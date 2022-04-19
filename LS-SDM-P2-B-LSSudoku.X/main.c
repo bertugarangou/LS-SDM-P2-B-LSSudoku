@@ -2,9 +2,6 @@
 #include <xc.h>
 #include "LcTLCD.h"
 #include "TiTTimer.h"
-#include "TeTeclat.h"
-#include "Ssms.h"
-
 
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
@@ -12,7 +9,7 @@
 #pragma config LVP = OFF	    //;Evitar resets eusart
 
 void __interrupt() high_rsi(){
-    _TiRSITimer();
+    _TiRSITimer();    
 }
 
 void init_ports(void){
@@ -25,8 +22,9 @@ void init_ports(void){
     //TRISBbits.TRISB5 = 1;   //pgm
     //B0 SPK
     TRISB = 0xE0;//11100000
-    LATBbits.LATB3 = 0;
-    LATBbits.LATB0 = 0;
+    LATBbits.LATB3 = 0;//led debugg
+    LATBbits.LATB0 = 0;//spk
+    LATBbits.LATB1 = 0;//bluetooth tx
     
     //TRISCbits.TRISC7 = 1;
     //TRISCbits.TRISC6 = 1;
@@ -60,15 +58,12 @@ void init_eusart(void){
 
 void main(void) {
     init_ports();
-    init_eusart(); 
+
     TiInitTimer();
+
     LcInit(2,16);
-    TeInit();
-    Sinit();
+    LcClear();
     while(1){
-        
-        TeTeclat();//antapenultim
-        SMotor(); //penultim
         LcLCD();//ultim
     }
     return;

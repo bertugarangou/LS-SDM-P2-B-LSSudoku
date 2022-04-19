@@ -22,10 +22,10 @@ void TiInitTimer(void) {
     INTCONbits.PEIE_GIEL = 1;
     INTCONbits.TMR0IE = 1;
     INTCONbits.TMR0IF = 0;
-    T0CON = 199; //11000111
+    T0CON = 136; //10001000
     
-    TMR0H = 0;//0, fem 8 bits de timer amb prescaller 256.   0.5m=(2^8 - x)x256x4 / 40M ;   x = 236
-    TMR0L = 236;//236 0xEC
+    TMR0H = 223;//0, fem 8 bits de timer amb prescaller 256.   0.83m=(2^16 - x)x1x4 / 40M ;
+    TMR0L = 148;//57236 de load
     T0CONbits.TMR0ON = 1; //Start timer
 
     for (counter=0;counter<TI_NUMTIMERS;counter++) {
@@ -36,8 +36,8 @@ void TiInitTimer(void) {
 
 void _TiRSITimer (void) {
 //Timer Interrupt Service Routine
-    TMR0H = 0;
-    TMR0L = 236;
+    TMR0H = 223;//0, fem 8 bits de timer amb prescaller 256.   0.83m=(2^16 - x)x1x4 / 40M ;
+    TMR0L = 148;//57236 de load
     INTCONbits.TMR0IF = 0;
     h_Tics++;
 

@@ -1,10 +1,10 @@
 #include "TeTeclat.h"
 #include "TiTTimer.h"
-#include "MMenu.h"
+//#include "MMenu.h"
 #include <xc.h>
 #include <pic18f4321.h>
 #include "Ssms.h"
-#include "JJoc.h"
+//#include "JJoc.h"
 
 static char tiTeclat=0;
 
@@ -74,9 +74,9 @@ void TeTeclat(void) {
 				state = 1;
 			}
 			else if (files!=0) {
-                MsetNovaTecla(teclaPremuda[files-1][cols]);
+                //MsetNovaTecla(teclaPremuda[files-1][cols]);//comentat falta menu
                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-                JnovaTecla(teclaPremuda[files-1][cols]);
+                //JnovaTecla(teclaPremuda[files-1][cols]); //comentat falta menu
 				state++;
 			}
 		break;
