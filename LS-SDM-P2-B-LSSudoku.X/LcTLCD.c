@@ -84,6 +84,7 @@ void LcClear(void) {
 // Post: The next order can last up to 1.6ms. 
 	WaitForBusy(); 	CantaIR(DISPLAY_CLEAR);	   //Spaces
 	Espera(Timer, 3); // V1.1
+    LcGotoXY(0,0);
 }
 
 void LcCursorOn(void) {

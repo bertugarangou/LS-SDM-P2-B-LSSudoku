@@ -2,6 +2,10 @@
 #include <xc.h>
 #include "LcTLCD.h"
 #include "TiTTimer.h"
+#include "Usuaris.h"
+#include "Menu.h"
+#include "TeTeclat.h"
+#include "Ssms.h"
 
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
@@ -48,31 +52,31 @@ void init_ports(void){
     TRISD = 0x8F; //10001111
     LATD = 0x00;
 }
-void init_eusart(void){
+/*void init_eusart(void){
     TXSTA = 0x24; //00100100
     RCSTA = 0x90;//10010000
     BAUDCON = 0x08;
     SPBRGH = 0x04;  //high(1040) -> high(0000 0100 0001 0000) -> 0000 0100 -> 0x04
     SPBRG = 0x10;   //low(1040) -> low(0000 0100 0001 0000) -> 0001 0000 -> 0x10
-}
+}*/
 
 
 void main(void) {
     init_ports();
     TiInitTimer();
-
+    TeInit();
+    Sinit();
+    SMotor();
+    
     LcInit(2,16);
-    LcClear();
+    Minit();
 
-    LcNewString("hola carquinyolis");
     while(1){
 
-        
-        
-        
-        
-        
-        LcLCD();
+        menu();
+        TeTeclat();//antapenultim
+        SMotor(); //penultim
+        LcLCD();//ultim
     }
     return;
 }

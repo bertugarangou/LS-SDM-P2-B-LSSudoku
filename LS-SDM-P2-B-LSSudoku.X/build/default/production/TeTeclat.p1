@@ -46,6 +46,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
 [v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
+"6 ./Menu.h
+[; ;./Menu.h: 6: void MsetNovaTecla(char tecla);
+[v _MsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
 "6 ./Ssms.h
 [; ;./Ssms.h: 6: void SsetNovaTecla(char tecla);
 [v _SsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
@@ -469,10 +472,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _tiTeclat
 -> -> 0 `i `uc
 ]
-[v F2577 `uc ~T0 @X0 -> 3 `i t ]
+[v F2583 `uc ~T0 @X0 -> 3 `i t ]
 "11
 [; ;TeTeclat.c: 11: char teclaPremuda[4][3] = {
-[v _teclaPremuda `F2577 ~T0 @X0 -> 4 `i e ]
+[v _teclaPremuda `F2583 ~T0 @X0 -> 4 `i e ]
 [i _teclaPremuda
 :U ..
 :U ..
@@ -518,25 +521,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "23
 [; ;TeTeclat.c: 23:  static char state = 0;
-[v F2580 `uc ~T0 @X0 1 s state ]
-[i F2580
+[v F2586 `uc ~T0 @X0 1 s state ]
+[i F2586
 -> -> 0 `i `uc
 ]
 "24
 [; ;TeTeclat.c: 24:     static char cols=0;
-[v F2581 `uc ~T0 @X0 1 s cols ]
-[i F2581
+[v F2587 `uc ~T0 @X0 1 s cols ]
+[i F2587
 -> -> 0 `i `uc
 ]
 "25
 [; ;TeTeclat.c: 25:     static char files = 0;
-[v F2582 `uc ~T0 @X0 1 s files ]
-[i F2582
+[v F2588 `uc ~T0 @X0 1 s files ]
+[i F2588
 -> -> 0 `i `uc
 ]
 "26
 [; ;TeTeclat.c: 26:     files = PORTDbits.RD0 + PORTDbits.RD1*2 + PORTDbits.RD2*3 + PORTDbits.RD3*4;
-[e = F2582 -> + + + -> . . _PORTDbits 0 0 `i * -> . . _PORTDbits 0 1 `i -> 2 `i * -> . . _PORTDbits 0 2 `i -> 3 `i * -> . . _PORTDbits 0 3 `i -> 4 `i `uc ]
+[e = F2588 -> + + + -> . . _PORTDbits 0 0 `i * -> . . _PORTDbits 0 1 `i -> 2 `i * -> . . _PORTDbits 0 2 `i -> 3 `i * -> . . _PORTDbits 0 3 `i -> 4 `i `uc ]
 "27
 [; ;TeTeclat.c: 27:  switch(state) {
 [e $U 283  ]
@@ -546,7 +549,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 284 ]
 "29
 [; ;TeTeclat.c: 29:    if (files==0) {
-[e $ ! == -> F2582 `i -> 0 `i 285  ]
+[e $ ! == -> F2588 `i -> 0 `i 285  ]
 {
 "30
 [; ;TeTeclat.c: 30:     LATDbits.LD4=1;
@@ -559,10 +562,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
 "33
 [; ;TeTeclat.c: 33:     cols=0;
-[e = F2581 -> -> 0 `i `uc ]
+[e = F2587 -> -> 0 `i `uc ]
 "34
 [; ;TeTeclat.c: 34:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "35
 [; ;TeTeclat.c: 35:    }
 }
@@ -570,14 +573,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;TeTeclat.c: 36:    else if (files!=0) {
 [e :U 285 ]
-[e $ ! != -> F2582 `i -> 0 `i 287  ]
+[e $ ! != -> F2588 `i -> 0 `i 287  ]
 {
 "37
 [; ;TeTeclat.c: 37:     TiResetTics(tiTeclat);
 [e ( _TiResetTics (1 _tiTeclat ]
 "38
 [; ;TeTeclat.c: 38:     state = 3;
-[e = F2580 -> -> 3 `i `uc ]
+[e = F2586 -> -> 3 `i `uc ]
 "39
 [; ;TeTeclat.c: 39:    }
 }
@@ -591,7 +594,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 288 ]
 "42
 [; ;TeTeclat.c: 42:    if (files==0) {
-[e $ ! == -> F2582 `i -> 0 `i 289  ]
+[e $ ! == -> F2588 `i -> 0 `i 289  ]
 {
 "43
 [; ;TeTeclat.c: 43:     LATDbits.LD4=0;
@@ -604,10 +607,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
 "46
 [; ;TeTeclat.c: 46:     cols=1;
-[e = F2581 -> -> 1 `i `uc ]
+[e = F2587 -> -> 1 `i `uc ]
 "47
 [; ;TeTeclat.c: 47:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "48
 [; ;TeTeclat.c: 48:    }
 }
@@ -615,14 +618,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49
 [; ;TeTeclat.c: 49:    else if (files!=0) {
 [e :U 289 ]
-[e $ ! != -> F2582 `i -> 0 `i 291  ]
+[e $ ! != -> F2588 `i -> 0 `i 291  ]
 {
 "50
 [; ;TeTeclat.c: 50:     TiResetTics(tiTeclat);
 [e ( _TiResetTics (1 _tiTeclat ]
 "51
 [; ;TeTeclat.c: 51:     state = 3;
-[e = F2580 -> -> 3 `i `uc ]
+[e = F2586 -> -> 3 `i `uc ]
 "52
 [; ;TeTeclat.c: 52:    }
 }
@@ -636,7 +639,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 292 ]
 "55
 [; ;TeTeclat.c: 55:    if (files==0) {
-[e $ ! == -> F2582 `i -> 0 `i 293  ]
+[e $ ! == -> F2588 `i -> 0 `i 293  ]
 {
 "56
 [; ;TeTeclat.c: 56:     LATDbits.LD4=0;
@@ -649,10 +652,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
 "59
 [; ;TeTeclat.c: 59:     cols=2;
-[e = F2581 -> -> 2 `i `uc ]
+[e = F2587 -> -> 2 `i `uc ]
 "60
 [; ;TeTeclat.c: 60:     state = 0;
-[e = F2580 -> -> 0 `i `uc ]
+[e = F2586 -> -> 0 `i `uc ]
 "61
 [; ;TeTeclat.c: 61:    }
 }
@@ -660,14 +663,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;TeTeclat.c: 62:    else if (files!=0) {
 [e :U 293 ]
-[e $ ! != -> F2582 `i -> 0 `i 295  ]
+[e $ ! != -> F2588 `i -> 0 `i 295  ]
 {
 "63
 [; ;TeTeclat.c: 63:     TiResetTics(tiTeclat);
 [e ( _TiResetTics (1 _tiTeclat ]
 "64
 [; ;TeTeclat.c: 64:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "65
 [; ;TeTeclat.c: 65:    }
 }
@@ -685,7 +688,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "69
 [; ;TeTeclat.c: 69:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "70
 [; ;TeTeclat.c: 70:    }
 }
@@ -698,11 +701,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 298 ]
 "73
 [; ;TeTeclat.c: 73:    if (files==0) {
-[e $ ! == -> F2582 `i -> 0 `i 299  ]
+[e $ ! == -> F2588 `i -> 0 `i 299  ]
 {
 "74
 [; ;TeTeclat.c: 74:     state = 1;
-[e = F2580 -> -> 1 `i `uc ]
+[e = F2586 -> -> 1 `i `uc ]
 "75
 [; ;TeTeclat.c: 75:    }
 }
@@ -710,14 +713,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "76
 [; ;TeTeclat.c: 76:    else if (files!=0) {
 [e :U 299 ]
-[e $ ! != -> F2582 `i -> 0 `i 301  ]
+[e $ ! != -> F2588 `i -> 0 `i 301  ]
 {
+"77
+[; ;TeTeclat.c: 77:                 MsetNovaTecla(teclaPremuda[files-1][cols]);
+[e ( _MsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2588 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2587 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2588 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
 "78
 [; ;TeTeclat.c: 78:                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2582 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2581 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2582 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
+[e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2588 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2587 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2588 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
 "80
 [; ;TeTeclat.c: 80:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "81
 [; ;TeTeclat.c: 81:    }
 }
@@ -731,14 +737,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 302 ]
 "84
 [; ;TeTeclat.c: 84:    if (files==0) {
-[e $ ! == -> F2582 `i -> 0 `i 303  ]
+[e $ ! == -> F2588 `i -> 0 `i 303  ]
 {
 "85
 [; ;TeTeclat.c: 85:     TiResetTics(tiTeclat);
 [e ( _TiResetTics (1 _tiTeclat ]
 "86
 [; ;TeTeclat.c: 86:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "87
 [; ;TeTeclat.c: 87:    }
 }
@@ -755,7 +761,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "91
 [; ;TeTeclat.c: 91:     state++;
-[e ++ F2580 -> -> 1 `i `uc ]
+[e ++ F2586 -> -> 1 `i `uc ]
 "92
 [; ;TeTeclat.c: 92:    }
 }
@@ -768,11 +774,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 306 ]
 "95
 [; ;TeTeclat.c: 95:    if (files!=0) {
-[e $ ! != -> F2582 `i -> 0 `i 307  ]
+[e $ ! != -> F2588 `i -> 0 `i 307  ]
 {
 "96
 [; ;TeTeclat.c: 96:     state = 5;
-[e = F2580 -> -> 5 `i `uc ]
+[e = F2586 -> -> 5 `i `uc ]
 "97
 [; ;TeTeclat.c: 97:    }
 }
@@ -780,11 +786,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98
 [; ;TeTeclat.c: 98:    else if (files==0) {
 [e :U 307 ]
-[e $ ! == -> F2582 `i -> 0 `i 309  ]
+[e $ ! == -> F2588 `i -> 0 `i 309  ]
 {
 "99
 [; ;TeTeclat.c: 99:     state = 0;
-[e = F2580 -> -> 0 `i `uc ]
+[e = F2586 -> -> 0 `i `uc ]
 "100
 [; ;TeTeclat.c: 100:    }
 }
@@ -798,7 +804,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 282  ]
 [e :U 283 ]
-[e [\ -> F2580 `i , $ -> 0 `i 284
+[e [\ -> F2586 `i , $ -> 0 `i 284
  , $ -> 1 `i 288
  , $ -> 2 `i 292
  , $ -> 3 `i 296

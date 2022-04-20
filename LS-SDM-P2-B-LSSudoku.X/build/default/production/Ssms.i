@@ -4654,12 +4654,13 @@ signed char lletraASCII = -1;
 char lletraInici[9] = "ADGJMPTW";
 char sumaPulsacions = 0;
 signed char novaTecla = -1;
-signed char timerSMS = -1;
+char timerSMS = -1;
 signed char ultimaTecla = -1;
 __bit setSMSon = 0;
 
 void Sinit(void){
     timerSMS = TiGetTimer();
+
 }
 
 void SMotor(void) {

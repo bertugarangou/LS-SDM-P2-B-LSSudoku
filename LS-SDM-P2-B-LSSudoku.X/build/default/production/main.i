@@ -4680,6 +4680,47 @@ void TiFreeTimer (char Handle);
 void _TiRSITimer (void);
 # 4 "main.c" 2
 
+# 1 "./Usuaris.h" 1
+
+
+
+char UgetNumUsuaris(void);
+# 5 "main.c" 2
+
+# 1 "./Menu.h" 1
+
+
+
+void Minit(void);
+void menu(void);
+void MsetNovaTecla(char tecla);
+void MNovaLletra(char lletra);
+# 6 "main.c" 2
+
+# 1 "./TeTeclat.h" 1
+
+
+
+
+
+
+
+
+    void TeInit();
+    void TeTeclat();
+# 7 "main.c" 2
+
+# 1 "./Ssms.h" 1
+
+
+
+void Sinit(void);
+void SMotor(void);
+void SsetNovaTecla(char tecla);
+void SMSon(void);
+void SMSoff (void);
+# 8 "main.c" 2
+
 
 #pragma config OSC = HSPLL
 #pragma config PBADEN = DIG
@@ -4704,36 +4745,28 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 38 "main.c"
+# 42 "main.c"
     TRISC = 0xC0;
-# 48 "main.c"
+# 52 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 }
-void init_eusart(void){
-    TXSTA = 0x24;
-    RCSTA = 0x90;
-    BAUDCON = 0x08;
-    SPBRGH = 0x04;
-    SPBRG = 0x10;
-}
-
-
+# 64 "main.c"
 void main(void) {
     init_ports();
     TiInitTimer();
+    TeInit();
+    Sinit();
+    SMotor();
 
     LcInit(2,16);
-    LcClear();
+    Minit();
 
-    LcNewString("hola carquinyolis");
     while(1){
 
-
-
-
-
-
+        menu();
+        TeTeclat();
+        SMotor();
         LcLCD();
     }
     return;

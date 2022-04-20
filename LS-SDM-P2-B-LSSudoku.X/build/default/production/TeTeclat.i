@@ -49,6 +49,15 @@ void TiFreeTimer (char Handle);
 void _TiRSITimer (void);
 # 2 "TeTeclat.c" 2
 
+# 1 "./Menu.h" 1
+
+
+
+void Minit(void);
+void menu(void);
+void MsetNovaTecla(char tecla);
+void MNovaLletra(char lletra);
+# 3 "TeTeclat.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
@@ -4732,7 +4741,7 @@ void TeTeclat(void) {
     state = 1;
    }
    else if (files!=0) {
-
+                MsetNovaTecla(teclaPremuda[files-1][cols]);
                 SsetNovaTecla(teclaPremuda[files-1][cols]);
 
     state++;

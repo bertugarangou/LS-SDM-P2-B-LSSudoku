@@ -1,6 +1,6 @@
 #include "TeTeclat.h"
 #include "TiTTimer.h"
-//#include "MMenu.h"
+#include "Menu.h"
 #include <xc.h>
 #include <pic18f4321.h>
 #include "Ssms.h"
@@ -74,9 +74,9 @@ void TeTeclat(void) {
 				state = 1;
 			}
 			else if (files!=0) {
-                //MsetNovaTecla(teclaPremuda[files-1][cols]);//comentat falta menu
+                MsetNovaTecla(teclaPremuda[files-1][cols]);//comentat falta menu
                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-                //JnovaTecla(teclaPremuda[files-1][cols]); //comentat falta menu
+                //JnovaTecla(teclaPremuda[files-1][cols]); //comentat falta joc
 				state++;
 			}
 		break;

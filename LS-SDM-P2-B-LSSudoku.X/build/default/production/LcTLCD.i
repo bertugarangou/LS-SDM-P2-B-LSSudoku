@@ -4748,6 +4748,7 @@ void LcClear(void) {
 
  WaitForBusy(); CantaIR(0x01);
  Espera(Timer, 3);
+    LcGotoXY(0,0);
 }
 
 void LcCursorOn(void) {
@@ -4773,7 +4774,7 @@ void LcGotoXY(char Column, char Row) {
 
 
    Fisics = Column + (!Row ? 0 : 0x40);
-# 124 "LcTLCD.c"
+# 125 "LcTLCD.c"
  WaitForBusy();
  CantaIR(0x80 | Fisics);
 
@@ -4794,7 +4795,7 @@ void LcPutChar(char c) {
    LcGotoXY(ColumnAct, RowAct);
   }
  }
-# 152 "LcTLCD.c"
+# 153 "LcTLCD.c"
  if (RowAct == 1) {
   if (ColumnAct >= 40) ColumnAct = 0;
   LcGotoXY(ColumnAct, RowAct);

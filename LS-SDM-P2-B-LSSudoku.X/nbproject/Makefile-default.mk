@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c
+SOURCEFILES_QUOTED_IF_SPACED=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c Menu.c Usuaris.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/LcTLCD.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Ssms.p1.d ${OBJECTDIR}/TeTeclat.p1.d ${OBJECTDIR}/TiTTimer.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1 ${OBJECTDIR}/Menu.p1 ${OBJECTDIR}/Usuaris.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/LcTLCD.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Ssms.p1.d ${OBJECTDIR}/TeTeclat.p1.d ${OBJECTDIR}/TiTTimer.p1.d ${OBJECTDIR}/Menu.p1.d ${OBJECTDIR}/Usuaris.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1
+OBJECTFILES=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1 ${OBJECTDIR}/Menu.p1 ${OBJECTDIR}/Usuaris.p1
 
 # Source Files
-SOURCEFILES=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c
+SOURCEFILES=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c Menu.c Usuaris.c
 
 
 
@@ -134,6 +134,22 @@ ${OBJECTDIR}/TiTTimer.p1: TiTTimer.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/TiTTimer.d ${OBJECTDIR}/TiTTimer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/TiTTimer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Menu.p1: Menu.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Menu.p1.d 
+	@${RM} ${OBJECTDIR}/Menu.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Menu.p1 Menu.c 
+	@-${MV} ${OBJECTDIR}/Menu.d ${OBJECTDIR}/Menu.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Menu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Usuaris.p1: Usuaris.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Usuaris.p1.d 
+	@${RM} ${OBJECTDIR}/Usuaris.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Usuaris.p1 Usuaris.c 
+	@-${MV} ${OBJECTDIR}/Usuaris.d ${OBJECTDIR}/Usuaris.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Usuaris.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/LcTLCD.p1: LcTLCD.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -174,6 +190,22 @@ ${OBJECTDIR}/TiTTimer.p1: TiTTimer.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/TiTTimer.p1 TiTTimer.c 
 	@-${MV} ${OBJECTDIR}/TiTTimer.d ${OBJECTDIR}/TiTTimer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/TiTTimer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Menu.p1: Menu.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Menu.p1.d 
+	@${RM} ${OBJECTDIR}/Menu.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Menu.p1 Menu.c 
+	@-${MV} ${OBJECTDIR}/Menu.d ${OBJECTDIR}/Menu.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Menu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Usuaris.p1: Usuaris.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Usuaris.p1.d 
+	@${RM} ${OBJECTDIR}/Usuaris.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Usuaris.p1 Usuaris.c 
+	@-${MV} ${OBJECTDIR}/Usuaris.d ${OBJECTDIR}/Usuaris.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Usuaris.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
