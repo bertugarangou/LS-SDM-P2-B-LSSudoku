@@ -13,6 +13,7 @@ void __interrupt() high_rsi(){
 }
 
 void init_ports(void){
+    
     //TRISAbits.TRISA0 = 1;   //axisX
     //TRISAbits.TRISA1 = 1;   //axisY
     TRISA = 0x03;//00000011
@@ -58,13 +59,20 @@ void init_eusart(void){
 
 void main(void) {
     init_ports();
-
     TiInitTimer();
 
     LcInit(2,16);
     LcClear();
+
+    LcNewString("hola carquinyolis");
     while(1){
-        LcLCD();//ultim
+
+        
+        
+        
+        
+        
+        LcLCD();
     }
     return;
 }

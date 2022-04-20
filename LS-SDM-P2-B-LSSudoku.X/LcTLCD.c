@@ -50,15 +50,15 @@ void LcInit(char rows, char columns) {
 	RowAct = ColumnAct = 0;
 	SetControlsSortida();
 	for (i = 0; i < 2; i++) {
-		Espera(Timer, 332);
+		Espera(Timer, 100);
 		// This sequence is set by the manual.
 
 		EscriuPrimeraOrdre(CURSOR_ON | DISPLAY_CLEAR);
-		Espera(Timer, 17);
+		Espera(Timer, 5);
 		EscriuPrimeraOrdre(CURSOR_ON | DISPLAY_CLEAR);
-		Espera(Timer, 4);
+		Espera(Timer, 1);
 		EscriuPrimeraOrdre(CURSOR_ON | DISPLAY_CLEAR);
-		Espera(Timer, 4);
+		Espera(Timer, 1);
 		// .. three times. 
 		// Now one at 4 bits
 		EscriuPrimeraOrdre(CURSOR_ON);
@@ -68,7 +68,7 @@ void LcInit(char rows, char columns) {
 		// Now we can wait for busy
 		WaitForBusy(); 	CantaIR(DISPLAY_CONTROL);  	// Display Off
 		WaitForBusy(); 	CantaIR(DISPLAY_CLEAR);	   	// All spaces
-		Espera(Timer,10); // 1.64ms V1.1
+		Espera(Timer,3); // 1.64ms V1.1
 		WaitForBusy(); 	CantaIR(DISPLAY_ON | CURSOR_ON); // Auto Increment and shift
 		WaitForBusy(); 	CantaIR(DISPLAY_CONTROL | DISPLAY_ON | CURSOR_ON | DISPLAY_CLEAR); 		// Display On
 	}
@@ -79,16 +79,11 @@ void LcInit(char rows, char columns) {
     LcCursorOff();
 }
 
-//void LcEnd(void) {
-//// The destructor
-//	TiFreeTimer(Timer); // It is not needed anymore
-//}
-
 void LcClear(void) {
 // Post: Erases the display and sets the cursor to its previous state. 
 // Post: The next order can last up to 1.6ms. 
 	WaitForBusy(); 	CantaIR(DISPLAY_CLEAR);	   //Spaces
-	Espera(Timer, 10); // V1.1
+	Espera(Timer, 3); // V1.1
 }
 
 void LcCursorOn(void) {
@@ -111,19 +106,20 @@ void LcGotoXY(char Column, char Row) {
 // Post: The next order can last until 40us.
 	int Fisics;
 	// calculating the effective address of the LCD ram. 
-	switch (Rows) {
-		case 2:
-			Fisics = Column + (!Row ? 0 : 0x40); break;
-		case 4:
-			Fisics = Column;
-			if (Row == 1) Fisics += 0x40; else
-			if (Row == 2) Fisics += Columns;      /* 0x14; */ else
-			if (Row == 3) Fisics += 0x40+Columns; /* 0x54; */
-			break;
-		case 1:
-		default:
-			Fisics = Column; break;
-	}
+//	switch (Rows) {
+//		case 2:
+			Fisics = Column + (!Row ? 0 : 0x40); 
+//          break;
+//		case 4:
+//			Fisics = Column;
+//			if (Row == 1) Fisics += 0x40; else
+//			if (Row == 2) Fisics += Columns;      /* 0x14; */ else
+//			if (Row == 3) Fisics += 0x40+Columns; /* 0x54; */
+//			break;
+//		case 1:
+//		default:
+//			Fisics = Column; break;
+//	}
 	// applying the command
 	WaitForBusy();
 	CantaIR(SET_DDRAM | Fisics);
@@ -133,32 +129,26 @@ void LcGotoXY(char Column, char Row) {
 }
 
 void LcPutChar(char c) {
-// Post: Paints the char in the actual cursor position and increments 
-// its position. If the column gets to 39 it returns to 0.
-// The row of the LCD is increased when this happens until the second
-// row and then it is reset back to row 0 if it has 2 rows total. 
-// If the LCD has 4 rows it will reset back to row 0 when it
-// reaches row 4 and the columns will go till 39 before reseting to 0.
-// The one row LCDs returns to 0 when a column gets to 39. 
-// The row is never increased. 
 	// The char is written
 	WaitForBusy(); CantaData(c);
 	// The cursor position is recalculated.
 	++ColumnAct;
-	if (Rows == 3) {
-		if (ColumnAct >= 20) {
-			ColumnAct = 0;
-			if (++RowAct >= 4) RowAct = 0;
-			LcGotoXY(ColumnAct, RowAct);
-		}
-	} else
+	
 	if (Rows == 2) {
 		if (ColumnAct >= 40) {
 			ColumnAct = 0;
 			if (++RowAct >= 2) RowAct = 0;
 			LcGotoXY(ColumnAct, RowAct);
 		}
-	} else
+	}
+    
+//    if (Rows == 3) {
+//		if (ColumnAct >= 20) {
+//			ColumnAct = 0;
+//			if (++RowAct >= 4) RowAct = 0;
+//			LcGotoXY(ColumnAct, RowAct);
+//		}
+//	}
 	if (RowAct == 1) {
 		if (ColumnAct >= 40) ColumnAct = 0;
 		LcGotoXY(ColumnAct, RowAct);
@@ -258,15 +248,6 @@ void LcPutFletxa(){ //no borra tot, compatible amb marquesina
                     //però dos caràcters s'ha comprovat que no trenca el cooperativisme, es trenca a >~4
     LcInsertFletxa();
 }
-
-////A eliminar quan no hi hagi espai, només debug
-//void LcPutStringDebug(char *s) {
-//// Post: Pinta l'string a apartir de la posici? actual del cursor.
-//// El criteri de coordenades ?s el mateix que a LcPutChar
-//// Post: Pot trigar fins a 40us pel nombre de chars de s a sortir de
-//// la rutina
-//	while(*s) LcPutChar(*s++);
-//}
 
 
 void LcLCD(void){

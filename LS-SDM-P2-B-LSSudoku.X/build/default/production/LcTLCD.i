@@ -4714,15 +4714,15 @@ void LcInit(char rows, char columns) {
  RowAct = ColumnAct = 0;
  (TRISCbits.TRISC5 = TRISDbits.TRISD7 = TRISCbits.TRISC4 = 0);
  for (i = 0; i < 2; i++) {
-  Espera(Timer, 332);
+  Espera(Timer, 100);
 
 
   EscriuPrimeraOrdre(0x02 | 0x01);
-  Espera(Timer, 17);
+  Espera(Timer, 5);
   EscriuPrimeraOrdre(0x02 | 0x01);
-  Espera(Timer, 4);
+  Espera(Timer, 1);
   EscriuPrimeraOrdre(0x02 | 0x01);
-  Espera(Timer, 4);
+  Espera(Timer, 1);
 
 
   EscriuPrimeraOrdre(0x02);
@@ -4732,7 +4732,7 @@ void LcInit(char rows, char columns) {
 
   WaitForBusy(); CantaIR(0x08);
   WaitForBusy(); CantaIR(0x01);
-  Espera(Timer,10);
+  Espera(Timer,3);
   WaitForBusy(); CantaIR(0x04 | 0x02);
   WaitForBusy(); CantaIR(0x08 | 0x04 | 0x02 | 0x01);
  }
@@ -4743,16 +4743,11 @@ void LcInit(char rows, char columns) {
     LcCursorOff();
 }
 
-
-
-
-
-
 void LcClear(void) {
 
 
  WaitForBusy(); CantaIR(0x01);
- Espera(Timer, 10);
+ Espera(Timer, 3);
 }
 
 void LcCursorOn(void) {
@@ -4775,20 +4770,10 @@ void LcGotoXY(char Column, char Row) {
 
  int Fisics;
 
- switch (Rows) {
-  case 2:
-   Fisics = Column + (!Row ? 0 : 0x40); break;
-  case 4:
-   Fisics = Column;
-   if (Row == 1) Fisics += 0x40; else
-   if (Row == 2) Fisics += Columns; else
-   if (Row == 3) Fisics += 0x40+Columns;
-   break;
-  case 1:
-  default:
-   Fisics = Column; break;
- }
 
+
+   Fisics = Column + (!Row ? 0 : 0x40);
+# 124 "LcTLCD.c"
  WaitForBusy();
  CantaIR(0x80 | Fisics);
 
@@ -4797,24 +4782,19 @@ void LcGotoXY(char Column, char Row) {
 }
 
 void LcPutChar(char c) {
-# 145 "LcTLCD.c"
+
  WaitForBusy(); CantaData(c);
 
  ++ColumnAct;
- if (Rows == 3) {
-  if (ColumnAct >= 20) {
-   ColumnAct = 0;
-   if (++RowAct >= 4) RowAct = 0;
-   LcGotoXY(ColumnAct, RowAct);
-  }
- } else
+
  if (Rows == 2) {
   if (ColumnAct >= 40) {
    ColumnAct = 0;
    if (++RowAct >= 2) RowAct = 0;
    LcGotoXY(ColumnAct, RowAct);
   }
- } else
+ }
+# 152 "LcTLCD.c"
  if (RowAct == 1) {
   if (ColumnAct >= 40) ColumnAct = 0;
   LcGotoXY(ColumnAct, RowAct);
@@ -4914,7 +4894,8 @@ void LcPutFletxa(){
 
     LcInsertFletxa();
 }
-# 272 "LcTLCD.c"
+
+
 void LcLCD(void){
     if(nou_s == 1){
         LcPutChar(*s_ptr);

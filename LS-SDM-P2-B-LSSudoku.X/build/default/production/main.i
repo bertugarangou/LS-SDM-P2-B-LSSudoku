@@ -4693,6 +4693,7 @@ void __attribute__((picinterrupt(("")))) high_rsi(){
 void init_ports(void){
 
 
+
     TRISA = 0x03;
 
 
@@ -4703,9 +4704,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 37 "main.c"
+# 38 "main.c"
     TRISC = 0xC0;
-# 47 "main.c"
+# 48 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 }
@@ -4720,12 +4721,19 @@ void init_eusart(void){
 
 void main(void) {
     init_ports();
-
     TiInitTimer();
 
     LcInit(2,16);
     LcClear();
+
+    LcNewString("hola carquinyolis");
     while(1){
+
+
+
+
+
+
         LcLCD();
     }
     return;
