@@ -8,6 +8,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
 [v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
+"7 ./Menu.h
+[; ;./Menu.h: 7: void MNovaLletra(char lletra);
+[v _MNovaLletra `(v ~T0 @X0 0 ef1`uc ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -495,8 +498,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "22
 [; ;Ssms.c: 22:  static char state = 0;
-[v F2582 `uc ~T0 @X0 1 s state ]
-[i F2582
+[v F2588 `uc ~T0 @X0 1 s state ]
+[i F2588
 -> -> 0 `i `uc
 ]
 "23
@@ -515,16 +518,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerSMS ]
 "27
 [; ;Ssms.c: 27:     state = 3;
-[e = F2582 -> -> 3 `i `uc ]
+[e = F2588 -> -> 3 `i `uc ]
 "28
 [; ;Ssms.c: 28:    }
 }
 [e $U 286  ]
 "29
-[; ;Ssms.c: 29:    else if (novaTecla == -1 && TiGetTics(timerSMS)>= 1000 && lletraASCII != -1 && setSMSon == 1) {
+[; ;Ssms.c: 29:    else if (novaTecla == -1 && TiGetTics(timerSMS)>= 602 && lletraASCII != -1 && setSMSon == 1) {
 [e :U 285 ]
-[e $ ! && && && == -> _novaTecla `i -U -> 1 `i >= ( _TiGetTics (1 _timerSMS -> 1000 `i != -> _lletraASCII `i -U -> 1 `i == -> _setSMSon `i -> 1 `i 287  ]
+[e $ ! && && && == -> _novaTecla `i -U -> 1 `i >= ( _TiGetTics (1 _timerSMS -> 602 `i != -> _lletraASCII `i -U -> 1 `i == -> _setSMSon `i -> 1 `i 287  ]
 {
+"30
+[; ;Ssms.c: 30:     MNovaLletra(lletraASCII);
+[e ( _MNovaLletra (1 -> _lletraASCII `uc ]
 "31
 [; ;Ssms.c: 31:     lletraASCII = -1;
 [e = _lletraASCII -> -U -> 1 `i `c ]
@@ -543,8 +549,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Ssms.c: 35:   case 1:
 [e :U 288 ]
 "36
-[; ;Ssms.c: 36:    if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < 1000) {
-[e $ ! && == -> _novaTecla `i -> _ultimaTecla `i < ( _TiGetTics (1 _timerSMS -> 1000 `i 289  ]
+[; ;Ssms.c: 36:    if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < 602) {
+[e $ ! && == -> _novaTecla `i -> _ultimaTecla `i < ( _TiGetTics (1 _timerSMS -> 602 `i 289  ]
 {
 "37
 [; ;Ssms.c: 37:     novaTecla = -1;
@@ -557,7 +563,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _lletraASCII -> -> 1 `i `c ]
 "40
 [; ;Ssms.c: 40:     state++;
-[e ++ F2582 -> -> 1 `i `uc ]
+[e ++ F2588 -> -> 1 `i `uc ]
 "41
 [; ;Ssms.c: 41:    }
 }
@@ -567,6 +573,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 289 ]
 [e $ ! && != -> _novaTecla `i -U -> 1 `i != -> _novaTecla `i -> _ultimaTecla `i 291  ]
 {
+"43
+[; ;Ssms.c: 43:     MNovaLletra(lletraASCII);
+[e ( _MNovaLletra (1 -> _lletraASCII `uc ]
 "44
 [; ;Ssms.c: 44:     lletraASCII = lletraInici[novaTecla-2];
 [e = _lletraASCII -> *U + &U _lletraInici * -> -> - -> _novaTecla `i -> 2 `i `ui `ux -> -> # *U &U _lletraInici `ui `ux `c ]
@@ -581,7 +590,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTecla -> -U -> 1 `i `c ]
 "48
 [; ;Ssms.c: 48:     state--;
-[e -- F2582 -> -> 1 `i `uc ]
+[e -- F2588 -> -> 1 `i `uc ]
 "49
 [; ;Ssms.c: 49:    }
 }
@@ -599,7 +608,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "53
 [; ;Ssms.c: 53:     state = 5;
-[e = F2582 -> -> 5 `i `uc ]
+[e = F2588 -> -> 5 `i `uc ]
 "54
 [; ;Ssms.c: 54:    }
 }
@@ -611,7 +620,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "56
 [; ;Ssms.c: 56:     state = 6;
-[e = F2582 -> -> 6 `i `uc ]
+[e = F2588 -> -> 6 `i `uc ]
 "57
 [; ;Ssms.c: 57:    }
 }
@@ -629,7 +638,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "61
 [; ;Ssms.c: 61:     state = 1;
-[e = F2582 -> -> 1 `i `uc ]
+[e = F2588 -> -> 1 `i `uc ]
 "62
 [; ;Ssms.c: 62:    }
 }
@@ -639,12 +648,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 297 ]
 [e $ ! && <= -> _novaTecla `i -> 1 `i == -> _lletraASCII `i -U -> 1 `i 299  ]
 {
+"64
+[; ;Ssms.c: 64:     MNovaLletra(novaTecla+48);
+[e ( _MNovaLletra (1 -> + -> _novaTecla `i -> 48 `i `uc ]
 "65
 [; ;Ssms.c: 65:     novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
 "66
 [; ;Ssms.c: 66:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "67
 [; ;Ssms.c: 67:    }
 }
@@ -654,12 +666,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 299 ]
 [e $ ! && <= -> _novaTecla `i -> 1 `i != -> _lletraASCII `i -U -> 1 `i 301  ]
 {
+"69
+[; ;Ssms.c: 69:     MNovaLletra(lletraASCII);
+[e ( _MNovaLletra (1 -> _lletraASCII `uc ]
 "70
 [; ;Ssms.c: 70:     lletraASCII = -1;
 [e = _lletraASCII -> -U -> 1 `i `c ]
 "71
 [; ;Ssms.c: 71:     state++;
-[e ++ F2582 -> -> 1 `i `uc ]
+[e ++ F2588 -> -> 1 `i `uc ]
 "72
 [; ;Ssms.c: 72:    }
 }
@@ -672,12 +687,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [; ;Ssms.c: 74:   case 4:
 [e :U 302 ]
+"75
+[; ;Ssms.c: 75:    MNovaLletra(novaTecla+48);
+[e ( _MNovaLletra (1 -> + -> _novaTecla `i -> 48 `i `uc ]
 "76
 [; ;Ssms.c: 76:    novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
 "77
 [; ;Ssms.c: 77:    state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "78
 [; ;Ssms.c: 78:   break;
 [e $U 282  ]
@@ -696,7 +714,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _sumaPulsacions -> -> 0 `i `uc ]
 "83
 [; ;Ssms.c: 83:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "84
 [; ;Ssms.c: 84:    }
 }
@@ -711,7 +729,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lletraASCII -> + -> _ultimaTecla `i -> 48 `i `c ]
 "87
 [; ;Ssms.c: 87:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "88
 [; ;Ssms.c: 88:    }
 }
@@ -723,7 +741,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "90
 [; ;Ssms.c: 90:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "91
 [; ;Ssms.c: 91:    }
 }
@@ -745,7 +763,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lletraASCII -> + -> _ultimaTecla `i -> 48 `i `c ]
 "96
 [; ;Ssms.c: 96:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "97
 [; ;Ssms.c: 97:    }
 }
@@ -763,7 +781,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _sumaPulsacions -> -> 0 `i `uc ]
 "101
 [; ;Ssms.c: 101:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "102
 [; ;Ssms.c: 102:    }
 }
@@ -775,7 +793,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "104
 [; ;Ssms.c: 104:     state = 0;
-[e = F2582 -> -> 0 `i `uc ]
+[e = F2588 -> -> 0 `i `uc ]
 "105
 [; ;Ssms.c: 105:    }
 }
@@ -790,7 +808,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 282  ]
 [e :U 283 ]
-[e [\ -> F2582 `i , $ -> 0 `i 284
+[e [\ -> F2588 `i , $ -> 0 `i 284
  , $ -> 1 `i 288
  , $ -> 2 `i 292
  , $ -> 3 `i 296

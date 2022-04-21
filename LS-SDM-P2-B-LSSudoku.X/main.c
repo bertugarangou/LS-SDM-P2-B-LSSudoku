@@ -51,6 +51,11 @@ void init_ports(void){
     //D3 teclat F4
     TRISD = 0x8F; //10001111
     LATD = 0x00;
+    
+    //EEPROM init
+    EECON1bits.EEPGD = 1;
+    EECON1bits.CFGS = 0;
+    
 }
 /*void init_eusart(void){
     TXSTA = 0x24; //00100100
@@ -74,6 +79,8 @@ void main(void) {
     while(1){
 
         menu();
+        motorUsuaris();
+        
         TeTeclat();//antapenultim
         SMotor(); //penultim
         LcLCD();//ultim

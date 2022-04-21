@@ -4685,6 +4685,9 @@ void _TiRSITimer (void);
 
 
 char UgetNumUsuaris(void);
+void motorUsuaris(void);
+void UAfegirLletraUsername(char novaLletra);
+void UcreateUser();
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1
@@ -4750,8 +4753,13 @@ void init_ports(void){
 # 52 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
+
+
+    EECON1bits.EEPGD = 1;
+    EECON1bits.CFGS = 0;
+
 }
-# 64 "main.c"
+# 69 "main.c"
 void main(void) {
     init_ports();
     TiInitTimer();
@@ -4765,6 +4773,8 @@ void main(void) {
     while(1){
 
         menu();
+        motorUsuaris();
+
         TeTeclat();
         SMotor();
         LcLCD();

@@ -4647,6 +4647,15 @@ void TiFreeTimer (char Handle);
 void _TiRSITimer (void);
 # 4 "Ssms.c" 2
 
+# 1 "./Menu.h" 1
+
+
+
+void Minit(void);
+void menu(void);
+void MsetNovaTecla(char tecla);
+void MNovaLletra(char lletra);
+# 5 "Ssms.c" 2
 
 
 
@@ -4671,21 +4680,21 @@ void SMotor(void) {
     TiResetTics(timerSMS);
     state = 3;
    }
-   else if (novaTecla == -1 && TiGetTics(timerSMS)>= 1000 && lletraASCII != -1 && setSMSon == 1) {
-
+   else if (novaTecla == -1 && TiGetTics(timerSMS)>= 602 && lletraASCII != -1 && setSMSon == 1) {
+    MNovaLletra(lletraASCII);
     lletraASCII = -1;
     ultimaTecla = -1;
    }
   break;
   case 1:
-   if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < 1000) {
+   if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < 602) {
     novaTecla = -1;
     sumaPulsacions++;
     lletraASCII++;
     state++;
    }
    else if (novaTecla != -1 && novaTecla != ultimaTecla) {
-
+    MNovaLletra(lletraASCII);
     lletraASCII = lletraInici[novaTecla-2];
     ultimaTecla = novaTecla;
     sumaPulsacions = 0;
@@ -4706,18 +4715,18 @@ void SMotor(void) {
     state = 1;
    }
    else if (novaTecla <= 1 && lletraASCII == -1) {
-
+    MNovaLletra(novaTecla+48);
     novaTecla = -1;
     state = 0;
    }
    else if (novaTecla <= 1 && lletraASCII != -1) {
-
+    MNovaLletra(lletraASCII);
     lletraASCII = -1;
     state++;
    }
   break;
   case 4:
-
+   MNovaLletra(novaTecla+48);
    novaTecla = -1;
    state = 0;
   break;

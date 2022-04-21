@@ -2,7 +2,7 @@
 #include <xc.h>
 #include "Ssms.h"
 #include "TiTTimer.h"
-//#include "MMenu.h"
+#include "Menu.h"
 #define neg -1
 
 signed char lletraASCII = -1;
@@ -27,7 +27,7 @@ void SMotor(void) {
 				state = 3;
 			}
 			else if (novaTecla == -1 && TiGetTics(timerSMS)>= TSMS && lletraASCII != -1  && setSMSon == 1) {
-				//MNovaLletra(lletraASCII); falta menu
+				MNovaLletra(lletraASCII);
 				lletraASCII = neg;
 				ultimaTecla = neg;
 			}
@@ -40,7 +40,7 @@ void SMotor(void) {
 				state++;
 			}
 			else if (novaTecla != -1 && novaTecla != ultimaTecla) {
-				//MNovaLletra(lletraASCII); //falta menu
+				MNovaLletra(lletraASCII); //falta menu
 				lletraASCII = lletraInici[novaTecla-2];
 				ultimaTecla = novaTecla;
 				sumaPulsacions = 0;
@@ -61,18 +61,18 @@ void SMotor(void) {
 				state = 1;
 			}
 			else if (novaTecla <= 1 && lletraASCII == -1) {
-				//MNovaLletra(novaTecla+48);//falta menu
+				MNovaLletra(novaTecla+48);//falta menu
 				novaTecla = neg;
 				state = 0;
 			}
 			else if (novaTecla <= 1 && lletraASCII != -1) {
-				//MNovaLletra(lletraASCII);//falta menu
+				MNovaLletra(lletraASCII);//falta menu
 				lletraASCII = neg;
 				state++;
 			}
 		break;
 		case 4:
-			//MNovaLletra(novaTecla+48);falta menu
+			MNovaLletra(novaTecla+48);
 			novaTecla = neg;
 			state = 0;
 		break;
