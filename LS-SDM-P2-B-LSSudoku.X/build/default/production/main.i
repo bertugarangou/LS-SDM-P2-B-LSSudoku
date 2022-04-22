@@ -4688,6 +4688,10 @@ char UgetNumUsuaris(void);
 void Uinit(void);
 void UcreateUser(void);
 void UsetData(char user[], char pass[]);
+void UmotorUsers(void);
+__bit UcheckExistsNotFinished(void);
+void UcheckExists(void);
+__bit UcheckExistsGetError(void);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1
@@ -4766,7 +4770,7 @@ void main(void) {
     TeInit();
     Sinit();
     SMotor();
-    Uinit();
+
 
     LcInit(2,16);
     Minit();
@@ -4775,7 +4779,7 @@ void main(void) {
 
         menu();
 
-
+        UmotorUsers();
         TeTeclat();
         SMotor();
         LcLCD();

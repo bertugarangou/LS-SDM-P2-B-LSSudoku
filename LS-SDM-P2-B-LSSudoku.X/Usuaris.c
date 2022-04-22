@@ -4,8 +4,10 @@
 unsigned char currentUsrIndex = 0;
 
 unsigned char numUsuaris = 0;
-__bit createUser = 0;
+__bit do_check_exists = 0;
 unsigned char indexLastUser;
+__bit return_error;
+unsigned char i;
 
 char *tmpUsername;
 char *tmpPassword;
@@ -20,8 +22,14 @@ char UgetNumUsuaris(void){
     return numUsuaris;
 }
 
-void UcreateUser(void){
-    createUser = 1;
+void UcheckExists(void){
+    do_check_exists = 1;
+}
+__bit UcheckExistsNotFinished(void){
+    return do_check_exists;
+}
+__bit UcheckExistsGetError(){
+    return return_error;
 }
 void UsetData(char user[], char pass[]){
     tmpUsername = user;
@@ -57,10 +65,48 @@ void Uinit(){
             EEADR++;
         }        
     }
-    
-    void UmotorUsers(){
-        
-    }
     //TODO: fer que al primer cop es guardin tot '\0' a la eeprom o almenys als bits de users
+        
+}
+    
+char compareStrings(const char *a, const char *b){
+    while (*a){
+        if (*a != *b)break; 
+        a++;
+        b++;
+    }
+    return *(const unsigned char*)a - *(const unsigned char*)b;
+}
+
+
+void UmotorUsers(){
+    static char state = 0;
+
+	switch(state) {
+		case 0:
+			if (do_check_exists == 0) {
+			}
+			else if (do_check_exists == 1) {
+				return_error = 0;
+				state = 1;
+			}
+		break;
+		case 1:
+			if (i < numUsuaris) {
+				if(compareStrings(tmpUsername, usuaris[i].username) == 0){
+					return_error = 1;
+				}
+				state = 2;
+			}
+			else if (i == numUsuaris) {
+				do_check_exists = 0;
+				state = 0;
+			}
+		break;
+		case 2:
+
+		break;
+	}
     
 }
+

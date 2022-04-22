@@ -72,7 +72,7 @@ void main(void) {
     TeInit();
     Sinit();
     SMotor();
-    Uinit();
+    //Uinit();
     
     LcInit(2,16);
     Minit();
@@ -81,7 +81,7 @@ void main(void) {
 
         menu();
         
-        
+        UmotorUsers();
         TeTeclat();//antapenultim
         SMotor(); //penultim
         LcLCD();//ultim

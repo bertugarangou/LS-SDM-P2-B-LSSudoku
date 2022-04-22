@@ -123,10 +123,31 @@ void menu(void) {
 				novaLletra = -1;
 				j = 0;
 				LcClear();
+				UsetData(username, password);
+				UcheckExists();
 				state = 10;
 			}
 		break;
 		case 10:
+			if (UcheckExistsNotFinished == 0) {
+				state = 11;
+			}
+		break;
+		case 11:
+			if (loginNOTRegister == 0 && UcheckExistsGetError() == 0) {
+				state = 12;
+			}
+			else if (loginNOTRegister == 1 && UcheckExistsGetError == 1) {
+				state = 13;
+			}
+			else if (loginNOTRegister == 0 ^ UcheckExistsGetError == 0) {
+				state = 0;
+			}
+		break;
+		case 12:
+
+		break;
+		case 13:
 
 		break;
 	}
