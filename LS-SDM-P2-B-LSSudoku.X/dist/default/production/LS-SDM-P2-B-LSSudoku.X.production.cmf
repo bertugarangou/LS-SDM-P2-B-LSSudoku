@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+$C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 32 32 4 1
 reset_vec CODE 0 0 0 4 1
@@ -61,7 +61,7 @@ idataCOMRAM CODE 0 D6C D6C 1B 1
 cstackCOMRAM COMRAM 1 61 61 16 1
 temp COMRAM 1 78 78 1 1
 bitbssCOMRAM COMRAM 1 3B8 77 1 1
-bssBANK1 BANK1 1 100 100 90 1
+bssBANK1 BANK1 1 100 100 B8 1
 intcode CODE 0 8 8 2A 1
 smallconst SMALLCONST 0 200 200 24 1
 dataCOMRAM COMRAM 1 46 46 1B 1
@@ -74,10 +74,10 @@ config CONFIG 4 300000 300000 E 1
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
 RAM 80-FF 1
-RAM 190-1FF 1
+RAM 1B8-1FF 1
 SFR F80-FFF 1
 BANK0 80-FF 1
-BANK1 190-1FF 1
+BANK1 1B8-1FF 1
 CONST 4-7 1
 CONST 36-1FF 1
 CONST D87-D87 1
@@ -90,7 +90,7 @@ CODE 36-1FF 1
 CODE D87-D87 1
 CODE E18-1FFF 1
 BIGRAM 79-FF 1
-BIGRAM 190-1FF 1
+BIGRAM 1B8-1FF 1
 COMRAM 79-7F 1
 EEDATA F00000-F000FF 1
 MEDIUMCONST D87-D87 1
@@ -109,7 +109,7 @@ MEDIUMCONST E18-1FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-8 intcode CODE >8310:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
+8 intcode CODE >8310:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
 8 intcode CODE >15:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 1A intcode CODE >16:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 1E intcode CODE >17:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
@@ -408,28 +408,28 @@ C22 text13 CODE >29:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-
 C24 text13 CODE >31:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 C30 text13 CODE >32:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 C40 text13 CODE >33:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
-A50 text12 CODE >72:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A50 text12 CODE >73:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A52 text12 CODE >74:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A6A text12 CODE >75:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A6E text12 CODE >76:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A72 text12 CODE >73:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A80 text12 CODE >78:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-A9C text12 CODE >79:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B26 text11 CODE >82:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B26 text11 CODE >85:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B28 text11 CODE >86:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B28 text11 CODE >87:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B2C text11 CODE >89:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B30 text11 CODE >90:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B32 text11 CODE >91:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B38 text11 CODE >101:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B38 text11 CODE >102:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B3A text11 CODE >103:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B40 text11 CODE >109:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B4A text11 CODE >109:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B52 text11 CODE >109:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-B58 text11 CODE >109:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A50 text12 CODE >74:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A50 text12 CODE >75:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A52 text12 CODE >76:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A6A text12 CODE >77:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A6E text12 CODE >78:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A72 text12 CODE >75:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A80 text12 CODE >80:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+A9C text12 CODE >81:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B26 text11 CODE >84:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B26 text11 CODE >87:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B28 text11 CODE >88:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B28 text11 CODE >89:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B2C text11 CODE >91:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B30 text11 CODE >92:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B32 text11 CODE >93:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B38 text11 CODE >103:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B38 text11 CODE >104:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B3A text11 CODE >105:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B40 text11 CODE >111:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B4A text11 CODE >111:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B52 text11 CODE >111:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+B58 text11 CODE >111:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 D4C text10 CODE >19:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 D4C text10 CODE >23:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 D50 text10 CODE >29:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
@@ -458,19 +458,19 @@ E0A text6 CODE >114:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-
 E0A text6 CODE >115:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 E0C text6 CODE >116:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 E0E text6 CODE >117:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
-E14 text5 CODE >25:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-E14 text5 CODE >26:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-E16 text5 CODE >27:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DAE text4 CODE >31:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DAE text4 CODE >32:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DB8 text4 CODE >33:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-E10 text3 CODE >21:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-E10 text3 CODE >22:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-E12 text3 CODE >23:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DA0 text2 CODE >34:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DA0 text2 CODE >35:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DA6 text2 CODE >36:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-DAC text2 CODE >37:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+E14 text5 CODE >27:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+E14 text5 CODE >28:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+E16 text5 CODE >29:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DAE text4 CODE >33:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DAE text4 CODE >34:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DB8 text4 CODE >35:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+E10 text3 CODE >23:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+E10 text3 CODE >24:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+E12 text3 CODE >25:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DA0 text2 CODE >36:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DA0 text2 CODE >37:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DA6 text2 CODE >38:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+DAC text2 CODE >39:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 224 text1 CODE >27:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 224 text1 CODE >30:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 226 text1 CODE >32:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
@@ -580,43 +580,43 @@ BFA text0 CODE >84:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P
 BFE text0 CODE >85:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 C02 text0 CODE >86:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 C06 text0 CODE >87:C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
-A9E cinit CODE >2296:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-A9E cinit CODE >2298:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-A9E cinit CODE >2301:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-A9E cinit CODE >2453:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AA0 cinit CODE >2454:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AA2 cinit CODE >2455:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AA4 cinit CODE >2456:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AA6 cinit CODE >2457:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AA8 cinit CODE >2458:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AAA cinit CODE >2459:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AAE cinit CODE >2460:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AB2 cinit CODE >2461:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AB2 cinit CODE >2462:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AB4 cinit CODE >2463:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AB8 cinit CODE >2464:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ABA cinit CODE >2465:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ABC cinit CODE >2466:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ABE cinit CODE >2470:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AC2 cinit CODE >2471:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AC4 cinit CODE >2472:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AC4 cinit CODE >2473:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AC6 cinit CODE >2474:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AC8 cinit CODE >2475:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ACA cinit CODE >2478:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ACC cinit CODE >2481:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD0 cinit CODE >2482:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD2 cinit CODE >2483:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD2 cinit CODE >2484:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD4 cinit CODE >2485:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD6 cinit CODE >2486:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD8 cinit CODE >2492:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AD8 cinit CODE >2494:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ADA cinit CODE >2495:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ADC cinit CODE >2497:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-ADE cinit CODE >2498:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AE0 cinit CODE >2499:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
-AE2 cinit CODE >2500:C:\Users\alber\AppData\Local\Temp\xcAs59g.s
+A9E cinit CODE >2296:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+A9E cinit CODE >2298:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+A9E cinit CODE >2301:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+A9E cinit CODE >2453:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AA0 cinit CODE >2454:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AA2 cinit CODE >2455:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AA4 cinit CODE >2456:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AA6 cinit CODE >2457:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AA8 cinit CODE >2458:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AAA cinit CODE >2459:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AAE cinit CODE >2460:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AB2 cinit CODE >2461:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AB2 cinit CODE >2462:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AB4 cinit CODE >2463:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AB8 cinit CODE >2464:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ABA cinit CODE >2465:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ABC cinit CODE >2466:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ABE cinit CODE >2470:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AC2 cinit CODE >2471:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AC4 cinit CODE >2472:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AC4 cinit CODE >2473:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AC6 cinit CODE >2474:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AC8 cinit CODE >2475:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ACA cinit CODE >2478:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ACC cinit CODE >2481:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD0 cinit CODE >2482:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD2 cinit CODE >2483:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD2 cinit CODE >2484:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD4 cinit CODE >2485:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD6 cinit CODE >2486:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD8 cinit CODE >2492:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AD8 cinit CODE >2494:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ADA cinit CODE >2495:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ADC cinit CODE >2497:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+ADE cinit CODE >2498:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AE0 cinit CODE >2499:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
+AE2 cinit CODE >2500:C:\Users\alber\AppData\Local\Temp\xcAsae4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -639,7 +639,7 @@ __Hspace_4 60000E 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.produ
 _teclaPremuda 55 0 COMRAM 1 dataCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __size_of_UsetData 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 _NovaTecla 50 0 COMRAM 1 dataCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _CantaPartBaixa 8D4 0 CODE 0 text31 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -648,11 +648,11 @@ __end_of_LcInit 85A 0 CODE 0 text26 dist/default/production\LS-SDM-P2-B-LSSudoku
 __Lsmallconst 200 0 SMALLCONST 0 smallconst dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _Rows 33 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+___sp 0 0 STACK 2 stack C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 _main BD4 0 CODE 0 text0 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _menu 224 0 CODE 0 text1 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 btemp 78 0 COMRAM 1 temp dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-start 32 0 CODE 0 init C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+start 32 0 CODE 0 init C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 __size_of_main 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __size_of_menu 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __size_of_UcheckExistsGetError 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -675,11 +675,11 @@ ttemp7 80 0 COMRAM 1 temp dist/default/production\LS-SDM-P2-B-LSSudoku.X.product
 __end_of_TeInit DF2 0 CODE 0 text17 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _timerMenu 25 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAs59g.o
-intlevel0 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAs59g.o
-intlevel1 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAs59g.o
-intlevel2 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAs59g.o
-intlevel3 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+__accesstop 80 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAsae4.o
+intlevel0 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAsae4.o
+intlevel1 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAsae4.o
+intlevel2 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAsae4.o
+intlevel3 0 0 CODE 0 text C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 _TiGetTics CD8 0 CODE 0 text35 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -698,8 +698,8 @@ __size_of_UmotorUsers 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X
 SMotor@state 2C 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 TeTeclat@files 28 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 menu@state 24 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\alber\AppData\Local\Temp\xcAs59g.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\alber\AppData\Local\Temp\xcAsae4.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 TeTeclat@state 2A 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _ColumnAct 30 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -743,7 +743,7 @@ _compareStrings A50 0 CODE 0 text12 dist/default/production\LS-SDM-P2-B-LSSudoku
 _TeInit DEA 0 CODE 0 text17 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __size_of_LcClear 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __end_of_TiResetTics DA0 0 CODE 0 text34 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+isa$xinst 0 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 SsetNovaTecla@tecla 66 0 COMRAM 1 cstackCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 TiGetTics@actual 6B 0 COMRAM 1 cstackCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __size_of_LcInit 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -770,7 +770,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/production\LS-SDM-P2-B-LSSudoku.X.producti
 _usuaris 100 0 BANK1 1 bssBANK1 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-__smallconst 200 0 SMALLCONST 0 smallconst C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+__smallconst 200 0 SMALLCONST 0 smallconst C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 __TiRSITimer 9A4 0 CODE 0 text38 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -827,7 +827,7 @@ __Hintret 0 0 ABS 0 intret dist/default/production\LS-SDM-P2-B-LSSudoku.X.produc
 __Hirdata 0 0 CODE 0 irdata dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __end_of_compareStrings A9E 0 CODE 0 text12 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __S0 E18 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-__S1 190 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
+__S1 1B8 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __S2 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -930,7 +930,7 @@ _LATDbits F8C 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.productio
 __size_of_TiResetTics 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+isa$std 1 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 _s_Timers 1 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 ?_TiGetTics 66 0 COMRAM 1 cstackCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _MsetNovaTecla DE2 0 CODE 0 text16 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -940,8 +940,8 @@ __size_of_CantaIR 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.pro
 _lletraASCII 54 0 COMRAM 1 dataCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _lletraInici 46 0 COMRAM 1 dataCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __size_of_EscriuPrimeraOrdre 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-stackhi FF 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAs59g.o
-stacklo 80 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+stackhi FF 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAsae4.o
+stacklo 80 0 ABS 0 - C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 __size_of_LcLliure 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _username 3D 0 COMRAM 1 bssCOMRAM dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -1023,7 +1023,7 @@ __Ltext36 0 0 ABS 0 text36 dist/default/production\LS-SDM-P2-B-LSSudoku.X.produc
 __Ltext38 0 0 ABS 0 text38 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Ltext39 0 0 ABS 0 text39 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __end_of_LcGotoXY B9A 0 CODE 0 text24 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
-__ramtop 200 0 RAM 0 ramtop C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+__ramtop 200 0 RAM 0 ramtop C:\Users\alber\AppData\Local\Temp\xcAsae4.o
 __size_of_UgetNumUsuaris 0 0 ABS 0 - dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 __Lpowerup 32 0 CODE 0 powerup dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
 _init_ports D4C 0 CODE 0 text10 dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
@@ -1137,7 +1137,7 @@ __Hintcode 32 0 CODE 0 intcode dist/default/production\LS-SDM-P2-B-LSSudoku.X.pr
 text1 0 224 224 B63 1
 text34 0 D88 D88 90 1
 reset_vec 0 0 0 4 1
-bssBANK1 1 100 100 90 1
+bssBANK1 1 100 100 B8 1
 intcode 0 8 8 2E 1
 smallconst 0 200 200 24 1
 bssCOMRAM 1 1 1 78 1

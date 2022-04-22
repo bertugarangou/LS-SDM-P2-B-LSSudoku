@@ -95,17 +95,17 @@
 [v _TiGetTics TiGetTics `(i  1 e 2 0 ]
 "70
 [v _TiGetTimer TiGetTimer `(uc  1 e 1 0 ]
-"21 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
-"25
+"27
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
-"31
+"33
 [v _UcheckExistsGetError UcheckExistsGetError `(b  1 e 0 0 ]
-"34
+"36
 [v _UsetData UsetData `(v  1 e 1 0 ]
-"72
+"74
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"82
+"84
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 [s S42 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
@@ -423,9 +423,9 @@
 [v _tmpUsername tmpUsername `*.39uc  1 e 2 0 ]
 "13
 [v _tmpPassword tmpPassword `*.39uc  1 e 2 0 ]
-[s S923 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
-"19
-[v _usuaris usuaris `[8]S923  1 e 144 0 ]
+[s S923 . 23 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 `[5]uc 1 scores 5 18 ]
+"20
+[v _usuaris usuaris `[8]S923  1 e 184 0 ]
 "69 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -438,27 +438,27 @@
 [v menu@state state `uc  1 s 1 state ]
 "154
 } 0
-"34 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"36 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UsetData UsetData `(v  1 e 1 0 ]
 {
 [v UsetData@user user `*.30uc  1 p 1 5 ]
 [v UsetData@pass pass `*.30uc  1 p 1 6 ]
-"37
+"39
 } 0
-"21
+"23
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
 {
-"23
+"25
 } 0
-"31
+"33
 [v _UcheckExistsGetError UcheckExistsGetError `(b  1 e 0 0 ]
 {
-"33
+"35
 } 0
-"25
+"27
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
 {
-"27
+"29
 } 0
 "114 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _SMSon SMSon `(v  1 e 1 0 ]
@@ -486,19 +486,19 @@
 {
 "59
 } 0
-"82 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"84 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"83
+"85
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"111
+"113
 } 0
-"72
+"74
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.39Cuc  1 p 2 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 7 ]
-"79
+"81
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v _TiInitTimer TiInitTimer `(v  1 e 1 0 ]

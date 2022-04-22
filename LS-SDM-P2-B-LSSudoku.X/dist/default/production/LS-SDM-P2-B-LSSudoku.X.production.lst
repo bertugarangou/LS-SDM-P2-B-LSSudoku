@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Fri Apr 22 12:53:20 2022
+                                                                                               Fri Apr 22 12:57:47 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9 
      1                           	processor	18F4321
@@ -242,9 +242,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
    228  000ABA  50E1               	movf	fsr1l,w,c
    229  000ABC  E1FA               	bnz	copy_data0
    230                           
-   231                           ; Clear objects allocated to BANK1 (144 bytes)
+   231                           ; Clear objects allocated to BANK1 (184 bytes)
    232  000ABE  EE01  F000         	lfsr	0,__pbssBANK1
-   233  000AC2  0E90               	movlw	144
+   233  000AC2  0EB8               	movlw	184
    234  000AC4                     clear_0:
    235  000AC4  6AEE               	clrf	postinc0,c
    236  000AC6  06E8               	decf	wreg,f,c
@@ -408,7 +408,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
    394                           	callstack 0
    395  000100                     _usuaris:
    396                           	callstack 0
-   397  000100                     	ds	144
+   397  000100                     	ds	184
    398                           
    399                           	psect	cstackCOMRAM
    400  000061                     __pcstackCOMRAM:
@@ -1123,7 +1123,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1108                           
   1109 ;; *************** function _UsetData *****************
   1110 ;; Defined at:
-  1111 ;;		line 34 in file "Usuaris.c"
+  1111 ;;		line 36 in file "Usuaris.c"
   1112 ;; Parameters:    Size  Location     Type
   1113 ;;  user            1    5[COMRAM] PTR unsigned char 
   1114 ;;		 -> username(9), 
@@ -1160,13 +1160,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1145  000DA0                     _UsetData:
   1146                           	callstack 27
   1147                           
-  1148                           ;Usuaris.c: 35:     tmpUsername = user;
+  1148                           ;Usuaris.c: 37:     tmpUsername = user;
   1149                           
   1150                           ;incstack = 0
   1151  000DA0  C066  F01B         	movff	UsetData@user,_tmpUsername
   1152  000DA4  6A1C               	clrf	(_tmpUsername+1)^0,c
   1153                           
-  1154                           ;Usuaris.c: 36:     tmpPassword = pass;
+  1154                           ;Usuaris.c: 38:     tmpPassword = pass;
   1155  000DA6  C067  F019         	movff	UsetData@pass,_tmpPassword
   1156  000DAA  6A1A               	clrf	(_tmpPassword+1)^0,c
   1157  000DAC  0012               	return		;funcret
@@ -1175,7 +1175,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1160                           
   1161 ;; *************** function _UgetNumUsuaris *****************
   1162 ;; Defined at:
-  1163 ;;		line 21 in file "Usuaris.c"
+  1163 ;;		line 23 in file "Usuaris.c"
   1164 ;; Parameters:    Size  Location     Type
   1165 ;;		None
   1166 ;; Auto vars:     Size  Location     Type
@@ -1209,7 +1209,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1194  000E10                     _UgetNumUsuaris:
   1195                           	callstack 27
   1196                           
-  1197                           ;Usuaris.c: 22:     return numUsuaris;
+  1197                           ;Usuaris.c: 24:     return numUsuaris;
   1198                           
   1199                           ;incstack = 0
   1200  000E10  5022               	movf	_numUsuaris^0,w,c
@@ -1219,7 +1219,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1204                           
   1205 ;; *************** function _UcheckExistsGetError *****************
   1206 ;; Defined at:
-  1207 ;;		line 31 in file "Usuaris.c"
+  1207 ;;		line 33 in file "Usuaris.c"
   1208 ;; Parameters:    Size  Location     Type
   1209 ;;		None
   1210 ;; Auto vars:     Size  Location     Type
@@ -1253,7 +1253,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1238  000DAE                     _UcheckExistsGetError:
   1239                           	callstack 27
   1240                           
-  1241                           ;Usuaris.c: 32:     return return_error;
+  1241                           ;Usuaris.c: 34:     return return_error;
   1242                           
   1243                           ;incstack = 0
   1244  000DAE  B077               	btfsc	(_return_error/(0+8))^0,_return_error& (0+7),c
@@ -1268,7 +1268,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1253                           
   1254 ;; *************** function _UcheckExists *****************
   1255 ;; Defined at:
-  1256 ;;		line 25 in file "Usuaris.c"
+  1256 ;;		line 27 in file "Usuaris.c"
   1257 ;; Parameters:    Size  Location     Type
   1258 ;;		None
   1259 ;; Auto vars:     Size  Location     Type
@@ -1302,7 +1302,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1287  000E14                     _UcheckExists:
   1288                           	callstack 27
   1289                           
-  1290                           ;Usuaris.c: 26:     do_check_exists = 1;
+  1290                           ;Usuaris.c: 28:     do_check_exists = 1;
   1291                           
   1292                           ;incstack = 0
   1293  000E14  8277               	bsf	(_do_check_exists/(0+8))^0,_do_check_exists& (0+7),c
@@ -1585,7 +1585,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1570                           
   1571 ;; *************** function _UmotorUsers *****************
   1572 ;; Defined at:
-  1573 ;;		line 82 in file "Usuaris.c"
+  1573 ;;		line 84 in file "Usuaris.c"
   1574 ;; Parameters:    Size  Location     Type
   1575 ;;		None
   1576 ;; Auto vars:     Size  Location     Type
@@ -1619,33 +1619,33 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1604  000B26                     _UmotorUsers:
   1605                           	callstack 27
   1606                           
-  1607                           ;Usuaris.c: 83:     static char state = 0;;Usuaris.c: 85:  switch(state) {
+  1607                           ;Usuaris.c: 85:     static char state = 0;;Usuaris.c: 87:  switch(state) {
   1608                           
   1609                           ;incstack = 0
   1610  000B26  D00C               	goto	l2513
   1611  000B28                     l528:
   1612                           
-  1613                           ;Usuaris.c: 87:    if (do_check_exists == 0) {
+  1613                           ;Usuaris.c: 89:    if (do_check_exists == 0) {
   1614  000B28  A277               	btfss	(_do_check_exists/(0+8))^0,_do_check_exists& (0+7),c
   1615  000B2A  0012               	return	
   1616                           
-  1617                           ;Usuaris.c: 89:    else if (do_check_exists == 1) {
+  1617                           ;Usuaris.c: 91:    else if (do_check_exists == 1) {
   1618  000B2C  A277               	btfss	(_do_check_exists/(0+8))^0,_do_check_exists& (0+7),c
   1619  000B2E  0012               	return	
   1620                           
-  1621                           ;Usuaris.c: 90:     return_error = 0;
+  1621                           ;Usuaris.c: 92:     return_error = 0;
   1622  000B30  9077               	bcf	(_return_error/(0+8))^0,_return_error& (0+7),c
   1623                           
-  1624                           ;Usuaris.c: 91:     state = 1;
+  1624                           ;Usuaris.c: 93:     state = 1;
   1625  000B32  0E01               	movlw	1
   1626  000B34  6E1F               	movwf	UmotorUsers@state^0,c
   1627  000B36  0012               	return	
   1628  000B38                     l534:
   1629                           
-  1630                           ;Usuaris.c: 102:     do_check_exists = 0;
+  1630                           ;Usuaris.c: 104:     do_check_exists = 0;
   1631  000B38  9277               	bcf	(_do_check_exists/(0+8))^0,_do_check_exists& (0+7),c
   1632                           
-  1633                           ;Usuaris.c: 103:     state = 0;
+  1633                           ;Usuaris.c: 105:     state = 0;
   1634  000B3A  0E00               	movlw	0
   1635  000B3C  6E1F               	movwf	UmotorUsers@state^0,c
   1636  000B3E  0012               	return	
@@ -1687,12 +1687,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1671                           
   1672 ;; *************** function _compareStrings *****************
   1673 ;; Defined at:
-  1674 ;;		line 72 in file "Usuaris.c"
+  1674 ;;		line 74 in file "Usuaris.c"
   1675 ;; Parameters:    Size  Location     Type
   1676 ;;  a               2    5[COMRAM] PTR const unsigned char 
   1677 ;;		 -> username(9), NULL(0), 
   1678 ;;  b               2    7[COMRAM] PTR const unsigned char 
-  1679 ;;		 -> usuaris.username(9), usuaris(144), 
+  1679 ;;		 -> usuaris.username(9), usuaris(184), 
   1680 ;; Auto vars:     Size  Location     Type
   1681 ;;		None
   1682 ;; Return value:  Size  Location     Type
@@ -1724,13 +1724,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1708  000A50                     _compareStrings:
   1709                           	callstack 27
   1710                           
-  1711                           ;Usuaris.c: 73:     while (*a){
+  1711                           ;Usuaris.c: 75:     while (*a){
   1712                           
   1713                           ;incstack = 0
   1714  000A50  D010               	goto	l2133
   1715  000A52                     l2127:
   1716                           
-  1717                           ;Usuaris.c: 74:         if (*a != *b)break;
+  1717                           ;Usuaris.c: 76:         if (*a != *b)break;
   1718  000A52  C068  FFD9         	movff	compareStrings@b,fsr2l
   1719  000A56  C069  FFDA         	movff	compareStrings@b+1,fsr2h
   1720  000A5A  C066  FFE1         	movff	compareStrings@a,fsr1l
@@ -1740,16 +1740,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1724  000A66  A4D8               	btfss	status,2,c
   1725  000A68  D00B               	goto	u1400
   1726                           
-  1727                           ;Usuaris.c: 75:         a++;
+  1727                           ;Usuaris.c: 77:         a++;
   1728  000A6A  4A66               	infsnz	compareStrings@a^0,f,c
   1729  000A6C  2A67               	incf	(compareStrings@a+1)^0,f,c
   1730                           
-  1731                           ;Usuaris.c: 76:         b++;
+  1731                           ;Usuaris.c: 78:         b++;
   1732  000A6E  4A68               	infsnz	compareStrings@b^0,f,c
   1733  000A70  2A69               	incf	(compareStrings@b+1)^0,f,c
   1734  000A72                     l2133:
   1735                           
-  1736                           ;Usuaris.c: 73:     while (*a){
+  1736                           ;Usuaris.c: 75:     while (*a){
   1737  000A72  C066  FFD9         	movff	compareStrings@a,fsr2l
   1738  000A76  C067  FFDA         	movff	compareStrings@a+1,fsr2h
   1739  000A7A  50DF               	movf	indf2,w,c
@@ -1757,7 +1757,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   1741  000A7E  D7E9               	goto	l2127
   1742  000A80                     u1400:
   1743                           
-  1744                           ;Usuaris.c: 78:     return *(const unsigned char*)a - *(const unsigned char*)b;
+  1744                           ;Usuaris.c: 80:     return *(const unsigned char*)a - *(const unsigned char*)b;
   1745  000A80  C068  FFD9         	movff	compareStrings@b,fsr2l
   1746  000A84  C069  FFDA         	movff	compareStrings@b+1,fsr2h
   1747  000A88  50DF               	movf	indf2,w,c
@@ -4625,7 +4625,7 @@ Data Sizes:
     Strings     33
     Constant    0
     Data        27
-    BSS         213
+    BSS         253
     Persistent  0
     Stack       0
 
@@ -4633,12 +4633,12 @@ Auto Spaces:
     Space          Size  Autos    Used
     COMRAM          126     22     119
     BANK0           128      0       0
-    BANK1           256      0     144
+    BANK1           256      0     184
 
 Pointer List with Targets:
 
-    compareStrings@b	PTR const unsigned char  size(2) Largest target is 144
-		 -> usuaris.username(BANK1[9]), usuaris(BANK1[144]), 
+    compareStrings@b	PTR const unsigned char  size(2) Largest target is 184
+		 -> usuaris.username(BANK1[9]), usuaris(BANK1[184]), 
 
     compareStrings@a	PTR const unsigned char  size(2) Largest target is 9
 		 -> username(COMRAM[9]), NULL(NULL[0]), 
@@ -4950,7 +4950,7 @@ Name               Size   Autos  Total    Cost      Usage
 BIGRAM             1FF      0       0       8        0.0%
 EEDATA             100      0       0       0        0.0%
 BITBANK1           100      0       0       5        0.0%
-BANK1              100      0      90       6       56.2%
+BANK1              100      0      B8       6       71.9%
 BITBANK0            80      0       0       3        0.0%
 BANK0               80      0       0       4        0.0%
 BITCOMRAM           7E      0       1       0        0.8%
@@ -4959,13 +4959,13 @@ BITSFR               0      0       0     200        0.0%
 SFR                  0      0       0     200        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0     107       7        0.0%
-DATA                 0      0     107       9        0.0%
+ABS                  0      0     12F       7        0.0%
+DATA                 0      0     12F       9        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Fri Apr 22 12:53:20 2022
+Symbol Table                                                                                   Fri Apr 22 12:57:47 2022
 
             TiResetTics@Handle 0066               _loginNOTRegister 03BA                              _i 0020  
                             _j 0026         __end_of_compareStrings 0A9E                            l415 028A  

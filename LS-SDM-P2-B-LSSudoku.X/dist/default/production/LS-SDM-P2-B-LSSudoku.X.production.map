@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.sym \
   --cmf=dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.cmf -z \
-  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAs59g.4 \
+  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAsae4.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LS-SDM-P2-B-LSSudoku.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=080h-0FFh -pstack=STACK \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alber\AppData\Local\Temp\xcAs59g.o \
+  C:\Users\alber\AppData\Local\Temp\xcAsae4.o \
   dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o 
 
 Object code version is 3.11
@@ -31,7 +31,7 @@ Machine type is 18F4321
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alber\AppData\Local\Temp\xcAs59g.o
+C:\Users\alber\AppData\Local\Temp\xcAsae4.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 32       32        4        4       0
@@ -81,7 +81,7 @@ dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
                 text1                               224      224      24C      112       0
                 text0                               BD4      BD4       38      112       0
                 cstackCOMRAM                         61       61       16        1       1
-                bssBANK1                            100      100       90      100       1
+                bssBANK1                            100      100       B8      100       1
                 dataCOMRAM                           46       46       1B        1       1
                 bssCOMRAM                             1        1       45        1       1
                 bitbssCOMRAM                        3B8       77        5        1       1     8
@@ -159,7 +159,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   BANK0          
 
         CLASS   BANK1          
-                bssBANK1                            100      100       90         1
+                bssBANK1                            100      100       B8         1
 
         CLASS   SFR            
 
@@ -180,7 +180,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  000078  000079         1       1  COMRAM  
                 intcode                        000008  00002E  000036         4       0  CODE    
-                bssBANK1                       000100  000090  000190       100       1  BANK1   
+                bssBANK1                       000100  0000B8  0001B8       100       1  BANK1   
                 smallconst                     000200  000024  000224       100       0  SMALLCON
                 text1                          000224  000B63  000D87       112       0  CODE    
                 text34                         000D88  000090  000E18       6C4       0  CODE    
@@ -190,9 +190,9 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            000080-0000FF               80
-        BANK1            000190-0001FF               70
+        BANK1            0001B8-0001FF               48
         BIGRAM           000079-0000FF               87
-                         000190-0001FF               70
+                         0001B8-0001FF               48
         CODE             000004-000007                4
                          000036-0001FF              1CA
                          000D87-000D87                1
@@ -206,7 +206,7 @@ UNUSED ADDRESS RANGES
         MEDIUMCONST      000D87-000D87                1
                          000E18-001FFF             11E8
         RAM              000080-0000FF               80
-                         000190-0001FF               70
+                         0001B8-0001FF               48
         SFR              000F80-000FFF               80
         SMALLCONST       000D87-000D87                1
                          000E18-001FFF              100
@@ -498,7 +498,7 @@ __Ltext7                       text7        000000
 __Ltext8                       text8        000000
 __Ltext9                       text9        000000
 __S0                           (abs)        000E18
-__S1                           (abs)        000190
+__S1                           (abs)        0001B8
 __S2                           (abs)        000000
 __S4                           (abs)        000000
 __S5                           (abs)        000000

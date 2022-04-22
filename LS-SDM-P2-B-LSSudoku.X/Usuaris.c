@@ -15,8 +15,10 @@ char *tmpPassword;
 typedef struct{
     char username[9];
     char password[9];
+    unsigned char scores[5];
 }Usuari;
 Usuari usuaris[8];
+
 
 char UgetNumUsuaris(void){
     return numUsuaris;
