@@ -1,4 +1,4 @@
-# 1 "Usuaris.c"
+# 1 "TiTTimer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Usuaris.c" 2
+# 1 "TiTTimer.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,141 +4605,118 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "Usuaris.c" 2
+# 1 "TiTTimer.c" 2
 
-# 1 "./Usuaris.h" 1
-
-
-
-char UgetNumUsuaris(void);
-void Uinit(void);
-void UcreateUser(void);
-void UsetData(char user[], char pass[]);
-void UmotorUsers(void);
-__bit UcheckExistsNotFinished(void);
-void UcheckExists(void);
-__bit UcheckExistsGetError(void);
-# 2 "Usuaris.c" 2
+# 1 "./TiTTimer.h" 1
 
 
-unsigned char currentUsrIndex = 0;
 
-unsigned char numUsuaris = 0;
-__bit do_check_exists = 0;
-unsigned char indexLastUser;
-__bit return_error;
-unsigned char i;
-
-char *tmpUsername;
-char *tmpPassword;
-
-typedef struct{
-    char username[9];
-    char password[9];
-    unsigned char scores[5];
-}Usuari;
-Usuari usuaris[8];
+void TiInitTimer(void);
 
 
-char UgetNumUsuaris(void){
-    return numUsuaris;
+
+void TiResetTics(char Handle);
+
+
+
+int TiGetTics(char Handle);
+
+
+
+
+char TiGetTimer(void);
+
+
+
+
+void TiFreeTimer (char Handle);
+
+
+
+void _TiRSITimer (void);
+# 2 "TiTTimer.c" 2
+
+
+
+
+
+
+
+struct Timer {
+ unsigned int h_initialTics;
+ unsigned char b_busy;
+} s_Timers[8];
+
+static unsigned int h_Tics=0;
+static char counter;
+
+
+void TiInitTimer(void) {
+
+    RCONbits.IPEN = 0;
+    INTCONbits.GIE_GIEH = 1;
+    INTCONbits.PEIE_GIEL = 1;
+    INTCONbits.TMR0IE = 1;
+    INTCONbits.TMR0IF = 0;
+    T0CON = 136;
+
+    TMR0H = 223;
+    TMR0L = 148;
+    T0CONbits.TMR0ON = 1;
+
+    for (counter=0;counter<8;counter++) {
+ s_Timers[counter].b_busy=0;
+    }
 }
 
-void UcheckExists(void){
-    do_check_exists = 1;
-}
-__bit UcheckExistsNotFinished(void){
-    return do_check_exists;
-}
-__bit UcheckExistsGetError(){
-    return return_error;
-}
-void UsetData(char user[], char pass[]){
-    tmpUsername = user;
-    tmpPassword = pass;
-}
-void Uinit(){
 
+void _TiRSITimer (void) {
 
+    TMR0H = 223;
+    TMR0L = 148;
+    INTCONbits.TMR0IF = 0;
+    h_Tics++;
 
+    if (h_Tics>=61000) {
 
-    EEADR = 0;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-    EECON1bits.RD = 1;
-    while(EECON1bits.RD == 1){}
-    numUsuaris = EEDATA;
-    numUsuaris = 8;
-
-
-    EEADR++;EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-
-    while(EECON1bits.RD == 1){}
-    indexLastUser = EEDATA;
-    EEADR++;
-
-    for(char i = 0; i< numUsuaris; i++){
-        for(char j = 0; j<9; j++){
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].username[j] = EEDATA;
-            EEADR++;
+        for (counter=0;counter<8;counter++){
+            if (s_Timers[counter].b_busy==1){
+                s_Timers[counter].h_initialTics -= h_Tics;
+            }
         }
-        for(char j = 0; j<9; j++){
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].password[j] = EEDATA;
-            EEADR++;
-        }
+        h_Tics=0;
     }
-
-
 }
 
-char compareStrings(const char *a, const char *b){
-    while (*a){
-        if (*a != *b)break;
-        a++;
-        b++;
-    }
-    return *(const unsigned char*)a - *(const unsigned char*)b;
+void TiResetTics(char Handle) {
+
+
+
+    s_Timers[Handle].h_initialTics=h_Tics;
 }
+int TiGetTics(char Handle) {
 
 
-void UmotorUsers(){
-    static char state = 0;
 
- switch(state) {
-  case 0:
-   if (do_check_exists == 0) {
-   }
-   else if (do_check_exists == 1) {
-    return_error = 0;
-    state = 1;
-   }
-  break;
-  case 1:
-   if (i < numUsuaris) {
-    if(compareStrings(tmpUsername, usuaris[i].username) == 0){
-     return_error = 1;
-    }
-    i++;
-    state = 1;
-   }
-   else if (i == numUsuaris) {
-    do_check_exists = 0;
-    state = 0;
-   }
-  break;
- }
+    volatile unsigned int actual;
+    actual=h_Tics;
+    return (actual-(s_Timers[Handle].h_initialTics));
 
 }
+char TiGetTimer(void) {
 
-void escriureEEPROM(){
 
+
+    counter=0;
+    while (s_Timers[counter].b_busy==1) {
+        counter++;
+ if (counter == 8) return -1;
+    }
+    s_Timers[counter].b_busy=1;
+    return (counter);
+}
+void TiFreeTimer (char Handle) {
+
+
+    s_Timers[Handle].b_busy=0;
 }

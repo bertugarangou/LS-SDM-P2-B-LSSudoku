@@ -38,6 +38,7 @@ void UsetData(char user[], char pass[]){
     tmpPassword = pass;
 }
 void Uinit(){
+    //escriureEEPROM();
     /*
      | num totals 8 | index last 8 | user1 8 | pass1 8 | user2 9 | pass2 9 |
      */
@@ -45,27 +46,35 @@ void Uinit(){
     EECON1bits.EEPGD = 0;
     EECON1bits.CFGS = 0;
     EECON1bits.RD = 1;
-    while(EECON1bits.RD == 1){}
+    while(EECON1bits.RD == 1){}//bucle al init
     numUsuaris = EEDATA;
+    numUsuaris = 8; //canviar, mirar el comentari de just sota
+    /*******************CAL ESCRIURE UN 0 AQUI AL PRIMER COP*********/
     
-    EEADR++;
-    while(EECON1bits.RD == 1){}
+    EEADR++;EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    
+    while(EECON1bits.RD == 1){}//bucle al init
     indexLastUser = EEDATA;
     EEADR++;
     
     for(char i = 0; i< numUsuaris; i++){//i-> usuari
         for(char j = 0; j<9; j++){//j-> caracter
+            EECON1bits.EEPGD = 0;
+            EECON1bits.CFGS = 0;
             EECON1bits.RD = 1;
             while(EECON1bits.RD == 1){}
             usuaris[i].username[j] = EEDATA;
             EEADR++;
         }
         for(char j = 0; j<9; j++){//j-> caracter
+            EECON1bits.EEPGD = 0;
+            EECON1bits.CFGS = 0;
             EECON1bits.RD = 1;
             while(EECON1bits.RD == 1){}
             usuaris[i].password[j] = EEDATA;
             EEADR++;
-        }        
+        }
     }
     //TODO: fer que al primer cop es guardin tot '\0' a la eeprom o almenys als bits de users
         
@@ -98,17 +107,19 @@ void UmotorUsers(){
 				if(compareStrings(tmpUsername, usuaris[i].username) == 0){
 					return_error = 1;
 				}
-				state = 2;
+				i++;
+				state = 1;
 			}
 			else if (i == numUsuaris) {
 				do_check_exists = 0;
 				state = 0;
 			}
 		break;
-		case 2:
-
-		break;
 	}
+    
+}
+
+void escriureEEPROM(){
     
 }
 

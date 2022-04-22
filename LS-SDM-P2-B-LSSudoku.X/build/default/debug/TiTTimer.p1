@@ -1,43 +1,86 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"17 ./TiTTimer.h
-[; ;./TiTTimer.h: 17: char TiGetTimer(void);
-[v _TiGetTimer `(uc ~T0 @X0 0 ef ]
-"42 ./LcTLCD.h
-[; ;./LcTLCD.h: 42: void LcClear(void);
-[v _LcClear `(v ~T0 @X0 0 ef ]
-"71
-[; ;./LcTLCD.h: 71: void LcNewString(char new_s[]);
-[v _LcNewString `(v ~T0 @X0 0 ef1`*uc ]
-"75
-[; ;./LcTLCD.h: 75: __bit LcLliure(void);
-[v _LcLliure `(b ~T0 @X0 0 ef ]
-"54
-[; ;./LcTLCD.h: 54: void LcGotoXY(char Column, char Row);
-[v _LcGotoXY `(v ~T0 @X0 0 ef2`uc`uc ]
-"4 ./Usuaris.h
-[; ;./Usuaris.h: 4: char UgetNumUsuaris(void);
-[v _UgetNumUsuaris `(uc ~T0 @X0 0 ef ]
-"7 ./Ssms.h
-[; ;./Ssms.h: 7: void SMSon(void);
-[v _SMSon `(v ~T0 @X0 0 ef ]
-"59 ./LcTLCD.h
-[; ;./LcTLCD.h: 59: void LcPutChar(char c);
-[v _LcPutChar `(v ~T0 @X0 0 ef1`uc ]
-"7 ./Usuaris.h
-[; ;./Usuaris.h: 7: void UsetData(char user[], char pass[]);
-[v _UsetData `(v ~T0 @X0 0 ef2`*uc`*uc ]
-"10
-[; ;./Usuaris.h: 10: void UcheckExists(void);
-[v _UcheckExists `(v ~T0 @X0 0 ef ]
-"9
-[; ;./Usuaris.h: 9: __bit UcheckExistsNotFinished(void);
-[v _UcheckExistsNotFinished `(b ~T0 @X0 0 ef ]
-[v F2626 `(b ~T0 @X0 0 tf ]
-"11
-[; ;./Usuaris.h: 11: __bit UcheckExistsGetError(void);
-[v _UcheckExistsGetError `(b ~T0 @X0 0 ef ]
-[v F2628 `(b ~T0 @X0 0 tf ]
-[v F2630 `(b ~T0 @X0 0 tf ]
+"9 TiTTimer.c
+[; ;TiTTimer.c: 9: struct Timer {
+[s S280 `ui 1 `uc 1 ]
+[n S280 Timer h_initialTics b_busy ]
+"5687 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5687:     struct {
+[s S237 :1 `uc 1 ]
+[n S237 . NOT_BOR ]
+"5690
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5690:     struct {
+[s S238 :1 `uc 1 :1 `uc 1 ]
+[n S238 . . NOT_POR ]
+"5694
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5694:     struct {
+[s S239 :2 `uc 1 :1 `uc 1 ]
+[n S239 . . NOT_PD ]
+"5698
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5698:     struct {
+[s S240 :3 `uc 1 :1 `uc 1 ]
+[n S240 . . NOT_TO ]
+"5702
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5702:     struct {
+[s S241 :4 `uc 1 :1 `uc 1 ]
+[n S241 . . NOT_RI ]
+"5706
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5706:     struct {
+[s S242 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S242 . nBOR nPOR nPD nTO nRI . IPEN ]
+"5715
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5715:     struct {
+[s S243 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S243 . BOR POR PD TO RI . SBOREN ]
+"5686
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5686: typedef union {
+[u S236 `S237 1 `S238 1 `S239 1 `S240 1 `S241 1 `S242 1 `S243 1 ]
+[n S236 . . . . . . . . ]
+"5725
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 5725: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
+[v _RCONbits `VS236 ~T0 @X0 0 e@4048 ]
+"6708
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6708:     struct {
+[s S274 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S274 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6718
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6718:     struct {
+[s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S275 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6728
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6728:     struct {
+[s S276 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S276 . . GIEL GIEH ]
+"6707
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6707: typedef union {
+[u S273 `S274 1 `S275 1 `S276 1 ]
+[n S273 . . . . ]
+"6734
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6734: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS273 ~T0 @X0 0 e@4082 ]
+"6184
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6184: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
+[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"6275
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6275: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"6268
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6268: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"6190
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6190:     struct {
+[s S261 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S261 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"6198
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6198:     struct {
+[s S262 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S262 . T0PS0 T0PS1 T0PS2 . T016BIT ]
+"6189
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6189: typedef union {
+[u S260 `S261 1 `S262 1 ]
+[n S260 . . . ]
+"6206
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 6206: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
+[v _T0CONbits `VS260 ~T0 @X0 0 e@4053 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -452,530 +495,220 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"8 Menu.c
-[; ;Menu.c: 8: unsigned char j;
-[v _j `uc ~T0 @X0 1 e ]
-"9
-[; ;Menu.c: 9: signed char NovaTecla = -1;
-[v _NovaTecla `c ~T0 @X0 1 e ]
-[i _NovaTecla
--> -U -> 1 `i `c
-]
-"10
-[; ;Menu.c: 10: signed char novaLletra = -1;
-[v _novaLletra `c ~T0 @X0 1 e ]
-[i _novaLletra
--> -U -> 1 `i `c
-]
-"11
-[; ;Menu.c: 11: char timerMenu;
-[v _timerMenu `uc ~T0 @X0 1 e ]
-"12
-[; ;Menu.c: 12: __bit loginNOTRegister;
-[v _loginNOTRegister `b ~T0 @X0 1 e ]
-"13
-[; ;Menu.c: 13: char username[9];
-[v _username `uc ~T0 @X0 -> 9 `i e ]
+"12 TiTTimer.c
+[; ;TiTTimer.c: 12: } s_Timers[8];
+[v _s_Timers `S280 ~T0 @X0 -> 8 `i e ]
 "14
-[; ;Menu.c: 14: char password[9];
-[v _password `uc ~T0 @X0 -> 9 `i e ]
-"16
-[; ;Menu.c: 16: void Minit(void){
-[v _Minit `(v ~T0 @X0 1 ef ]
-{
-[e :U _Minit ]
-[f ]
-"17
-[; ;Menu.c: 17:     timerMenu = TiGetTimer();
-[e = _timerMenu ( _TiGetTimer ..  ]
+[; ;TiTTimer.c: 14: static unsigned int h_Tics=0;
+[v _h_Tics `ui ~T0 @X0 1 s ]
+[i _h_Tics
+-> -> 0 `i `ui
+]
+"15
+[; ;TiTTimer.c: 15: static char counter;
+[v _counter `uc ~T0 @X0 1 s ]
 "18
-[; ;Menu.c: 18: }
-[e :UE 280 ]
-}
-"19
-[; ;Menu.c: 19: void MsetNovaTecla(char tecla){
-[v _MsetNovaTecla `(v ~T0 @X0 1 ef1`uc ]
+[; ;TiTTimer.c: 18: void TiInitTimer(void) {
+[v _TiInitTimer `(v ~T0 @X0 1 ef ]
 {
-[e :U _MsetNovaTecla ]
-[v _tecla `uc ~T0 @X0 1 r1 ]
+[e :U _TiInitTimer ]
 [f ]
 "20
-[; ;Menu.c: 20:     NovaTecla = tecla;
-[e = _NovaTecla -> _tecla `c ]
+[; ;TiTTimer.c: 20:     RCONbits.IPEN = 0;
+[e = . . _RCONbits 5 6 -> -> 0 `i `uc ]
 "21
-[; ;Menu.c: 21: }
+[; ;TiTTimer.c: 21:     INTCONbits.GIE_GIEH = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"22
+[; ;TiTTimer.c: 22:     INTCONbits.PEIE_GIEL = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"23
+[; ;TiTTimer.c: 23:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"24
+[; ;TiTTimer.c: 24:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"25
+[; ;TiTTimer.c: 25:     T0CON = 136;
+[e = _T0CON -> -> 136 `i `uc ]
+"27
+[; ;TiTTimer.c: 27:     TMR0H = 223;
+[e = _TMR0H -> -> 223 `i `uc ]
+"28
+[; ;TiTTimer.c: 28:     TMR0L = 148;
+[e = _TMR0L -> -> 148 `i `uc ]
+"29
+[; ;TiTTimer.c: 29:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"31
+[; ;TiTTimer.c: 31:     for (counter=0;counter<8;counter++) {
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 8 `i 282  ]
+[e $U 283  ]
+[e :U 282 ]
+{
+"32
+[; ;TiTTimer.c: 32:  s_Timers[counter].b_busy=0;
+[e = . *U + &U _s_Timers * -> _counter `ux -> -> # *U &U _s_Timers `ui `ux 1 -> -> 0 `i `uc ]
+"33
+[; ;TiTTimer.c: 33:     }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 8 `i 282  ]
+[e :U 283 ]
+}
+"34
+[; ;TiTTimer.c: 34: }
 [e :UE 281 ]
 }
-"23
-[; ;Menu.c: 23: void MNovaLletra(char lletra){
-[v _MNovaLletra `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _MNovaLletra ]
-[v _lletra `uc ~T0 @X0 1 r1 ]
-[f ]
-"24
-[; ;Menu.c: 24:     novaLletra = lletra;
-[e = _novaLletra -> _lletra `c ]
-"25
-[; ;Menu.c: 25: }
-[e :UE 282 ]
-}
-"27
-[; ;Menu.c: 27: void menu(void) {
-[v _menu `(v ~T0 @X0 1 ef ]
-{
-[e :U _menu ]
-[f ]
-"28
-[; ;Menu.c: 28:  static char state = 0;
-[v F2624 `uc ~T0 @X0 1 s state ]
-[i F2624
--> -> 0 `i `uc
-]
-"30
-[; ;Menu.c: 30:  switch(state) {
-[e $U 285  ]
-{
-"31
-[; ;Menu.c: 31:   case 0:
-[e :U 286 ]
-"32
-[; ;Menu.c: 32:    LcClear();
-[e ( _LcClear ..  ]
-"33
-[; ;Menu.c: 33:    LcNewString("1.LOGIN");
-[e ( _LcNewString (1 :s 1C ]
-"34
-[; ;Menu.c: 34:    state = 1;
-[e = F2624 -> -> 1 `i `uc ]
-"35
-[; ;Menu.c: 35:   break;
-[e $U 284  ]
-"36
-[; ;Menu.c: 36:   case 1:
-[e :U 287 ]
 "37
-[; ;Menu.c: 37:    if (LcLliure()) {
-[e $ ! ( _LcLliure ..  288  ]
+[; ;TiTTimer.c: 37: void _TiRSITimer (void) {
+[v __TiRSITimer `(v ~T0 @X0 1 ef ]
 {
-"38
-[; ;Menu.c: 38:     LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e :U __TiRSITimer ]
+[f ]
 "39
-[; ;Menu.c: 39:     LcNewString("2.REGISTER");
-[e ( _LcNewString (1 :s 2C ]
+[; ;TiTTimer.c: 39:     TMR0H = 223;
+[e = _TMR0H -> -> 223 `i `uc ]
 "40
-[; ;Menu.c: 40:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;TiTTimer.c: 40:     TMR0L = 148;
+[e = _TMR0L -> -> 148 `i `uc ]
 "41
-[; ;Menu.c: 41:     state = 2;
-[e = F2624 -> -> 2 `i `uc ]
+[; ;TiTTimer.c: 41:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "42
-[; ;Menu.c: 42:    }
-}
-[e :U 288 ]
-"43
-[; ;Menu.c: 43:   break;
-[e $U 284  ]
+[; ;TiTTimer.c: 42:     h_Tics++;
+[e ++ _h_Tics -> -> 1 `i `ui ]
 "44
-[; ;Menu.c: 44:   case 2:
-[e :U 289 ]
-"45
-[; ;Menu.c: 45:    if (NovaTecla == 1 && UgetNumUsuaris() > 0) {
-[e $ ! && == -> _NovaTecla `i -> 1 `i > -> ( _UgetNumUsuaris ..  `i -> 0 `i 290  ]
+[; ;TiTTimer.c: 44:     if (h_Tics>=61000) {
+[e $ ! >= -> _h_Tics `l -> 61000 `l 286  ]
 {
 "46
-[; ;Menu.c: 46:     loginNOTRegister = 1;
-[e = _loginNOTRegister -> -> 1 `i `b ]
+[; ;TiTTimer.c: 46:         for (counter=0;counter<8;counter++){
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 8 `i 287  ]
+[e $U 288  ]
+[e :U 287 ]
+{
 "47
-[; ;Menu.c: 47:     state = 3;
-[e = F2624 -> -> 3 `i `uc ]
+[; ;TiTTimer.c: 47:             if (s_Timers[counter].b_busy==1){
+[e $ ! == -> . *U + &U _s_Timers * -> _counter `ux -> -> # *U &U _s_Timers `ui `ux 1 `i -> 1 `i 290  ]
+{
 "48
-[; ;Menu.c: 48:    }
-}
-[e $U 291  ]
+[; ;TiTTimer.c: 48:                 s_Timers[counter].h_initialTics -= h_Tics;
+[e =- . *U + &U _s_Timers * -> _counter `ux -> -> # *U &U _s_Timers `ui `ux 0 _h_Tics ]
 "49
-[; ;Menu.c: 49:    else if (NovaTecla == 2) {
+[; ;TiTTimer.c: 49:             }
+}
 [e :U 290 ]
-[e $ ! == -> _NovaTecla `i -> 2 `i 292  ]
-{
 "50
-[; ;Menu.c: 50:     loginNOTRegister = 0;
-[e = _loginNOTRegister -> -> 0 `i `b ]
+[; ;TiTTimer.c: 50:         }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 8 `i 287  ]
+[e :U 288 ]
+}
 "51
-[; ;Menu.c: 51:     state = 3;
-[e = F2624 -> -> 3 `i `uc ]
+[; ;TiTTimer.c: 51:         h_Tics=0;
+[e = _h_Tics -> -> 0 `i `ui ]
 "52
-[; ;Menu.c: 52:    }
+[; ;TiTTimer.c: 52:     }
 }
-[e :U 292 ]
-[e :U 291 ]
+[e :U 286 ]
 "53
-[; ;Menu.c: 53:   break;
-[e $U 284  ]
-"54
-[; ;Menu.c: 54:   case 3:
-[e :U 293 ]
+[; ;TiTTimer.c: 53: }
+[e :UE 285 ]
+}
 "55
-[; ;Menu.c: 55:    NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"56
-[; ;Menu.c: 56:    LcClear();
-[e ( _LcClear ..  ]
-"57
-[; ;Menu.c: 57:    LcNewString("USER: ");
-[e ( _LcNewString (1 :s 3C ]
-"58
-[; ;Menu.c: 58:    state = 4;
-[e = F2624 -> -> 4 `i `uc ]
+[; ;TiTTimer.c: 55: void TiResetTics(char Handle) {
+[v _TiResetTics `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _TiResetTics ]
+[v _Handle `uc ~T0 @X0 1 r1 ]
+[f ]
 "59
-[; ;Menu.c: 59:   break;
-[e $U 284  ]
+[; ;TiTTimer.c: 59:     s_Timers[Handle].h_initialTics=h_Tics;
+[e = . *U + &U _s_Timers * -> _Handle `ux -> -> # *U &U _s_Timers `ui `ux 0 _h_Tics ]
 "60
-[; ;Menu.c: 60:   case 4:
-[e :U 294 ]
+[; ;TiTTimer.c: 60: }
+[e :UE 291 ]
+}
 "61
-[; ;Menu.c: 61:    if (LcLliure()) {
-[e $ ! ( _LcLliure ..  295  ]
+[; ;TiTTimer.c: 61: int TiGetTics(char Handle) {
+[v _TiGetTics `(i ~T0 @X0 1 ef1`uc ]
 {
-"62
-[; ;Menu.c: 62:     LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"63
-[; ;Menu.c: 63:     LcNewString("PSWD: ");
-[e ( _LcNewString (1 :s 4C ]
-"64
-[; ;Menu.c: 64:     state = 5;
-[e = F2624 -> -> 5 `i `uc ]
+[e :U _TiGetTics ]
+[v _Handle `uc ~T0 @X0 1 r1 ]
+[f ]
 "65
-[; ;Menu.c: 65:    }
-}
-[e :U 295 ]
+[; ;TiTTimer.c: 65:     volatile unsigned int actual;
+[v _actual `Vui ~T0 @X0 1 a ]
 "66
-[; ;Menu.c: 66:   break;
-[e $U 284  ]
+[; ;TiTTimer.c: 66:     actual=h_Tics;
+[e = _actual _h_Tics ]
 "67
-[; ;Menu.c: 67:   case 5:
-[e :U 296 ]
-"68
-[; ;Menu.c: 68:    if (LcLliure()) {
-[e $ ! ( _LcLliure ..  297  ]
-{
+[; ;TiTTimer.c: 67:     return (actual-(s_Timers[Handle].h_initialTics));
+[e ) -> - _actual . *U + &U _s_Timers * -> _Handle `ux -> -> # *U &U _s_Timers `ui `ux 0 `i ]
+[e $UE 292  ]
 "69
-[; ;Menu.c: 69:     LcGotoXY(6,0);
-[e ( _LcGotoXY (2 , -> -> 6 `i `uc -> -> 0 `i `uc ]
+[; ;TiTTimer.c: 69: }
+[e :UE 292 ]
+}
 "70
-[; ;Menu.c: 70:     SMSon();
-[e ( _SMSon ..  ]
-"71
-[; ;Menu.c: 71:     j =0;
-[e = _j -> -> 0 `i `uc ]
-"72
-[; ;Menu.c: 72:     state = 6;
-[e = F2624 -> -> 6 `i `uc ]
-"73
-[; ;Menu.c: 73:    }
-}
-[e :U 297 ]
+[; ;TiTTimer.c: 70: char TiGetTimer(void) {
+[v _TiGetTimer `(uc ~T0 @X0 1 ef ]
+{
+[e :U _TiGetTimer ]
+[f ]
 "74
-[; ;Menu.c: 74:   break;
-[e $U 284  ]
+[; ;TiTTimer.c: 74:     counter=0;
+[e = _counter -> -> 0 `i `uc ]
 "75
-[; ;Menu.c: 75:   case 6:
-[e :U 298 ]
+[; ;TiTTimer.c: 75:     while (s_Timers[counter].b_busy==1) {
+[e $U 294  ]
+[e :U 295 ]
+{
 "76
-[; ;Menu.c: 76:    if (novaLletra > 47 && NovaTecla < 11) {
-[e $ ! && > -> _novaLletra `i -> 47 `i < -> _NovaTecla `i -> 11 `i 299  ]
-{
+[; ;TiTTimer.c: 76:         counter++;
+[e ++ _counter -> -> 1 `i `uc ]
 "77
-[; ;Menu.c: 77:     LcPutChar(novaLletra);
-[e ( _LcPutChar (1 -> _novaLletra `uc ]
+[; ;TiTTimer.c: 77:  if (counter == 8) return -1;
+[e $ ! == -> _counter `i -> 8 `i 297  ]
+[e ) -> -U -> 1 `i `uc ]
+[e $UE 293  ]
+[e :U 297 ]
 "78
-[; ;Menu.c: 78:     username[j] = novaLletra;
-[e = *U + &U _username * -> _j `ux -> -> # *U &U _username `ui `ux -> _novaLletra `uc ]
+[; ;TiTTimer.c: 78:     }
+}
+[e :U 294 ]
+"75
+[; ;TiTTimer.c: 75:     while (s_Timers[counter].b_busy==1) {
+[e $ == -> . *U + &U _s_Timers * -> _counter `ux -> -> # *U &U _s_Timers `ui `ux 1 `i -> 1 `i 295  ]
+[e :U 296 ]
 "79
-[; ;Menu.c: 79:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;TiTTimer.c: 79:     s_Timers[counter].b_busy=1;
+[e = . *U + &U _s_Timers * -> _counter `ux -> -> # *U &U _s_Timers `ui `ux 1 -> -> 1 `i `uc ]
 "80
-[; ;Menu.c: 80:     novaLletra = -1;
-[e = _novaLletra -> -U -> 1 `i `c ]
+[; ;TiTTimer.c: 80:     return (counter);
+[e ) _counter ]
+[e $UE 293  ]
 "81
-[; ;Menu.c: 81:     j++;
-[e ++ _j -> -> 1 `i `uc ]
+[; ;TiTTimer.c: 81: }
+[e :UE 293 ]
+}
 "82
-[; ;Menu.c: 82:     state = 7;
-[e = F2624 -> -> 7 `i `uc ]
-"83
-[; ;Menu.c: 83:    }
-}
-[e $U 300  ]
-"84
-[; ;Menu.c: 84:    else if (NovaTecla == 11) {
-[e :U 299 ]
-[e $ ! == -> _NovaTecla `i -> 11 `i 301  ]
+[; ;TiTTimer.c: 82: void TiFreeTimer (char Handle) {
+[v _TiFreeTimer `(v ~T0 @X0 1 ef1`uc ]
 {
+[e :U _TiFreeTimer ]
+[v _Handle `uc ~T0 @X0 1 r1 ]
+[f ]
 "85
-[; ;Menu.c: 85:     j = 8;
-[e = _j -> -> 8 `i `uc ]
+[; ;TiTTimer.c: 85:     s_Timers[Handle].b_busy=0;
+[e = . *U + &U _s_Timers * -> _Handle `ux -> -> # *U &U _s_Timers `ui `ux 1 -> -> 0 `i `uc ]
 "86
-[; ;Menu.c: 86:     state = 7;
-[e = F2624 -> -> 7 `i `uc ]
-"87
-[; ;Menu.c: 87:    }
+[; ;TiTTimer.c: 86: }
+[e :UE 298 ]
 }
-[e :U 301 ]
-[e :U 300 ]
-"88
-[; ;Menu.c: 88:   break;
-[e $U 284  ]
-"89
-[; ;Menu.c: 89:   case 7:
-[e :U 302 ]
-"90
-[; ;Menu.c: 90:    if (j != 8) {
-[e $ ! != -> _j `i -> 8 `i 303  ]
-{
-"91
-[; ;Menu.c: 91:     state = 6;
-[e = F2624 -> -> 6 `i `uc ]
-"92
-[; ;Menu.c: 92:    }
-}
-[e $U 304  ]
-"93
-[; ;Menu.c: 93:    else if (j == 8) {
-[e :U 303 ]
-[e $ ! == -> _j `i -> 8 `i 305  ]
-{
-"94
-[; ;Menu.c: 94:     LcGotoXY(6,1);
-[e ( _LcGotoXY (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
-"95
-[; ;Menu.c: 95:     username[j] = novaLletra;
-[e = *U + &U _username * -> _j `ux -> -> # *U &U _username `ui `ux -> _novaLletra `uc ]
-"96
-[; ;Menu.c: 96:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"97
-[; ;Menu.c: 97:     novaLletra = -1;
-[e = _novaLletra -> -U -> 1 `i `c ]
-"98
-[; ;Menu.c: 98:     j = 0;
-[e = _j -> -> 0 `i `uc ]
-"99
-[; ;Menu.c: 99:     state = 8;
-[e = F2624 -> -> 8 `i `uc ]
-"100
-[; ;Menu.c: 100:    }
-}
-[e :U 305 ]
-[e :U 304 ]
-"101
-[; ;Menu.c: 101:   break;
-[e $U 284  ]
-"102
-[; ;Menu.c: 102:   case 8:
-[e :U 306 ]
-"103
-[; ;Menu.c: 103:    if (novaLletra > 47 && NovaTecla < 11) {
-[e $ ! && > -> _novaLletra `i -> 47 `i < -> _NovaTecla `i -> 11 `i 307  ]
-{
-"104
-[; ;Menu.c: 104:     LcPutChar(novaLletra);
-[e ( _LcPutChar (1 -> _novaLletra `uc ]
-"105
-[; ;Menu.c: 105:     password[j] = novaLletra;
-[e = *U + &U _password * -> _j `ux -> -> # *U &U _password `ui `ux -> _novaLletra `uc ]
-"106
-[; ;Menu.c: 106:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"107
-[; ;Menu.c: 107:     novaLletra = -1;
-[e = _novaLletra -> -U -> 1 `i `c ]
-"108
-[; ;Menu.c: 108:     j++;
-[e ++ _j -> -> 1 `i `uc ]
-"109
-[; ;Menu.c: 109:     state = 9;
-[e = F2624 -> -> 9 `i `uc ]
-"110
-[; ;Menu.c: 110:    }
-}
-[e $U 308  ]
-"111
-[; ;Menu.c: 111:    else if (NovaTecla == 11) {
-[e :U 307 ]
-[e $ ! == -> _NovaTecla `i -> 11 `i 309  ]
-{
-"112
-[; ;Menu.c: 112:     j = 8;
-[e = _j -> -> 8 `i `uc ]
-"113
-[; ;Menu.c: 113:     state = 9;
-[e = F2624 -> -> 9 `i `uc ]
-"114
-[; ;Menu.c: 114:    }
-}
-[e :U 309 ]
-[e :U 308 ]
-"115
-[; ;Menu.c: 115:   break;
-[e $U 284  ]
-"116
-[; ;Menu.c: 116:   case 9:
-[e :U 310 ]
-"117
-[; ;Menu.c: 117:    if (j != 8) {
-[e $ ! != -> _j `i -> 8 `i 311  ]
-{
-"118
-[; ;Menu.c: 118:     state = 8;
-[e = F2624 -> -> 8 `i `uc ]
-"119
-[; ;Menu.c: 119:    }
-}
-[e $U 312  ]
-"120
-[; ;Menu.c: 120:    else if (j == 8) {
-[e :U 311 ]
-[e $ ! == -> _j `i -> 8 `i 313  ]
-{
-"121
-[; ;Menu.c: 121:     password[j] = novaLletra;
-[e = *U + &U _password * -> _j `ux -> -> # *U &U _password `ui `ux -> _novaLletra `uc ]
-"122
-[; ;Menu.c: 122:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"123
-[; ;Menu.c: 123:     novaLletra = -1;
-[e = _novaLletra -> -U -> 1 `i `c ]
-"124
-[; ;Menu.c: 124:     j = 0;
-[e = _j -> -> 0 `i `uc ]
-"125
-[; ;Menu.c: 125:     LcClear();
-[e ( _LcClear ..  ]
-"126
-[; ;Menu.c: 126:     UsetData(username, password);
-[e ( _UsetData (2 , &U _username &U _password ]
-"127
-[; ;Menu.c: 127:     UcheckExists();
-[e ( _UcheckExists ..  ]
-"128
-[; ;Menu.c: 128:     state = 10;
-[e = F2624 -> -> 10 `i `uc ]
-"129
-[; ;Menu.c: 129:    }
-}
-[e :U 313 ]
-[e :U 312 ]
-"130
-[; ;Menu.c: 130:   break;
-[e $U 284  ]
-"131
-[; ;Menu.c: 131:   case 10:
-[e :U 314 ]
-"132
-[; ;Menu.c: 132:    if (UcheckExistsNotFinished == 0) {
-[e $ ! == &U _UcheckExistsNotFinished -> -> 0 `i `*F2626 315  ]
-{
-"133
-[; ;Menu.c: 133:     state = 11;
-[e = F2624 -> -> 11 `i `uc ]
-"134
-[; ;Menu.c: 134:    }
-}
-[e :U 315 ]
-"135
-[; ;Menu.c: 135:   break;
-[e $U 284  ]
-"136
-[; ;Menu.c: 136:   case 11:
-[e :U 316 ]
-"137
-[; ;Menu.c: 137:    if (loginNOTRegister == 0 && UcheckExistsGetError() == 0) {
-[e $ ! && == -> _loginNOTRegister `i -> 0 `i == -> ( _UcheckExistsGetError ..  `i -> 0 `i 317  ]
-{
-"138
-[; ;Menu.c: 138:     state = 12;
-[e = F2624 -> -> 12 `i `uc ]
-"139
-[; ;Menu.c: 139:    }
-}
-[e $U 318  ]
-"140
-[; ;Menu.c: 140:    else if (loginNOTRegister == 1 && UcheckExistsGetError == 1) {
-[e :U 317 ]
-[e $ ! && == -> _loginNOTRegister `i -> 1 `i == &U _UcheckExistsGetError -> -> 1 `i `*F2628 319  ]
-{
-"141
-[; ;Menu.c: 141:     state = 13;
-[e = F2624 -> -> 13 `i `uc ]
-"142
-[; ;Menu.c: 142:    }
-}
-[e $U 320  ]
-"143
-[; ;Menu.c: 143:    else if (loginNOTRegister == 0 ^ UcheckExistsGetError == 0) {
-[e :U 319 ]
-[e $ ! ^ == -> _loginNOTRegister `i -> 0 `i == &U _UcheckExistsGetError -> -> 0 `i `*F2630 321  ]
-{
-"144
-[; ;Menu.c: 144:     state = 0;
-[e = F2624 -> -> 0 `i `uc ]
-"145
-[; ;Menu.c: 145:    }
-}
-[e :U 321 ]
-[e :U 320 ]
-[e :U 318 ]
-"146
-[; ;Menu.c: 146:   break;
-[e $U 284  ]
-"147
-[; ;Menu.c: 147:   case 12:
-[e :U 322 ]
-"148
-[; ;Menu.c: 148:             LcPutChar('r');
-[e ( _LcPutChar (1 -> -> 114 `ui `uc ]
-"149
-[; ;Menu.c: 149:   break;
-[e $U 284  ]
-"150
-[; ;Menu.c: 150:   case 13:
-[e :U 323 ]
-"151
-[; ;Menu.c: 151:             LcPutChar('l');
-[e ( _LcPutChar (1 -> -> 108 `ui `uc ]
-"152
-[; ;Menu.c: 152:   break;
-[e $U 284  ]
-"153
-[; ;Menu.c: 153:  }
-}
-[e $U 284  ]
-[e :U 285 ]
-[e [\ -> F2624 `i , $ -> 0 `i 286
- , $ -> 1 `i 287
- , $ -> 2 `i 289
- , $ -> 3 `i 293
- , $ -> 4 `i 294
- , $ -> 5 `i 296
- , $ -> 6 `i 298
- , $ -> 7 `i 302
- , $ -> 8 `i 306
- , $ -> 9 `i 310
- , $ -> 10 `i 314
- , $ -> 11 `i 316
- , $ -> 12 `i 322
- , $ -> 13 `i 323
- 284 ]
-[e :U 284 ]
-"154
-[; ;Menu.c: 154: }
-[e :UE 283 ]
-}
-[a 2C 50 46 82 69 71 73 83 84 69 82 0 ]
-[a 1C 49 46 76 79 71 73 78 0 ]
-[a 3C 85 83 69 82 58 32 0 ]
-[a 4C 80 83 87 68 58 32 0 ]

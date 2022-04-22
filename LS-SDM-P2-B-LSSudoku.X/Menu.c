@@ -46,7 +46,7 @@ void menu(void) {
 				loginNOTRegister = 1;
 				state = 3;
 			}
-			else if (NovaTecla == 2 && UgetNumUsuaris() < 8) {
+			else if (NovaTecla == 2) {
 				loginNOTRegister = 0;
 				state = 3;
 			}
@@ -145,10 +145,10 @@ void menu(void) {
 			}
 		break;
 		case 12:
-
+            LcPutChar('r');
 		break;
 		case 13:
-
+            LcPutChar('l');
 		break;
 	}
 }

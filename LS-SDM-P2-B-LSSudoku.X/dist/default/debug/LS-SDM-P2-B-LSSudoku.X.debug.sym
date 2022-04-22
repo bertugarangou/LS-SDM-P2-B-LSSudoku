@@ -484,9 +484,9 @@ bssBANK1 100 1B7 BANK1 100 1
 text1 224 DBE CODE 224 0
 text33 DC0 E4F CODE DC0 0
 %locals
-dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
+dist/default/debug\LS-SDM-P2-B-LSSudoku.X.debug.o
 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-C:\Users\alber\AppData\Local\Temp\xcAs30c.s
+C:\Users\alber\AppData\Local\Temp\xcAs4po.s
 2300 B10 0 CODE 0
 2302 B10 0 CODE 0
 2305 B10 0 CODE 0
@@ -1029,8 +1029,8 @@ LcTLCD.c
 235 97A 0 CODE 0
 236 990 0 CODE 0
 237 992 0 CODE 0
-C:\Users\alber\AppData\Local\Temp\xcAs30c.s
-8342 8 0 CODE 0
+C:\Users\alber\AppData\Local\Temp\xcAs4po.s
+8352 8 0 CODE 0
 main.c
 15 8 0 CODE 0
 16 1A 0 CODE 0

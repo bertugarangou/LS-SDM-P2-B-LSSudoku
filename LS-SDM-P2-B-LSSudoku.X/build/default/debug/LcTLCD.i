@@ -1,4 +1,4 @@
-# 1 "Usuaris.c"
+# 1 "LcTLCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Usuaris.c" 2
+# 1 "LcTLCD.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,141 +4605,309 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "Usuaris.c" 2
+# 1 "LcTLCD.c" 2
 
-# 1 "./Usuaris.h" 1
-
-
-
-char UgetNumUsuaris(void);
-void Uinit(void);
-void UcreateUser(void);
-void UsetData(char user[], char pass[]);
-void UmotorUsers(void);
-__bit UcheckExistsNotFinished(void);
-void UcheckExists(void);
-__bit UcheckExistsGetError(void);
-# 2 "Usuaris.c" 2
+# 1 "./TiTTimer.h" 1
 
 
-unsigned char currentUsrIndex = 0;
 
-unsigned char numUsuaris = 0;
-__bit do_check_exists = 0;
-unsigned char indexLastUser;
-__bit return_error;
-unsigned char i;
-
-char *tmpUsername;
-char *tmpPassword;
-
-typedef struct{
-    char username[9];
-    char password[9];
-    unsigned char scores[5];
-}Usuari;
-Usuari usuaris[8];
+void TiInitTimer(void);
 
 
-char UgetNumUsuaris(void){
-    return numUsuaris;
+
+void TiResetTics(char Handle);
+
+
+
+int TiGetTics(char Handle);
+
+
+
+
+char TiGetTimer(void);
+
+
+
+
+void TiFreeTimer (char Handle);
+
+
+
+void _TiRSITimer (void);
+# 2 "LcTLCD.c" 2
+
+# 1 "./LcTLCD.h" 1
+# 28 "./LcTLCD.h"
+void LcInit(char rows, char columns);
+
+
+
+
+
+
+void LcEnd(void);
+
+
+void LcScroll(void);
+
+
+
+void LcClear(void);
+
+
+
+void LcCursorOn(void);
+
+
+
+void LcCursorOff(void);
+
+
+
+void LcGotoXY(char Column, char Row);
+
+
+
+
+void LcPutChar(char c);
+# 70 "./LcTLCD.h"
+void LcPutStringDebug(char *s);
+void LcNewString(char new_s[]);
+void PutStringCooperatiu();
+void LcPutFletxa();
+void LcLCD();
+__bit LcLliure(void);
+void LcInsertFletxa(void);
+# 3 "LcTLCD.c" 2
+# 19 "LcTLCD.c"
+static unsigned char Rows, Columns;
+static unsigned char RowAct, ColumnAct;
+static char Timer;
+
+char *s_ptr = 0;
+__bit nou_s = 0;
+
+
+
+
+
+
+void Espera(char Timer, int ms);
+void CantaIR(char IR);
+void CantaData(char Data);
+void WaitForBusy(void);
+void EscriuPrimeraOrdre(char);
+
+void LcScroll(void){
+  CantaIR(0x10 | 0x08 | 0x00);
 }
 
-void UcheckExists(void){
-    do_check_exists = 1;
-}
-__bit UcheckExistsNotFinished(void){
-    return do_check_exists;
-}
-__bit UcheckExistsGetError(){
-    return return_error;
-}
-void UsetData(char user[], char pass[]){
-    tmpUsername = user;
-    tmpPassword = pass;
-}
-void Uinit(){
+void LcInit(char rows, char columns) {
 
 
 
 
-    EEADR = 0;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-    EECON1bits.RD = 1;
-    while(EECON1bits.RD == 1){}
-    numUsuaris = EEDATA;
-    numUsuaris = 8;
+
+ int i;
+ Timer = TiGetTimer();
+ Rows = rows; Columns = columns;
+ RowAct = ColumnAct = 0;
+ (TRISCbits.TRISC5 = TRISDbits.TRISD7 = TRISCbits.TRISC4 = 0);
+ for (i = 0; i < 2; i++) {
+  Espera(Timer, 100);
 
 
-    EEADR++;EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-
-    while(EECON1bits.RD == 1){}
-    indexLastUser = EEDATA;
-    EEADR++;
-
-    for(char i = 0; i< numUsuaris; i++){
-        for(char j = 0; j<9; j++){
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].username[j] = EEDATA;
-            EEADR++;
-        }
-        for(char j = 0; j<9; j++){
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].password[j] = EEDATA;
-            EEADR++;
-        }
-    }
+  EscriuPrimeraOrdre(0x02 | 0x01);
+  Espera(Timer, 5);
+  EscriuPrimeraOrdre(0x02 | 0x01);
+  Espera(Timer, 1);
+  EscriuPrimeraOrdre(0x02 | 0x01);
+  Espera(Timer, 1);
 
 
-}
-
-char compareStrings(const char *a, const char *b){
-    while (*a){
-        if (*a != *b)break;
-        a++;
-        b++;
-    }
-    return *(const unsigned char*)a - *(const unsigned char*)b;
-}
+  EscriuPrimeraOrdre(0x02);
+  Espera(Timer, 4);
+  CantaIR(0x20 | 0x08);
 
 
-void UmotorUsers(){
-    static char state = 0;
-
- switch(state) {
-  case 0:
-   if (do_check_exists == 0) {
-   }
-   else if (do_check_exists == 1) {
-    return_error = 0;
-    state = 1;
-   }
-  break;
-  case 1:
-   if (i < numUsuaris) {
-    if(compareStrings(tmpUsername, usuaris[i].username) == 0){
-     return_error = 1;
-    }
-    i++;
-    state = 1;
-   }
-   else if (i == numUsuaris) {
-    do_check_exists = 0;
-    state = 0;
-   }
-  break;
+  WaitForBusy(); CantaIR(0x08);
+  WaitForBusy(); CantaIR(0x01);
+  Espera(Timer,3);
+  WaitForBusy(); CantaIR(0x04 | 0x02);
+  WaitForBusy(); CantaIR(0x08 | 0x04 | 0x02 | 0x01);
  }
 
+
+
+
+    LcCursorOff();
 }
 
-void escriureEEPROM(){
+void LcClear(void) {
 
+
+ WaitForBusy(); CantaIR(0x01);
+ Espera(Timer, 3);
+    LcGotoXY(0,0);
+}
+
+void LcCursorOn(void) {
+
+
+ WaitForBusy();
+ CantaIR(0x08 | 0x04 | 0x02);
+}
+
+void LcCursorOff(void) {
+
+
+ WaitForBusy();
+ CantaIR(0x08 | 0x04);
+}
+
+void LcGotoXY(char Column, char Row) {
+
+
+
+ int Fisics;
+
+
+
+   Fisics = Column + (!Row ? 0 : 0x40);
+# 125 "LcTLCD.c"
+ WaitForBusy();
+ CantaIR(0x80 | Fisics);
+
+ RowAct = Row;
+ ColumnAct = Column;
+}
+
+void LcPutChar(char c) {
+
+ WaitForBusy(); CantaData(c);
+
+ ++ColumnAct;
+
+ if (Rows == 2) {
+  if (ColumnAct >= 40) {
+   ColumnAct = 0;
+   if (++RowAct >= 2) RowAct = 0;
+   LcGotoXY(ColumnAct, RowAct);
+  }
+ }
+# 153 "LcTLCD.c"
+ if (RowAct == 1) {
+  if (ColumnAct >= 40) ColumnAct = 0;
+  LcGotoXY(ColumnAct, RowAct);
+ }
+}
+
+void Espera(char Timer, int ms) {
+ TiResetTics(Timer);
+ while(TiGetTics(Timer) < ms);
+}
+
+void CantaPartAlta(char c) {
+  (LATCbits.LATC3 = (c & 0x80 ? 1 : 0));
+  (LATCbits.LATC2 = (c & 0x40 ? 1 : 0));
+  (LATCbits.LATC1 = (c & 0x20 ? 1 : 0));
+  (LATCbits.LATC0 = (c & 0x10 ? 1 : 0));
+}
+
+void CantaPartBaixa(char c) {
+  (LATCbits.LATC3 = (c & 0x08 ? 1 : 0));
+  (LATCbits.LATC2 = (c & 0x04 ? 1 : 0));
+  (LATCbits.LATC1 = (c & 0x02 ? 1 : 0));
+  (LATCbits.LATC0 = (c & 0x01 ? 1 : 0));
+}
+
+void CantaIR(char IR) {
+ (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0);
+ (LATCbits.LATC5 = 0);
+ (LATDbits.LATD7 = 0);
+ (LATCbits.LATC4 = 1);
+ CantaPartAlta(IR);
+ (LATCbits.LATC4 = 1);
+ (LATCbits.LATC4 = 0);
+ (LATCbits.LATC4 = 0);
+ (LATCbits.LATC4 = 1);
+ CantaPartBaixa(IR);
+ (LATCbits.LATC4 = 1);
+ (LATCbits.LATC4 = 0);
+ (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 1);
+}
+
+void CantaData(char Data) {
+ (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0);
+ (LATCbits.LATC5 = 1);
+ (LATDbits.LATD7 = 0);
+ (LATCbits.LATC4 = 1);
+ CantaPartAlta(Data);
+ (LATCbits.LATC4 = 1);
+ (LATCbits.LATC4 = 0);
+ (LATCbits.LATC4 = 0);
+ (LATCbits.LATC4 = 1);
+ CantaPartBaixa(Data);
+ (LATCbits.LATC4 = 1);
+ (LATCbits.LATC4 = 0);
+ (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 1);
+}
+
+void WaitForBusy(void) { char Busy;
+ (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 1);
+ (LATCbits.LATC5 = 0);
+ (LATDbits.LATD7 = 1);
+ TiResetTics(Timer);
+ do {
+  (LATCbits.LATC4 = 1);(LATCbits.LATC4 = 1);
+  Busy = (PORTCbits.RC3);
+  (LATCbits.LATC4 = 0);
+  (LATCbits.LATC4 = 0);
+  (LATCbits.LATC4 = 1);(LATCbits.LATC4 = 1);
+
+  (LATCbits.LATC4 = 0);
+  (LATCbits.LATC4 = 0);
+  if (TiGetTics(Timer)) break;
+ } while(Busy);
+}
+
+void EscriuPrimeraOrdre(char ordre) {
+
+ (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0); (LATCbits.LATC5 = 0); (LATDbits.LATD7 = 0);
+ (LATCbits.LATC4 = 1); (LATCbits.LATC4 = 1);
+  (LATCbits.LATC3 = (ordre & 0x08 ? 1 : 0));
+  (LATCbits.LATC2 = (ordre & 0x04 ? 1 : 0));
+  (LATCbits.LATC1 = (ordre & 0x02 ? 1 : 0));
+  (LATCbits.LATC0 = (ordre & 0x01 ? 1 : 0));
+ (LATCbits.LATC4 = 0);
+}
+
+void LcNewString(char new_s[]){
+    s_ptr = new_s;
+    nou_s = 1;
+}
+void LcInsertFletxa(){
+    LcPutChar('-');
+    LcPutChar('>');
+}
+void LcPutFletxa(){
+    LcGotoXY(0,0);
+
+    LcInsertFletxa();
+}
+
+
+void LcLCD(void){
+    if(nou_s == 1){
+        LcPutChar(*s_ptr);
+        s_ptr++;
+        if(*s_ptr == '\0'){
+            nou_s = 0;
+            s_ptr=0;
+        }
+    }
+}
+
+__bit LcLliure(void){
+    return !nou_s;
 }
