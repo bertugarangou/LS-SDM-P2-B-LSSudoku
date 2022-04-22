@@ -2,7 +2,8 @@
 #define UUsuaris_
 
 char UgetNumUsuaris(void);
-void motorUsuaris(void);
-void UAfegirLletraUsername(char novaLletra);
-void UcreateUser();
+void Uinit(void);
+void UcreateUser(void);
+void UsetData(char user[], char pass[]);
+void UmotorUsers(void);
 #endif

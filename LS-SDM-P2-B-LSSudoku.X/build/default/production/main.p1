@@ -62,6 +62,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5
 [; ;./Ssms.h: 5: void SMotor(void);
 [v _SMotor `(v ~T0 @X0 0 ef ]
+"5 ./Usuaris.h
+[; ;./Usuaris.h: 5: void Uinit(void);
+[v _Uinit `(v ~T0 @X0 0 ef ]
 "28 ./LcTLCD.h
 [; ;./LcTLCD.h: 28: void LcInit(char rows, char columns);
 [v _LcInit `(v ~T0 @X0 0 ef2`uc`uc ]
@@ -71,9 +74,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5
 [; ;./Menu.h: 5: void menu(void);
 [v _menu `(v ~T0 @X0 0 ef ]
-"5 ./Usuaris.h
-[; ;./Usuaris.h: 5: void motorUsuaris(void);
-[v _motorUsuaris `(v ~T0 @X0 0 ef ]
 "10 ./TeTeclat.h
 [; ;./TeTeclat.h: 10:     void TeTeclat();
 [v _TeTeclat `(v ~T0 @X0 0 e? ]
@@ -576,41 +576,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [; ;main.c: 74:     SMotor();
 [e ( _SMotor ..  ]
-"76
-[; ;main.c: 76:     LcInit(2,16);
-[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
+"75
+[; ;main.c: 75:     Uinit();
+[e ( _Uinit ..  ]
 "77
-[; ;main.c: 77:     Minit();
+[; ;main.c: 77:     LcInit(2,16);
+[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
+"78
+[; ;main.c: 78:     Minit();
 [e ( _Minit ..  ]
-"79
-[; ;main.c: 79:     while(1){
+"80
+[; ;main.c: 80:     while(1){
 [e :U 284 ]
 {
-"81
-[; ;main.c: 81:         menu();
-[e ( _menu ..  ]
 "82
-[; ;main.c: 82:         motorUsuaris();
-[e ( _motorUsuaris ..  ]
-"84
-[; ;main.c: 84:         TeTeclat();
-[e ( _TeTeclat ..  ]
+[; ;main.c: 82:         menu();
+[e ( _menu ..  ]
 "85
-[; ;main.c: 85:         SMotor();
-[e ( _SMotor ..  ]
+[; ;main.c: 85:         TeTeclat();
+[e ( _TeTeclat ..  ]
 "86
-[; ;main.c: 86:         LcLCD();
-[e ( _LcLCD ..  ]
+[; ;main.c: 86:         SMotor();
+[e ( _SMotor ..  ]
 "87
-[; ;main.c: 87:     }
+[; ;main.c: 87:         LcLCD();
+[e ( _LcLCD ..  ]
+"88
+[; ;main.c: 88:     }
 }
 [e :U 283 ]
 [e $U 284  ]
 [e :U 285 ]
-"88
-[; ;main.c: 88:     return;
-[e $UE 282  ]
 "89
-[; ;main.c: 89: }
+[; ;main.c: 89:     return;
+[e $UE 282  ]
+"90
+[; ;main.c: 90: }
 [e :UE 282 ]
 }

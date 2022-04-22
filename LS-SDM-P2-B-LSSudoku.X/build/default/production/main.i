@@ -4685,9 +4685,9 @@ void _TiRSITimer (void);
 
 
 char UgetNumUsuaris(void);
-void motorUsuaris(void);
-void UAfegirLletraUsername(char novaLletra);
-void UcreateUser();
+void Uinit(void);
+void UcreateUser(void);
+void UsetData(char user[], char pass[]);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1
@@ -4766,6 +4766,7 @@ void main(void) {
     TeInit();
     Sinit();
     SMotor();
+    Uinit();
 
     LcInit(2,16);
     Minit();
@@ -4773,7 +4774,7 @@ void main(void) {
     while(1){
 
         menu();
-        motorUsuaris();
+
 
         TeTeclat();
         SMotor();

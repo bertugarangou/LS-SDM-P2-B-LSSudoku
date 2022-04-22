@@ -95,10 +95,10 @@
 [v _TiGetTics TiGetTics `(i  1 e 2 0 ]
 "70
 [v _TiGetTimer TiGetTimer `(uc  1 e 1 0 ]
-"11 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
-"21
-[v _motorUsuaris motorUsuaris `(v  1 e 1 0 ]
+"30
+[v _Uinit Uinit `(v  1 e 1 0 ]
 [s S42 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
@@ -276,8 +276,6 @@
 ]
 [u S455 . 1 `S443 1 . 1 0 `S452 1 . 1 0 ]
 [v _EECON1bits EECON1bits `VES455  1 e 1 @4006 ]
-"3101
-[v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "3108
 [v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
 "3115
@@ -374,7 +372,9 @@
 [v _s_ptr s_ptr `*.31uc  1 e 1 0 ]
 "24
 [v _nou_s nou_s `b  1 e 0 0 ]
-"9 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+"8 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+[v _j j `uc  1 e 1 0 ]
+"9
 [v _NovaTecla NovaTecla `c  1 e 1 0 ]
 "10
 [v _novaLletra novaLletra `c  1 e 1 0 ]
@@ -411,27 +411,17 @@
 [v _h_Tics h_Tics `ui  1 s 2 h_Tics ]
 "15
 [v _counter counter `uc  1 s 1 counter ]
-"4 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-[v _currentUsrIndex currentUsrIndex `uc  1 e 1 0 ]
-"6
+"6 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _numUsuaris numUsuaris `uc  1 e 1 0 ]
-"7
-[v _tmpEEPROM tmpEEPROM `[9]uc  1 e 9 0 ]
 "8
-[v _createUser createUser `b  1 e 0 0 ]
-"9
-[v _j j `uc  1 e 1 0 ]
+[v _indexLastUser indexLastUser `uc  1 e 1 0 ]
+[s S894 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
+"17
+[v _usuaris usuaris `[8]S894  1 e 144 0 ]
 "69 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"89
-} 0
-"21 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
-[v _motorUsuaris motorUsuaris `(v  1 e 1 0 ]
-{
-"22
-[v motorUsuaris@state state `uc  1 s 1 state ]
-"75
+"90
 } 0
 "27 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 [v _menu menu `(v  1 e 1 0 ]
@@ -440,10 +430,10 @@
 [v menu@state state `uc  1 s 1 state ]
 "133
 } 0
-"11 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
 {
-"13
+"21
 } 0
 "114 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _SMSon SMSon `(v  1 e 1 0 ]
@@ -470,6 +460,17 @@
 [v _init_ports init_ports `(v  1 e 1 0 ]
 {
 "59
+} 0
+"30 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+[v _Uinit Uinit `(v  1 e 1 0 ]
+{
+"53
+[v Uinit@j_932 j `uc  1 a 1 9 ]
+"47
+[v Uinit@j j `uc  1 a 1 8 ]
+"46
+[v Uinit@i i `uc  1 a 1 7 ]
+"62
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v _TiInitTimer TiInitTimer `(v  1 e 1 0 ]

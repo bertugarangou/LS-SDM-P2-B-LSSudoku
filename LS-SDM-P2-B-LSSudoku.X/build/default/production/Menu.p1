@@ -513,8 +513,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "28
 [; ;Menu.c: 28:  static char state = 0;
-[v F2619 `uc ~T0 @X0 1 s state ]
-[i F2619
+[v F2620 `uc ~T0 @X0 1 s state ]
+[i F2620
 -> -> 0 `i `uc
 ]
 "30
@@ -532,7 +532,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 1C ]
 "34
 [; ;Menu.c: 34:    state = 1;
-[e = F2619 -> -> 1 `i `uc ]
+[e = F2620 -> -> 1 `i `uc ]
 "35
 [; ;Menu.c: 35:   break;
 [e $U 284  ]
@@ -554,7 +554,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "41
 [; ;Menu.c: 41:     state = 2;
-[e = F2619 -> -> 2 `i `uc ]
+[e = F2620 -> -> 2 `i `uc ]
 "42
 [; ;Menu.c: 42:    }
 }
@@ -574,7 +574,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _loginNOTRegister -> -> 1 `i `b ]
 "47
 [; ;Menu.c: 47:     state = 3;
-[e = F2619 -> -> 3 `i `uc ]
+[e = F2620 -> -> 3 `i `uc ]
 "48
 [; ;Menu.c: 48:    }
 }
@@ -589,7 +589,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _loginNOTRegister -> -> 0 `i `b ]
 "51
 [; ;Menu.c: 51:     state = 3;
-[e = F2619 -> -> 3 `i `uc ]
+[e = F2620 -> -> 3 `i `uc ]
 "52
 [; ;Menu.c: 52:    }
 }
@@ -612,7 +612,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 3C ]
 "58
 [; ;Menu.c: 58:    state = 4;
-[e = F2619 -> -> 4 `i `uc ]
+[e = F2620 -> -> 4 `i `uc ]
 "59
 [; ;Menu.c: 59:   break;
 [e $U 284  ]
@@ -631,7 +631,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 4C ]
 "64
 [; ;Menu.c: 64:     state = 5;
-[e = F2619 -> -> 5 `i `uc ]
+[e = F2620 -> -> 5 `i `uc ]
 "65
 [; ;Menu.c: 65:    }
 }
@@ -657,7 +657,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _j -> -> 0 `i `uc ]
 "72
 [; ;Menu.c: 72:     state = 6;
-[e = F2619 -> -> 6 `i `uc ]
+[e = F2620 -> -> 6 `i `uc ]
 "73
 [; ;Menu.c: 73:    }
 }
@@ -689,7 +689,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _j -> -> 1 `i `uc ]
 "82
 [; ;Menu.c: 82:     state = 7;
-[e = F2619 -> -> 7 `i `uc ]
+[e = F2620 -> -> 7 `i `uc ]
 "83
 [; ;Menu.c: 83:    }
 }
@@ -704,7 +704,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _j -> -> 8 `i `uc ]
 "86
 [; ;Menu.c: 86:     state = 7;
-[e = F2619 -> -> 7 `i `uc ]
+[e = F2620 -> -> 7 `i `uc ]
 "87
 [; ;Menu.c: 87:    }
 }
@@ -722,7 +722,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "91
 [; ;Menu.c: 91:     state = 6;
-[e = F2619 -> -> 6 `i `uc ]
+[e = F2620 -> -> 6 `i `uc ]
 "92
 [; ;Menu.c: 92:    }
 }
@@ -749,7 +749,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _j -> -> 0 `i `uc ]
 "99
 [; ;Menu.c: 99:     state = 8;
-[e = F2619 -> -> 8 `i `uc ]
+[e = F2620 -> -> 8 `i `uc ]
 "100
 [; ;Menu.c: 100:    }
 }
@@ -782,7 +782,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _j -> -> 1 `i `uc ]
 "109
 [; ;Menu.c: 109:     state = 9;
-[e = F2619 -> -> 9 `i `uc ]
+[e = F2620 -> -> 9 `i `uc ]
 "110
 [; ;Menu.c: 110:    }
 }
@@ -797,7 +797,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _j -> -> 8 `i `uc ]
 "113
 [; ;Menu.c: 113:     state = 9;
-[e = F2619 -> -> 9 `i `uc ]
+[e = F2620 -> -> 9 `i `uc ]
 "114
 [; ;Menu.c: 114:    }
 }
@@ -815,7 +815,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "118
 [; ;Menu.c: 118:     state = 8;
-[e = F2619 -> -> 8 `i `uc ]
+[e = F2620 -> -> 8 `i `uc ]
 "119
 [; ;Menu.c: 119:    }
 }
@@ -842,7 +842,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcClear ..  ]
 "126
 [; ;Menu.c: 126:     state = 10;
-[e = F2619 -> -> 10 `i `uc ]
+[e = F2620 -> -> 10 `i `uc ]
 "127
 [; ;Menu.c: 127:    }
 }
@@ -862,7 +862,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 284  ]
 [e :U 285 ]
-[e [\ -> F2619 `i , $ -> 0 `i 286
+[e [\ -> F2620 `i , $ -> 0 `i 286
  , $ -> 1 `i 287
  , $ -> 2 `i 289
  , $ -> 3 `i 293

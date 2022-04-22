@@ -4695,9 +4695,9 @@ void _TiRSITimer (void);
 
 
 char UgetNumUsuaris(void);
-void motorUsuaris(void);
-void UAfegirLletraUsername(char novaLletra);
-void UcreateUser();
+void Uinit(void);
+void UcreateUser(void);
+void UsetData(char user[], char pass[]);
 # 5 "Menu.c" 2
 
 # 1 "./Ssms.h" 1

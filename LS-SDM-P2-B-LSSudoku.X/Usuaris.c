@@ -4,72 +4,63 @@
 unsigned char currentUsrIndex = 0;
 
 unsigned char numUsuaris = 0;
-char tmpEEPROM[9];
 __bit createUser = 0;
-unsigned char j = 0;
+unsigned char indexLastUser;
+
+char *tmpUsername;
+char *tmpPassword;
+
+typedef struct{
+    char username[9];
+    char password[9];
+}Usuari;
+Usuari usuaris[8];
 
 char UgetNumUsuaris(void){
     return numUsuaris;
 }
-void UAfegirLletraUsername(char novaLletra){
-    tmpEEPROM[j] = novaLletra;
-    j++;
-}
-void UcreateUser(){
+
+void UcreateUser(void){
     createUser = 1;
 }
-void motorUsuaris(void) {
-    static char state = 0;
-
-	switch(state) {
-		case 1:
-			if (j < 9) {
-				EEADR = currentUsrIndex;
-				EEDATA = tmpEEPROM[j];
-				EECON1bits.EEPGD = 0;
-				EECON1bits.CFGS = 0;
-				EECON1bits.WREN = 1;
-				INTCONbits.GIE = 0;
-				EECON2 = 0x55;
-				EECON2 = 0x0AA;
-				EECON1bits.WR = 1;
-				state = 2;
-			}
-			else if (j == 9) {
-				createUser = 0;
-				state = 0;
-			}
-		break;
-		case 2:
-			if (EECON1bits.WR == 0) {
-				INTCONbits.GIE = 1;
-				currentUsrIndex++;
-				state = 3;
-			}
-		break;
-		case 3:
-			if (tmpEEPROM[j] != '\0') {
-				j++;
-				state = 1;
-			}
-			else if (tmpEEPROM[j] == '\0') {
-				j++;
-				state = 4;
-			}
-		break;
-		case 0:
-			if (createUser == 1) {
-				state = 1;
-                j = 0;
-			}
-		break;
-		case 4:
-			if (j < 9) {
-			}
-			else if (j == 9) {
-				j = 0;
-				state = 0;
-			}
-		break;
-	}
+void UsetData(char user[], char pass[]){
+    tmpUsername = user;
+    tmpPassword = pass;
+}
+void Uinit(){
+    /*
+     | num totals 8 | index last 8 | user1 8 | pass1 8 | user2 9 | pass2 9 |
+     */
+    EEADR = 0;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    EECON1bits.RD = 1;
+    while(EECON1bits.RD == 1){}
+    numUsuaris = EEDATA;
+    
+    EEADR++;
+    while(EECON1bits.RD == 1){}
+    indexLastUser = EEDATA;
+    EEADR++;
+    
+    for(char i = 0; i< numUsuaris; i++){//i-> usuari
+        for(char j = 0; j<9; j++){//j-> caracter
+            EECON1bits.RD = 1;
+            while(EECON1bits.RD == 1){}
+            usuaris[i].username[j] = EEDATA;
+            EEADR++;
+        }
+        for(char j = 0; j<9; j++){//j-> caracter
+            EECON1bits.RD = 1;
+            while(EECON1bits.RD == 1){}
+            usuaris[i].password[j] = EEDATA;
+            EEADR++;
+        }        
+    }
+    
+    void UmotorUsers(){
+        
+    }
+    //TODO: fer que al primer cop es guardin tot '\0' a la eeprom o almenys als bits de users
+    
 }
