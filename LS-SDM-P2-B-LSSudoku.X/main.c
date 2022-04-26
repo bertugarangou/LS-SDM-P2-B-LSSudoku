@@ -68,6 +68,7 @@ void init_ports(void){
 
 void main(void) {
     init_ports();
+    escriureEEPROM();
     TiInitTimer();
     TeInit();
     Sinit();
@@ -76,12 +77,12 @@ void main(void) {
     
     LcInit(2,16);
     Minit();
-
+    
     while(1){
 
         menu();
         
-        //UmotorUsers();
+        UmotorUsers();
         TeTeclat();//antapenultim
         SMotor(); //penultim
         LcLCD();//ultim

@@ -10,8 +10,6 @@ signed char NovaTecla = -1;
 signed char novaLletra = -1;
 char timerMenu;
 __bit loginNOTRegister;
-char username[9];
-char password[9];
 
 void Minit(void){
     timerMenu = TiGetTimer();
@@ -25,7 +23,7 @@ void MNovaLletra(char lletra){
 }
 
 void menu(void) {
-	static char state = 0;
+		static char state = 0;
 
 	switch(state) {
 		case 0:
@@ -53,6 +51,7 @@ void menu(void) {
 		break;
 		case 3:
 			NovaTecla = -1;
+			novaLletra = -1;
 			LcClear();
 			LcNewString("USER: ");
 			state = 4;
@@ -73,26 +72,25 @@ void menu(void) {
 			}
 		break;
 		case 6:
-			if (novaLletra > 47 && NovaTecla < 11) {
+			if (novaLletra > 47 && NovaTecla != 10) {
 				LcPutChar(novaLletra);
-				username[j] = novaLletra;
-				NovaTecla = -1;
-				novaLletra = -1;
-				j++;
+				UenviaChar(novaLletra,j);
 				state = 7;
 			}
 			else if (NovaTecla == 11) {
-				j = 8;
 				state = 7;
 			}
 		break;
 		case 7:
-			if (j != 8) {
+			if (j != 7 && NovaTecla != 11) {
+				j++;
+				NovaTecla = -1;
+				novaLletra = -1;
 				state = 6;
 			}
-			else if (j == 8) {
+			else if (j == 7 || NovaTecla == 11) {
 				LcGotoXY(6,1);
-				username[j] = novaLletra;
+				UenviaChar('\0',j);
 				NovaTecla = -1;
 				novaLletra = -1;
 				j = 0;
@@ -100,36 +98,35 @@ void menu(void) {
 			}
 		break;
 		case 8:
-			if (novaLletra > 47 && NovaTecla < 11) {
+			if (novaLletra > 47 && NovaTecla != 10) {
 				LcPutChar(novaLletra);
-				password[j] = novaLletra;
-				NovaTecla = -1;
-				novaLletra = -1;
-				j++;
+				UenviaPas(novaLletra,j);
 				state = 9;
 			}
 			else if (NovaTecla == 11) {
-				j = 8;
 				state = 9;
 			}
 		break;
 		case 9:
-			if (j != 8) {
+			if (j != 7 && NovaTecla != 11) {
+				j++;
+				NovaTecla = -1;
+				novaLletra = -1;
 				state = 8;
 			}
-			else if (j == 8) {
-				password[j] = novaLletra;
+			else if (j == 7 || NovaTecla == 11) {
+				UenviaPas('\0',j);
 				NovaTecla = -1;
 				novaLletra = -1;
 				j = 0;
 				LcClear();
-				UsetData(username, password);
 				UcheckExists();
+				SMSoff();
 				state = 10;
 			}
 		break;
 		case 10:
-			if (UcheckExistsNotFinished == 0) {
+			if (!UcheckExistsNotFinished()) {
 				state = 11;
 			}
 		break;
@@ -137,18 +134,18 @@ void menu(void) {
 			if (loginNOTRegister == 0 && UcheckExistsGetError() == 0) {
 				state = 12;
 			}
-			else if (loginNOTRegister == 1 && UcheckExistsGetError == 1) {
+			else if (loginNOTRegister == 1 && UcheckExistsGetError() == 1) {
 				state = 13;
 			}
-			else if (loginNOTRegister == 0 ^ UcheckExistsGetError == 0) {
+			else if (loginNOTRegister ^ UcheckExistsGetError()) {
 				state = 0;
 			}
 		break;
 		case 12:
-            LcPutChar('r');
+
 		break;
 		case 13:
-            LcPutChar('l');
+
 		break;
 	}
 }

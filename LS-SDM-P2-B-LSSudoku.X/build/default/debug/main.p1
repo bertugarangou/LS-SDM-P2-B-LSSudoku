@@ -50,6 +50,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3056: extern volatile EECON1bits_t EECON1bits __attribute__((address(0xFA6)));
 [v _EECON1bits `VS103 ~T0 @X0 0 e@4006 ]
 [p mainexit ]
+"13 ./Usuaris.h
+[; ;./Usuaris.h: 13: void escriureEEPROM(void);
+[v _escriureEEPROM `(v ~T0 @X0 0 ef ]
 "4 ./TiTTimer.h
 [; ;./TiTTimer.h: 4: void TiInitTimer(void);
 [v _TiInitTimer `(v ~T0 @X0 0 ef ]
@@ -74,6 +77,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5
 [; ;./Menu.h: 5: void menu(void);
 [v _menu `(v ~T0 @X0 0 ef ]
+"9 ./Usuaris.h
+[; ;./Usuaris.h: 9: void UmotorUsers(void);
+[v _UmotorUsers `(v ~T0 @X0 0 ef ]
 "10 ./TeTeclat.h
 [; ;./TeTeclat.h: 10:     void TeTeclat();
 [v _TeTeclat `(v ~T0 @X0 0 e? ]
@@ -565,52 +571,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 70:     init_ports();
 [e ( _init_ports ..  ]
 "71
-[; ;main.c: 71:     TiInitTimer();
-[e ( _TiInitTimer ..  ]
+[; ;main.c: 71:     escriureEEPROM();
+[e ( _escriureEEPROM ..  ]
 "72
-[; ;main.c: 72:     TeInit();
-[e ( _TeInit ..  ]
+[; ;main.c: 72:     TiInitTimer();
+[e ( _TiInitTimer ..  ]
 "73
-[; ;main.c: 73:     Sinit();
-[e ( _Sinit ..  ]
+[; ;main.c: 73:     TeInit();
+[e ( _TeInit ..  ]
 "74
-[; ;main.c: 74:     SMotor();
-[e ( _SMotor ..  ]
+[; ;main.c: 74:     Sinit();
+[e ( _Sinit ..  ]
 "75
-[; ;main.c: 75:     Uinit();
+[; ;main.c: 75:     SMotor();
+[e ( _SMotor ..  ]
+"76
+[; ;main.c: 76:     Uinit();
 [e ( _Uinit ..  ]
-"77
-[; ;main.c: 77:     LcInit(2,16);
-[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
 "78
-[; ;main.c: 78:     Minit();
+[; ;main.c: 78:     LcInit(2,16);
+[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
+"79
+[; ;main.c: 79:     Minit();
 [e ( _Minit ..  ]
-"80
-[; ;main.c: 80:     while(1){
+"81
+[; ;main.c: 81:     while(1){
 [e :U 284 ]
 {
-"82
-[; ;main.c: 82:         menu();
+"83
+[; ;main.c: 83:         menu();
 [e ( _menu ..  ]
 "85
-[; ;main.c: 85:         TeTeclat();
-[e ( _TeTeclat ..  ]
+[; ;main.c: 85:         UmotorUsers();
+[e ( _UmotorUsers ..  ]
 "86
-[; ;main.c: 86:         SMotor();
-[e ( _SMotor ..  ]
+[; ;main.c: 86:         TeTeclat();
+[e ( _TeTeclat ..  ]
 "87
-[; ;main.c: 87:         LcLCD();
-[e ( _LcLCD ..  ]
+[; ;main.c: 87:         SMotor();
+[e ( _SMotor ..  ]
 "88
-[; ;main.c: 88:     }
+[; ;main.c: 88:         LcLCD();
+[e ( _LcLCD ..  ]
+"89
+[; ;main.c: 89:     }
 }
 [e :U 283 ]
 [e $U 284  ]
 [e :U 285 ]
-"89
-[; ;main.c: 89:     return;
-[e $UE 282  ]
 "90
-[; ;main.c: 90: }
+[; ;main.c: 90:     return;
+[e $UE 282  ]
+"91
+[; ;main.c: 91: }
 [e :UE 282 ]
 }

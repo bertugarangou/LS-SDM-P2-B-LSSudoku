@@ -4687,11 +4687,13 @@ void _TiRSITimer (void);
 char UgetNumUsuaris(void);
 void Uinit(void);
 void UcreateUser(void);
-void UsetData(char user[], char pass[]);
+void UenviaChar(char c, char pos);
+void UenviaPas(char c, char pos);
 void UmotorUsers(void);
 __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
 __bit UcheckExistsGetError(void);
+void escriureEEPROM(void);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1
@@ -4766,6 +4768,7 @@ void init_ports(void){
 # 69 "main.c"
 void main(void) {
     init_ports();
+    escriureEEPROM();
     TiInitTimer();
     TeInit();
     Sinit();
@@ -4779,7 +4782,7 @@ void main(void) {
 
         menu();
 
-
+        UmotorUsers();
         TeTeclat();
         SMotor();
         LcLCD();

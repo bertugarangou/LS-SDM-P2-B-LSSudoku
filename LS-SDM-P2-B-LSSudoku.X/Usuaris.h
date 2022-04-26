@@ -4,9 +4,11 @@
 char UgetNumUsuaris(void);
 void Uinit(void);
 void UcreateUser(void);
-void UsetData(char user[], char pass[]);
+void UenviaChar(char c, char pos);
+void UenviaPas(char c, char pos);
 void UmotorUsers(void);
 __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
 __bit UcheckExistsGetError(void);
+void escriureEEPROM(void);
 #endif
