@@ -4704,6 +4704,8 @@ __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
 __bit UcheckExistsGetError(void);
 void escriureEEPROM(void);
+__bit URegisterEnded(void);
+void URegister(void);
 # 5 "Menu.c" 2
 
 # 1 "./Ssms.h" 1
