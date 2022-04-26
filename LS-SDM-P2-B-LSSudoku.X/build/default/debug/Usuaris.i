@@ -4621,6 +4621,8 @@ __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
 __bit UcheckExistsGetError(void);
 void escriureEEPROM(void);
+__bit URegisterEnded(void);
+void URegister(void);
 # 2 "Usuaris.c" 2
 
 
@@ -4628,11 +4630,11 @@ unsigned char currentUsrIndex = 0;
 
 unsigned char numUsuaris = 0;
 __bit do_check_exists = 0;
-unsigned char indexLastUser;
+unsigned char indexNextUser;
 __bit return_error;
+__bit do_register = 0;
 unsigned char i;
 unsigned char j;
-unsigned char pos = 0;
 
 char tmpUsername[9];
 char tmpPassword[9];
@@ -4664,6 +4666,26 @@ void UenviaChar(char c, char pos){
 void UenviaPas(char c, char pos){
     tmpPassword[pos] = c;
 }
+
+__bit URegisterEnded(void){
+    return do_register;
+}
+void URegister(void){
+    do_register = 1;
+}
+void escriureCharEEPROM(char c, char pos){
+    EEADR = c;
+    EEDATA = pos;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    EECON1bits.WREN = 1;
+    INTCONbits.GIE = 0;
+    EECON2 = 85;
+    EECON2 = 170;
+     EECON1bits.WR = 1;
+    while(EECON1bits.WR){}
+   INTCONbits.GIE = 1;
+}
 void Uinit(){
 
 
@@ -4683,7 +4705,7 @@ void Uinit(){
     EECON1bits.CFGS = 0;
 
     while(EECON1bits.RD == 1){}
-    indexLastUser = EEDATA;
+    indexNextUser = EEDATA;
     EEADR++;
 
     for(char i = 0; i< numUsuaris; i++){
@@ -4722,19 +4744,22 @@ static char state = 0;
 
  switch(state) {
   case 0:
-   if (do_check_exists == 0) {
+   if (!do_check_exists && !do_register) {
+    i = 0;
+    j = 0;
    }
    else if (do_check_exists == 1) {
     return_error = 0;
-    i = 0;
-    j = 0;
     state = 1;
+   }
+   else if (do_register == 1) {
+    state = 2;
    }
   break;
   case 1:
    if (i < numUsuaris) {
     if(compareStrings(tmpUsername, usuaris[i].username) == 0){
-     return_error = 1;
+     return_error = i;
 
     }
     i++;
@@ -4742,6 +4767,30 @@ static char state = 0;
    }
    else if (i == numUsuaris) {
     do_check_exists = 0;
+    state = 0;
+   }
+  break;
+  case 2:
+   if (i != 8) {
+    escriureCharEEPROM(tmpUsername[i],indexNextUser++);
+    i++;
+    state = 2;
+   }
+   else if (i == 8) {
+    i = 0;
+    state = 3;
+   }
+  break;
+  case 3:
+   if (i != 8) {
+    escriureCharEEPROM(tmpPassword[i],indexNextUser++);
+    i++;
+    state = 3;
+   }
+   else if (i == 8) {
+    do_register = 0;
+    indexNextUser = ++indexNextUser;
+    if(numUsuaris != 8) numUsuaris++;
     state = 0;
    }
   break;

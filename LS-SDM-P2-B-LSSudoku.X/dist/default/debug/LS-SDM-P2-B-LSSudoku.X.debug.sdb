@@ -109,13 +109,15 @@
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
 "41
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
-"44
+"51
+[v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
+"64
 [v _Uinit Uinit `(v  1 e 1 0 ]
-"87
+"107
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"97
+"117
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
-"129
+"176
 [v _escriureEEPROM escriureEEPROM `(v  1 e 1 0 ]
 [s S42 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
@@ -392,7 +394,9 @@
 [v _s_ptr s_ptr `*.31uc  1 e 1 0 ]
 "24
 [v _nou_s nou_s `b  1 e 0 0 ]
-"9 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+"8 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+[v _tmp tmp `uc  1 e 1 0 ]
+"9
 [v _NovaTecla NovaTecla `c  1 e 1 0 ]
 "10
 [v _novaLletra novaLletra `c  1 e 1 0 ]
@@ -430,12 +434,14 @@
 "7
 [v _do_check_exists do_check_exists `b  1 e 0 0 ]
 "8
-[v _indexLastUser indexLastUser `uc  1 e 1 0 ]
+[v _indexNextUser indexNextUser `uc  1 e 1 0 ]
 "9
 [v _return_error return_error `b  1 e 0 0 ]
 "10
-[v _i i `uc  1 e 1 0 ]
+[v _do_register do_register `b  1 e 0 0 ]
 "11
+[v _i i `uc  1 e 1 0 ]
+"12
 [v _j j `uc  1 e 1 0 ]
 "14
 [v _tmpUsername tmpUsername `[9]uc  1 e 9 0 ]
@@ -525,37 +531,46 @@
 {
 "59
 } 0
-"129 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"176 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _escriureEEPROM escriureEEPROM `(v  1 e 1 0 ]
 {
-"130
+"177
 [v escriureEEPROM@caca caca `uc  1 a 1 5 ]
-"147
+"194
 } 0
-"97
+"117
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"98
+"118
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"127
+"174
 } 0
-"87
+"51
+[v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
+{
+[v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
+[v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
+[v escriureCharEEPROM@pos pos `uc  1 p 1 5 ]
+[v escriureCharEEPROM@c c `uc  1 a 1 6 ]
+"63
+} 0
+"107
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.30Cuc  1 p 1 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 6 ]
-"94
+"114
 } 0
-"44
+"64
 [v _Uinit Uinit `(v  1 e 1 0 ]
 {
-"75
-[v Uinit@j_1003 j `uc  1 a 1 9 ]
-"67
+"95
+[v Uinit@j_1016 j `uc  1 a 1 9 ]
+"87
 [v Uinit@j j `uc  1 a 1 8 ]
-"66
+"86
 [v Uinit@i i `uc  1 a 1 7 ]
-"85
+"105
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v _TiInitTimer TiInitTimer `(v  1 e 1 0 ]
