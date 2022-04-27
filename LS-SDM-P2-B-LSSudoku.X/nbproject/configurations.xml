@@ -10,6 +10,7 @@
       <itemPath>TiTTimer.h</itemPath>
       <itemPath>Usuaris.h</itemPath>
       <itemPath>Menu.h</itemPath>
+      <itemPath>Altaveu.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -25,6 +26,7 @@
       <itemPath>TiTTimer.c</itemPath>
       <itemPath>Menu.c</itemPath>
       <itemPath>Usuaris.c</itemPath>
+      <itemPath>Altaveu.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

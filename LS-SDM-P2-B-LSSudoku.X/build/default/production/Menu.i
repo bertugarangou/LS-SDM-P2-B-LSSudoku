@@ -4720,7 +4720,7 @@ void SMSoff (void);
 # 6 "Menu.c" 2
 
 
-unsigned char j;
+unsigned char tmp = 0;
 signed char NovaTecla = -1;
 signed char novaLletra = -1;
 char timerMenu;
@@ -4782,14 +4782,14 @@ void menu(void) {
    if (LcLliure()) {
     LcGotoXY(6,0);
     SMSon();
-    j =0;
+    tmp =0;
     state = 6;
    }
   break;
   case 6:
    if (novaLletra > 47 && NovaTecla != 10) {
     LcPutChar(novaLletra);
-    UenviaChar(novaLletra,j);
+    UenviaChar(novaLletra,tmp);
     state = 7;
    }
    else if (NovaTecla == 11) {
@@ -4797,25 +4797,25 @@ void menu(void) {
    }
   break;
   case 7:
-   if (j != 7 && NovaTecla != 11) {
-    j++;
+   if (tmp != 7 && NovaTecla != 11) {
+    tmp++;
     NovaTecla = -1;
     novaLletra = -1;
     state = 6;
    }
-   else if (j == 7 || NovaTecla == 11) {
+   else if (tmp == 7 || NovaTecla == 11) {
     LcGotoXY(6,1);
-    UenviaChar('\0',j);
+    UenviaChar('\0',tmp);
     NovaTecla = -1;
     novaLletra = -1;
-    j = 0;
+    tmp = 0;
     state = 8;
    }
   break;
   case 8:
    if (novaLletra > 47 && NovaTecla != 10) {
     LcPutChar(novaLletra);
-    UenviaPas(novaLletra,j);
+    UenviaPas(novaLletra,tmp);
     state = 9;
    }
    else if (NovaTecla == 11) {
@@ -4823,17 +4823,17 @@ void menu(void) {
    }
   break;
   case 9:
-   if (j != 7 && NovaTecla != 11) {
-    j++;
+   if (tmp != 7 && NovaTecla != 11) {
+    tmp++;
     NovaTecla = -1;
     novaLletra = -1;
     state = 8;
    }
-   else if (j == 7 || NovaTecla == 11) {
-    UenviaPas('\0',j);
+   else if (tmp == 7 || NovaTecla == 11) {
+    UenviaPas('\0',tmp);
     NovaTecla = -1;
     novaLletra = -1;
-    j = 0;
+    tmp = 0;
     LcClear();
     UcheckExists();
     SMSoff();

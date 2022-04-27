@@ -1,4 +1,4 @@
-# 1 "Usuaris.c"
+# 1 "Altaveu.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Usuaris.c" 2
+# 1 "Altaveu.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,215 +4605,93 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "Usuaris.c" 2
+# 1 "Altaveu.c" 2
 
-# 1 "./Usuaris.h" 1
-
-
-
-char UgetNumUsuaris(void);
-void Uinit(void);
-void UcreateUser(void);
-void UenviaChar(char c, char pos);
-void UenviaPas(char c, char pos);
-void UmotorUsers(void);
-__bit UcheckExistsNotFinished(void);
-void UcheckExists(void);
-__bit UcheckExistsGetError(void);
-void escriureEEPROM(void);
-__bit URegisterEnded(void);
-void URegister(void);
-# 2 "Usuaris.c" 2
+# 1 "./Altaveu.h" 1
 
 
-unsigned char currentUsrIndex = 0;
+    void motorAltaveu(void);
+    void initAltaveu(void);
+    void playAltaveu(void);
+# 2 "Altaveu.c" 2
 
-unsigned char numUsuaris = 0;
-__bit do_check_exists = 0;
-unsigned char indexNextUser;
-__bit return_error;
-__bit do_register = 0;
-unsigned char i;
-unsigned char j;
-
-char tmpUsername[9];
-char tmpPassword[9];
-
-typedef struct{
-    char username[9];
-    char password[9];
-    unsigned char scores[5];
-}Usuari;
-Usuari usuaris[8];
+# 1 "./TiTTimer.h" 1
 
 
-char UgetNumUsuaris(void){
-    return numUsuaris;
-}
 
-void UcheckExists(void){
-    do_check_exists = 1;
-}
-__bit UcheckExistsNotFinished(void){
-    return do_check_exists;
-}
-__bit UcheckExistsGetError(){
-    return return_error;
-}
-void UenviaChar(char c, char pos){
-    tmpUsername[pos] = c;
-}
-void UenviaPas(char c, char pos){
-    tmpPassword[pos] = c;
-}
+void TiInitTimer(void);
 
-__bit URegisterEnded(void){
-    return do_register;
-}
-void URegister(void){
-    do_register = 1;
-}
-void escriureCharEEPROM(char c, char pos){
-    EEADR = c;
-    EEDATA = pos;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-    EECON1bits.WREN = 1;
-    INTCONbits.GIE = 0;
-    EECON2 = 85;
-    EECON2 = 170;
-     EECON1bits.WR = 1;
-    while(EECON1bits.WR){}
-   INTCONbits.GIE = 1;
-}
-void Uinit(){
+
+
+void TiResetTics(char Handle);
+
+
+
+int TiGetTics(char Handle);
 
 
 
 
-    EEADR = 0;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-    EECON1bits.RD = 1;
-    while(EECON1bits.RD == 1){}
-    numUsuaris = EEDATA;
+char TiGetTimer(void);
 
 
 
-    EEADR++;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
 
-    while(EECON1bits.RD == 1){}
-    indexNextUser = EEDATA;
-    EEADR++;
+void TiFreeTimer (char Handle);
 
-    for(char i = 0; i< numUsuaris; i++){
-        for(char j = 0; j<9; j++){
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].username[j] = EEDATA;
-            EEADR++;
-        }
-        for(char j = 0; j<9; j++){
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].password[j] = EEDATA;
-            EEADR++;
-        }
-    }
+
+
+void _TiRSITimer (void);
+# 3 "Altaveu.c" 2
+
+
+__bit reproduir = 0;
+unsigned char nota;
+char timerAltaveu;
+unsigned char copsNota;
+
+void initAltaveu(void){
+    timerAltaveu = TiGetTimer();
 
 }
-
-char compareStrings(const char *a, const char *b){
-    while (*a){
-        if (*a != *b)break;
-        a++;
-        b++;
-    }
-    return *(const unsigned char*)a - *(const unsigned char*)b;
+void playAltaveu(void){
+    reproduir = 1;
 }
-
-
-void UmotorUsers(){
+void motorAltaveu(void){
 static char state = 0;
 
  switch(state) {
   case 0:
-   if (!do_check_exists && !do_register) {
-    i = 0;
-    j = 0;
-   }
-   else if (do_check_exists == 1) {
-    return_error = 0;
+   if (reproduir) {
+    nota = 1;
+    copsNota = 0;
+    TiResetTics(timerAltaveu);
     state = 1;
-   }
-   else if (do_register == 1) {
-    state = 2;
    }
   break;
   case 1:
-   if (i < numUsuaris) {
-    if(compareStrings(tmpUsername, usuaris[i].username) == 0){
-     return_error = i;
-
-    }
-    i++;
+   if (nota > 5) {
+    reproduir = 0;
+    state = 0;
+   }
+   else if (copsNota == 168) {
+    nota++;
+    copsNota = 0;
     state = 1;
    }
-   else if (i == numUsuaris) {
-    do_check_exists = 0;
-    state = 0;
+   else if (TiGetTics(timerAltaveu) > nota) {
+    LATBbits.LB0 = 1;
+    TiResetTics(timerAltaveu);
+    state = 2;
    }
   break;
   case 2:
-   if (i != 8) {
-    escriureCharEEPROM(tmpUsername[i],indexNextUser++);
-    i++;
-    state = 2;
-   }
-   else if (i == 8) {
-    i = 0;
-    state = 3;
-   }
-  break;
-  case 3:
-   if (i != 8) {
-    escriureCharEEPROM(tmpPassword[i],indexNextUser++);
-    i++;
-    state = 3;
-   }
-   else if (i == 8) {
-    do_register = 0;
-    indexNextUser = ++indexNextUser;
-    if(numUsuaris != 8) numUsuaris++;
-    state = 0;
+   if (TiGetTics(timerAltaveu) > nota) {
+    LATBbits.LB0 = 0;
+    TiResetTics(timerAltaveu);
+    copsNota++;
+    state = 1;
    }
   break;
  }
-
-}
-
-void escriureEEPROM(){
-    for(unsigned char caca = 0; caca < 160; caca++){
-        EEADR = 0;
-        EEDATA = 0;
-        EECON1bits.EEPGD = 0;
-        EECON1bits.CFGS = 0;
-        EECON1bits.WREN = 1;
-        INTCONbits.GIE = 0;
-        EECON2 = 85;
-        EECON2 = 170;
-         EECON1bits.WR = 1;
-        while(EECON1bits.WR){
-
-
-
-        }
-    }
-   INTCONbits.GIE = 1;
 }

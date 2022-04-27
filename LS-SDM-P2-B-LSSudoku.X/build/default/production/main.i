@@ -4732,6 +4732,14 @@ void SMSon(void);
 void SMSoff (void);
 # 8 "main.c" 2
 
+# 1 "./Altaveu.h" 1
+
+
+    void motorAltaveu(void);
+    void initAltaveu(void);
+    void playAltaveu(void);
+# 9 "main.c" 2
+
 
 #pragma config OSC = HSPLL
 #pragma config PBADEN = DIG
@@ -4756,9 +4764,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 42 "main.c"
+# 43 "main.c"
     TRISC = 0xC0;
-# 52 "main.c"
+# 53 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4767,7 +4775,7 @@ void init_ports(void){
     EECON1bits.CFGS = 0;
 
 }
-# 69 "main.c"
+# 70 "main.c"
 void main(void) {
     init_ports();
     escriureEEPROM();
@@ -4776,6 +4784,8 @@ void main(void) {
     Sinit();
     SMotor();
     Uinit();
+    initAltaveu();
+    playAltaveu();
 
     LcInit(2,16);
     Minit();
@@ -4783,7 +4793,7 @@ void main(void) {
     while(1){
 
         menu();
-
+        motorAltaveu();
         UmotorUsers();
         TeTeclat();
         SMotor();

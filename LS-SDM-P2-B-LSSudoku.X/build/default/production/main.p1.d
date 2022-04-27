@@ -5,4 +5,5 @@ TiTTimer.h  \
 Usuaris.h  \
 Menu.h  \
 TeTeclat.h  \
-Ssms.h 
+Ssms.h  \
+Altaveu.h 

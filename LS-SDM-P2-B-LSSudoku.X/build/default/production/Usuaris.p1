@@ -1042,8 +1042,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Usuaris.c: 166:     do_register = 0;
 [e = _do_register -> -> 0 `i `b ]
 "167
-[; ;Usuaris.c: 167:     indexNextUser = ++indexNextUser;
-[e = _indexNextUser =+ _indexNextUser -> -> 1 `i `uc ]
+[; ;Usuaris.c: 167:     indexNextUser++;
+[e ++ _indexNextUser -> -> 1 `i `uc ]
 "168
 [; ;Usuaris.c: 168:     if(numUsuaris != 8) numUsuaris++;
 [e $ ! != -> _numUsuaris `i -> 8 `i 343  ]

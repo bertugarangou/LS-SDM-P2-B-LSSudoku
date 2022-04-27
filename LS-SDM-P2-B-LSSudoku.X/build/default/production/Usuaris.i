@@ -4789,7 +4789,7 @@ static char state = 0;
    }
    else if (i == 8) {
     do_register = 0;
-    indexNextUser = ++indexNextUser;
+    indexNextUser++;
     if(numUsuaris != 8) numUsuaris++;
     state = 0;
    }

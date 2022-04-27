@@ -456,8 +456,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "8 Menu.c
-[; ;Menu.c: 8: unsigned char j;
-[v _j `uc ~T0 @X0 1 e ]
+[; ;Menu.c: 8: unsigned char tmp = 0;
+[v _tmp `uc ~T0 @X0 1 e ]
+[i _tmp
+-> -> 0 `i `uc
+]
 "9
 [; ;Menu.c: 9: signed char NovaTecla = -1;
 [v _NovaTecla `c ~T0 @X0 1 e ]
@@ -668,8 +671,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 69:     SMSon();
 [e ( _SMSon ..  ]
 "70
-[; ;Menu.c: 70:     j =0;
-[e = _j -> -> 0 `i `uc ]
+[; ;Menu.c: 70:     tmp =0;
+[e = _tmp -> -> 0 `i `uc ]
 "71
 [; ;Menu.c: 71:     state = 6;
 [e = F2628 -> -> 6 `i `uc ]
@@ -691,8 +694,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 76:     LcPutChar(novaLletra);
 [e ( _LcPutChar (1 -> _novaLletra `uc ]
 "77
-[; ;Menu.c: 77:     UenviaChar(novaLletra,j);
-[e ( _UenviaChar (2 , -> _novaLletra `uc -> _j `uc ]
+[; ;Menu.c: 77:     UenviaChar(novaLletra,tmp);
+[e ( _UenviaChar (2 , -> _novaLletra `uc -> _tmp `uc ]
 "78
 [; ;Menu.c: 78:     state = 7;
 [e = F2628 -> -> 7 `i `uc ]
@@ -720,12 +723,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 84:   case 7:
 [e :U 302 ]
 "85
-[; ;Menu.c: 85:    if (j != 7 && NovaTecla != 11) {
-[e $ ! && != -> _j `i -> 7 `i != -> _NovaTecla `i -> 11 `i 303  ]
+[; ;Menu.c: 85:    if (tmp != 7 && NovaTecla != 11) {
+[e $ ! && != -> _tmp `i -> 7 `i != -> _NovaTecla `i -> 11 `i 303  ]
 {
 "86
-[; ;Menu.c: 86:     j++;
-[e ++ _j -> -> 1 `i `uc ]
+[; ;Menu.c: 86:     tmp++;
+[e ++ _tmp -> -> 1 `i `uc ]
 "87
 [; ;Menu.c: 87:     NovaTecla = -1;
 [e = _NovaTecla -> -U -> 1 `i `c ]
@@ -740,16 +743,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 304  ]
 "91
-[; ;Menu.c: 91:    else if (j == 7 || NovaTecla == 11) {
+[; ;Menu.c: 91:    else if (tmp == 7 || NovaTecla == 11) {
 [e :U 303 ]
-[e $ ! || == -> _j `i -> 7 `i == -> _NovaTecla `i -> 11 `i 305  ]
+[e $ ! || == -> _tmp `i -> 7 `i == -> _NovaTecla `i -> 11 `i 305  ]
 {
 "92
 [; ;Menu.c: 92:     LcGotoXY(6,1);
 [e ( _LcGotoXY (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
 "93
-[; ;Menu.c: 93:     UenviaChar('\0',j);
-[e ( _UenviaChar (2 , -> -> 0 `ui `uc -> _j `uc ]
+[; ;Menu.c: 93:     UenviaChar('\0',tmp);
+[e ( _UenviaChar (2 , -> -> 0 `ui `uc -> _tmp `uc ]
 "94
 [; ;Menu.c: 94:     NovaTecla = -1;
 [e = _NovaTecla -> -U -> 1 `i `c ]
@@ -757,8 +760,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 95:     novaLletra = -1;
 [e = _novaLletra -> -U -> 1 `i `c ]
 "96
-[; ;Menu.c: 96:     j = 0;
-[e = _j -> -> 0 `i `uc ]
+[; ;Menu.c: 96:     tmp = 0;
+[e = _tmp -> -> 0 `i `uc ]
 "97
 [; ;Menu.c: 97:     state = 8;
 [e = F2628 -> -> 8 `i `uc ]
@@ -781,8 +784,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 102:     LcPutChar(novaLletra);
 [e ( _LcPutChar (1 -> _novaLletra `uc ]
 "103
-[; ;Menu.c: 103:     UenviaPas(novaLletra,j);
-[e ( _UenviaPas (2 , -> _novaLletra `uc -> _j `uc ]
+[; ;Menu.c: 103:     UenviaPas(novaLletra,tmp);
+[e ( _UenviaPas (2 , -> _novaLletra `uc -> _tmp `uc ]
 "104
 [; ;Menu.c: 104:     state = 9;
 [e = F2628 -> -> 9 `i `uc ]
@@ -810,12 +813,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 110:   case 9:
 [e :U 310 ]
 "111
-[; ;Menu.c: 111:    if (j != 7 && NovaTecla != 11) {
-[e $ ! && != -> _j `i -> 7 `i != -> _NovaTecla `i -> 11 `i 311  ]
+[; ;Menu.c: 111:    if (tmp != 7 && NovaTecla != 11) {
+[e $ ! && != -> _tmp `i -> 7 `i != -> _NovaTecla `i -> 11 `i 311  ]
 {
 "112
-[; ;Menu.c: 112:     j++;
-[e ++ _j -> -> 1 `i `uc ]
+[; ;Menu.c: 112:     tmp++;
+[e ++ _tmp -> -> 1 `i `uc ]
 "113
 [; ;Menu.c: 113:     NovaTecla = -1;
 [e = _NovaTecla -> -U -> 1 `i `c ]
@@ -830,13 +833,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 312  ]
 "117
-[; ;Menu.c: 117:    else if (j == 7 || NovaTecla == 11) {
+[; ;Menu.c: 117:    else if (tmp == 7 || NovaTecla == 11) {
 [e :U 311 ]
-[e $ ! || == -> _j `i -> 7 `i == -> _NovaTecla `i -> 11 `i 313  ]
+[e $ ! || == -> _tmp `i -> 7 `i == -> _NovaTecla `i -> 11 `i 313  ]
 {
 "118
-[; ;Menu.c: 118:     UenviaPas('\0',j);
-[e ( _UenviaPas (2 , -> -> 0 `ui `uc -> _j `uc ]
+[; ;Menu.c: 118:     UenviaPas('\0',tmp);
+[e ( _UenviaPas (2 , -> -> 0 `ui `uc -> _tmp `uc ]
 "119
 [; ;Menu.c: 119:     NovaTecla = -1;
 [e = _NovaTecla -> -U -> 1 `i `c ]
@@ -844,8 +847,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 120:     novaLletra = -1;
 [e = _novaLletra -> -U -> 1 `i `c ]
 "121
-[; ;Menu.c: 121:     j = 0;
-[e = _j -> -> 0 `i `uc ]
+[; ;Menu.c: 121:     tmp = 0;
+[e = _tmp -> -> 0 `i `uc ]
 "122
 [; ;Menu.c: 122:     LcClear();
 [e ( _LcClear ..  ]

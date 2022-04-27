@@ -6,6 +6,7 @@
 #include "Menu.h"
 #include "TeTeclat.h"
 #include "Ssms.h"
+#include "Altaveu.h"
 
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
@@ -74,6 +75,8 @@ void main(void) {
     Sinit();
     SMotor();
     Uinit();
+    initAltaveu();
+    playAltaveu();
     
     LcInit(2,16);
     Minit();
@@ -81,7 +84,7 @@ void main(void) {
     while(1){
 
         menu();
-        
+        motorAltaveu();
         UmotorUsers();
         TeTeclat();//antapenultim
         SMotor(); //penultim
