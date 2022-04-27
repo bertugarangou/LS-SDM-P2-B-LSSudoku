@@ -10,6 +10,7 @@ signed char NovaTecla = -1;
 signed char novaLletra = -1;
 char timerMenu;
 __bit loginNOTRegister;
+unsigned char menuDalt = 0;
 
 void Minit(void){
     timerMenu = TiGetTimer();

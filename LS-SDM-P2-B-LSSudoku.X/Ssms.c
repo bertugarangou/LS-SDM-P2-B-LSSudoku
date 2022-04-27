@@ -15,11 +15,11 @@ __bit setSMSon = 0;
 
 void Sinit(void){
     timerSMS = TiGetTimer();
-    
 }
 
 void SMotor(void) {
 	static char state = 0;
+
 	switch(state) {
 		case 0:
 			if (novaTecla != -1 && setSMSon == 1) {
@@ -28,52 +28,63 @@ void SMotor(void) {
 			}
 			else if (novaTecla == -1 && TiGetTics(timerSMS)>= TSMS && lletraASCII != -1  && setSMSon == 1) {
 				MNovaLletra(lletraASCII);
-				lletraASCII = neg;
-				ultimaTecla = neg;
+				lletraASCII = -1;
+				ultimaTecla = -1;
+				state = 0;
 			}
 		break;
 		case 1:
 			if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < TSMS) {
-				novaTecla = neg;
+				novaTecla = -1;
 				sumaPulsacions++;
-				lletraASCII++;
-				state++;
+				if(!(lletraASCII == '0' || lletraASCII == ' ')){
+				  lletraASCII++;
+				}
+				state = 2;
 			}
 			else if (novaTecla != -1 && novaTecla != ultimaTecla) {
-				MNovaLletra(lletraASCII); //falta menu
-				lletraASCII = lletraInici[novaTecla-2];
+				MNovaLletra(lletraASCII);
+				if(novaTecla == 0){
+					if(sumaPulsacions == 1) lletraASCII = '0';
+					else lletraASCII = ' ';
+				}else{
+				  lletraASCII = lletraInici[novaTecla-2];
+				}
 				ultimaTecla = novaTecla;
 				sumaPulsacions = 0;
-				novaTecla = neg;
-				state--;
+				novaTecla = -1;
+				state = 0;
 			}
 		break;
 		case 2:
-			if (ultimaTecla != 7 && ultimaTecla != 9) {
+			if (ultimaTecla != 7 && ultimaTecla != 9 && ultimaTecla != 0) {
 				state = 5;
 			}
 			else if (ultimaTecla == 7 || ultimaTecla == 9) {
 				state = 6;
 			}
+			else if (ultimaTecla == 0) {
+				state = 7;
+			}
 		break;
 		case 3:
-			if (novaTecla > 1 && novaTecla < 10) {
+			if ((novaTecla > 1 || novaTecla == 0) && novaTecla < 10) {
 				state = 1;
 			}
 			else if (novaTecla <= 1 && lletraASCII == -1) {
-				MNovaLletra(novaTecla+48);//falta menu
-				novaTecla = neg;
+				MNovaLletra(novaTecla+48);
+				novaTecla = -1;
 				state = 0;
 			}
 			else if (novaTecla <= 1 && lletraASCII != -1) {
-				MNovaLletra(lletraASCII);//falta menu
-				lletraASCII = neg;
-				state++;
+				MNovaLletra(lletraASCII);
+				lletraASCII = -1;
+				state = 4;
 			}
 		break;
 		case 4:
 			MNovaLletra(novaTecla+48);
-			novaTecla = neg;
+			novaTecla = -1;
 			state = 0;
 		break;
 		case 5:
@@ -101,6 +112,20 @@ void SMotor(void) {
 				state = 0;
 			}
 			else if (sumaPulsacions < 4) {
+				state = 0;
+			}
+		break;
+		case 7:
+			if (sumaPulsacions == 2) {
+				lletraASCII = ' ';
+				state = 0;
+			}
+			else if (sumaPulsacions == 3) {
+				lletraASCII = '0';
+				sumaPulsacions = 0;
+				state = 0;
+			}
+			else if (sumaPulsacions < 2) {
 				state = 0;
 			}
 		break;

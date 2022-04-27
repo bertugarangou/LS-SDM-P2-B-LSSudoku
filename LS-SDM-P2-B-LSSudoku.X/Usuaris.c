@@ -6,10 +6,11 @@ unsigned char currentUsrIndex = 0;
 unsigned char numUsuaris = 0;
 __bit do_check_exists = 0;
 unsigned char indexNextUser;
-__bit return_error;
+unsigned char indexNextUserStruct;
 __bit do_register = 0;
 unsigned char i;
 unsigned char j;
+unsigned char usuariLoguejat;
 
 char tmpUsername[9];
 char tmpPassword[9];
@@ -33,7 +34,7 @@ __bit UcheckExistsNotFinished(void){    //saber si ha acabat de comprovar
     return do_check_exists;
 }
 __bit UcheckExistsGetError(){//saber si existeix 1 o no 0
-    return return_error;
+    return usuariLoguejat;
 }
 void UenviaChar(char c, char pos){
     tmpUsername[pos] = c;
@@ -124,7 +125,7 @@ static char state = 0;
 				j = 0;
 			}
 			else if (do_check_exists == 1) {
-				return_error = 0;
+				usuariLoguejat = 0;
 				state = 1;
 			}
 			else if (do_register == 1) {
@@ -134,7 +135,7 @@ static char state = 0;
 		case 1:
 			if (i < numUsuaris) {
 				if(compareStrings(tmpUsername, usuaris[i].username) == 0){
-					return_error = i;
+					usuariLoguejat = i;
 				//si son iguals;
 				}
 				i++;
@@ -148,6 +149,7 @@ static char state = 0;
 		case 2:
 			if (i != 8) {
 				escriureCharEEPROM(tmpUsername[i],indexNextUser++);
+				usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
 				i++;
 				state = 2;
 			}
@@ -159,12 +161,16 @@ static char state = 0;
 		case 3:
 			if (i != 8) {
 				escriureCharEEPROM(tmpPassword[i],indexNextUser++);
+				usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
 				i++;
 				state = 3;
 			}
 			else if (i == 8) {
 				do_register = 0;
 				indexNextUser++;
+				if(indexNextUser == 159) indexNextUser = 16;
+				indexNextUserStruct++;
+				if(indexNextUserStruct == 8) indexNextUserStruct = 0;
 				if(numUsuaris != 8) numUsuaris++;
 				state = 0;
 			}

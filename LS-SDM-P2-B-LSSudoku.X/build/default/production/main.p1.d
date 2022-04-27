@@ -6,4 +6,5 @@ Usuaris.h  \
 Menu.h  \
 TeTeclat.h  \
 Ssms.h  \
-Altaveu.h 
+Altaveu.h  \
+GestioLCD.h 

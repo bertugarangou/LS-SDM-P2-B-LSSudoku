@@ -4740,6 +4740,17 @@ void SMSoff (void);
     void playAltaveu(void);
 # 9 "main.c" 2
 
+# 1 "./GestioLCD.h" 1
+
+
+
+void GLCDMostraMenu(unsigned char num);
+void GLCDInit(void);
+void GLCDMotor(void);
+void SiFerMenu(void);
+void NoFerMenu(void);
+# 10 "main.c" 2
+
 
 #pragma config OSC = HSPLL
 #pragma config PBADEN = DIG
@@ -4764,9 +4775,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 43 "main.c"
+# 44 "main.c"
     TRISC = 0xC0;
-# 53 "main.c"
+# 54 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4775,7 +4786,7 @@ void init_ports(void){
     EECON1bits.CFGS = 0;
 
 }
-# 70 "main.c"
+# 71 "main.c"
 void main(void) {
     init_ports();
     escriureEEPROM();
@@ -4785,16 +4796,18 @@ void main(void) {
     SMotor();
     Uinit();
     initAltaveu();
-    playAltaveu();
+    GLCDInit();
 
     LcInit(2,16);
     Minit();
 
     while(1){
 
+
         menu();
         motorAltaveu();
         UmotorUsers();
+        GLCDMotor();
         TeTeclat();
         SMotor();
         LcLCD();
