@@ -497,8 +497,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Usuaris.c: 12: unsigned char j;
 [v _j `uc ~T0 @X0 1 e ]
 "13
-[; ;Usuaris.c: 13: unsigned char usuariLoguejat;
-[v _usuariLoguejat `uc ~T0 @X0 1 e ]
+[; ;Usuaris.c: 13: signed char usuariLoguejat = -1;
+[v _usuariLoguejat `c ~T0 @X0 1 e ]
+[i _usuariLoguejat
+-> -U -> 1 `i `c
+]
 "15
 [; ;Usuaris.c: 15: char tmpUsername[9];
 [v _tmpUsername `uc ~T0 @X0 -> 9 `i e ]
@@ -890,8 +893,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _do_check_exists `i -> 1 `i 326  ]
 {
 "129
-[; ;Usuaris.c: 129:     usuariLoguejat = 0;
-[e = _usuariLoguejat -> -> 0 `i `uc ]
+[; ;Usuaris.c: 129:     usuariLoguejat = -1;
+[e = _usuariLoguejat -> -U -> 1 `i `c ]
 "130
 [; ;Usuaris.c: 130:     state = 1;
 [e = F2613 -> -> 1 `i `uc ]
@@ -929,7 +932,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "139
 [; ;Usuaris.c: 139:      usuariLoguejat = i;
-[e = _usuariLoguejat _i ]
+[e = _usuariLoguejat -> _i `c ]
 "141
 [; ;Usuaris.c: 141:     }
 }

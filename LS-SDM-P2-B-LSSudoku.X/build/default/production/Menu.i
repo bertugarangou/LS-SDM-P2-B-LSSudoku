@@ -4856,15 +4856,18 @@ void menu(void) {
    }
   break;
   case 11:
-   if (loginNOTRegister == 0 && UcheckExistsGetError() == 0) {
+            if(1==1){
+                state = 12;
+            }
+            else if (!loginNOTRegister && UcheckExistsGetError() == -1) {
     URegister();
     loginNOTRegister = 1;
     state = 3;
    }
-   else if (loginNOTRegister == 1 && UcheckExistsGetError() == 1) {
+   else if (loginNOTRegister == 1 && UcheckExistsGetError()) {
     state = 12;
    }
-   else if (loginNOTRegister ^ UcheckExistsGetError()) {
+   else if (loginNOTRegister && UcheckExistsGetError() == -1 || !loginNOTRegister && UcheckExistsGetError()) {
     state = 0;
    }
   break;

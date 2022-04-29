@@ -3,12 +3,12 @@
 #include "LcTLCD.h"
 #include "GestioLCD.h"
 
-const char menuList[][22] = {
-    "1. Play a Game",
-    "2. Modify Time",
-    "3. Show General Top 5 Scores ",
-    "4. Logout",
-    "5. Show All Users"
+const char menuList[][29] = {
+    "1.Play a Game",
+    "2.Modify Time",
+    "3.Show General Top 5 Scores ",
+    "4.Logout",
+    "5.Show All Users"
 };
 
 char timerGLCD=0;
@@ -75,18 +75,18 @@ void GLCDMotor(void) {
 			}
 		break;
 		case 6:
-			if (menuDaltGLCD<5) {
+			if (menuDaltGLCD<4) {
 				state++;
 			}
-			else if (menuDaltGLCD >= 5) {
+			else if (menuDaltGLCD >= 4) {
 				state = 0;
 			}
 		break;
 		case 5:
-			if (LcLliure() && menuDaltGLCD<5) {
+			if (LcLliure() && menuDaltGLCD<4) {
 				state = 7;
 			}
-			else if (LcLliure() && menuDaltGLCD >= 5) {
+			else if (LcLliure() && menuDaltGLCD >= 4) {
 				state = 0;
 			}
 		break;
@@ -107,13 +107,13 @@ void GLCDMotor(void) {
 			}
 		break;
 		case 1:
-			if (menuList[menuDaltGLCD][length1] == '\0' && menuDaltGLCD>=5) {
+			if (menuList[menuDaltGLCD][length1] == '\0' && menuDaltGLCD>=4) {
 				state++;
 			}
 			else if (menuList[menuDaltGLCD][length1] != '\0') {
 				length1++;
 			}
-			else if (menuDaltGLCD<5 && menuList[menuDaltGLCD][length1] == '\0') {
+			else if (menuDaltGLCD<4 && menuList[menuDaltGLCD][length1] == '\0') {
 				state = 13;
 			}
 		break;
@@ -146,7 +146,7 @@ void GLCDMotor(void) {
 			}
 		break;
 		case 11:
-			if (TiGetTics(timerGLCD)>= 2000 && newString == 0 && ferMenu == 1) {
+			if (TiGetTics(timerGLCD)>= 1205 && newString == 0 && ferMenu == 1) {
 				LcClear();
 				state = 2;
 			}

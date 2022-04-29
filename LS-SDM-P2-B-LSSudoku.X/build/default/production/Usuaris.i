@@ -4635,7 +4635,7 @@ unsigned char indexNextUserStruct;
 __bit do_register = 0;
 unsigned char i;
 unsigned char j;
-unsigned char usuariLoguejat;
+signed char usuariLoguejat = -1;
 
 char tmpUsername[9];
 char tmpPassword[9];
@@ -4751,7 +4751,7 @@ static char state = 0;
     j = 0;
    }
    else if (do_check_exists == 1) {
-    usuariLoguejat = 0;
+    usuariLoguejat = -1;
     state = 1;
    }
    else if (do_register == 1) {

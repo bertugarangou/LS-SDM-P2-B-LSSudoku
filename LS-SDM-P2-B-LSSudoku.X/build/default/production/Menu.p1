@@ -902,114 +902,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 134:   case 11:
 [e :U 316 ]
 "135
-[; ;Menu.c: 135:    if (loginNOTRegister == 0 && UcheckExistsGetError() == 0) {
-[e $ ! && == -> _loginNOTRegister `i -> 0 `i == -> ( _UcheckExistsGetError ..  `i -> 0 `i 317  ]
+[; ;Menu.c: 135:             if(1==1){
+[e $ ! == -> 1 `i -> 1 `i 317  ]
 {
 "136
-[; ;Menu.c: 136:     URegister();
-[e ( _URegister ..  ]
+[; ;Menu.c: 136:                 state = 12;
+[e = F2634 -> -> 12 `i `uc ]
 "137
-[; ;Menu.c: 137:     loginNOTRegister = 1;
-[e = _loginNOTRegister -> -> 1 `i `b ]
-"138
-[; ;Menu.c: 138:     state = 3;
-[e = F2634 -> -> 3 `i `uc ]
-"139
-[; ;Menu.c: 139:    }
+[; ;Menu.c: 137:             }
 }
 [e $U 318  ]
-"140
-[; ;Menu.c: 140:    else if (loginNOTRegister == 1 && UcheckExistsGetError() == 1) {
+"138
+[; ;Menu.c: 138:             else if (!loginNOTRegister && UcheckExistsGetError() == -1) {
 [e :U 317 ]
-[e $ ! && == -> _loginNOTRegister `i -> 1 `i == -> ( _UcheckExistsGetError ..  `i -> 1 `i 319  ]
+[e $ ! && ! _loginNOTRegister == -> ( _UcheckExistsGetError ..  `i -U -> 1 `i 319  ]
 {
+"139
+[; ;Menu.c: 139:     URegister();
+[e ( _URegister ..  ]
+"140
+[; ;Menu.c: 140:     loginNOTRegister = 1;
+[e = _loginNOTRegister -> -> 1 `i `b ]
 "141
-[; ;Menu.c: 141:     state = 12;
-[e = F2634 -> -> 12 `i `uc ]
+[; ;Menu.c: 141:     state = 3;
+[e = F2634 -> -> 3 `i `uc ]
 "142
 [; ;Menu.c: 142:    }
 }
 [e $U 320  ]
 "143
-[; ;Menu.c: 143:    else if (loginNOTRegister ^ UcheckExistsGetError()) {
+[; ;Menu.c: 143:    else if (loginNOTRegister == 1 && UcheckExistsGetError()) {
 [e :U 319 ]
-[e $ ! ^ _loginNOTRegister ( _UcheckExistsGetError ..  321  ]
+[e $ ! && == -> _loginNOTRegister `i -> 1 `i ( _UcheckExistsGetError ..  321  ]
 {
 "144
-[; ;Menu.c: 144:     state = 0;
-[e = F2634 -> -> 0 `i `uc ]
+[; ;Menu.c: 144:     state = 12;
+[e = F2634 -> -> 12 `i `uc ]
 "145
 [; ;Menu.c: 145:    }
 }
+[e $U 322  ]
+"146
+[; ;Menu.c: 146:    else if (loginNOTRegister && UcheckExistsGetError() == -1 || !loginNOTRegister && UcheckExistsGetError()) {
 [e :U 321 ]
+[e $ ! || && _loginNOTRegister == -> ( _UcheckExistsGetError ..  `i -U -> 1 `i && ! _loginNOTRegister ( _UcheckExistsGetError ..  323  ]
+{
+"147
+[; ;Menu.c: 147:     state = 0;
+[e = F2634 -> -> 0 `i `uc ]
+"148
+[; ;Menu.c: 148:    }
+}
+[e :U 323 ]
+[e :U 322 ]
 [e :U 320 ]
 [e :U 318 ]
-"146
-[; ;Menu.c: 146:   break;
-[e $U 284  ]
-"147
-[; ;Menu.c: 147:   case 12:
-[e :U 322 ]
-"148
-[; ;Menu.c: 148:    LcClear();
-[e ( _LcClear ..  ]
 "149
-[; ;Menu.c: 149:    SiFerMenu();
-[e ( _SiFerMenu ..  ]
+[; ;Menu.c: 149:   break;
+[e $U 284  ]
 "150
-[; ;Menu.c: 150:    GLCDMostraMenu(menuDalt);
-[e ( _GLCDMostraMenu (1 _menuDalt ]
-"151
-[; ;Menu.c: 151:    NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"152
-[; ;Menu.c: 152:    state = 13;
-[e = F2634 -> -> 13 `i `uc ]
-"153
-[; ;Menu.c: 153:   break;
-[e $U 284  ]
-"154
-[; ;Menu.c: 154:   case 13:
-[e :U 323 ]
-"155
-[; ;Menu.c: 155:    if (NovaTecla == 8) {
-[e $ ! == -> _NovaTecla `i -> 8 `i 324  ]
-{
-"156
-[; ;Menu.c: 156:     if(menuDalt < 4) menuDalt++;
-[e $ ! < -> _menuDalt `i -> 4 `i 325  ]
-[e ++ _menuDalt -> -> 1 `i `uc ]
-[e :U 325 ]
-"157
-[; ;Menu.c: 157:     state = 12;
-[e = F2634 -> -> 12 `i `uc ]
-"158
-[; ;Menu.c: 158:    }
-}
-[e $U 326  ]
-"159
-[; ;Menu.c: 159:    else if (NovaTecla == 2) {
+[; ;Menu.c: 150:   case 12:
 [e :U 324 ]
-[e $ ! == -> _NovaTecla `i -> 2 `i 327  ]
-{
-"160
-[; ;Menu.c: 160:     if(menuDalt > 0) menuDalt--;
-[e $ ! > -> _menuDalt `i -> 0 `i 328  ]
-[e -- _menuDalt -> -> 1 `i `uc ]
-[e :U 328 ]
-"161
-[; ;Menu.c: 161:     state = 12;
-[e = F2634 -> -> 12 `i `uc ]
-"162
-[; ;Menu.c: 162:    }
-}
-[e :U 327 ]
-[e :U 326 ]
-"163
-[; ;Menu.c: 163:   break;
+"151
+[; ;Menu.c: 151:    LcClear();
+[e ( _LcClear ..  ]
+"152
+[; ;Menu.c: 152:    SiFerMenu();
+[e ( _SiFerMenu ..  ]
+"153
+[; ;Menu.c: 153:    GLCDMostraMenu(menuDalt);
+[e ( _GLCDMostraMenu (1 _menuDalt ]
+"154
+[; ;Menu.c: 154:    NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"155
+[; ;Menu.c: 155:    state = 13;
+[e = F2634 -> -> 13 `i `uc ]
+"156
+[; ;Menu.c: 156:   break;
 [e $U 284  ]
+"157
+[; ;Menu.c: 157:   case 13:
+[e :U 325 ]
+"158
+[; ;Menu.c: 158:    if (NovaTecla == 8) {
+[e $ ! == -> _NovaTecla `i -> 8 `i 326  ]
+{
+"159
+[; ;Menu.c: 159:     if(menuDalt < 4) menuDalt++;
+[e $ ! < -> _menuDalt `i -> 4 `i 327  ]
+[e ++ _menuDalt -> -> 1 `i `uc ]
+[e :U 327 ]
+"160
+[; ;Menu.c: 160:     state = 12;
+[e = F2634 -> -> 12 `i `uc ]
+"161
+[; ;Menu.c: 161:    }
+}
+[e $U 328  ]
+"162
+[; ;Menu.c: 162:    else if (NovaTecla == 2) {
+[e :U 326 ]
+[e $ ! == -> _NovaTecla `i -> 2 `i 329  ]
+{
+"163
+[; ;Menu.c: 163:     if(menuDalt > 0) menuDalt--;
+[e $ ! > -> _menuDalt `i -> 0 `i 330  ]
+[e -- _menuDalt -> -> 1 `i `uc ]
+[e :U 330 ]
 "164
-[; ;Menu.c: 164:  }
+[; ;Menu.c: 164:     state = 12;
+[e = F2634 -> -> 12 `i `uc ]
+"165
+[; ;Menu.c: 165:    }
+}
+[e :U 329 ]
+[e :U 328 ]
+"166
+[; ;Menu.c: 166:   break;
+[e $U 284  ]
+"167
+[; ;Menu.c: 167:  }
 }
 [e $U 284  ]
 [e :U 285 ]
@@ -1025,12 +1038,12 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 9 `i 310
  , $ -> 10 `i 314
  , $ -> 11 `i 316
- , $ -> 12 `i 322
- , $ -> 13 `i 323
+ , $ -> 12 `i 324
+ , $ -> 13 `i 325
  284 ]
 [e :U 284 ]
-"165
-[; ;Menu.c: 165: }
+"168
+[; ;Menu.c: 168: }
 [e :UE 283 ]
 }
 [a 2C 50 46 82 69 71 73 83 84 69 82 0 ]

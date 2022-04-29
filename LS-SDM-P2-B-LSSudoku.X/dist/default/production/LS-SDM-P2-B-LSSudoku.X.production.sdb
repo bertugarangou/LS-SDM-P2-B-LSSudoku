@@ -403,7 +403,7 @@
 [u S786 . 1 `S764 1 . 1 0 `S773 1 . 1 0 `S782 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES786  1 e 1 @4082 ]
 "6 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
-[v _menuList menuList `C[5][22]uc  1 e 110 0 ]
+[v _menuList menuList `C[5][29]uc  1 e 145 0 ]
 "14
 [v _timerGLCD timerGLCD `uc  1 e 1 0 ]
 "15
@@ -476,7 +476,7 @@
 "12
 [v _j j `uc  1 e 1 0 ]
 "13
-[v _usuariLoguejat usuariLoguejat `uc  1 e 1 0 ]
+[v _usuariLoguejat usuariLoguejat `c  1 e 1 0 ]
 "15
 [v _tmpUsername tmpUsername `[9]uc  1 e 9 0 ]
 "16
@@ -501,7 +501,7 @@
 {
 "28
 [v menu@state state `uc  1 s 1 state ]
-"165
+"168
 } 0
 "26 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
