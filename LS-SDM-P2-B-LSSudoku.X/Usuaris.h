@@ -13,4 +13,5 @@ __bit UcheckExistsGetError(void);
 void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
+char* UgetUserName(char quin);
 #endif

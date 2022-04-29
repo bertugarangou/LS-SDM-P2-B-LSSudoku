@@ -4695,6 +4695,7 @@ __bit UcheckExistsGetError(void);
 void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
+char* UgetUserName(char quin);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1

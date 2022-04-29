@@ -4705,6 +4705,7 @@ __bit UcheckExistsGetError(void);
 void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
+char* UgetUserName(char quin);
 # 5 "Menu.c" 2
 
 # 1 "./Ssms.h" 1
@@ -4736,6 +4737,7 @@ signed char novaLletra = -1;
 char timerMenu;
 __bit loginNOTRegister;
 unsigned char menuDalt = 0;
+signed char indexUsuari;
 
 void Minit(void){
     timerMenu = TiGetTimer();
@@ -4852,24 +4854,26 @@ void menu(void) {
   break;
   case 10:
    if (!UcheckExistsNotFinished()) {
+    indexUsuari = UcheckExistsGetError();
     state = 11;
    }
   break;
   case 11:
-            if(1==1){
-                state = 12;
-            }
-            else if (!loginNOTRegister && UcheckExistsGetError() == -1) {
+            if (1 == 1) {
+    state = 12;
+   }
+   else if (!loginNOTRegister && indexUsuari == -1) {
     URegister();
     loginNOTRegister = 1;
     state = 3;
    }
-   else if (loginNOTRegister == 1 && UcheckExistsGetError()) {
+   else if (loginNOTRegister == 1 && indexUsuari) {
     state = 12;
    }
-   else if (loginNOTRegister && UcheckExistsGetError() == -1 || !loginNOTRegister && UcheckExistsGetError()) {
+   else if (loginNOTRegister && indexUsuari == -1 || !loginNOTRegister && indexUsuari) {
     state = 0;
    }
+
   break;
   case 12:
    LcClear();
@@ -4886,6 +4890,24 @@ void menu(void) {
    else if (NovaTecla == 2) {
     if(menuDalt > 0) menuDalt--;
     state = 12;
+   }
+   else if (NovaTecla == 11 && menuDalt == 3) {
+    NoFerMenu();
+    LcClear();
+    LcNewString("BYE BYE ");
+    state = 14;
+   }
+  break;
+  case 14:
+   if (LcLliure()) {
+    LcNewString(UgetUserName(indexUsuari));
+    TiResetTics(timerMenu);
+    state = 15;
+   }
+  break;
+  case 15:
+   if (TiGetTics(timerMenu) > 2410) {
+    state = 0;
    }
   break;
  }

@@ -22,7 +22,9 @@ typedef struct{
 }Usuari;
 Usuari usuaris[8];
 
-
+char* UgetUserName(char quin){
+    return usuaris[quin].username;
+}
 char UgetNumUsuaris(void){
     return numUsuaris;
 }
