@@ -12,6 +12,7 @@
       <itemPath>Menu.h</itemPath>
       <itemPath>Altaveu.h</itemPath>
       <itemPath>GestioLCD.h</itemPath>
+      <itemPath>Joystick.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -29,6 +30,7 @@
       <itemPath>Usuaris.c</itemPath>
       <itemPath>Altaveu.c</itemPath>
       <itemPath>GestioLCD.c</itemPath>
+      <itemPath>Joystick.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
