@@ -79,8 +79,9 @@ char TiGetTimer(void) {
     s_Timers[counter].b_busy=TI_TRUE;
     return (counter);
 }
+/*
 void TiFreeTimer (char Handle) {
 //Pre: 0<Handle<MAXTIMERS.
 //Post: The Handle timer is marked as free.
     s_Timers[Handle].b_busy=TI_FALSE;
-}
+}*/

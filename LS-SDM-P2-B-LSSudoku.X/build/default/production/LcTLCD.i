@@ -4674,7 +4674,6 @@ void LcPutChar(char c);
 void LcPutStringDebug(char *s);
 void LcNewString(char new_s[]);
 void PutStringCooperatiu();
-void LcPutFletxa();
 void LcLCD();
 __bit LcLliure(void);
 void LcInsertFletxa(void);
@@ -4886,16 +4885,6 @@ void LcNewString(char new_s[]){
     s_ptr = new_s;
     nou_s = 1;
 }
-void LcInsertFletxa(){
-    LcPutChar('-');
-    LcPutChar('>');
-}
-void LcPutFletxa(){
-    LcGotoXY(0,0);
-
-    LcInsertFletxa();
-}
-
 
 void LcLCD(void){
     if(nou_s == 1){

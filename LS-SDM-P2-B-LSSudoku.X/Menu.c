@@ -4,6 +4,7 @@
 #include "TiTTimer.h"
 #include "Usuaris.h"
 #include "Ssms.h"
+#include "GestioLCD.h"
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
@@ -24,7 +25,7 @@ void MNovaLletra(char lletra){
 }
 
 void menu(void) {
-		static char state = 0;
+	static char state = 0;
 
 	switch(state) {
 		case 0:
@@ -120,7 +121,6 @@ void menu(void) {
 				NovaTecla = -1;
 				novaLletra = -1;
 				tmp = 0;
-				LcClear();
 				UcheckExists();
 				SMSoff();
 				state = 10;
@@ -133,20 +133,33 @@ void menu(void) {
 		break;
 		case 11:
 			if (loginNOTRegister == 0 && UcheckExistsGetError() == 0) {
-				state = 12;
+				URegister();
+				loginNOTRegister = 1;
+				state = 3;
 			}
 			else if (loginNOTRegister == 1 && UcheckExistsGetError() == 1) {
-				state = 13;
+				state = 12;
 			}
 			else if (loginNOTRegister ^ UcheckExistsGetError()) {
 				state = 0;
 			}
 		break;
 		case 12:
-
+			LcClear();
+			SiFerMenu();
+			GLCDMostraMenu(menuDalt);
+			NovaTecla = -1;
+			state = 13;
 		break;
 		case 13:
-
+			if (NovaTecla == 8) {
+				if(menuDalt < 4) menuDalt++;
+				state = 12;
+			}
+			else if (NovaTecla == 2) {
+				if(menuDalt > 0) menuDalt--;
+				state = 12;
+			}
 		break;
 	}
 }

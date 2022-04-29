@@ -240,16 +240,6 @@ void LcNewString(char new_s[]){
     s_ptr = new_s;
     nou_s = 1;
 }
-void LcInsertFletxa(){
-    LcPutChar('-');
-    LcPutChar('>');
-}
-void LcPutFletxa(){ //no borra tot, compatible amb marquesina
-    LcGotoXY(0,0);  //una alternativa seria cridar LcNewString("->"); 
-                    //però dos caràcters s'ha comprovat que no trenca el cooperativisme, es trenca a >~4
-    LcInsertFletxa();
-}
-
 
 void LcLCD(void){
     if(nou_s == 1){

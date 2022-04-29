@@ -4715,8 +4715,3 @@ char TiGetTimer(void) {
     s_Timers[counter].b_busy=1;
     return (counter);
 }
-void TiFreeTimer (char Handle) {
-
-
-    s_Timers[Handle].b_busy=0;
-}

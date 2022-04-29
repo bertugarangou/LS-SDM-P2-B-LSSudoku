@@ -1084,87 +1084,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LcTLCD.c: 242: }
 [e :UE 309 ]
 }
-"243
-[; ;LcTLCD.c: 243: void LcInsertFletxa(){
-[v _LcInsertFletxa `(v ~T0 @X0 1 ef ]
-{
-[e :U _LcInsertFletxa ]
-[f ]
 "244
-[; ;LcTLCD.c: 244:     LcPutChar('-');
-[e ( _LcPutChar (1 -> -> 45 `ui `uc ]
-"245
-[; ;LcTLCD.c: 245:     LcPutChar('>');
-[e ( _LcPutChar (1 -> -> 62 `ui `uc ]
-"246
-[; ;LcTLCD.c: 246: }
-[e :UE 310 ]
-}
-"247
-[; ;LcTLCD.c: 247: void LcPutFletxa(){
-[v _LcPutFletxa `(v ~T0 @X0 1 ef ]
-{
-[e :U _LcPutFletxa ]
-[f ]
-"248
-[; ;LcTLCD.c: 248:     LcGotoXY(0,0);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"250
-[; ;LcTLCD.c: 250:     LcInsertFletxa();
-[e ( _LcInsertFletxa ..  ]
-"251
-[; ;LcTLCD.c: 251: }
-[e :UE 311 ]
-}
-"254
-[; ;LcTLCD.c: 254: void LcLCD(void){
+[; ;LcTLCD.c: 244: void LcLCD(void){
 [v _LcLCD `(v ~T0 @X0 1 ef ]
 {
 [e :U _LcLCD ]
 [f ]
-"255
-[; ;LcTLCD.c: 255:     if(nou_s == 1){
-[e $ ! == -> _nou_s `i -> 1 `i 313  ]
+"245
+[; ;LcTLCD.c: 245:     if(nou_s == 1){
+[e $ ! == -> _nou_s `i -> 1 `i 311  ]
 {
-"256
-[; ;LcTLCD.c: 256:         LcPutChar(*s_ptr);
+"246
+[; ;LcTLCD.c: 246:         LcPutChar(*s_ptr);
 [e ( _LcPutChar (1 *U _s_ptr ]
-"257
-[; ;LcTLCD.c: 257:         s_ptr++;
+"247
+[; ;LcTLCD.c: 247:         s_ptr++;
 [e ++ _s_ptr * -> -> 1 `i `x -> -> # *U _s_ptr `i `x ]
-"258
-[; ;LcTLCD.c: 258:         if(*s_ptr == '\0'){
-[e $ ! == -> *U _s_ptr `ui -> 0 `ui 314  ]
+"248
+[; ;LcTLCD.c: 248:         if(*s_ptr == '\0'){
+[e $ ! == -> *U _s_ptr `ui -> 0 `ui 312  ]
 {
-"259
-[; ;LcTLCD.c: 259:             nou_s = 0;
+"249
+[; ;LcTLCD.c: 249:             nou_s = 0;
 [e = _nou_s -> -> 0 `i `b ]
-"260
-[; ;LcTLCD.c: 260:             s_ptr=0;
+"250
+[; ;LcTLCD.c: 250:             s_ptr=0;
 [e = _s_ptr -> -> 0 `i `*uc ]
-"261
-[; ;LcTLCD.c: 261:         }
+"251
+[; ;LcTLCD.c: 251:         }
 }
-[e :U 314 ]
-"262
-[; ;LcTLCD.c: 262:     }
+[e :U 312 ]
+"252
+[; ;LcTLCD.c: 252:     }
 }
-[e :U 313 ]
-"263
-[; ;LcTLCD.c: 263: }
-[e :UE 312 ]
+[e :U 311 ]
+"253
+[; ;LcTLCD.c: 253: }
+[e :UE 310 ]
 }
-"265
-[; ;LcTLCD.c: 265: __bit LcLliure(void){
+"255
+[; ;LcTLCD.c: 255: __bit LcLliure(void){
 [v _LcLliure `(b ~T0 @X0 1 ef ]
 {
 [e :U _LcLliure ]
 [f ]
-"266
-[; ;LcTLCD.c: 266:     return !nou_s;
+"256
+[; ;LcTLCD.c: 256:     return !nou_s;
 [e ) ! _nou_s ]
-[e $UE 315  ]
-"267
-[; ;LcTLCD.c: 267: }
-[e :UE 315 ]
+[e $UE 313  ]
+"257
+[; ;LcTLCD.c: 257: }
+[e :UE 313 ]
 }

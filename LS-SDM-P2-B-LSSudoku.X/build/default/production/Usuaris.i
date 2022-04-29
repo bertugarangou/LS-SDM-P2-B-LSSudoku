@@ -4668,9 +4668,10 @@ void UenviaPas(char c, char pos){
     tmpPassword[pos] = c;
 }
 
-__bit URegisterEnded(void){
-    return do_register;
-}
+
+
+
+
 void URegister(void){
     do_register = 1;
 }

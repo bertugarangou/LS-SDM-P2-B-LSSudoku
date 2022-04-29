@@ -31,8 +31,12 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"26 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
+"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
+[v _SiFerMenu SiFerMenu `(v  1 e 1 0 ]
+"26
 [v _GLCDInit GLCDInit `(v  1 e 1 0 ]
+"30
+[v _GLCDMostraMenu GLCDMostraMenu `(v  1 e 1 0 ]
 "36
 [v _GLCDMotor GLCDMotor `(v  1 e 1 0 ]
 "41 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
@@ -61,13 +65,9 @@
 [v _EscriuPrimeraOrdre EscriuPrimeraOrdre `(v  1 e 1 0 ]
 "239
 [v _LcNewString LcNewString `(v  1 e 1 0 ]
-"243
-[v _LcInsertFletxa LcInsertFletxa `(v  1 e 1 0 ]
-"247
-[v _LcPutFletxa LcPutFletxa `(v  1 e 1 0 ]
-"254
+"244
 [v _LcLCD LcLCD `(v  1 e 1 0 ]
-"265
+"255
 [v _LcLliure LcLliure `(b  1 e 0 0 ]
 "17 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _high_rsi high_rsi `IIH(v  1 e 1 0 ]
@@ -75,12 +75,14 @@
 [v _init_ports init_ports `(v  1 e 1 0 ]
 "71
 [v _main main `(v  1 e 1 0 ]
-"15 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+"16 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 [v _Minit Minit `(v  1 e 1 0 ]
-"18
+"19
 [v _MsetNovaTecla MsetNovaTecla `(v  1 e 1 0 ]
-"22
+"23
 [v _MNovaLletra MNovaLletra `(v  1 e 1 0 ]
+"27
+[v _menu menu `(v  1 e 1 0 ]
 "16 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _Sinit Sinit `(v  1 e 1 0 ]
 "20
@@ -117,15 +119,17 @@
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
 "42
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
-"52
+"50
+[v _URegister URegister `(v  1 e 1 0 ]
+"53
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
-"65
+"66
 [v _Uinit Uinit `(v  1 e 1 0 ]
-"108
+"109
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"118
+"119
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
-"182
+"183
 [v _escriureEEPROM escriureEEPROM `(v  1 e 1 0 ]
 "5 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Altaveu.c
 [v _reproduir reproduir `b  1 e 0 0 ]
@@ -181,7 +185,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "681
-[s S591 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S588 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -190,17 +194,17 @@
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S600 . 1 `uc 1 . 1 0 :5:0 
+[s S597 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 P1B 1 0 :1:5 
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S605 . 1 `uc 1 . 1 0 :7:0 
+[s S602 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S608 . 1 `S82 1 . 1 0 `S591 1 . 1 0 `S600 1 . 1 0 `S605 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES608  1 e 1 @3971 ]
-[s S400 . 1 `uc 1 LATB0 1 0 :1:0 
+[u S605 . 1 `S82 1 . 1 0 `S588 1 . 1 0 `S597 1 . 1 0 `S602 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES605  1 e 1 @3971 ]
+[s S397 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -210,7 +214,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1128
-[s S409 . 1 `uc 1 LB0 1 0 :1:0 
+[s S406 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -219,8 +223,8 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S418 . 1 `S400 1 . 1 0 `S409 1 . 1 0 ]
-[v _LATBbits LATBbits `VES418  1 e 1 @3978 ]
+[u S415 . 1 `S397 1 . 1 0 `S406 1 . 1 0 ]
+[v _LATBbits LATBbits `VES415  1 e 1 @3978 ]
 [s S153 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
@@ -297,7 +301,7 @@
 "2187
 [u S91 . 1 `S73 1 . 1 0 `S82 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES91  1 e 1 @3989 ]
-[s S443 . 1 `uc 1 RD 1 0 :1:0 
+[s S440 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -307,33 +311,33 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3056
-[s S452 . 1 `uc 1 . 1 0 :6:0 
+[s S449 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S455 . 1 `S443 1 . 1 0 `S452 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES455  1 e 1 @4006 ]
+[u S452 . 1 `S440 1 . 1 0 `S449 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES452  1 e 1 @4006 ]
 "3101
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "3108
 [v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
 "3115
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
-[s S698 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S695 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "5725
-[s S700 . 1 `uc 1 . 1 0 :1:0 
+[s S697 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S703 . 1 `uc 1 . 1 0 :2:0 
+[s S700 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S706 . 1 `uc 1 . 1 0 :3:0 
+[s S703 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S709 . 1 `uc 1 . 1 0 :4:0 
+[s S706 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S712 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S709 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -341,7 +345,7 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S720 . 1 `uc 1 BOR 1 0 :1:0 
+[s S717 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
@@ -349,11 +353,11 @@
 `uc 1 . 1 0 :1:5 
 `uc 1 SBOREN 1 0 :1:6 
 ]
-[u S728 . 1 `S698 1 . 1 0 `S700 1 . 1 0 `S703 1 . 1 0 `S706 1 . 1 0 `S709 1 . 1 0 `S712 1 . 1 0 `S720 1 . 1 0 ]
-[v _RCONbits RCONbits `VES728  1 e 1 @4048 ]
+[u S725 . 1 `S695 1 . 1 0 `S697 1 . 1 0 `S700 1 . 1 0 `S703 1 . 1 0 `S706 1 . 1 0 `S709 1 . 1 0 `S717 1 . 1 0 ]
+[v _RCONbits RCONbits `VES725  1 e 1 @4048 ]
 "6184
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S819 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S816 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -361,19 +365,19 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6206
-[s S826 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S823 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S832 . 1 `S819 1 . 1 0 `S826 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES832  1 e 1 @4053 ]
+[u S829 . 1 `S816 1 . 1 0 `S823 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES829  1 e 1 @4053 ]
 "6268
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6275
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S767 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S764 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -383,7 +387,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6734
-[s S776 . 1 `uc 1 . 1 0 :1:0 
+[s S773 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -392,17 +396,20 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S785 . 1 `uc 1 . 1 0 :6:0 
+[s S782 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S789 . 1 `S767 1 . 1 0 `S776 1 . 1 0 `S785 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES789  1 e 1 @4082 ]
+[u S786 . 1 `S764 1 . 1 0 `S773 1 . 1 0 `S782 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES786  1 e 1 @4082 ]
 "6 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
-[v _menu menu `C[5][22]uc  1 e 110 0 ]
-[v _menu menu `C[5][22]uc  1 e 110 0 ]
+[v _menuList menuList `C[5][22]uc  1 e 110 0 ]
 "14
 [v _timerGLCD timerGLCD `uc  1 e 1 0 ]
+"15
+[v _menuDaltGLCD menuDaltGLCD `uc  1 e 1 0 ]
+"16
+[v _ferMenu ferMenu `b  1 e 0 0 ]
 "17
 [v _newString newString `b  1 e 0 0 ]
 "19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
@@ -417,16 +424,18 @@
 [v _s_ptr s_ptr `*.31uc  1 e 1 0 ]
 "24
 [v _nou_s nou_s `b  1 e 0 0 ]
-"8 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+"9 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 [v _tmp tmp `uc  1 e 1 0 ]
-"9
-[v _NovaTecla NovaTecla `c  1 e 1 0 ]
 "10
-[v _novaLletra novaLletra `c  1 e 1 0 ]
+[v _NovaTecla NovaTecla `c  1 e 1 0 ]
 "11
-[v _timerMenu timerMenu `uc  1 e 1 0 ]
+[v _novaLletra novaLletra `c  1 e 1 0 ]
 "12
+[v _timerMenu timerMenu `uc  1 e 1 0 ]
+"13
 [v _loginNOTRegister loginNOTRegister `b  1 e 0 0 ]
+"14
+[v _menuDalt menuDalt `uc  1 e 1 0 ]
 "8 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _lletraASCII lletraASCII `c  1 e 1 0 ]
 "9
@@ -445,9 +454,9 @@
 [v _tiTeclat tiTeclat `uc  1 s 1 tiTeclat ]
 "11
 [v _teclaPremuda teclaPremuda `[4][3]uc  1 e 12 0 ]
-[s S695 Timer 3 `ui 1 h_initialTics 2 0 `uc 1 b_busy 1 2 ]
+[s S692 Timer 3 `ui 1 h_initialTics 2 0 `uc 1 b_busy 1 2 ]
 "12 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
-[v _s_Timers s_Timers `[8]S695  1 e 24 0 ]
+[v _s_Timers s_Timers `[8]S692  1 e 24 0 ]
 "14
 [v _h_Tics h_Tics `ui  1 s 2 h_Tics ]
 "15
@@ -472,9 +481,9 @@
 [v _tmpUsername tmpUsername `[9]uc  1 e 9 0 ]
 "16
 [v _tmpPassword tmpPassword `[9]uc  1 e 9 0 ]
-[s S943 . 23 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 `[5]uc 1 scores 5 18 ]
+[s S951 . 23 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 `[5]uc 1 scores 5 18 ]
 "23
-[v _usuaris usuaris `[8]S943  1 e 184 0 ]
+[v _usuaris usuaris `[8]S951  1 e 184 0 ]
 "71 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -487,12 +496,12 @@
 [v motorAltaveu@state state `uc  1 s 1 state ]
 "54
 } 0
-"6 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
-[v _menu menu `C[5][22]uc  1 e 110 0 ]
-{
 "27 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+[v _menu menu `(v  1 e 1 0 ]
+{
+"28
 [v menu@state state `uc  1 s 1 state ]
-"152
+"165
 } 0
 "26 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
@@ -532,6 +541,16 @@
 {
 "32
 } 0
+"50
+[v _URegister URegister `(v  1 e 1 0 ]
+{
+"52
+} 0
+"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
+[v _SiFerMenu SiFerMenu `(v  1 e 1 0 ]
+{
+"21
+} 0
 "139 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _SMSon SMSon `(v  1 e 1 0 ]
 {
@@ -541,6 +560,14 @@
 [v _SMSoff SMSoff `(v  1 e 1 0 ]
 {
 "147
+} 0
+"30 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
+[v _GLCDMostraMenu GLCDMostraMenu `(v  1 e 1 0 ]
+{
+[v GLCDMostraMenu@num num `uc  1 a 1 wreg ]
+[v GLCDMostraMenu@num num `uc  1 a 1 wreg ]
+[v GLCDMostraMenu@num num `uc  1 a 1 5 ]
+"34
 } 0
 "21 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _init_ports init_ports `(v  1 e 1 0 ]
@@ -552,46 +579,46 @@
 {
 "13
 } 0
-"182 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"183 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _escriureEEPROM escriureEEPROM `(v  1 e 1 0 ]
 {
-"183
+"184
 [v escriureEEPROM@caca caca `uc  1 a 1 5 ]
-"200
+"201
 } 0
-"118
+"119
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"119
+"120
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"180
+"181
 } 0
-"52
+"53
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
 {
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@pos pos `uc  1 p 1 5 ]
 [v escriureCharEEPROM@c c `uc  1 a 1 6 ]
-"64
+"65
 } 0
-"108
+"109
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.30Cuc  1 p 1 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 6 ]
-"115
+"116
 } 0
-"65
+"66
 [v _Uinit Uinit `(v  1 e 1 0 ]
 {
-"96
-[v Uinit@j_1034 j `uc  1 a 1 9 ]
-"88
+"97
+[v Uinit@j_1041 j `uc  1 a 1 9 ]
+"89
 [v Uinit@j j `uc  1 a 1 8 ]
-"87
+"88
 [v Uinit@i i `uc  1 a 1 7 ]
-"106
+"107
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v _TiInitTimer TiInitTimer `(v  1 e 1 0 ]
@@ -617,13 +644,13 @@
 [v SsetNovaTecla@tecla tecla `uc  1 a 1 5 ]
 "137
 } 0
-"18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 [v _MsetNovaTecla MsetNovaTecla `(v  1 e 1 0 ]
 {
 [v MsetNovaTecla@tecla tecla `uc  1 a 1 wreg ]
 [v MsetNovaTecla@tecla tecla `uc  1 a 1 wreg ]
 [v MsetNovaTecla@tecla tecla `uc  1 a 1 5 ]
-"20
+"21
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TeTeclat.c
 [v _TeInit TeInit `(v  1 e 1 0 ]
@@ -642,23 +669,23 @@
 [v SMotor@state state `uc  1 s 1 state ]
 "133
 } 0
-"22 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
+"23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 [v _MNovaLletra MNovaLletra `(v  1 e 1 0 ]
 {
 [v MNovaLletra@lletra lletra `uc  1 a 1 wreg ]
 [v MNovaLletra@lletra lletra `uc  1 a 1 wreg ]
 [v MNovaLletra@lletra lletra `uc  1 a 1 5 ]
-"24
+"25
 } 0
-"15
+"16
 [v _Minit Minit `(v  1 e 1 0 ]
 {
-"17
+"18
 } 0
-"254 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
+"244 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
 [v _LcLCD LcLCD `(v  1 e 1 0 ]
 {
-"263
+"253
 } 0
 "41
 [v _LcInit LcInit `(v  1 e 1 0 ]
@@ -710,19 +737,9 @@
 [v GLCDMotor@length1 length1 `uc  1 s 1 length1 ]
 "46
 [v GLCDMotor@length2 length2 `uc  1 s 1 length2 ]
-"181
+"177
 } 0
-"247 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
-[v _LcPutFletxa LcPutFletxa `(v  1 e 1 0 ]
-{
-"251
-} 0
-"243
-[v _LcInsertFletxa LcInsertFletxa `(v  1 e 1 0 ]
-{
-"246
-} 0
-"132
+"132 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
 [v _LcPutChar LcPutChar `(v  1 e 1 0 ]
 {
 [v LcPutChar@c c `uc  1 a 1 wreg ]
@@ -745,10 +762,10 @@
 [v LcNewString@new_s new_s `*.31uc  1 p 1 5 ]
 "242
 } 0
-"265
+"255
 [v _LcLliure LcLliure `(b  1 e 0 0 ]
 {
-"267
+"257
 } 0
 "82
 [v _LcClear LcClear `(v  1 e 1 0 ]

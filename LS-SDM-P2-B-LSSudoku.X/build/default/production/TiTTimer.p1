@@ -698,17 +698,3 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TiTTimer.c: 81: }
 [e :UE 293 ]
 }
-"82
-[; ;TiTTimer.c: 82: void TiFreeTimer (char Handle) {
-[v _TiFreeTimer `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _TiFreeTimer ]
-[v _Handle `uc ~T0 @X0 1 r1 ]
-[f ]
-"85
-[; ;TiTTimer.c: 85:     s_Timers[Handle].b_busy=0;
-[e = . *U + &U _s_Timers * -> _Handle `ux -> -> # *U &U _s_Timers `ui `ux 1 -> -> 0 `i `uc ]
-"86
-[; ;TiTTimer.c: 86: }
-[e :UE 298 ]
-}

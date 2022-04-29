@@ -4645,7 +4645,6 @@ void LcPutChar(char c);
 void LcPutStringDebug(char *s);
 void LcNewString(char new_s[]);
 void PutStringCooperatiu();
-void LcPutFletxa();
 void LcLCD();
 __bit LcLliure(void);
 void LcInsertFletxa(void);

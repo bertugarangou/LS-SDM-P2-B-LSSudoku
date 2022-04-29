@@ -4,4 +4,5 @@ Menu.h  \
 LcTLCD.h  \
 TiTTimer.h  \
 Usuaris.h  \
-Ssms.h 
+Ssms.h  \
+GestioLCD.h 
