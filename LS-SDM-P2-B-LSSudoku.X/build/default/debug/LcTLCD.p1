@@ -1,30 +1,79 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"32 LcTLCD.c
+[; ;LcTLCD.c: 32: void CantaIR(char IR);
+[v _CantaIR `(v ~T0 @X0 0 ef1`uc ]
 "17 ./TiTTimer.h
 [; ;./TiTTimer.h: 17: char TiGetTimer(void);
 [v _TiGetTimer `(uc ~T0 @X0 0 ef ]
-"650 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 650:     struct {
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"660
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 660:     struct {
-[s S28 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S28 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"670
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 670:     struct {
-[s S29 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . . P1B P1C P1D ]
-"676
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 676:     struct {
-[s S30 :7 `uc 1 :1 `uc 1 ]
-[n S30 . . SS2 ]
-"649
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 649: typedef union {
-[u S26 `S27 1 `S28 1 `S29 1 `S30 1 ]
-[n S26 . . . . . ]
-"681
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 681: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS26 ~T0 @X0 0 e@3971 ]
+"1944 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1944:     struct {
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S70 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1954
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1954:     struct {
+[s S71 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"1943
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1943: typedef union {
+[u S69 `S70 1 `S71 1 ]
+[n S69 . . . ]
+"1965
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1965: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS69 ~T0 @X0 0 e@3988 ]
+"2166
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 2166:     struct {
+[s S76 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S76 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"2176
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 2176:     struct {
+[s S77 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S77 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"2165
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 2165: typedef union {
+[u S75 `S76 1 `S77 1 ]
+[n S75 . . . ]
+"2187
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 2187: extern volatile TRISDbits_t TRISDbits __attribute__((address(0xF95)));
+[v _TRISDbits `VS75 ~T0 @X0 0 e@3989 ]
+"31 LcTLCD.c
+[; ;LcTLCD.c: 31: void Espera(char Timer, int ms);
+[v _Espera `(v ~T0 @X0 0 ef2`uc`i ]
+"35
+[; ;LcTLCD.c: 35: void EscriuPrimeraOrdre(char);
+[v _EscriuPrimeraOrdre `(v ~T0 @X0 0 ef1`uc ]
+"34
+[; ;LcTLCD.c: 34: void WaitForBusy(void);
+[v _WaitForBusy `(v ~T0 @X0 0 ef ]
+"50 ./LcTLCD.h
+[; ;./LcTLCD.h: 50: void LcCursorOff(void);
+[v _LcCursorOff `(v ~T0 @X0 0 ef ]
+"54
+[; ;./LcTLCD.h: 54: void LcGotoXY(char Column, char Row);
+[v _LcGotoXY `(v ~T0 @X0 0 ef2`uc`uc ]
+"33 LcTLCD.c
+[; ;LcTLCD.c: 33: void CantaData(char Data);
+[v _CantaData `(v ~T0 @X0 0 ef1`uc ]
+"8 ./TiTTimer.h
+[; ;./TiTTimer.h: 8: void TiResetTics(char Handle);
+[v _TiResetTics `(v ~T0 @X0 0 ef1`uc ]
+"12
+[; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
+[v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
+"1219 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1219:     struct {
+[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S49 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"1229
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1229:     struct {
+[s S50 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"1218
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1218: typedef union {
+[u S48 `S49 1 `S50 1 ]
+[n S48 . . . ]
+"1240
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1240: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
+[v _LATCbits `VS48 ~T0 @X0 0 e@3979 ]
 "1331
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1331:     struct {
 [s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -40,18 +89,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1352
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1352: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
 [v _LATDbits `VS51 ~T0 @X0 0 e@3980 ]
-"8 ./TiTTimer.h
-[; ;./TiTTimer.h: 8: void TiResetTics(char Handle);
-[v _TiResetTics `(v ~T0 @X0 0 ef1`uc ]
-"12
-[; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
-[v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
-"6 ./Menu.h
-[; ;./Menu.h: 6: void MsetNovaTecla(char tecla);
-[v _MsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
-"6 ./Ssms.h
-[; ;./Ssms.h: 6: void SsetNovaTecla(char tecla);
-[v _SsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
+"470
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 470:     struct {
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"480
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 480:     struct {
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . T1OSO T1OSI CCP1 SCK SDI SDO TX RX ]
+"490
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 490:     struct {
+[s S23 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S23 . T13CKI CCP2 P1A SCL SDA . CK DT ]
+"500
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 500:     struct {
+[s S24 :1 `uc 1 ]
+[n S24 . T1CKI ]
+"503
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 503:     struct {
+[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S25 . . PA2 PA1 ]
+"469
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 469: typedef union {
+[u S20 `S21 1 `S22 1 `S23 1 `S24 1 `S25 1 ]
+[n S20 . . . . . . ]
+"509
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 509: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
+[v _PORTCbits `VS20 ~T0 @X0 0 e@3970 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -466,355 +530,609 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 TeTeclat.c
-[; ;TeTeclat.c: 9: static char tiTeclat=0;
-[v _tiTeclat `uc ~T0 @X0 1 s ]
-[i _tiTeclat
--> -> 0 `i `uc
-]
-[v F2585 `uc ~T0 @X0 -> 3 `i t ]
-"11
-[; ;TeTeclat.c: 11: char teclaPremuda[4][3] = {
-[v _teclaPremuda `F2585 ~T0 @X0 -> 4 `i e ]
-[i _teclaPremuda
-:U ..
-:U ..
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
-..
-:U ..
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
-..
-:U ..
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
-..
-:U ..
--> -> 10 `i `uc
--> -> 0 `i `uc
--> -> 11 `i `uc
-..
-..
-]
-"18
-[; ;TeTeclat.c: 18: void TeInit(void){
-[v _TeInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _TeInit ]
-[f ]
-"19
-[; ;TeTeclat.c: 19:     tiTeclat=TiGetTimer();
-[e = _tiTeclat ( _TiGetTimer ..  ]
+"19 LcTLCD.c
+[; ;LcTLCD.c: 19: static unsigned char Rows, Columns;
+[v _Rows `uc ~T0 @X0 1 s ]
+[v _Columns `uc ~T0 @X0 1 s ]
 "20
-[; ;TeTeclat.c: 20: }
-[e :UE 280 ]
-}
-"22
-[; ;TeTeclat.c: 22: void TeTeclat(void) {
-[v _TeTeclat `(v ~T0 @X0 1 ef ]
-{
-[e :U _TeTeclat ]
-[f ]
+[; ;LcTLCD.c: 20: static unsigned char RowAct, ColumnAct;
+[v _RowAct `uc ~T0 @X0 1 s ]
+[v _ColumnAct `uc ~T0 @X0 1 s ]
+"21
+[; ;LcTLCD.c: 21: static char Timer;
+[v _Timer `uc ~T0 @X0 1 s ]
 "23
-[; ;TeTeclat.c: 23:  static char state = 0;
-[v F2588 `uc ~T0 @X0 1 s state ]
-[i F2588
--> -> 0 `i `uc
+[; ;LcTLCD.c: 23: char *s_ptr = 0;
+[v _s_ptr `*uc ~T0 @X0 1 e ]
+[i _s_ptr
+-> -> 0 `i `*uc
 ]
 "24
-[; ;TeTeclat.c: 24:     static char cols=0;
-[v F2589 `uc ~T0 @X0 1 s cols ]
-[i F2589
--> -> 0 `i `uc
+[; ;LcTLCD.c: 24: __bit nou_s = 0;
+[v _nou_s `b ~T0 @X0 1 e ]
+[i _nou_s
+-> -> 0 `i `b
 ]
-"25
-[; ;TeTeclat.c: 25:     static char files = 0;
-[v F2590 `uc ~T0 @X0 1 s files ]
-[i F2590
--> -> 0 `i `uc
-]
-"26
-[; ;TeTeclat.c: 26:     files = PORTDbits.RD0 + PORTDbits.RD1*2 + PORTDbits.RD2*3 + PORTDbits.RD3*4;
-[e = F2590 -> + + + -> . . _PORTDbits 0 0 `i * -> . . _PORTDbits 0 1 `i -> 2 `i * -> . . _PORTDbits 0 2 `i -> 3 `i * -> . . _PORTDbits 0 3 `i -> 4 `i `uc ]
-"27
-[; ;TeTeclat.c: 27:  switch(state) {
-[e $U 283  ]
-{
-"28
-[; ;TeTeclat.c: 28:   case 0:
-[e :U 284 ]
-"29
-[; ;TeTeclat.c: 29:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 285  ]
-{
-"30
-[; ;TeTeclat.c: 30:     LATDbits.LD4=1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"31
-[; ;TeTeclat.c: 31:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"32
-[; ;TeTeclat.c: 32:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"33
-[; ;TeTeclat.c: 33:     cols=0;
-[e = F2589 -> -> 0 `i `uc ]
-"34
-[; ;TeTeclat.c: 34:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"35
-[; ;TeTeclat.c: 35:    }
-}
-[e $U 286  ]
-"36
-[; ;TeTeclat.c: 36:    else if (files!=0) {
-[e :U 285 ]
-[e $ ! != -> F2590 `i -> 0 `i 287  ]
-{
 "37
-[; ;TeTeclat.c: 37:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
+[; ;LcTLCD.c: 37: void LcScroll(void){
+[v _LcScroll `(v ~T0 @X0 1 ef ]
+{
+[e :U _LcScroll ]
+[f ]
 "38
-[; ;TeTeclat.c: 38:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
+[; ;LcTLCD.c: 38:   CantaIR(0x10 | 0x08 | 0x00);
+[e ( _CantaIR (1 -> | | -> 16 `i -> 8 `i -> 0 `i `uc ]
 "39
-[; ;TeTeclat.c: 39:    }
+[; ;LcTLCD.c: 39: }
+[e :UE 280 ]
 }
-[e :U 287 ]
-[e :U 286 ]
-"40
-[; ;TeTeclat.c: 40:   break;
-[e $U 282  ]
 "41
-[; ;TeTeclat.c: 41:   case 1:
-[e :U 288 ]
-"42
-[; ;TeTeclat.c: 42:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 289  ]
+[; ;LcTLCD.c: 41: void LcInit(char rows, char columns) {
+[v _LcInit `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-"43
-[; ;TeTeclat.c: 43:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"44
-[; ;TeTeclat.c: 44:     LATDbits.LD5=1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"45
-[; ;TeTeclat.c: 45:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"46
-[; ;TeTeclat.c: 46:     cols=1;
-[e = F2589 -> -> 1 `i `uc ]
+[e :U _LcInit ]
+[v _rows `uc ~T0 @X0 1 r1 ]
+[v _columns `uc ~T0 @X0 1 r2 ]
+[f ]
 "47
-[; ;TeTeclat.c: 47:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
+[; ;LcTLCD.c: 47:  int i;
+[v _i `i ~T0 @X0 1 a ]
 "48
-[; ;TeTeclat.c: 48:    }
-}
-[e $U 290  ]
+[; ;LcTLCD.c: 48:  Timer = TiGetTimer();
+[e = _Timer ( _TiGetTimer ..  ]
 "49
-[; ;TeTeclat.c: 49:    else if (files!=0) {
-[e :U 289 ]
-[e $ ! != -> F2590 `i -> 0 `i 291  ]
-{
+[; ;LcTLCD.c: 49:  Rows = rows; Columns = columns;
+[e = _Rows -> _rows `uc ]
+[e = _Columns -> _columns `uc ]
 "50
-[; ;TeTeclat.c: 50:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
+[; ;LcTLCD.c: 50:  RowAct = ColumnAct = 0;
+[e = _RowAct = _ColumnAct -> -> 0 `i `uc ]
 "51
-[; ;TeTeclat.c: 51:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
+[; ;LcTLCD.c: 51:  (TRISCbits.TRISC5 = TRISDbits.TRISD7 = TRISCbits.TRISC4 = 0);
+[e = . . _TRISCbits 0 5 = . . _TRISDbits 0 7 = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
 "52
-[; ;TeTeclat.c: 52:    }
+[; ;LcTLCD.c: 52:  for (i = 0; i < 2; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 2 `i 282  ]
+[e $U 283  ]
+[e :U 282 ]
+{
+"53
+[; ;LcTLCD.c: 53:   Espera(Timer, 100);
+[e ( _Espera (2 , _Timer -> 100 `i ]
+"56
+[; ;LcTLCD.c: 56:   EscriuPrimeraOrdre(0x02 | 0x01);
+[e ( _EscriuPrimeraOrdre (1 -> | -> 2 `i -> 1 `i `uc ]
+"57
+[; ;LcTLCD.c: 57:   Espera(Timer, 5);
+[e ( _Espera (2 , _Timer -> 5 `i ]
+"58
+[; ;LcTLCD.c: 58:   EscriuPrimeraOrdre(0x02 | 0x01);
+[e ( _EscriuPrimeraOrdre (1 -> | -> 2 `i -> 1 `i `uc ]
+"59
+[; ;LcTLCD.c: 59:   Espera(Timer, 1);
+[e ( _Espera (2 , _Timer -> 1 `i ]
+"60
+[; ;LcTLCD.c: 60:   EscriuPrimeraOrdre(0x02 | 0x01);
+[e ( _EscriuPrimeraOrdre (1 -> | -> 2 `i -> 1 `i `uc ]
+"61
+[; ;LcTLCD.c: 61:   Espera(Timer, 1);
+[e ( _Espera (2 , _Timer -> 1 `i ]
+"64
+[; ;LcTLCD.c: 64:   EscriuPrimeraOrdre(0x02);
+[e ( _EscriuPrimeraOrdre (1 -> -> 2 `i `uc ]
+"65
+[; ;LcTLCD.c: 65:   Espera(Timer, 4);
+[e ( _Espera (2 , _Timer -> 4 `i ]
+"66
+[; ;LcTLCD.c: 66:   CantaIR(0x20 | 0x08);
+[e ( _CantaIR (1 -> | -> 32 `i -> 8 `i `uc ]
+"69
+[; ;LcTLCD.c: 69:   WaitForBusy(); CantaIR(0x08);
+[e ( _WaitForBusy ..  ]
+[e ( _CantaIR (1 -> -> 8 `i `uc ]
+"70
+[; ;LcTLCD.c: 70:   WaitForBusy(); CantaIR(0x01);
+[e ( _WaitForBusy ..  ]
+[e ( _CantaIR (1 -> -> 1 `i `uc ]
+"71
+[; ;LcTLCD.c: 71:   Espera(Timer,3);
+[e ( _Espera (2 , _Timer -> 3 `i ]
+"72
+[; ;LcTLCD.c: 72:   WaitForBusy(); CantaIR(0x04 | 0x02);
+[e ( _WaitForBusy ..  ]
+[e ( _CantaIR (1 -> | -> 4 `i -> 2 `i `uc ]
+"73
+[; ;LcTLCD.c: 73:   WaitForBusy(); CantaIR(0x08 | 0x04 | 0x02 | 0x01);
+[e ( _WaitForBusy ..  ]
+[e ( _CantaIR (1 -> | | | -> 8 `i -> 4 `i -> 2 `i -> 1 `i `uc ]
+"74
+[; ;LcTLCD.c: 74:  }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 2 `i 282  ]
+[e :U 283 ]
+}
+"79
+[; ;LcTLCD.c: 79:     LcCursorOff();
+[e ( _LcCursorOff ..  ]
+"80
+[; ;LcTLCD.c: 80: }
+[e :UE 281 ]
+}
+"82
+[; ;LcTLCD.c: 82: void LcClear(void) {
+[v _LcClear `(v ~T0 @X0 1 ef ]
+{
+[e :U _LcClear ]
+[f ]
+"85
+[; ;LcTLCD.c: 85:  WaitForBusy(); CantaIR(0x01);
+[e ( _WaitForBusy ..  ]
+[e ( _CantaIR (1 -> -> 1 `i `uc ]
+"86
+[; ;LcTLCD.c: 86:  Espera(Timer, 3);
+[e ( _Espera (2 , _Timer -> 3 `i ]
+"87
+[; ;LcTLCD.c: 87:     LcGotoXY(0,0);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"88
+[; ;LcTLCD.c: 88: }
+[e :UE 285 ]
+}
+"90
+[; ;LcTLCD.c: 90: void LcCursorOn(void) {
+[v _LcCursorOn `(v ~T0 @X0 1 ef ]
+{
+[e :U _LcCursorOn ]
+[f ]
+"93
+[; ;LcTLCD.c: 93:  WaitForBusy();
+[e ( _WaitForBusy ..  ]
+"94
+[; ;LcTLCD.c: 94:  CantaIR(0x08 | 0x04 | 0x02);
+[e ( _CantaIR (1 -> | | -> 8 `i -> 4 `i -> 2 `i `uc ]
+"95
+[; ;LcTLCD.c: 95: }
+[e :UE 286 ]
+}
+"97
+[; ;LcTLCD.c: 97: void LcCursorOff(void) {
+[v _LcCursorOff `(v ~T0 @X0 1 ef ]
+{
+[e :U _LcCursorOff ]
+[f ]
+"100
+[; ;LcTLCD.c: 100:  WaitForBusy();
+[e ( _WaitForBusy ..  ]
+"101
+[; ;LcTLCD.c: 101:  CantaIR(0x08 | 0x04);
+[e ( _CantaIR (1 -> | -> 8 `i -> 4 `i `uc ]
+"102
+[; ;LcTLCD.c: 102: }
+[e :UE 287 ]
+}
+"104
+[; ;LcTLCD.c: 104: void LcGotoXY(char Column, char Row) {
+[v _LcGotoXY `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _LcGotoXY ]
+[v _Column `uc ~T0 @X0 1 r1 ]
+[v _Row `uc ~T0 @X0 1 r2 ]
+[f ]
+"108
+[; ;LcTLCD.c: 108:  int Fisics;
+[v _Fisics `i ~T0 @X0 1 a ]
+"112
+[; ;LcTLCD.c: 112:    Fisics = Column + (!Row ? 0 : 0x40);
+[e = _Fisics + -> _Column `i ? ! != -> _Row `i -> 0 `i : -> 0 `i -> 64 `i ]
+"125
+[; ;LcTLCD.c: 125:  WaitForBusy();
+[e ( _WaitForBusy ..  ]
+"126
+[; ;LcTLCD.c: 126:  CantaIR(0x80 | Fisics);
+[e ( _CantaIR (1 -> | -> 128 `i _Fisics `uc ]
+"128
+[; ;LcTLCD.c: 128:  RowAct = Row;
+[e = _RowAct -> _Row `uc ]
+"129
+[; ;LcTLCD.c: 129:  ColumnAct = Column;
+[e = _ColumnAct -> _Column `uc ]
+"130
+[; ;LcTLCD.c: 130: }
+[e :UE 288 ]
+}
+"132
+[; ;LcTLCD.c: 132: void LcPutChar(char c) {
+[v _LcPutChar `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _LcPutChar ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[f ]
+"134
+[; ;LcTLCD.c: 134:  WaitForBusy(); CantaData(c);
+[e ( _WaitForBusy ..  ]
+[e ( _CantaData (1 _c ]
+"136
+[; ;LcTLCD.c: 136:  ++ColumnAct;
+[e =+ _ColumnAct -> -> 1 `i `uc ]
+"138
+[; ;LcTLCD.c: 138:  if (Rows == 2) {
+[e $ ! == -> _Rows `i -> 2 `i 290  ]
+{
+"139
+[; ;LcTLCD.c: 139:   if (ColumnAct >= 40) {
+[e $ ! >= -> _ColumnAct `i -> 40 `i 291  ]
+{
+"140
+[; ;LcTLCD.c: 140:    ColumnAct = 0;
+[e = _ColumnAct -> -> 0 `i `uc ]
+"141
+[; ;LcTLCD.c: 141:    if (++RowAct >= 2) RowAct = 0;
+[e $ ! >= -> =+ _RowAct -> -> 1 `i `uc `i -> 2 `i 292  ]
+[e = _RowAct -> -> 0 `i `uc ]
+[e :U 292 ]
+"142
+[; ;LcTLCD.c: 142:    LcGotoXY(ColumnAct, RowAct);
+[e ( _LcGotoXY (2 , -> _ColumnAct `uc -> _RowAct `uc ]
+"143
+[; ;LcTLCD.c: 143:   }
 }
 [e :U 291 ]
+"144
+[; ;LcTLCD.c: 144:  }
+}
 [e :U 290 ]
-"53
-[; ;TeTeclat.c: 53:   break;
-[e $U 282  ]
-"54
-[; ;TeTeclat.c: 54:   case 2:
-[e :U 292 ]
-"55
-[; ;TeTeclat.c: 55:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 293  ]
+"153
+[; ;LcTLCD.c: 153:  if (RowAct == 1) {
+[e $ ! == -> _RowAct `i -> 1 `i 293  ]
 {
-"56
-[; ;TeTeclat.c: 56:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"57
-[; ;TeTeclat.c: 57:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"58
-[; ;TeTeclat.c: 58:     LATDbits.LD6=1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"59
-[; ;TeTeclat.c: 59:     cols=2;
-[e = F2589 -> -> 2 `i `uc ]
-"60
-[; ;TeTeclat.c: 60:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
-"61
-[; ;TeTeclat.c: 61:    }
-}
-[e $U 294  ]
-"62
-[; ;TeTeclat.c: 62:    else if (files!=0) {
-[e :U 293 ]
-[e $ ! != -> F2590 `i -> 0 `i 295  ]
-{
-"63
-[; ;TeTeclat.c: 63:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"64
-[; ;TeTeclat.c: 64:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"65
-[; ;TeTeclat.c: 65:    }
-}
-[e :U 295 ]
+"154
+[; ;LcTLCD.c: 154:   if (ColumnAct >= 40) ColumnAct = 0;
+[e $ ! >= -> _ColumnAct `i -> 40 `i 294  ]
+[e = _ColumnAct -> -> 0 `i `uc ]
 [e :U 294 ]
-"66
-[; ;TeTeclat.c: 66:   break;
-[e $U 282  ]
-"67
-[; ;TeTeclat.c: 67:   case 3:
-[e :U 296 ]
-"68
-[; ;TeTeclat.c: 68:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 297  ]
-{
-"69
-[; ;TeTeclat.c: 69:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"70
-[; ;TeTeclat.c: 70:    }
+"155
+[; ;LcTLCD.c: 155:   LcGotoXY(ColumnAct, RowAct);
+[e ( _LcGotoXY (2 , -> _ColumnAct `uc -> _RowAct `uc ]
+"156
+[; ;LcTLCD.c: 156:  }
 }
+[e :U 293 ]
+"157
+[; ;LcTLCD.c: 157: }
+[e :UE 289 ]
+}
+"159
+[; ;LcTLCD.c: 159: void Espera(char Timer, int ms) {
+[v _Espera `(v ~T0 @X0 1 ef2`uc`i ]
+{
+[e :U _Espera ]
+[v _Timer `uc ~T0 @X0 1 r1 ]
+[v _ms `i ~T0 @X0 1 r2 ]
+[f ]
+"160
+[; ;LcTLCD.c: 160:  TiResetTics(Timer);
+[e ( _TiResetTics (1 _Timer ]
+"161
+[; ;LcTLCD.c: 161:  while(TiGetTics(Timer) < ms);
+[e $U 296  ]
 [e :U 297 ]
-"71
-[; ;TeTeclat.c: 71:   break;
-[e $U 282  ]
-"72
-[; ;TeTeclat.c: 72:   case 4:
+[e :U 296 ]
+[e $ < ( _TiGetTics (1 _Timer _ms 297  ]
 [e :U 298 ]
-"73
-[; ;TeTeclat.c: 73:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 299  ]
-{
-"74
-[; ;TeTeclat.c: 74:     state = 1;
-[e = F2588 -> -> 1 `i `uc ]
-"75
-[; ;TeTeclat.c: 75:    }
+"162
+[; ;LcTLCD.c: 162: }
+[e :UE 295 ]
 }
-[e $U 300  ]
-"76
-[; ;TeTeclat.c: 76:    else if (files!=0) {
-[e :U 299 ]
-[e $ ! != -> F2590 `i -> 0 `i 301  ]
+"164
+[; ;LcTLCD.c: 164: void CantaPartAlta(char c) {
+[v _CantaPartAlta `(v ~T0 @X0 1 ef1`uc ]
 {
-"77
-[; ;TeTeclat.c: 77:                 MsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _MsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"78
-[; ;TeTeclat.c: 78:                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"80
-[; ;TeTeclat.c: 80:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"81
-[; ;TeTeclat.c: 81:    }
+[e :U _CantaPartAlta ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[f ]
+"165
+[; ;LcTLCD.c: 165:   (LATCbits.LATC3 = (c & 0x80 ? 1 : 0));
+[e = . . _LATCbits 0 3 -> ? != & -> _c `i -> 128 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"166
+[; ;LcTLCD.c: 166:   (LATCbits.LATC2 = (c & 0x40 ? 1 : 0));
+[e = . . _LATCbits 0 2 -> ? != & -> _c `i -> 64 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"167
+[; ;LcTLCD.c: 167:   (LATCbits.LATC1 = (c & 0x20 ? 1 : 0));
+[e = . . _LATCbits 0 1 -> ? != & -> _c `i -> 32 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"168
+[; ;LcTLCD.c: 168:   (LATCbits.LATC0 = (c & 0x10 ? 1 : 0));
+[e = . . _LATCbits 0 0 -> ? != & -> _c `i -> 16 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"169
+[; ;LcTLCD.c: 169: }
+[e :UE 299 ]
 }
-[e :U 301 ]
-[e :U 300 ]
-"82
-[; ;TeTeclat.c: 82:   break;
-[e $U 282  ]
-"83
-[; ;TeTeclat.c: 83:   case 5:
-[e :U 302 ]
-"84
-[; ;TeTeclat.c: 84:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 303  ]
+"171
+[; ;LcTLCD.c: 171: void CantaPartBaixa(char c) {
+[v _CantaPartBaixa `(v ~T0 @X0 1 ef1`uc ]
 {
-"85
-[; ;TeTeclat.c: 85:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"86
-[; ;TeTeclat.c: 86:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"87
-[; ;TeTeclat.c: 87:    }
+[e :U _CantaPartBaixa ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[f ]
+"172
+[; ;LcTLCD.c: 172:   (LATCbits.LATC3 = (c & 0x08 ? 1 : 0));
+[e = . . _LATCbits 0 3 -> ? != & -> _c `i -> 8 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"173
+[; ;LcTLCD.c: 173:   (LATCbits.LATC2 = (c & 0x04 ? 1 : 0));
+[e = . . _LATCbits 0 2 -> ? != & -> _c `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"174
+[; ;LcTLCD.c: 174:   (LATCbits.LATC1 = (c & 0x02 ? 1 : 0));
+[e = . . _LATCbits 0 1 -> ? != & -> _c `i -> 2 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"175
+[; ;LcTLCD.c: 175:   (LATCbits.LATC0 = (c & 0x01 ? 1 : 0));
+[e = . . _LATCbits 0 0 -> ? != & -> _c `i -> 1 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"176
+[; ;LcTLCD.c: 176: }
+[e :UE 300 ]
 }
-[e :U 303 ]
-"88
-[; ;TeTeclat.c: 88:   break;
-[e $U 282  ]
-"89
-[; ;TeTeclat.c: 89:   case 6:
-[e :U 304 ]
-"90
-[; ;TeTeclat.c: 90:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 305  ]
+"178
+[; ;LcTLCD.c: 178: void CantaIR(char IR) {
+[v _CantaIR `(v ~T0 @X0 1 ef1`uc ]
 {
-"91
-[; ;TeTeclat.c: 91:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"92
-[; ;TeTeclat.c: 92:    }
+[e :U _CantaIR ]
+[v _IR `uc ~T0 @X0 1 r1 ]
+[f ]
+"179
+[; ;LcTLCD.c: 179:  (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0);
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"180
+[; ;LcTLCD.c: 180:  (LATCbits.LATC5 = 0);
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+"181
+[; ;LcTLCD.c: 181:  (LATDbits.LATD7 = 0);
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"182
+[; ;LcTLCD.c: 182:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"183
+[; ;LcTLCD.c: 183:  CantaPartAlta(IR);
+[e ( _CantaPartAlta (1 _IR ]
+"184
+[; ;LcTLCD.c: 184:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"185
+[; ;LcTLCD.c: 185:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"186
+[; ;LcTLCD.c: 186:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"187
+[; ;LcTLCD.c: 187:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"188
+[; ;LcTLCD.c: 188:  CantaPartBaixa(IR);
+[e ( _CantaPartBaixa (1 _IR ]
+"189
+[; ;LcTLCD.c: 189:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"190
+[; ;LcTLCD.c: 190:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"191
+[; ;LcTLCD.c: 191:  (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 1);
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"192
+[; ;LcTLCD.c: 192: }
+[e :UE 301 ]
 }
-[e :U 305 ]
-"93
-[; ;TeTeclat.c: 93:   break;
-[e $U 282  ]
-"94
-[; ;TeTeclat.c: 94:   case 7:
+"194
+[; ;LcTLCD.c: 194: void CantaData(char Data) {
+[v _CantaData `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _CantaData ]
+[v _Data `uc ~T0 @X0 1 r1 ]
+[f ]
+"195
+[; ;LcTLCD.c: 195:  (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0);
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"196
+[; ;LcTLCD.c: 196:  (LATCbits.LATC5 = 1);
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+"197
+[; ;LcTLCD.c: 197:  (LATDbits.LATD7 = 0);
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"198
+[; ;LcTLCD.c: 198:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"199
+[; ;LcTLCD.c: 199:  CantaPartAlta(Data);
+[e ( _CantaPartAlta (1 _Data ]
+"200
+[; ;LcTLCD.c: 200:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"201
+[; ;LcTLCD.c: 201:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"202
+[; ;LcTLCD.c: 202:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"203
+[; ;LcTLCD.c: 203:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"204
+[; ;LcTLCD.c: 204:  CantaPartBaixa(Data);
+[e ( _CantaPartBaixa (1 _Data ]
+"205
+[; ;LcTLCD.c: 205:  (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"206
+[; ;LcTLCD.c: 206:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"207
+[; ;LcTLCD.c: 207:  (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 1);
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"208
+[; ;LcTLCD.c: 208: }
+[e :UE 302 ]
+}
+"210
+[; ;LcTLCD.c: 210: void WaitForBusy(void) { char Busy;
+[v _WaitForBusy `(v ~T0 @X0 1 ef ]
+{
+[e :U _WaitForBusy ]
+[f ]
+[v _Busy `uc ~T0 @X0 1 a ]
+"211
+[; ;LcTLCD.c: 211:  (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 1);
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"212
+[; ;LcTLCD.c: 212:  (LATCbits.LATC5 = 0);
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+"213
+[; ;LcTLCD.c: 213:  (LATDbits.LATD7 = 1);
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+"214
+[; ;LcTLCD.c: 214:  TiResetTics(Timer);
+[e ( _TiResetTics (1 _Timer ]
+"215
+[; ;LcTLCD.c: 215:  do {
 [e :U 306 ]
-"95
-[; ;TeTeclat.c: 95:    if (files!=0) {
-[e $ ! != -> F2590 `i -> 0 `i 307  ]
 {
-"96
-[; ;TeTeclat.c: 96:     state = 5;
-[e = F2588 -> -> 5 `i `uc ]
-"97
-[; ;TeTeclat.c: 97:    }
-}
-[e $U 308  ]
-"98
-[; ;TeTeclat.c: 98:    else if (files==0) {
+"216
+[; ;LcTLCD.c: 216:   (LATCbits.LATC4 = 1);(LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"217
+[; ;LcTLCD.c: 217:   Busy = (PORTCbits.RC3);
+[e = _Busy -> . . _PORTCbits 0 3 `uc ]
+"218
+[; ;LcTLCD.c: 218:   (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"219
+[; ;LcTLCD.c: 219:   (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"220
+[; ;LcTLCD.c: 220:   (LATCbits.LATC4 = 1);(LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"222
+[; ;LcTLCD.c: 222:   (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"223
+[; ;LcTLCD.c: 223:   (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"224
+[; ;LcTLCD.c: 224:   if (TiGetTics(Timer)) break;
+[e $ ! != ( _TiGetTics (1 _Timer -> 0 `i 307  ]
+[e $U 305  ]
 [e :U 307 ]
-[e $ ! == -> F2590 `i -> 0 `i 309  ]
+"225
+[; ;LcTLCD.c: 225:  } while(Busy);
+}
+[e $ != -> _Busy `i -> 0 `i 306  ]
+[e :U 305 ]
+"226
+[; ;LcTLCD.c: 226: }
+[e :UE 303 ]
+}
+"228
+[; ;LcTLCD.c: 228: void EscriuPrimeraOrdre(char ordre) {
+[v _EscriuPrimeraOrdre `(v ~T0 @X0 1 ef1`uc ]
 {
-"99
-[; ;TeTeclat.c: 99:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
-"100
-[; ;TeTeclat.c: 100:    }
+[e :U _EscriuPrimeraOrdre ]
+[v _ordre `uc ~T0 @X0 1 r1 ]
+[f ]
+"230
+[; ;LcTLCD.c: 230:  (TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0); (LATCbits.LATC5 = 0); (LATDbits.LATD7 = 0);
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"231
+[; ;LcTLCD.c: 231:  (LATCbits.LATC4 = 1); (LATCbits.LATC4 = 1);
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+"232
+[; ;LcTLCD.c: 232:   (LATCbits.LATC3 = (ordre & 0x08 ? 1 : 0));
+[e = . . _LATCbits 0 3 -> ? != & -> _ordre `i -> 8 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"233
+[; ;LcTLCD.c: 233:   (LATCbits.LATC2 = (ordre & 0x04 ? 1 : 0));
+[e = . . _LATCbits 0 2 -> ? != & -> _ordre `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"234
+[; ;LcTLCD.c: 234:   (LATCbits.LATC1 = (ordre & 0x02 ? 1 : 0));
+[e = . . _LATCbits 0 1 -> ? != & -> _ordre `i -> 2 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"235
+[; ;LcTLCD.c: 235:   (LATCbits.LATC0 = (ordre & 0x01 ? 1 : 0));
+[e = . . _LATCbits 0 0 -> ? != & -> _ordre `i -> 1 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"236
+[; ;LcTLCD.c: 236:  (LATCbits.LATC4 = 0);
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+"237
+[; ;LcTLCD.c: 237: }
+[e :UE 308 ]
 }
-[e :U 309 ]
-[e :U 308 ]
-"101
-[; ;TeTeclat.c: 101:   break;
-[e $U 282  ]
-"102
-[; ;TeTeclat.c: 102:  }
+"239
+[; ;LcTLCD.c: 239: void LcNewString(char new_s[]){
+[v _LcNewString `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _LcNewString ]
+[v _new_s `*uc ~T0 @X0 1 r1 ]
+[f ]
+"240
+[; ;LcTLCD.c: 240:     s_ptr = new_s;
+[e = _s_ptr _new_s ]
+"241
+[; ;LcTLCD.c: 241:     nou_s = 1;
+[e = _nou_s -> -> 1 `i `b ]
+"242
+[; ;LcTLCD.c: 242: }
+[e :UE 309 ]
 }
-[e $U 282  ]
-[e :U 283 ]
-[e [\ -> F2588 `i , $ -> 0 `i 284
- , $ -> 1 `i 288
- , $ -> 2 `i 292
- , $ -> 3 `i 296
- , $ -> 4 `i 298
- , $ -> 5 `i 302
- , $ -> 6 `i 304
- , $ -> 7 `i 306
- 282 ]
-[e :U 282 ]
-"103
-[; ;TeTeclat.c: 103: }
-[e :UE 281 ]
+"244
+[; ;LcTLCD.c: 244: void LcLCD(void){
+[v _LcLCD `(v ~T0 @X0 1 ef ]
+{
+[e :U _LcLCD ]
+[f ]
+"245
+[; ;LcTLCD.c: 245:     if(nou_s == 1){
+[e $ ! == -> _nou_s `i -> 1 `i 311  ]
+{
+"246
+[; ;LcTLCD.c: 246:         LcPutChar(*s_ptr);
+[e ( _LcPutChar (1 *U _s_ptr ]
+"247
+[; ;LcTLCD.c: 247:         s_ptr++;
+[e ++ _s_ptr * -> -> 1 `i `x -> -> # *U _s_ptr `i `x ]
+"248
+[; ;LcTLCD.c: 248:         if(*s_ptr == '\0'){
+[e $ ! == -> *U _s_ptr `ui -> 0 `ui 312  ]
+{
+"249
+[; ;LcTLCD.c: 249:             nou_s = 0;
+[e = _nou_s -> -> 0 `i `b ]
+"250
+[; ;LcTLCD.c: 250:             s_ptr=0;
+[e = _s_ptr -> -> 0 `i `*uc ]
+"251
+[; ;LcTLCD.c: 251:         }
+}
+[e :U 312 ]
+"252
+[; ;LcTLCD.c: 252:     }
+}
+[e :U 311 ]
+"253
+[; ;LcTLCD.c: 253: }
+[e :UE 310 ]
+}
+"255
+[; ;LcTLCD.c: 255: __bit LcLliure(void){
+[v _LcLliure `(b ~T0 @X0 1 ef ]
+{
+[e :U _LcLliure ]
+[f ]
+"256
+[; ;LcTLCD.c: 256:     return !nou_s;
+[e ) ! _nou_s ]
+[e $UE 313  ]
+"257
+[; ;LcTLCD.c: 257: }
+[e :UE 313 ]
 }

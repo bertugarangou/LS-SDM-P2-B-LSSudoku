@@ -2,56 +2,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./TiTTimer.h
 [; ;./TiTTimer.h: 17: char TiGetTimer(void);
 [v _TiGetTimer `(uc ~T0 @X0 0 ef ]
-"650 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 650:     struct {
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"660
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 660:     struct {
-[s S28 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S28 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"670
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 670:     struct {
-[s S29 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . . P1B P1C P1D ]
-"676
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 676:     struct {
-[s S30 :7 `uc 1 :1 `uc 1 ]
-[n S30 . . SS2 ]
-"649
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 649: typedef union {
-[u S26 `S27 1 `S28 1 `S29 1 `S30 1 ]
-[n S26 . . . . . ]
-"681
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 681: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS26 ~T0 @X0 0 e@3971 ]
-"1331
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1331:     struct {
-[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S52 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"1341
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1341:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"1330
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1330: typedef union {
-[u S51 `S52 1 `S53 1 ]
-[n S51 . . . ]
-"1352
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1352: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS51 ~T0 @X0 0 e@3980 ]
-"8 ./TiTTimer.h
+"8
 [; ;./TiTTimer.h: 8: void TiResetTics(char Handle);
 [v _TiResetTics `(v ~T0 @X0 0 ef1`uc ]
 "12
 [; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
 [v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
-"6 ./Menu.h
-[; ;./Menu.h: 6: void MsetNovaTecla(char tecla);
-[v _MsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
-"6 ./Ssms.h
-[; ;./Ssms.h: 6: void SsetNovaTecla(char tecla);
-[v _SsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
+"1107 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1107:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1117
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1117:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"1106
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1106: typedef union {
+[u S45 `S46 1 `S47 1 ]
+[n S45 . . . ]
+"1128
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1128: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS45 ~T0 @X0 0 e@3978 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -466,355 +437,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 TeTeclat.c
-[; ;TeTeclat.c: 9: static char tiTeclat=0;
-[v _tiTeclat `uc ~T0 @X0 1 s ]
-[i _tiTeclat
--> -> 0 `i `uc
+"5 Altaveu.c
+[; ;Altaveu.c: 5: __bit reproduir = 0;
+[v _reproduir `b ~T0 @X0 1 e ]
+[i _reproduir
+-> -> 0 `i `b
 ]
-[v F2585 `uc ~T0 @X0 -> 3 `i t ]
-"11
-[; ;TeTeclat.c: 11: char teclaPremuda[4][3] = {
-[v _teclaPremuda `F2585 ~T0 @X0 -> 4 `i e ]
-[i _teclaPremuda
-:U ..
-:U ..
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
-..
-:U ..
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
-..
-:U ..
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
-..
-:U ..
--> -> 10 `i `uc
--> -> 0 `i `uc
--> -> 11 `i `uc
-..
-..
-]
-"18
-[; ;TeTeclat.c: 18: void TeInit(void){
-[v _TeInit `(v ~T0 @X0 1 ef ]
+"6
+[; ;Altaveu.c: 6: unsigned char nota;
+[v _nota `uc ~T0 @X0 1 e ]
+"7
+[; ;Altaveu.c: 7: char timerAltaveu;
+[v _timerAltaveu `uc ~T0 @X0 1 e ]
+"8
+[; ;Altaveu.c: 8: unsigned char copsNota;
+[v _copsNota `uc ~T0 @X0 1 e ]
+"10
+[; ;Altaveu.c: 10: void initAltaveu(void){
+[v _initAltaveu `(v ~T0 @X0 1 ef ]
 {
-[e :U _TeInit ]
+[e :U _initAltaveu ]
 [f ]
-"19
-[; ;TeTeclat.c: 19:     tiTeclat=TiGetTimer();
-[e = _tiTeclat ( _TiGetTimer ..  ]
-"20
-[; ;TeTeclat.c: 20: }
+"11
+[; ;Altaveu.c: 11:     timerAltaveu = TiGetTimer();
+[e = _timerAltaveu ( _TiGetTimer ..  ]
+"13
+[; ;Altaveu.c: 13: }
 [e :UE 280 ]
 }
-"22
-[; ;TeTeclat.c: 22: void TeTeclat(void) {
-[v _TeTeclat `(v ~T0 @X0 1 ef ]
+"14
+[; ;Altaveu.c: 14: void playAltaveu(void){
+[v _playAltaveu `(v ~T0 @X0 1 ef ]
 {
-[e :U _TeTeclat ]
+[e :U _playAltaveu ]
 [f ]
-"23
-[; ;TeTeclat.c: 23:  static char state = 0;
-[v F2588 `uc ~T0 @X0 1 s state ]
-[i F2588
--> -> 0 `i `uc
-]
-"24
-[; ;TeTeclat.c: 24:     static char cols=0;
-[v F2589 `uc ~T0 @X0 1 s cols ]
-[i F2589
--> -> 0 `i `uc
-]
-"25
-[; ;TeTeclat.c: 25:     static char files = 0;
-[v F2590 `uc ~T0 @X0 1 s files ]
-[i F2590
--> -> 0 `i `uc
-]
-"26
-[; ;TeTeclat.c: 26:     files = PORTDbits.RD0 + PORTDbits.RD1*2 + PORTDbits.RD2*3 + PORTDbits.RD3*4;
-[e = F2590 -> + + + -> . . _PORTDbits 0 0 `i * -> . . _PORTDbits 0 1 `i -> 2 `i * -> . . _PORTDbits 0 2 `i -> 3 `i * -> . . _PORTDbits 0 3 `i -> 4 `i `uc ]
-"27
-[; ;TeTeclat.c: 27:  switch(state) {
-[e $U 283  ]
-{
-"28
-[; ;TeTeclat.c: 28:   case 0:
-[e :U 284 ]
-"29
-[; ;TeTeclat.c: 29:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 285  ]
-{
-"30
-[; ;TeTeclat.c: 30:     LATDbits.LD4=1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"31
-[; ;TeTeclat.c: 31:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"32
-[; ;TeTeclat.c: 32:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"33
-[; ;TeTeclat.c: 33:     cols=0;
-[e = F2589 -> -> 0 `i `uc ]
-"34
-[; ;TeTeclat.c: 34:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"35
-[; ;TeTeclat.c: 35:    }
-}
-[e $U 286  ]
-"36
-[; ;TeTeclat.c: 36:    else if (files!=0) {
-[e :U 285 ]
-[e $ ! != -> F2590 `i -> 0 `i 287  ]
-{
-"37
-[; ;TeTeclat.c: 37:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"38
-[; ;TeTeclat.c: 38:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
-"39
-[; ;TeTeclat.c: 39:    }
-}
-[e :U 287 ]
-[e :U 286 ]
-"40
-[; ;TeTeclat.c: 40:   break;
-[e $U 282  ]
-"41
-[; ;TeTeclat.c: 41:   case 1:
-[e :U 288 ]
-"42
-[; ;TeTeclat.c: 42:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 289  ]
-{
-"43
-[; ;TeTeclat.c: 43:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"44
-[; ;TeTeclat.c: 44:     LATDbits.LD5=1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"45
-[; ;TeTeclat.c: 45:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"46
-[; ;TeTeclat.c: 46:     cols=1;
-[e = F2589 -> -> 1 `i `uc ]
-"47
-[; ;TeTeclat.c: 47:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"48
-[; ;TeTeclat.c: 48:    }
-}
-[e $U 290  ]
-"49
-[; ;TeTeclat.c: 49:    else if (files!=0) {
-[e :U 289 ]
-[e $ ! != -> F2590 `i -> 0 `i 291  ]
-{
-"50
-[; ;TeTeclat.c: 50:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"51
-[; ;TeTeclat.c: 51:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
-"52
-[; ;TeTeclat.c: 52:    }
-}
-[e :U 291 ]
-[e :U 290 ]
-"53
-[; ;TeTeclat.c: 53:   break;
-[e $U 282  ]
-"54
-[; ;TeTeclat.c: 54:   case 2:
-[e :U 292 ]
-"55
-[; ;TeTeclat.c: 55:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 293  ]
-{
-"56
-[; ;TeTeclat.c: 56:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"57
-[; ;TeTeclat.c: 57:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"58
-[; ;TeTeclat.c: 58:     LATDbits.LD6=1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"59
-[; ;TeTeclat.c: 59:     cols=2;
-[e = F2589 -> -> 2 `i `uc ]
-"60
-[; ;TeTeclat.c: 60:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
-"61
-[; ;TeTeclat.c: 61:    }
-}
-[e $U 294  ]
-"62
-[; ;TeTeclat.c: 62:    else if (files!=0) {
-[e :U 293 ]
-[e $ ! != -> F2590 `i -> 0 `i 295  ]
-{
-"63
-[; ;TeTeclat.c: 63:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"64
-[; ;TeTeclat.c: 64:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"65
-[; ;TeTeclat.c: 65:    }
-}
-[e :U 295 ]
-[e :U 294 ]
-"66
-[; ;TeTeclat.c: 66:   break;
-[e $U 282  ]
-"67
-[; ;TeTeclat.c: 67:   case 3:
-[e :U 296 ]
-"68
-[; ;TeTeclat.c: 68:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 297  ]
-{
-"69
-[; ;TeTeclat.c: 69:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"70
-[; ;TeTeclat.c: 70:    }
-}
-[e :U 297 ]
-"71
-[; ;TeTeclat.c: 71:   break;
-[e $U 282  ]
-"72
-[; ;TeTeclat.c: 72:   case 4:
-[e :U 298 ]
-"73
-[; ;TeTeclat.c: 73:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 299  ]
-{
-"74
-[; ;TeTeclat.c: 74:     state = 1;
-[e = F2588 -> -> 1 `i `uc ]
-"75
-[; ;TeTeclat.c: 75:    }
-}
-[e $U 300  ]
-"76
-[; ;TeTeclat.c: 76:    else if (files!=0) {
-[e :U 299 ]
-[e $ ! != -> F2590 `i -> 0 `i 301  ]
-{
-"77
-[; ;TeTeclat.c: 77:                 MsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _MsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"78
-[; ;TeTeclat.c: 78:                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"80
-[; ;TeTeclat.c: 80:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"81
-[; ;TeTeclat.c: 81:    }
-}
-[e :U 301 ]
-[e :U 300 ]
-"82
-[; ;TeTeclat.c: 82:   break;
-[e $U 282  ]
-"83
-[; ;TeTeclat.c: 83:   case 5:
-[e :U 302 ]
-"84
-[; ;TeTeclat.c: 84:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 303  ]
-{
-"85
-[; ;TeTeclat.c: 85:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"86
-[; ;TeTeclat.c: 86:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"87
-[; ;TeTeclat.c: 87:    }
-}
-[e :U 303 ]
-"88
-[; ;TeTeclat.c: 88:   break;
-[e $U 282  ]
-"89
-[; ;TeTeclat.c: 89:   case 6:
-[e :U 304 ]
-"90
-[; ;TeTeclat.c: 90:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 305  ]
-{
-"91
-[; ;TeTeclat.c: 91:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"92
-[; ;TeTeclat.c: 92:    }
-}
-[e :U 305 ]
-"93
-[; ;TeTeclat.c: 93:   break;
-[e $U 282  ]
-"94
-[; ;TeTeclat.c: 94:   case 7:
-[e :U 306 ]
-"95
-[; ;TeTeclat.c: 95:    if (files!=0) {
-[e $ ! != -> F2590 `i -> 0 `i 307  ]
-{
-"96
-[; ;TeTeclat.c: 96:     state = 5;
-[e = F2588 -> -> 5 `i `uc ]
-"97
-[; ;TeTeclat.c: 97:    }
-}
-[e $U 308  ]
-"98
-[; ;TeTeclat.c: 98:    else if (files==0) {
-[e :U 307 ]
-[e $ ! == -> F2590 `i -> 0 `i 309  ]
-{
-"99
-[; ;TeTeclat.c: 99:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
-"100
-[; ;TeTeclat.c: 100:    }
-}
-[e :U 309 ]
-[e :U 308 ]
-"101
-[; ;TeTeclat.c: 101:   break;
-[e $U 282  ]
-"102
-[; ;TeTeclat.c: 102:  }
-}
-[e $U 282  ]
-[e :U 283 ]
-[e [\ -> F2588 `i , $ -> 0 `i 284
- , $ -> 1 `i 288
- , $ -> 2 `i 292
- , $ -> 3 `i 296
- , $ -> 4 `i 298
- , $ -> 5 `i 302
- , $ -> 6 `i 304
- , $ -> 7 `i 306
- 282 ]
-[e :U 282 ]
-"103
-[; ;TeTeclat.c: 103: }
+"15
+[; ;Altaveu.c: 15:     reproduir = 1;
+[e = _reproduir -> -> 1 `i `b ]
+"16
+[; ;Altaveu.c: 16: }
 [e :UE 281 ]
+}
+"17
+[; ;Altaveu.c: 17: void motorAltaveu(void){
+[v _motorAltaveu `(v ~T0 @X0 1 ef ]
+{
+[e :U _motorAltaveu ]
+[f ]
+"18
+[; ;Altaveu.c: 18: static char state = 0;
+[v F2577 `uc ~T0 @X0 1 s state ]
+[i F2577
+-> -> 0 `i `uc
+]
+"20
+[; ;Altaveu.c: 20:  switch(state) {
+[e $U 284  ]
+{
+"21
+[; ;Altaveu.c: 21:   case 0:
+[e :U 285 ]
+"22
+[; ;Altaveu.c: 22:    if (reproduir) {
+[e $ ! _reproduir 286  ]
+{
+"23
+[; ;Altaveu.c: 23:     nota = 1;
+[e = _nota -> -> 1 `i `uc ]
+"24
+[; ;Altaveu.c: 24:     copsNota = 0;
+[e = _copsNota -> -> 0 `i `uc ]
+"25
+[; ;Altaveu.c: 25:     TiResetTics(timerAltaveu);
+[e ( _TiResetTics (1 _timerAltaveu ]
+"26
+[; ;Altaveu.c: 26:     state = 1;
+[e = F2577 -> -> 1 `i `uc ]
+"27
+[; ;Altaveu.c: 27:    }
+}
+[e :U 286 ]
+"28
+[; ;Altaveu.c: 28:   break;
+[e $U 283  ]
+"29
+[; ;Altaveu.c: 29:   case 1:
+[e :U 287 ]
+"30
+[; ;Altaveu.c: 30:    if (nota > 5) {
+[e $ ! > -> _nota `i -> 5 `i 288  ]
+{
+"31
+[; ;Altaveu.c: 31:     reproduir = 0;
+[e = _reproduir -> -> 0 `i `b ]
+"32
+[; ;Altaveu.c: 32:     state = 0;
+[e = F2577 -> -> 0 `i `uc ]
+"33
+[; ;Altaveu.c: 33:    }
+}
+[e $U 289  ]
+"34
+[; ;Altaveu.c: 34:    else if (copsNota == 168) {
+[e :U 288 ]
+[e $ ! == -> _copsNota `i -> 168 `i 290  ]
+{
+"35
+[; ;Altaveu.c: 35:     nota++;
+[e ++ _nota -> -> 1 `i `uc ]
+"36
+[; ;Altaveu.c: 36:     copsNota = 0;
+[e = _copsNota -> -> 0 `i `uc ]
+"37
+[; ;Altaveu.c: 37:     state = 1;
+[e = F2577 -> -> 1 `i `uc ]
+"38
+[; ;Altaveu.c: 38:    }
+}
+[e $U 291  ]
+"39
+[; ;Altaveu.c: 39:    else if (TiGetTics(timerAltaveu) > nota) {
+[e :U 290 ]
+[e $ ! > ( _TiGetTics (1 _timerAltaveu -> _nota `i 292  ]
+{
+"40
+[; ;Altaveu.c: 40:     LATBbits.LB0 = 1;
+[e = . . _LATBbits 1 0 -> -> 1 `i `uc ]
+"41
+[; ;Altaveu.c: 41:     TiResetTics(timerAltaveu);
+[e ( _TiResetTics (1 _timerAltaveu ]
+"42
+[; ;Altaveu.c: 42:     state = 2;
+[e = F2577 -> -> 2 `i `uc ]
+"43
+[; ;Altaveu.c: 43:    }
+}
+[e :U 292 ]
+[e :U 291 ]
+[e :U 289 ]
+"44
+[; ;Altaveu.c: 44:   break;
+[e $U 283  ]
+"45
+[; ;Altaveu.c: 45:   case 2:
+[e :U 293 ]
+"46
+[; ;Altaveu.c: 46:    if (TiGetTics(timerAltaveu) > nota) {
+[e $ ! > ( _TiGetTics (1 _timerAltaveu -> _nota `i 294  ]
+{
+"47
+[; ;Altaveu.c: 47:     LATBbits.LB0 = 0;
+[e = . . _LATBbits 1 0 -> -> 0 `i `uc ]
+"48
+[; ;Altaveu.c: 48:     TiResetTics(timerAltaveu);
+[e ( _TiResetTics (1 _timerAltaveu ]
+"49
+[; ;Altaveu.c: 49:     copsNota++;
+[e ++ _copsNota -> -> 1 `i `uc ]
+"50
+[; ;Altaveu.c: 50:     state = 1;
+[e = F2577 -> -> 1 `i `uc ]
+"51
+[; ;Altaveu.c: 51:    }
+}
+[e :U 294 ]
+"52
+[; ;Altaveu.c: 52:   break;
+[e $U 283  ]
+"53
+[; ;Altaveu.c: 53:  }
+}
+[e $U 283  ]
+[e :U 284 ]
+[e [\ -> F2577 `i , $ -> 0 `i 285
+ , $ -> 1 `i 287
+ , $ -> 2 `i 293
+ 283 ]
+[e :U 283 ]
+"54
+[; ;Altaveu.c: 54: }
+[e :UE 282 ]
 }

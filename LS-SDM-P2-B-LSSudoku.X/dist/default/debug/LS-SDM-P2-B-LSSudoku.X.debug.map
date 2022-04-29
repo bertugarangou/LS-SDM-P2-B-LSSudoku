@@ -3,17 +3,18 @@ Microchip MPLAB XC8 Compiler V2.32
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
-  -h+dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.sym \
-  --cmf=dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.cmf -z \
-  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAs30.5 \
-  --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/LS-SDM-P2-B-LSSudoku.X.production.map -E1 \
+  -h+dist/default/debug\LS-SDM-P2-B-LSSudoku.X.debug.sym \
+  --cmf=dist/default/debug\LS-SDM-P2-B-LSSudoku.X.debug.cmf -z -Q18F4321 \
+  -oC:\Users\alber\AppData\Local\Temp\xcAs3og.4 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/debug/LS-SDM-P2-B-LSSudoku.X.debug.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=098h-0FFh -pstack=STACK \
-  -ACODE=00h-01FFFh -ACONST=00h-01FFFh -ASMALLCONST=0200h-02FFhx30 \
-  -AMEDIUMCONST=0200h-01FFFh -ACOMRAM=01h-07Fh -AABS1=00h-01FFh \
-  -ABIGRAM=01h-01FFh -ARAM=080h-0FFh,0100h-01FFh -ABANK0=080h-0FFh \
-  -ABANK1=0100h-01FFh -ASFR=0F80h-0FFFh -ACONFIG=0300000h-030000Dh \
-  -AIDLOC=0200000h-0200007h -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
+  -ACODE=00h-01DBFh -ACONST=00h-01DBFh \
+  -ASMALLCONST=0200h-02FFhx27,01D00h-01DBFh -AMEDIUMCONST=0200h-01DBFh \
+  -ACOMRAM=01h-07Fh -AABS1=00h-01F3h -ABIGRAM=01h-01F3h \
+  -ARAM=080h-0FFh,0100h-01F3h -ABANK0=080h-0FFh -ABANK1=0100h-01F3h \
+  -ASFR=0F80h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFCh \
+  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
+  -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
   -preset_vec=00h,intcode=08h,intcodelo,powerup,init -pramtop=0200h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h \
@@ -21,8 +22,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alber\AppData\Local\Temp\xcAs30.o \
-  dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o 
+  C:\Users\alber\AppData\Local\Temp\xcAs3og.o \
+  dist/default/debug\LS-SDM-P2-B-LSSudoku.X.debug.o 
 
 Object code version is 3.11
 
@@ -31,12 +32,12 @@ Machine type is 18F4321
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alber\AppData\Local\Temp\xcAs30.o
+C:\Users\alber\AppData\Local\Temp\xcAs3og.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 32       32        4        4       0
                 reset_vec                             0        0        4        0       0
-dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
+dist/default/debug\LS-SDM-P2-B-LSSudoku.X.debug.o
                 intcode                               8        8       2A        4       0
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
@@ -229,27 +230,32 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            000098-0000FF               68
-        BANK1            0001B8-0001FF               48
+        BANK1            0001B8-0001F3               3C
         BIGRAM           000077-00007F                9
                          000098-0000FF               68
-                         0001B8-0001FF               48
+                         0001B8-0001F3               3C
         CODE             000004-000007                4
                          000036-0001FF              1CA
                          001751-001751                1
-                         00185C-001FFF              7A4
+                         00185C-001DBF              564
         COMRAM           000077-00007F                9
         CONST            000004-000007                4
                          000036-0001FF              1CA
                          001751-001751                1
-                         00185C-001FFF              7A4
+                         00185C-001DBF              564
         EEDATA           F00000-F000FF              100
         MEDIUMCONST      001751-001751                1
-                         00185C-001FFF              7A4
+                         00185C-001DBF              564
         RAM              000098-0000FF               68
-                         0001B8-0001FF               48
-        SFR              000F80-000FFF               80
+                         0001B8-0001F3               3C
+        SFR              000F80-000F9B               1C
+                         000F9D-000FD3               37
+                         000FD5-000FDA                6
+                         000FE0-000FE2                3
+                         000FE8-000FEA                3
+                         000FF0-000FFC                D
         SMALLCONST       001751-001751                1
-                         00185C-001FFF              100
+                         00185C-001DBF              100
         STACK            000098-0000FF               68
 
                                   Symbol Table

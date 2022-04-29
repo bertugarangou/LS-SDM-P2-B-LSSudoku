@@ -646,9 +646,9 @@ bssBANK1 100 1B7 BANK1 100 1
 text39 2BE 1750 CODE 2BE 0
 text51 1752 185B CODE 1752 0
 %locals
-dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
+dist/default/debug\LS-SDM-P2-B-LSSudoku.X.debug.o
 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-C:\Users\alber\AppData\Local\Temp\xcAs30.s
+C:\Users\alber\AppData\Local\Temp\xcAs3og.s
 3382 140E 0 CODE 0
 3384 140E 0 CODE 0
 3387 140E 0 CODE 0
@@ -1539,8 +1539,8 @@ TiTTimer.c
 79 159C 0 CODE 0
 80 15AC 0 CODE 0
 81 15AE 0 CODE 0
-C:\Users\alber\AppData\Local\Temp\xcAs30.s
-13592 8 0 CODE 0
+C:\Users\alber\AppData\Local\Temp\xcAs3og.s
+13602 8 0 CODE 0
 main.c
 18 8 0 CODE 0
 19 1A 0 CODE 0

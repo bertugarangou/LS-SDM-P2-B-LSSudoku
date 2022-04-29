@@ -9,6 +9,8 @@
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
 signed char novaLletra = -1;
+signed char novaDireccio = -1;
+
 char timerMenu;
 __bit loginNOTRegister;
 unsigned char menuDalt = 0;
@@ -23,6 +25,9 @@ void MsetNovaTecla(char tecla){
 
 void MNovaLletra(char lletra){
     novaLletra = lletra;
+}
+void MNouJoystick(signed char posicio){
+    novaDireccio = posicio;
 }
 
 void menu(void) {
@@ -154,15 +159,16 @@ void menu(void) {
 			LcClear();
 			SiFerMenu();
 			GLCDMostraMenu(menuDalt);
-			NovaTecla = -1;
+			novaDireccio = -1;
+            NovaTecla = -1;
 			state = 13;
 		break;
 		case 13:
-			if (NovaTecla == 8) {
+			if (novaDireccio == 8) {
 				if(menuDalt < 4) menuDalt++;
 				state = 12;
 			}
-			else if (NovaTecla == 2) {
+			else if (novaDireccio == 2) {
 				if(menuDalt > 0) menuDalt--;
 				state = 12;
 			}

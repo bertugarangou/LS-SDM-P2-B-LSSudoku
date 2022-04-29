@@ -2,56 +2,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./TiTTimer.h
 [; ;./TiTTimer.h: 17: char TiGetTimer(void);
 [v _TiGetTimer `(uc ~T0 @X0 0 ef ]
-"650 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 650:     struct {
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"660
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 660:     struct {
-[s S28 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S28 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"670
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 670:     struct {
-[s S29 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . . P1B P1C P1D ]
-"676
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 676:     struct {
-[s S30 :7 `uc 1 :1 `uc 1 ]
-[n S30 . . SS2 ]
-"649
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 649: typedef union {
-[u S26 `S27 1 `S28 1 `S29 1 `S30 1 ]
-[n S26 . . . . . ]
-"681
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 681: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS26 ~T0 @X0 0 e@3971 ]
-"1331
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1331:     struct {
-[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S52 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"1341
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1341:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"1330
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1330: typedef union {
-[u S51 `S52 1 `S53 1 ]
-[n S51 . . . ]
-"1352
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1352: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS51 ~T0 @X0 0 e@3980 ]
+"54 ./LcTLCD.h
+[; ;./LcTLCD.h: 54: void LcGotoXY(char Column, char Row);
+[v _LcGotoXY `(v ~T0 @X0 0 ef2`uc`uc ]
+"71
+[; ;./LcTLCD.h: 71: void LcNewString(char new_s[]);
+[v _LcNewString `(v ~T0 @X0 0 ef1`*uc ]
+"59
+[; ;./LcTLCD.h: 59: void LcPutChar(char c);
+[v _LcPutChar `(v ~T0 @X0 0 ef1`uc ]
+"74
+[; ;./LcTLCD.h: 74: __bit LcLliure(void);
+[v _LcLliure `(b ~T0 @X0 0 ef ]
+"12 ./TiTTimer.h
+[; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
+[v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
+"42 ./LcTLCD.h
+[; ;./LcTLCD.h: 42: void LcClear(void);
+[v _LcClear `(v ~T0 @X0 0 ef ]
 "8 ./TiTTimer.h
 [; ;./TiTTimer.h: 8: void TiResetTics(char Handle);
 [v _TiResetTics `(v ~T0 @X0 0 ef1`uc ]
-"12
-[; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
-[v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
-"6 ./Menu.h
-[; ;./Menu.h: 6: void MsetNovaTecla(char tecla);
-[v _MsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
-"6 ./Ssms.h
-[; ;./Ssms.h: 6: void SsetNovaTecla(char tecla);
-[v _SsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -466,355 +437,735 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 TeTeclat.c
-[; ;TeTeclat.c: 9: static char tiTeclat=0;
-[v _tiTeclat `uc ~T0 @X0 1 s ]
-[i _tiTeclat
+[v F2595 `Cuc ~T0 @X0 -> 29 `i t ]
+"6 GestioLCD.c
+[; ;GestioLCD.c: 6: const char menuList[][29] = {
+[v _menuList `F2595 ~T0 @X0 -> 5 `i e ]
+[i _menuList
+:U ..
+:U ..
+-> 49 `c
+-> 46 `c
+-> 80 `c
+-> 108 `c
+-> 97 `c
+-> 121 `c
+-> 32 `c
+-> 97 `c
+-> 32 `c
+-> 71 `c
+-> 97 `c
+-> 109 `c
+-> 101 `c
+-> 0 `c
+..
+:U ..
+-> 50 `c
+-> 46 `c
+-> 77 `c
+-> 111 `c
+-> 100 `c
+-> 105 `c
+-> 102 `c
+-> 121 `c
+-> 32 `c
+-> 84 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 0 `c
+..
+:U ..
+-> 51 `c
+-> 46 `c
+-> 83 `c
+-> 104 `c
+-> 111 `c
+-> 119 `c
+-> 32 `c
+-> 71 `c
+-> 101 `c
+-> 110 `c
+-> 101 `c
+-> 114 `c
+-> 97 `c
+-> 108 `c
+-> 32 `c
+-> 84 `c
+-> 111 `c
+-> 112 `c
+-> 32 `c
+-> 53 `c
+-> 32 `c
+-> 83 `c
+-> 99 `c
+-> 111 `c
+-> 114 `c
+-> 101 `c
+-> 115 `c
+-> 32 `c
+-> 0 `c
+..
+:U ..
+-> 52 `c
+-> 46 `c
+-> 76 `c
+-> 111 `c
+-> 103 `c
+-> 111 `c
+-> 117 `c
+-> 116 `c
+-> 0 `c
+..
+:U ..
+-> 53 `c
+-> 46 `c
+-> 83 `c
+-> 104 `c
+-> 111 `c
+-> 119 `c
+-> 32 `c
+-> 65 `c
+-> 108 `c
+-> 108 `c
+-> 32 `c
+-> 85 `c
+-> 115 `c
+-> 101 `c
+-> 114 `c
+-> 115 `c
+-> 0 `c
+..
+..
+]
+"14
+[; ;GestioLCD.c: 14: char timerGLCD=0;
+[v _timerGLCD `uc ~T0 @X0 1 e ]
+[i _timerGLCD
 -> -> 0 `i `uc
 ]
-[v F2585 `uc ~T0 @X0 -> 3 `i t ]
-"11
-[; ;TeTeclat.c: 11: char teclaPremuda[4][3] = {
-[v _teclaPremuda `F2585 ~T0 @X0 -> 4 `i e ]
-[i _teclaPremuda
-:U ..
-:U ..
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
-..
-:U ..
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
-..
-:U ..
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
-..
-:U ..
--> -> 10 `i `uc
+"15
+[; ;GestioLCD.c: 15: char menuDaltGLCD=0;
+[v _menuDaltGLCD `uc ~T0 @X0 1 e ]
+[i _menuDaltGLCD
 -> -> 0 `i `uc
--> -> 11 `i `uc
-..
-..
 ]
-"18
-[; ;TeTeclat.c: 18: void TeInit(void){
-[v _TeInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _TeInit ]
-[f ]
+"16
+[; ;GestioLCD.c: 16: __bit ferMenu = 0;
+[v _ferMenu `b ~T0 @X0 1 e ]
+[i _ferMenu
+-> -> 0 `i `b
+]
+"17
+[; ;GestioLCD.c: 17: __bit newString = 0;
+[v _newString `b ~T0 @X0 1 e ]
+[i _newString
+-> -> 0 `i `b
+]
 "19
-[; ;TeTeclat.c: 19:     tiTeclat=TiGetTimer();
-[e = _tiTeclat ( _TiGetTimer ..  ]
+[; ;GestioLCD.c: 19: void SiFerMenu(void){
+[v _SiFerMenu `(v ~T0 @X0 1 ef ]
+{
+[e :U _SiFerMenu ]
+[f ]
 "20
-[; ;TeTeclat.c: 20: }
+[; ;GestioLCD.c: 20:     ferMenu = 1;
+[e = _ferMenu -> -> 1 `i `b ]
+"21
+[; ;GestioLCD.c: 21: }
 [e :UE 280 ]
 }
 "22
-[; ;TeTeclat.c: 22: void TeTeclat(void) {
-[v _TeTeclat `(v ~T0 @X0 1 ef ]
+[; ;GestioLCD.c: 22: void NoFerMenu(void){
+[v _NoFerMenu `(v ~T0 @X0 1 ef ]
 {
-[e :U _TeTeclat ]
+[e :U _NoFerMenu ]
 [f ]
 "23
-[; ;TeTeclat.c: 23:  static char state = 0;
-[v F2588 `uc ~T0 @X0 1 s state ]
-[i F2588
--> -> 0 `i `uc
-]
+[; ;GestioLCD.c: 23:     ferMenu = 0;
+[e = _ferMenu -> -> 0 `i `b ]
 "24
-[; ;TeTeclat.c: 24:     static char cols=0;
-[v F2589 `uc ~T0 @X0 1 s cols ]
-[i F2589
--> -> 0 `i `uc
-]
-"25
-[; ;TeTeclat.c: 25:     static char files = 0;
-[v F2590 `uc ~T0 @X0 1 s files ]
-[i F2590
--> -> 0 `i `uc
-]
+[; ;GestioLCD.c: 24: }
+[e :UE 281 ]
+}
 "26
-[; ;TeTeclat.c: 26:     files = PORTDbits.RD0 + PORTDbits.RD1*2 + PORTDbits.RD2*3 + PORTDbits.RD3*4;
-[e = F2590 -> + + + -> . . _PORTDbits 0 0 `i * -> . . _PORTDbits 0 1 `i -> 2 `i * -> . . _PORTDbits 0 2 `i -> 3 `i * -> . . _PORTDbits 0 3 `i -> 4 `i `uc ]
+[; ;GestioLCD.c: 26: void GLCDInit(void){
+[v _GLCDInit `(v ~T0 @X0 1 ef ]
+{
+[e :U _GLCDInit ]
+[f ]
 "27
-[; ;TeTeclat.c: 27:  switch(state) {
-[e $U 283  ]
-{
+[; ;GestioLCD.c: 27:     timerGLCD=TiGetTimer();
+[e = _timerGLCD ( _TiGetTimer ..  ]
 "28
-[; ;TeTeclat.c: 28:   case 0:
-[e :U 284 ]
-"29
-[; ;TeTeclat.c: 29:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 285  ]
-{
+[; ;GestioLCD.c: 28: }
+[e :UE 282 ]
+}
 "30
-[; ;TeTeclat.c: 30:     LATDbits.LD4=1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
+[; ;GestioLCD.c: 30: void GLCDMostraMenu(unsigned char num){
+[v _GLCDMostraMenu `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _GLCDMostraMenu ]
+[v _num `uc ~T0 @X0 1 r1 ]
+[f ]
 "31
-[; ;TeTeclat.c: 31:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 31:     newString = 1;
+[e = _newString -> -> 1 `i `b ]
 "32
-[; ;TeTeclat.c: 32:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 32:     menuDaltGLCD = num;
+[e = _menuDaltGLCD -> _num `uc ]
 "33
-[; ;TeTeclat.c: 33:     cols=0;
-[e = F2589 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 33:     ferMenu = 1;
+[e = _ferMenu -> -> 1 `i `b ]
 "34
-[; ;TeTeclat.c: 34:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"35
-[; ;TeTeclat.c: 35:    }
+[; ;GestioLCD.c: 34: }
+[e :UE 283 ]
 }
-[e $U 286  ]
 "36
-[; ;TeTeclat.c: 36:    else if (files!=0) {
-[e :U 285 ]
-[e $ ! != -> F2590 `i -> 0 `i 287  ]
+[; ;GestioLCD.c: 36: void GLCDMotor(void) {
+[v _GLCDMotor `(v ~T0 @X0 1 ef ]
 {
+[e :U _GLCDMotor ]
+[f ]
 "37
-[; ;TeTeclat.c: 37:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
+[; ;GestioLCD.c: 37:  static char state = 0;
+[v F2606 `uc ~T0 @X0 1 s state ]
+[i F2606
+-> -> 0 `i `uc
+]
 "38
-[; ;TeTeclat.c: 38:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
+[; ;GestioLCD.c: 38:     static char j=0;
+[v F2607 `uc ~T0 @X0 1 s j ]
+[i F2607
+-> -> 0 `i `uc
+]
 "39
-[; ;TeTeclat.c: 39:    }
-}
-[e :U 287 ]
-[e :U 286 ]
+[; ;GestioLCD.c: 39:     static char max1 = 15;
+[v F2608 `uc ~T0 @X0 1 s max1 ]
+[i F2608
+-> -> 15 `i `uc
+]
 "40
-[; ;TeTeclat.c: 40:   break;
-[e $U 282  ]
+[; ;GestioLCD.c: 40:     static char min1 = 0;
+[v F2609 `uc ~T0 @X0 1 s min1 ]
+[i F2609
+-> -> 0 `i `uc
+]
 "41
-[; ;TeTeclat.c: 41:   case 1:
-[e :U 288 ]
+[; ;GestioLCD.c: 41:     static char min2 = 0;
+[v F2610 `uc ~T0 @X0 1 s min2 ]
+[i F2610
+-> -> 0 `i `uc
+]
 "42
-[; ;TeTeclat.c: 42:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 289  ]
-{
+[; ;GestioLCD.c: 42:     static char max2 = 15;
+[v F2611 `uc ~T0 @X0 1 s max2 ]
+[i F2611
+-> -> 15 `i `uc
+]
 "43
-[; ;TeTeclat.c: 43:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 43:     static char k1 = 0;
+[v F2612 `uc ~T0 @X0 1 s k1 ]
+[i F2612
+-> -> 0 `i `uc
+]
 "44
-[; ;TeTeclat.c: 44:     LATDbits.LD5=1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+[; ;GestioLCD.c: 44:     static char k2 = 0;
+[v F2613 `uc ~T0 @X0 1 s k2 ]
+[i F2613
+-> -> 0 `i `uc
+]
 "45
-[; ;TeTeclat.c: 45:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 45:     static char length1=0;
+[v F2614 `uc ~T0 @X0 1 s length1 ]
+[i F2614
+-> -> 0 `i `uc
+]
 "46
-[; ;TeTeclat.c: 46:     cols=1;
-[e = F2589 -> -> 1 `i `uc ]
-"47
-[; ;TeTeclat.c: 47:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
+[; ;GestioLCD.c: 46:     static char length2=0;
+[v F2615 `uc ~T0 @X0 1 s length2 ]
+[i F2615
+-> -> 0 `i `uc
+]
 "48
-[; ;TeTeclat.c: 48:    }
-}
-[e $U 290  ]
-"49
-[; ;TeTeclat.c: 49:    else if (files!=0) {
-[e :U 289 ]
-[e $ ! != -> F2590 `i -> 0 `i 291  ]
+[; ;GestioLCD.c: 48:     switch(state) {
+[e $U 286  ]
 {
+"49
+[; ;GestioLCD.c: 49:   case 2:
+[e :U 287 ]
 "50
-[; ;TeTeclat.c: 50:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
+[; ;GestioLCD.c: 50:    if (length1 < 17 && ferMenu == 1) {
+[e $ ! && < -> F2614 `i -> 17 `i == -> _ferMenu `i -> 1 `i 288  ]
+{
 "51
-[; ;TeTeclat.c: 51:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
+[; ;GestioLCD.c: 51:     LcGotoXY(0,0);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "52
-[; ;TeTeclat.c: 52:    }
-}
-[e :U 291 ]
-[e :U 290 ]
+[; ;GestioLCD.c: 52:     LcNewString(menuList[menuDaltGLCD]);
+[e ( _LcNewString (1 -> &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `*uc ]
 "53
-[; ;TeTeclat.c: 53:   break;
-[e $U 282  ]
+[; ;GestioLCD.c: 53:     state = 5;
+[e = F2606 -> -> 5 `i `uc ]
 "54
-[; ;TeTeclat.c: 54:   case 2:
-[e :U 292 ]
+[; ;GestioLCD.c: 54:    }
+}
+[e $U 289  ]
 "55
-[; ;TeTeclat.c: 55:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 293  ]
+[; ;GestioLCD.c: 55:    else if (length1 >= 17 && ferMenu == 1) {
+[e :U 288 ]
+[e $ ! && >= -> F2614 `i -> 17 `i == -> _ferMenu `i -> 1 `i 290  ]
 {
 "56
-[; ;TeTeclat.c: 56:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 56:     state++;
+[e ++ F2606 -> -> 1 `i `uc ]
 "57
-[; ;TeTeclat.c: 57:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 57:    }
+}
+[e :U 290 ]
+[e :U 289 ]
 "58
-[; ;TeTeclat.c: 58:     LATDbits.LD6=1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+[; ;GestioLCD.c: 58:   break;
+[e $U 285  ]
 "59
-[; ;TeTeclat.c: 59:     cols=2;
-[e = F2589 -> -> 2 `i `uc ]
+[; ;GestioLCD.c: 59:   case 3:
+[e :U 291 ]
 "60
-[; ;TeTeclat.c: 60:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 60:    if (j>=16) {
+[e $ ! >= -> F2607 `i -> 16 `i 292  ]
+{
 "61
-[; ;TeTeclat.c: 61:    }
-}
-[e $U 294  ]
+[; ;GestioLCD.c: 61:     min1++;
+[e ++ F2609 -> -> 1 `i `uc ]
 "62
-[; ;TeTeclat.c: 62:    else if (files!=0) {
-[e :U 293 ]
-[e $ ! != -> F2590 `i -> 0 `i 295  ]
-{
+[; ;GestioLCD.c: 62:     max1++;
+[e ++ F2608 -> -> 1 `i `uc ]
 "63
-[; ;TeTeclat.c: 63:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
+[; ;GestioLCD.c: 63:     if (menuList[menuDaltGLCD][max1] == '\0') max1=0;
+[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2608 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 293  ]
+[e = F2608 -> -> 0 `i `uc ]
+[e :U 293 ]
 "64
-[; ;TeTeclat.c: 64:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"65
-[; ;TeTeclat.c: 65:    }
-}
-[e :U 295 ]
+[; ;GestioLCD.c: 64:     if (menuList[menuDaltGLCD][min1] == '\0') min1=0;
+[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2609 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 294  ]
+[e = F2609 -> -> 0 `i `uc ]
 [e :U 294 ]
+"65
+[; ;GestioLCD.c: 65:     j=0;
+[e = F2607 -> -> 0 `i `uc ]
 "66
-[; ;TeTeclat.c: 66:   break;
-[e $U 282  ]
+[; ;GestioLCD.c: 66:     k1=min1;
+[e = F2612 F2609 ]
 "67
-[; ;TeTeclat.c: 67:   case 3:
-[e :U 296 ]
+[; ;GestioLCD.c: 67:     state = 6;
+[e = F2606 -> -> 6 `i `uc ]
 "68
-[; ;TeTeclat.c: 68:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 297  ]
-{
-"69
-[; ;TeTeclat.c: 69:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"70
-[; ;TeTeclat.c: 70:    }
+[; ;GestioLCD.c: 68:    }
 }
-[e :U 297 ]
-"71
-[; ;TeTeclat.c: 71:   break;
-[e $U 282  ]
-"72
-[; ;TeTeclat.c: 72:   case 4:
-[e :U 298 ]
-"73
-[; ;TeTeclat.c: 73:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 299  ]
+[e $U 295  ]
+"69
+[; ;GestioLCD.c: 69:    else if (j<16) {
+[e :U 292 ]
+[e $ ! < -> F2607 `i -> 16 `i 296  ]
 {
+"70
+[; ;GestioLCD.c: 70:     LcGotoXY(j,0);
+[e ( _LcGotoXY (2 , F2607 -> -> 0 `i `uc ]
+"71
+[; ;GestioLCD.c: 71:     LcPutChar(menuList[menuDaltGLCD][k1]);
+[e ( _LcPutChar (1 *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2612 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux ]
+"72
+[; ;GestioLCD.c: 72:     j++;
+[e ++ F2607 -> -> 1 `i `uc ]
+"73
+[; ;GestioLCD.c: 73:     k1++;
+[e ++ F2612 -> -> 1 `i `uc ]
 "74
-[; ;TeTeclat.c: 74:     state = 1;
-[e = F2588 -> -> 1 `i `uc ]
+[; ;GestioLCD.c: 74:     if(menuList[menuDaltGLCD][k1] == '\0') k1 = 0;
+[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2612 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 297  ]
+[e = F2612 -> -> 0 `i `uc ]
+[e :U 297 ]
 "75
-[; ;TeTeclat.c: 75:    }
+[; ;GestioLCD.c: 75:    }
+}
+[e :U 296 ]
+[e :U 295 ]
+"76
+[; ;GestioLCD.c: 76:   break;
+[e $U 285  ]
+"77
+[; ;GestioLCD.c: 77:   case 6:
+[e :U 298 ]
+"78
+[; ;GestioLCD.c: 78:    if (menuDaltGLCD<4) {
+[e $ ! < -> _menuDaltGLCD `i -> 4 `i 299  ]
+{
+"79
+[; ;GestioLCD.c: 79:     state++;
+[e ++ F2606 -> -> 1 `i `uc ]
+"80
+[; ;GestioLCD.c: 80:    }
 }
 [e $U 300  ]
-"76
-[; ;TeTeclat.c: 76:    else if (files!=0) {
-[e :U 299 ]
-[e $ ! != -> F2590 `i -> 0 `i 301  ]
-{
-"77
-[; ;TeTeclat.c: 77:                 MsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _MsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"78
-[; ;TeTeclat.c: 78:                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"80
-[; ;TeTeclat.c: 80:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
 "81
-[; ;TeTeclat.c: 81:    }
+[; ;GestioLCD.c: 81:    else if (menuDaltGLCD >= 4) {
+[e :U 299 ]
+[e $ ! >= -> _menuDaltGLCD `i -> 4 `i 301  ]
+{
+"82
+[; ;GestioLCD.c: 82:     state = 0;
+[e = F2606 -> -> 0 `i `uc ]
+"83
+[; ;GestioLCD.c: 83:    }
 }
 [e :U 301 ]
 [e :U 300 ]
-"82
-[; ;TeTeclat.c: 82:   break;
-[e $U 282  ]
-"83
-[; ;TeTeclat.c: 83:   case 5:
-[e :U 302 ]
 "84
-[; ;TeTeclat.c: 84:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 303  ]
-{
+[; ;GestioLCD.c: 84:   break;
+[e $U 285  ]
 "85
-[; ;TeTeclat.c: 85:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
+[; ;GestioLCD.c: 85:   case 5:
+[e :U 302 ]
 "86
-[; ;TeTeclat.c: 86:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"87
-[; ;TeTeclat.c: 87:    }
-}
-[e :U 303 ]
-"88
-[; ;TeTeclat.c: 88:   break;
-[e $U 282  ]
-"89
-[; ;TeTeclat.c: 89:   case 6:
-[e :U 304 ]
-"90
-[; ;TeTeclat.c: 90:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 305  ]
+[; ;GestioLCD.c: 86:    if (LcLliure() && menuDaltGLCD<4) {
+[e $ ! && ( _LcLliure ..  < -> _menuDaltGLCD `i -> 4 `i 303  ]
 {
+"87
+[; ;GestioLCD.c: 87:     state = 7;
+[e = F2606 -> -> 7 `i `uc ]
+"88
+[; ;GestioLCD.c: 88:    }
+}
+[e $U 304  ]
+"89
+[; ;GestioLCD.c: 89:    else if (LcLliure() && menuDaltGLCD >= 4) {
+[e :U 303 ]
+[e $ ! && ( _LcLliure ..  >= -> _menuDaltGLCD `i -> 4 `i 305  ]
+{
+"90
+[; ;GestioLCD.c: 90:     state = 0;
+[e = F2606 -> -> 0 `i `uc ]
 "91
-[; ;TeTeclat.c: 91:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"92
-[; ;TeTeclat.c: 92:    }
+[; ;GestioLCD.c: 91:    }
 }
 [e :U 305 ]
+[e :U 304 ]
+"92
+[; ;GestioLCD.c: 92:   break;
+[e $U 285  ]
 "93
-[; ;TeTeclat.c: 93:   break;
-[e $U 282  ]
-"94
-[; ;TeTeclat.c: 94:   case 7:
+[; ;GestioLCD.c: 93:   case 0:
 [e :U 306 ]
+"94
+[; ;GestioLCD.c: 94:    if (newString != 0 && ferMenu == 1) {
+[e $ ! && != -> _newString `i -> 0 `i == -> _ferMenu `i -> 1 `i 307  ]
+{
 "95
-[; ;TeTeclat.c: 95:    if (files!=0) {
-[e $ ! != -> F2590 `i -> 0 `i 307  ]
-{
+[; ;GestioLCD.c: 95:     length1 = 0;
+[e = F2614 -> -> 0 `i `uc ]
 "96
-[; ;TeTeclat.c: 96:     state = 5;
-[e = F2588 -> -> 5 `i `uc ]
+[; ;GestioLCD.c: 96:     length2 = 0;
+[e = F2615 -> -> 0 `i `uc ]
 "97
-[; ;TeTeclat.c: 97:    }
-}
-[e $U 308  ]
+[; ;GestioLCD.c: 97:     LcGotoXY(0,0);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "98
-[; ;TeTeclat.c: 98:    else if (files==0) {
-[e :U 307 ]
-[e $ ! == -> F2590 `i -> 0 `i 309  ]
-{
+[; ;GestioLCD.c: 98:     min1 = 0;
+[e = F2609 -> -> 0 `i `uc ]
 "99
-[; ;TeTeclat.c: 99:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
+[; ;GestioLCD.c: 99:     max1 = 15;
+[e = F2608 -> -> 15 `i `uc ]
 "100
-[; ;TeTeclat.c: 100:    }
-}
-[e :U 309 ]
-[e :U 308 ]
+[; ;GestioLCD.c: 100:     min2 = 0;
+[e = F2610 -> -> 0 `i `uc ]
 "101
-[; ;TeTeclat.c: 101:   break;
-[e $U 282  ]
+[; ;GestioLCD.c: 101:     max2 = 15;
+[e = F2611 -> -> 15 `i `uc ]
 "102
-[; ;TeTeclat.c: 102:  }
-}
-[e $U 282  ]
-[e :U 283 ]
-[e [\ -> F2588 `i , $ -> 0 `i 284
- , $ -> 1 `i 288
- , $ -> 2 `i 292
- , $ -> 3 `i 296
- , $ -> 4 `i 298
- , $ -> 5 `i 302
- , $ -> 6 `i 304
- , $ -> 7 `i 306
- 282 ]
-[e :U 282 ]
+[; ;GestioLCD.c: 102:     j = 0;
+[e = F2607 -> -> 0 `i `uc ]
 "103
-[; ;TeTeclat.c: 103: }
-[e :UE 281 ]
+[; ;GestioLCD.c: 103:     k1 = 0;
+[e = F2612 -> -> 0 `i `uc ]
+"104
+[; ;GestioLCD.c: 104:     k2 = 0;
+[e = F2613 -> -> 0 `i `uc ]
+"105
+[; ;GestioLCD.c: 105:     newString = 0;
+[e = _newString -> -> 0 `i `b ]
+"106
+[; ;GestioLCD.c: 106:     state++;
+[e ++ F2606 -> -> 1 `i `uc ]
+"107
+[; ;GestioLCD.c: 107:    }
+}
+[e :U 307 ]
+"108
+[; ;GestioLCD.c: 108:   break;
+[e $U 285  ]
+"109
+[; ;GestioLCD.c: 109:   case 1:
+[e :U 308 ]
+"110
+[; ;GestioLCD.c: 110:    if (menuList[menuDaltGLCD][length1] == '\0' && menuDaltGLCD>=4) {
+[e $ ! && == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui >= -> _menuDaltGLCD `i -> 4 `i 309  ]
+{
+"111
+[; ;GestioLCD.c: 111:     state++;
+[e ++ F2606 -> -> 1 `i `uc ]
+"112
+[; ;GestioLCD.c: 112:    }
+}
+[e $U 310  ]
+"113
+[; ;GestioLCD.c: 113:    else if (menuList[menuDaltGLCD][length1] != '\0') {
+[e :U 309 ]
+[e $ ! != -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 311  ]
+{
+"114
+[; ;GestioLCD.c: 114:     length1++;
+[e ++ F2614 -> -> 1 `i `uc ]
+"115
+[; ;GestioLCD.c: 115:    }
+}
+[e $U 312  ]
+"116
+[; ;GestioLCD.c: 116:    else if (menuDaltGLCD<4 && menuList[menuDaltGLCD][length1] == '\0') {
+[e :U 311 ]
+[e $ ! && < -> _menuDaltGLCD `i -> 4 `i == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 313  ]
+{
+"117
+[; ;GestioLCD.c: 117:     state = 13;
+[e = F2606 -> -> 13 `i `uc ]
+"118
+[; ;GestioLCD.c: 118:    }
+}
+[e :U 313 ]
+[e :U 312 ]
+[e :U 310 ]
+"119
+[; ;GestioLCD.c: 119:   break;
+[e $U 285  ]
+"120
+[; ;GestioLCD.c: 120:   case 7:
+[e :U 314 ]
+"121
+[; ;GestioLCD.c: 121:    if (length2 < 17 && ferMenu == 1) {
+[e $ ! && < -> F2615 `i -> 17 `i == -> _ferMenu `i -> 1 `i 315  ]
+{
+"122
+[; ;GestioLCD.c: 122:     LcGotoXY(0,1);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"123
+[; ;GestioLCD.c: 123:     LcNewString(menuList[menuDaltGLCD+1]);
+[e ( _LcNewString (1 -> &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `*uc ]
+"124
+[; ;GestioLCD.c: 124:     state++;
+[e ++ F2606 -> -> 1 `i `uc ]
+"125
+[; ;GestioLCD.c: 125:    }
+}
+[e $U 316  ]
+"126
+[; ;GestioLCD.c: 126:    else if (length2 >= 17 && ferMenu == 1) {
+[e :U 315 ]
+[e $ ! && >= -> F2615 `i -> 17 `i == -> _ferMenu `i -> 1 `i 317  ]
+{
+"127
+[; ;GestioLCD.c: 127:     state = 9;
+[e = F2606 -> -> 9 `i `uc ]
+"128
+[; ;GestioLCD.c: 128:    }
+}
+[e :U 317 ]
+[e :U 316 ]
+"129
+[; ;GestioLCD.c: 129:   break;
+[e $U 285  ]
+"130
+[; ;GestioLCD.c: 130:   case 9:
+[e :U 318 ]
+"131
+[; ;GestioLCD.c: 131:    if (j<16) {
+[e $ ! < -> F2607 `i -> 16 `i 319  ]
+{
+"132
+[; ;GestioLCD.c: 132:     LcGotoXY(j,1);
+[e ( _LcGotoXY (2 , F2607 -> -> 1 `i `uc ]
+"133
+[; ;GestioLCD.c: 133:     LcPutChar(menuList[menuDaltGLCD+1][k2]);
+[e ( _LcPutChar (1 *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux ]
+"134
+[; ;GestioLCD.c: 134:     j++;
+[e ++ F2607 -> -> 1 `i `uc ]
+"135
+[; ;GestioLCD.c: 135:     k2++;
+[e ++ F2613 -> -> 1 `i `uc ]
+"136
+[; ;GestioLCD.c: 136:     if(menuList[menuDaltGLCD+1][k2] == '\0') k2 = 0;
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 320  ]
+[e = F2613 -> -> 0 `i `uc ]
+[e :U 320 ]
+"137
+[; ;GestioLCD.c: 137:    }
+}
+[e $U 321  ]
+"138
+[; ;GestioLCD.c: 138:    else if (j>=16) {
+[e :U 319 ]
+[e $ ! >= -> F2607 `i -> 16 `i 322  ]
+{
+"139
+[; ;GestioLCD.c: 139:     min2++;
+[e ++ F2610 -> -> 1 `i `uc ]
+"140
+[; ;GestioLCD.c: 140:     max2++;
+[e ++ F2611 -> -> 1 `i `uc ]
+"141
+[; ;GestioLCD.c: 141:     if (menuList[menuDaltGLCD+1][max2] == '\0') max2=0;
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2611 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 323  ]
+[e = F2611 -> -> 0 `i `uc ]
+[e :U 323 ]
+"142
+[; ;GestioLCD.c: 142:     if (menuList[menuDaltGLCD+1][min2] == '\0') min2=0;
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2610 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 324  ]
+[e = F2610 -> -> 0 `i `uc ]
+[e :U 324 ]
+"143
+[; ;GestioLCD.c: 143:     j=0;
+[e = F2607 -> -> 0 `i `uc ]
+"144
+[; ;GestioLCD.c: 144:     k2=min2;
+[e = F2613 F2610 ]
+"145
+[; ;GestioLCD.c: 145:     state++;
+[e ++ F2606 -> -> 1 `i `uc ]
+"146
+[; ;GestioLCD.c: 146:    }
+}
+[e :U 322 ]
+[e :U 321 ]
+"147
+[; ;GestioLCD.c: 147:   break;
+[e $U 285  ]
+"148
+[; ;GestioLCD.c: 148:   case 11:
+[e :U 325 ]
+"149
+[; ;GestioLCD.c: 149:    if (TiGetTics(timerGLCD)>= 1205 && newString == 0 && ferMenu == 1) {
+[e $ ! && && >= ( _TiGetTics (1 _timerGLCD -> 1205 `i == -> _newString `i -> 0 `i == -> _ferMenu `i -> 1 `i 326  ]
+{
+"150
+[; ;GestioLCD.c: 150:     LcClear();
+[e ( _LcClear ..  ]
+"151
+[; ;GestioLCD.c: 151:     state = 2;
+[e = F2606 -> -> 2 `i `uc ]
+"152
+[; ;GestioLCD.c: 152:    }
+}
+[e $U 327  ]
+"153
+[; ;GestioLCD.c: 153:    else if (newString != 0 && ferMenu == 1) {
+[e :U 326 ]
+[e $ ! && != -> _newString `i -> 0 `i == -> _ferMenu `i -> 1 `i 328  ]
+{
+"154
+[; ;GestioLCD.c: 154:     LcClear();
+[e ( _LcClear ..  ]
+"155
+[; ;GestioLCD.c: 155:     state = 0;
+[e = F2606 -> -> 0 `i `uc ]
+"156
+[; ;GestioLCD.c: 156:    }
+}
+[e :U 328 ]
+[e :U 327 ]
+"157
+[; ;GestioLCD.c: 157:   break;
+[e $U 285  ]
+"158
+[; ;GestioLCD.c: 158:   case 10:
+[e :U 329 ]
+"159
+[; ;GestioLCD.c: 159:    TiResetTics(timerGLCD);
+[e ( _TiResetTics (1 _timerGLCD ]
+"160
+[; ;GestioLCD.c: 160:    state++;
+[e ++ F2606 -> -> 1 `i `uc ]
+"161
+[; ;GestioLCD.c: 161:   break;
+[e $U 285  ]
+"162
+[; ;GestioLCD.c: 162:   case 8:
+[e :U 330 ]
+"163
+[; ;GestioLCD.c: 163:    if (LcLliure()) {
+[e $ ! ( _LcLliure ..  331  ]
+{
+"164
+[; ;GestioLCD.c: 164:     TiResetTics(timerGLCD);
+[e ( _TiResetTics (1 _timerGLCD ]
+"165
+[; ;GestioLCD.c: 165:     state = 11;
+[e = F2606 -> -> 11 `i `uc ]
+"166
+[; ;GestioLCD.c: 166:    }
+}
+[e :U 331 ]
+"167
+[; ;GestioLCD.c: 167:   break;
+[e $U 285  ]
+"168
+[; ;GestioLCD.c: 168:   case 13:
+[e :U 332 ]
+"169
+[; ;GestioLCD.c: 169:    if (menuList[menuDaltGLCD+1][length2] != '\0') {
+[e $ ! != -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2615 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 333  ]
+{
+"170
+[; ;GestioLCD.c: 170:     length2++;
+[e ++ F2615 -> -> 1 `i `uc ]
+"171
+[; ;GestioLCD.c: 171:    }
+}
+[e $U 334  ]
+"172
+[; ;GestioLCD.c: 172:    else if (menuList[menuDaltGLCD+1][length2] == '\0' ) {
+[e :U 333 ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2615 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 335  ]
+{
+"173
+[; ;GestioLCD.c: 173:     state = 2;
+[e = F2606 -> -> 2 `i `uc ]
+"174
+[; ;GestioLCD.c: 174:    }
+}
+[e :U 335 ]
+[e :U 334 ]
+"175
+[; ;GestioLCD.c: 175:   break;
+[e $U 285  ]
+"176
+[; ;GestioLCD.c: 176:  }
+}
+[e $U 285  ]
+[e :U 286 ]
+[e [\ -> F2606 `i , $ -> 2 `i 287
+ , $ -> 3 `i 291
+ , $ -> 6 `i 298
+ , $ -> 5 `i 302
+ , $ -> 0 `i 306
+ , $ -> 1 `i 308
+ , $ -> 7 `i 314
+ , $ -> 9 `i 318
+ , $ -> 11 `i 325
+ , $ -> 10 `i 329
+ , $ -> 8 `i 330
+ , $ -> 13 `i 332
+ 285 ]
+[e :U 285 ]
+"177
+[; ;GestioLCD.c: 177: }
+[e :UE 284 ]
 }

@@ -1,57 +1,58 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"17 ./TiTTimer.h
-[; ;./TiTTimer.h: 17: char TiGetTimer(void);
-[v _TiGetTimer `(uc ~T0 @X0 0 ef ]
-"650 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 650:     struct {
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"660
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 660:     struct {
-[s S28 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S28 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"670
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 670:     struct {
-[s S29 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . . P1B P1C P1D ]
-"676
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 676:     struct {
-[s S30 :7 `uc 1 :1 `uc 1 ]
-[n S30 . . SS2 ]
-"649
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 649: typedef union {
-[u S26 `S27 1 `S28 1 `S29 1 `S30 1 ]
-[n S26 . . . . . ]
-"681
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 681: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS26 ~T0 @X0 0 e@3971 ]
-"1331
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1331:     struct {
-[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S52 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"1341
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1341:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"1330
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1330: typedef union {
-[u S51 `S52 1 `S53 1 ]
-[n S51 . . . ]
-"1352
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1352: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS51 ~T0 @X0 0 e@3980 ]
-"8 ./TiTTimer.h
-[; ;./TiTTimer.h: 8: void TiResetTics(char Handle);
-[v _TiResetTics `(v ~T0 @X0 0 ef1`uc ]
-"12
-[; ;./TiTTimer.h: 12: int TiGetTics(char Handle);
-[v _TiGetTics `(i ~T0 @X0 0 ef1`uc ]
-"6 ./Menu.h
-[; ;./Menu.h: 6: void MsetNovaTecla(char tecla);
-[v _MsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
-"6 ./Ssms.h
-[; ;./Ssms.h: 6: void SsetNovaTecla(char tecla);
-[v _SsetNovaTecla `(v ~T0 @X0 0 ef1`uc ]
+"4802 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4802: extern volatile unsigned char ADCON0 __attribute__((address(0xFC2)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
+"4717
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4717: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"4646
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4646: extern volatile unsigned char ADCON2 __attribute__((address(0xFC0)));
+[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
+"4935
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4935: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
+"4808
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4808:     struct {
+[s S188 :1 `uc 1 :1 `uc 1 ]
+[n S188 . . GO_NOT_DONE ]
+"4812
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4812:     struct {
+[s S189 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S189 . ADON GO_nDONE CHS ]
+"4817
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4817:     struct {
+[s S190 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S190 . . GO CHS0 CHS1 CHS2 CHS3 ]
+"4825
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4825:     struct {
+[s S191 :1 `uc 1 :1 `uc 1 ]
+[n S191 . . DONE ]
+"4829
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4829:     struct {
+[s S192 :1 `uc 1 :1 `uc 1 ]
+[n S192 . . NOT_DONE ]
+"4833
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4833:     struct {
+[s S193 :1 `uc 1 :1 `uc 1 ]
+[n S193 . . nDONE ]
+"4837
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4837:     struct {
+[s S194 :1 `uc 1 :1 `uc 1 ]
+[n S194 . . GO_DONE ]
+"4841
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4841:     struct {
+[s S195 :1 `uc 1 :1 `uc 1 ]
+[n S195 . . GODONE ]
+"4807
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4807: typedef union {
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 ]
+[n S187 . . . . . . . . . ]
+"4846
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4846: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
+[v _ADCON0bits `VS187 ~T0 @X0 0 e@4034 ]
+"8 ./Menu.h
+[; ;./Menu.h: 8: void MNouJoystick(signed char posicio);
+[v _MNouJoystick `(v ~T0 @X0 0 ef1`c ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -466,355 +467,234 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 TeTeclat.c
-[; ;TeTeclat.c: 9: static char tiTeclat=0;
-[v _tiTeclat `uc ~T0 @X0 1 s ]
-[i _tiTeclat
+"4 Joystick.c
+[; ;Joystick.c: 4: char ultimaTeclaAD = 0;
+[v _ultimaTeclaAD `uc ~T0 @X0 1 e ]
+[i _ultimaTeclaAD
 -> -> 0 `i `uc
 ]
-[v F2585 `uc ~T0 @X0 -> 3 `i t ]
-"11
-[; ;TeTeclat.c: 11: char teclaPremuda[4][3] = {
-[v _teclaPremuda `F2585 ~T0 @X0 -> 4 `i e ]
-[i _teclaPremuda
-:U ..
-:U ..
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
-..
-:U ..
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
-..
-:U ..
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
-..
-:U ..
--> -> 10 `i `uc
--> -> 0 `i `uc
--> -> 11 `i `uc
-..
-..
-]
-"18
-[; ;TeTeclat.c: 18: void TeInit(void){
-[v _TeInit `(v ~T0 @X0 1 ef ]
+"5
+[; ;Joystick.c: 5: __bit cap1;
+[v _cap1 `b ~T0 @X0 1 e ]
+"6
+[; ;Joystick.c: 6: __bit cap2;
+[v _cap2 `b ~T0 @X0 1 e ]
+"12
+[; ;Joystick.c: 12: void JoystickInit(void){
+[v _JoystickInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _TeInit ]
+[e :U _JoystickInit ]
 [f ]
-"19
-[; ;TeTeclat.c: 19:     tiTeclat=TiGetTimer();
-[e = _tiTeclat ( _TiGetTimer ..  ]
-"20
-[; ;TeTeclat.c: 20: }
+"13
+[; ;Joystick.c: 13:     ADCON0 = 0x01;
+[e = _ADCON0 -> -> 1 `i `uc ]
+"14
+[; ;Joystick.c: 14:     ADCON1 = 0x0D;
+[e = _ADCON1 -> -> 13 `i `uc ]
+"15
+[; ;Joystick.c: 15:     ADCON2 = 0x09;
+[e = _ADCON2 -> -> 9 `i `uc ]
+"16
+[; ;Joystick.c: 16:     ADRESH = 127;
+[e = _ADRESH -> -> 127 `i `uc ]
+"17
+[; ;Joystick.c: 17: }
 [e :UE 280 ]
 }
-"22
-[; ;TeTeclat.c: 22: void TeTeclat(void) {
-[v _TeTeclat `(v ~T0 @X0 1 ef ]
+"18
+[; ;Joystick.c: 18: void JoystickMotor(void) {
+[v _JoystickMotor `(v ~T0 @X0 1 ef ]
 {
-[e :U _TeTeclat ]
+[e :U _JoystickMotor ]
 [f ]
-"23
-[; ;TeTeclat.c: 23:  static char state = 0;
-[v F2588 `uc ~T0 @X0 1 s state ]
-[i F2588
+"19
+[; ;Joystick.c: 19:  static char state = 0;
+[v F2571 `uc ~T0 @X0 1 s state ]
+[i F2571
 -> -> 0 `i `uc
 ]
-"24
-[; ;TeTeclat.c: 24:     static char cols=0;
-[v F2589 `uc ~T0 @X0 1 s cols ]
-[i F2589
--> -> 0 `i `uc
-]
-"25
-[; ;TeTeclat.c: 25:     static char files = 0;
-[v F2590 `uc ~T0 @X0 1 s files ]
-[i F2590
--> -> 0 `i `uc
-]
-"26
-[; ;TeTeclat.c: 26:     files = PORTDbits.RD0 + PORTDbits.RD1*2 + PORTDbits.RD2*3 + PORTDbits.RD3*4;
-[e = F2590 -> + + + -> . . _PORTDbits 0 0 `i * -> . . _PORTDbits 0 1 `i -> 2 `i * -> . . _PORTDbits 0 2 `i -> 3 `i * -> . . _PORTDbits 0 3 `i -> 4 `i `uc ]
-"27
-[; ;TeTeclat.c: 27:  switch(state) {
+"20
+[; ;Joystick.c: 20:     switch(state) {
 [e $U 283  ]
 {
-"28
-[; ;TeTeclat.c: 28:   case 0:
+"21
+[; ;Joystick.c: 21:   case 0:
 [e :U 284 ]
-"29
-[; ;TeTeclat.c: 29:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 285  ]
+"22
+[; ;Joystick.c: 22:    if (ADCON0bits.GODONE == 0 && ADRESH < 200 && ADRESH > 50) {
+[e $ ! && && == -> . . _ADCON0bits 7 1 `i -> 0 `i < -> _ADRESH `i -> 200 `i > -> _ADRESH `i -> 50 `i 285  ]
 {
-"30
-[; ;TeTeclat.c: 30:     LATDbits.LD4=1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"31
-[; ;TeTeclat.c: 31:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"32
-[; ;TeTeclat.c: 32:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"33
-[; ;TeTeclat.c: 33:     cols=0;
-[e = F2589 -> -> 0 `i `uc ]
-"34
-[; ;TeTeclat.c: 34:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"35
-[; ;TeTeclat.c: 35:    }
+"23
+[; ;Joystick.c: 23:     ADCON0 = 0x07;
+[e = _ADCON0 -> -> 7 `i `uc ]
+"24
+[; ;Joystick.c: 24:                 cap1 = 1;
+[e = _cap1 -> -> 1 `i `b ]
+"25
+[; ;Joystick.c: 25:     state++;
+[e ++ F2571 -> -> 1 `i `uc ]
+"26
+[; ;Joystick.c: 26:    }
 }
 [e $U 286  ]
-"36
-[; ;TeTeclat.c: 36:    else if (files!=0) {
+"27
+[; ;Joystick.c: 27:    else if (ADCON0bits.GODONE == 0 && ADRESH >= 200) {
 [e :U 285 ]
-[e $ ! != -> F2590 `i -> 0 `i 287  ]
+[e $ ! && == -> . . _ADCON0bits 7 1 `i -> 0 `i >= -> _ADRESH `i -> 200 `i 287  ]
 {
-"37
-[; ;TeTeclat.c: 37:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"38
-[; ;TeTeclat.c: 38:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
-"39
-[; ;TeTeclat.c: 39:    }
-}
-[e :U 287 ]
-[e :U 286 ]
-"40
-[; ;TeTeclat.c: 40:   break;
-[e $U 282  ]
-"41
-[; ;TeTeclat.c: 41:   case 1:
+"28
+[; ;Joystick.c: 28:     if(ultimaTeclaAD != 2)MNouJoystick(2);
+[e $ ! != -> _ultimaTeclaAD `i -> 2 `i 288  ]
+[e ( _MNouJoystick (1 -> -> 2 `i `c ]
 [e :U 288 ]
-"42
-[; ;TeTeclat.c: 42:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 289  ]
-{
-"43
-[; ;TeTeclat.c: 43:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"44
-[; ;TeTeclat.c: 44:     LATDbits.LD5=1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"45
-[; ;TeTeclat.c: 45:     LATDbits.LD6=0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"46
-[; ;TeTeclat.c: 46:     cols=1;
-[e = F2589 -> -> 1 `i `uc ]
-"47
-[; ;TeTeclat.c: 47:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"48
-[; ;TeTeclat.c: 48:    }
+"29
+[; ;Joystick.c: 29:     ultimaTeclaAD = 2;
+[e = _ultimaTeclaAD -> -> 2 `i `uc ]
+"30
+[; ;Joystick.c: 30:     ADCON0 = 0x07;
+[e = _ADCON0 -> -> 7 `i `uc ]
+"31
+[; ;Joystick.c: 31:                 cap1 = 0;
+[e = _cap1 -> -> 0 `i `b ]
+"32
+[; ;Joystick.c: 32:     state++;
+[e ++ F2571 -> -> 1 `i `uc ]
+"33
+[; ;Joystick.c: 33:    }
 }
-[e $U 290  ]
-"49
-[; ;TeTeclat.c: 49:    else if (files!=0) {
-[e :U 289 ]
-[e $ ! != -> F2590 `i -> 0 `i 291  ]
+[e $U 289  ]
+"34
+[; ;Joystick.c: 34:    else if (ADCON0bits.GODONE == 0 && ADRESH <= 50) {
+[e :U 287 ]
+[e $ ! && == -> . . _ADCON0bits 7 1 `i -> 0 `i <= -> _ADRESH `i -> 50 `i 290  ]
 {
-"50
-[; ;TeTeclat.c: 50:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"51
-[; ;TeTeclat.c: 51:     state = 3;
-[e = F2588 -> -> 3 `i `uc ]
-"52
-[; ;TeTeclat.c: 52:    }
-}
+"35
+[; ;Joystick.c: 35:     if(ultimaTeclaAD != 8)MNouJoystick(8);
+[e $ ! != -> _ultimaTeclaAD `i -> 8 `i 291  ]
+[e ( _MNouJoystick (1 -> -> 8 `i `c ]
 [e :U 291 ]
+"36
+[; ;Joystick.c: 36:     ultimaTeclaAD = 8;
+[e = _ultimaTeclaAD -> -> 8 `i `uc ]
+"37
+[; ;Joystick.c: 37:     ADCON0 = 0x07;
+[e = _ADCON0 -> -> 7 `i `uc ]
+"38
+[; ;Joystick.c: 38:                 cap1 = 0;
+[e = _cap1 -> -> 0 `i `b ]
+"39
+[; ;Joystick.c: 39:     state++;
+[e ++ F2571 -> -> 1 `i `uc ]
+"40
+[; ;Joystick.c: 40:    }
+}
 [e :U 290 ]
-"53
-[; ;TeTeclat.c: 53:   break;
+[e :U 289 ]
+[e :U 286 ]
+"41
+[; ;Joystick.c: 41:   break;
 [e $U 282  ]
-"54
-[; ;TeTeclat.c: 54:   case 2:
+"42
+[; ;Joystick.c: 42:   case 1:
 [e :U 292 ]
-"55
-[; ;TeTeclat.c: 55:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 293  ]
+"43
+[; ;Joystick.c: 43:    if (ADCON0bits.GODONE == 0 && ADRESH < 200 && ADRESH > 50) {
+[e $ ! && && == -> . . _ADCON0bits 7 1 `i -> 0 `i < -> _ADRESH `i -> 200 `i > -> _ADRESH `i -> 50 `i 293  ]
 {
-"56
-[; ;TeTeclat.c: 56:     LATDbits.LD4=0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"57
-[; ;TeTeclat.c: 57:     LATDbits.LD5=0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"58
-[; ;TeTeclat.c: 58:     LATDbits.LD6=1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"59
-[; ;TeTeclat.c: 59:     cols=2;
-[e = F2589 -> -> 2 `i `uc ]
-"60
-[; ;TeTeclat.c: 60:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
-"61
-[; ;TeTeclat.c: 61:    }
+"44
+[; ;Joystick.c: 44:     ADCON0 = 0x03;
+[e = _ADCON0 -> -> 3 `i `uc ]
+"45
+[; ;Joystick.c: 45:                 cap2 = 1;
+[e = _cap2 -> -> 1 `i `b ]
+"46
+[; ;Joystick.c: 46:     state--;
+[e -- F2571 -> -> 1 `i `uc ]
+"47
+[; ;Joystick.c: 47:    }
 }
 [e $U 294  ]
-"62
-[; ;TeTeclat.c: 62:    else if (files!=0) {
+"48
+[; ;Joystick.c: 48:    else if (ADCON0bits.GODONE == 0 && ADRESH >= 200) {
 [e :U 293 ]
-[e $ ! != -> F2590 `i -> 0 `i 295  ]
+[e $ ! && == -> . . _ADCON0bits 7 1 `i -> 0 `i >= -> _ADRESH `i -> 200 `i 295  ]
 {
-"63
-[; ;TeTeclat.c: 63:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"64
-[; ;TeTeclat.c: 64:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"65
-[; ;TeTeclat.c: 65:    }
-}
-[e :U 295 ]
-[e :U 294 ]
-"66
-[; ;TeTeclat.c: 66:   break;
-[e $U 282  ]
-"67
-[; ;TeTeclat.c: 67:   case 3:
+"49
+[; ;Joystick.c: 49:     if(ultimaTeclaAD != 6)MNouJoystick(6);
+[e $ ! != -> _ultimaTeclaAD `i -> 6 `i 296  ]
+[e ( _MNouJoystick (1 -> -> 6 `i `c ]
 [e :U 296 ]
-"68
-[; ;TeTeclat.c: 68:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 297  ]
-{
-"69
-[; ;TeTeclat.c: 69:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"70
-[; ;TeTeclat.c: 70:    }
+"50
+[; ;Joystick.c: 50:     ultimaTeclaAD = 6;
+[e = _ultimaTeclaAD -> -> 6 `i `uc ]
+"51
+[; ;Joystick.c: 51:     ADCON0 = 0x03;
+[e = _ADCON0 -> -> 3 `i `uc ]
+"52
+[; ;Joystick.c: 52:                 cap2 = 0;
+[e = _cap2 -> -> 0 `i `b ]
+"53
+[; ;Joystick.c: 53:     state--;
+[e -- F2571 -> -> 1 `i `uc ]
+"54
+[; ;Joystick.c: 54:    }
 }
-[e :U 297 ]
-"71
-[; ;TeTeclat.c: 71:   break;
-[e $U 282  ]
-"72
-[; ;TeTeclat.c: 72:   case 4:
-[e :U 298 ]
-"73
-[; ;TeTeclat.c: 73:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 299  ]
+[e $U 297  ]
+"55
+[; ;Joystick.c: 55:    else if (ADCON0bits.GODONE == 0 && ADRESH <= 50) {
+[e :U 295 ]
+[e $ ! && == -> . . _ADCON0bits 7 1 `i -> 0 `i <= -> _ADRESH `i -> 50 `i 298  ]
 {
-"74
-[; ;TeTeclat.c: 74:     state = 1;
-[e = F2588 -> -> 1 `i `uc ]
-"75
-[; ;TeTeclat.c: 75:    }
-}
-[e $U 300  ]
-"76
-[; ;TeTeclat.c: 76:    else if (files!=0) {
+"56
+[; ;Joystick.c: 56:     if(ultimaTeclaAD != 4)MNouJoystick(4);
+[e $ ! != -> _ultimaTeclaAD `i -> 4 `i 299  ]
+[e ( _MNouJoystick (1 -> -> 4 `i `c ]
 [e :U 299 ]
-[e $ ! != -> F2590 `i -> 0 `i 301  ]
-{
-"77
-[; ;TeTeclat.c: 77:                 MsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _MsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"78
-[; ;TeTeclat.c: 78:                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-[e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"80
-[; ;TeTeclat.c: 80:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"81
-[; ;TeTeclat.c: 81:    }
+"57
+[; ;Joystick.c: 57:     ultimaTeclaAD = 4;
+[e = _ultimaTeclaAD -> -> 4 `i `uc ]
+"58
+[; ;Joystick.c: 58:     ADCON0 = 0x03;
+[e = _ADCON0 -> -> 3 `i `uc ]
+"59
+[; ;Joystick.c: 59:                 cap2 = 0;
+[e = _cap2 -> -> 0 `i `b ]
+"60
+[; ;Joystick.c: 60:     state--;
+[e -- F2571 -> -> 1 `i `uc ]
+"61
+[; ;Joystick.c: 61:    }
 }
-[e :U 301 ]
-[e :U 300 ]
-"82
-[; ;TeTeclat.c: 82:   break;
+[e :U 298 ]
+[e :U 297 ]
+[e :U 294 ]
+"62
+[; ;Joystick.c: 62:   break;
 [e $U 282  ]
-"83
-[; ;TeTeclat.c: 83:   case 5:
-[e :U 302 ]
-"84
-[; ;TeTeclat.c: 84:    if (files==0) {
-[e $ ! == -> F2590 `i -> 0 `i 303  ]
-{
-"85
-[; ;TeTeclat.c: 85:     TiResetTics(tiTeclat);
-[e ( _TiResetTics (1 _tiTeclat ]
-"86
-[; ;TeTeclat.c: 86:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"87
-[; ;TeTeclat.c: 87:    }
-}
-[e :U 303 ]
-"88
-[; ;TeTeclat.c: 88:   break;
-[e $U 282  ]
-"89
-[; ;TeTeclat.c: 89:   case 6:
-[e :U 304 ]
-"90
-[; ;TeTeclat.c: 90:    if (TiGetTics(tiTeclat)>=0) {
-[e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 305  ]
-{
-"91
-[; ;TeTeclat.c: 91:     state++;
-[e ++ F2588 -> -> 1 `i `uc ]
-"92
-[; ;TeTeclat.c: 92:    }
-}
-[e :U 305 ]
-"93
-[; ;TeTeclat.c: 93:   break;
-[e $U 282  ]
-"94
-[; ;TeTeclat.c: 94:   case 7:
-[e :U 306 ]
-"95
-[; ;TeTeclat.c: 95:    if (files!=0) {
-[e $ ! != -> F2590 `i -> 0 `i 307  ]
-{
-"96
-[; ;TeTeclat.c: 96:     state = 5;
-[e = F2588 -> -> 5 `i `uc ]
-"97
-[; ;TeTeclat.c: 97:    }
-}
-[e $U 308  ]
-"98
-[; ;TeTeclat.c: 98:    else if (files==0) {
-[e :U 307 ]
-[e $ ! == -> F2590 `i -> 0 `i 309  ]
-{
-"99
-[; ;TeTeclat.c: 99:     state = 0;
-[e = F2588 -> -> 0 `i `uc ]
-"100
-[; ;TeTeclat.c: 100:    }
-}
-[e :U 309 ]
-[e :U 308 ]
-"101
-[; ;TeTeclat.c: 101:   break;
-[e $U 282  ]
-"102
-[; ;TeTeclat.c: 102:  }
+"64
+[; ;Joystick.c: 64:  }
 }
 [e $U 282  ]
 [e :U 283 ]
-[e [\ -> F2588 `i , $ -> 0 `i 284
- , $ -> 1 `i 288
- , $ -> 2 `i 292
- , $ -> 3 `i 296
- , $ -> 4 `i 298
- , $ -> 5 `i 302
- , $ -> 6 `i 304
- , $ -> 7 `i 306
+[e [\ -> F2571 `i , $ -> 0 `i 284
+ , $ -> 1 `i 292
  282 ]
 [e :U 282 ]
-"103
-[; ;TeTeclat.c: 103: }
+"65
+[; ;Joystick.c: 65:     if(cap1 && cap2 && ultimaTeclaAD != 0){
+[e $ ! && && _cap1 _cap2 != -> _ultimaTeclaAD `i -> 0 `i 300  ]
+{
+"66
+[; ;Joystick.c: 66:         MNouJoystick(0);
+[e ( _MNouJoystick (1 -> -> 0 `i `c ]
+"67
+[; ;Joystick.c: 67:         ultimaTeclaAD = 0;
+[e = _ultimaTeclaAD -> -> 0 `i `uc ]
+"68
+[; ;Joystick.c: 68:     }
+}
+[e :U 300 ]
+"69
+[; ;Joystick.c: 69: }
 [e :UE 281 ]
 }
