@@ -5,11 +5,16 @@
 #include "Usuaris.h"
 #include "Ssms.h"
 #include "GestioLCD.h"
+#include "Hora.h"
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
 signed char novaLletra = -1;
 signed char novaDireccio = -1;
+char horaTmp[4];
+
+unsigned char loginText[8] = "1.LOGIN";
+unsigned char registerText[11] = "2.REGISTER";
 
 char timerMenu;
 __bit loginNOTRegister;
@@ -150,17 +155,17 @@ void menu(void) {
 			else if (loginNOTRegister == 1 && indexUsuari) {
 				state = 12;
 			}
-			else if (loginNOTRegister && indexUsuari == -1 || !loginNOTRegister && indexUsuari) {
+			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari)) {
 				state = 0;
 			}
-			
+		
 		break;
 		case 12:
 			LcClear();
 			SiFerMenu();
 			GLCDMostraMenu(menuDalt);
 			novaDireccio = -1;
-            NovaTecla = -1;
+			NovaTecla = -1;
 			state = 13;
 		break;
 		case 13:
@@ -178,6 +183,13 @@ void menu(void) {
 				LcNewString("BYE BYE ");
 				state = 14;
 			}
+			else if (NovaTecla == 11 && menuDalt == 1) {
+				LcClear();
+				NoFerMenu();
+				LcNewString("Modify Time:");
+				NovaTecla = -1;
+				state = 16;
+			}
 		break;
 		case 14:
 			if (LcLliure()) {
@@ -189,6 +201,62 @@ void menu(void) {
 		case 15:
 			if (TiGetTics(timerMenu) > 2410) {
 				state = 0;
+			}
+		break;
+		case 16:
+			if (LcLliure() && NovaTecla > -1 && NovaTecla < 10) {
+				LcGotoXY(0,1);
+				horaTmp[0] = NovaTecla+48;
+				LcPutChar(horaTmp[0]);
+				NovaTecla = -1;
+				state = 17;
+			}
+			else if (NovaTecla == 10) {
+				state = 12;
+			}
+		break;
+		case 17:
+			if (NovaTecla > -1 && NovaTecla < 10) {
+				horaTmp[1] = NovaTecla+48;
+				LcPutChar(horaTmp[1]);
+				NovaTecla = -1;
+				LcPutChar(':');
+				state = 18;
+			}
+			else if (NovaTecla ==10) {
+				state = 12;
+			}
+		break;
+		case 18:
+			if (NovaTecla > -1 && NovaTecla < 10) {
+				horaTmp[2] = NovaTecla+48;
+				LcPutChar(horaTmp[2]);
+				NovaTecla = -1;
+				state = 19;
+			}
+			else if (NovaTecla == 10) {
+				state = 12;
+			}
+		break;
+		case 19:
+			if (NovaTecla > -1 && NovaTecla < 10) {
+				horaTmp[3] = NovaTecla+48;
+				LcPutChar(horaTmp[3]);
+				NovaTecla = -1;
+				state = 20;
+			}
+			else if (NovaTecla ==10) {
+				state = 12;
+			}
+		break;
+		case 20:
+			if (NovaTecla == 11) {
+				HActualitzaHora(horaTmp);
+				NovaTecla = -1;
+				state = 12;
+			}
+			else if (NovaTecla == 10) {
+				state = 12;
 			}
 		break;
 	}

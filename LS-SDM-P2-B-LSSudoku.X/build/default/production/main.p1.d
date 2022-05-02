@@ -8,4 +8,5 @@ TeTeclat.h  \
 Ssms.h  \
 Altaveu.h  \
 GestioLCD.h  \
-Joystick.h 
+Joystick.h  \
+Hora.h 

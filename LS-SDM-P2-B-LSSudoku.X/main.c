@@ -9,6 +9,7 @@
 #include "Altaveu.h"
 #include "GestioLCD.h"
 #include "Joystick.h"
+#include "Hora.h"
 
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
@@ -80,12 +81,14 @@ void main(void) {
     initAltaveu();
     GLCDInit();
     JoystickInit();
+    initHora();
     
     LcInit(2,16);
     Minit();
     
     while(1){
 
+        motorHora();
         JoystickMotor();
         menu();
         motorAltaveu();

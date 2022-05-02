@@ -1,4 +1,4 @@
-# 1 "Altaveu.c"
+# 1 "Hora.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Altaveu.c" 2
+# 1 "Hora.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,7 +4605,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "Altaveu.c" 2
+# 1 "Hora.c" 2
 
 # 1 "./Altaveu.h" 1
 
@@ -4613,7 +4613,7 @@ unsigned char __t3rd16on(void);
     void motorAltaveu(void);
     void initAltaveu(void);
     void playAltaveu(void);
-# 2 "Altaveu.c" 2
+# 2 "Hora.c" 2
 
 # 1 "./TiTTimer.h" 1
 
@@ -4642,55 +4642,61 @@ void TiFreeTimer (char Handle);
 
 
 void _TiRSITimer (void);
-# 3 "Altaveu.c" 2
+# 3 "Hora.c" 2
 
+char timerHora;
+unsigned char segons = 0;
+char hora[6] = "30:00";
+__bit jugant = 0;
 
-__bit reproduir = 0;
-unsigned char nota;
-char timerAltaveu;
-unsigned char copsNota;
-
-void initAltaveu(void){
-    timerAltaveu = TiGetTimer();
-
+void initHora(void){
+    timerHora = TiGetTimer();
 }
-void playAltaveu(void){
-    reproduir = 1;
+
+void HActualitzaHora(char nova[]){
+    hora[0] = nova[0];
+    hora[1] = nova[1];
+    hora[3] = nova[2];
+    hora[4] = nova[3];
 }
-void motorAltaveu(void){
-static char state = 0;
+
+void motorHora(void) {
+ static char state = 0;
 
  switch(state) {
   case 0:
-   if (reproduir) {
-    nota = 1;
-    copsNota = 0;
-    TiResetTics(timerAltaveu);
-    state = 1;
-   }
-  break;
-  case 1:
-   if (nota > 5) {
-    reproduir = 0;
+   if (TiGetTics(timerHora) >= 1205) {
+    TiResetTics(timerHora);
+    if(jugant){
+
+     hora[4]--;
+     if(hora[4] == ('0'-1)){
+      hora[4] = '9';
+      hora[3]--;
+     }
+
+     if(hora[3] == ('0'-1)){
+      hora[3] = '5';
+      hora[1]--;
+     }
+
+     if(hora[1] == ('0'-1)){
+      hora[1] = '9';
+      hora[0]--;
+     }
+
+     if(hora[0] == '0' && hora[1] == '0' && hora[3] == '0' && hora[4] == ('0'-1)){
+
+     }
+
+     segons++;
+     if(segons > 59){
+
+                        playAltaveu();
+      segons = 0;
+     }
+    }
     state = 0;
-   }
-   else if (copsNota == 168) {
-    nota++;
-    copsNota = 0;
-    state = 1;
-   }
-   else if (TiGetTics(timerAltaveu) > nota) {
-    LATBbits.LB0 = 1;
-    TiResetTics(timerAltaveu);
-    state = 2;
-   }
-  break;
-  case 2:
-   if (TiGetTics(timerAltaveu) > nota) {
-    LATBbits.LB0 = 0;
-    TiResetTics(timerAltaveu);
-    copsNota++;
-    state = 1;
    }
   break;
  }

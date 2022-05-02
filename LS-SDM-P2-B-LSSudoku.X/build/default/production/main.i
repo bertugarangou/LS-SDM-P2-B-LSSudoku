@@ -4759,6 +4759,16 @@ void JoystickInit(void);
 void JoystickMotor(void);
 # 11 "main.c" 2
 
+# 1 "./Hora.h" 1
+
+
+    extern __bit jugant;
+    extern char hora[6];
+    void initHora(void);
+    void motorHora(void);
+    void HActualitzaHora(char nova[]);
+# 12 "main.c" 2
+
 
 #pragma config OSC = HSPLL
 #pragma config PBADEN = DIG
@@ -4783,9 +4793,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 45 "main.c"
+# 46 "main.c"
     TRISC = 0xC0;
-# 55 "main.c"
+# 56 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4794,7 +4804,7 @@ void init_ports(void){
     EECON1bits.CFGS = 0;
 
 }
-# 72 "main.c"
+# 73 "main.c"
 void main(void) {
     init_ports();
     escriureEEPROM();
@@ -4806,12 +4816,14 @@ void main(void) {
     initAltaveu();
     GLCDInit();
     JoystickInit();
+    initHora();
 
     LcInit(2,16);
     Minit();
 
     while(1){
 
+        motorHora();
         JoystickMotor();
         menu();
         motorAltaveu();
