@@ -41,13 +41,13 @@ void menu(void) {
 	switch(state) {
 		case 0:
 			LcClear();
-			LcNewString("1.LOGIN");
+			LcNewString(loginText);
 			state = 1;
 		break;
 		case 1:
 			if (LcLliure()) {
 				LcGotoXY(0,1);
-				LcNewString("2.REGISTER");
+				LcNewString(registerText);
 				NovaTecla = -1;
 				state = 2;
 			}
