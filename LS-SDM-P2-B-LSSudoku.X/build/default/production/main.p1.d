@@ -9,4 +9,6 @@ Ssms.h  \
 Altaveu.h  \
 GestioLCD.h  \
 Joystick.h  \
-Hora.h 
+Hora.h  \
+SIO.h  \
+Joc.h 

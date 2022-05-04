@@ -49,6 +49,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3056
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3056: extern volatile EECON1bits_t EECON1bits __attribute__((address(0xFA6)));
 [v _EECON1bits `VS103 ~T0 @X0 0 e@4006 ]
+"3332
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3332: extern volatile unsigned char TXSTA __attribute__((address(0xFAC)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
+"3122
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3122: extern volatile unsigned char RCSTA __attribute__((address(0xFAB)));
+[v _RCSTA `Vuc ~T0 @X0 0 e@4011 ]
+"4153
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 4153: extern volatile unsigned char BAUDCON __attribute__((address(0xFB8)));
+[v _BAUDCON `Vuc ~T0 @X0 0 e@4024 ]
+"3624
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3624: extern volatile unsigned char SPBRGH __attribute__((address(0xFB0)));
+[v _SPBRGH `Vuc ~T0 @X0 0 e@4016 ]
+"3612
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3612: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
 [p mainexit ]
 "13 ./Usuaris.h
 [; ;./Usuaris.h: 13: void escriureEEPROM(void);
@@ -86,6 +101,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 ./Menu.h
 [; ;./Menu.h: 4: void Minit(void);
 [v _Minit `(v ~T0 @X0 0 ef ]
+"19 ./Usuaris.h
+[; ;./Usuaris.h: 19: void escriure2usuarisStruct(void);
+[v _escriure2usuarisStruct `(v ~T0 @X0 0 ef ]
+"3 ./Joc.h
+[; ;./Joc.h: 3: void motorJoc(void);
+[v _motorJoc `(v ~T0 @X0 0 ef ]
+"7 ./SIO.h
+[; ;./SIO.h: 7: void motorSIO(void);
+[v _motorSIO `(v ~T0 @X0 0 ef ]
 "6 ./Hora.h
 [; ;./Hora.h: 6:     void motorHora(void);
 [v _motorHora `(v ~T0 @X0 0 ef ]
@@ -524,150 +548,185 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"14 main.c
-[; ;main.c: 14:     TRISB = 0xE0;
-[p x OSC  =  HSPLL      ]
-"15
-[; ;main.c: 15:     LATBbits.LATB3 = 0;
-[p x PBADEN  =  DIG      ]
-"16
+"16 main.c
 [; ;main.c: 16:     LATBbits.LATB0 = 0;
-[p x WDT  =  OFF      ]
+[p x OSC  =  HSPLL      ]
 "17
 [; ;main.c: 17:     LATBbits.LATB1 = 0;
+[p x PBADEN  =  DIG      ]
+"18
+[p x WDT  =  OFF      ]
+"19
 [p x LVP  =  OFF      ]
 [v $root$_high_rsi `(v ~T0 @X0 0 e ]
-"19
+"21
 [v _high_rsi `(v ~T41 @X0 1 ef ]
 {
 [e :U _high_rsi ]
 [f ]
-"20
+"22
 [e ( __TiRSITimer ..  ]
-"21
+"23
 [e :UE 280 ]
 }
-"23
+"25
 [v _init_ports `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_ports ]
 [f ]
-"27
+"29
 [e = _TRISA -> -> 3 `i `uc ]
-"33
-[e = _TRISB -> -> 224 `i `uc ]
-"34
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "35
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[e = _TRISB -> -> 224 `i `uc ]
 "36
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"37
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+"38
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     TRISC = 0xC0;
+"48
+[; ;main.c: 48:     TRISC = 0xC0;
 [e = _TRISC -> -> 192 `i `uc ]
-"56
-[; ;main.c: 56:     TRISD = 0x8F;
+"58
+[; ;main.c: 58:     TRISD = 0x8F;
 [e = _TRISD -> -> 143 `i `uc ]
-"57
-[; ;main.c: 57:     LATD = 0x00;
+"59
+[; ;main.c: 59:     LATD = 0x00;
 [e = _LATD -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:     EECON1bits.EEPGD = 1;
+"62
+[; ;main.c: 62:     EECON1bits.EEPGD = 1;
 [e = . . _EECON1bits 0 7 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:     EECON1bits.CFGS = 0;
-[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
 "63
-[; ;main.c: 63: }
+[; ;main.c: 63:     EECON1bits.CFGS = 0;
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+"65
+[; ;main.c: 65: }
 [e :UE 281 ]
 }
+"66
+[; ;main.c: 66: void init_eusart(void){
+[v _init_eusart `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_eusart ]
+[f ]
+"67
+[; ;main.c: 67:     TXSTA = 0x24;
+[e = _TXSTA -> -> 36 `i `uc ]
+"68
+[; ;main.c: 68:     RCSTA = 0x90;
+[e = _RCSTA -> -> 144 `i `uc ]
+"69
+[; ;main.c: 69:     BAUDCON = 0x08;
+[e = _BAUDCON -> -> 8 `i `uc ]
+"70
+[; ;main.c: 70:     SPBRGH = 0x04;
+[e = _SPBRGH -> -> 4 `i `uc ]
+"71
+[; ;main.c: 71:     SPBRG = 0x10;
+[e = _SPBRG -> -> 16 `i `uc ]
+"72
+[; ;main.c: 72: }
+[e :UE 282 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"73
-[; ;main.c: 73: void main(void) {
+"75
+[; ;main.c: 75: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"74
-[; ;main.c: 74:     init_ports();
-[e ( _init_ports ..  ]
-"75
-[; ;main.c: 75:     escriureEEPROM();
-[e ( _escriureEEPROM ..  ]
 "76
-[; ;main.c: 76:     TiInitTimer();
-[e ( _TiInitTimer ..  ]
+[; ;main.c: 76:     init_ports();
+[e ( _init_ports ..  ]
 "77
-[; ;main.c: 77:     TeInit();
-[e ( _TeInit ..  ]
+[; ;main.c: 77:     escriureEEPROM();
+[e ( _escriureEEPROM ..  ]
 "78
-[; ;main.c: 78:     Sinit();
-[e ( _Sinit ..  ]
+[; ;main.c: 78:     init_eusart();
+[e ( _init_eusart ..  ]
 "79
-[; ;main.c: 79:     SMotor();
-[e ( _SMotor ..  ]
+[; ;main.c: 79:     TiInitTimer();
+[e ( _TiInitTimer ..  ]
 "80
-[; ;main.c: 80:     Uinit();
-[e ( _Uinit ..  ]
+[; ;main.c: 80:     TeInit();
+[e ( _TeInit ..  ]
 "81
-[; ;main.c: 81:     initAltaveu();
-[e ( _initAltaveu ..  ]
+[; ;main.c: 81:     Sinit();
+[e ( _Sinit ..  ]
 "82
-[; ;main.c: 82:     GLCDInit();
-[e ( _GLCDInit ..  ]
-"83
-[; ;main.c: 83:     JoystickInit();
-[e ( _JoystickInit ..  ]
-"84
-[; ;main.c: 84:     initHora();
-[e ( _initHora ..  ]
-"86
-[; ;main.c: 86:     LcInit(2,16);
-[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
-"87
-[; ;main.c: 87:     Minit();
-[e ( _Minit ..  ]
-"89
-[; ;main.c: 89:     while(1){
-[e :U 284 ]
-{
-"91
-[; ;main.c: 91:         motorHora();
-[e ( _motorHora ..  ]
-"92
-[; ;main.c: 92:         JoystickMotor();
-[e ( _JoystickMotor ..  ]
-"93
-[; ;main.c: 93:         menu();
-[e ( _menu ..  ]
-"94
-[; ;main.c: 94:         motorAltaveu();
-[e ( _motorAltaveu ..  ]
-"95
-[; ;main.c: 95:         UmotorUsers();
-[e ( _UmotorUsers ..  ]
-"96
-[; ;main.c: 96:         GLCDMotor();
-[e ( _GLCDMotor ..  ]
-"97
-[; ;main.c: 97:         TeTeclat();
-[e ( _TeTeclat ..  ]
-"98
-[; ;main.c: 98:         SMotor();
+[; ;main.c: 82:     SMotor();
 [e ( _SMotor ..  ]
-"99
-[; ;main.c: 99:         LcLCD();
-[e ( _LcLCD ..  ]
-"100
-[; ;main.c: 100:     }
-}
-[e :U 283 ]
-[e $U 284  ]
+"83
+[; ;main.c: 83:     Uinit();
+[e ( _Uinit ..  ]
+"84
+[; ;main.c: 84:     initAltaveu();
+[e ( _initAltaveu ..  ]
+"85
+[; ;main.c: 85:     GLCDInit();
+[e ( _GLCDInit ..  ]
+"86
+[; ;main.c: 86:     JoystickInit();
+[e ( _JoystickInit ..  ]
+"87
+[; ;main.c: 87:     initHora();
+[e ( _initHora ..  ]
+"89
+[; ;main.c: 89:     LcInit(2,16);
+[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
+"90
+[; ;main.c: 90:     Minit();
+[e ( _Minit ..  ]
+"92
+[; ;main.c: 92:     escriure2usuarisStruct();
+[e ( _escriure2usuarisStruct ..  ]
+"94
+[; ;main.c: 94:     while(1){
 [e :U 285 ]
+{
+"95
+[; ;main.c: 95:         motorJoc();
+[e ( _motorJoc ..  ]
+"96
+[; ;main.c: 96:         motorSIO();
+[e ( _motorSIO ..  ]
+"97
+[; ;main.c: 97:         motorHora();
+[e ( _motorHora ..  ]
+"98
+[; ;main.c: 98:         JoystickMotor();
+[e ( _JoystickMotor ..  ]
+"99
+[; ;main.c: 99:         menu();
+[e ( _menu ..  ]
+"100
+[; ;main.c: 100:         motorAltaveu();
+[e ( _motorAltaveu ..  ]
 "101
-[; ;main.c: 101:     return;
-[e $UE 282  ]
+[; ;main.c: 101:         UmotorUsers();
+[e ( _UmotorUsers ..  ]
 "102
-[; ;main.c: 102: }
-[e :UE 282 ]
+[; ;main.c: 102:         GLCDMotor();
+[e ( _GLCDMotor ..  ]
+"103
+[; ;main.c: 103:         TeTeclat();
+[e ( _TeTeclat ..  ]
+"104
+[; ;main.c: 104:         SMotor();
+[e ( _SMotor ..  ]
+"105
+[; ;main.c: 105:         LcLCD();
+[e ( _LcLCD ..  ]
+"106
+[; ;main.c: 106:     }
+}
+[e :U 284 ]
+[e $U 285  ]
+[e :U 286 ]
+"107
+[; ;main.c: 107:     return;
+[e $UE 283  ]
+"108
+[; ;main.c: 108: }
+[e :UE 283 ]
 }

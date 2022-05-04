@@ -76,7 +76,9 @@ void LcInit(char rows, char columns) {
     //correctly after 40ms. Therefore, there is a loop with two initializations 
     //from here the initialization works correctly if a reset is made or if
     //the supply is turned ON and OFF.
-    LcCursorOff();
+    //LcCursorOff();
+    WaitForBusy();
+	CantaIR(DISPLAY_CONTROL | DISPLAY_ON);
 }
 
 void LcClear(void) {
@@ -86,20 +88,20 @@ void LcClear(void) {
 	Espera(Timer, 3); // V1.1
     LcGotoXY(0,0);
 }
-
+/*
 void LcCursorOn(void) {
 // Post: Turn on the cursor
 // Post: The next order can last up to 40us. 
 	WaitForBusy();
 	CantaIR(DISPLAY_CONTROL | DISPLAY_ON | CURSOR_ON);
-}
-
+}*/
+/*
 void LcCursorOff(void) {
 // Post: Turns off the cursor
 // Post: The next order can last up to 40us. 
 	WaitForBusy();
 	CantaIR(DISPLAY_CONTROL | DISPLAY_ON);
-}
+}*/
 
 void LcGotoXY(char Column, char Row) {
 // Pre : Column between 0 and 39, row between 0 and 3. 

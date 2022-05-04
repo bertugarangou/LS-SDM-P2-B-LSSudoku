@@ -10,6 +10,8 @@
 #include "GestioLCD.h"
 #include "Joystick.h"
 #include "Hora.h"
+#include "SIO.h"
+#include "Joc.h"
 
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
@@ -61,18 +63,19 @@ void init_ports(void){
     EECON1bits.CFGS = 0;
     
 }
-/*void init_eusart(void){
+void init_eusart(void){
     TXSTA = 0x24; //00100100
     RCSTA = 0x90;//10010000
     BAUDCON = 0x08;
     SPBRGH = 0x04;  //high(1040) -> high(0000 0100 0001 0000) -> 0000 0100 -> 0x04
     SPBRG = 0x10;   //low(1040) -> low(0000 0100 0001 0000) -> 0001 0000 -> 0x10
-}*/
+}
 
 
 void main(void) {
     init_ports();
-    escriureEEPROM();
+    escriureEEPROM();//no hauria de serhi, esborra tot
+    init_eusart();
     TiInitTimer();
     TeInit();
     Sinit();
@@ -85,9 +88,12 @@ void main(void) {
     
     LcInit(2,16);
     Minit();
+    //borrar lo de sota, posa 2 usuaris forçats!
+    escriure2usuarisStruct();
     
     while(1){
-
+        motorJoc();
+        motorSIO();
         motorHora();
         JoystickMotor();
         menu();

@@ -4739,7 +4739,9 @@ void LcInit(char rows, char columns) {
 
 
 
-    LcCursorOff();
+
+    WaitForBusy();
+ CantaIR(0x08 | 0x04);
 }
 
 void LcClear(void) {
@@ -4749,21 +4751,7 @@ void LcClear(void) {
  Espera(Timer, 3);
     LcGotoXY(0,0);
 }
-
-void LcCursorOn(void) {
-
-
- WaitForBusy();
- CantaIR(0x08 | 0x04 | 0x02);
-}
-
-void LcCursorOff(void) {
-
-
- WaitForBusy();
- CantaIR(0x08 | 0x04);
-}
-
+# 106 "LcTLCD.c"
 void LcGotoXY(char Column, char Row) {
 
 
@@ -4773,7 +4761,7 @@ void LcGotoXY(char Column, char Row) {
 
 
    Fisics = Column + (!Row ? 0 : 0x40);
-# 125 "LcTLCD.c"
+# 127 "LcTLCD.c"
  WaitForBusy();
  CantaIR(0x80 | Fisics);
 
@@ -4794,7 +4782,7 @@ void LcPutChar(char c) {
    LcGotoXY(ColumnAct, RowAct);
   }
  }
-# 153 "LcTLCD.c"
+# 155 "LcTLCD.c"
  if (RowAct == 1) {
   if (ColumnAct >= 40) ColumnAct = 0;
   LcGotoXY(ColumnAct, RowAct);

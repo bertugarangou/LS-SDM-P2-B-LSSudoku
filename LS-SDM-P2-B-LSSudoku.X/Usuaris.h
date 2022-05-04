@@ -14,4 +14,7 @@ void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
+
+
+void escriure2usuarisStruct(void);
 #endif

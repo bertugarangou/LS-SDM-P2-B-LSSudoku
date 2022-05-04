@@ -6,4 +6,5 @@ TiTTimer.h  \
 Usuaris.h  \
 Ssms.h  \
 GestioLCD.h  \
-Hora.h 
+Hora.h  \
+Joc.h 

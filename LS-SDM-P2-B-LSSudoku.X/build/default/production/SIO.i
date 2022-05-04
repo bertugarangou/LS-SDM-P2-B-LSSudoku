@@ -1,4 +1,4 @@
-# 1 "Menu.c"
+# 1 "SIO.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Menu.c" 2
+# 1 "SIO.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,90 +4605,18 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "Menu.c" 2
+# 1 "SIO.c" 2
 
-# 1 "./Menu.h" 1
-
-
-
-void Minit(void);
-void menu(void);
-void MsetNovaTecla(char tecla);
-void MNovaLletra(char lletra);
-void MNouJoystick(signed char posicio);
-# 2 "Menu.c" 2
-
-# 1 "./LcTLCD.h" 1
-# 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+# 1 "./SIO.h" 1
 
 
-
-
-
-
-void LcEnd(void);
-
-
-void LcScroll(void);
-
-
-
-void LcClear(void);
-
-
-
-void LcCursorOn(void);
-
-
-
-void LcCursorOff(void);
-
-
-
-void LcGotoXY(char Column, char Row);
-
-
-
-
-void LcPutChar(char c);
-# 70 "./LcTLCD.h"
-void LcPutStringDebug(char *s);
-void LcNewString(char new_s[]);
-void PutStringCooperatiu();
-void LcLCD();
-__bit LcLliure(void);
-void LcInsertFletxa(void);
-# 3 "Menu.c" 2
-
-# 1 "./TiTTimer.h" 1
-
-
-
-void TiInitTimer(void);
-
-
-
-void TiResetTics(char Handle);
-
-
-
-int TiGetTics(char Handle);
-
-
-
-
-char TiGetTimer(void);
-
-
-
-
-void TiFreeTimer (char Handle);
-
-
-
-void _TiRSITimer (void);
-# 4 "Menu.c" 2
+void SIONovaDireccio(char num);
+void SIOStartGame(char usuari);
+signed char SIOUsuariActua(void);
+void SIONovaTecla(signed char tecla);
+void motorSIO(void);
+__bit SIOJugant(void);
+# 2 "SIO.c" 2
 
 # 1 "./Usuaris.h" 1
 
@@ -4710,322 +4638,84 @@ char* UgetUserName(char quin);
 
 
 void escriure2usuarisStruct(void);
-# 5 "Menu.c" 2
-
-# 1 "./Ssms.h" 1
+# 3 "SIO.c" 2
 
 
-
-void Sinit(void);
-void SMotor(void);
-void SsetNovaTecla(char tecla);
-void SMSon(void);
-void SMSoff (void);
-# 6 "Menu.c" 2
-
-# 1 "./GestioLCD.h" 1
+char *userPtr = 0;
+signed char usuariActualSIO = -1;
+signed char direccio = -1;
+unsigned char rebut;
+signed char novaTeclaSIO = -1;
+__bit jugant = 0;
 
 
-
-void GLCDMostraMenu(unsigned char num);
-void GLCDInit(void);
-void GLCDMotor(void);
-void SiFerMenu(void);
-void NoFerMenu(void);
-# 7 "Menu.c" 2
-
-# 1 "./Hora.h" 1
-
-
-    extern __bit jugant;
-    extern char hora[6];
-    void initHora(void);
-    void motorHora(void);
-    void HActualitzaHora(char nova[]);
-
-    void HJugant(void);
-    void HnoJugant(void);
-    char* HGetTime(void);
-    __bit HNouSegon(void);
-    void HClearNouSegon(void);
-# 8 "Menu.c" 2
-
-# 1 "./Joc.h" 1
-
-
-void motorJoc(void);
-void JJuguem(char usuari);
-void JnovaTecla(char tecla);
-signed char JUsuari(void);
-# 9 "Menu.c" 2
-
-
-unsigned char tmp = 0;
-signed char NovaTecla = -1;
-signed char novaLletra = -1;
-signed char novaDireccio = -1;
-char horaTmp[4];
-
-unsigned char loginText[8] = "1.LOGIN";
-unsigned char registerText[11] = "2.REGISTER";
-
-char timerMenu;
-__bit loginNOTRegister;
-unsigned char menuDalt = 0;
-signed char indexUsuari;
-
-void Minit(void){
-    timerMenu = TiGetTimer();
-}
-void MsetNovaTecla(char tecla){
-    NovaTecla = tecla;
+void SIONovaDireccio(char num){
+    direccio = num;
 }
 
-void MNovaLletra(char lletra){
-    novaLletra = lletra;
-}
-void MNouJoystick(signed char posicio){
-    novaDireccio = posicio;
+void SIOStartGame(char usuari){
+    usuariActualSIO = usuari;
 }
 
-void menu(void) {
- static char state = 0;
+signed char SIOUsuariActual(void){
+    return usuariActualSIO;
+}
+void SIONovaTecla(signed char tecla){
+    novaTeclaSIO = tecla;
+}
+__bit SIOJugant(void){
+    return jugant;
+}
+
+void motorSIO(void){
+    static char state = 0;
 
  switch(state) {
   case 0:
-   LcClear();
-   LcNewString(loginText);
-   state = 1;
+   if (usuariActualSIO > -1) {
+    userPtr = UgetUserName(usuariActualSIO);
+    jugant = 1;
+    state = 1;
+   }
   break;
   case 1:
-   if (LcLliure()) {
-    LcGotoXY(0,1);
-    LcNewString(registerText);
-    NovaTecla = -1;
+   if (*userPtr == '\0' && TXSTAbits.TRMT) {
+    TXREG = '\0';
+    novaTeclaSIO = 0;
     state = 2;
+   }
+   else if (*userPtr != '\0' && TXSTAbits.TRMT) {
+    TXREG = *userPtr;
+    userPtr++;
    }
   break;
   case 2:
-   if (NovaTecla == 1 && UgetNumUsuaris() > 0) {
-    loginNOTRegister = 1;
-    state = 3;
-   }
-   else if (NovaTecla == 2) {
-    loginNOTRegister = 0;
+   if (RCREG == 'K') {
     state = 3;
    }
   break;
   case 3:
-   NovaTecla = -1;
-   novaLletra = -1;
-   LcClear();
-   LcNewString("USER: ");
-   state = 4;
+   if (direccio != -1 && TXSTAbits.TRMT) {
+    TXREG = direccio;
+    direccio = -1;
+    state = 3;
+   }
+   else if (novaTeclaSIO > 0 && novaTeclaSIO < 10 && TXSTAbits.TRMT) {
+    TXREG = novaTeclaSIO;
+    novaTeclaSIO = 0;
+    state = 3;
+   }
+   else if (novaTeclaSIO == 10 && TXSTAbits.TRMT) {
+    TXREG = 'F';
+    novaTeclaSIO = 0;
+    jugant = 0;
+    state = 4;
+   }
   break;
   case 4:
-   if (LcLliure()) {
-    LcGotoXY(0,1);
-    LcNewString("PSWD: ");
-    state = 5;
-   }
-  break;
-  case 5:
-   if (LcLliure()) {
-    LcGotoXY(6,0);
-    SMSon();
-    tmp =0;
-    state = 6;
-   }
-  break;
-  case 6:
-   if (novaLletra > 47 && NovaTecla != 10) {
-    LcPutChar(novaLletra);
-    UenviaChar(novaLletra,tmp);
-    state = 7;
-   }
-   else if (NovaTecla == 11) {
-    state = 7;
-   }
-  break;
-  case 7:
-   if (tmp != 7 && NovaTecla != 11) {
-    tmp++;
-    NovaTecla = -1;
-    novaLletra = -1;
-    state = 6;
-   }
-   else if (tmp == 7 || NovaTecla == 11) {
-    LcGotoXY(6,1);
-    UenviaChar('\0',tmp);
-    NovaTecla = -1;
-    novaLletra = -1;
-    tmp = 0;
-    state = 8;
-   }
-  break;
-  case 8:
-   if (novaLletra > 47 && NovaTecla != 10) {
-    LcPutChar(novaLletra);
-    UenviaPas(novaLletra,tmp);
-    state = 9;
-   }
-   else if (NovaTecla == 11) {
-    state = 9;
-   }
-  break;
-  case 9:
-   if (tmp != 7 && NovaTecla != 11) {
-    tmp++;
-    NovaTecla = -1;
-    novaLletra = -1;
-    state = 8;
-   }
-   else if (tmp == 7 || NovaTecla == 11) {
-    UenviaPas('\0',tmp);
-    NovaTecla = -1;
-    novaLletra = -1;
-    tmp = 0;
-    UcheckExists();
-    SMSoff();
-    state = 10;
-   }
-  break;
-  case 10:
-   if (!UcheckExistsNotFinished()) {
-    indexUsuari = UcheckExistsGetError();
-    state = 11;
-   }
-  break;
-  case 11:
-            if (1 == 1) {
-    state = 12;
-   }
-   else if (!loginNOTRegister && indexUsuari == -1) {
-    URegister();
-    state = 0;
-   }
-   else if (loginNOTRegister == 1 && indexUsuari > -1) {
-    state = 12;
-   }
-   else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
-    state = 0;
-   }
-  break;
-  case 12:
-   LcClear();
-   SiFerMenu();
-   GLCDMostraMenu(menuDalt);
-   novaDireccio = -1;
-   NovaTecla = -1;
-   state = 13;
-  break;
-  case 13:
-   if (novaDireccio == 8) {
-    if(menuDalt < 4) menuDalt++;
-    state = 12;
-   }
-   else if (novaDireccio == 2) {
-    if(menuDalt > 0) menuDalt--;
-    state = 12;
-   }
-   else if (NovaTecla == 11 && menuDalt == 3) {
-    NoFerMenu();
-    LcClear();
-    LcNewString("BYE BYE ");
-    state = 14;
-   }
-   else if (NovaTecla == 11 && menuDalt == 1) {
-    LcClear();
-    NoFerMenu();
-    LcNewString("Modify Time:");
-    NovaTecla = -1;
-    state = 16;
-   }
-   else if (menuDalt == 0 && NovaTecla == 11) {
-    NoFerMenu();
-    NovaTecla = -1;
-    LcClear();
-    LcNewString("TIME REMAINING:");
-    JJuguem(indexUsuari);
-    state = 21;
-   }
-  break;
-  case 14:
-   if (LcLliure()) {
-    LcNewString(UgetUserName(indexUsuari));
-    TiResetTics(timerMenu);
-    state = 15;
-   }
-  break;
-  case 15:
-   if (TiGetTics(timerMenu) > 2410) {
-    state = 0;
-   }
-  break;
-  case 16:
-   if (LcLliure() && NovaTecla > -1 && NovaTecla < 10) {
-    LcGotoXY(0,1);
-    horaTmp[0] = NovaTecla+48;
-    LcPutChar(horaTmp[0]);
-    NovaTecla = -1;
-    state = 17;
-   }
-   else if (NovaTecla == 10) {
-    state = 12;
-   }
-  break;
-  case 17:
-   if (NovaTecla > -1 && NovaTecla < 10) {
-    horaTmp[1] = NovaTecla+48;
-    LcPutChar(horaTmp[1]);
-    NovaTecla = -1;
-    LcPutChar(':');
-    state = 18;
-   }
-   else if (NovaTecla ==10) {
-    state = 12;
-   }
-  break;
-  case 18:
-   if (NovaTecla > -1 && NovaTecla < 10) {
-    horaTmp[2] = NovaTecla+48;
-    LcPutChar(horaTmp[2]);
-    NovaTecla = -1;
-    state = 19;
-   }
-   else if (NovaTecla == 10) {
-    state = 12;
-   }
-  break;
-  case 19:
-   if (NovaTecla > -1 && NovaTecla < 10) {
-    horaTmp[3] = NovaTecla+48;
-    LcPutChar(horaTmp[3]);
-    NovaTecla = -1;
-    state = 20;
-   }
-   else if (NovaTecla ==10) {
-    state = 12;
-   }
-  break;
-  case 20:
-   if (NovaTecla == 11) {
-    HActualitzaHora(horaTmp);
-    NovaTecla = -1;
-    state = 12;
-   }
-   else if (NovaTecla == 10) {
-    state = 12;
-   }
-  break;
-  case 21:
-   if (NovaTecla == 11 && JUsuari() && LcLliure()) {
-    LcClear();
-    state = 22;
-   }
-  break;
-  case 22:
 
   break;
  }
+
+
 }

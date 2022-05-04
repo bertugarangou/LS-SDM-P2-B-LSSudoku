@@ -4648,6 +4648,7 @@ char timerHora;
 unsigned char segons = 0;
 char hora[6] = "30:00";
 __bit jugant = 0;
+__bit nouSegon = 0;
 
 void initHora(void){
     timerHora = TiGetTimer();
@@ -4660,6 +4661,25 @@ void HActualitzaHora(char nova[]){
     hora[4] = nova[3];
 }
 
+__bit HNouSegon(void){
+    return nouSegon;
+}
+
+void HClearNouSegon(void){
+    nouSegon = 0;
+}
+
+char* HGetTime(void){
+    return hora;
+}
+
+void HnoJugant(void){
+    jugant = 0;
+}
+void HJugant(void){
+    jugant = 1;
+}
+
 void motorHora(void) {
  static char state = 0;
 
@@ -4668,6 +4688,7 @@ void motorHora(void) {
    if (TiGetTics(timerHora) >= 1205) {
     TiResetTics(timerHora);
     if(jugant){
+      nouSegon = 1;
 
      hora[4]--;
      if(hora[4] == ('0'-1)){
@@ -4691,8 +4712,7 @@ void motorHora(void) {
 
      segons++;
      if(segons > 59){
-
-                        playAltaveu();
+      playAltaveu();
       segons = 0;
      }
     }

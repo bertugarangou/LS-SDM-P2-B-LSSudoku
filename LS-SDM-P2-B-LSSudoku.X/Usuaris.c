@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "Usuaris.h"
+#include "LcTLCD.h"
 
 unsigned char currentUsrIndex = 0;
 
@@ -11,6 +12,7 @@ __bit do_register = 0;
 unsigned char i;
 unsigned char j;
 signed char usuariLoguejat = -1;
+__bit borram;
 
 char tmpUsername[9];
 char tmpPassword[9];
@@ -53,17 +55,17 @@ void URegister(void){
     do_register = 1;
 }
 void escriureCharEEPROM(char c, char pos){
-    EEADR = c;
-    EEDATA = pos;
+    EEADR = pos;
+    EEDATA = c;
     EECON1bits.EEPGD = 0;
     EECON1bits.CFGS = 0;
     EECON1bits.WREN = 1;
     INTCONbits.GIE = 0;
     EECON2 = 85;
     EECON2 = 170;
-     EECON1bits.WR = 1;
+    EECON1bits.WR = 1;
     while(EECON1bits.WR){}
-   INTCONbits.GIE = 1;
+    INTCONbits.GIE = 1;
 }
 void Uinit(){
     //escriureEEPROM();
@@ -77,7 +79,6 @@ void Uinit(){
     while(EECON1bits.RD == 1){}//bucle al init
     numUsuaris = EEDATA;
     //numUsuaris = 8; //canviar, mirar el comentari de just sota
-    /*******************CAL ESCRIURE UN 0 AQUI AL PRIMER COP*********/
     
     EEADR++;
     EECON1bits.EEPGD = 0;
@@ -85,6 +86,7 @@ void Uinit(){
     
     while(EECON1bits.RD == 1){}//bucle al init
     indexNextUser = EEDATA;
+    
     EEADR++;
     
     for(char i = 0; i< numUsuaris; i++){//i-> usuari
@@ -105,7 +107,23 @@ void Uinit(){
             EEADR++;
         }
     }
+    
         
+}
+
+//BORRAR A FINAL
+void escriure2usuarisStruct(void){
+    //de manera forçada crea dos usuaris
+    usuaris[0].username[0] = 1;
+    usuaris[0].password[0] = 1;
+    usuaris[1].username[0] = '1';
+    usuaris[1].password[0] = '1';
+    usuaris[0].username[1] = '\0';
+    usuaris[0].password[1] = '\0';
+    usuaris[1].username[1] = '\0';
+    usuaris[1].password[1] = '\0';
+    numUsuaris = 2;
+    indexNextUser = 2;
 }
     
 char compareStrings(const char *a, const char *b){
@@ -136,9 +154,13 @@ static char state = 0;
 			}
 		break;
 		case 1:
+            
 			if (i < numUsuaris) {
 				if(compareStrings(tmpUsername, usuaris[i].username) == 0){
 					usuariLoguejat = i;
+                    LATBbits.LATB3 = 1;
+                    
+                    
 				//si son iguals;
 				}
 				i++;
@@ -150,6 +172,7 @@ static char state = 0;
 			}
 		break;
 		case 2:
+            
 			if (i != 8) {
 				escriureCharEEPROM(tmpUsername[i],indexNextUser++);
 				usuaris[indexNextUserStruct].username[i] = tmpUsername[i];

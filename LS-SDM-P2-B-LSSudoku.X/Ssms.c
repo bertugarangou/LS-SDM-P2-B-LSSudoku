@@ -12,6 +12,8 @@ signed char novaTecla = -1;
 char timerSMS = -1;
 signed char ultimaTecla = -1;
 __bit setSMSon = 0;
+unsigned char zeroTecla;
+char arrayZero[3] = "0 ";
 
 void Sinit(void){
     timerSMS = TiGetTimer();
@@ -30,6 +32,7 @@ void SMotor(void) {
 				MNovaLletra(lletraASCII);
 				lletraASCII = -1;
 				ultimaTecla = -1;
+				zeroTecla = 0;
 				state = 0;
 			}
 		break;
@@ -37,18 +40,17 @@ void SMotor(void) {
 			if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < TSMS) {
 				novaTecla = -1;
 				sumaPulsacions++;
-				if(!(lletraASCII == '0' || lletraASCII == ' ')){
-				  lletraASCII++;
-				}
+				lletraASCII++;
 				state = 2;
 			}
 			else if (novaTecla != -1 && novaTecla != ultimaTecla) {
 				MNovaLletra(lletraASCII);
-				if(novaTecla == 0){
-					if(sumaPulsacions == 1) lletraASCII = '0';
-					else lletraASCII = ' ';
-				}else{
+				if(novaTecla != 0){
 				  lletraASCII = lletraInici[novaTecla-2];
+				  zeroTecla = 0;
+				}else{
+				  lletraASCII = '0';
+				  zeroTecla=0;
 				}
 				ultimaTecla = novaTecla;
 				sumaPulsacions = 0;
@@ -64,19 +66,22 @@ void SMotor(void) {
 				state = 6;
 			}
 			else if (ultimaTecla == 0) {
-				state = 7;
+				zeroTecla++;
+				if(zeroTecla == 2) zeroTecla = 0;
+				lletraASCII = arrayZero[zeroTecla];
+				state = 0;
 			}
 		break;
 		case 3:
 			if ((novaTecla > 1 || novaTecla == 0) && novaTecla < 10) {
 				state = 1;
 			}
-			else if (novaTecla <= 1 && lletraASCII == -1) {
+			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII == -1) {
 				MNovaLletra(novaTecla+48);
 				novaTecla = -1;
 				state = 0;
 			}
-			else if (novaTecla <= 1 && lletraASCII != -1) {
+			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII != -1) {
 				MNovaLletra(lletraASCII);
 				lletraASCII = -1;
 				state = 4;
@@ -112,20 +117,6 @@ void SMotor(void) {
 				state = 0;
 			}
 			else if (sumaPulsacions < 4) {
-				state = 0;
-			}
-		break;
-		case 7:
-			if (sumaPulsacions == 2) {
-				lletraASCII = ' ';
-				state = 0;
-			}
-			else if (sumaPulsacions == 3) {
-				lletraASCII = '0';
-				sumaPulsacions = 0;
-				state = 0;
-			}
-			else if (sumaPulsacions < 2) {
 				state = 0;
 			}
 		break;

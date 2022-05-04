@@ -4696,6 +4696,9 @@ void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
+
+
+void escriure2usuarisStruct(void);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1
@@ -4767,7 +4770,33 @@ void JoystickMotor(void);
     void initHora(void);
     void motorHora(void);
     void HActualitzaHora(char nova[]);
+
+    void HJugant(void);
+    void HnoJugant(void);
+    char* HGetTime(void);
+    __bit HNouSegon(void);
+    void HClearNouSegon(void);
 # 12 "main.c" 2
+
+# 1 "./SIO.h" 1
+
+
+void SIONovaDireccio(char num);
+void SIOStartGame(char usuari);
+signed char SIOUsuariActua(void);
+void SIONovaTecla(signed char tecla);
+void motorSIO(void);
+__bit SIOJugant(void);
+# 13 "main.c" 2
+
+# 1 "./Joc.h" 1
+
+
+void motorJoc(void);
+void JJuguem(char usuari);
+void JnovaTecla(char tecla);
+signed char JUsuari(void);
+# 14 "main.c" 2
 
 
 #pragma config OSC = HSPLL
@@ -4793,9 +4822,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 46 "main.c"
+# 48 "main.c"
     TRISC = 0xC0;
-# 56 "main.c"
+# 58 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4804,10 +4833,19 @@ void init_ports(void){
     EECON1bits.CFGS = 0;
 
 }
-# 73 "main.c"
+void init_eusart(void){
+    TXSTA = 0x24;
+    RCSTA = 0x90;
+    BAUDCON = 0x08;
+    SPBRGH = 0x04;
+    SPBRG = 0x10;
+}
+
+
 void main(void) {
     init_ports();
     escriureEEPROM();
+    init_eusart();
     TiInitTimer();
     TeInit();
     Sinit();
@@ -4821,8 +4859,11 @@ void main(void) {
     LcInit(2,16);
     Minit();
 
-    while(1){
+    escriure2usuarisStruct();
 
+    while(1){
+        motorJoc();
+        motorSIO();
         motorHora();
         JoystickMotor();
         menu();

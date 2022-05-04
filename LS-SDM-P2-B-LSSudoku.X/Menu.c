@@ -6,6 +6,7 @@
 #include "Ssms.h"
 #include "GestioLCD.h"
 #include "Hora.h"
+#include "Joc.h"
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
@@ -149,16 +150,14 @@ void menu(void) {
 			}
 			else if (!loginNOTRegister && indexUsuari == -1) {
 				URegister();
-				loginNOTRegister = 1;
-				state = 3;
-			}
-			else if (loginNOTRegister == 1 && indexUsuari) {
-				state = 12;
-			}
-			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari)) {
 				state = 0;
 			}
-		
+			else if (loginNOTRegister == 1 && indexUsuari > -1) {
+				state = 12;
+			}
+			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
+				state = 0;
+			}
 		break;
 		case 12:
 			LcClear();
@@ -189,6 +188,14 @@ void menu(void) {
 				LcNewString("Modify Time:");
 				NovaTecla = -1;
 				state = 16;
+			}
+			else if (menuDalt == 0 && NovaTecla == 11) {
+				NoFerMenu();
+				NovaTecla = -1;
+				LcClear();
+				LcNewString("TIME REMAINING:");
+				JJuguem(indexUsuari);
+				state = 21;
 			}
 		break;
 		case 14:
@@ -258,6 +265,15 @@ void menu(void) {
 			else if (NovaTecla == 10) {
 				state = 12;
 			}
+		break;
+		case 21:
+			if (NovaTecla == 11 && JUsuari() && LcLliure()) {
+				LcClear();
+				state = 22;
+			}
+		break;
+		case 22:
+
 		break;
 	}
 }

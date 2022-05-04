@@ -4624,7 +4624,53 @@ void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
+
+
+void escriure2usuarisStruct(void);
 # 2 "Usuaris.c" 2
+
+# 1 "./LcTLCD.h" 1
+# 28 "./LcTLCD.h"
+void LcInit(char rows, char columns);
+
+
+
+
+
+
+void LcEnd(void);
+
+
+void LcScroll(void);
+
+
+
+void LcClear(void);
+
+
+
+void LcCursorOn(void);
+
+
+
+void LcCursorOff(void);
+
+
+
+void LcGotoXY(char Column, char Row);
+
+
+
+
+void LcPutChar(char c);
+# 70 "./LcTLCD.h"
+void LcPutStringDebug(char *s);
+void LcNewString(char new_s[]);
+void PutStringCooperatiu();
+void LcLCD();
+__bit LcLliure(void);
+void LcInsertFletxa(void);
+# 3 "Usuaris.c" 2
 
 
 unsigned char currentUsrIndex = 0;
@@ -4637,6 +4683,7 @@ __bit do_register = 0;
 unsigned char i;
 unsigned char j;
 signed char usuariLoguejat = -1;
+__bit borram;
 
 char tmpUsername[9];
 char tmpPassword[9];
@@ -4679,17 +4726,17 @@ void URegister(void){
     do_register = 1;
 }
 void escriureCharEEPROM(char c, char pos){
-    EEADR = c;
-    EEDATA = pos;
+    EEADR = pos;
+    EEDATA = c;
     EECON1bits.EEPGD = 0;
     EECON1bits.CFGS = 0;
     EECON1bits.WREN = 1;
     INTCONbits.GIE = 0;
     EECON2 = 85;
     EECON2 = 170;
-     EECON1bits.WR = 1;
+    EECON1bits.WR = 1;
     while(EECON1bits.WR){}
-   INTCONbits.GIE = 1;
+    INTCONbits.GIE = 1;
 }
 void Uinit(){
 
@@ -4704,13 +4751,13 @@ void Uinit(){
     numUsuaris = EEDATA;
 
 
-
     EEADR++;
     EECON1bits.EEPGD = 0;
     EECON1bits.CFGS = 0;
 
     while(EECON1bits.RD == 1){}
     indexNextUser = EEDATA;
+
     EEADR++;
 
     for(char i = 0; i< numUsuaris; i++){
@@ -4732,6 +4779,22 @@ void Uinit(){
         }
     }
 
+
+}
+
+
+void escriure2usuarisStruct(void){
+
+    usuaris[0].username[0] = 1;
+    usuaris[0].password[0] = 1;
+    usuaris[1].username[0] = '1';
+    usuaris[1].password[0] = '1';
+    usuaris[0].username[1] = '\0';
+    usuaris[0].password[1] = '\0';
+    usuaris[1].username[1] = '\0';
+    usuaris[1].password[1] = '\0';
+    numUsuaris = 2;
+    indexNextUser = 2;
 }
 
 char compareStrings(const char *a, const char *b){
@@ -4762,9 +4825,13 @@ static char state = 0;
    }
   break;
   case 1:
+
    if (i < numUsuaris) {
     if(compareStrings(tmpUsername, usuaris[i].username) == 0){
      usuariLoguejat = i;
+                    LATBbits.LATB3 = 1;
+
+
 
     }
     i++;
@@ -4776,6 +4843,7 @@ static char state = 0;
    }
   break;
   case 2:
+
    if (i != 8) {
     escriureCharEEPROM(tmpUsername[i],indexNextUser++);
     usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
