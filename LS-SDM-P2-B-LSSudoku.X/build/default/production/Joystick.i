@@ -4681,7 +4681,7 @@ void JoystickMotor(void) {
 
  }
     if(cap1 && cap2 && ultimaTeclaAD != 0){
-        MNouJoystick(0);
-        ultimaTeclaAD = 0;
+        MNouJoystick(-1);
+        ultimaTeclaAD = -1;
     }
 }

@@ -4786,8 +4786,8 @@ void SIOStartGame(char usuari);
 signed char SIOUsuariActua(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
-__bit SIOJugant(void);
 __bit SIOcheckKrebut(void);
+void SIOendGame(void);
 # 13 "main.c" 2
 
 # 1 "./Joc.h" 1
@@ -4795,9 +4795,10 @@ __bit SIOcheckKrebut(void);
 
 void motorJoc(void);
 void JJuguem(char usuari);
-void JnovaTecla(char tecla);
+void JnovaTecla(signed char tecla);
 signed char JUsuari(void);
 void JnovaDireccio(char dir);
+void JendGame(void);
 # 14 "main.c" 2
 
 

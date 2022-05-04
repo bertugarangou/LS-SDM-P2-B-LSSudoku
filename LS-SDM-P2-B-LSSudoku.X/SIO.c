@@ -4,17 +4,20 @@
 
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
-signed char novaDireccioSIO = -1;
+signed char direccioSIO = -1;
 unsigned char rebut;
 signed char novaTeclaSIO = -1;
-__bit jugant = 0;
+__bit jugantSIO = 0;
 __bit Krebut = 0;
 
+void SIOendGame(void){
+    jugantSIO = 0;
+}
 __bit SIOcheckKrebut(void){
     return Krebut;
 }
 void SIONovaDireccio(char num){
-    novaDireccioSIO = num;
+    direccioSIO = num;
 }
 
 void SIOStartGame(char usuari){
@@ -27,9 +30,6 @@ signed char SIOUsuariActual(void){
 void SIONovaTecla(signed char tecla){
     novaTeclaSIO = tecla;
 }
-__bit SIOJugant(void){
-    return jugant;
-}
 
 void motorSIO(void){
     static char state = 0;
@@ -38,8 +38,8 @@ void motorSIO(void){
 		case 0:
 			if (usuariActualSIO > -1) {
 				userPtr = UgetUserName(usuariActualSIO);
-				jugant = 1;
-                Krebut = 0;
+				jugantSIO = 1;
+				Krebut = 0;
 				state = 1;
 			}
 		break;
@@ -62,20 +62,19 @@ void motorSIO(void){
 			}
 		break;
 		case 3:
-			if (novaDireccioSIO != -1 && TXSTAbits.TRMT) {
-				TXREG = novaDireccioSIO;
-				novaDireccioSIO = -1;
+			if (direccioSIO != -1 && TXSTAbits.TRMT) {
+				TXREG = direccioSIO;
+				direccioSIO = -1;
 				state = 3;
 			}
-			else if (novaTeclaSIO > 0 && novaTeclaSIO < 10 && TXSTAbits.TRMT) {
+			else if (novaTeclaSIO > '0' && novaTeclaSIO <= '9' && TXSTAbits.TRMT) {
 				TXREG = novaTeclaSIO;
 				novaTeclaSIO = 0;
 				state = 3;
 			}
-			else if (novaTeclaSIO == 10 && TXSTAbits.TRMT) {
+			else if (!jugantSIO && TXSTAbits.TRMT) {
 				TXREG = 'F';
 				novaTeclaSIO = 0;
-				jugant = 0;
 				state = 4;
 			}
 		break;
@@ -83,7 +82,5 @@ void motorSIO(void){
 
 		break;
 	}
-    
-    
 }
 

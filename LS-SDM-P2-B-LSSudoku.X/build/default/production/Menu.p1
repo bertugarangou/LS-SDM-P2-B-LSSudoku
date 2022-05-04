@@ -68,12 +68,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./Hora.h
 [; ;./Hora.h: 7:     void HActualitzaHora(char nova[]);
 [v _HActualitzaHora `(v ~T0 @X0 0 ef1`*uc ]
-"6 ./Joc.h
-[; ;./Joc.h: 6: signed char JUsuari(void);
-[v _JUsuari `(c ~T0 @X0 0 ef ]
+"8 ./Joc.h
+[; ;./Joc.h: 8: void JendGame(void);
+[v _JendGame `(v ~T0 @X0 0 ef ]
 "5
-[; ;./Joc.h: 5: void JnovaTecla(char tecla);
-[v _JnovaTecla `(v ~T0 @X0 0 ef1`uc ]
+[; ;./Joc.h: 5: void JnovaTecla(signed char tecla);
+[v _JnovaTecla `(v ~T0 @X0 0 ef1`c ]
 "7
 [; ;./Joc.h: 7: void JnovaDireccio(char dir);
 [v _JnovaDireccio `(v ~T0 @X0 0 ef1`uc ]
@@ -629,8 +629,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "40
 [; ;Menu.c: 40:  static char state = 0;
-[v F2665 `uc ~T0 @X0 1 s state ]
-[i F2665
+[v F2666 `uc ~T0 @X0 1 s state ]
+[i F2666
 -> -> 0 `i `uc
 ]
 "42
@@ -648,7 +648,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 -> &U _loginText `*uc ]
 "46
 [; ;Menu.c: 46:    state = 1;
-[e = F2665 -> -> 1 `i `uc ]
+[e = F2666 -> -> 1 `i `uc ]
 "47
 [; ;Menu.c: 47:   break;
 [e $U 285  ]
@@ -670,7 +670,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "53
 [; ;Menu.c: 53:     state = 2;
-[e = F2665 -> -> 2 `i `uc ]
+[e = F2666 -> -> 2 `i `uc ]
 "54
 [; ;Menu.c: 54:    }
 }
@@ -690,7 +690,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _loginNOTRegister -> -> 1 `i `b ]
 "59
 [; ;Menu.c: 59:     state = 3;
-[e = F2665 -> -> 3 `i `uc ]
+[e = F2666 -> -> 3 `i `uc ]
 "60
 [; ;Menu.c: 60:    }
 }
@@ -705,7 +705,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _loginNOTRegister -> -> 0 `i `b ]
 "63
 [; ;Menu.c: 63:     state = 3;
-[e = F2665 -> -> 3 `i `uc ]
+[e = F2666 -> -> 3 `i `uc ]
 "64
 [; ;Menu.c: 64:    }
 }
@@ -731,7 +731,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 1C ]
 "71
 [; ;Menu.c: 71:    state = 4;
-[e = F2665 -> -> 4 `i `uc ]
+[e = F2666 -> -> 4 `i `uc ]
 "72
 [; ;Menu.c: 72:   break;
 [e $U 285  ]
@@ -750,7 +750,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 2C ]
 "77
 [; ;Menu.c: 77:     state = 5;
-[e = F2665 -> -> 5 `i `uc ]
+[e = F2666 -> -> 5 `i `uc ]
 "78
 [; ;Menu.c: 78:    }
 }
@@ -776,7 +776,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tmp -> -> 0 `i `uc ]
 "85
 [; ;Menu.c: 85:     state = 6;
-[e = F2665 -> -> 6 `i `uc ]
+[e = F2666 -> -> 6 `i `uc ]
 "86
 [; ;Menu.c: 86:    }
 }
@@ -799,7 +799,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UenviaChar (2 , -> _novaLletra `uc -> _tmp `uc ]
 "92
 [; ;Menu.c: 92:     state = 7;
-[e = F2665 -> -> 7 `i `uc ]
+[e = F2666 -> -> 7 `i `uc ]
 "93
 [; ;Menu.c: 93:    }
 }
@@ -811,7 +811,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "95
 [; ;Menu.c: 95:     state = 7;
-[e = F2665 -> -> 7 `i `uc ]
+[e = F2666 -> -> 7 `i `uc ]
 "96
 [; ;Menu.c: 96:    }
 }
@@ -838,7 +838,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaLletra -> -U -> 1 `i `c ]
 "103
 [; ;Menu.c: 103:     state = 6;
-[e = F2665 -> -> 6 `i `uc ]
+[e = F2666 -> -> 6 `i `uc ]
 "104
 [; ;Menu.c: 104:    }
 }
@@ -865,7 +865,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tmp -> -> 0 `i `uc ]
 "111
 [; ;Menu.c: 111:     state = 8;
-[e = F2665 -> -> 8 `i `uc ]
+[e = F2666 -> -> 8 `i `uc ]
 "112
 [; ;Menu.c: 112:    }
 }
@@ -889,7 +889,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UenviaPas (2 , -> _novaLletra `uc -> _tmp `uc ]
 "118
 [; ;Menu.c: 118:     state = 9;
-[e = F2665 -> -> 9 `i `uc ]
+[e = F2666 -> -> 9 `i `uc ]
 "119
 [; ;Menu.c: 119:    }
 }
@@ -901,7 +901,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "121
 [; ;Menu.c: 121:     state = 9;
-[e = F2665 -> -> 9 `i `uc ]
+[e = F2666 -> -> 9 `i `uc ]
 "122
 [; ;Menu.c: 122:    }
 }
@@ -928,7 +928,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaLletra -> -U -> 1 `i `c ]
 "129
 [; ;Menu.c: 129:     state = 8;
-[e = F2665 -> -> 8 `i `uc ]
+[e = F2666 -> -> 8 `i `uc ]
 "130
 [; ;Menu.c: 130:    }
 }
@@ -958,7 +958,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SMSoff ..  ]
 "138
 [; ;Menu.c: 138:     state = 10;
-[e = F2665 -> -> 10 `i `uc ]
+[e = F2666 -> -> 10 `i `uc ]
 "139
 [; ;Menu.c: 139:    }
 }
@@ -979,7 +979,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _indexUsuari -> ( _UcheckExistsGetError ..  `c ]
 "144
 [; ;Menu.c: 144:     state = 11;
-[e = F2665 -> -> 11 `i `uc ]
+[e = F2666 -> -> 11 `i `uc ]
 "145
 [; ;Menu.c: 145:    }
 }
@@ -996,7 +996,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "149
 [; ;Menu.c: 149:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "150
 [; ;Menu.c: 150:    }
 }
@@ -1011,7 +1011,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _URegister ..  ]
 "153
 [; ;Menu.c: 153:     state = 0;
-[e = F2665 -> -> 0 `i `uc ]
+[e = F2666 -> -> 0 `i `uc ]
 "154
 [; ;Menu.c: 154:    }
 }
@@ -1023,7 +1023,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "156
 [; ;Menu.c: 156:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "157
 [; ;Menu.c: 157:    }
 }
@@ -1035,7 +1035,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "159
 [; ;Menu.c: 159:     state = 0;
-[e = F2665 -> -> 0 `i `uc ]
+[e = F2666 -> -> 0 `i `uc ]
 "160
 [; ;Menu.c: 160:    }
 }
@@ -1066,7 +1066,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "169
 [; ;Menu.c: 169:    state = 13;
-[e = F2665 -> -> 13 `i `uc ]
+[e = F2666 -> -> 13 `i `uc ]
 "170
 [; ;Menu.c: 170:   break;
 [e $U 285  ]
@@ -1084,7 +1084,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 328 ]
 "174
 [; ;Menu.c: 174:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "175
 [; ;Menu.c: 175:    }
 }
@@ -1101,7 +1101,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 331 ]
 "178
 [; ;Menu.c: 178:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "179
 [; ;Menu.c: 179:    }
 }
@@ -1122,7 +1122,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 3C ]
 "184
 [; ;Menu.c: 184:     state = 14;
-[e = F2665 -> -> 14 `i `uc ]
+[e = F2666 -> -> 14 `i `uc ]
 "185
 [; ;Menu.c: 185:    }
 }
@@ -1146,7 +1146,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "191
 [; ;Menu.c: 191:     state = 16;
-[e = F2665 -> -> 16 `i `uc ]
+[e = F2666 -> -> 16 `i `uc ]
 "192
 [; ;Menu.c: 192:    }
 }
@@ -1173,7 +1173,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _JJuguem (1 -> _indexUsuari `uc ]
 "199
 [; ;Menu.c: 199:     state = 21;
-[e = F2665 -> -> 21 `i `uc ]
+[e = F2666 -> -> 21 `i `uc ]
 "200
 [; ;Menu.c: 200:    }
 }
@@ -1200,7 +1200,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerMenu ]
 "206
 [; ;Menu.c: 206:     state = 15;
-[e = F2665 -> -> 15 `i `uc ]
+[e = F2666 -> -> 15 `i `uc ]
 "207
 [; ;Menu.c: 207:    }
 }
@@ -1217,7 +1217,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "211
 [; ;Menu.c: 211:     state = 0;
-[e = F2665 -> -> 0 `i `uc ]
+[e = F2666 -> -> 0 `i `uc ]
 "212
 [; ;Menu.c: 212:    }
 }
@@ -1246,7 +1246,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "220
 [; ;Menu.c: 220:     state = 17;
-[e = F2665 -> -> 17 `i `uc ]
+[e = F2666 -> -> 17 `i `uc ]
 "221
 [; ;Menu.c: 221:    }
 }
@@ -1258,7 +1258,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "223
 [; ;Menu.c: 223:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "224
 [; ;Menu.c: 224:    }
 }
@@ -1288,7 +1288,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcPutChar (1 -> -> 58 `ui `uc ]
 "232
 [; ;Menu.c: 232:     state = 18;
-[e = F2665 -> -> 18 `i `uc ]
+[e = F2666 -> -> 18 `i `uc ]
 "233
 [; ;Menu.c: 233:    }
 }
@@ -1300,7 +1300,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "235
 [; ;Menu.c: 235:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "236
 [; ;Menu.c: 236:    }
 }
@@ -1327,7 +1327,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "243
 [; ;Menu.c: 243:     state = 19;
-[e = F2665 -> -> 19 `i `uc ]
+[e = F2666 -> -> 19 `i `uc ]
 "244
 [; ;Menu.c: 244:    }
 }
@@ -1339,7 +1339,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "246
 [; ;Menu.c: 246:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "247
 [; ;Menu.c: 247:    }
 }
@@ -1366,7 +1366,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "254
 [; ;Menu.c: 254:     state = 20;
-[e = F2665 -> -> 20 `i `uc ]
+[e = F2666 -> -> 20 `i `uc ]
 "255
 [; ;Menu.c: 255:    }
 }
@@ -1378,7 +1378,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "257
 [; ;Menu.c: 257:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "258
 [; ;Menu.c: 258:    }
 }
@@ -1402,7 +1402,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "264
 [; ;Menu.c: 264:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "265
 [; ;Menu.c: 265:    }
 }
@@ -1414,7 +1414,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "267
 [; ;Menu.c: 267:     state = 12;
-[e = F2665 -> -> 12 `i `uc ]
+[e = F2666 -> -> 12 `i `uc ]
 "268
 [; ;Menu.c: 268:    }
 }
@@ -1427,66 +1427,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 270:   case 21:
 [e :U 362 ]
 "271
-[; ;Menu.c: 271:    if (NovaTecla == 11 && JUsuari() && LcLliure()) {
-[e $ ! && && == -> _NovaTecla `i -> 11 `i != -> ( _JUsuari ..  `i -> 0 `i ( _LcLliure ..  363  ]
+[; ;Menu.c: 271:    if (NovaTecla == 10 && LcLliure()) {
+[e $ ! && == -> _NovaTecla `i -> 10 `i ( _LcLliure ..  363  ]
 {
 "272
 [; ;Menu.c: 272:     LcClear();
 [e ( _LcClear ..  ]
 "273
-[; ;Menu.c: 273:     state = 22;
-[e = F2665 -> -> 22 `i `uc ]
+[; ;Menu.c: 273:     JendGame();
+[e ( _JendGame ..  ]
 "274
-[; ;Menu.c: 274:    }
+[; ;Menu.c: 274:     state = 22;
+[e = F2666 -> -> 22 `i `uc ]
+"275
+[; ;Menu.c: 275:    }
 }
 [e $U 364  ]
-"275
-[; ;Menu.c: 275:    else if (NovaTecla > -1 && NovaTecla < 10) {
-[e :U 363 ]
-[e $ ! && > -> _NovaTecla `i -U -> 1 `i < -> _NovaTecla `i -> 10 `i 365  ]
-{
 "276
-[; ;Menu.c: 276:     JnovaTecla(NovaTecla);
-[e ( _JnovaTecla (1 -> _NovaTecla `uc ]
+[; ;Menu.c: 276:    else if (NovaTecla > 0 && NovaTecla < 10) {
+[e :U 363 ]
+[e $ ! && > -> _NovaTecla `i -> 0 `i < -> _NovaTecla `i -> 10 `i 365  ]
+{
 "277
-[; ;Menu.c: 277:     state = 21;
-[e = F2665 -> -> 21 `i `uc ]
+[; ;Menu.c: 277:     JnovaTecla(NovaTecla);
+[e ( _JnovaTecla (1 _NovaTecla ]
 "278
-[; ;Menu.c: 278:    }
+[; ;Menu.c: 278:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"279
+[; ;Menu.c: 279:     state = 21;
+[e = F2666 -> -> 21 `i `uc ]
+"280
+[; ;Menu.c: 280:    }
 }
 [e $U 366  ]
-"279
-[; ;Menu.c: 279:    else if (novaDireccio > -1) {
+"281
+[; ;Menu.c: 281:    else if (novaDireccio > -1) {
 [e :U 365 ]
 [e $ ! > -> _novaDireccio `i -U -> 1 `i 367  ]
 {
-"280
-[; ;Menu.c: 280:     JnovaDireccio(novaDireccio);
-[e ( _JnovaDireccio (1 -> _novaDireccio `uc ]
-"281
-[; ;Menu.c: 281:     state = 21;
-[e = F2665 -> -> 21 `i `uc ]
 "282
-[; ;Menu.c: 282:    }
+[; ;Menu.c: 282:     JnovaDireccio(novaDireccio);
+[e ( _JnovaDireccio (1 -> _novaDireccio `uc ]
+"283
+[; ;Menu.c: 283:     novaDireccio = -1;
+[e = _novaDireccio -> -U -> 1 `i `c ]
+"284
+[; ;Menu.c: 284:     state = 21;
+[e = F2666 -> -> 21 `i `uc ]
+"285
+[; ;Menu.c: 285:    }
 }
 [e :U 367 ]
 [e :U 366 ]
 [e :U 364 ]
-"283
-[; ;Menu.c: 283:   break;
-[e $U 285  ]
-"284
-[; ;Menu.c: 284:   case 22:
-[e :U 368 ]
 "286
 [; ;Menu.c: 286:   break;
 [e $U 285  ]
 "287
-[; ;Menu.c: 287:  }
+[; ;Menu.c: 287:   case 22:
+[e :U 368 ]
+"289
+[; ;Menu.c: 289:   break;
+[e $U 285  ]
+"290
+[; ;Menu.c: 290:  }
 }
 [e $U 285  ]
 [e :U 286 ]
-[e [\ -> F2665 `i , $ -> 0 `i 287
+[e [\ -> F2666 `i , $ -> 0 `i 287
  , $ -> 1 `i 288
  , $ -> 2 `i 290
  , $ -> 3 `i 294
@@ -1511,8 +1520,8 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 22 `i 368
  285 ]
 [e :U 285 ]
-"288
-[; ;Menu.c: 288: }
+"291
+[; ;Menu.c: 291: }
 [e :UE 284 ]
 }
 [a 4C 77 111 100 105 102 121 32 84 105 109 101 58 0 ]

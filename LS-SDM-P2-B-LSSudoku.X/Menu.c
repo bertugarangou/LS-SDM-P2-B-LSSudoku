@@ -268,16 +268,19 @@ void menu(void) {
 			}
 		break;
 		case 21:
-			if (NovaTecla == 11 && JUsuari() && LcLliure()) {
+			if (NovaTecla == 10 && LcLliure()) {
 				LcClear();
+				JendGame();
 				state = 22;
 			}
-			else if (NovaTecla > -1 && NovaTecla < 10) {
+			else if (NovaTecla > 0 && NovaTecla < 10) {
 				JnovaTecla(NovaTecla);
+				NovaTecla = -1;
 				state = 21;
 			}
 			else if (novaDireccio > -1) {
 				JnovaDireccio(novaDireccio);
+				novaDireccio = -1;
 				state = 21;
 			}
 		break;

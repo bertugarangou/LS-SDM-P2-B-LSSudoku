@@ -2,12 +2,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 ./SIO.h
 [; ;./SIO.h: 4: void SIOStartGame(char usuari);
 [v _SIOStartGame `(v ~T0 @X0 0 ef1`uc ]
-"8
-[; ;./SIO.h: 8: __bit SIOJugant(void);
-[v _SIOJugant `(b ~T0 @X0 0 ef ]
 "10 ./Hora.h
 [; ;./Hora.h: 10:     void HnoJugant(void);
 [v _HnoJugant `(v ~T0 @X0 0 ef ]
+"9 ./SIO.h
+[; ;./SIO.h: 9: void SIOendGame(void);
+[v _SIOendGame `(v ~T0 @X0 0 ef ]
+"1107 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1107:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1117
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1117:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"1106
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1106: typedef union {
+[u S45 `S46 1 `S47 1 ]
+[n S45 . . . ]
+"1128
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1128: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS45 ~T0 @X0 0 e@3978 ]
 "3 ./SIO.h
 [; ;./SIO.h: 3: void SIONovaDireccio(char num);
 [v _SIONovaDireccio `(v ~T0 @X0 0 ef1`uc ]
@@ -32,8 +47,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6 ./SIO.h
 [; ;./SIO.h: 6: void SIONovaTecla(signed char tecla);
 [v _SIONovaTecla `(v ~T0 @X0 0 ef1`c ]
-"9
-[; ;./SIO.h: 9: __bit SIOcheckKrebut(void);
+"8
+[; ;./SIO.h: 8: __bit SIOcheckKrebut(void);
 [v _SIOcheckKrebut `(b ~T0 @X0 0 ef ]
 "9 ./Hora.h
 [; ;./Hora.h: 9:     void HJugant(void);
@@ -459,9 +474,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "8
-[; ;Joc.c: 8: signed char novaDireccioJOC = 0;
-[v _novaDireccioJOC `c ~T0 @X0 1 e ]
-[i _novaDireccioJOC
+[; ;Joc.c: 8: signed char direccioJoc = 0;
+[v _direccioJoc `c ~T0 @X0 1 e ]
+[i _direccioJoc
 -> -> 0 `i `c
 ]
 "9
@@ -470,212 +485,300 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _novaTeclaJOC
 -> -U -> 1 `i `c
 ]
-"12
-[; ;Joc.c: 12: void JJuguem(char usuari){
+"10
+[; ;Joc.c: 10: __bit jugantJoc;
+[v _jugantJoc `b ~T0 @X0 1 e ]
+"13
+[; ;Joc.c: 13: void JJuguem(char usuari){
 [v _JJuguem `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _JJuguem ]
 [v _usuari `uc ~T0 @X0 1 r1 ]
 [f ]
-"13
-[; ;Joc.c: 13:     usuariJoc = usuari;
-[e = _usuariJoc -> _usuari `c ]
 "14
-[; ;Joc.c: 14: }
+[; ;Joc.c: 14:     usuariJoc = usuari;
+[e = _usuariJoc -> _usuari `c ]
+"15
+[; ;Joc.c: 15: }
 [e :UE 280 ]
 }
-"15
-[; ;Joc.c: 15: void JnovaTecla(char tecla){
-[v _JnovaTecla `(v ~T0 @X0 1 ef1`uc ]
+"16
+[; ;Joc.c: 16: void JnovaTecla(signed char tecla){
+[v _JnovaTecla `(v ~T0 @X0 1 ef1`c ]
 {
 [e :U _JnovaTecla ]
-[v _tecla `uc ~T0 @X0 1 r1 ]
+[v _tecla `c ~T0 @X0 1 r1 ]
 [f ]
-"16
-[; ;Joc.c: 16:     novaTeclaJOC = tecla;
-[e = _novaTeclaJOC -> _tecla `c ]
 "17
-[; ;Joc.c: 17: }
+[; ;Joc.c: 17:     novaTeclaJOC = tecla;
+[e = _novaTeclaJOC _tecla ]
+"18
+[; ;Joc.c: 18: }
 [e :UE 281 ]
 }
-"18
-[; ;Joc.c: 18: void JnovaDireccio(char dir){
+"19
+[; ;Joc.c: 19: void JnovaDireccio(char dir){
 [v _JnovaDireccio `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _JnovaDireccio ]
 [v _dir `uc ~T0 @X0 1 r1 ]
 [f ]
-"19
-[; ;Joc.c: 19:     novaDireccioJOC = dir;
-[e = _novaDireccioJOC -> _dir `c ]
 "20
-[; ;Joc.c: 20: }
+[; ;Joc.c: 20:     direccioJoc = dir;
+[e = _direccioJoc -> _dir `c ]
+"21
+[; ;Joc.c: 21: }
 [e :UE 282 ]
 }
-"22
-[; ;Joc.c: 22: signed char JUsuari(void){
+"23
+[; ;Joc.c: 23: signed char JUsuari(void){
 [v _JUsuari `(c ~T0 @X0 1 ef ]
 {
 [e :U _JUsuari ]
 [f ]
-"23
-[; ;Joc.c: 23:     return usuariJoc;
+"24
+[; ;Joc.c: 24:     return usuariJoc;
 [e ) _usuariJoc ]
 [e $UE 283  ]
-"24
-[; ;Joc.c: 24: }
+"25
+[; ;Joc.c: 25: }
 [e :UE 283 ]
 }
-"26
-[; ;Joc.c: 26: void motorJoc(void){
+"27
+[; ;Joc.c: 27: void JendGame(void){
+[v _JendGame `(v ~T0 @X0 1 ef ]
+{
+[e :U _JendGame ]
+[f ]
+"28
+[; ;Joc.c: 28:     jugantJoc = 0;
+[e = _jugantJoc -> -> 0 `i `b ]
+"29
+[; ;Joc.c: 29: }
+[e :UE 284 ]
+}
+"31
+[; ;Joc.c: 31: char conversorJoystick(char direc){
+[v _conversorJoystick `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _conversorJoystick ]
+[v _direc `uc ~T0 @X0 1 r1 ]
+[f ]
+"33
+[; ;Joc.c: 33:     if (direc==2) {
+[e $ ! == -> _direc `i -> 2 `i 286  ]
+{
+"34
+[; ;Joc.c: 34:         return 'W';
+[e ) -> -> 87 `ui `uc ]
+[e $UE 285  ]
+"35
+[; ;Joc.c: 35:     }
+}
+[e :U 286 ]
+"36
+[; ;Joc.c: 36:     if (direc==6) {
+[e $ ! == -> _direc `i -> 6 `i 287  ]
+{
+"37
+[; ;Joc.c: 37:         return 'D';
+[e ) -> -> 68 `ui `uc ]
+[e $UE 285  ]
+"38
+[; ;Joc.c: 38:     }
+}
+[e :U 287 ]
+"39
+[; ;Joc.c: 39:     if (direc==8) {
+[e $ ! == -> _direc `i -> 8 `i 288  ]
+{
+"40
+[; ;Joc.c: 40:         return 'S';
+[e ) -> -> 83 `ui `uc ]
+[e $UE 285  ]
+"41
+[; ;Joc.c: 41:     }
+}
+[e :U 288 ]
+"42
+[; ;Joc.c: 42:     if (direc==4) {
+[e $ ! == -> _direc `i -> 4 `i 289  ]
+{
+"43
+[; ;Joc.c: 43:         return 'A';
+[e ) -> -> 65 `ui `uc ]
+[e $UE 285  ]
+"44
+[; ;Joc.c: 44:     }
+}
+[e :U 289 ]
+"45
+[; ;Joc.c: 45:     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 285  ]
+"46
+[; ;Joc.c: 46: }
+[e :UE 285 ]
+}
+"48
+[; ;Joc.c: 48: void motorJoc(void){
 [v _motorJoc `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorJoc ]
 [f ]
-"27
-[; ;Joc.c: 27:     static char state = 0;
-[v F2619 `uc ~T0 @X0 1 s state ]
-[i F2619
+"49
+[; ;Joc.c: 49:     static char state = 0;
+[v F2624 `uc ~T0 @X0 1 s state ]
+[i F2624
 -> -> 0 `i `uc
 ]
-"29
-[; ;Joc.c: 29:  switch(state) {
-[e $U 286  ]
-{
-"30
-[; ;Joc.c: 30:   case 0:
-[e :U 287 ]
-"31
-[; ;Joc.c: 31:    if (usuariJoc != -1) {
-[e $ ! != -> _usuariJoc `i -U -> 1 `i 288  ]
-{
-"32
-[; ;Joc.c: 32:     SIOStartGame(usuariJoc);
-[e ( _SIOStartGame (1 -> _usuariJoc `uc ]
-"33
-[; ;Joc.c: 33:     state = 2;
-[e = F2619 -> -> 2 `i `uc ]
-"34
-[; ;Joc.c: 34:    }
-}
-[e :U 288 ]
-"35
-[; ;Joc.c: 35:   break;
-[e $U 285  ]
-"36
-[; ;Joc.c: 36:   case 1:
-[e :U 289 ]
-"37
-[; ;Joc.c: 37:    if (!SIOJugant()) {
-[e $ ! ! ( _SIOJugant ..  290  ]
-{
-"38
-[; ;Joc.c: 38:     usuariJoc = -1;
-[e = _usuariJoc -> -U -> 1 `i `c ]
-"39
-[; ;Joc.c: 39:     HnoJugant();
-[e ( _HnoJugant ..  ]
-"40
-[; ;Joc.c: 40:     state = 0;
-[e = F2619 -> -> 0 `i `uc ]
-"41
-[; ;Joc.c: 41:    }
-}
-[e $U 291  ]
-"42
-[; ;Joc.c: 42:    else if (novaDireccioJOC > -1) {
-[e :U 290 ]
-[e $ ! > -> _novaDireccioJOC `i -U -> 1 `i 292  ]
-{
-"43
-[; ;Joc.c: 43:     SIONovaDireccio(novaDireccioJOC);
-[e ( _SIONovaDireccio (1 -> _novaDireccioJOC `uc ]
-"44
-[; ;Joc.c: 44:     novaDireccioJOC = -1;
-[e = _novaDireccioJOC -> -U -> 1 `i `c ]
-"45
-[; ;Joc.c: 45:     state = 1;
-[e = F2619 -> -> 1 `i `uc ]
-"46
-[; ;Joc.c: 46:    }
-}
-[e $U 293  ]
-"47
-[; ;Joc.c: 47:    else if (HNouSegon() && LcLliure()) {
-[e :U 292 ]
-[e $ ! && ( _HNouSegon ..  ( _LcLliure ..  294  ]
-{
-"48
-[; ;Joc.c: 48:     HClearNouSegon();
-[e ( _HClearNouSegon ..  ]
-"49
-[; ;Joc.c: 49:     LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"50
-[; ;Joc.c: 50:     LcNewString(HGetTime());
-[e ( _LcNewString (1 ( _HGetTime ..  ]
 "51
-[; ;Joc.c: 51:     state = 1;
-[e = F2619 -> -> 1 `i `uc ]
+[; ;Joc.c: 51:  switch(state) {
+[e $U 292  ]
+{
 "52
-[; ;Joc.c: 52:    }
-}
-[e $U 295  ]
+[; ;Joc.c: 52:   case 0:
+[e :U 293 ]
 "53
-[; ;Joc.c: 53:    else if (novaTeclaJOC > 0) {
-[e :U 294 ]
-[e $ ! > -> _novaTeclaJOC `i -> 0 `i 296  ]
+[; ;Joc.c: 53:    if (usuariJoc != -1) {
+[e $ ! != -> _usuariJoc `i -U -> 1 `i 294  ]
 {
 "54
-[; ;Joc.c: 54:     SIONovaTecla(novaTeclaJOC);
-[e ( _SIONovaTecla (1 _novaTeclaJOC ]
+[; ;Joc.c: 54:     SIOStartGame(usuariJoc);
+[e ( _SIOStartGame (1 -> _usuariJoc `uc ]
 "55
-[; ;Joc.c: 55:     novaTeclaJOC = -1;
-[e = _novaTeclaJOC -> -U -> 1 `i `c ]
+[; ;Joc.c: 55:     jugantJoc = 1;
+[e = _jugantJoc -> -> 1 `i `b ]
 "56
-[; ;Joc.c: 56:     state = 1;
-[e = F2619 -> -> 1 `i `uc ]
+[; ;Joc.c: 56:     state = 2;
+[e = F2624 -> -> 2 `i `uc ]
 "57
 [; ;Joc.c: 57:    }
 }
-[e :U 296 ]
-[e :U 295 ]
-[e :U 293 ]
-[e :U 291 ]
+[e :U 294 ]
 "58
 [; ;Joc.c: 58:   break;
-[e $U 285  ]
+[e $U 291  ]
 "59
-[; ;Joc.c: 59:   case 2:
-[e :U 297 ]
+[; ;Joc.c: 59:   case 1:
+[e :U 295 ]
 "60
-[; ;Joc.c: 60:    if (SIOcheckKrebut()) {
-[e $ ! ( _SIOcheckKrebut ..  298  ]
+[; ;Joc.c: 60:    if (!jugantJoc) {
+[e $ ! ! _jugantJoc 296  ]
 {
 "61
-[; ;Joc.c: 61:     HJugant();
-[e ( _HJugant ..  ]
+[; ;Joc.c: 61:     usuariJoc = -1;
+[e = _usuariJoc -> -U -> 1 `i `c ]
 "62
-[; ;Joc.c: 62:     state = 1;
-[e = F2619 -> -> 1 `i `uc ]
+[; ;Joc.c: 62:     HnoJugant();
+[e ( _HnoJugant ..  ]
 "63
-[; ;Joc.c: 63:    }
-}
-[e :U 298 ]
+[; ;Joc.c: 63:     SIOendGame();
+[e ( _SIOendGame ..  ]
 "64
-[; ;Joc.c: 64:   break;
-[e $U 285  ]
+[; ;Joc.c: 64:     state = 0;
+[e = F2624 -> -> 0 `i `uc ]
 "65
-[; ;Joc.c: 65:  }
-}
-[e $U 285  ]
-[e :U 286 ]
-[e [\ -> F2619 `i , $ -> 0 `i 287
- , $ -> 1 `i 289
- , $ -> 2 `i 297
- 285 ]
-[e :U 285 ]
+[; ;Joc.c: 65:                 LATBbits.LATB3 = 0;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "66
-[; ;Joc.c: 66: }
-[e :UE 284 ]
+[; ;Joc.c: 66:    }
+}
+[e $U 297  ]
+"67
+[; ;Joc.c: 67:    else if (direccioJoc > -1) {
+[e :U 296 ]
+[e $ ! > -> _direccioJoc `i -U -> 1 `i 298  ]
+{
+"68
+[; ;Joc.c: 68:     SIONovaDireccio(conversorJoystick(direccioJoc));
+[e ( _SIONovaDireccio (1 ( _conversorJoystick (1 -> _direccioJoc `uc ]
+"69
+[; ;Joc.c: 69:     direccioJoc = -1;
+[e = _direccioJoc -> -U -> 1 `i `c ]
+"70
+[; ;Joc.c: 70:     state = 1;
+[e = F2624 -> -> 1 `i `uc ]
+"71
+[; ;Joc.c: 71:    }
+}
+[e $U 299  ]
+"72
+[; ;Joc.c: 72:    else if (HNouSegon() && LcLliure()) {
+[e :U 298 ]
+[e $ ! && ( _HNouSegon ..  ( _LcLliure ..  300  ]
+{
+"73
+[; ;Joc.c: 73:     HClearNouSegon();
+[e ( _HClearNouSegon ..  ]
+"74
+[; ;Joc.c: 74:     LcGotoXY(0,1);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"75
+[; ;Joc.c: 75:     LcNewString(HGetTime());
+[e ( _LcNewString (1 ( _HGetTime ..  ]
+"76
+[; ;Joc.c: 76:     state = 1;
+[e = F2624 -> -> 1 `i `uc ]
+"77
+[; ;Joc.c: 77:    }
+}
+[e $U 301  ]
+"78
+[; ;Joc.c: 78:    else if (novaTeclaJOC > 0) {
+[e :U 300 ]
+[e $ ! > -> _novaTeclaJOC `i -> 0 `i 302  ]
+{
+"79
+[; ;Joc.c: 79:     SIONovaTecla(novaTeclaJOC+48);
+[e ( _SIONovaTecla (1 -> + -> _novaTeclaJOC `i -> 48 `i `c ]
+"80
+[; ;Joc.c: 80:     novaTeclaJOC = -1;
+[e = _novaTeclaJOC -> -U -> 1 `i `c ]
+"81
+[; ;Joc.c: 81:     state = 1;
+[e = F2624 -> -> 1 `i `uc ]
+"82
+[; ;Joc.c: 82:    }
+}
+[e :U 302 ]
+[e :U 301 ]
+[e :U 299 ]
+[e :U 297 ]
+"83
+[; ;Joc.c: 83:   break;
+[e $U 291  ]
+"84
+[; ;Joc.c: 84:   case 2:
+[e :U 303 ]
+"85
+[; ;Joc.c: 85:    if (SIOcheckKrebut()) {
+[e $ ! ( _SIOcheckKrebut ..  304  ]
+{
+"86
+[; ;Joc.c: 86:     HJugant();
+[e ( _HJugant ..  ]
+"87
+[; ;Joc.c: 87:     state = 1;
+[e = F2624 -> -> 1 `i `uc ]
+"88
+[; ;Joc.c: 88:    }
+}
+[e :U 304 ]
+"89
+[; ;Joc.c: 89:   break;
+[e $U 291  ]
+"90
+[; ;Joc.c: 90:  }
+}
+[e $U 291  ]
+[e :U 292 ]
+[e [\ -> F2624 `i , $ -> 0 `i 293
+ , $ -> 1 `i 295
+ , $ -> 2 `i 303
+ 291 ]
+[e :U 291 ]
+"91
+[; ;Joc.c: 91: }
+[e :UE 290 ]
 }

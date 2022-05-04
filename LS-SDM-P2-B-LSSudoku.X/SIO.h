@@ -5,6 +5,6 @@ void SIOStartGame(char usuari);
 signed char SIOUsuariActua(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
-__bit SIOJugant(void);
 __bit SIOcheckKrebut(void);
+void SIOendGame(void);
 #endif

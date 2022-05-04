@@ -685,11 +685,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && && _cap1 _cap2 != -> _ultimaTeclaAD `i -> 0 `i 300  ]
 {
 "66
-[; ;Joystick.c: 66:         MNouJoystick(0);
-[e ( _MNouJoystick (1 -> -> 0 `i `c ]
+[; ;Joystick.c: 66:         MNouJoystick(-1);
+[e ( _MNouJoystick (1 -> -U -> 1 `i `c ]
 "67
-[; ;Joystick.c: 67:         ultimaTeclaAD = 0;
-[e = _ultimaTeclaAD -> -> 0 `i `uc ]
+[; ;Joystick.c: 67:         ultimaTeclaAD = -1;
+[e = _ultimaTeclaAD -> -U -> 1 `i `uc ]
 "68
 [; ;Joystick.c: 68:     }
 }

@@ -473,9 +473,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "7
-[; ;SIO.c: 7: signed char novaDireccioSIO = -1;
-[v _novaDireccioSIO `c ~T0 @X0 1 e ]
-[i _novaDireccioSIO
+[; ;SIO.c: 7: signed char direccioSIO = -1;
+[v _direccioSIO `c ~T0 @X0 1 e ]
+[i _direccioSIO
 -> -U -> 1 `i `c
 ]
 "8
@@ -488,9 +488,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "10
-[; ;SIO.c: 10: __bit jugant = 0;
-[v _jugant `b ~T0 @X0 1 e ]
-[i _jugant
+[; ;SIO.c: 10: __bit jugantSIO = 0;
+[v _jugantSIO `b ~T0 @X0 1 e ]
+[i _jugantSIO
 -> -> 0 `i `b
 ]
 "11
@@ -500,85 +500,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `b
 ]
 "13
-[; ;SIO.c: 13: __bit SIOcheckKrebut(void){
-[v _SIOcheckKrebut `(b ~T0 @X0 1 ef ]
+[; ;SIO.c: 13: void SIOendGame(void){
+[v _SIOendGame `(v ~T0 @X0 1 ef ]
 {
-[e :U _SIOcheckKrebut ]
+[e :U _SIOendGame ]
 [f ]
 "14
-[; ;SIO.c: 14:     return Krebut;
-[e ) _Krebut ]
-[e $UE 280  ]
+[; ;SIO.c: 14:     jugantSIO = 0;
+[e = _jugantSIO -> -> 0 `i `b ]
 "15
 [; ;SIO.c: 15: }
 [e :UE 280 ]
 }
 "16
-[; ;SIO.c: 16: void SIONovaDireccio(char num){
+[; ;SIO.c: 16: __bit SIOcheckKrebut(void){
+[v _SIOcheckKrebut `(b ~T0 @X0 1 ef ]
+{
+[e :U _SIOcheckKrebut ]
+[f ]
+"17
+[; ;SIO.c: 17:     return Krebut;
+[e ) _Krebut ]
+[e $UE 281  ]
+"18
+[; ;SIO.c: 18: }
+[e :UE 281 ]
+}
+"19
+[; ;SIO.c: 19: void SIONovaDireccio(char num){
 [v _SIONovaDireccio `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SIONovaDireccio ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-"17
-[; ;SIO.c: 17:     novaDireccioSIO = num;
-[e = _novaDireccioSIO -> _num `c ]
-"18
-[; ;SIO.c: 18: }
-[e :UE 281 ]
-}
 "20
-[; ;SIO.c: 20: void SIOStartGame(char usuari){
+[; ;SIO.c: 20:     direccioSIO = num;
+[e = _direccioSIO -> _num `c ]
+"21
+[; ;SIO.c: 21: }
+[e :UE 282 ]
+}
+"23
+[; ;SIO.c: 23: void SIOStartGame(char usuari){
 [v _SIOStartGame `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SIOStartGame ]
 [v _usuari `uc ~T0 @X0 1 r1 ]
 [f ]
-"21
-[; ;SIO.c: 21:     usuariActualSIO = usuari;
-[e = _usuariActualSIO -> _usuari `c ]
-"22
-[; ;SIO.c: 22: }
-[e :UE 282 ]
-}
 "24
-[; ;SIO.c: 24: signed char SIOUsuariActual(void){
+[; ;SIO.c: 24:     usuariActualSIO = usuari;
+[e = _usuariActualSIO -> _usuari `c ]
+"25
+[; ;SIO.c: 25: }
+[e :UE 283 ]
+}
+"27
+[; ;SIO.c: 27: signed char SIOUsuariActual(void){
 [v _SIOUsuariActual `(c ~T0 @X0 1 ef ]
 {
 [e :U _SIOUsuariActual ]
 [f ]
-"25
-[; ;SIO.c: 25:     return usuariActualSIO;
-[e ) _usuariActualSIO ]
-[e $UE 283  ]
-"26
-[; ;SIO.c: 26: }
-[e :UE 283 ]
-}
-"27
-[; ;SIO.c: 27: void SIONovaTecla(signed char tecla){
-[v _SIONovaTecla `(v ~T0 @X0 1 ef1`c ]
-{
-[e :U _SIONovaTecla ]
-[v _tecla `c ~T0 @X0 1 r1 ]
-[f ]
 "28
-[; ;SIO.c: 28:     novaTeclaSIO = tecla;
-[e = _novaTeclaSIO _tecla ]
+[; ;SIO.c: 28:     return usuariActualSIO;
+[e ) _usuariActualSIO ]
+[e $UE 284  ]
 "29
 [; ;SIO.c: 29: }
 [e :UE 284 ]
 }
 "30
-[; ;SIO.c: 30: __bit SIOJugant(void){
-[v _SIOJugant `(b ~T0 @X0 1 ef ]
+[; ;SIO.c: 30: void SIONovaTecla(signed char tecla){
+[v _SIONovaTecla `(v ~T0 @X0 1 ef1`c ]
 {
-[e :U _SIOJugant ]
+[e :U _SIONovaTecla ]
+[v _tecla `c ~T0 @X0 1 r1 ]
 [f ]
 "31
-[; ;SIO.c: 31:     return jugant;
-[e ) _jugant ]
-[e $UE 285  ]
+[; ;SIO.c: 31:     novaTeclaSIO = tecla;
+[e = _novaTeclaSIO _tecla ]
 "32
 [; ;SIO.c: 32: }
 [e :UE 285 ]
@@ -610,10 +609,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 40:     userPtr = UgetUserName(usuariActualSIO);
 [e = _userPtr ( _UgetUserName (1 -> _usuariActualSIO `uc ]
 "41
-[; ;SIO.c: 41:     jugant = 1;
-[e = _jugant -> -> 1 `i `b ]
+[; ;SIO.c: 41:     jugantSIO = 1;
+[e = _jugantSIO -> -> 1 `i `b ]
 "42
-[; ;SIO.c: 42:                 Krebut = 0;
+[; ;SIO.c: 42:     Krebut = 0;
 [e = _Krebut -> -> 0 `i `b ]
 "43
 [; ;SIO.c: 43:     state = 1;
@@ -691,15 +690,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 64:   case 3:
 [e :U 297 ]
 "65
-[; ;SIO.c: 65:    if (novaDireccioSIO != -1 && TXSTAbits.TRMT) {
-[e $ ! && != -> _novaDireccioSIO `i -U -> 1 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 298  ]
+[; ;SIO.c: 65:    if (direccioSIO != -1 && TXSTAbits.TRMT) {
+[e $ ! && != -> _direccioSIO `i -U -> 1 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 298  ]
 {
 "66
-[; ;SIO.c: 66:     TXREG = novaDireccioSIO;
-[e = _TXREG -> _novaDireccioSIO `uc ]
+[; ;SIO.c: 66:     TXREG = direccioSIO;
+[e = _TXREG -> _direccioSIO `uc ]
 "67
-[; ;SIO.c: 67:     novaDireccioSIO = -1;
-[e = _novaDireccioSIO -> -U -> 1 `i `c ]
+[; ;SIO.c: 67:     direccioSIO = -1;
+[e = _direccioSIO -> -U -> 1 `i `c ]
 "68
 [; ;SIO.c: 68:     state = 3;
 [e = F2604 -> -> 3 `i `uc ]
@@ -708,9 +707,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 299  ]
 "70
-[; ;SIO.c: 70:    else if (novaTeclaSIO > 0 && novaTeclaSIO < 10 && TXSTAbits.TRMT) {
+[; ;SIO.c: 70:    else if (novaTeclaSIO > '0' && novaTeclaSIO <= '9' && TXSTAbits.TRMT) {
 [e :U 298 ]
-[e $ ! && && > -> _novaTeclaSIO `i -> 0 `i < -> _novaTeclaSIO `i -> 10 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 300  ]
+[e $ ! && && > -> -> _novaTeclaSIO `i `ui -> 48 `ui <= -> -> _novaTeclaSIO `i `ui -> 57 `ui != -> . . _TXSTAbits 0 1 `i -> 0 `i 300  ]
 {
 "71
 [; ;SIO.c: 71:     TXREG = novaTeclaSIO;
@@ -726,9 +725,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 301  ]
 "75
-[; ;SIO.c: 75:    else if (novaTeclaSIO == 10 && TXSTAbits.TRMT) {
+[; ;SIO.c: 75:    else if (!jugantSIO && TXSTAbits.TRMT) {
 [e :U 300 ]
-[e $ ! && == -> _novaTeclaSIO `i -> 10 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 302  ]
+[e $ ! && ! _jugantSIO != -> . . _TXSTAbits 0 1 `i -> 0 `i 302  ]
 {
 "76
 [; ;SIO.c: 76:     TXREG = 'F';
@@ -737,28 +736,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 77:     novaTeclaSIO = 0;
 [e = _novaTeclaSIO -> -> 0 `i `c ]
 "78
-[; ;SIO.c: 78:     jugant = 0;
-[e = _jugant -> -> 0 `i `b ]
-"79
-[; ;SIO.c: 79:     state = 4;
+[; ;SIO.c: 78:     state = 4;
 [e = F2604 -> -> 4 `i `uc ]
-"80
-[; ;SIO.c: 80:    }
+"79
+[; ;SIO.c: 79:    }
 }
 [e :U 302 ]
 [e :U 301 ]
 [e :U 299 ]
+"80
+[; ;SIO.c: 80:   break;
+[e $U 287  ]
 "81
-[; ;SIO.c: 81:   break;
-[e $U 287  ]
-"82
-[; ;SIO.c: 82:   case 4:
+[; ;SIO.c: 81:   case 4:
 [e :U 303 ]
-"84
-[; ;SIO.c: 84:   break;
+"83
+[; ;SIO.c: 83:   break;
 [e $U 287  ]
-"85
-[; ;SIO.c: 85:  }
+"84
+[; ;SIO.c: 84:  }
 }
 [e $U 287  ]
 [e :U 288 ]
@@ -769,7 +765,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 4 `i 303
  287 ]
 [e :U 287 ]
-"88
-[; ;SIO.c: 88: }
+"85
+[; ;SIO.c: 85: }
 [e :UE 286 ]
 }

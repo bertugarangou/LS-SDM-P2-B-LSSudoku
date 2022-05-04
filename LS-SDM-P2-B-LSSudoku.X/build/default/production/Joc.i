@@ -4612,9 +4612,10 @@ unsigned char __t3rd16on(void);
 
 void motorJoc(void);
 void JJuguem(char usuari);
-void JnovaTecla(char tecla);
+void JnovaTecla(signed char tecla);
 signed char JUsuari(void);
 void JnovaDireccio(char dir);
+void JendGame(void);
 # 2 "Joc.c" 2
 
 # 1 "./Hora.h" 1
@@ -4641,8 +4642,8 @@ void SIOStartGame(char usuari);
 signed char SIOUsuariActua(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
-__bit SIOJugant(void);
 __bit SIOcheckKrebut(void);
+void SIOendGame(void);
 # 4 "Joc.c" 2
 
 # 1 "./LcTLCD.h" 1
@@ -4690,22 +4691,44 @@ void LcInsertFletxa(void);
 
 
 signed char usuariJoc = -1;
-signed char novaDireccioJOC = 0;
+signed char direccioJoc = 0;
 signed char novaTeclaJOC = -1;
+__bit jugantJoc;
 
 
 void JJuguem(char usuari){
     usuariJoc = usuari;
 }
-void JnovaTecla(char tecla){
+void JnovaTecla(signed char tecla){
     novaTeclaJOC = tecla;
 }
 void JnovaDireccio(char dir){
-    novaDireccioJOC = dir;
+    direccioJoc = dir;
 }
 
 signed char JUsuari(void){
     return usuariJoc;
+}
+
+void JendGame(void){
+    jugantJoc = 0;
+}
+
+char conversorJoystick(char direc){
+
+    if (direc==2) {
+        return 'W';
+    }
+    if (direc==6) {
+        return 'D';
+    }
+    if (direc==8) {
+        return 'S';
+    }
+    if (direc==4) {
+        return 'A';
+    }
+    return 0;
 }
 
 void motorJoc(void){
@@ -4715,18 +4738,21 @@ void motorJoc(void){
   case 0:
    if (usuariJoc != -1) {
     SIOStartGame(usuariJoc);
+    jugantJoc = 1;
     state = 2;
    }
   break;
   case 1:
-   if (!SIOJugant()) {
+   if (!jugantJoc) {
     usuariJoc = -1;
     HnoJugant();
+    SIOendGame();
     state = 0;
+                LATBbits.LATB3 = 0;
    }
-   else if (novaDireccioJOC > -1) {
-    SIONovaDireccio(novaDireccioJOC);
-    novaDireccioJOC = -1;
+   else if (direccioJoc > -1) {
+    SIONovaDireccio(conversorJoystick(direccioJoc));
+    direccioJoc = -1;
     state = 1;
    }
    else if (HNouSegon() && LcLliure()) {
@@ -4736,7 +4762,7 @@ void motorJoc(void){
     state = 1;
    }
    else if (novaTeclaJOC > 0) {
-    SIONovaTecla(novaTeclaJOC);
+    SIONovaTecla(novaTeclaJOC+48);
     novaTeclaJOC = -1;
     state = 1;
    }
