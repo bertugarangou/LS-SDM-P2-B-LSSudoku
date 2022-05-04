@@ -555,9 +555,9 @@
 "7 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
 [v _usuariJoc usuariJoc `c  1 e 1 0 ]
 "8
-[v _novaDireccio novaDireccio `c  1 e 1 0 ]
+[v _novaDireccioJOC novaDireccioJOC `c  1 e 1 0 ]
 "9
-[v _novaTecla novaTecla `c  1 e 1 0 ]
+[v _novaTeclaJOC novaTeclaJOC `c  1 e 1 0 ]
 "4 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joystick.c
 [v _ultimaTeclaAD ultimaTeclaAD `uc  1 e 1 0 ]
 "5
@@ -582,6 +582,8 @@
 [v _NovaTecla NovaTecla `c  1 e 1 0 ]
 "13
 [v _novaLletra novaLletra `c  1 e 1 0 ]
+"14
+[v _novaDireccio novaDireccio `c  1 e 1 0 ]
 "15
 [v _horaTmp horaTmp `[4]uc  1 e 4 0 ]
 "17
@@ -601,7 +603,7 @@
 "6
 [v _usuariActualSIO usuariActualSIO `c  1 e 1 0 ]
 "7
-[v _direccio direccio `c  1 e 1 0 ]
+[v _novaDireccioSIO novaDireccioSIO `c  1 e 1 0 ]
 "9
 [v _novaTeclaSIO novaTeclaSIO `c  1 e 1 0 ]
 "10
@@ -614,6 +616,8 @@
 [v _lletraInici lletraInici `[9]uc  1 e 9 0 ]
 "10
 [v _sumaPulsacions sumaPulsacions `uc  1 e 1 0 ]
+"11
+[v _novaTecla novaTecla `c  1 e 1 0 ]
 "12
 [v _timerSMS timerSMS `uc  1 e 1 0 ]
 "13
@@ -760,7 +764,7 @@
 {
 "40
 [v menu@state state `uc  1 s 1 state ]
-"290
+"288
 } 0
 "27 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
@@ -1014,12 +1018,12 @@
 {
 [v LcInit@rows rows `uc  1 a 1 wreg ]
 "47
-[v LcInit@i i `i  1 a 2 18 ]
+[v LcInit@i i `i  1 a 2 1 ]
 "41
 [v LcInit@rows rows `uc  1 a 1 wreg ]
 [v LcInit@columns columns `uc  1 p 1 16 ]
 "48
-[v LcInit@rows rows `uc  1 a 1 17 ]
+[v LcInit@rows rows `uc  1 a 1 0 ]
 "82
 } 0
 "230
@@ -1082,7 +1086,7 @@
 [v LcPutChar@c c `uc  1 a 1 wreg ]
 [v LcPutChar@c c `uc  1 a 1 wreg ]
 "136
-[v LcPutChar@c c `uc  1 a 1 19 ]
+[v LcPutChar@c c `uc  1 a 1 0 ]
 "159
 } 0
 "196

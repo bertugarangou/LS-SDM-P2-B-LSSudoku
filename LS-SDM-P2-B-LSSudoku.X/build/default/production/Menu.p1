@@ -1449,46 +1449,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 276:     JnovaTecla(NovaTecla);
 [e ( _JnovaTecla (1 -> _NovaTecla `uc ]
 "277
-[; ;Menu.c: 277:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"278
-[; ;Menu.c: 278:     state = 21;
+[; ;Menu.c: 277:     state = 21;
 [e = F2665 -> -> 21 `i `uc ]
-"279
-[; ;Menu.c: 279:    }
+"278
+[; ;Menu.c: 278:    }
 }
 [e $U 366  ]
-"280
-[; ;Menu.c: 280:    else if (novaDireccio > -1) {
+"279
+[; ;Menu.c: 279:    else if (novaDireccio > -1) {
 [e :U 365 ]
 [e $ ! > -> _novaDireccio `i -U -> 1 `i 367  ]
 {
-"281
-[; ;Menu.c: 281:     JnovaDireccio(novaDireccio);
+"280
+[; ;Menu.c: 280:     JnovaDireccio(novaDireccio);
 [e ( _JnovaDireccio (1 -> _novaDireccio `uc ]
-"282
-[; ;Menu.c: 282:     novaDireccio = -1;
-[e = _novaDireccio -> -U -> 1 `i `c ]
-"283
-[; ;Menu.c: 283:     state = 21;
+"281
+[; ;Menu.c: 281:     state = 21;
 [e = F2665 -> -> 21 `i `uc ]
-"284
-[; ;Menu.c: 284:    }
+"282
+[; ;Menu.c: 282:    }
 }
 [e :U 367 ]
 [e :U 366 ]
 [e :U 364 ]
-"285
-[; ;Menu.c: 285:   break;
+"283
+[; ;Menu.c: 283:   break;
 [e $U 285  ]
-"286
-[; ;Menu.c: 286:   case 22:
+"284
+[; ;Menu.c: 284:   case 22:
 [e :U 368 ]
-"288
-[; ;Menu.c: 288:   break;
+"286
+[; ;Menu.c: 286:   break;
 [e $U 285  ]
-"289
-[; ;Menu.c: 289:  }
+"287
+[; ;Menu.c: 287:  }
 }
 [e $U 285  ]
 [e :U 286 ]
@@ -1517,8 +1511,8 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 22 `i 368
  285 ]
 [e :U 285 ]
-"290
-[; ;Menu.c: 290: }
+"288
+[; ;Menu.c: 288: }
 [e :UE 284 ]
 }
 [a 4C 77 111 100 105 102 121 32 84 105 109 101 58 0 ]

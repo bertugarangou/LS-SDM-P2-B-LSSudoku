@@ -5027,12 +5027,10 @@ void menu(void) {
    }
    else if (NovaTecla > -1 && NovaTecla < 10) {
     JnovaTecla(NovaTecla);
-    NovaTecla = -1;
     state = 21;
    }
    else if (novaDireccio > -1) {
     JnovaDireccio(novaDireccio);
-    novaDireccio = -1;
     state = 21;
    }
   break;

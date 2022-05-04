@@ -473,9 +473,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "7
-[; ;SIO.c: 7: signed char direccio = -1;
-[v _direccio `c ~T0 @X0 1 e ]
-[i _direccio
+[; ;SIO.c: 7: signed char novaDireccioSIO = -1;
+[v _novaDireccioSIO `c ~T0 @X0 1 e ]
+[i _novaDireccioSIO
 -> -U -> 1 `i `c
 ]
 "8
@@ -521,8 +521,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
 "17
-[; ;SIO.c: 17:     direccio = num;
-[e = _direccio -> _num `c ]
+[; ;SIO.c: 17:     novaDireccioSIO = num;
+[e = _novaDireccioSIO -> _num `c ]
 "18
 [; ;SIO.c: 18: }
 [e :UE 281 ]
@@ -691,15 +691,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 64:   case 3:
 [e :U 297 ]
 "65
-[; ;SIO.c: 65:    if (direccio != -1 && TXSTAbits.TRMT) {
-[e $ ! && != -> _direccio `i -U -> 1 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 298  ]
+[; ;SIO.c: 65:    if (novaDireccioSIO != -1 && TXSTAbits.TRMT) {
+[e $ ! && != -> _novaDireccioSIO `i -U -> 1 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 298  ]
 {
 "66
-[; ;SIO.c: 66:     TXREG = direccio;
-[e = _TXREG -> _direccio `uc ]
+[; ;SIO.c: 66:     TXREG = novaDireccioSIO;
+[e = _TXREG -> _novaDireccioSIO `uc ]
 "67
-[; ;SIO.c: 67:     direccio = -1;
-[e = _direccio -> -U -> 1 `i `c ]
+[; ;SIO.c: 67:     novaDireccioSIO = -1;
+[e = _novaDireccioSIO -> -U -> 1 `i `c ]
 "68
 [; ;SIO.c: 68:     state = 3;
 [e = F2604 -> -> 3 `i `uc ]

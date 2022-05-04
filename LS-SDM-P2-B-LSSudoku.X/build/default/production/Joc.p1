@@ -459,15 +459,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "8
-[; ;Joc.c: 8: signed char novaDireccio = 0;
-[v _novaDireccio `c ~T0 @X0 1 e ]
-[i _novaDireccio
+[; ;Joc.c: 8: signed char novaDireccioJOC = 0;
+[v _novaDireccioJOC `c ~T0 @X0 1 e ]
+[i _novaDireccioJOC
 -> -> 0 `i `c
 ]
 "9
-[; ;Joc.c: 9: signed char novaTecla = -1;
-[v _novaTecla `c ~T0 @X0 1 e ]
-[i _novaTecla
+[; ;Joc.c: 9: signed char novaTeclaJOC = -1;
+[v _novaTeclaJOC `c ~T0 @X0 1 e ]
+[i _novaTeclaJOC
 -> -U -> 1 `i `c
 ]
 "12
@@ -492,8 +492,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
 "16
-[; ;Joc.c: 16:     novaTecla = tecla;
-[e = _novaTecla -> _tecla `c ]
+[; ;Joc.c: 16:     novaTeclaJOC = tecla;
+[e = _novaTeclaJOC -> _tecla `c ]
 "17
 [; ;Joc.c: 17: }
 [e :UE 281 ]
@@ -506,8 +506,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _dir `uc ~T0 @X0 1 r1 ]
 [f ]
 "19
-[; ;Joc.c: 19:     novaDireccio = dir;
-[e = _novaDireccio -> _dir `c ]
+[; ;Joc.c: 19:     novaDireccioJOC = dir;
+[e = _novaDireccioJOC -> _dir `c ]
 "20
 [; ;Joc.c: 20: }
 [e :UE 282 ]
@@ -583,16 +583,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 291  ]
 "42
-[; ;Joc.c: 42:    else if (novaDireccio > -1) {
+[; ;Joc.c: 42:    else if (novaDireccioJOC > -1) {
 [e :U 290 ]
-[e $ ! > -> _novaDireccio `i -U -> 1 `i 292  ]
+[e $ ! > -> _novaDireccioJOC `i -U -> 1 `i 292  ]
 {
 "43
-[; ;Joc.c: 43:     SIONovaDireccio(novaDireccio);
-[e ( _SIONovaDireccio (1 -> _novaDireccio `uc ]
+[; ;Joc.c: 43:     SIONovaDireccio(novaDireccioJOC);
+[e ( _SIONovaDireccio (1 -> _novaDireccioJOC `uc ]
 "44
-[; ;Joc.c: 44:     novaDireccio = -1;
-[e = _novaDireccio -> -U -> 1 `i `c ]
+[; ;Joc.c: 44:     novaDireccioJOC = -1;
+[e = _novaDireccioJOC -> -U -> 1 `i `c ]
 "45
 [; ;Joc.c: 45:     state = 1;
 [e = F2619 -> -> 1 `i `uc ]
@@ -622,16 +622,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 295  ]
 "53
-[; ;Joc.c: 53:    else if (novaTecla > 0) {
+[; ;Joc.c: 53:    else if (novaTeclaJOC > 0) {
 [e :U 294 ]
-[e $ ! > -> _novaTecla `i -> 0 `i 296  ]
+[e $ ! > -> _novaTeclaJOC `i -> 0 `i 296  ]
 {
 "54
-[; ;Joc.c: 54:     SIONovaTecla(novaTecla);
-[e ( _SIONovaTecla (1 _novaTecla ]
+[; ;Joc.c: 54:     SIONovaTecla(novaTeclaJOC);
+[e ( _SIONovaTecla (1 _novaTeclaJOC ]
 "55
-[; ;Joc.c: 55:     novaTecla = -1;
-[e = _novaTecla -> -U -> 1 `i `c ]
+[; ;Joc.c: 55:     novaTeclaJOC = -1;
+[e = _novaTeclaJOC -> -U -> 1 `i `c ]
 "56
 [; ;Joc.c: 56:     state = 1;
 [e = F2619 -> -> 1 `i `uc ]

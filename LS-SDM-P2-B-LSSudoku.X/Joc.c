@@ -5,18 +5,18 @@
 #include "LcTLCD.h"
 
 signed char usuariJoc = -1;
-signed char novaDireccio = 0;
-signed char novaTecla = -1;
+signed char novaDireccioJOC = 0;
+signed char novaTeclaJOC = -1;
 
 
 void JJuguem(char usuari){
     usuariJoc = usuari;
 }
 void JnovaTecla(char tecla){
-    novaTecla = tecla;
+    novaTeclaJOC = tecla;
 }
 void JnovaDireccio(char dir){
-    novaDireccio = dir;
+    novaDireccioJOC = dir;
 }
 
 signed char JUsuari(void){
@@ -39,9 +39,9 @@ void motorJoc(void){
 				HnoJugant();
 				state = 0;
 			}
-			else if (novaDireccio > -1) {
-				SIONovaDireccio(novaDireccio);
-				novaDireccio = -1;
+			else if (novaDireccioJOC > -1) {
+				SIONovaDireccio(novaDireccioJOC);
+				novaDireccioJOC = -1;
 				state = 1;
 			}
 			else if (HNouSegon() && LcLliure()) {
@@ -50,9 +50,9 @@ void motorJoc(void){
 				LcNewString(HGetTime());
 				state = 1;
 			}
-			else if (novaTecla > 0) {
-				SIONovaTecla(novaTecla);
-				novaTecla = -1;
+			else if (novaTeclaJOC > 0) {
+				SIONovaTecla(novaTeclaJOC);
+				novaTeclaJOC = -1;
 				state = 1;
 			}
 		break;

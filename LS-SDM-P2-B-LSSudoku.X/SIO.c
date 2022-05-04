@@ -4,7 +4,7 @@
 
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
-signed char direccio = -1;
+signed char novaDireccioSIO = -1;
 unsigned char rebut;
 signed char novaTeclaSIO = -1;
 __bit jugant = 0;
@@ -14,7 +14,7 @@ __bit SIOcheckKrebut(void){
     return Krebut;
 }
 void SIONovaDireccio(char num){
-    direccio = num;
+    novaDireccioSIO = num;
 }
 
 void SIOStartGame(char usuari){
@@ -62,9 +62,9 @@ void motorSIO(void){
 			}
 		break;
 		case 3:
-			if (direccio != -1 && TXSTAbits.TRMT) {
-				TXREG = direccio;
-				direccio = -1;
+			if (novaDireccioSIO != -1 && TXSTAbits.TRMT) {
+				TXREG = novaDireccioSIO;
+				novaDireccioSIO = -1;
 				state = 3;
 			}
 			else if (novaTeclaSIO > 0 && novaTeclaSIO < 10 && TXSTAbits.TRMT) {
