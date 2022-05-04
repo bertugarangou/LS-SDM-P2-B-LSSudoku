@@ -28,6 +28,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3588
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3588: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
 [v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"1107
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1107:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1117
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1117:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"1106
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1106: typedef union {
+[u S45 `S46 1 `S47 1 ]
+[n S45 . . . ]
+"1128
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1128: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS45 ~T0 @X0 0 e@3978 ]
 "3600
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3600: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
@@ -478,254 +493,283 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _jugant
 -> -> 0 `i `b
 ]
+"11
+[; ;SIO.c: 11: __bit Krebut = 0;
+[v _Krebut `b ~T0 @X0 1 e ]
+[i _Krebut
+-> -> 0 `i `b
+]
 "13
-[; ;SIO.c: 13: void SIONovaDireccio(char num){
+[; ;SIO.c: 13: __bit SIOcheckKrebut(void){
+[v _SIOcheckKrebut `(b ~T0 @X0 1 ef ]
+{
+[e :U _SIOcheckKrebut ]
+[f ]
+"14
+[; ;SIO.c: 14:     return Krebut;
+[e ) _Krebut ]
+[e $UE 280  ]
+"15
+[; ;SIO.c: 15: }
+[e :UE 280 ]
+}
+"16
+[; ;SIO.c: 16: void SIONovaDireccio(char num){
 [v _SIONovaDireccio `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SIONovaDireccio ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-"14
-[; ;SIO.c: 14:     direccio = num;
-[e = _direccio -> _num `c ]
-"15
-[; ;SIO.c: 15: }
-[e :UE 280 ]
-}
 "17
-[; ;SIO.c: 17: void SIOStartGame(char usuari){
+[; ;SIO.c: 17:     direccio = num;
+[e = _direccio -> _num `c ]
+"18
+[; ;SIO.c: 18: }
+[e :UE 281 ]
+}
+"20
+[; ;SIO.c: 20: void SIOStartGame(char usuari){
 [v _SIOStartGame `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SIOStartGame ]
 [v _usuari `uc ~T0 @X0 1 r1 ]
 [f ]
-"18
-[; ;SIO.c: 18:     usuariActualSIO = usuari;
-[e = _usuariActualSIO -> _usuari `c ]
-"19
-[; ;SIO.c: 19: }
-[e :UE 281 ]
-}
 "21
-[; ;SIO.c: 21: signed char SIOUsuariActual(void){
+[; ;SIO.c: 21:     usuariActualSIO = usuari;
+[e = _usuariActualSIO -> _usuari `c ]
+"22
+[; ;SIO.c: 22: }
+[e :UE 282 ]
+}
+"24
+[; ;SIO.c: 24: signed char SIOUsuariActual(void){
 [v _SIOUsuariActual `(c ~T0 @X0 1 ef ]
 {
 [e :U _SIOUsuariActual ]
 [f ]
-"22
-[; ;SIO.c: 22:     return usuariActualSIO;
-[e ) _usuariActualSIO ]
-[e $UE 282  ]
-"23
-[; ;SIO.c: 23: }
-[e :UE 282 ]
-}
-"24
-[; ;SIO.c: 24: void SIONovaTecla(signed char tecla){
-[v _SIONovaTecla `(v ~T0 @X0 1 ef1`c ]
-{
-[e :U _SIONovaTecla ]
-[v _tecla `c ~T0 @X0 1 r1 ]
-[f ]
 "25
-[; ;SIO.c: 25:     novaTeclaSIO = tecla;
-[e = _novaTeclaSIO _tecla ]
+[; ;SIO.c: 25:     return usuariActualSIO;
+[e ) _usuariActualSIO ]
+[e $UE 283  ]
 "26
 [; ;SIO.c: 26: }
 [e :UE 283 ]
 }
 "27
-[; ;SIO.c: 27: __bit SIOJugant(void){
-[v _SIOJugant `(b ~T0 @X0 1 ef ]
+[; ;SIO.c: 27: void SIONovaTecla(signed char tecla){
+[v _SIONovaTecla `(v ~T0 @X0 1 ef1`c ]
 {
-[e :U _SIOJugant ]
+[e :U _SIONovaTecla ]
+[v _tecla `c ~T0 @X0 1 r1 ]
 [f ]
 "28
-[; ;SIO.c: 28:     return jugant;
-[e ) _jugant ]
-[e $UE 284  ]
+[; ;SIO.c: 28:     novaTeclaSIO = tecla;
+[e = _novaTeclaSIO _tecla ]
 "29
 [; ;SIO.c: 29: }
 [e :UE 284 ]
 }
+"30
+[; ;SIO.c: 30: __bit SIOJugant(void){
+[v _SIOJugant `(b ~T0 @X0 1 ef ]
+{
+[e :U _SIOJugant ]
+[f ]
 "31
-[; ;SIO.c: 31: void motorSIO(void){
+[; ;SIO.c: 31:     return jugant;
+[e ) _jugant ]
+[e $UE 285  ]
+"32
+[; ;SIO.c: 32: }
+[e :UE 285 ]
+}
+"34
+[; ;SIO.c: 34: void motorSIO(void){
 [v _motorSIO `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorSIO ]
 [f ]
-"32
-[; ;SIO.c: 32:     static char state = 0;
-[v F2601 `uc ~T0 @X0 1 s state ]
-[i F2601
+"35
+[; ;SIO.c: 35:     static char state = 0;
+[v F2604 `uc ~T0 @X0 1 s state ]
+[i F2604
 -> -> 0 `i `uc
 ]
-"34
-[; ;SIO.c: 34:  switch(state) {
-[e $U 287  ]
-{
-"35
-[; ;SIO.c: 35:   case 0:
-[e :U 288 ]
-"36
-[; ;SIO.c: 36:    if (usuariActualSIO > -1) {
-[e $ ! > -> _usuariActualSIO `i -U -> 1 `i 289  ]
-{
 "37
-[; ;SIO.c: 37:     userPtr = UgetUserName(usuariActualSIO);
-[e = _userPtr ( _UgetUserName (1 -> _usuariActualSIO `uc ]
+[; ;SIO.c: 37:  switch(state) {
+[e $U 288  ]
+{
 "38
-[; ;SIO.c: 38:     jugant = 1;
-[e = _jugant -> -> 1 `i `b ]
-"39
-[; ;SIO.c: 39:     state = 1;
-[e = F2601 -> -> 1 `i `uc ]
-"40
-[; ;SIO.c: 40:    }
-}
+[; ;SIO.c: 38:   case 0:
 [e :U 289 ]
+"39
+[; ;SIO.c: 39:    if (usuariActualSIO > -1) {
+[e $ ! > -> _usuariActualSIO `i -U -> 1 `i 290  ]
+{
+"40
+[; ;SIO.c: 40:     userPtr = UgetUserName(usuariActualSIO);
+[e = _userPtr ( _UgetUserName (1 -> _usuariActualSIO `uc ]
 "41
-[; ;SIO.c: 41:   break;
-[e $U 286  ]
+[; ;SIO.c: 41:     jugant = 1;
+[e = _jugant -> -> 1 `i `b ]
 "42
-[; ;SIO.c: 42:   case 1:
-[e :U 290 ]
+[; ;SIO.c: 42:                 Krebut = 0;
+[e = _Krebut -> -> 0 `i `b ]
 "43
-[; ;SIO.c: 43:    if (*userPtr == '\0' && TXSTAbits.TRMT) {
-[e $ ! && == -> *U _userPtr `ui -> 0 `ui != -> . . _TXSTAbits 0 1 `i -> 0 `i 291  ]
-{
+[; ;SIO.c: 43:     state = 1;
+[e = F2604 -> -> 1 `i `uc ]
 "44
-[; ;SIO.c: 44:     TXREG = '\0';
-[e = _TXREG -> -> 0 `ui `uc ]
+[; ;SIO.c: 44:    }
+}
+[e :U 290 ]
 "45
-[; ;SIO.c: 45:     novaTeclaSIO = 0;
-[e = _novaTeclaSIO -> -> 0 `i `c ]
+[; ;SIO.c: 45:   break;
+[e $U 287  ]
 "46
-[; ;SIO.c: 46:     state = 2;
-[e = F2601 -> -> 2 `i `uc ]
-"47
-[; ;SIO.c: 47:    }
-}
-[e $U 292  ]
-"48
-[; ;SIO.c: 48:    else if (*userPtr != '\0' && TXSTAbits.TRMT) {
+[; ;SIO.c: 46:   case 1:
 [e :U 291 ]
-[e $ ! && != -> *U _userPtr `ui -> 0 `ui != -> . . _TXSTAbits 0 1 `i -> 0 `i 293  ]
+"47
+[; ;SIO.c: 47:    if (*userPtr == '\0' && TXSTAbits.TRMT) {
+[e $ ! && == -> *U _userPtr `ui -> 0 `ui != -> . . _TXSTAbits 0 1 `i -> 0 `i 292  ]
 {
+"48
+[; ;SIO.c: 48:     TXREG = '\0';
+[e = _TXREG -> -> 0 `ui `uc ]
 "49
-[; ;SIO.c: 49:     TXREG = *userPtr;
-[e = _TXREG -> *U _userPtr `uc ]
+[; ;SIO.c: 49:     novaTeclaSIO = 0;
+[e = _novaTeclaSIO -> -> 0 `i `c ]
 "50
-[; ;SIO.c: 50:     userPtr++;
-[e ++ _userPtr * -> -> 1 `i `x -> -> # *U _userPtr `i `x ]
+[; ;SIO.c: 50:     LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 "51
-[; ;SIO.c: 51:    }
-}
-[e :U 293 ]
-[e :U 292 ]
+[; ;SIO.c: 51:     state = 2;
+[e = F2604 -> -> 2 `i `uc ]
 "52
-[; ;SIO.c: 52:   break;
-[e $U 286  ]
+[; ;SIO.c: 52:    }
+}
+[e $U 293  ]
 "53
-[; ;SIO.c: 53:   case 2:
-[e :U 294 ]
-"54
-[; ;SIO.c: 54:    if (RCREG == 'K') {
-[e $ ! == -> _RCREG `ui -> 75 `ui 295  ]
+[; ;SIO.c: 53:    else if (*userPtr != '\0' && TXSTAbits.TRMT) {
+[e :U 292 ]
+[e $ ! && != -> *U _userPtr `ui -> 0 `ui != -> . . _TXSTAbits 0 1 `i -> 0 `i 294  ]
 {
+"54
+[; ;SIO.c: 54:     TXREG = *userPtr;
+[e = _TXREG -> *U _userPtr `uc ]
 "55
-[; ;SIO.c: 55:     state = 3;
-[e = F2601 -> -> 3 `i `uc ]
+[; ;SIO.c: 55:     userPtr++;
+[e ++ _userPtr * -> -> 1 `i `x -> -> # *U _userPtr `i `x ]
 "56
 [; ;SIO.c: 56:    }
 }
-[e :U 295 ]
+[e :U 294 ]
+[e :U 293 ]
 "57
 [; ;SIO.c: 57:   break;
-[e $U 286  ]
+[e $U 287  ]
 "58
-[; ;SIO.c: 58:   case 3:
-[e :U 296 ]
+[; ;SIO.c: 58:   case 2:
+[e :U 295 ]
 "59
-[; ;SIO.c: 59:    if (direccio != -1 && TXSTAbits.TRMT) {
-[e $ ! && != -> _direccio `i -U -> 1 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 297  ]
+[; ;SIO.c: 59:    if (RCREG == 'K') {
+[e $ ! == -> _RCREG `ui -> 75 `ui 296  ]
 {
 "60
-[; ;SIO.c: 60:     TXREG = direccio;
-[e = _TXREG -> _direccio `uc ]
+[; ;SIO.c: 60:     Krebut = 1;
+[e = _Krebut -> -> 1 `i `b ]
 "61
-[; ;SIO.c: 61:     direccio = -1;
-[e = _direccio -> -U -> 1 `i `c ]
+[; ;SIO.c: 61:     state = 3;
+[e = F2604 -> -> 3 `i `uc ]
 "62
-[; ;SIO.c: 62:     state = 3;
-[e = F2601 -> -> 3 `i `uc ]
+[; ;SIO.c: 62:    }
+}
+[e :U 296 ]
 "63
-[; ;SIO.c: 63:    }
-}
-[e $U 298  ]
+[; ;SIO.c: 63:   break;
+[e $U 287  ]
 "64
-[; ;SIO.c: 64:    else if (novaTeclaSIO > 0 && novaTeclaSIO < 10 && TXSTAbits.TRMT) {
+[; ;SIO.c: 64:   case 3:
 [e :U 297 ]
-[e $ ! && && > -> _novaTeclaSIO `i -> 0 `i < -> _novaTeclaSIO `i -> 10 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 299  ]
-{
 "65
-[; ;SIO.c: 65:     TXREG = novaTeclaSIO;
-[e = _TXREG -> _novaTeclaSIO `uc ]
-"66
-[; ;SIO.c: 66:     novaTeclaSIO = 0;
-[e = _novaTeclaSIO -> -> 0 `i `c ]
-"67
-[; ;SIO.c: 67:     state = 3;
-[e = F2601 -> -> 3 `i `uc ]
-"68
-[; ;SIO.c: 68:    }
-}
-[e $U 300  ]
-"69
-[; ;SIO.c: 69:    else if (novaTeclaSIO == 10 && TXSTAbits.TRMT) {
-[e :U 299 ]
-[e $ ! && == -> _novaTeclaSIO `i -> 10 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 301  ]
+[; ;SIO.c: 65:    if (direccio != -1 && TXSTAbits.TRMT) {
+[e $ ! && != -> _direccio `i -U -> 1 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 298  ]
 {
+"66
+[; ;SIO.c: 66:     TXREG = direccio;
+[e = _TXREG -> _direccio `uc ]
+"67
+[; ;SIO.c: 67:     direccio = -1;
+[e = _direccio -> -U -> 1 `i `c ]
+"68
+[; ;SIO.c: 68:     state = 3;
+[e = F2604 -> -> 3 `i `uc ]
+"69
+[; ;SIO.c: 69:    }
+}
+[e $U 299  ]
 "70
-[; ;SIO.c: 70:     TXREG = 'F';
-[e = _TXREG -> -> 70 `ui `uc ]
+[; ;SIO.c: 70:    else if (novaTeclaSIO > 0 && novaTeclaSIO < 10 && TXSTAbits.TRMT) {
+[e :U 298 ]
+[e $ ! && && > -> _novaTeclaSIO `i -> 0 `i < -> _novaTeclaSIO `i -> 10 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 300  ]
+{
 "71
-[; ;SIO.c: 71:     novaTeclaSIO = 0;
-[e = _novaTeclaSIO -> -> 0 `i `c ]
+[; ;SIO.c: 71:     TXREG = novaTeclaSIO;
+[e = _TXREG -> _novaTeclaSIO `uc ]
 "72
-[; ;SIO.c: 72:     jugant = 0;
-[e = _jugant -> -> 0 `i `b ]
+[; ;SIO.c: 72:     novaTeclaSIO = 0;
+[e = _novaTeclaSIO -> -> 0 `i `c ]
 "73
-[; ;SIO.c: 73:     state = 4;
-[e = F2601 -> -> 4 `i `uc ]
+[; ;SIO.c: 73:     state = 3;
+[e = F2604 -> -> 3 `i `uc ]
 "74
 [; ;SIO.c: 74:    }
 }
-[e :U 301 ]
-[e :U 300 ]
-[e :U 298 ]
+[e $U 301  ]
 "75
-[; ;SIO.c: 75:   break;
-[e $U 286  ]
+[; ;SIO.c: 75:    else if (novaTeclaSIO == 10 && TXSTAbits.TRMT) {
+[e :U 300 ]
+[e $ ! && == -> _novaTeclaSIO `i -> 10 `i != -> . . _TXSTAbits 0 1 `i -> 0 `i 302  ]
+{
 "76
-[; ;SIO.c: 76:   case 4:
-[e :U 302 ]
+[; ;SIO.c: 76:     TXREG = 'F';
+[e = _TXREG -> -> 70 `ui `uc ]
+"77
+[; ;SIO.c: 77:     novaTeclaSIO = 0;
+[e = _novaTeclaSIO -> -> 0 `i `c ]
 "78
-[; ;SIO.c: 78:   break;
-[e $U 286  ]
+[; ;SIO.c: 78:     jugant = 0;
+[e = _jugant -> -> 0 `i `b ]
 "79
-[; ;SIO.c: 79:  }
+[; ;SIO.c: 79:     state = 4;
+[e = F2604 -> -> 4 `i `uc ]
+"80
+[; ;SIO.c: 80:    }
 }
-[e $U 286  ]
-[e :U 287 ]
-[e [\ -> F2601 `i , $ -> 0 `i 288
- , $ -> 1 `i 290
- , $ -> 2 `i 294
- , $ -> 3 `i 296
- , $ -> 4 `i 302
- 286 ]
-[e :U 286 ]
+[e :U 302 ]
+[e :U 301 ]
+[e :U 299 ]
+"81
+[; ;SIO.c: 81:   break;
+[e $U 287  ]
 "82
-[; ;SIO.c: 82: }
-[e :UE 285 ]
+[; ;SIO.c: 82:   case 4:
+[e :U 303 ]
+"84
+[; ;SIO.c: 84:   break;
+[e $U 287  ]
+"85
+[; ;SIO.c: 85:  }
+}
+[e $U 287  ]
+[e :U 288 ]
+[e [\ -> F2604 `i , $ -> 0 `i 289
+ , $ -> 1 `i 291
+ , $ -> 2 `i 295
+ , $ -> 3 `i 297
+ , $ -> 4 `i 303
+ 287 ]
+[e :U 287 ]
+"88
+[; ;SIO.c: 88: }
+[e :UE 286 ]
 }

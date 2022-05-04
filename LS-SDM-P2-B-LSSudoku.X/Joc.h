@@ -4,4 +4,5 @@ void motorJoc(void);
 void JJuguem(char usuari);
 void JnovaTecla(char tecla);
 signed char JUsuari(void);
+void JnovaDireccio(char dir);
 #endif

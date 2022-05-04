@@ -4757,6 +4757,7 @@ void motorJoc(void);
 void JJuguem(char usuari);
 void JnovaTecla(char tecla);
 signed char JUsuari(void);
+void JnovaDireccio(char dir);
 # 9 "Menu.c" 2
 
 
@@ -4910,6 +4911,7 @@ void menu(void) {
    else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
     state = 0;
    }
+
   break;
   case 12:
    LcClear();
@@ -5022,6 +5024,16 @@ void menu(void) {
    if (NovaTecla == 11 && JUsuari() && LcLliure()) {
     LcClear();
     state = 22;
+   }
+   else if (NovaTecla > -1 && NovaTecla < 10) {
+    JnovaTecla(NovaTecla);
+    NovaTecla = -1;
+    state = 21;
+   }
+   else if (novaDireccio > -1) {
+    JnovaDireccio(novaDireccio);
+    novaDireccio = -1;
+    state = 21;
    }
   break;
   case 22:

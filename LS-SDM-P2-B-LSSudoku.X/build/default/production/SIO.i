@@ -4616,6 +4616,7 @@ signed char SIOUsuariActua(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
 __bit SIOJugant(void);
+__bit SIOcheckKrebut(void);
 # 2 "SIO.c" 2
 
 # 1 "./Usuaris.h" 1
@@ -4647,8 +4648,11 @@ signed char direccio = -1;
 unsigned char rebut;
 signed char novaTeclaSIO = -1;
 __bit jugant = 0;
+__bit Krebut = 0;
 
-
+__bit SIOcheckKrebut(void){
+    return Krebut;
+}
 void SIONovaDireccio(char num){
     direccio = num;
 }
@@ -4675,6 +4679,7 @@ void motorSIO(void){
    if (usuariActualSIO > -1) {
     userPtr = UgetUserName(usuariActualSIO);
     jugant = 1;
+                Krebut = 0;
     state = 1;
    }
   break;
@@ -4682,6 +4687,7 @@ void motorSIO(void){
    if (*userPtr == '\0' && TXSTAbits.TRMT) {
     TXREG = '\0';
     novaTeclaSIO = 0;
+    LATBbits.LATB3 = 1;
     state = 2;
    }
    else if (*userPtr != '\0' && TXSTAbits.TRMT) {
@@ -4691,6 +4697,7 @@ void motorSIO(void){
   break;
   case 2:
    if (RCREG == 'K') {
+    Krebut = 1;
     state = 3;
    }
   break;

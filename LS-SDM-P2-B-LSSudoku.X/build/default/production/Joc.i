@@ -4614,6 +4614,7 @@ void motorJoc(void);
 void JJuguem(char usuari);
 void JnovaTecla(char tecla);
 signed char JUsuari(void);
+void JnovaDireccio(char dir);
 # 2 "Joc.c" 2
 
 # 1 "./Hora.h" 1
@@ -4641,6 +4642,7 @@ signed char SIOUsuariActua(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
 __bit SIOJugant(void);
+__bit SIOcheckKrebut(void);
 # 4 "Joc.c" 2
 
 # 1 "./LcTLCD.h" 1
@@ -4691,11 +4693,15 @@ signed char usuariJoc = -1;
 signed char novaDireccio = 0;
 signed char novaTecla = -1;
 
+
 void JJuguem(char usuari){
     usuariJoc = usuari;
 }
 void JnovaTecla(char tecla){
     novaTecla = tecla;
+}
+void JnovaDireccio(char dir){
+    novaDireccio = dir;
 }
 
 signed char JUsuari(void){
@@ -4705,36 +4711,41 @@ signed char JUsuari(void){
 void motorJoc(void){
     static char state = 0;
 
-        switch(state) {
-            case 0:
-                if (usuariJoc != -1) {
-                    SIOStartGame(usuariJoc);
-                    HJugant();
-                    state = 1;
-                }
-            break;
-            case 1:
-                if (!SIOJugant()) {
-                    usuariJoc = -1;
-                    HnoJugant();
-                    state = 0;
-                }
-                else if (novaDireccio > -1) {
-                    SIONovaDireccio(novaDireccio);
-                    novaDireccio = -1;
-                    state = 1;
-                }
-                else if (HNouSegon() && LcLliure()) {
-                    HClearNouSegon();
-                    LcGotoXY(0,1);
-                    LcNewString(HGetTime());
-                    state = 1;
-                }
-                else if (novaTecla > 0) {
-                    SIONovaTecla(novaTecla);
-                    novaTecla = -1;
-                    state = 1;
-                }
-            break;
-        }
+ switch(state) {
+  case 0:
+   if (usuariJoc != -1) {
+    SIOStartGame(usuariJoc);
+    state = 2;
+   }
+  break;
+  case 1:
+   if (!SIOJugant()) {
+    usuariJoc = -1;
+    HnoJugant();
+    state = 0;
+   }
+   else if (novaDireccio > -1) {
+    SIONovaDireccio(novaDireccio);
+    novaDireccio = -1;
+    state = 1;
+   }
+   else if (HNouSegon() && LcLliure()) {
+    HClearNouSegon();
+    LcGotoXY(0,1);
+    LcNewString(HGetTime());
+    state = 1;
+   }
+   else if (novaTecla > 0) {
+    SIONovaTecla(novaTecla);
+    novaTecla = -1;
+    state = 1;
+   }
+  break;
+  case 2:
+   if (SIOcheckKrebut()) {
+    HJugant();
+    state = 1;
+   }
+  break;
+ }
 }
