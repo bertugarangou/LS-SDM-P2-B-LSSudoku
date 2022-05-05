@@ -39,9 +39,9 @@
 [v _CToAHaAcabat CToAHaAcabat `(uc  1 e 1 0 ]
 "14
 [v _CToAReset CToAReset `(v  1 e 1 0 ]
-"19
+"18
 [v _CToAConverteix CToAConverteix `(v  1 e 1 0 ]
-"24
+"23
 [v _CtoA CtoA `(v  1 e 1 0 ]
 "19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
 [v _SiFerMenu SiFerMenu `(v  1 e 1 0 ]
@@ -571,7 +571,7 @@
 "4 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\CtoA.c
 [v _convertir convertir `uc  1 e 1 0 ]
 "5
-[v _stringScore stringScore `[4]uc  1 e 4 0 ]
+[v _stringScore stringScore `[3]uc  1 e 3 0 ]
 "6 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
 [v _menuList menuList `C[5][29]uc  1 e 145 0 ]
 "14
@@ -730,18 +730,18 @@
 {
 "12
 } 0
-"19
+"18
 [v _CToAConverteix CToAConverteix `(v  1 e 1 0 ]
 {
 [v CToAConverteix@numero numero `uc  1 a 1 wreg ]
 [v CToAConverteix@numero numero `uc  1 a 1 wreg ]
 [v CToAConverteix@numero numero `uc  1 a 1 5 ]
-"22
+"21
 } 0
 "14
 [v _CToAReset CToAReset `(v  1 e 1 0 ]
 {
-"18
+"17
 } 0
 "48 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
 [v _motorJoc motorJoc `(v  1 e 1 0 ]
@@ -1289,10 +1289,10 @@
 {
 "81
 } 0
-"24 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\CtoA.c
+"23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\CtoA.c
 [v _CtoA CtoA `(v  1 e 1 0 ]
 {
-"41
+"36
 } 0
 "22 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _high_rsi high_rsi `IIH(v  1 e 1 0 ]

@@ -420,11 +420,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 250 `i `uc
 ]
 "5
-[; ;CtoA.c: 5: char stringScore[] = "000";
-[v _stringScore `uc ~T0 @X0 -> 4 `i e ]
+[; ;CtoA.c: 5: char stringScore[] = "00";
+[v _stringScore `uc ~T0 @X0 -> 3 `i e ]
 [i _stringScore
 :U ..
--> 48 `c
 -> 48 `c
 -> 48 `c
 -> 0 `c
@@ -471,95 +470,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;CtoA.c: 16:     stringScore[1] = '0';
 [e = *U + &U _stringScore * -> -> -> 1 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 48 `ui `uc ]
 "17
-[; ;CtoA.c: 17:     stringScore[2] = '0';
-[e = *U + &U _stringScore * -> -> -> 2 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 48 `ui `uc ]
-"18
-[; ;CtoA.c: 18: }
+[; ;CtoA.c: 17: }
 [e :UE 282 ]
 }
-"19
-[; ;CtoA.c: 19: void CToAConverteix(unsigned char numero){
+"18
+[; ;CtoA.c: 18: void CToAConverteix(unsigned char numero){
 [v _CToAConverteix `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _CToAConverteix ]
 [v _numero `uc ~T0 @X0 1 r1 ]
 [f ]
-"20
-[; ;CtoA.c: 20:     CToAReset();
+"19
+[; ;CtoA.c: 19:     CToAReset();
 [e ( _CToAReset ..  ]
-"21
-[; ;CtoA.c: 21:     convertir = numero;
+"20
+[; ;CtoA.c: 20:     convertir = numero;
 [e = _convertir _numero ]
-"22
-[; ;CtoA.c: 22: }
+"21
+[; ;CtoA.c: 21: }
 [e :UE 283 ]
 }
-"24
-[; ;CtoA.c: 24: void CtoA(void) {
+"23
+[; ;CtoA.c: 23: void CtoA(void) {
 [v _CtoA `(v ~T0 @X0 1 ef ]
 {
 [e :U _CtoA ]
 [f ]
-"25
-[; ;CtoA.c: 25:     if (convertir != 250) {
+"24
+[; ;CtoA.c: 24:     if (convertir != 250) {
 [e $ ! != -> _convertir `i -> 250 `i 285  ]
 {
-"26
-[; ;CtoA.c: 26:     if (convertir != 0){
+"25
+[; ;CtoA.c: 25:     if (convertir != 0){
 [e $ ! != -> _convertir `i -> 0 `i 286  ]
 {
-"27
-[; ;CtoA.c: 27:      stringScore[2]++;
-[e ++ *U + &U _stringScore * -> -> -> 2 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 1 `i `uc ]
-"28
-[; ;CtoA.c: 28:      if (stringScore[2] == 58) {
-[e $ ! == -> *U + &U _stringScore * -> -> -> 2 `i `ui `ux -> -> # *U &U _stringScore `ui `ux `i -> 58 `i 287  ]
-{
-"29
-[; ;CtoA.c: 29:       stringScore[2] = '0';
-[e = *U + &U _stringScore * -> -> -> 2 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 48 `ui `uc ]
-"30
-[; ;CtoA.c: 30:       stringScore[1]++;
+"26
+[; ;CtoA.c: 26:      stringScore[1]++;
 [e ++ *U + &U _stringScore * -> -> -> 1 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 1 `i `uc ]
-"31
-[; ;CtoA.c: 31:      }
+"27
+[; ;CtoA.c: 27:      if (stringScore[1] == 58) {
+[e $ ! == -> *U + &U _stringScore * -> -> -> 1 `i `ui `ux -> -> # *U &U _stringScore `ui `ux `i -> 58 `i 287  ]
+{
+"28
+[; ;CtoA.c: 28:       stringScore[1] = '0';
+[e = *U + &U _stringScore * -> -> -> 1 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 48 `ui `uc ]
+"29
+[; ;CtoA.c: 29:       stringScore[0]++;
+[e ++ *U + &U _stringScore * -> -> -> 0 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 1 `i `uc ]
+"30
+[; ;CtoA.c: 30:      }
 }
 [e :U 287 ]
-"32
-[; ;CtoA.c: 32:      if (stringScore[1] == 58) {
-[e $ ! == -> *U + &U _stringScore * -> -> -> 1 `i `ui `ux -> -> # *U &U _stringScore `ui `ux `i -> 58 `i 288  ]
-{
-"33
-[; ;CtoA.c: 33:       stringScore[1] = '0';
-[e = *U + &U _stringScore * -> -> -> 1 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 48 `ui `uc ]
-"34
-[; ;CtoA.c: 34:       stringScore[0]++;
-[e ++ *U + &U _stringScore * -> -> -> 0 `i `ui `ux -> -> # *U &U _stringScore `ui `ux -> -> 1 `i `uc ]
-"35
-[; ;CtoA.c: 35:      }
-}
-[e :U 288 ]
-"36
-[; ;CtoA.c: 36:      convertir--;
+"31
+[; ;CtoA.c: 31:      convertir--;
 [e -- _convertir -> -> 1 `i `uc ]
-"37
-[; ;CtoA.c: 37:     } else {
+"32
+[; ;CtoA.c: 32:     } else {
 }
-[e $U 289  ]
+[e $U 288  ]
 [e :U 286 ]
 {
-"38
-[; ;CtoA.c: 38:      convertir = 250;
+"33
+[; ;CtoA.c: 33:      convertir = 250;
 [e = _convertir -> -> 250 `i `uc ]
-"39
-[; ;CtoA.c: 39:     }
+"34
+[; ;CtoA.c: 34:     }
 }
-[e :U 289 ]
-"40
-[; ;CtoA.c: 40:     }
+[e :U 288 ]
+"35
+[; ;CtoA.c: 35:     }
 }
 [e :U 285 ]
-"41
-[; ;CtoA.c: 41: }
+"36
+[; ;CtoA.c: 36: }
 [e :UE 284 ]
 }
