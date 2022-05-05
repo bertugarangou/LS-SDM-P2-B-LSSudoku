@@ -1,4 +1,4 @@
-# 1 "SIO.c"
+# 1 "CtoA.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "SIO.c" 2
+# 1 "CtoA.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4605,71 +4605,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "SIO.c" 2
-
-# 1 "./SIO.h" 1
-
-
-void SIONovaDireccio(char num);
-void SIOStartGame(char usuari);
-signed char SIOHaAcabatPuntuacions(void);
-void SIONovaTecla(signed char tecla);
-void motorSIO(void);
-__bit SIOcheckKrebut(void);
-void SIOendGame(void);
-void initSIO(void);
-# 2 "SIO.c" 2
-
-# 1 "./Usuaris.h" 1
-
-
-
-char UgetNumUsuaris(void);
-void Uinit(void);
-void UcreateUser(void);
-void UenviaChar(char c, char pos);
-void UenviaPas(char c, char pos);
-void UmotorUsers(void);
-__bit UcheckExistsNotFinished(void);
-void UcheckExists(void);
-__bit UcheckExistsGetError(void);
-void escriureEEPROM(void);
-__bit URegisterEnded(void);
-void URegister(void);
-char* UgetUserName(char quin);
-
-
-void escriure2usuarisStruct(void);
-# 3 "SIO.c" 2
-
-# 1 "./TiTTimer.h" 1
-
-
-
-void TiInitTimer(void);
-
-
-
-void TiResetTics(char Handle);
-
-
-
-int TiGetTics(char Handle);
-
-
-
-
-char TiGetTimer(void);
-
-
-
-
-void TiFreeTimer (char Handle);
-
-
-
-void _TiRSITimer (void);
-# 4 "SIO.c" 2
+# 1 "CtoA.c" 2
 
 # 1 "./CtoA.h" 1
 
@@ -4679,196 +4615,44 @@ void CtoA(void);
 void CToAConverteix(unsigned char numero);
 char* CToAobtenir(void);
 char CToAHaAcabat(void);
-# 5 "SIO.c" 2
-
-# 1 "./Hora.h" 1
+# 2 "CtoA.c" 2
 
 
-    extern __bit jugant;
-    extern char hora[6];
-    void initHora(void);
-    void motorHora(void);
-    void HActualitzaHora(char nova[]);
+unsigned char convertir = 250;
+char stringScore[] = "000";
 
-    void HJugant(void);
-    void HnoJugant(void);
-    char* HGetTime(void);
-    __bit HNouSegon(void);
-    void HClearNouSegon(void);
-    __bit checkHoraAcabat(void);
-# 6 "SIO.c" 2
-
-# 1 "./LcTLCD.h" 1
-# 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
-
-
-
-
-
-
-void LcEnd(void);
-
-
-void LcScroll(void);
-
-
-
-void LcClear(void);
-
-
-
-void LcCursorOn(void);
-
-
-
-void LcCursorOff(void);
-
-
-
-void LcGotoXY(char Column, char Row);
-
-
-
-
-void LcPutChar(char c);
-# 70 "./LcTLCD.h"
-void LcPutStringDebug(char *s);
-void LcNewString(char new_s[]);
-void PutStringCooperatiu();
-void LcLCD();
-__bit LcLliure(void);
-void LcInsertFletxa(void);
-# 7 "SIO.c" 2
-
-
-char *userPtr = 0;
-signed char usuariActualSIO = -1;
-signed char direccioSIO = -1;
-unsigned char rebut;
-signed char novaTeclaSIO = -1;
-__bit jugantSIO = 0;
-__bit Krebut = 0;
-char timerSIO;
-
-void initSIO(void){
-    timerSIO = TiGetTimer();
+char* CToAobtenir(void){
+    return stringScore;
+}
+char CToAHaAcabat(void){
+    return convertir;
 }
 
-void SIOendGame(void){
-    jugantSIO = 0;
+void CToAReset(void){
+    stringScore[0] = '0';
+    stringScore[1] = '0';
+    stringScore[2] = '0';
 }
-__bit SIOcheckKrebut(void){
-    return Krebut;
-}
-void SIONovaDireccio(char num){
-    direccioSIO = num;
-}
-
-void SIOStartGame(char usuari){
-    usuariActualSIO = usuari;
+void CToAConverteix(unsigned char numero){
+    CToAReset();
+    convertir = numero;
 }
 
-signed char SIOHaAcabatPuntuacions(void){
-    return usuariActualSIO;
-}
-void SIONovaTecla(signed char tecla){
-    novaTeclaSIO = tecla;
-}
-void motorSIO(void){
-    static char state = 0;
-
- switch(state) {
-  case 0:
-   if (usuariActualSIO > -1) {
-    userPtr = UgetUserName(usuariActualSIO);
-    jugantSIO = 1;
-    Krebut = 0;
-    state = 1;
-   }
-  break;
-  case 1:
-   if (*userPtr == '\0' && TXSTAbits.TRMT) {
-    TXREG = '\0';
-    novaTeclaSIO = 0;
-    LATBbits.LATB3 = 1;
-    state = 2;
-   }
-   else if (*userPtr != '\0' && TXSTAbits.TRMT) {
-    TXREG = *userPtr;
-    userPtr++;
-   }
-  break;
-  case 2:
-   if (RCREG == 'K') {
-    Krebut = 1;
-    state = 3;
-   }
-  break;
-  case 3:
-   if (direccioSIO != -1 && TXSTAbits.TRMT) {
-    TXREG = direccioSIO;
-    direccioSIO = -1;
-    state = 3;
-   }
-   else if (novaTeclaSIO > '0' && novaTeclaSIO <= '9' && TXSTAbits.TRMT) {
-    TXREG = novaTeclaSIO;
-    novaTeclaSIO = 0;
-    state = 3;
-   }
-   else if ((!jugantSIO && TXSTAbits.TRMT) || PIR1bits.RCIF) {
-    LcClear();
-    LcNewString("ERRORS:");
-    TXREG = 'F';
-    novaTeclaSIO = 0;
-    state = 4;
-   }
-  break;
-  case 4:
-   if (PIR1bits.RCIF) {
-    CToAConverteix(RCREG);
-    TiResetTics(timerSIO);
-    state = 5;
-   }
-  break;
-  case 5:
-   if (TiGetTics(timerSIO) > 2490) {
-    LcClear();
-    LcNewString("TIME LEFT: ");
-    state = 7;
-   }
-   else if (TiGetTics(timerSIO) < 2490 && PIR1bits.RCIF && LcLliure()) {
-    LcGotoXY(0,1);
-    LcPutChar(RCREG);
-    state = 6;
-   }
-  break;
-  case 7:
-   if (LcLliure()) {
-    LcNewString(HGetTime());
-    state = 8;
-   }
-  break;
-  case 6:
-   if (PIR1bits.RCIF) {
-    LcPutChar(RCREG);
-                TiResetTics(timerSIO);
-    state = 5;
-   }
-  break;
-  case 8:
-   if (LcLliure()) {
-    LcGotoXY(0,1);
-    LcNewString("SCORE: ");
-    state = 9;
-   }
-  break;
-  case 9:
-   if (LcLliure() && CToAHaAcabat() == 250) {
-    LcNewString(CToAobtenir());
-    usuariActualSIO = -1;
-    state = 0;
-   }
-  break;
- }
+void CtoA(void) {
+    if (convertir != 250) {
+    if (convertir != 0){
+     stringScore[2]++;
+     if (stringScore[2] == 58) {
+      stringScore[2] = '0';
+      stringScore[1]++;
+     }
+     if (stringScore[1] == 58) {
+      stringScore[1] = '0';
+      stringScore[0]++;
+     }
+     convertir--;
+    } else {
+     convertir = 250;
+    }
+    }
 }

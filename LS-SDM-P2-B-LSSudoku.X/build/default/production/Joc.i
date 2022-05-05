@@ -4640,11 +4640,12 @@ void JendGame(void);
 
 void SIONovaDireccio(char num);
 void SIOStartGame(char usuari);
-signed char SIOUsuariActua(void);
+signed char SIOHaAcabatPuntuacions(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
+void initSIO(void);
 # 4 "Joc.c" 2
 
 # 1 "./LcTLCD.h" 1
@@ -4748,8 +4749,8 @@ void motorJoc(void){
     usuariJoc = -1;
     HnoJugant();
     SIOendGame();
+    LATBbits.LATB3 = 0;
     state = 0;
-                LATBbits.LATB3 = 0;
    }
    else if (direccioJoc > -1) {
     SIONovaDireccio(conversorJoystick(direccioJoc));

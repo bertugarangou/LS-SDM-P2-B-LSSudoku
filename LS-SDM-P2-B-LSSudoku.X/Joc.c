@@ -61,8 +61,8 @@ void motorJoc(void){
 				usuariJoc = -1;
 				HnoJugant();
 				SIOendGame();
+				LATBbits.LATB3 = 0;
 				state = 0;
-                LATBbits.LATB3 = 0;
 			}
 			else if (direccioJoc > -1) {
 				SIONovaDireccio(conversorJoystick(direccioJoc));

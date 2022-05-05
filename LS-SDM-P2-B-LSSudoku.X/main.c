@@ -12,6 +12,7 @@
 #include "Hora.h"
 #include "SIO.h"
 #include "Joc.h"
+#include "CtoA.h"
 
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
@@ -85,6 +86,7 @@ void main(void) {
     GLCDInit();
     JoystickInit();
     initHora();
+    initSIO();
     
     LcInit(2,16);
     Minit();
@@ -97,6 +99,7 @@ void main(void) {
         motorHora();
         JoystickMotor();
         menu();
+        CtoA();
         motorAltaveu();
         UmotorUsers();
         GLCDMotor();

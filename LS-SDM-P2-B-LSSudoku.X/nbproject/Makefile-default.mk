@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c Menu.c Usuaris.c Altaveu.c GestioLCD.c Joystick.c Hora.c Joc.c SIO.c
+SOURCEFILES_QUOTED_IF_SPACED=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c Menu.c Usuaris.c Altaveu.c GestioLCD.c Joystick.c Hora.c Joc.c SIO.c CtoA.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1 ${OBJECTDIR}/Menu.p1 ${OBJECTDIR}/Usuaris.p1 ${OBJECTDIR}/Altaveu.p1 ${OBJECTDIR}/GestioLCD.p1 ${OBJECTDIR}/Joystick.p1 ${OBJECTDIR}/Hora.p1 ${OBJECTDIR}/Joc.p1 ${OBJECTDIR}/SIO.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/LcTLCD.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Ssms.p1.d ${OBJECTDIR}/TeTeclat.p1.d ${OBJECTDIR}/TiTTimer.p1.d ${OBJECTDIR}/Menu.p1.d ${OBJECTDIR}/Usuaris.p1.d ${OBJECTDIR}/Altaveu.p1.d ${OBJECTDIR}/GestioLCD.p1.d ${OBJECTDIR}/Joystick.p1.d ${OBJECTDIR}/Hora.p1.d ${OBJECTDIR}/Joc.p1.d ${OBJECTDIR}/SIO.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1 ${OBJECTDIR}/Menu.p1 ${OBJECTDIR}/Usuaris.p1 ${OBJECTDIR}/Altaveu.p1 ${OBJECTDIR}/GestioLCD.p1 ${OBJECTDIR}/Joystick.p1 ${OBJECTDIR}/Hora.p1 ${OBJECTDIR}/Joc.p1 ${OBJECTDIR}/SIO.p1 ${OBJECTDIR}/CtoA.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/LcTLCD.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Ssms.p1.d ${OBJECTDIR}/TeTeclat.p1.d ${OBJECTDIR}/TiTTimer.p1.d ${OBJECTDIR}/Menu.p1.d ${OBJECTDIR}/Usuaris.p1.d ${OBJECTDIR}/Altaveu.p1.d ${OBJECTDIR}/GestioLCD.p1.d ${OBJECTDIR}/Joystick.p1.d ${OBJECTDIR}/Hora.p1.d ${OBJECTDIR}/Joc.p1.d ${OBJECTDIR}/SIO.p1.d ${OBJECTDIR}/CtoA.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1 ${OBJECTDIR}/Menu.p1 ${OBJECTDIR}/Usuaris.p1 ${OBJECTDIR}/Altaveu.p1 ${OBJECTDIR}/GestioLCD.p1 ${OBJECTDIR}/Joystick.p1 ${OBJECTDIR}/Hora.p1 ${OBJECTDIR}/Joc.p1 ${OBJECTDIR}/SIO.p1
+OBJECTFILES=${OBJECTDIR}/LcTLCD.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Ssms.p1 ${OBJECTDIR}/TeTeclat.p1 ${OBJECTDIR}/TiTTimer.p1 ${OBJECTDIR}/Menu.p1 ${OBJECTDIR}/Usuaris.p1 ${OBJECTDIR}/Altaveu.p1 ${OBJECTDIR}/GestioLCD.p1 ${OBJECTDIR}/Joystick.p1 ${OBJECTDIR}/Hora.p1 ${OBJECTDIR}/Joc.p1 ${OBJECTDIR}/SIO.p1 ${OBJECTDIR}/CtoA.p1
 
 # Source Files
-SOURCEFILES=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c Menu.c Usuaris.c Altaveu.c GestioLCD.c Joystick.c Hora.c Joc.c SIO.c
+SOURCEFILES=LcTLCD.c main.c Ssms.c TeTeclat.c TiTTimer.c Menu.c Usuaris.c Altaveu.c GestioLCD.c Joystick.c Hora.c Joc.c SIO.c CtoA.c
 
 
 
@@ -198,6 +198,14 @@ ${OBJECTDIR}/SIO.p1: SIO.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/SIO.d ${OBJECTDIR}/SIO.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/SIO.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/CtoA.p1: CtoA.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/CtoA.p1.d 
+	@${RM} ${OBJECTDIR}/CtoA.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -Os -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/CtoA.p1 CtoA.c 
+	@-${MV} ${OBJECTDIR}/CtoA.d ${OBJECTDIR}/CtoA.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/CtoA.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/LcTLCD.p1: LcTLCD.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -302,6 +310,14 @@ ${OBJECTDIR}/SIO.p1: SIO.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -Os -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/SIO.p1 SIO.c 
 	@-${MV} ${OBJECTDIR}/SIO.d ${OBJECTDIR}/SIO.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/SIO.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/CtoA.p1: CtoA.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/CtoA.p1.d 
+	@${RM} ${OBJECTDIR}/CtoA.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -Os -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/CtoA.p1 CtoA.c 
+	@-${MV} ${OBJECTDIR}/CtoA.d ${OBJECTDIR}/CtoA.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/CtoA.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

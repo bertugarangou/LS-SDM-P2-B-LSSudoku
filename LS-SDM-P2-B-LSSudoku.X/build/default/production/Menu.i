@@ -4762,6 +4762,19 @@ void JnovaDireccio(char dir);
 void JendGame(void);
 # 9 "Menu.c" 2
 
+# 1 "./SIO.h" 1
+
+
+void SIONovaDireccio(char num);
+void SIOStartGame(char usuari);
+signed char SIOHaAcabatPuntuacions(void);
+void SIONovaTecla(signed char tecla);
+void motorSIO(void);
+__bit SIOcheckKrebut(void);
+void SIOendGame(void);
+void initSIO(void);
+# 10 "Menu.c" 2
+
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
@@ -5040,7 +5053,9 @@ void menu(void) {
    }
   break;
   case 22:
-
+   if (SIOHaAcabatPuntuacions() && NovaTecla == 11) {
+    state = 12;
+   }
   break;
  }
 }

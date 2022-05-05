@@ -1,6 +1,10 @@
 #include <xc.h>
 #include "SIO.h"
 #include "Usuaris.h"
+#include "TiTTimer.h"
+#include "CtoA.h"
+#include "Hora.h"
+#include "LcTLCD.h"
 
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
@@ -9,6 +13,11 @@ unsigned char rebut;
 signed char novaTeclaSIO = -1;
 __bit jugantSIO = 0;
 __bit Krebut = 0;
+char timerSIO;
+
+void initSIO(void){
+    timerSIO = TiGetTimer();
+}
 
 void SIOendGame(void){
     jugantSIO = 0;
@@ -24,13 +33,12 @@ void SIOStartGame(char usuari){
     usuariActualSIO = usuari;
 }
 
-signed char SIOUsuariActual(void){
+signed char SIOHaAcabatPuntuacions(void){
     return usuariActualSIO;
 }
 void SIONovaTecla(signed char tecla){
     novaTeclaSIO = tecla;
 }
-
 void motorSIO(void){
     static char state = 0;
 
@@ -72,14 +80,59 @@ void motorSIO(void){
 				novaTeclaSIO = 0;
 				state = 3;
 			}
-			else if (!jugantSIO && TXSTAbits.TRMT) {
+			else if ((!jugantSIO && TXSTAbits.TRMT) || PIR1bits.RCIF) {
+				LcClear();
+				LcNewString("ERRORS:");
 				TXREG = 'F';
 				novaTeclaSIO = 0;
 				state = 4;
 			}
 		break;
 		case 4:
-
+			if (PIR1bits.RCIF) {
+				CToAConverteix(RCREG);
+				TiResetTics(timerSIO);
+				state = 5;
+			}
+		break;
+		case 5:
+			if (TiGetTics(timerSIO) > 2490) {
+				LcClear();
+				LcNewString("TIME LEFT: ");
+				state = 7;
+			}
+			else if (TiGetTics(timerSIO) < 2490 && PIR1bits.RCIF && LcLliure()) {
+				LcGotoXY(0,1);
+				LcPutChar(RCREG);
+				state = 6;
+			}
+		break;
+		case 7:
+			if (LcLliure()) {
+				LcNewString(HGetTime());
+				state = 8;
+			}
+		break;
+		case 6:
+			if (PIR1bits.RCIF) {
+				LcPutChar(RCREG);
+                TiResetTics(timerSIO);
+				state = 5;
+			}
+		break;
+		case 8:
+			if (LcLliure()) {
+				LcGotoXY(0,1);
+				LcNewString("SCORE: ");
+				state = 9;
+			}
+		break;
+		case 9:
+			if (LcLliure() && CToAHaAcabat() == 250) {
+				LcNewString(CToAobtenir());
+				usuariActualSIO = -1;
+				state = 0;
+			}
 		break;
 	}
 }

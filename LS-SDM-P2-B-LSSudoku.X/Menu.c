@@ -7,6 +7,7 @@
 #include "GestioLCD.h"
 #include "Hora.h"
 #include "Joc.h"
+#include "SIO.h"
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
@@ -285,7 +286,9 @@ void menu(void) {
 			}
 		break;
 		case 22:
-
+			if (SIOHaAcabatPuntuacions() && NovaTecla == 11) {
+				state = 12;
+			}
 		break;
 	}
 }

@@ -4784,11 +4784,12 @@ void JoystickMotor(void);
 
 void SIONovaDireccio(char num);
 void SIOStartGame(char usuari);
-signed char SIOUsuariActua(void);
+signed char SIOHaAcabatPuntuacions(void);
 void SIONovaTecla(signed char tecla);
 void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
+void initSIO(void);
 # 13 "main.c" 2
 
 # 1 "./Joc.h" 1
@@ -4801,6 +4802,16 @@ signed char JUsuari(void);
 void JnovaDireccio(char dir);
 void JendGame(void);
 # 14 "main.c" 2
+
+# 1 "./CtoA.h" 1
+
+
+
+void CtoA(void);
+void CToAConverteix(unsigned char numero);
+char* CToAobtenir(void);
+char CToAHaAcabat(void);
+# 15 "main.c" 2
 
 
 #pragma config OSC = HSPLL
@@ -4826,9 +4837,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 48 "main.c"
+# 49 "main.c"
     TRISC = 0xC0;
-# 58 "main.c"
+# 59 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4859,6 +4870,7 @@ void main(void) {
     GLCDInit();
     JoystickInit();
     initHora();
+    initSIO();
 
     LcInit(2,16);
     Minit();
@@ -4871,6 +4883,7 @@ void main(void) {
         motorHora();
         JoystickMotor();
         menu();
+        CtoA();
         motorAltaveu();
         UmotorUsers();
         GLCDMotor();

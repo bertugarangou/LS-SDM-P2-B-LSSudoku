@@ -628,8 +628,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "49
 [; ;Joc.c: 49:     static char state = 0;
-[v F2625 `uc ~T0 @X0 1 s state ]
-[i F2625
+[v F2626 `uc ~T0 @X0 1 s state ]
+[i F2626
 -> -> 0 `i `uc
 ]
 "51
@@ -651,7 +651,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _jugantJoc -> -> 1 `i `b ]
 "56
 [; ;Joc.c: 56:     state = 2;
-[e = F2625 -> -> 2 `i `uc ]
+[e = F2626 -> -> 2 `i `uc ]
 "57
 [; ;Joc.c: 57:    }
 }
@@ -676,11 +676,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Joc.c: 63:     SIOendGame();
 [e ( _SIOendGame ..  ]
 "64
-[; ;Joc.c: 64:     state = 0;
-[e = F2625 -> -> 0 `i `uc ]
-"65
-[; ;Joc.c: 65:                 LATBbits.LATB3 = 0;
+[; ;Joc.c: 64:     LATBbits.LATB3 = 0;
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"65
+[; ;Joc.c: 65:     state = 0;
+[e = F2626 -> -> 0 `i `uc ]
 "66
 [; ;Joc.c: 66:    }
 }
@@ -698,7 +698,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _direccioJoc -> -U -> 1 `i `c ]
 "70
 [; ;Joc.c: 70:     state = 1;
-[e = F2625 -> -> 1 `i `uc ]
+[e = F2626 -> -> 1 `i `uc ]
 "71
 [; ;Joc.c: 71:    }
 }
@@ -719,7 +719,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 ( _HGetTime ..  ]
 "76
 [; ;Joc.c: 76:     state = 1;
-[e = F2625 -> -> 1 `i `uc ]
+[e = F2626 -> -> 1 `i `uc ]
 "77
 [; ;Joc.c: 77:    }
 }
@@ -737,7 +737,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTeclaJOC -> -U -> 1 `i `c ]
 "81
 [; ;Joc.c: 81:     state = 1;
-[e = F2625 -> -> 1 `i `uc ]
+[e = F2626 -> -> 1 `i `uc ]
 "82
 [; ;Joc.c: 82:    }
 }
@@ -760,7 +760,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _HJugant ..  ]
 "87
 [; ;Joc.c: 87:     state = 1;
-[e = F2625 -> -> 1 `i `uc ]
+[e = F2626 -> -> 1 `i `uc ]
 "88
 [; ;Joc.c: 88:    }
 }
@@ -773,7 +773,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 291  ]
 [e :U 292 ]
-[e [\ -> F2625 `i , $ -> 0 `i 293
+[e [\ -> F2626 `i , $ -> 0 `i 293
  , $ -> 1 `i 295
  , $ -> 2 `i 303
  291 ]

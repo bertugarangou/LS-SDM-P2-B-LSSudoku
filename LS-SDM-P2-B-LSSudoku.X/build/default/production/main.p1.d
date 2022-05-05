@@ -11,4 +11,5 @@ GestioLCD.h  \
 Joystick.h  \
 Hora.h  \
 SIO.h  \
-Joc.h 
+Joc.h  \
+CtoA.h 
