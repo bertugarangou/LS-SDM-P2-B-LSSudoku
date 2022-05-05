@@ -4632,6 +4632,7 @@ void JendGame(void);
     char* HGetTime(void);
     __bit HNouSegon(void);
     void HClearNouSegon(void);
+    __bit checkHoraAcabat(void);
 # 3 "Joc.c" 2
 
 # 1 "./SIO.h" 1

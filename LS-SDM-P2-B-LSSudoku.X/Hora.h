@@ -11,4 +11,5 @@
     char* HGetTime(void);
     __bit HNouSegon(void);
     void HClearNouSegon(void);
+    __bit checkHoraAcabat(void);
 #endif

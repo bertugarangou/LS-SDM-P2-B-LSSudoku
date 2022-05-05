@@ -6,6 +6,7 @@ unsigned char segons = 0;
 char hora[6] = "30:00";
 __bit jugant = 0;
 __bit nouSegon = 0;
+__bit tempsAcabat;
 
 void initHora(void){
     timerHora = TiGetTimer();
@@ -35,6 +36,10 @@ void HnoJugant(void){
 }
 void HJugant(void){
     jugant = 1;
+    tempsAcabat = 0;
+}
+__bit checkHoraAcabat(void){
+    return tempsAcabat;
 }
 
 void motorHora(void) {
@@ -63,8 +68,8 @@ void motorHora(void) {
 						hora[0]--;
 					}
 					//final;
-					if(hora[0] == '0' && hora[1] == '0' && hora[3] == '0' && hora[4] == ('0'-1)){
-						//tempsAcabat;
+					if(hora[0] == '0' && hora[1] == '0' && hora[3] == '0' && hora[4] == ('0')){
+						tempsAcabat = 1;
 					}
 					//reproducció;
 					segons++;

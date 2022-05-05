@@ -459,235 +459,258 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _nouSegon
 -> -> 0 `i `b
 ]
-"10
-[; ;Hora.c: 10: void initHora(void){
+"9
+[; ;Hora.c: 9: __bit tempsAcabat;
+[v _tempsAcabat `b ~T0 @X0 1 e ]
+"11
+[; ;Hora.c: 11: void initHora(void){
 [v _initHora `(v ~T0 @X0 1 ef ]
 {
 [e :U _initHora ]
 [f ]
-"11
-[; ;Hora.c: 11:     timerHora = TiGetTimer();
-[e = _timerHora ( _TiGetTimer ..  ]
 "12
-[; ;Hora.c: 12: }
+[; ;Hora.c: 12:     timerHora = TiGetTimer();
+[e = _timerHora ( _TiGetTimer ..  ]
+"13
+[; ;Hora.c: 13: }
 [e :UE 280 ]
 }
-"14
-[; ;Hora.c: 14: void HActualitzaHora(char nova[]){
+"15
+[; ;Hora.c: 15: void HActualitzaHora(char nova[]){
 [v _HActualitzaHora `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _HActualitzaHora ]
 [v _nova `*uc ~T0 @X0 1 r1 ]
 [f ]
-"15
-[; ;Hora.c: 15:     hora[0] = nova[0];
-[e = *U + &U _hora * -> -> -> 0 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 0 `i `x -> -> # *U _nova `i `x ]
 "16
-[; ;Hora.c: 16:     hora[1] = nova[1];
-[e = *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 1 `i `x -> -> # *U _nova `i `x ]
+[; ;Hora.c: 16:     hora[0] = nova[0];
+[e = *U + &U _hora * -> -> -> 0 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 0 `i `x -> -> # *U _nova `i `x ]
 "17
-[; ;Hora.c: 17:     hora[3] = nova[2];
-[e = *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 2 `i `x -> -> # *U _nova `i `x ]
+[; ;Hora.c: 17:     hora[1] = nova[1];
+[e = *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 1 `i `x -> -> # *U _nova `i `x ]
 "18
-[; ;Hora.c: 18:     hora[4] = nova[3];
-[e = *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 3 `i `x -> -> # *U _nova `i `x ]
+[; ;Hora.c: 18:     hora[3] = nova[2];
+[e = *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 2 `i `x -> -> # *U _nova `i `x ]
 "19
-[; ;Hora.c: 19: }
+[; ;Hora.c: 19:     hora[4] = nova[3];
+[e = *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux *U + _nova * -> -> 3 `i `x -> -> # *U _nova `i `x ]
+"20
+[; ;Hora.c: 20: }
 [e :UE 281 ]
 }
-"21
-[; ;Hora.c: 21: __bit HNouSegon(void){
+"22
+[; ;Hora.c: 22: __bit HNouSegon(void){
 [v _HNouSegon `(b ~T0 @X0 1 ef ]
 {
 [e :U _HNouSegon ]
 [f ]
-"22
-[; ;Hora.c: 22:     return nouSegon;
+"23
+[; ;Hora.c: 23:     return nouSegon;
 [e ) _nouSegon ]
 [e $UE 282  ]
-"23
-[; ;Hora.c: 23: }
+"24
+[; ;Hora.c: 24: }
 [e :UE 282 ]
 }
-"25
-[; ;Hora.c: 25: void HClearNouSegon(void){
+"26
+[; ;Hora.c: 26: void HClearNouSegon(void){
 [v _HClearNouSegon `(v ~T0 @X0 1 ef ]
 {
 [e :U _HClearNouSegon ]
 [f ]
-"26
-[; ;Hora.c: 26:     nouSegon = 0;
-[e = _nouSegon -> -> 0 `i `b ]
 "27
-[; ;Hora.c: 27: }
+[; ;Hora.c: 27:     nouSegon = 0;
+[e = _nouSegon -> -> 0 `i `b ]
+"28
+[; ;Hora.c: 28: }
 [e :UE 283 ]
 }
-"29
-[; ;Hora.c: 29: char* HGetTime(void){
+"30
+[; ;Hora.c: 30: char* HGetTime(void){
 [v _HGetTime `(*uc ~T0 @X0 1 ef ]
 {
 [e :U _HGetTime ]
 [f ]
-"30
-[; ;Hora.c: 30:     return hora;
+"31
+[; ;Hora.c: 31:     return hora;
 [e ) &U _hora ]
 [e $UE 284  ]
-"31
-[; ;Hora.c: 31: }
+"32
+[; ;Hora.c: 32: }
 [e :UE 284 ]
 }
-"33
-[; ;Hora.c: 33: void HnoJugant(void){
+"34
+[; ;Hora.c: 34: void HnoJugant(void){
 [v _HnoJugant `(v ~T0 @X0 1 ef ]
 {
 [e :U _HnoJugant ]
 [f ]
-"34
-[; ;Hora.c: 34:     jugant = 0;
-[e = _jugant -> -> 0 `i `b ]
 "35
-[; ;Hora.c: 35: }
+[; ;Hora.c: 35:     jugant = 0;
+[e = _jugant -> -> 0 `i `b ]
+"36
+[; ;Hora.c: 36: }
 [e :UE 285 ]
 }
-"36
-[; ;Hora.c: 36: void HJugant(void){
+"37
+[; ;Hora.c: 37: void HJugant(void){
 [v _HJugant `(v ~T0 @X0 1 ef ]
 {
 [e :U _HJugant ]
 [f ]
-"37
-[; ;Hora.c: 37:     jugant = 1;
-[e = _jugant -> -> 1 `i `b ]
 "38
-[; ;Hora.c: 38: }
+[; ;Hora.c: 38:     jugant = 1;
+[e = _jugant -> -> 1 `i `b ]
+"39
+[; ;Hora.c: 39:     tempsAcabat = 0;
+[e = _tempsAcabat -> -> 0 `i `b ]
+"40
+[; ;Hora.c: 40: }
 [e :UE 286 ]
 }
-"40
-[; ;Hora.c: 40: void motorHora(void) {
+"41
+[; ;Hora.c: 41: __bit checkHoraAcabat(void){
+[v _checkHoraAcabat `(b ~T0 @X0 1 ef ]
+{
+[e :U _checkHoraAcabat ]
+[f ]
+"42
+[; ;Hora.c: 42:     return tempsAcabat;
+[e ) _tempsAcabat ]
+[e $UE 287  ]
+"43
+[; ;Hora.c: 43: }
+[e :UE 287 ]
+}
+"45
+[; ;Hora.c: 45: void motorHora(void) {
 [v _motorHora `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorHora ]
 [f ]
-"41
-[; ;Hora.c: 41:  static char state = 0;
-[v F2584 `uc ~T0 @X0 1 s state ]
-[i F2584
+"46
+[; ;Hora.c: 46:  static char state = 0;
+[v F2586 `uc ~T0 @X0 1 s state ]
+[i F2586
 -> -> 0 `i `uc
 ]
-"43
-[; ;Hora.c: 43:  switch(state) {
-[e $U 289  ]
-{
-"44
-[; ;Hora.c: 44:   case 0:
-[e :U 290 ]
-"45
-[; ;Hora.c: 45:    if (TiGetTics(timerHora) >= 1205) {
-[e $ ! >= ( _TiGetTics (1 _timerHora -> 1205 `i 291  ]
-{
-"46
-[; ;Hora.c: 46:     TiResetTics(timerHora);
-[e ( _TiResetTics (1 _timerHora ]
-"47
-[; ;Hora.c: 47:     if(jugant){
-[e $ ! _jugant 292  ]
-{
 "48
-[; ;Hora.c: 48:       nouSegon = 1;
-[e = _nouSegon -> -> 1 `i `b ]
-"50
-[; ;Hora.c: 50:      hora[4]--;
-[e -- *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
-"51
-[; ;Hora.c: 51:      if(hora[4] == ('0'-1)){
-[e $ ! == -> *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 293  ]
+[; ;Hora.c: 48:  switch(state) {
+[e $U 290  ]
 {
+"49
+[; ;Hora.c: 49:   case 0:
+[e :U 291 ]
+"50
+[; ;Hora.c: 50:    if (TiGetTics(timerHora) >= 1205) {
+[e $ ! >= ( _TiGetTics (1 _timerHora -> 1205 `i 292  ]
+{
+"51
+[; ;Hora.c: 51:     TiResetTics(timerHora);
+[e ( _TiResetTics (1 _timerHora ]
 "52
-[; ;Hora.c: 52:       hora[4] = '9';
-[e = *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 57 `ui `uc ]
+[; ;Hora.c: 52:     if(jugant){
+[e $ ! _jugant 293  ]
+{
 "53
-[; ;Hora.c: 53:       hora[3]--;
-[e -- *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
-"54
-[; ;Hora.c: 54:      }
-}
-[e :U 293 ]
+[; ;Hora.c: 53:       nouSegon = 1;
+[e = _nouSegon -> -> 1 `i `b ]
+"55
+[; ;Hora.c: 55:      hora[4]--;
+[e -- *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
 "56
-[; ;Hora.c: 56:      if(hora[3] == ('0'-1)){
-[e $ ! == -> *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 294  ]
+[; ;Hora.c: 56:      if(hora[4] == ('0'-1)){
+[e $ ! == -> *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 294  ]
 {
 "57
-[; ;Hora.c: 57:       hora[3] = '5';
-[e = *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 53 `ui `uc ]
+[; ;Hora.c: 57:       hora[4] = '9';
+[e = *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 57 `ui `uc ]
 "58
-[; ;Hora.c: 58:       hora[1]--;
-[e -- *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
+[; ;Hora.c: 58:       hora[3]--;
+[e -- *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
 "59
 [; ;Hora.c: 59:      }
 }
 [e :U 294 ]
 "61
-[; ;Hora.c: 61:      if(hora[1] == ('0'-1)){
-[e $ ! == -> *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 295  ]
+[; ;Hora.c: 61:      if(hora[3] == ('0'-1)){
+[e $ ! == -> *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 295  ]
 {
 "62
-[; ;Hora.c: 62:       hora[1] = '9';
-[e = *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 57 `ui `uc ]
+[; ;Hora.c: 62:       hora[3] = '5';
+[e = *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 53 `ui `uc ]
 "63
-[; ;Hora.c: 63:       hora[0]--;
-[e -- *U + &U _hora * -> -> -> 0 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
+[; ;Hora.c: 63:       hora[1]--;
+[e -- *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
 "64
 [; ;Hora.c: 64:      }
 }
 [e :U 295 ]
 "66
-[; ;Hora.c: 66:      if(hora[0] == '0' && hora[1] == '0' && hora[3] == '0' && hora[4] == ('0'-1)){
-[e $ ! && && && == -> *U + &U _hora * -> -> -> 0 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui == -> *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui == -> *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui == -> *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 296  ]
+[; ;Hora.c: 66:      if(hora[1] == ('0'-1)){
+[e $ ! == -> *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui - -> 48 `ui -> -> 1 `i `ui 296  ]
 {
+"67
+[; ;Hora.c: 67:       hora[1] = '9';
+[e = *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 57 `ui `uc ]
 "68
-[; ;Hora.c: 68:      }
+[; ;Hora.c: 68:       hora[0]--;
+[e -- *U + &U _hora * -> -> -> 0 `i `ui `ux -> -> # *U &U _hora `ui `ux -> -> 1 `i `uc ]
+"69
+[; ;Hora.c: 69:      }
 }
 [e :U 296 ]
-"70
-[; ;Hora.c: 70:      segons++;
-[e ++ _segons -> -> 1 `i `uc ]
 "71
-[; ;Hora.c: 71:      if(segons > 59){
-[e $ ! > -> _segons `i -> 59 `i 297  ]
+[; ;Hora.c: 71:      if(hora[0] == '0' && hora[1] == '0' && hora[3] == '0' && hora[4] == ('0')){
+[e $ ! && && && == -> *U + &U _hora * -> -> -> 0 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui == -> *U + &U _hora * -> -> -> 1 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui == -> *U + &U _hora * -> -> -> 3 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui == -> *U + &U _hora * -> -> -> 4 `i `ui `ux -> -> # *U &U _hora `ui `ux `ui -> 48 `ui 297  ]
 {
 "72
-[; ;Hora.c: 72:       playAltaveu();
-[e ( _playAltaveu ..  ]
+[; ;Hora.c: 72:       tempsAcabat = 1;
+[e = _tempsAcabat -> -> 1 `i `b ]
 "73
-[; ;Hora.c: 73:       segons = 0;
-[e = _segons -> -> 0 `i `uc ]
-"74
-[; ;Hora.c: 74:      }
+[; ;Hora.c: 73:      }
 }
 [e :U 297 ]
 "75
-[; ;Hora.c: 75:     }
+[; ;Hora.c: 75:      segons++;
+[e ++ _segons -> -> 1 `i `uc ]
+"76
+[; ;Hora.c: 76:      if(segons > 59){
+[e $ ! > -> _segons `i -> 59 `i 298  ]
+{
+"77
+[; ;Hora.c: 77:       playAltaveu();
+[e ( _playAltaveu ..  ]
+"78
+[; ;Hora.c: 78:       segons = 0;
+[e = _segons -> -> 0 `i `uc ]
+"79
+[; ;Hora.c: 79:      }
+}
+[e :U 298 ]
+"80
+[; ;Hora.c: 80:     }
+}
+[e :U 293 ]
+"81
+[; ;Hora.c: 81:     state = 0;
+[e = F2586 -> -> 0 `i `uc ]
+"82
+[; ;Hora.c: 82:    }
 }
 [e :U 292 ]
-"76
-[; ;Hora.c: 76:     state = 0;
-[e = F2584 -> -> 0 `i `uc ]
-"77
-[; ;Hora.c: 77:    }
+"83
+[; ;Hora.c: 83:   break;
+[e $U 289  ]
+"84
+[; ;Hora.c: 84:  }
 }
-[e :U 291 ]
-"78
-[; ;Hora.c: 78:   break;
-[e $U 288  ]
-"79
-[; ;Hora.c: 79:  }
-}
-[e $U 288  ]
+[e $U 289  ]
+[e :U 290 ]
+[e [\ -> F2586 `i , $ -> 0 `i 291
+ 289 ]
 [e :U 289 ]
-[e [\ -> F2584 `i , $ -> 0 `i 290
- 288 ]
-[e :U 288 ]
-"80
-[; ;Hora.c: 80: }
-[e :UE 287 ]
+"85
+[; ;Hora.c: 85: }
+[e :UE 288 ]
 }

@@ -4748,6 +4748,7 @@ void NoFerMenu(void);
     char* HGetTime(void);
     __bit HNouSegon(void);
     void HClearNouSegon(void);
+    __bit checkHoraAcabat(void);
 # 8 "Menu.c" 2
 
 # 1 "./Joc.h" 1
@@ -5022,7 +5023,7 @@ void menu(void) {
    }
   break;
   case 21:
-   if (NovaTecla == 10 && LcLliure()) {
+   if (NovaTecla == 10 && LcLliure() || checkHoraAcabat()) {
     LcClear();
     JendGame();
     state = 22;

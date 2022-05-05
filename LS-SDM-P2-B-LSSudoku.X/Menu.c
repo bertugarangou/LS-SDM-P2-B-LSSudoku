@@ -268,7 +268,7 @@ void menu(void) {
 			}
 		break;
 		case 21:
-			if (NovaTecla == 10 && LcLliure()) {
+			if (NovaTecla == 10 && LcLliure() || checkHoraAcabat()) {
 				LcClear();
 				JendGame();
 				state = 22;
