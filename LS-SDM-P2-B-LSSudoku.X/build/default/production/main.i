@@ -4691,12 +4691,13 @@ void UenviaPas(char c, char pos);
 void UmotorUsers(void);
 __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
-__bit UcheckExistsGetError(void);
+signed char UcheckExistsGetError(void);
 void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
-
+void UchangeScore(char quin, char score);
+void initPuntuacions(void);
 
 void escriure2usuarisStruct(void);
 # 5 "main.c" 2
@@ -4874,6 +4875,7 @@ void main(void) {
 
     LcInit(2,16);
     Minit();
+
 
     escriure2usuarisStruct();
 

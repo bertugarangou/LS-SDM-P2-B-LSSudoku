@@ -90,6 +90,7 @@ void main(void) {
     
     LcInit(2,16);
     Minit();
+    
     //borrar lo de sota, posa 2 usuaris forçats!
     escriure2usuarisStruct();
     

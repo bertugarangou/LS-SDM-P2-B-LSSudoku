@@ -14,14 +14,13 @@ signed char NovaTecla = -1;
 signed char novaLletra = -1;
 signed char novaDireccio = -1;
 char horaTmp[4];
-
-unsigned char loginText[8] = "1.LOGIN";
-unsigned char registerText[11] = "2.REGISTER";
+signed char arrayMostrarUsuaris[8] = {-1,-1,-1,-1,-1,-1,-1,-1};
 
 char timerMenu;
 __bit loginNOTRegister;
 unsigned char menuDalt = 0;
 signed char indexUsuari;
+unsigned char pos;
 
 void Minit(void){
     timerMenu = TiGetTimer();
@@ -43,13 +42,13 @@ void menu(void) {
 	switch(state) {
 		case 0:
 			LcClear();
-			LcNewString(loginText);
+			LcNewString("1.LOGIN");
 			state = 1;
 		break;
 		case 1:
 			if (LcLliure()) {
 				LcGotoXY(0,1);
-				LcNewString(registerText);
+				LcNewString("2.REGISTER");
 				NovaTecla = -1;
 				state = 2;
 			}
@@ -146,10 +145,7 @@ void menu(void) {
 			}
 		break;
 		case 11:
-            if (1 == 1) {
-				state = 12;
-			}
-			else if (!loginNOTRegister && indexUsuari == -1) {
+			if (!loginNOTRegister && indexUsuari == -1) {
 				URegister();
 				state = 0;
 			}
@@ -159,7 +155,9 @@ void menu(void) {
 			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
 				state = 0;
 			}
-			
+			else if (1 == 1) {
+				state = 12;
+			}
 		break;
 		case 12:
 			LcClear();
@@ -198,6 +196,13 @@ void menu(void) {
 				LcNewString("TIME REMAINING:");
 				JJuguem(indexUsuari);
 				state = 21;
+			}
+			else if (NovaTecla == 11 && menuDalt == 4) {
+				NoFerMenu();
+				LcClear();
+				menuDalt = 0;
+                NovaTecla = -1;
+				state = 23;
 			}
 		break;
 		case 14:
@@ -269,7 +274,7 @@ void menu(void) {
 			}
 		break;
 		case 21:
-			if (NovaTecla == 10 && LcLliure() || checkHoraAcabat()) {
+			if ((NovaTecla == 10 && LcLliure()) || checkHoraAcabat()) {
 				LcClear();
 				JendGame();
 				state = 22;
@@ -288,6 +293,76 @@ void menu(void) {
 		case 22:
 			if (SIOHaAcabatPuntuacions() && NovaTecla == 11) {
 				state = 12;
+			}
+		break;
+		case 23:
+			if (LcLliure()) {
+				if (menuDalt == UgetNumUsuaris()){
+				  menuDalt = 0;
+				}
+				LcGotoXY(0,0);
+				LcNewString(UgetUserName(menuDalt));
+				menuDalt++;
+				state = 24;
+			}
+		break;
+		case 24:
+			if (LcLliure()) {
+				if (menuDalt < UgetNumUsuaris()){
+				  LcGotoXY(0,1);
+				  LcNewString(UgetUserName(menuDalt));
+				  menuDalt++;
+				} else {
+				  menuDalt = 0;
+				}
+				state = 25;
+			}
+		break;
+		case 25:
+			if (LcLliure()) {
+				if (menuDalt == UgetNumUsuaris()){
+				  menuDalt = 0;
+				}
+				LcGotoXY(16,0);
+				LcNewString(UgetUserName(menuDalt));
+				state = 26;
+			}
+		break;
+		case 26:
+			if (LcLliure()) {
+				if (menuDalt+1 < UgetNumUsuaris()){
+				  LcGotoXY(16,1);
+				  LcNewString(UgetUserName(menuDalt+1));
+				}
+				state = 27;
+			}
+		break;
+		case 28:
+			if (TiGetTics(timerMenu) > 1205) {
+				state = 29;
+			}
+			else if (NovaTecla == 11) {
+				menuDalt = 0;
+				state = 12;
+			}
+		break;
+		case 29:
+			if (pos > 15) {
+				LcClear();
+				state = 23;
+			}
+			else if (pos < 16) {
+				TiResetTics(timerMenu);
+				LcScroll();
+				pos++;
+				state = 28;
+			}
+		break;
+		case 27:
+			if (LcLliure()) {
+				TiResetTics(timerMenu);
+				pos = 0;
+				state = 28;
 			}
 		break;
 	}

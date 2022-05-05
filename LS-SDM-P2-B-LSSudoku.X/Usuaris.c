@@ -14,6 +14,9 @@ unsigned char j;
 signed char usuariLoguejat = -1;
 __bit borram;
 
+signed char nouIndex = -1;
+unsigned char novaScore = -1;
+
 char tmpUsername[9];
 char tmpPassword[9];
 
@@ -23,6 +26,26 @@ typedef struct{
     unsigned char scores[5];
 }Usuari;
 Usuari usuaris[8];
+
+typedef struct{
+    signed char indexStruct;
+    unsigned char score;
+}Scores;
+Scores puntuacions[5];
+
+void initPuntuacions(void){
+    puntuacions[0].indexStruct = -1;
+    puntuacions[1].indexStruct = -1;
+    puntuacions[2].indexStruct = -1;
+    puntuacions[3].indexStruct = -1;
+    puntuacions[4].indexStruct = -1;
+}
+
+//funcio que actualitza les millors puntuacions
+void UchangeScore(char quin, char score){
+    novaScore = score;
+    nouIndex = quin;
+}
 
 char* UgetUserName(char quin){
     return usuaris[quin].username;
@@ -37,7 +60,7 @@ void UcheckExists(void){    //començar a comprovar
 __bit UcheckExistsNotFinished(void){    //saber si ha acabat de comprovar
     return do_check_exists;
 }
-__bit UcheckExistsGetError(){//saber si existeix 1 o no 0
+signed char UcheckExistsGetError(){//saber si existeix -1 o ID
     return usuariLoguejat;
 }
 void UenviaChar(char c, char pos){
@@ -114,16 +137,24 @@ void Uinit(){
 //BORRAR A FINAL
 void escriure2usuarisStruct(void){
     //de manera forçada crea dos usuaris
-    usuaris[0].username[0] = 1;
-    usuaris[0].password[0] = 1;
-    usuaris[1].username[0] = '1';
-    usuaris[1].password[0] = '1';
+    usuaris[0].username[0] = '1';
+    usuaris[0].password[0] = '1';
     usuaris[0].username[1] = '\0';
     usuaris[0].password[1] = '\0';
+    
+    usuaris[1].username[0] = 'A';
     usuaris[1].username[1] = '\0';
-    usuaris[1].password[1] = '\0';
-    numUsuaris = 2;
-    indexNextUser = 2;
+    
+    usuaris[2].username[0] = 'D';
+    usuaris[2].username[1] = '\0';
+    
+    usuaris[3].username[0] = 'G';
+    usuaris[3].username[1] = '\0';
+    
+    usuaris[4].username[0] = 'J';
+    usuaris[4].username[1] = '\0';
+    numUsuaris = 5;
+    indexNextUser = 5;
 }
     
 char compareStrings(const char *a, const char *b){
