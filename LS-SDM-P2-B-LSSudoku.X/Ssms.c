@@ -13,7 +13,7 @@ char timerSMS = -1;
 signed char ultimaTecla = -1;
 __bit setSMSon = 0;
 unsigned char zeroTecla;
-char arrayZero[3] = "0 ";
+char arrayZero[3] = {'0',95};
 
 void Sinit(void){
     timerSMS = TiGetTimer();
@@ -47,11 +47,10 @@ void SMotor(void) {
 				MNovaLletra(lletraASCII);
 				if(novaTecla != 0){
 				  lletraASCII = lletraInici[novaTecla-2];
-				  zeroTecla = 0;
 				}else{
 				  lletraASCII = '0';
-				  zeroTecla=0;
 				}
+				zeroTecla=0;
 				ultimaTecla = novaTecla;
 				sumaPulsacions = 0;
 				novaTecla = -1;

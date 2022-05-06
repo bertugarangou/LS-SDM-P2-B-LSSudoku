@@ -38,6 +38,7 @@ void init_ports(void){
     LATBbits.LATB0 = 0;//spk
     LATBbits.LATB1 = 0;//bluetooth tx
     
+    
     //TRISCbits.TRISC7 = 1;
     //TRISCbits.TRISC6 = 1;
     //c5 RS lcd
@@ -95,15 +96,15 @@ void main(void) {
     escriure2usuarisStruct();
     
     while(1){
-        motorJoc();
-        motorSIO();
-        motorHora();
-        JoystickMotor();
+        //motorJoc();
+        //motorSIO();
+        //motorHora();
+        //JoystickMotor();
         menu();
-        CtoA();
-        motorAltaveu();
-        UmotorUsers();
-        GLCDMotor();
+        //CtoA();
+        //motorAltaveu();
+        //UmotorUsers();
+        //GLCDMotor();
         TeTeclat();//antapenultim
         SMotor(); //penultim
         LcLCD();//ultim
