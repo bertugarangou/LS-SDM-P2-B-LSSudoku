@@ -4630,6 +4630,11 @@ void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
 __bit UshowUsersCalculat(void);
+
+unsigned char UgetScore(char quin);
+signed char UgetTop5(char quin);
+__bit UHaAcabatCalcTop5(void);
+void UnewScore(char score);
 # 2 "Usuaris.c" 2
 
 # 1 "./LcTLCD.h" 1
@@ -4714,6 +4719,11 @@ void initPuntuacions(void){
     puntuacions[2].indexStruct = -1;
     puntuacions[3].indexStruct = -1;
     puntuacions[4].indexStruct = -1;
+    puntuacions[0].score = 0;
+    puntuacions[1].score = 0;
+    puntuacions[2].score = 0;
+    puntuacions[3].score = 0;
+    puntuacions[4].score = 0;
 }
 
 
@@ -4830,14 +4840,17 @@ void escriure2usuarisStruct(void){
     usuaris[4].username[0] = 'J';
     usuaris[4].username[1] = '\0';
 
-    usuaris[5].username[0] = 'M';
-    usuaris[5].username[1] = '\0';
+    puntuacions[0].indexStruct = 0;
+    puntuacions[1].indexStruct = 1;
+    puntuacions[2].indexStruct = 2;
+    puntuacions[3].indexStruct = 3;
+    puntuacions[4].indexStruct = 4;
+    puntuacions[0].score = 10;
+    puntuacions[1].score = 11;
+    puntuacions[2].score = 12;
+    puntuacions[3].score = 13;
+    puntuacions[4].score = 14;
 
-    usuaris[6].username[0] = 'P';
-    usuaris[6].username[1] = '\0';
-
-    usuaris[7].username[0] = 'T';
-    usuaris[7].username[1] = '\0';
     numUsuaris = 8;
     indexNextUserStruct = 3;
 }
@@ -4963,6 +4976,41 @@ void UmotorUsers(){
  }
 
 }
+
+unsigned char UgetScore(char quin){
+    return puntuacions[quin].score;
+}
+signed char UgetTop5(char quin){
+    return puntuacions[quin].indexStruct;
+}
+__bit UHaAcabatCalcTop5(void){
+    return do_updateScores;
+}
+
+void UnewScore(char score){
+    if(puntuacions[0].score < score){
+        puntuacions[0].indexStruct = usuariLoguejat;
+    }else{
+        if(puntuacions[1].score < score){
+            puntuacions[1].indexStruct = usuariLoguejat;
+        }else{
+            if(puntuacions[2].score < score){
+                puntuacions[2].indexStruct = usuariLoguejat;
+            }else{
+                if(puntuacions[3].score < score){
+                    puntuacions[3].indexStruct = usuariLoguejat;
+                }else{
+                    if(puntuacions[4].score < score){
+                        puntuacions[4].indexStruct = usuariLoguejat;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
 
 void escriureEEPROM(){
     for(unsigned char caca = 0; caca < 160; caca++){

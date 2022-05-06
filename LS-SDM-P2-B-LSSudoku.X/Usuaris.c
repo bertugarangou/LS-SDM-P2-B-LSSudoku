@@ -40,6 +40,11 @@ void initPuntuacions(void){
     puntuacions[2].indexStruct = -1;
     puntuacions[3].indexStruct = -1;
     puntuacions[4].indexStruct = -1;
+    puntuacions[0].score = 0;
+    puntuacions[1].score = 0;
+    puntuacions[2].score = 0;
+    puntuacions[3].score = 0;
+    puntuacions[4].score = 0;
 }
 
 //funcio que actualitza les millors puntuacions
@@ -293,10 +298,10 @@ void UmotorUsers(){
     
 }
 
-char UgetScore(char quin){
+unsigned char UgetScore(char quin){
     return puntuacions[quin].score;
 }
-char UgetTop5(char quin){
+signed char UgetTop5(char quin){
     return puntuacions[quin].indexStruct;
 }
 __bit UHaAcabatCalcTop5(void){

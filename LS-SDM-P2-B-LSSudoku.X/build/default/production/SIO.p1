@@ -70,6 +70,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71
 [; ;./LcTLCD.h: 71: void LcNewString(char new_s[]);
 [v _LcNewString `(v ~T0 @X0 0 ef1`*uc ]
+"27 ./Usuaris.h
+[; ;./Usuaris.h: 27: void UnewScore(char score);
+[v _UnewScore `(v ~T0 @X0 0 ef1`uc ]
 "5 ./CtoA.h
 [; ;./CtoA.h: 5: void CToAConverteix(unsigned char numero);
 [v _CToAConverteix `(v ~T0 @X0 0 ef1`uc ]
@@ -530,29 +533,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "12
-[; ;SIO.c: 12: unsigned char rebut;
-[v _rebut `uc ~T0 @X0 1 e ]
-"13
-[; ;SIO.c: 13: signed char novaTeclaSIO = -1;
+[; ;SIO.c: 12: signed char novaTeclaSIO = -1;
 [v _novaTeclaSIO `c ~T0 @X0 1 e ]
 [i _novaTeclaSIO
 -> -U -> 1 `i `c
 ]
-"14
-[; ;SIO.c: 14: __bit jugantSIO = 0;
+"13
+[; ;SIO.c: 13: __bit jugantSIO = 0;
 [v _jugantSIO `b ~T0 @X0 1 e ]
 [i _jugantSIO
 -> -> 0 `i `b
 ]
-"15
-[; ;SIO.c: 15: __bit Krebut = 0;
+"14
+[; ;SIO.c: 14: __bit Krebut = 0;
 [v _Krebut `b ~T0 @X0 1 e ]
 [i _Krebut
 -> -> 0 `i `b
 ]
-"16
-[; ;SIO.c: 16: char timerSIO;
+"15
+[; ;SIO.c: 15: char timerSIO;
 [v _timerSIO `uc ~T0 @X0 1 e ]
+"16
+[; ;SIO.c: 16: char score;
+[v _score `uc ~T0 @X0 1 e ]
 "18
 [; ;SIO.c: 18: void initSIO(void){
 [v _initSIO `(v ~T0 @X0 1 ef ]
@@ -657,8 +660,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "43
 [; ;SIO.c: 43:     static char state = 0;
-[v F2663 `uc ~T0 @X0 1 s state ]
-[i F2663
+[v F2670 `uc ~T0 @X0 1 s state ]
+[i F2670
 -> -> 0 `i `uc
 ]
 "45
@@ -683,7 +686,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Krebut -> -> 0 `i `b ]
 "51
 [; ;SIO.c: 51:     state = 1;
-[e = F2663 -> -> 1 `i `uc ]
+[e = F2670 -> -> 1 `i `uc ]
 "52
 [; ;SIO.c: 52:    }
 }
@@ -709,7 +712,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 "59
 [; ;SIO.c: 59:     state = 2;
-[e = F2663 -> -> 2 `i `uc ]
+[e = F2670 -> -> 2 `i `uc ]
 "60
 [; ;SIO.c: 60:    }
 }
@@ -745,7 +748,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Krebut -> -> 1 `i `b ]
 "69
 [; ;SIO.c: 69:     state = 3;
-[e = F2663 -> -> 3 `i `uc ]
+[e = F2670 -> -> 3 `i `uc ]
 "70
 [; ;SIO.c: 70:    }
 }
@@ -768,7 +771,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _direccioSIO -> -U -> 1 `i `c ]
 "76
 [; ;SIO.c: 76:     state = 3;
-[e = F2663 -> -> 3 `i `uc ]
+[e = F2670 -> -> 3 `i `uc ]
 "77
 [; ;SIO.c: 77:    }
 }
@@ -786,7 +789,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTeclaSIO -> -> 0 `i `c ]
 "81
 [; ;SIO.c: 81:     state = 3;
-[e = F2663 -> -> 3 `i `uc ]
+[e = F2670 -> -> 3 `i `uc ]
 "82
 [; ;SIO.c: 82:    }
 }
@@ -810,7 +813,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTeclaSIO -> -> 0 `i `c ]
 "88
 [; ;SIO.c: 88:     state = 4;
-[e = F2663 -> -> 4 `i `uc ]
+[e = F2670 -> -> 4 `i `uc ]
 "89
 [; ;SIO.c: 89:    }
 }
@@ -828,158 +831,164 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 305  ]
 {
 "93
-[; ;SIO.c: 93:     CToAConverteix(RCREG);
-[e ( _CToAConverteix (1 _RCREG ]
+[; ;SIO.c: 93:                 score = RCREG;
+[e = _score -> _RCREG `uc ]
 "94
-[; ;SIO.c: 94:     TiResetTics(timerSIO);
-[e ( _TiResetTics (1 _timerSIO ]
+[; ;SIO.c: 94:                 UnewScore(score);
+[e ( _UnewScore (1 _score ]
 "95
-[; ;SIO.c: 95:     state = 5;
-[e = F2663 -> -> 5 `i `uc ]
+[; ;SIO.c: 95:     CToAConverteix(score);
+[e ( _CToAConverteix (1 -> _score `uc ]
 "96
-[; ;SIO.c: 96:    }
+[; ;SIO.c: 96:     TiResetTics(timerSIO);
+[e ( _TiResetTics (1 _timerSIO ]
+"97
+[; ;SIO.c: 97:     state = 5;
+[e = F2670 -> -> 5 `i `uc ]
+"98
+[; ;SIO.c: 98:    }
 }
 [e :U 305 ]
-"97
-[; ;SIO.c: 97:   break;
-[e $U 288  ]
-"98
-[; ;SIO.c: 98:   case 5:
-[e :U 306 ]
 "99
-[; ;SIO.c: 99:    if (TiGetTics(timerSIO) > 2490) {
+[; ;SIO.c: 99:   break;
+[e $U 288  ]
+"100
+[; ;SIO.c: 100:   case 5:
+[e :U 306 ]
+"101
+[; ;SIO.c: 101:    if (TiGetTics(timerSIO) > 2490) {
 [e $ ! > ( _TiGetTics (1 _timerSIO -> 2490 `i 307  ]
 {
-"100
-[; ;SIO.c: 100:     LcClear();
-[e ( _LcClear ..  ]
-"101
-[; ;SIO.c: 101:     LcNewString("TIME LEFT: ");
-[e ( _LcNewString (1 :s 2C ]
 "102
-[; ;SIO.c: 102:     state = 7;
-[e = F2663 -> -> 7 `i `uc ]
+[; ;SIO.c: 102:     LcClear();
+[e ( _LcClear ..  ]
 "103
-[; ;SIO.c: 103:    }
+[; ;SIO.c: 103:     LcNewString("TIME LEFT: ");
+[e ( _LcNewString (1 :s 2C ]
+"104
+[; ;SIO.c: 104:     state = 7;
+[e = F2670 -> -> 7 `i `uc ]
+"105
+[; ;SIO.c: 105:    }
 }
 [e $U 308  ]
-"104
-[; ;SIO.c: 104:    else if (TiGetTics(timerSIO) < 2490 && PIR1bits.RCIF && LcLliure()) {
+"106
+[; ;SIO.c: 106:    else if (TiGetTics(timerSIO) < 2490 && PIR1bits.RCIF && LcLliure()) {
 [e :U 307 ]
 [e $ ! && && < ( _TiGetTics (1 _timerSIO -> 2490 `i != -> . . _PIR1bits 0 5 `i -> 0 `i ( _LcLliure ..  309  ]
 {
-"105
-[; ;SIO.c: 105:     LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"106
-[; ;SIO.c: 106:     LcPutChar(RCREG);
-[e ( _LcPutChar (1 -> _RCREG `uc ]
 "107
-[; ;SIO.c: 107:     state = 6;
-[e = F2663 -> -> 6 `i `uc ]
+[; ;SIO.c: 107:     LcGotoXY(0,1);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "108
-[; ;SIO.c: 108:    }
+[; ;SIO.c: 108:     LcPutChar(RCREG);
+[e ( _LcPutChar (1 -> _RCREG `uc ]
+"109
+[; ;SIO.c: 109:     state = 6;
+[e = F2670 -> -> 6 `i `uc ]
+"110
+[; ;SIO.c: 110:    }
 }
 [e :U 309 ]
 [e :U 308 ]
-"109
-[; ;SIO.c: 109:   break;
-[e $U 288  ]
-"110
-[; ;SIO.c: 110:   case 7:
-[e :U 310 ]
 "111
-[; ;SIO.c: 111:    if (LcLliure()) {
+[; ;SIO.c: 111:   break;
+[e $U 288  ]
+"112
+[; ;SIO.c: 112:   case 7:
+[e :U 310 ]
+"113
+[; ;SIO.c: 113:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  311  ]
 {
-"112
-[; ;SIO.c: 112:     LcNewString(HGetTime());
-[e ( _LcNewString (1 ( _HGetTime ..  ]
-"113
-[; ;SIO.c: 113:     state = 8;
-[e = F2663 -> -> 8 `i `uc ]
 "114
-[; ;SIO.c: 114:    }
+[; ;SIO.c: 114:     LcNewString(HGetTime());
+[e ( _LcNewString (1 ( _HGetTime ..  ]
+"115
+[; ;SIO.c: 115:     state = 8;
+[e = F2670 -> -> 8 `i `uc ]
+"116
+[; ;SIO.c: 116:    }
 }
 [e :U 311 ]
-"115
-[; ;SIO.c: 115:   break;
-[e $U 288  ]
-"116
-[; ;SIO.c: 116:   case 6:
-[e :U 312 ]
 "117
-[; ;SIO.c: 117:    if (PIR1bits.RCIF) {
+[; ;SIO.c: 117:   break;
+[e $U 288  ]
+"118
+[; ;SIO.c: 118:   case 6:
+[e :U 312 ]
+"119
+[; ;SIO.c: 119:    if (PIR1bits.RCIF) {
 [e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 313  ]
 {
-"118
-[; ;SIO.c: 118:     LcPutChar(RCREG);
-[e ( _LcPutChar (1 -> _RCREG `uc ]
-"119
-[; ;SIO.c: 119:                 TiResetTics(timerSIO);
-[e ( _TiResetTics (1 _timerSIO ]
 "120
-[; ;SIO.c: 120:     state = 5;
-[e = F2663 -> -> 5 `i `uc ]
+[; ;SIO.c: 120:     LcPutChar(RCREG);
+[e ( _LcPutChar (1 -> _RCREG `uc ]
 "121
-[; ;SIO.c: 121:    }
+[; ;SIO.c: 121:                 TiResetTics(timerSIO);
+[e ( _TiResetTics (1 _timerSIO ]
+"122
+[; ;SIO.c: 122:     state = 5;
+[e = F2670 -> -> 5 `i `uc ]
+"123
+[; ;SIO.c: 123:    }
 }
 [e :U 313 ]
-"122
-[; ;SIO.c: 122:   break;
-[e $U 288  ]
-"123
-[; ;SIO.c: 123:   case 8:
-[e :U 314 ]
 "124
-[; ;SIO.c: 124:    if (LcLliure()) {
+[; ;SIO.c: 124:   break;
+[e $U 288  ]
+"125
+[; ;SIO.c: 125:   case 8:
+[e :U 314 ]
+"126
+[; ;SIO.c: 126:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  315  ]
 {
-"125
-[; ;SIO.c: 125:     LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"126
-[; ;SIO.c: 126:     LcNewString("SCORE: ");
-[e ( _LcNewString (1 :s 3C ]
 "127
-[; ;SIO.c: 127:     state = 9;
-[e = F2663 -> -> 9 `i `uc ]
+[; ;SIO.c: 127:     LcGotoXY(0,1);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "128
-[; ;SIO.c: 128:    }
+[; ;SIO.c: 128:     LcNewString("SCORE: ");
+[e ( _LcNewString (1 :s 3C ]
+"129
+[; ;SIO.c: 129:     state = 9;
+[e = F2670 -> -> 9 `i `uc ]
+"130
+[; ;SIO.c: 130:    }
 }
 [e :U 315 ]
-"129
-[; ;SIO.c: 129:   break;
-[e $U 288  ]
-"130
-[; ;SIO.c: 130:   case 9:
-[e :U 316 ]
 "131
-[; ;SIO.c: 131:    if (LcLliure() && CToAHaAcabat() == 250) {
+[; ;SIO.c: 131:   break;
+[e $U 288  ]
+"132
+[; ;SIO.c: 132:   case 9:
+[e :U 316 ]
+"133
+[; ;SIO.c: 133:    if (LcLliure() && CToAHaAcabat() == 250) {
 [e $ ! && ( _LcLliure ..  == -> ( _CToAHaAcabat ..  `i -> 250 `i 317  ]
 {
-"132
-[; ;SIO.c: 132:     LcNewString(CToAobtenir());
-[e ( _LcNewString (1 ( _CToAobtenir ..  ]
-"133
-[; ;SIO.c: 133:     usuariActualSIO = -1;
-[e = _usuariActualSIO -> -U -> 1 `i `c ]
 "134
-[; ;SIO.c: 134:     state = 0;
-[e = F2663 -> -> 0 `i `uc ]
+[; ;SIO.c: 134:     LcNewString(CToAobtenir());
+[e ( _LcNewString (1 ( _CToAobtenir ..  ]
 "135
-[; ;SIO.c: 135:    }
+[; ;SIO.c: 135:     usuariActualSIO = -1;
+[e = _usuariActualSIO -> -U -> 1 `i `c ]
+"136
+[; ;SIO.c: 136:     state = 0;
+[e = F2670 -> -> 0 `i `uc ]
+"137
+[; ;SIO.c: 137:    }
 }
 [e :U 317 ]
-"136
-[; ;SIO.c: 136:   break;
+"138
+[; ;SIO.c: 138:   break;
 [e $U 288  ]
-"137
-[; ;SIO.c: 137:  }
+"139
+[; ;SIO.c: 139:  }
 }
 [e $U 288  ]
 [e :U 289 ]
-[e [\ -> F2663 `i , $ -> 0 `i 290
+[e [\ -> F2670 `i , $ -> 0 `i 290
  , $ -> 1 `i 292
  , $ -> 2 `i 296
  , $ -> 3 `i 298
@@ -991,8 +1000,8 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 9 `i 316
  288 ]
 [e :U 288 ]
-"138
-[; ;SIO.c: 138: }
+"140
+[; ;SIO.c: 140: }
 [e :UE 287 ]
 }
 [a 1C 69 82 82 79 82 83 58 0 ]

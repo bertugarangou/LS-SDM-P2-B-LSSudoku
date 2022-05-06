@@ -4643,6 +4643,11 @@ void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
 __bit UshowUsersCalculat(void);
+
+unsigned char UgetScore(char quin);
+signed char UgetTop5(char quin);
+__bit UHaAcabatCalcTop5(void);
+void UnewScore(char score);
 # 3 "SIO.c" 2
 
 # 1 "./TiTTimer.h" 1
@@ -4749,11 +4754,11 @@ void LcInsertFletxa(void);
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
 signed char direccioSIO = -1;
-unsigned char rebut;
 signed char novaTeclaSIO = -1;
 __bit jugantSIO = 0;
 __bit Krebut = 0;
 char timerSIO;
+char score;
 
 void initSIO(void){
     timerSIO = TiGetTimer();
@@ -4830,7 +4835,9 @@ void motorSIO(void){
   break;
   case 4:
    if (PIR1bits.RCIF) {
-    CToAConverteix(RCREG);
+                score = RCREG;
+                UnewScore(score);
+    CToAConverteix(score);
     TiResetTics(timerSIO);
     state = 5;
    }
