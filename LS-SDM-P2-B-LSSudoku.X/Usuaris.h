@@ -16,6 +16,8 @@ void URegister(void);
 char* UgetUserName(char quin);
 void UchangeScore(char quin, char score);
 void initPuntuacions(void);
-
+void calculateShowUsers(void);
+char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
+__bit UshowUsersCalculat(void);
 #endif

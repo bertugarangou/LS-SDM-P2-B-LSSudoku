@@ -145,7 +145,10 @@ void menu(void) {
 			}
 		break;
 		case 11:
-			if (!loginNOTRegister && indexUsuari == -1) {
+            if (1 == 1) {
+				state = 12;
+			}
+			else if (!loginNOTRegister && indexUsuari == -1) {
 				URegister();
 				state = 0;
 			}
@@ -155,9 +158,7 @@ void menu(void) {
 			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
 				state = 0;
 			}
-			else if (1 == 1) {
-				state = 12;
-			}
+			
 		break;
 		case 12:
 			LcClear();
@@ -201,8 +202,9 @@ void menu(void) {
 				NoFerMenu();
 				LcClear();
 				menuDalt = 0;
-                NovaTecla = -1;
-				state = 23;
+				NovaTecla = -1;
+				calculateShowUsers();
+				state = 30;
 			}
 		break;
 		case 14:
@@ -301,7 +303,7 @@ void menu(void) {
 				  menuDalt = 0;
 				}
 				LcGotoXY(0,0);
-				LcNewString(UgetUserName(menuDalt));
+				LcNewString(getArrayShowUsers(menuDalt));
 				menuDalt++;
 				state = 24;
 			}
@@ -310,7 +312,7 @@ void menu(void) {
 			if (LcLliure()) {
 				if (menuDalt < UgetNumUsuaris()){
 				  LcGotoXY(0,1);
-				  LcNewString(UgetUserName(menuDalt));
+				  LcNewString(getArrayShowUsers(menuDalt));
 				  menuDalt++;
 				} else {
 				  menuDalt = 0;
@@ -324,7 +326,7 @@ void menu(void) {
 				  menuDalt = 0;
 				}
 				LcGotoXY(16,0);
-				LcNewString(UgetUserName(menuDalt));
+				LcNewString(getArrayShowUsers(menuDalt));
 				state = 26;
 			}
 		break;
@@ -332,13 +334,13 @@ void menu(void) {
 			if (LcLliure()) {
 				if (menuDalt+1 < UgetNumUsuaris()){
 				  LcGotoXY(16,1);
-				  LcNewString(UgetUserName(menuDalt+1));
+				  LcNewString(getArrayShowUsers(menuDalt+1));
 				}
 				state = 27;
 			}
 		break;
 		case 28:
-			if (TiGetTics(timerMenu) > 1205) {
+			if (TiGetTics(timerMenu) > 400) {
 				state = 29;
 			}
 			else if (NovaTecla == 11) {
@@ -363,6 +365,11 @@ void menu(void) {
 				TiResetTics(timerMenu);
 				pos = 0;
 				state = 28;
+			}
+		break;
+		case 30:
+			if (UshowUsersCalculat()) {
+				state = 23;
 			}
 		break;
 	}

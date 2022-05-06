@@ -11,9 +11,12 @@ unsigned char i;
 unsigned char j;
 signed char usuariLoguejat = -1;
 __bit borram;
-
+__bit do_showUsers = 0;
+__bit do_updateScores = 0;
 signed char nouIndex = -1;
 unsigned char novaScore = -1;
+
+signed char arrayShowUsers[8];
 
 char tmpUsername[9];
 char tmpPassword[9];
@@ -45,9 +48,7 @@ void UchangeScore(char quin, char score){
     nouIndex = quin;
 }
 
-char* UgetUserName(char quin){
-    return usuaris[quin].username;
-}
+
 char UgetNumUsuaris(void){
     return numUsuaris;
 }
@@ -67,13 +68,18 @@ void UenviaChar(char c, char pos){
 void UenviaPas(char c, char pos){
     tmpPassword[pos] = c;
 }
-/*
-__bit URegisterEnded(void){
-    return do_register;
-}
-*/
+
 void URegister(void){
     do_register = 1;
+}
+
+char* UgetUserName(char quin){
+    return usuaris[quin].username;
+}
+
+char* getArrayShowUsers(char quin){
+    
+    return usuaris[arrayShowUsers[quin]].username;
 }
 void escriureCharEEPROM(char c, char pos){
     EEADR = pos;
@@ -136,9 +142,7 @@ void Uinit(){
 void escriure2usuarisStruct(void){
     //de manera forçada crea dos usuaris
     usuaris[0].username[0] = '1';
-    usuaris[0].password[0] = '1';
     usuaris[0].username[1] = '\0';
-    usuaris[0].password[1] = '\0';
     
     usuaris[1].username[0] = 'A';
     usuaris[1].username[1] = '\0';
@@ -151,8 +155,17 @@ void escriure2usuarisStruct(void){
     
     usuaris[4].username[0] = 'J';
     usuaris[4].username[1] = '\0';
-    numUsuaris = 5;
-    indexNextUser = 5;
+    
+    usuaris[5].username[0] = 'M';
+    usuaris[5].username[1] = '\0';
+    
+    usuaris[6].username[0] = 'P';
+    usuaris[6].username[1] = '\0';
+    
+    usuaris[7].username[0] = 'T';
+    usuaris[7].username[1] = '\0';
+    numUsuaris = 8;
+    indexNextUserStruct = 3;
 }
     
 char compareStrings(const char *a, const char *b){
@@ -164,13 +177,19 @@ char compareStrings(const char *a, const char *b){
     return *(const unsigned char*)a - *(const unsigned char*)b;
 }
 
+void calculateShowUsers(void){
+    do_showUsers = 1;
+}
+__bit UshowUsersCalculat(void){
+    return !do_showUsers;
+}
 
 void UmotorUsers(){
-static char state = 0;
+    static char state = 0;
 
 	switch(state) {
 		case 0:
-			if (!do_check_exists && !do_register) {
+			if (!do_check_exists && !do_register && !do_updateScores && !do_showUsers) {
 				i = 0;
 				j = 0;
 			}
@@ -181,15 +200,32 @@ static char state = 0;
 			else if (do_register == 1) {
 				state = 2;
 			}
+			else if (do_updateScores) {
+				state = 4;
+			}
+			else if (do_showUsers) {
+				arrayShowUsers[0] = usuariLoguejat;
+				arrayShowUsers[1] = -1;
+				arrayShowUsers[2] = -1;
+				arrayShowUsers[3] = -1;
+				arrayShowUsers[4] = -1;
+				arrayShowUsers[5] = -1;
+				arrayShowUsers[6] = -1;
+				arrayShowUsers[7] = -1;
+				i = 1;
+				if(numUsuaris < 7) {
+				  j = 0;
+				}
+				else{
+				  j = indexNextUserStruct;
+				}
+				state = 5;
+			}
 		break;
 		case 1:
-            
 			if (i < numUsuaris) {
 				if(compareStrings(tmpUsername, usuaris[i].username) == 0){
 					usuariLoguejat = i;
-                    LATBbits.LATB3 = 1;
-                    
-                    
 				//si son iguals;
 				}
 				i++;
@@ -201,7 +237,6 @@ static char state = 0;
 			}
 		break;
 		case 2:
-            
 			if (i != 8) {
 				escriureCharEEPROM(tmpUsername[i],indexNextUser++);
 				usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
@@ -227,6 +262,27 @@ static char state = 0;
 				indexNextUserStruct++;
 				if(indexNextUserStruct == 8) indexNextUserStruct = 0;
 				if(numUsuaris != 8) numUsuaris++;
+				state = 0;
+			}
+		break;
+		case 4:
+
+		break;
+		case 5:
+			if (i < numUsuaris) {
+				if(j != usuariLoguejat){
+				  arrayShowUsers[i] = j;
+					i++;
+                    j++;
+				}else{
+                    j++;
+                }
+				
+				if(j > 7) j=0;
+				state = 5;
+			}
+			else if (i == numUsuaris) {
+				do_showUsers = 0;
 				state = 0;
 			}
 		break;

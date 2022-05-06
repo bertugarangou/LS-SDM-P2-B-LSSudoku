@@ -4639,8 +4639,10 @@ void URegister(void);
 char* UgetUserName(char quin);
 void UchangeScore(char quin, char score);
 void initPuntuacions(void);
-
+void calculateShowUsers(void);
+char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
+__bit UshowUsersCalculat(void);
 # 3 "SIO.c" 2
 
 # 1 "./TiTTimer.h" 1
@@ -4680,6 +4682,7 @@ void CtoA(void);
 void CToAConverteix(unsigned char numero);
 char* CToAobtenir(void);
 char CToAHaAcabat(void);
+void CToAReset(void);
 # 5 "SIO.c" 2
 
 # 1 "./Hora.h" 1

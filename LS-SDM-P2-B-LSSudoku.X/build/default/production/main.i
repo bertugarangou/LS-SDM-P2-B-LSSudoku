@@ -4698,8 +4698,10 @@ void URegister(void);
 char* UgetUserName(char quin);
 void UchangeScore(char quin, char score);
 void initPuntuacions(void);
-
+void calculateShowUsers(void);
+char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
+__bit UshowUsersCalculat(void);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1
@@ -4812,6 +4814,7 @@ void CtoA(void);
 void CToAConverteix(unsigned char numero);
 char* CToAobtenir(void);
 char CToAHaAcabat(void);
+void CToAReset(void);
 # 15 "main.c" 2
 
 

@@ -11,15 +11,14 @@ char CToAHaAcabat(void){
     return convertir;
 }
 
-void CToAReset(void){
-    stringScore[0] = '0';
-    stringScore[1] = '0';
-}
 void CToAConverteix(unsigned char numero){
     CToAReset();
     convertir = numero;
 }
-
+void CToAReset(void){
+    stringScore[0] = '0';
+    stringScore[1] = '0';
+}
 void CtoA(void) {
     if (convertir != 250) {
         if (convertir != 0){

@@ -56,7 +56,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 ./Joc.h
 [; ;./Joc.h: 4: void JJuguem(char usuari);
 [v _JJuguem `(v ~T0 @X0 0 ef1`uc ]
-"16 ./Usuaris.h
+"19 ./Usuaris.h
+[; ;./Usuaris.h: 19: void calculateShowUsers(void);
+[v _calculateShowUsers `(v ~T0 @X0 0 ef ]
+"16
 [; ;./Usuaris.h: 16: char* UgetUserName(char quin);
 [v _UgetUserName `(*uc ~T0 @X0 0 ef1`uc ]
 "8 ./TiTTimer.h
@@ -83,9 +86,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5 ./SIO.h
 [; ;./SIO.h: 5: signed char SIOHaAcabatPuntuacions(void);
 [v _SIOHaAcabatPuntuacions `(c ~T0 @X0 0 ef ]
+"20 ./Usuaris.h
+[; ;./Usuaris.h: 20: char* getArrayShowUsers(char quin);
+[v _getArrayShowUsers `(*uc ~T0 @X0 0 ef1`uc ]
 "38 ./LcTLCD.h
 [; ;./LcTLCD.h: 38: void LcScroll(void);
 [v _LcScroll `(v ~T0 @X0 0 ef ]
+"22 ./Usuaris.h
+[; ;./Usuaris.h: 22: __bit UshowUsersCalculat(void);
+[v _UshowUsersCalculat `(b ~T0 @X0 0 ef ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -623,8 +632,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "40
 [; ;Menu.c: 40:  static char state = 0;
-[v F2682 `uc ~T0 @X0 1 s state ]
-[i F2682
+[v F2686 `uc ~T0 @X0 1 s state ]
+[i F2686
 -> -> 0 `i `uc
 ]
 "42
@@ -642,7 +651,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 1C ]
 "46
 [; ;Menu.c: 46:    state = 1;
-[e = F2682 -> -> 1 `i `uc ]
+[e = F2686 -> -> 1 `i `uc ]
 "47
 [; ;Menu.c: 47:   break;
 [e $U 285  ]
@@ -664,7 +673,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _NovaTecla -> -U -> 1 `i `c ]
 "53
 [; ;Menu.c: 53:     state = 2;
-[e = F2682 -> -> 2 `i `uc ]
+[e = F2686 -> -> 2 `i `uc ]
 "54
 [; ;Menu.c: 54:    }
 }
@@ -684,7 +693,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _loginNOTRegister -> -> 1 `i `b ]
 "59
 [; ;Menu.c: 59:     state = 3;
-[e = F2682 -> -> 3 `i `uc ]
+[e = F2686 -> -> 3 `i `uc ]
 "60
 [; ;Menu.c: 60:    }
 }
@@ -699,7 +708,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _loginNOTRegister -> -> 0 `i `b ]
 "63
 [; ;Menu.c: 63:     state = 3;
-[e = F2682 -> -> 3 `i `uc ]
+[e = F2686 -> -> 3 `i `uc ]
 "64
 [; ;Menu.c: 64:    }
 }
@@ -725,7 +734,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 3C ]
 "71
 [; ;Menu.c: 71:    state = 4;
-[e = F2682 -> -> 4 `i `uc ]
+[e = F2686 -> -> 4 `i `uc ]
 "72
 [; ;Menu.c: 72:   break;
 [e $U 285  ]
@@ -744,7 +753,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 4C ]
 "77
 [; ;Menu.c: 77:     state = 5;
-[e = F2682 -> -> 5 `i `uc ]
+[e = F2686 -> -> 5 `i `uc ]
 "78
 [; ;Menu.c: 78:    }
 }
@@ -770,7 +779,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tmp -> -> 0 `i `uc ]
 "85
 [; ;Menu.c: 85:     state = 6;
-[e = F2682 -> -> 6 `i `uc ]
+[e = F2686 -> -> 6 `i `uc ]
 "86
 [; ;Menu.c: 86:    }
 }
@@ -793,7 +802,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UenviaChar (2 , -> _novaLletra `uc -> _tmp `uc ]
 "92
 [; ;Menu.c: 92:     state = 7;
-[e = F2682 -> -> 7 `i `uc ]
+[e = F2686 -> -> 7 `i `uc ]
 "93
 [; ;Menu.c: 93:    }
 }
@@ -805,7 +814,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "95
 [; ;Menu.c: 95:     state = 7;
-[e = F2682 -> -> 7 `i `uc ]
+[e = F2686 -> -> 7 `i `uc ]
 "96
 [; ;Menu.c: 96:    }
 }
@@ -832,7 +841,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaLletra -> -U -> 1 `i `c ]
 "103
 [; ;Menu.c: 103:     state = 6;
-[e = F2682 -> -> 6 `i `uc ]
+[e = F2686 -> -> 6 `i `uc ]
 "104
 [; ;Menu.c: 104:    }
 }
@@ -859,7 +868,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tmp -> -> 0 `i `uc ]
 "111
 [; ;Menu.c: 111:     state = 8;
-[e = F2682 -> -> 8 `i `uc ]
+[e = F2686 -> -> 8 `i `uc ]
 "112
 [; ;Menu.c: 112:    }
 }
@@ -883,7 +892,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UenviaPas (2 , -> _novaLletra `uc -> _tmp `uc ]
 "118
 [; ;Menu.c: 118:     state = 9;
-[e = F2682 -> -> 9 `i `uc ]
+[e = F2686 -> -> 9 `i `uc ]
 "119
 [; ;Menu.c: 119:    }
 }
@@ -895,7 +904,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "121
 [; ;Menu.c: 121:     state = 9;
-[e = F2682 -> -> 9 `i `uc ]
+[e = F2686 -> -> 9 `i `uc ]
 "122
 [; ;Menu.c: 122:    }
 }
@@ -922,7 +931,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaLletra -> -U -> 1 `i `c ]
 "129
 [; ;Menu.c: 129:     state = 8;
-[e = F2682 -> -> 8 `i `uc ]
+[e = F2686 -> -> 8 `i `uc ]
 "130
 [; ;Menu.c: 130:    }
 }
@@ -952,7 +961,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SMSoff ..  ]
 "138
 [; ;Menu.c: 138:     state = 10;
-[e = F2682 -> -> 10 `i `uc ]
+[e = F2686 -> -> 10 `i `uc ]
 "139
 [; ;Menu.c: 139:    }
 }
@@ -973,7 +982,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _indexUsuari ( _UcheckExistsGetError ..  ]
 "144
 [; ;Menu.c: 144:     state = 11;
-[e = F2682 -> -> 11 `i `uc ]
+[e = F2686 -> -> 11 `i `uc ]
 "145
 [; ;Menu.c: 145:    }
 }
@@ -985,51 +994,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 147:   case 11:
 [e :U 317 ]
 "148
-[; ;Menu.c: 148:    if (!loginNOTRegister && indexUsuari == -1) {
-[e $ ! && ! _loginNOTRegister == -> _indexUsuari `i -U -> 1 `i 318  ]
+[; ;Menu.c: 148:             if (1 == 1) {
+[e $ ! == -> 1 `i -> 1 `i 318  ]
 {
 "149
-[; ;Menu.c: 149:     URegister();
-[e ( _URegister ..  ]
+[; ;Menu.c: 149:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
 "150
-[; ;Menu.c: 150:     state = 0;
-[e = F2682 -> -> 0 `i `uc ]
-"151
-[; ;Menu.c: 151:    }
+[; ;Menu.c: 150:    }
 }
 [e $U 319  ]
-"152
-[; ;Menu.c: 152:    else if (loginNOTRegister == 1 && indexUsuari > -1) {
+"151
+[; ;Menu.c: 151:    else if (!loginNOTRegister && indexUsuari == -1) {
 [e :U 318 ]
-[e $ ! && == -> _loginNOTRegister `i -> 1 `i > -> _indexUsuari `i -U -> 1 `i 320  ]
+[e $ ! && ! _loginNOTRegister == -> _indexUsuari `i -U -> 1 `i 320  ]
 {
+"152
+[; ;Menu.c: 152:     URegister();
+[e ( _URegister ..  ]
 "153
-[; ;Menu.c: 153:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
+[; ;Menu.c: 153:     state = 0;
+[e = F2686 -> -> 0 `i `uc ]
 "154
 [; ;Menu.c: 154:    }
 }
 [e $U 321  ]
 "155
-[; ;Menu.c: 155:    else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
+[; ;Menu.c: 155:    else if (loginNOTRegister == 1 && indexUsuari > -1) {
 [e :U 320 ]
-[e $ ! || && _loginNOTRegister == -> _indexUsuari `i -U -> 1 `i && ! _loginNOTRegister > -> _indexUsuari `i -U -> 1 `i 322  ]
+[e $ ! && == -> _loginNOTRegister `i -> 1 `i > -> _indexUsuari `i -U -> 1 `i 322  ]
 {
 "156
-[; ;Menu.c: 156:     state = 0;
-[e = F2682 -> -> 0 `i `uc ]
+[; ;Menu.c: 156:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
 "157
 [; ;Menu.c: 157:    }
 }
 [e $U 323  ]
 "158
-[; ;Menu.c: 158:    else if (1 == 1) {
+[; ;Menu.c: 158:    else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
 [e :U 322 ]
-[e $ ! == -> 1 `i -> 1 `i 324  ]
+[e $ ! || && _loginNOTRegister == -> _indexUsuari `i -U -> 1 `i && ! _loginNOTRegister > -> _indexUsuari `i -U -> 1 `i 324  ]
 {
 "159
-[; ;Menu.c: 159:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
+[; ;Menu.c: 159:     state = 0;
+[e = F2686 -> -> 0 `i `uc ]
 "160
 [; ;Menu.c: 160:    }
 }
@@ -1037,163 +1046,166 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 323 ]
 [e :U 321 ]
 [e :U 319 ]
-"161
-[; ;Menu.c: 161:   break;
-[e $U 285  ]
 "162
-[; ;Menu.c: 162:   case 12:
-[e :U 325 ]
-"163
-[; ;Menu.c: 163:    LcClear();
-[e ( _LcClear ..  ]
-"164
-[; ;Menu.c: 164:    SiFerMenu();
-[e ( _SiFerMenu ..  ]
-"165
-[; ;Menu.c: 165:    GLCDMostraMenu(menuDalt);
-[e ( _GLCDMostraMenu (1 _menuDalt ]
-"166
-[; ;Menu.c: 166:    novaDireccio = -1;
-[e = _novaDireccio -> -U -> 1 `i `c ]
-"167
-[; ;Menu.c: 167:    NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
-"168
-[; ;Menu.c: 168:    state = 13;
-[e = F2682 -> -> 13 `i `uc ]
-"169
-[; ;Menu.c: 169:   break;
+[; ;Menu.c: 162:   break;
 [e $U 285  ]
+"163
+[; ;Menu.c: 163:   case 12:
+[e :U 325 ]
+"164
+[; ;Menu.c: 164:    LcClear();
+[e ( _LcClear ..  ]
+"165
+[; ;Menu.c: 165:    SiFerMenu();
+[e ( _SiFerMenu ..  ]
+"166
+[; ;Menu.c: 166:    GLCDMostraMenu(menuDalt);
+[e ( _GLCDMostraMenu (1 _menuDalt ]
+"167
+[; ;Menu.c: 167:    novaDireccio = -1;
+[e = _novaDireccio -> -U -> 1 `i `c ]
+"168
+[; ;Menu.c: 168:    NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"169
+[; ;Menu.c: 169:    state = 13;
+[e = F2686 -> -> 13 `i `uc ]
 "170
-[; ;Menu.c: 170:   case 13:
-[e :U 326 ]
+[; ;Menu.c: 170:   break;
+[e $U 285  ]
 "171
-[; ;Menu.c: 171:    if (novaDireccio == 8) {
+[; ;Menu.c: 171:   case 13:
+[e :U 326 ]
+"172
+[; ;Menu.c: 172:    if (novaDireccio == 8) {
 [e $ ! == -> _novaDireccio `i -> 8 `i 327  ]
 {
-"172
-[; ;Menu.c: 172:     if(menuDalt < 4) menuDalt++;
+"173
+[; ;Menu.c: 173:     if(menuDalt < 4) menuDalt++;
 [e $ ! < -> _menuDalt `i -> 4 `i 328  ]
 [e ++ _menuDalt -> -> 1 `i `uc ]
 [e :U 328 ]
-"173
-[; ;Menu.c: 173:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
 "174
-[; ;Menu.c: 174:    }
+[; ;Menu.c: 174:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"175
+[; ;Menu.c: 175:    }
 }
 [e $U 329  ]
-"175
-[; ;Menu.c: 175:    else if (novaDireccio == 2) {
+"176
+[; ;Menu.c: 176:    else if (novaDireccio == 2) {
 [e :U 327 ]
 [e $ ! == -> _novaDireccio `i -> 2 `i 330  ]
 {
-"176
-[; ;Menu.c: 176:     if(menuDalt > 0) menuDalt--;
+"177
+[; ;Menu.c: 177:     if(menuDalt > 0) menuDalt--;
 [e $ ! > -> _menuDalt `i -> 0 `i 331  ]
 [e -- _menuDalt -> -> 1 `i `uc ]
 [e :U 331 ]
-"177
-[; ;Menu.c: 177:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
 "178
-[; ;Menu.c: 178:    }
+[; ;Menu.c: 178:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"179
+[; ;Menu.c: 179:    }
 }
 [e $U 332  ]
-"179
-[; ;Menu.c: 179:    else if (NovaTecla == 11 && menuDalt == 3) {
+"180
+[; ;Menu.c: 180:    else if (NovaTecla == 11 && menuDalt == 3) {
 [e :U 330 ]
 [e $ ! && == -> _NovaTecla `i -> 11 `i == -> _menuDalt `i -> 3 `i 333  ]
 {
-"180
-[; ;Menu.c: 180:     NoFerMenu();
-[e ( _NoFerMenu ..  ]
 "181
-[; ;Menu.c: 181:     LcClear();
-[e ( _LcClear ..  ]
+[; ;Menu.c: 181:     NoFerMenu();
+[e ( _NoFerMenu ..  ]
 "182
-[; ;Menu.c: 182:     LcNewString("BYE BYE ");
-[e ( _LcNewString (1 :s 5C ]
+[; ;Menu.c: 182:     LcClear();
+[e ( _LcClear ..  ]
 "183
-[; ;Menu.c: 183:     state = 14;
-[e = F2682 -> -> 14 `i `uc ]
+[; ;Menu.c: 183:     LcNewString("BYE BYE ");
+[e ( _LcNewString (1 :s 5C ]
 "184
-[; ;Menu.c: 184:    }
+[; ;Menu.c: 184:     state = 14;
+[e = F2686 -> -> 14 `i `uc ]
+"185
+[; ;Menu.c: 185:    }
 }
 [e $U 334  ]
-"185
-[; ;Menu.c: 185:    else if (NovaTecla == 11 && menuDalt == 1) {
+"186
+[; ;Menu.c: 186:    else if (NovaTecla == 11 && menuDalt == 1) {
 [e :U 333 ]
 [e $ ! && == -> _NovaTecla `i -> 11 `i == -> _menuDalt `i -> 1 `i 335  ]
 {
-"186
-[; ;Menu.c: 186:     LcClear();
-[e ( _LcClear ..  ]
 "187
-[; ;Menu.c: 187:     NoFerMenu();
-[e ( _NoFerMenu ..  ]
+[; ;Menu.c: 187:     LcClear();
+[e ( _LcClear ..  ]
 "188
-[; ;Menu.c: 188:     LcNewString("Modify Time:");
-[e ( _LcNewString (1 :s 6C ]
+[; ;Menu.c: 188:     NoFerMenu();
+[e ( _NoFerMenu ..  ]
 "189
-[; ;Menu.c: 189:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 189:     LcNewString("Modify Time:");
+[e ( _LcNewString (1 :s 6C ]
 "190
-[; ;Menu.c: 190:     state = 16;
-[e = F2682 -> -> 16 `i `uc ]
+[; ;Menu.c: 190:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
 "191
-[; ;Menu.c: 191:    }
+[; ;Menu.c: 191:     state = 16;
+[e = F2686 -> -> 16 `i `uc ]
+"192
+[; ;Menu.c: 192:    }
 }
 [e $U 336  ]
-"192
-[; ;Menu.c: 192:    else if (menuDalt == 0 && NovaTecla == 11) {
+"193
+[; ;Menu.c: 193:    else if (menuDalt == 0 && NovaTecla == 11) {
 [e :U 335 ]
 [e $ ! && == -> _menuDalt `i -> 0 `i == -> _NovaTecla `i -> 11 `i 337  ]
 {
-"193
-[; ;Menu.c: 193:     NoFerMenu();
-[e ( _NoFerMenu ..  ]
 "194
-[; ;Menu.c: 194:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 194:     NoFerMenu();
+[e ( _NoFerMenu ..  ]
 "195
-[; ;Menu.c: 195:     LcClear();
-[e ( _LcClear ..  ]
+[; ;Menu.c: 195:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
 "196
-[; ;Menu.c: 196:     LcNewString("TIME REMAINING:");
-[e ( _LcNewString (1 :s 7C ]
+[; ;Menu.c: 196:     LcClear();
+[e ( _LcClear ..  ]
 "197
-[; ;Menu.c: 197:     JJuguem(indexUsuari);
-[e ( _JJuguem (1 -> _indexUsuari `uc ]
+[; ;Menu.c: 197:     LcNewString("TIME REMAINING:");
+[e ( _LcNewString (1 :s 7C ]
 "198
-[; ;Menu.c: 198:     state = 21;
-[e = F2682 -> -> 21 `i `uc ]
+[; ;Menu.c: 198:     JJuguem(indexUsuari);
+[e ( _JJuguem (1 -> _indexUsuari `uc ]
 "199
-[; ;Menu.c: 199:    }
+[; ;Menu.c: 199:     state = 21;
+[e = F2686 -> -> 21 `i `uc ]
+"200
+[; ;Menu.c: 200:    }
 }
 [e $U 338  ]
-"200
-[; ;Menu.c: 200:    else if (NovaTecla == 11 && menuDalt == 4) {
+"201
+[; ;Menu.c: 201:    else if (NovaTecla == 11 && menuDalt == 4) {
 [e :U 337 ]
 [e $ ! && == -> _NovaTecla `i -> 11 `i == -> _menuDalt `i -> 4 `i 339  ]
 {
-"201
-[; ;Menu.c: 201:     NoFerMenu();
-[e ( _NoFerMenu ..  ]
 "202
-[; ;Menu.c: 202:     LcClear();
-[e ( _LcClear ..  ]
+[; ;Menu.c: 202:     NoFerMenu();
+[e ( _NoFerMenu ..  ]
 "203
-[; ;Menu.c: 203:     menuDalt = 0;
-[e = _menuDalt -> -> 0 `i `uc ]
+[; ;Menu.c: 203:     LcClear();
+[e ( _LcClear ..  ]
 "204
-[; ;Menu.c: 204:                 NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 204:     menuDalt = 0;
+[e = _menuDalt -> -> 0 `i `uc ]
 "205
-[; ;Menu.c: 205:     state = 23;
-[e = F2682 -> -> 23 `i `uc ]
+[; ;Menu.c: 205:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
 "206
-[; ;Menu.c: 206:    }
+[; ;Menu.c: 206:     calculateShowUsers();
+[e ( _calculateShowUsers ..  ]
+"207
+[; ;Menu.c: 207:     state = 30;
+[e = F2686 -> -> 30 `i `uc ]
+"208
+[; ;Menu.c: 208:    }
 }
 [e :U 339 ]
 [e :U 338 ]
@@ -1201,574 +1213,591 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 334 ]
 [e :U 332 ]
 [e :U 329 ]
-"207
-[; ;Menu.c: 207:   break;
-[e $U 285  ]
-"208
-[; ;Menu.c: 208:   case 14:
-[e :U 340 ]
 "209
-[; ;Menu.c: 209:    if (LcLliure()) {
+[; ;Menu.c: 209:   break;
+[e $U 285  ]
+"210
+[; ;Menu.c: 210:   case 14:
+[e :U 340 ]
+"211
+[; ;Menu.c: 211:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  341  ]
 {
-"210
-[; ;Menu.c: 210:     LcNewString(UgetUserName(indexUsuari));
-[e ( _LcNewString (1 ( _UgetUserName (1 -> _indexUsuari `uc ]
-"211
-[; ;Menu.c: 211:     TiResetTics(timerMenu);
-[e ( _TiResetTics (1 _timerMenu ]
 "212
-[; ;Menu.c: 212:     state = 15;
-[e = F2682 -> -> 15 `i `uc ]
+[; ;Menu.c: 212:     LcNewString(UgetUserName(indexUsuari));
+[e ( _LcNewString (1 ( _UgetUserName (1 -> _indexUsuari `uc ]
 "213
-[; ;Menu.c: 213:    }
+[; ;Menu.c: 213:     TiResetTics(timerMenu);
+[e ( _TiResetTics (1 _timerMenu ]
+"214
+[; ;Menu.c: 214:     state = 15;
+[e = F2686 -> -> 15 `i `uc ]
+"215
+[; ;Menu.c: 215:    }
 }
 [e :U 341 ]
-"214
-[; ;Menu.c: 214:   break;
-[e $U 285  ]
-"215
-[; ;Menu.c: 215:   case 15:
-[e :U 342 ]
 "216
-[; ;Menu.c: 216:    if (TiGetTics(timerMenu) > 2410) {
+[; ;Menu.c: 216:   break;
+[e $U 285  ]
+"217
+[; ;Menu.c: 217:   case 15:
+[e :U 342 ]
+"218
+[; ;Menu.c: 218:    if (TiGetTics(timerMenu) > 2410) {
 [e $ ! > ( _TiGetTics (1 _timerMenu -> 2410 `i 343  ]
 {
-"217
-[; ;Menu.c: 217:     state = 0;
-[e = F2682 -> -> 0 `i `uc ]
-"218
-[; ;Menu.c: 218:    }
+"219
+[; ;Menu.c: 219:     state = 0;
+[e = F2686 -> -> 0 `i `uc ]
+"220
+[; ;Menu.c: 220:    }
 }
 [e :U 343 ]
-"219
-[; ;Menu.c: 219:   break;
-[e $U 285  ]
-"220
-[; ;Menu.c: 220:   case 16:
-[e :U 344 ]
 "221
-[; ;Menu.c: 221:    if (LcLliure() && NovaTecla > -1 && NovaTecla < 10) {
+[; ;Menu.c: 221:   break;
+[e $U 285  ]
+"222
+[; ;Menu.c: 222:   case 16:
+[e :U 344 ]
+"223
+[; ;Menu.c: 223:    if (LcLliure() && NovaTecla > -1 && NovaTecla < 10) {
 [e $ ! && && ( _LcLliure ..  > -> _NovaTecla `i -U -> 1 `i < -> _NovaTecla `i -> 10 `i 345  ]
 {
-"222
-[; ;Menu.c: 222:     LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"223
-[; ;Menu.c: 223:     horaTmp[0] = NovaTecla+48;
-[e = *U + &U _horaTmp * -> -> -> 0 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
 "224
-[; ;Menu.c: 224:     LcPutChar(horaTmp[0]);
-[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 0 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
+[; ;Menu.c: 224:     LcGotoXY(0,1);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "225
-[; ;Menu.c: 225:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 225:     horaTmp[0] = NovaTecla+48;
+[e = *U + &U _horaTmp * -> -> -> 0 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
 "226
-[; ;Menu.c: 226:     state = 17;
-[e = F2682 -> -> 17 `i `uc ]
+[; ;Menu.c: 226:     LcPutChar(horaTmp[0]);
+[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 0 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "227
-[; ;Menu.c: 227:    }
+[; ;Menu.c: 227:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"228
+[; ;Menu.c: 228:     state = 17;
+[e = F2686 -> -> 17 `i `uc ]
+"229
+[; ;Menu.c: 229:    }
 }
 [e $U 346  ]
-"228
-[; ;Menu.c: 228:    else if (NovaTecla == 10) {
+"230
+[; ;Menu.c: 230:    else if (NovaTecla == 10) {
 [e :U 345 ]
 [e $ ! == -> _NovaTecla `i -> 10 `i 347  ]
 {
-"229
-[; ;Menu.c: 229:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
-"230
-[; ;Menu.c: 230:    }
+"231
+[; ;Menu.c: 231:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"232
+[; ;Menu.c: 232:    }
 }
 [e :U 347 ]
 [e :U 346 ]
-"231
-[; ;Menu.c: 231:   break;
-[e $U 285  ]
-"232
-[; ;Menu.c: 232:   case 17:
-[e :U 348 ]
 "233
-[; ;Menu.c: 233:    if (NovaTecla > -1 && NovaTecla < 10) {
+[; ;Menu.c: 233:   break;
+[e $U 285  ]
+"234
+[; ;Menu.c: 234:   case 17:
+[e :U 348 ]
+"235
+[; ;Menu.c: 235:    if (NovaTecla > -1 && NovaTecla < 10) {
 [e $ ! && > -> _NovaTecla `i -U -> 1 `i < -> _NovaTecla `i -> 10 `i 349  ]
 {
-"234
-[; ;Menu.c: 234:     horaTmp[1] = NovaTecla+48;
-[e = *U + &U _horaTmp * -> -> -> 1 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
-"235
-[; ;Menu.c: 235:     LcPutChar(horaTmp[1]);
-[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 1 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "236
-[; ;Menu.c: 236:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 236:     horaTmp[1] = NovaTecla+48;
+[e = *U + &U _horaTmp * -> -> -> 1 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
 "237
-[; ;Menu.c: 237:     LcPutChar(':');
-[e ( _LcPutChar (1 -> -> 58 `ui `uc ]
+[; ;Menu.c: 237:     LcPutChar(horaTmp[1]);
+[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 1 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "238
-[; ;Menu.c: 238:     state = 18;
-[e = F2682 -> -> 18 `i `uc ]
+[; ;Menu.c: 238:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
 "239
-[; ;Menu.c: 239:    }
+[; ;Menu.c: 239:     LcPutChar(':');
+[e ( _LcPutChar (1 -> -> 58 `ui `uc ]
+"240
+[; ;Menu.c: 240:     state = 18;
+[e = F2686 -> -> 18 `i `uc ]
+"241
+[; ;Menu.c: 241:    }
 }
 [e $U 350  ]
-"240
-[; ;Menu.c: 240:    else if (NovaTecla ==10) {
+"242
+[; ;Menu.c: 242:    else if (NovaTecla ==10) {
 [e :U 349 ]
 [e $ ! == -> _NovaTecla `i -> 10 `i 351  ]
 {
-"241
-[; ;Menu.c: 241:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
-"242
-[; ;Menu.c: 242:    }
+"243
+[; ;Menu.c: 243:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"244
+[; ;Menu.c: 244:    }
 }
 [e :U 351 ]
 [e :U 350 ]
-"243
-[; ;Menu.c: 243:   break;
-[e $U 285  ]
-"244
-[; ;Menu.c: 244:   case 18:
-[e :U 352 ]
 "245
-[; ;Menu.c: 245:    if (NovaTecla > -1 && NovaTecla < 10) {
+[; ;Menu.c: 245:   break;
+[e $U 285  ]
+"246
+[; ;Menu.c: 246:   case 18:
+[e :U 352 ]
+"247
+[; ;Menu.c: 247:    if (NovaTecla > -1 && NovaTecla < 10) {
 [e $ ! && > -> _NovaTecla `i -U -> 1 `i < -> _NovaTecla `i -> 10 `i 353  ]
 {
-"246
-[; ;Menu.c: 246:     horaTmp[2] = NovaTecla+48;
-[e = *U + &U _horaTmp * -> -> -> 2 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
-"247
-[; ;Menu.c: 247:     LcPutChar(horaTmp[2]);
-[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 2 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "248
-[; ;Menu.c: 248:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 248:     horaTmp[2] = NovaTecla+48;
+[e = *U + &U _horaTmp * -> -> -> 2 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
 "249
-[; ;Menu.c: 249:     state = 19;
-[e = F2682 -> -> 19 `i `uc ]
+[; ;Menu.c: 249:     LcPutChar(horaTmp[2]);
+[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 2 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "250
-[; ;Menu.c: 250:    }
+[; ;Menu.c: 250:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"251
+[; ;Menu.c: 251:     state = 19;
+[e = F2686 -> -> 19 `i `uc ]
+"252
+[; ;Menu.c: 252:    }
 }
 [e $U 354  ]
-"251
-[; ;Menu.c: 251:    else if (NovaTecla == 10) {
+"253
+[; ;Menu.c: 253:    else if (NovaTecla == 10) {
 [e :U 353 ]
 [e $ ! == -> _NovaTecla `i -> 10 `i 355  ]
 {
-"252
-[; ;Menu.c: 252:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
-"253
-[; ;Menu.c: 253:    }
+"254
+[; ;Menu.c: 254:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"255
+[; ;Menu.c: 255:    }
 }
 [e :U 355 ]
 [e :U 354 ]
-"254
-[; ;Menu.c: 254:   break;
-[e $U 285  ]
-"255
-[; ;Menu.c: 255:   case 19:
-[e :U 356 ]
 "256
-[; ;Menu.c: 256:    if (NovaTecla > -1 && NovaTecla < 10) {
+[; ;Menu.c: 256:   break;
+[e $U 285  ]
+"257
+[; ;Menu.c: 257:   case 19:
+[e :U 356 ]
+"258
+[; ;Menu.c: 258:    if (NovaTecla > -1 && NovaTecla < 10) {
 [e $ ! && > -> _NovaTecla `i -U -> 1 `i < -> _NovaTecla `i -> 10 `i 357  ]
 {
-"257
-[; ;Menu.c: 257:     horaTmp[3] = NovaTecla+48;
-[e = *U + &U _horaTmp * -> -> -> 3 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
-"258
-[; ;Menu.c: 258:     LcPutChar(horaTmp[3]);
-[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 3 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "259
-[; ;Menu.c: 259:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
+[; ;Menu.c: 259:     horaTmp[3] = NovaTecla+48;
+[e = *U + &U _horaTmp * -> -> -> 3 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux -> + -> _NovaTecla `i -> 48 `i `uc ]
 "260
-[; ;Menu.c: 260:     state = 20;
-[e = F2682 -> -> 20 `i `uc ]
+[; ;Menu.c: 260:     LcPutChar(horaTmp[3]);
+[e ( _LcPutChar (1 *U + &U _horaTmp * -> -> -> 3 `i `ui `ux -> -> # *U &U _horaTmp `ui `ux ]
 "261
-[; ;Menu.c: 261:    }
+[; ;Menu.c: 261:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"262
+[; ;Menu.c: 262:     state = 20;
+[e = F2686 -> -> 20 `i `uc ]
+"263
+[; ;Menu.c: 263:    }
 }
 [e $U 358  ]
-"262
-[; ;Menu.c: 262:    else if (NovaTecla ==10) {
+"264
+[; ;Menu.c: 264:    else if (NovaTecla ==10) {
 [e :U 357 ]
 [e $ ! == -> _NovaTecla `i -> 10 `i 359  ]
 {
-"263
-[; ;Menu.c: 263:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
-"264
-[; ;Menu.c: 264:    }
+"265
+[; ;Menu.c: 265:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"266
+[; ;Menu.c: 266:    }
 }
 [e :U 359 ]
 [e :U 358 ]
-"265
-[; ;Menu.c: 265:   break;
-[e $U 285  ]
-"266
-[; ;Menu.c: 266:   case 20:
-[e :U 360 ]
 "267
-[; ;Menu.c: 267:    if (NovaTecla == 11) {
+[; ;Menu.c: 267:   break;
+[e $U 285  ]
+"268
+[; ;Menu.c: 268:   case 20:
+[e :U 360 ]
+"269
+[; ;Menu.c: 269:    if (NovaTecla == 11) {
 [e $ ! == -> _NovaTecla `i -> 11 `i 361  ]
 {
-"268
-[; ;Menu.c: 268:     HActualitzaHora(horaTmp);
-[e ( _HActualitzaHora (1 &U _horaTmp ]
-"269
-[; ;Menu.c: 269:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
 "270
-[; ;Menu.c: 270:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
+[; ;Menu.c: 270:     HActualitzaHora(horaTmp);
+[e ( _HActualitzaHora (1 &U _horaTmp ]
 "271
-[; ;Menu.c: 271:    }
+[; ;Menu.c: 271:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"272
+[; ;Menu.c: 272:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"273
+[; ;Menu.c: 273:    }
 }
 [e $U 362  ]
-"272
-[; ;Menu.c: 272:    else if (NovaTecla == 10) {
+"274
+[; ;Menu.c: 274:    else if (NovaTecla == 10) {
 [e :U 361 ]
 [e $ ! == -> _NovaTecla `i -> 10 `i 363  ]
 {
-"273
-[; ;Menu.c: 273:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
-"274
-[; ;Menu.c: 274:    }
+"275
+[; ;Menu.c: 275:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"276
+[; ;Menu.c: 276:    }
 }
 [e :U 363 ]
 [e :U 362 ]
-"275
-[; ;Menu.c: 275:   break;
-[e $U 285  ]
-"276
-[; ;Menu.c: 276:   case 21:
-[e :U 364 ]
 "277
-[; ;Menu.c: 277:    if ((NovaTecla == 10 && LcLliure()) || checkHoraAcabat()) {
+[; ;Menu.c: 277:   break;
+[e $U 285  ]
+"278
+[; ;Menu.c: 278:   case 21:
+[e :U 364 ]
+"279
+[; ;Menu.c: 279:    if ((NovaTecla == 10 && LcLliure()) || checkHoraAcabat()) {
 [e $ ! || && == -> _NovaTecla `i -> 10 `i ( _LcLliure ..  ( _checkHoraAcabat ..  365  ]
 {
-"278
-[; ;Menu.c: 278:     LcClear();
-[e ( _LcClear ..  ]
-"279
-[; ;Menu.c: 279:     JendGame();
-[e ( _JendGame ..  ]
 "280
-[; ;Menu.c: 280:     state = 22;
-[e = F2682 -> -> 22 `i `uc ]
+[; ;Menu.c: 280:     LcClear();
+[e ( _LcClear ..  ]
 "281
-[; ;Menu.c: 281:    }
+[; ;Menu.c: 281:     JendGame();
+[e ( _JendGame ..  ]
+"282
+[; ;Menu.c: 282:     state = 22;
+[e = F2686 -> -> 22 `i `uc ]
+"283
+[; ;Menu.c: 283:    }
 }
 [e $U 366  ]
-"282
-[; ;Menu.c: 282:    else if (NovaTecla > 0 && NovaTecla < 10) {
+"284
+[; ;Menu.c: 284:    else if (NovaTecla > 0 && NovaTecla < 10) {
 [e :U 365 ]
 [e $ ! && > -> _NovaTecla `i -> 0 `i < -> _NovaTecla `i -> 10 `i 367  ]
 {
-"283
-[; ;Menu.c: 283:     JnovaTecla(NovaTecla);
-[e ( _JnovaTecla (1 _NovaTecla ]
-"284
-[; ;Menu.c: 284:     NovaTecla = -1;
-[e = _NovaTecla -> -U -> 1 `i `c ]
 "285
-[; ;Menu.c: 285:     state = 21;
-[e = F2682 -> -> 21 `i `uc ]
+[; ;Menu.c: 285:     JnovaTecla(NovaTecla);
+[e ( _JnovaTecla (1 _NovaTecla ]
 "286
-[; ;Menu.c: 286:    }
+[; ;Menu.c: 286:     NovaTecla = -1;
+[e = _NovaTecla -> -U -> 1 `i `c ]
+"287
+[; ;Menu.c: 287:     state = 21;
+[e = F2686 -> -> 21 `i `uc ]
+"288
+[; ;Menu.c: 288:    }
 }
 [e $U 368  ]
-"287
-[; ;Menu.c: 287:    else if (novaDireccio > -1) {
+"289
+[; ;Menu.c: 289:    else if (novaDireccio > -1) {
 [e :U 367 ]
 [e $ ! > -> _novaDireccio `i -U -> 1 `i 369  ]
 {
-"288
-[; ;Menu.c: 288:     JnovaDireccio(novaDireccio);
-[e ( _JnovaDireccio (1 -> _novaDireccio `uc ]
-"289
-[; ;Menu.c: 289:     novaDireccio = -1;
-[e = _novaDireccio -> -U -> 1 `i `c ]
 "290
-[; ;Menu.c: 290:     state = 21;
-[e = F2682 -> -> 21 `i `uc ]
+[; ;Menu.c: 290:     JnovaDireccio(novaDireccio);
+[e ( _JnovaDireccio (1 -> _novaDireccio `uc ]
 "291
-[; ;Menu.c: 291:    }
+[; ;Menu.c: 291:     novaDireccio = -1;
+[e = _novaDireccio -> -U -> 1 `i `c ]
+"292
+[; ;Menu.c: 292:     state = 21;
+[e = F2686 -> -> 21 `i `uc ]
+"293
+[; ;Menu.c: 293:    }
 }
 [e :U 369 ]
 [e :U 368 ]
 [e :U 366 ]
-"292
-[; ;Menu.c: 292:   break;
-[e $U 285  ]
-"293
-[; ;Menu.c: 293:   case 22:
-[e :U 370 ]
 "294
-[; ;Menu.c: 294:    if (SIOHaAcabatPuntuacions() && NovaTecla == 11) {
+[; ;Menu.c: 294:   break;
+[e $U 285  ]
+"295
+[; ;Menu.c: 295:   case 22:
+[e :U 370 ]
+"296
+[; ;Menu.c: 296:    if (SIOHaAcabatPuntuacions() && NovaTecla == 11) {
 [e $ ! && != -> ( _SIOHaAcabatPuntuacions ..  `i -> 0 `i == -> _NovaTecla `i -> 11 `i 371  ]
 {
-"295
-[; ;Menu.c: 295:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
-"296
-[; ;Menu.c: 296:    }
+"297
+[; ;Menu.c: 297:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"298
+[; ;Menu.c: 298:    }
 }
 [e :U 371 ]
-"297
-[; ;Menu.c: 297:   break;
-[e $U 285  ]
-"298
-[; ;Menu.c: 298:   case 23:
-[e :U 372 ]
 "299
-[; ;Menu.c: 299:    if (LcLliure()) {
+[; ;Menu.c: 299:   break;
+[e $U 285  ]
+"300
+[; ;Menu.c: 300:   case 23:
+[e :U 372 ]
+"301
+[; ;Menu.c: 301:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  373  ]
 {
-"300
-[; ;Menu.c: 300:     if (menuDalt == UgetNumUsuaris()){
+"302
+[; ;Menu.c: 302:     if (menuDalt == UgetNumUsuaris()){
 [e $ ! == -> _menuDalt `i -> ( _UgetNumUsuaris ..  `i 374  ]
 {
-"301
-[; ;Menu.c: 301:       menuDalt = 0;
+"303
+[; ;Menu.c: 303:       menuDalt = 0;
 [e = _menuDalt -> -> 0 `i `uc ]
-"302
-[; ;Menu.c: 302:     }
+"304
+[; ;Menu.c: 304:     }
 }
 [e :U 374 ]
-"303
-[; ;Menu.c: 303:     LcGotoXY(0,0);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"304
-[; ;Menu.c: 304:     LcNewString(UgetUserName(menuDalt));
-[e ( _LcNewString (1 ( _UgetUserName (1 -> _menuDalt `uc ]
 "305
-[; ;Menu.c: 305:     menuDalt++;
-[e ++ _menuDalt -> -> 1 `i `uc ]
+[; ;Menu.c: 305:     LcGotoXY(0,0);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "306
-[; ;Menu.c: 306:     state = 24;
-[e = F2682 -> -> 24 `i `uc ]
+[; ;Menu.c: 306:     LcNewString(getArrayShowUsers(menuDalt));
+[e ( _LcNewString (1 ( _getArrayShowUsers (1 -> _menuDalt `uc ]
 "307
-[; ;Menu.c: 307:    }
+[; ;Menu.c: 307:     menuDalt++;
+[e ++ _menuDalt -> -> 1 `i `uc ]
+"308
+[; ;Menu.c: 308:     state = 24;
+[e = F2686 -> -> 24 `i `uc ]
+"309
+[; ;Menu.c: 309:    }
 }
 [e :U 373 ]
-"308
-[; ;Menu.c: 308:   break;
-[e $U 285  ]
-"309
-[; ;Menu.c: 309:   case 24:
-[e :U 375 ]
 "310
-[; ;Menu.c: 310:    if (LcLliure()) {
+[; ;Menu.c: 310:   break;
+[e $U 285  ]
+"311
+[; ;Menu.c: 311:   case 24:
+[e :U 375 ]
+"312
+[; ;Menu.c: 312:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  376  ]
 {
-"311
-[; ;Menu.c: 311:     if (menuDalt < UgetNumUsuaris()){
+"313
+[; ;Menu.c: 313:     if (menuDalt < UgetNumUsuaris()){
 [e $ ! < -> _menuDalt `i -> ( _UgetNumUsuaris ..  `i 377  ]
 {
-"312
-[; ;Menu.c: 312:       LcGotoXY(0,1);
-[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"313
-[; ;Menu.c: 313:       LcNewString(UgetUserName(menuDalt));
-[e ( _LcNewString (1 ( _UgetUserName (1 -> _menuDalt `uc ]
 "314
-[; ;Menu.c: 314:       menuDalt++;
-[e ++ _menuDalt -> -> 1 `i `uc ]
+[; ;Menu.c: 314:       LcGotoXY(0,1);
+[e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
 "315
-[; ;Menu.c: 315:     } else {
+[; ;Menu.c: 315:       LcNewString(getArrayShowUsers(menuDalt));
+[e ( _LcNewString (1 ( _getArrayShowUsers (1 -> _menuDalt `uc ]
+"316
+[; ;Menu.c: 316:       menuDalt++;
+[e ++ _menuDalt -> -> 1 `i `uc ]
+"317
+[; ;Menu.c: 317:     } else {
 }
 [e $U 378  ]
 [e :U 377 ]
 {
-"316
-[; ;Menu.c: 316:       menuDalt = 0;
+"318
+[; ;Menu.c: 318:       menuDalt = 0;
 [e = _menuDalt -> -> 0 `i `uc ]
-"317
-[; ;Menu.c: 317:     }
+"319
+[; ;Menu.c: 319:     }
 }
 [e :U 378 ]
-"318
-[; ;Menu.c: 318:     state = 25;
-[e = F2682 -> -> 25 `i `uc ]
-"319
-[; ;Menu.c: 319:    }
+"320
+[; ;Menu.c: 320:     state = 25;
+[e = F2686 -> -> 25 `i `uc ]
+"321
+[; ;Menu.c: 321:    }
 }
 [e :U 376 ]
-"320
-[; ;Menu.c: 320:   break;
-[e $U 285  ]
-"321
-[; ;Menu.c: 321:   case 25:
-[e :U 379 ]
 "322
-[; ;Menu.c: 322:    if (LcLliure()) {
+[; ;Menu.c: 322:   break;
+[e $U 285  ]
+"323
+[; ;Menu.c: 323:   case 25:
+[e :U 379 ]
+"324
+[; ;Menu.c: 324:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  380  ]
 {
-"323
-[; ;Menu.c: 323:     if (menuDalt == UgetNumUsuaris()){
+"325
+[; ;Menu.c: 325:     if (menuDalt == UgetNumUsuaris()){
 [e $ ! == -> _menuDalt `i -> ( _UgetNumUsuaris ..  `i 381  ]
 {
-"324
-[; ;Menu.c: 324:       menuDalt = 0;
+"326
+[; ;Menu.c: 326:       menuDalt = 0;
 [e = _menuDalt -> -> 0 `i `uc ]
-"325
-[; ;Menu.c: 325:     }
+"327
+[; ;Menu.c: 327:     }
 }
 [e :U 381 ]
-"326
-[; ;Menu.c: 326:     LcGotoXY(16,0);
-[e ( _LcGotoXY (2 , -> -> 16 `i `uc -> -> 0 `i `uc ]
-"327
-[; ;Menu.c: 327:     LcNewString(UgetUserName(menuDalt));
-[e ( _LcNewString (1 ( _UgetUserName (1 -> _menuDalt `uc ]
 "328
-[; ;Menu.c: 328:     state = 26;
-[e = F2682 -> -> 26 `i `uc ]
+[; ;Menu.c: 328:     LcGotoXY(16,0);
+[e ( _LcGotoXY (2 , -> -> 16 `i `uc -> -> 0 `i `uc ]
 "329
-[; ;Menu.c: 329:    }
+[; ;Menu.c: 329:     LcNewString(getArrayShowUsers(menuDalt));
+[e ( _LcNewString (1 ( _getArrayShowUsers (1 -> _menuDalt `uc ]
+"330
+[; ;Menu.c: 330:     state = 26;
+[e = F2686 -> -> 26 `i `uc ]
+"331
+[; ;Menu.c: 331:    }
 }
 [e :U 380 ]
-"330
-[; ;Menu.c: 330:   break;
-[e $U 285  ]
-"331
-[; ;Menu.c: 331:   case 26:
-[e :U 382 ]
 "332
-[; ;Menu.c: 332:    if (LcLliure()) {
+[; ;Menu.c: 332:   break;
+[e $U 285  ]
+"333
+[; ;Menu.c: 333:   case 26:
+[e :U 382 ]
+"334
+[; ;Menu.c: 334:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  383  ]
 {
-"333
-[; ;Menu.c: 333:     if (menuDalt+1 < UgetNumUsuaris()){
+"335
+[; ;Menu.c: 335:     if (menuDalt+1 < UgetNumUsuaris()){
 [e $ ! < + -> _menuDalt `i -> 1 `i -> ( _UgetNumUsuaris ..  `i 384  ]
 {
-"334
-[; ;Menu.c: 334:       LcGotoXY(16,1);
-[e ( _LcGotoXY (2 , -> -> 16 `i `uc -> -> 1 `i `uc ]
-"335
-[; ;Menu.c: 335:       LcNewString(UgetUserName(menuDalt+1));
-[e ( _LcNewString (1 ( _UgetUserName (1 -> + -> _menuDalt `i -> 1 `i `uc ]
 "336
-[; ;Menu.c: 336:     }
+[; ;Menu.c: 336:       LcGotoXY(16,1);
+[e ( _LcGotoXY (2 , -> -> 16 `i `uc -> -> 1 `i `uc ]
+"337
+[; ;Menu.c: 337:       LcNewString(getArrayShowUsers(menuDalt+1));
+[e ( _LcNewString (1 ( _getArrayShowUsers (1 -> + -> _menuDalt `i -> 1 `i `uc ]
+"338
+[; ;Menu.c: 338:     }
 }
 [e :U 384 ]
-"337
-[; ;Menu.c: 337:     state = 27;
-[e = F2682 -> -> 27 `i `uc ]
-"338
-[; ;Menu.c: 338:    }
+"339
+[; ;Menu.c: 339:     state = 27;
+[e = F2686 -> -> 27 `i `uc ]
+"340
+[; ;Menu.c: 340:    }
 }
 [e :U 383 ]
-"339
-[; ;Menu.c: 339:   break;
-[e $U 285  ]
-"340
-[; ;Menu.c: 340:   case 28:
-[e :U 385 ]
 "341
-[; ;Menu.c: 341:    if (TiGetTics(timerMenu) > 1205) {
-[e $ ! > ( _TiGetTics (1 _timerMenu -> 1205 `i 386  ]
-{
+[; ;Menu.c: 341:   break;
+[e $U 285  ]
 "342
-[; ;Menu.c: 342:     state = 29;
-[e = F2682 -> -> 29 `i `uc ]
+[; ;Menu.c: 342:   case 28:
+[e :U 385 ]
 "343
-[; ;Menu.c: 343:    }
+[; ;Menu.c: 343:    if (TiGetTics(timerMenu) > 400) {
+[e $ ! > ( _TiGetTics (1 _timerMenu -> 400 `i 386  ]
+{
+"344
+[; ;Menu.c: 344:     state = 29;
+[e = F2686 -> -> 29 `i `uc ]
+"345
+[; ;Menu.c: 345:    }
 }
 [e $U 387  ]
-"344
-[; ;Menu.c: 344:    else if (NovaTecla == 11) {
+"346
+[; ;Menu.c: 346:    else if (NovaTecla == 11) {
 [e :U 386 ]
 [e $ ! == -> _NovaTecla `i -> 11 `i 388  ]
 {
-"345
-[; ;Menu.c: 345:     menuDalt = 0;
-[e = _menuDalt -> -> 0 `i `uc ]
-"346
-[; ;Menu.c: 346:     state = 12;
-[e = F2682 -> -> 12 `i `uc ]
 "347
-[; ;Menu.c: 347:    }
+[; ;Menu.c: 347:     menuDalt = 0;
+[e = _menuDalt -> -> 0 `i `uc ]
+"348
+[; ;Menu.c: 348:     state = 12;
+[e = F2686 -> -> 12 `i `uc ]
+"349
+[; ;Menu.c: 349:    }
 }
 [e :U 388 ]
 [e :U 387 ]
-"348
-[; ;Menu.c: 348:   break;
-[e $U 285  ]
-"349
-[; ;Menu.c: 349:   case 29:
-[e :U 389 ]
 "350
-[; ;Menu.c: 350:    if (pos > 15) {
+[; ;Menu.c: 350:   break;
+[e $U 285  ]
+"351
+[; ;Menu.c: 351:   case 29:
+[e :U 389 ]
+"352
+[; ;Menu.c: 352:    if (pos > 15) {
 [e $ ! > -> _pos `i -> 15 `i 390  ]
 {
-"351
-[; ;Menu.c: 351:     LcClear();
-[e ( _LcClear ..  ]
-"352
-[; ;Menu.c: 352:     state = 23;
-[e = F2682 -> -> 23 `i `uc ]
 "353
-[; ;Menu.c: 353:    }
+[; ;Menu.c: 353:     LcClear();
+[e ( _LcClear ..  ]
+"354
+[; ;Menu.c: 354:     state = 23;
+[e = F2686 -> -> 23 `i `uc ]
+"355
+[; ;Menu.c: 355:    }
 }
 [e $U 391  ]
-"354
-[; ;Menu.c: 354:    else if (pos < 16) {
+"356
+[; ;Menu.c: 356:    else if (pos < 16) {
 [e :U 390 ]
 [e $ ! < -> _pos `i -> 16 `i 392  ]
 {
-"355
-[; ;Menu.c: 355:     TiResetTics(timerMenu);
-[e ( _TiResetTics (1 _timerMenu ]
-"356
-[; ;Menu.c: 356:     LcScroll();
-[e ( _LcScroll ..  ]
 "357
-[; ;Menu.c: 357:     pos++;
-[e ++ _pos -> -> 1 `i `uc ]
+[; ;Menu.c: 357:     TiResetTics(timerMenu);
+[e ( _TiResetTics (1 _timerMenu ]
 "358
-[; ;Menu.c: 358:     state = 28;
-[e = F2682 -> -> 28 `i `uc ]
+[; ;Menu.c: 358:     LcScroll();
+[e ( _LcScroll ..  ]
 "359
-[; ;Menu.c: 359:    }
+[; ;Menu.c: 359:     pos++;
+[e ++ _pos -> -> 1 `i `uc ]
+"360
+[; ;Menu.c: 360:     state = 28;
+[e = F2686 -> -> 28 `i `uc ]
+"361
+[; ;Menu.c: 361:    }
 }
 [e :U 392 ]
 [e :U 391 ]
-"360
-[; ;Menu.c: 360:   break;
-[e $U 285  ]
-"361
-[; ;Menu.c: 361:   case 27:
-[e :U 393 ]
 "362
-[; ;Menu.c: 362:    if (LcLliure()) {
+[; ;Menu.c: 362:   break;
+[e $U 285  ]
+"363
+[; ;Menu.c: 363:   case 27:
+[e :U 393 ]
+"364
+[; ;Menu.c: 364:    if (LcLliure()) {
 [e $ ! ( _LcLliure ..  394  ]
 {
-"363
-[; ;Menu.c: 363:     TiResetTics(timerMenu);
-[e ( _TiResetTics (1 _timerMenu ]
-"364
-[; ;Menu.c: 364:     pos = 0;
-[e = _pos -> -> 0 `i `uc ]
 "365
-[; ;Menu.c: 365:     state = 28;
-[e = F2682 -> -> 28 `i `uc ]
+[; ;Menu.c: 365:     TiResetTics(timerMenu);
+[e ( _TiResetTics (1 _timerMenu ]
 "366
-[; ;Menu.c: 366:    }
+[; ;Menu.c: 366:     pos = 0;
+[e = _pos -> -> 0 `i `uc ]
+"367
+[; ;Menu.c: 367:     state = 28;
+[e = F2686 -> -> 28 `i `uc ]
+"368
+[; ;Menu.c: 368:    }
 }
 [e :U 394 ]
-"367
-[; ;Menu.c: 367:   break;
+"369
+[; ;Menu.c: 369:   break;
 [e $U 285  ]
-"368
-[; ;Menu.c: 368:  }
+"370
+[; ;Menu.c: 370:   case 30:
+[e :U 395 ]
+"371
+[; ;Menu.c: 371:    if (UshowUsersCalculat()) {
+[e $ ! ( _UshowUsersCalculat ..  396  ]
+{
+"372
+[; ;Menu.c: 372:     state = 23;
+[e = F2686 -> -> 23 `i `uc ]
+"373
+[; ;Menu.c: 373:    }
+}
+[e :U 396 ]
+"374
+[; ;Menu.c: 374:   break;
+[e $U 285  ]
+"375
+[; ;Menu.c: 375:  }
 }
 [e $U 285  ]
 [e :U 286 ]
-[e [\ -> F2682 `i , $ -> 0 `i 287
+[e [\ -> F2686 `i , $ -> 0 `i 287
  , $ -> 1 `i 288
  , $ -> 2 `i 290
  , $ -> 3 `i 294
@@ -1798,10 +1827,11 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 28 `i 385
  , $ -> 29 `i 389
  , $ -> 27 `i 393
+ , $ -> 30 `i 395
  285 ]
 [e :U 285 ]
-"369
-[; ;Menu.c: 369: }
+"376
+[; ;Menu.c: 376: }
 [e :UE 284 ]
 }
 [a 2C 50 46 82 69 71 73 83 84 69 82 0 ]
