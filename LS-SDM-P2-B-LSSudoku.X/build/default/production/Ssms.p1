@@ -481,13 +481,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Ssms.c: 15: unsigned char zeroTecla;
 [v _zeroTecla `uc ~T0 @X0 1 e ]
 "16
-[; ;Ssms.c: 16: char arrayZero[3] = "0 ";
+[; ;Ssms.c: 16: char arrayZero[3] = {'0',32};
 [v _arrayZero `uc ~T0 @X0 -> 3 `i e ]
 [i _arrayZero
 :U ..
--> 48 `c
--> 32 `c
--> 0 `c
+-> -> 48 `ui `uc
+-> -> 32 `i `uc
 ..
 ]
 "18
@@ -603,274 +602,271 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Ssms.c: 49:       lletraASCII = lletraInici[novaTecla-2];
 [e = _lletraASCII -> *U + &U _lletraInici * -> -> - -> _novaTecla `i -> 2 `i `ui `ux -> -> # *U &U _lletraInici `ui `ux `c ]
 "50
-[; ;Ssms.c: 50:       zeroTecla = 0;
-[e = _zeroTecla -> -> 0 `i `uc ]
-"51
-[; ;Ssms.c: 51:     }else{
+[; ;Ssms.c: 50:     }else{
 }
 [e $U 293  ]
 [e :U 292 ]
 {
-"52
-[; ;Ssms.c: 52:       lletraASCII = '0';
+"51
+[; ;Ssms.c: 51:       lletraASCII = '0';
 [e = _lletraASCII -> -> 48 `ui `c ]
-"53
-[; ;Ssms.c: 53:       zeroTecla=0;
-[e = _zeroTecla -> -> 0 `i `uc ]
-"54
-[; ;Ssms.c: 54:     }
+"52
+[; ;Ssms.c: 52:     }
 }
 [e :U 293 ]
-"55
-[; ;Ssms.c: 55:     ultimaTecla = novaTecla;
+"53
+[; ;Ssms.c: 53:     zeroTecla=0;
+[e = _zeroTecla -> -> 0 `i `uc ]
+"54
+[; ;Ssms.c: 54:     ultimaTecla = novaTecla;
 [e = _ultimaTecla _novaTecla ]
-"56
-[; ;Ssms.c: 56:     sumaPulsacions = 0;
+"55
+[; ;Ssms.c: 55:     sumaPulsacions = 0;
 [e = _sumaPulsacions -> -> 0 `i `uc ]
-"57
-[; ;Ssms.c: 57:     novaTecla = -1;
+"56
+[; ;Ssms.c: 56:     novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
-"58
-[; ;Ssms.c: 58:     state = 0;
+"57
+[; ;Ssms.c: 57:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"59
-[; ;Ssms.c: 59:    }
+"58
+[; ;Ssms.c: 58:    }
 }
 [e :U 291 ]
 [e :U 290 ]
-"60
-[; ;Ssms.c: 60:   break;
+"59
+[; ;Ssms.c: 59:   break;
 [e $U 282  ]
-"61
-[; ;Ssms.c: 61:   case 2:
+"60
+[; ;Ssms.c: 60:   case 2:
 [e :U 294 ]
-"62
-[; ;Ssms.c: 62:    if (ultimaTecla != 7 && ultimaTecla != 9 && ultimaTecla != 0) {
+"61
+[; ;Ssms.c: 61:    if (ultimaTecla != 7 && ultimaTecla != 9 && ultimaTecla != 0) {
 [e $ ! && && != -> _ultimaTecla `i -> 7 `i != -> _ultimaTecla `i -> 9 `i != -> _ultimaTecla `i -> 0 `i 295  ]
 {
-"63
-[; ;Ssms.c: 63:     state = 5;
+"62
+[; ;Ssms.c: 62:     state = 5;
 [e = F2592 -> -> 5 `i `uc ]
-"64
-[; ;Ssms.c: 64:    }
+"63
+[; ;Ssms.c: 63:    }
 }
 [e $U 296  ]
-"65
-[; ;Ssms.c: 65:    else if (ultimaTecla == 7 || ultimaTecla == 9) {
+"64
+[; ;Ssms.c: 64:    else if (ultimaTecla == 7 || ultimaTecla == 9) {
 [e :U 295 ]
 [e $ ! || == -> _ultimaTecla `i -> 7 `i == -> _ultimaTecla `i -> 9 `i 297  ]
 {
-"66
-[; ;Ssms.c: 66:     state = 6;
+"65
+[; ;Ssms.c: 65:     state = 6;
 [e = F2592 -> -> 6 `i `uc ]
-"67
-[; ;Ssms.c: 67:    }
+"66
+[; ;Ssms.c: 66:    }
 }
 [e $U 298  ]
-"68
-[; ;Ssms.c: 68:    else if (ultimaTecla == 0) {
+"67
+[; ;Ssms.c: 67:    else if (ultimaTecla == 0) {
 [e :U 297 ]
 [e $ ! == -> _ultimaTecla `i -> 0 `i 299  ]
 {
-"69
-[; ;Ssms.c: 69:     zeroTecla++;
+"68
+[; ;Ssms.c: 68:     zeroTecla++;
 [e ++ _zeroTecla -> -> 1 `i `uc ]
-"70
-[; ;Ssms.c: 70:     if(zeroTecla == 2) zeroTecla = 0;
+"69
+[; ;Ssms.c: 69:     if(zeroTecla == 2) zeroTecla = 0;
 [e $ ! == -> _zeroTecla `i -> 2 `i 300  ]
 [e = _zeroTecla -> -> 0 `i `uc ]
 [e :U 300 ]
-"71
-[; ;Ssms.c: 71:     lletraASCII = arrayZero[zeroTecla];
+"70
+[; ;Ssms.c: 70:     lletraASCII = arrayZero[zeroTecla];
 [e = _lletraASCII -> *U + &U _arrayZero * -> _zeroTecla `ux -> -> # *U &U _arrayZero `ui `ux `c ]
-"72
-[; ;Ssms.c: 72:     state = 0;
+"71
+[; ;Ssms.c: 71:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"73
-[; ;Ssms.c: 73:    }
+"72
+[; ;Ssms.c: 72:    }
 }
 [e :U 299 ]
 [e :U 298 ]
 [e :U 296 ]
-"74
-[; ;Ssms.c: 74:   break;
+"73
+[; ;Ssms.c: 73:   break;
 [e $U 282  ]
-"75
-[; ;Ssms.c: 75:   case 3:
+"74
+[; ;Ssms.c: 74:   case 3:
 [e :U 301 ]
-"76
-[; ;Ssms.c: 76:    if ((novaTecla > 1 || novaTecla == 0) && novaTecla < 10) {
+"75
+[; ;Ssms.c: 75:    if ((novaTecla > 1 || novaTecla == 0) && novaTecla < 10) {
 [e $ ! && || > -> _novaTecla `i -> 1 `i == -> _novaTecla `i -> 0 `i < -> _novaTecla `i -> 10 `i 302  ]
 {
-"77
-[; ;Ssms.c: 77:     state = 1;
+"76
+[; ;Ssms.c: 76:     state = 1;
 [e = F2592 -> -> 1 `i `uc ]
-"78
-[; ;Ssms.c: 78:    }
+"77
+[; ;Ssms.c: 77:    }
 }
 [e $U 303  ]
-"79
-[; ;Ssms.c: 79:    else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII == -1) {
+"78
+[; ;Ssms.c: 78:    else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII == -1) {
 [e :U 302 ]
 [e $ ! && && != -> _novaTecla `i -> 0 `i <= -> _novaTecla `i -> 1 `i == -> _lletraASCII `i -U -> 1 `i 304  ]
 {
-"80
-[; ;Ssms.c: 80:     MNovaLletra(novaTecla+48);
+"79
+[; ;Ssms.c: 79:     MNovaLletra(novaTecla+48);
 [e ( _MNovaLletra (1 -> + -> _novaTecla `i -> 48 `i `uc ]
-"81
-[; ;Ssms.c: 81:     novaTecla = -1;
+"80
+[; ;Ssms.c: 80:     novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
-"82
-[; ;Ssms.c: 82:     state = 0;
+"81
+[; ;Ssms.c: 81:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"83
-[; ;Ssms.c: 83:    }
+"82
+[; ;Ssms.c: 82:    }
 }
 [e $U 305  ]
-"84
-[; ;Ssms.c: 84:    else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII != -1) {
+"83
+[; ;Ssms.c: 83:    else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII != -1) {
 [e :U 304 ]
 [e $ ! && && != -> _novaTecla `i -> 0 `i <= -> _novaTecla `i -> 1 `i != -> _lletraASCII `i -U -> 1 `i 306  ]
 {
-"85
-[; ;Ssms.c: 85:     MNovaLletra(lletraASCII);
+"84
+[; ;Ssms.c: 84:     MNovaLletra(lletraASCII);
 [e ( _MNovaLletra (1 -> _lletraASCII `uc ]
-"86
-[; ;Ssms.c: 86:     lletraASCII = -1;
+"85
+[; ;Ssms.c: 85:     lletraASCII = -1;
 [e = _lletraASCII -> -U -> 1 `i `c ]
-"87
-[; ;Ssms.c: 87:     state = 4;
+"86
+[; ;Ssms.c: 86:     state = 4;
 [e = F2592 -> -> 4 `i `uc ]
-"88
-[; ;Ssms.c: 88:    }
+"87
+[; ;Ssms.c: 87:    }
 }
 [e :U 306 ]
 [e :U 305 ]
 [e :U 303 ]
+"88
+[; ;Ssms.c: 88:   break;
+[e $U 282  ]
 "89
-[; ;Ssms.c: 89:   break;
-[e $U 282  ]
-"90
-[; ;Ssms.c: 90:   case 4:
+[; ;Ssms.c: 89:   case 4:
 [e :U 307 ]
-"91
-[; ;Ssms.c: 91:    MNovaLletra(novaTecla+48);
+"90
+[; ;Ssms.c: 90:    MNovaLletra(novaTecla+48);
 [e ( _MNovaLletra (1 -> + -> _novaTecla `i -> 48 `i `uc ]
-"92
-[; ;Ssms.c: 92:    novaTecla = -1;
+"91
+[; ;Ssms.c: 91:    novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
-"93
-[; ;Ssms.c: 93:    state = 0;
+"92
+[; ;Ssms.c: 92:    state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"94
-[; ;Ssms.c: 94:   break;
+"93
+[; ;Ssms.c: 93:   break;
 [e $U 282  ]
-"95
-[; ;Ssms.c: 95:   case 5:
+"94
+[; ;Ssms.c: 94:   case 5:
 [e :U 308 ]
-"96
-[; ;Ssms.c: 96:    if (sumaPulsacions == 4) {
+"95
+[; ;Ssms.c: 95:    if (sumaPulsacions == 4) {
 [e $ ! == -> _sumaPulsacions `i -> 4 `i 309  ]
 {
-"97
-[; ;Ssms.c: 97:     lletraASCII = lletraInici[ultimaTecla-2];
+"96
+[; ;Ssms.c: 96:     lletraASCII = lletraInici[ultimaTecla-2];
 [e = _lletraASCII -> *U + &U _lletraInici * -> -> - -> _ultimaTecla `i -> 2 `i `ui `ux -> -> # *U &U _lletraInici `ui `ux `c ]
-"98
-[; ;Ssms.c: 98:     sumaPulsacions = 0;
+"97
+[; ;Ssms.c: 97:     sumaPulsacions = 0;
 [e = _sumaPulsacions -> -> 0 `i `uc ]
-"99
-[; ;Ssms.c: 99:     state = 0;
+"98
+[; ;Ssms.c: 98:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"100
-[; ;Ssms.c: 100:    }
+"99
+[; ;Ssms.c: 99:    }
 }
 [e $U 310  ]
-"101
-[; ;Ssms.c: 101:    else if (sumaPulsacions == 3) {
+"100
+[; ;Ssms.c: 100:    else if (sumaPulsacions == 3) {
 [e :U 309 ]
 [e $ ! == -> _sumaPulsacions `i -> 3 `i 311  ]
 {
-"102
-[; ;Ssms.c: 102:     lletraASCII = ultimaTecla+48;
+"101
+[; ;Ssms.c: 101:     lletraASCII = ultimaTecla+48;
 [e = _lletraASCII -> + -> _ultimaTecla `i -> 48 `i `c ]
-"103
-[; ;Ssms.c: 103:     state = 0;
+"102
+[; ;Ssms.c: 102:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"104
-[; ;Ssms.c: 104:    }
+"103
+[; ;Ssms.c: 103:    }
 }
 [e $U 312  ]
-"105
-[; ;Ssms.c: 105:    else if (sumaPulsacions < 3) {
+"104
+[; ;Ssms.c: 104:    else if (sumaPulsacions < 3) {
 [e :U 311 ]
 [e $ ! < -> _sumaPulsacions `i -> 3 `i 313  ]
 {
-"106
-[; ;Ssms.c: 106:     state = 0;
+"105
+[; ;Ssms.c: 105:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"107
-[; ;Ssms.c: 107:    }
+"106
+[; ;Ssms.c: 106:    }
 }
 [e :U 313 ]
 [e :U 312 ]
 [e :U 310 ]
-"108
-[; ;Ssms.c: 108:   break;
+"107
+[; ;Ssms.c: 107:   break;
 [e $U 282  ]
-"109
-[; ;Ssms.c: 109:   case 6:
+"108
+[; ;Ssms.c: 108:   case 6:
 [e :U 314 ]
-"110
-[; ;Ssms.c: 110:    if (sumaPulsacions == 4) {
+"109
+[; ;Ssms.c: 109:    if (sumaPulsacions == 4) {
 [e $ ! == -> _sumaPulsacions `i -> 4 `i 315  ]
 {
-"111
-[; ;Ssms.c: 111:     lletraASCII = ultimaTecla+48;
+"110
+[; ;Ssms.c: 110:     lletraASCII = ultimaTecla+48;
 [e = _lletraASCII -> + -> _ultimaTecla `i -> 48 `i `c ]
-"112
-[; ;Ssms.c: 112:     state = 0;
+"111
+[; ;Ssms.c: 111:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"113
-[; ;Ssms.c: 113:    }
+"112
+[; ;Ssms.c: 112:    }
 }
 [e $U 316  ]
-"114
-[; ;Ssms.c: 114:    else if (sumaPulsacions == 5) {
+"113
+[; ;Ssms.c: 113:    else if (sumaPulsacions == 5) {
 [e :U 315 ]
 [e $ ! == -> _sumaPulsacions `i -> 5 `i 317  ]
 {
-"115
-[; ;Ssms.c: 115:     lletraASCII = lletraInici[ultimaTecla-2];
+"114
+[; ;Ssms.c: 114:     lletraASCII = lletraInici[ultimaTecla-2];
 [e = _lletraASCII -> *U + &U _lletraInici * -> -> - -> _ultimaTecla `i -> 2 `i `ui `ux -> -> # *U &U _lletraInici `ui `ux `c ]
-"116
-[; ;Ssms.c: 116:     sumaPulsacions = 0;
+"115
+[; ;Ssms.c: 115:     sumaPulsacions = 0;
 [e = _sumaPulsacions -> -> 0 `i `uc ]
-"117
-[; ;Ssms.c: 117:     state = 0;
+"116
+[; ;Ssms.c: 116:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"118
-[; ;Ssms.c: 118:    }
+"117
+[; ;Ssms.c: 117:    }
 }
 [e $U 318  ]
-"119
-[; ;Ssms.c: 119:    else if (sumaPulsacions < 4) {
+"118
+[; ;Ssms.c: 118:    else if (sumaPulsacions < 4) {
 [e :U 317 ]
 [e $ ! < -> _sumaPulsacions `i -> 4 `i 319  ]
 {
-"120
-[; ;Ssms.c: 120:     state = 0;
+"119
+[; ;Ssms.c: 119:     state = 0;
 [e = F2592 -> -> 0 `i `uc ]
-"121
-[; ;Ssms.c: 121:    }
+"120
+[; ;Ssms.c: 120:    }
 }
 [e :U 319 ]
 [e :U 318 ]
 [e :U 316 ]
-"122
-[; ;Ssms.c: 122:   break;
+"121
+[; ;Ssms.c: 121:   break;
 [e $U 282  ]
-"123
-[; ;Ssms.c: 123:  }
+"122
+[; ;Ssms.c: 122:  }
 }
 [e $U 282  ]
 [e :U 283 ]
@@ -883,53 +879,53 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 6 `i 314
  282 ]
 [e :U 282 ]
-"124
-[; ;Ssms.c: 124: }
+"123
+[; ;Ssms.c: 123: }
 [e :UE 281 ]
 }
-"126
-[; ;Ssms.c: 126: void SsetNovaTecla(char tecla){
+"125
+[; ;Ssms.c: 125: void SsetNovaTecla(char tecla){
 [v _SsetNovaTecla `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SsetNovaTecla ]
 [v _tecla `uc ~T0 @X0 1 r1 ]
 [f ]
-"127
-[; ;Ssms.c: 127:     novaTecla = tecla;
+"126
+[; ;Ssms.c: 126:     novaTecla = tecla;
 [e = _novaTecla -> _tecla `c ]
-"128
-[; ;Ssms.c: 128: }
+"127
+[; ;Ssms.c: 127: }
 [e :UE 320 ]
 }
-"130
-[; ;Ssms.c: 130: void SMSon(void){
+"129
+[; ;Ssms.c: 129: void SMSon(void){
 [v _SMSon `(v ~T0 @X0 1 ef ]
 {
 [e :U _SMSon ]
 [f ]
-"131
-[; ;Ssms.c: 131:     setSMSon = 1;
+"130
+[; ;Ssms.c: 130:     setSMSon = 1;
 [e = _setSMSon -> -> 1 `i `b ]
-"132
-[; ;Ssms.c: 132:     novaTecla = -1;
+"131
+[; ;Ssms.c: 131:     novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
-"133
-[; ;Ssms.c: 133: }
+"132
+[; ;Ssms.c: 132: }
 [e :UE 321 ]
 }
-"135
-[; ;Ssms.c: 135: void SMSoff (void){
+"134
+[; ;Ssms.c: 134: void SMSoff (void){
 [v _SMSoff `(v ~T0 @X0 1 ef ]
 {
 [e :U _SMSoff ]
 [f ]
-"136
-[; ;Ssms.c: 136:     setSMSon = 0;
+"135
+[; ;Ssms.c: 135:     setSMSon = 0;
 [e = _setSMSon -> -> 0 `i `b ]
-"137
-[; ;Ssms.c: 137:     novaTecla = -1;
+"136
+[; ;Ssms.c: 136:     novaTecla = -1;
 [e = _novaTecla -> -U -> 1 `i `c ]
-"138
-[; ;Ssms.c: 138: }
+"137
+[; ;Ssms.c: 137: }
 [e :UE 322 ]
 }

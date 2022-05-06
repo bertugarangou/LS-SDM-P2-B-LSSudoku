@@ -4854,7 +4854,7 @@ void menu(void) {
    }
   break;
   case 6:
-   if (novaLletra > 47 && NovaTecla != 10) {
+   if (novaLletra > 31 && NovaTecla != 10) {
     LcPutChar(novaLletra);
     UenviaChar(novaLletra,tmp);
     state = 7;
@@ -4880,7 +4880,7 @@ void menu(void) {
    }
   break;
   case 8:
-   if (novaLletra > 47 && NovaTecla != 10) {
+   if (novaLletra > 31 && NovaTecla != 10) {
     LcPutChar(novaLletra);
     UenviaPas(novaLletra,tmp);
     state = 9;

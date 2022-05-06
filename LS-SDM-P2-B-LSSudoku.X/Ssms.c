@@ -13,7 +13,7 @@ char timerSMS = -1;
 signed char ultimaTecla = -1;
 __bit setSMSon = 0;
 unsigned char zeroTecla;
-char arrayZero[3] = {'0',95};
+char arrayZero[3] = {'0',32};
 
 void Sinit(void){
     timerSMS = TiGetTimer();

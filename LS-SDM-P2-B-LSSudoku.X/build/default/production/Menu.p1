@@ -782,8 +782,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 88:   case 6:
 [e :U 299 ]
 "89
-[; ;Menu.c: 89:    if (novaLletra > 47 && NovaTecla != 10) {
-[e $ ! && > -> _novaLletra `i -> 47 `i != -> _NovaTecla `i -> 10 `i 300  ]
+[; ;Menu.c: 89:    if (novaLletra > 31 && NovaTecla != 10) {
+[e $ ! && > -> _novaLletra `i -> 31 `i != -> _NovaTecla `i -> 10 `i 300  ]
 {
 "90
 [; ;Menu.c: 90:     LcPutChar(novaLletra);
@@ -872,8 +872,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Menu.c: 114:   case 8:
 [e :U 307 ]
 "115
-[; ;Menu.c: 115:    if (novaLletra > 47 && NovaTecla != 10) {
-[e $ ! && > -> _novaLletra `i -> 47 `i != -> _NovaTecla `i -> 10 `i 308  ]
+[; ;Menu.c: 115:    if (novaLletra > 31 && NovaTecla != 10) {
+[e $ ! && > -> _novaLletra `i -> 31 `i != -> _NovaTecla `i -> 10 `i 308  ]
 {
 "116
 [; ;Menu.c: 116:     LcPutChar(novaLletra);

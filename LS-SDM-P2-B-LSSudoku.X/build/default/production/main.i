@@ -4838,9 +4838,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 49 "main.c"
+# 50 "main.c"
     TRISC = 0xC0;
-# 59 "main.c"
+# 60 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4876,7 +4876,6 @@ void main(void) {
     LcInit(2,16);
     Minit();
 
-
     escriure2usuarisStruct();
 
     while(1){
@@ -4885,6 +4884,7 @@ void main(void) {
         motorHora();
         JoystickMotor();
         menu();
+
         CtoA();
         motorAltaveu();
         UmotorUsers();

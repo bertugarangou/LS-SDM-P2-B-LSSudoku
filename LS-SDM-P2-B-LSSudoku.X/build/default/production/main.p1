@@ -589,101 +589,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 "39
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"49
-[; ;main.c: 49:     TRISC = 0xC0;
+"50
+[; ;main.c: 50:     TRISC = 0xC0;
 [e = _TRISC -> -> 192 `i `uc ]
-"59
-[; ;main.c: 59:     TRISD = 0x8F;
-[e = _TRISD -> -> 143 `i `uc ]
 "60
-[; ;main.c: 60:     LATD = 0x00;
+[; ;main.c: 60:     TRISD = 0x8F;
+[e = _TRISD -> -> 143 `i `uc ]
+"61
+[; ;main.c: 61:     LATD = 0x00;
 [e = _LATD -> -> 0 `i `uc ]
-"63
-[; ;main.c: 63:     EECON1bits.EEPGD = 1;
-[e = . . _EECON1bits 0 7 -> -> 1 `i `uc ]
 "64
-[; ;main.c: 64:     EECON1bits.CFGS = 0;
+[; ;main.c: 64:     EECON1bits.EEPGD = 1;
+[e = . . _EECON1bits 0 7 -> -> 1 `i `uc ]
+"65
+[; ;main.c: 65:     EECON1bits.CFGS = 0;
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66: }
+"67
+[; ;main.c: 67: }
 [e :UE 281 ]
 }
-"67
-[; ;main.c: 67: void init_eusart(void){
+"68
+[; ;main.c: 68: void init_eusart(void){
 [v _init_eusart `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_eusart ]
 [f ]
-"68
-[; ;main.c: 68:     TXSTA = 0x24;
-[e = _TXSTA -> -> 36 `i `uc ]
 "69
-[; ;main.c: 69:     RCSTA = 0x90;
-[e = _RCSTA -> -> 144 `i `uc ]
+[; ;main.c: 69:     TXSTA = 0x24;
+[e = _TXSTA -> -> 36 `i `uc ]
 "70
-[; ;main.c: 70:     BAUDCON = 0x08;
-[e = _BAUDCON -> -> 8 `i `uc ]
+[; ;main.c: 70:     RCSTA = 0x90;
+[e = _RCSTA -> -> 144 `i `uc ]
 "71
-[; ;main.c: 71:     SPBRGH = 0x04;
-[e = _SPBRGH -> -> 4 `i `uc ]
+[; ;main.c: 71:     BAUDCON = 0x08;
+[e = _BAUDCON -> -> 8 `i `uc ]
 "72
-[; ;main.c: 72:     SPBRG = 0x10;
-[e = _SPBRG -> -> 16 `i `uc ]
+[; ;main.c: 72:     SPBRGH = 0x04;
+[e = _SPBRGH -> -> 4 `i `uc ]
 "73
-[; ;main.c: 73: }
+[; ;main.c: 73:     SPBRG = 0x10;
+[e = _SPBRG -> -> 16 `i `uc ]
+"74
+[; ;main.c: 74: }
 [e :UE 282 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"76
-[; ;main.c: 76: void main(void) {
+"77
+[; ;main.c: 77: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"77
-[; ;main.c: 77:     init_ports();
-[e ( _init_ports ..  ]
 "78
-[; ;main.c: 78:     escriureEEPROM();
-[e ( _escriureEEPROM ..  ]
+[; ;main.c: 78:     init_ports();
+[e ( _init_ports ..  ]
 "79
-[; ;main.c: 79:     init_eusart();
-[e ( _init_eusart ..  ]
+[; ;main.c: 79:     escriureEEPROM();
+[e ( _escriureEEPROM ..  ]
 "80
-[; ;main.c: 80:     TiInitTimer();
-[e ( _TiInitTimer ..  ]
+[; ;main.c: 80:     init_eusart();
+[e ( _init_eusart ..  ]
 "81
-[; ;main.c: 81:     TeInit();
-[e ( _TeInit ..  ]
+[; ;main.c: 81:     TiInitTimer();
+[e ( _TiInitTimer ..  ]
 "82
-[; ;main.c: 82:     Sinit();
-[e ( _Sinit ..  ]
+[; ;main.c: 82:     TeInit();
+[e ( _TeInit ..  ]
 "83
-[; ;main.c: 83:     SMotor();
-[e ( _SMotor ..  ]
+[; ;main.c: 83:     Sinit();
+[e ( _Sinit ..  ]
 "84
-[; ;main.c: 84:     Uinit();
-[e ( _Uinit ..  ]
+[; ;main.c: 84:     SMotor();
+[e ( _SMotor ..  ]
 "85
-[; ;main.c: 85:     initAltaveu();
-[e ( _initAltaveu ..  ]
+[; ;main.c: 85:     Uinit();
+[e ( _Uinit ..  ]
 "86
-[; ;main.c: 86:     GLCDInit();
-[e ( _GLCDInit ..  ]
+[; ;main.c: 86:     initAltaveu();
+[e ( _initAltaveu ..  ]
 "87
-[; ;main.c: 87:     JoystickInit();
-[e ( _JoystickInit ..  ]
+[; ;main.c: 87:     GLCDInit();
+[e ( _GLCDInit ..  ]
 "88
-[; ;main.c: 88:     initHora();
-[e ( _initHora ..  ]
+[; ;main.c: 88:     JoystickInit();
+[e ( _JoystickInit ..  ]
 "89
-[; ;main.c: 89:     initSIO();
+[; ;main.c: 89:     initHora();
+[e ( _initHora ..  ]
+"90
+[; ;main.c: 90:     initSIO();
 [e ( _initSIO ..  ]
-"91
-[; ;main.c: 91:     LcInit(2,16);
-[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
 "92
-[; ;main.c: 92:     Minit();
+[; ;main.c: 92:     LcInit(2,16);
+[e ( _LcInit (2 , -> -> 2 `i `uc -> -> 16 `i `uc ]
+"93
+[; ;main.c: 93:     Minit();
 [e ( _Minit ..  ]
 "95
 [; ;main.c: 95:     escriure2usuarisStruct();
@@ -707,37 +707,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "102
 [; ;main.c: 102:         menu();
 [e ( _menu ..  ]
-"103
-[; ;main.c: 103:         CtoA();
-[e ( _CtoA ..  ]
 "104
-[; ;main.c: 104:         motorAltaveu();
-[e ( _motorAltaveu ..  ]
+[; ;main.c: 104:         CtoA();
+[e ( _CtoA ..  ]
 "105
-[; ;main.c: 105:         UmotorUsers();
-[e ( _UmotorUsers ..  ]
+[; ;main.c: 105:         motorAltaveu();
+[e ( _motorAltaveu ..  ]
 "106
-[; ;main.c: 106:         GLCDMotor();
-[e ( _GLCDMotor ..  ]
+[; ;main.c: 106:         UmotorUsers();
+[e ( _UmotorUsers ..  ]
 "107
-[; ;main.c: 107:         TeTeclat();
-[e ( _TeTeclat ..  ]
+[; ;main.c: 107:         GLCDMotor();
+[e ( _GLCDMotor ..  ]
 "108
-[; ;main.c: 108:         SMotor();
-[e ( _SMotor ..  ]
+[; ;main.c: 108:         TeTeclat();
+[e ( _TeTeclat ..  ]
 "109
-[; ;main.c: 109:         LcLCD();
-[e ( _LcLCD ..  ]
+[; ;main.c: 109:         SMotor();
+[e ( _SMotor ..  ]
 "110
-[; ;main.c: 110:     }
+[; ;main.c: 110:         LcLCD();
+[e ( _LcLCD ..  ]
+"111
+[; ;main.c: 111:     }
 }
 [e :U 284 ]
 [e $U 285  ]
 [e :U 286 ]
-"111
-[; ;main.c: 111:     return;
-[e $UE 283  ]
 "112
-[; ;main.c: 112: }
+[; ;main.c: 112:     return;
+[e $UE 283  ]
+"113
+[; ;main.c: 113: }
 [e :UE 283 ]
 }

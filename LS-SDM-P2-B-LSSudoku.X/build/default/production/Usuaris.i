@@ -4674,8 +4674,6 @@ void LcInsertFletxa(void);
 # 3 "Usuaris.c" 2
 
 
-unsigned char currentUsrIndex = 0;
-
 unsigned char numUsuaris = 0;
 __bit do_check_exists = 0;
 unsigned char indexNextUser;

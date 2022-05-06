@@ -2,8 +2,6 @@
 #include "Usuaris.h"
 #include "LcTLCD.h"
 
-unsigned char currentUsrIndex = 0;
-
 unsigned char numUsuaris = 0;
 __bit do_check_exists = 0;
 unsigned char indexNextUser;

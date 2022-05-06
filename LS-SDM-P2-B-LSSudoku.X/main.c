@@ -91,20 +91,20 @@ void main(void) {
     
     LcInit(2,16);
     Minit();
-    
     //borrar lo de sota, posa 2 usuaris forçats!
     escriure2usuarisStruct();
     
     while(1){
-        //motorJoc();
-        //motorSIO();
-        //motorHora();
-        //JoystickMotor();
+        motorJoc();
+        motorSIO();
+        motorHora();
+        JoystickMotor();
         menu();
-        //CtoA();
-        //motorAltaveu();
-        //UmotorUsers();
-        //GLCDMotor();
+
+        CtoA();
+        motorAltaveu();
+        UmotorUsers();
+        GLCDMotor();
         TeTeclat();//antapenultim
         SMotor(); //penultim
         LcLCD();//ultim
