@@ -8,4 +8,5 @@ Ssms.h  \
 GestioLCD.h  \
 Hora.h  \
 Joc.h  \
-SIO.h 
+SIO.h  \
+CtoA.h 

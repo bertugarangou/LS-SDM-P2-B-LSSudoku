@@ -8,6 +8,7 @@
 #include "Hora.h"
 #include "Joc.h"
 #include "SIO.h"
+#include "CtoA.h"
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
@@ -145,7 +146,10 @@ void menu(void) {
 			}
 		break;
 		case 11:
-			if (!loginNOTRegister && indexUsuari == -1) {
+            if (1 == 1) {
+				state = 12;
+			}
+			else if (!loginNOTRegister && indexUsuari == -1) {
 				URegister();
 				state = 0;
 			}
@@ -154,9 +158,6 @@ void menu(void) {
 			}
 			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
 				state = 0;
-			}
-			else if (1 == 1) {
-				state = 12;
 			}
 		break;
 		case 12:

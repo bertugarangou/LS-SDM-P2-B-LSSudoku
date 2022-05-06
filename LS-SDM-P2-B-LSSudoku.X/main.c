@@ -34,10 +34,9 @@ void init_ports(void){
     //TRISBbits.TRISB5 = 1;   //pgm
     //B0 SPK
     TRISB = 0xE0;//11100000
-    TRISBbits.RB1 = 1;
     LATBbits.LATB3 = 0;//led debugg
     LATBbits.LATB0 = 0;//spk
-    //LATBbits.LATB1 = 0;//bluetooth tx
+    LATBbits.LATB1 = 0;//bluetooth tx
     
     
     //TRISCbits.TRISC7 = 1;

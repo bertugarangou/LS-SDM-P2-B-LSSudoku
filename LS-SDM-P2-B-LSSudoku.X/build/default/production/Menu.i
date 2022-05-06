@@ -4783,6 +4783,17 @@ void SIOendGame(void);
 void initSIO(void);
 # 10 "Menu.c" 2
 
+# 1 "./CtoA.h" 1
+
+
+
+void CtoA(void);
+void CToAConverteix(unsigned char numero);
+char* CToAobtenir(void);
+char CToAHaAcabat(void);
+void CToAReset(void);
+# 11 "Menu.c" 2
+
 
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
