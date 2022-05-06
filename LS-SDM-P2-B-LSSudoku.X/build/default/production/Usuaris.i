@@ -4625,7 +4625,6 @@ __bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
 void UchangeScore(char quin, char score);
-void initPuntuacions(void);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
@@ -4633,7 +4632,6 @@ __bit UshowUsersCalculat(void);
 
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
-__bit UHaAcabatCalcTop5(void);
 void UnewScore(char score);
 # 2 "Usuaris.c" 2
 
@@ -4713,18 +4711,6 @@ typedef struct{
 }Scores;
 Scores puntuacions[5];
 
-void initPuntuacions(void){
-    puntuacions[0].indexStruct = -1;
-    puntuacions[1].indexStruct = -1;
-    puntuacions[2].indexStruct = -1;
-    puntuacions[3].indexStruct = -1;
-    puntuacions[4].indexStruct = -1;
-    puntuacions[0].score = 0;
-    puntuacions[1].score = 0;
-    puntuacions[2].score = 0;
-    puntuacions[3].score = 0;
-    puntuacions[4].score = 0;
-}
 
 
 void UchangeScore(char quin, char score){
@@ -4836,23 +4822,23 @@ void escriure2usuarisStruct(void){
 
     usuaris[3].username[0] = 'G';
     usuaris[3].username[1] = '\0';
-
-    usuaris[4].username[0] = 'J';
+    usuaris[4].username[0] = 'c';
     usuaris[4].username[1] = '\0';
 
-    puntuacions[0].indexStruct = 0;
-    puntuacions[1].indexStruct = 1;
+    puntuacions[0].indexStruct = 4;
+    puntuacions[1].indexStruct = 3;
     puntuacions[2].indexStruct = 2;
-    puntuacions[3].indexStruct = 3;
-    puntuacions[4].indexStruct = 4;
+    puntuacions[3].indexStruct = 1;
+    puntuacions[4].indexStruct = 0;
+    puntuacions[5].indexStruct = -1;
     puntuacions[0].score = 10;
     puntuacions[1].score = 11;
     puntuacions[2].score = 12;
     puntuacions[3].score = 13;
-    puntuacions[4].score = 14;
+    puntuacions[4].score = 1;
 
-    numUsuaris = 8;
-    indexNextUserStruct = 3;
+    numUsuaris = 4;
+    indexNextUserStruct = 4;
 }
 
 char compareStrings(const char *a, const char *b){
@@ -4983,10 +4969,6 @@ unsigned char UgetScore(char quin){
 signed char UgetTop5(char quin){
     return puntuacions[quin].indexStruct;
 }
-__bit UHaAcabatCalcTop5(void){
-    return do_updateScores;
-}
-
 void UnewScore(char score){
     if(puntuacions[0].score < score){
         puntuacions[0].indexStruct = usuariLoguejat;
@@ -5010,7 +4992,6 @@ void UnewScore(char score){
 
 
 }
-
 
 void escriureEEPROM(){
     for(unsigned char caca = 0; caca < 160; caca++){

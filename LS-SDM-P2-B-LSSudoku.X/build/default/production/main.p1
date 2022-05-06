@@ -104,8 +104,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 ./Menu.h
 [; ;./Menu.h: 4: void Minit(void);
 [v _Minit `(v ~T0 @X0 0 ef ]
-"21 ./Usuaris.h
-[; ;./Usuaris.h: 21: void escriure2usuarisStruct(void);
+"20 ./Usuaris.h
+[; ;./Usuaris.h: 20: void escriure2usuarisStruct(void);
 [v _escriure2usuarisStruct `(v ~T0 @X0 0 ef ]
 "3 ./Joc.h
 [; ;./Joc.h: 3: void motorJoc(void);

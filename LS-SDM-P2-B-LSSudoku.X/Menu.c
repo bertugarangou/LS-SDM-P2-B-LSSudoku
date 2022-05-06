@@ -146,10 +146,7 @@ void menu(void) {
 			}
 		break;
 		case 11:
-            if (1 == 1) {
-				state = 12;
-			}
-			else if (!loginNOTRegister && indexUsuari == -1) {
+			if (!loginNOTRegister && indexUsuari == -1) {
 				URegister();
 				state = 0;
 			}
@@ -158,6 +155,9 @@ void menu(void) {
 			}
 			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
 				state = 0;
+			}
+			else if (1 == 1) {
+				state = 12;
 			}
 		break;
 		case 12:
@@ -206,10 +206,11 @@ void menu(void) {
 				calculateShowUsers();
 				state = 30;
 			}
-			else if (NovaTecla == 11 && menuDalt == 2) {
+			else if (NovaTecla == 11 && menuDalt == 2 && UgetTop5(0) != -1) {
 				NoFerMenu();
 				LcClear();
 				menuDalt = 0;
+				NovaTecla = -1;
 				state = 31;
 			}
 		break;
@@ -377,7 +378,6 @@ void menu(void) {
 		break;
 		case 31:
 			if (LcLliure()) {
-				LcGotoXY(0,0);
 				LcNewString(UgetUserName(UgetTop5(menuDalt)));
 				CToAConverteix(UgetScore(UgetTop5(menuDalt)));
 				state = 32;
@@ -389,16 +389,12 @@ void menu(void) {
 				LcGotoXY(0,1);
 				LcNewString(CToAobtenir());
 				menuDalt++;
+				if(menuDalt == 5 || UgetTop5(menuDalt) == -1) menuDalt = 0;
 				state = 34;
 			}
 		break;
 		case 34:
-			if (UgetTop5(menuDalt) == -1 || menuDalt == 5) {
-				pos = 0;
-				TiResetTics(timerMenu);
-				state = 37;
-			}
-			else if ((UgetTop5(menuDalt)  != -1 || menuDalt != 5) && LcLliure()) {
+			if ((UgetTop5(menuDalt)  != -1 || menuDalt != 5) && LcLliure()) {
 				LcGotoXY(16,0);
 				LcNewString(UgetUserName(UgetTop5(menuDalt)));
 				CToAConverteix(UgetScore(UgetTop5(menuDalt)));
@@ -408,7 +404,7 @@ void menu(void) {
 		case 35:
 			if (LcLliure() && CToAHaAcabat() == 250) {
 				LcPutChar(':');
-				LcGotoXY(28,1);
+				LcGotoXY(16,1);
 				LcNewString(CToAobtenir());
 				pos = 0;
 				TiResetTics(timerMenu);
@@ -416,11 +412,23 @@ void menu(void) {
 			}
 		break;
 		case 37:
-			if (NovaTecla == 11) {
+			if (NovaTecla == 11 && LcLliure()) {
 				menuDalt = 0;
 				state = 12;
 			}
-			else if (TiGetTics(timerMenu) > 1205) {
+			else if (TiGetTics(timerMenu) > 400 & LcLliure()) {
+				state = 38;
+			}
+		break;
+		case 38:
+			if (pos < 16) {
+				TiResetTics(timerMenu);
+				LcScroll();
+				pos++;
+				state = 37;
+			}
+			else if (pos > 15) {
+				LcClear();
 				state = 31;
 			}
 		break;

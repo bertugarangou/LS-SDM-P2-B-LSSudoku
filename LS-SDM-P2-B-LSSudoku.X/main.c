@@ -91,7 +91,7 @@ void main(void) {
     
     LcInit(2,16);
     Minit();
-    //borrar lo de sota, posa 2 usuaris forçats!
+    //borrar lo de sota, posa 2 usuaris forçats i punts!
     escriure2usuarisStruct();
     
     while(1){
