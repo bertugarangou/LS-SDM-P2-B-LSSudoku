@@ -4838,12 +4838,12 @@ void init_ports(void){
 
 
     TRISB = 0xE0;
+    TRISBbits.RB1 = 1;
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
-    LATBbits.LATB1 = 0;
-# 50 "main.c"
+# 51 "main.c"
     TRISC = 0xC0;
-# 60 "main.c"
+# 61 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.sym \
   --cmf=dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.cmf -z \
-  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAsmps.4 \
+  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAs43c.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LS-SDM-P2-B-LSSudoku.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=01B8h-01FFh -pstack=STACK \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alber\AppData\Local\Temp\xcAsmps.o \
+  C:\Users\alber\AppData\Local\Temp\xcAs43c.o \
   dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o 
 
 Object code version is 3.11
@@ -31,7 +31,7 @@ Machine type is 18F4321
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alber\AppData\Local\Temp\xcAsmps.o
+C:\Users\alber\AppData\Local\Temp\xcAs43c.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 32       32        4        4       0
@@ -419,7 +419,7 @@ UenviaPas@pos                     cstackCOMRAM 000063
 UgetUserName@quin                 cstackCOMRAM 000065
 Uinit@i                           cstackCOMRAM 000065
 Uinit@j                           cstackCOMRAM 000066
-Uinit@j_1167                      cstackCOMRAM 000067
+Uinit@j_1215                      cstackCOMRAM 000067
 UmotorUsers@state                 bssCOMRAM    000026
 WaitForBusy@Busy                  cstackCOMRAM 00006A
 _ADCON0                           (abs)        000FC2
@@ -508,6 +508,7 @@ _TMR0H                            (abs)        000FD7
 _TMR0L                            (abs)        000FD6
 _TRISA                            (abs)        000F92
 _TRISB                            (abs)        000F93
+_TRISBbits                        (abs)        000F93
 _TRISC                            (abs)        000F94
 _TRISCbits                        (abs)        000F94
 _TRISD                            (abs)        000F95
