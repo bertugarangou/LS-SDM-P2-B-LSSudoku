@@ -554,7 +554,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 15: char timerSIO;
 [v _timerSIO `uc ~T0 @X0 1 e ]
 "16
-[; ;SIO.c: 16: char score;
+[; ;SIO.c: 16: unsigned char score;
 [v _score `uc ~T0 @X0 1 e ]
 "18
 [; ;SIO.c: 18: void initSIO(void){
@@ -832,13 +832,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "93
 [; ;SIO.c: 93:                 score = RCREG;
-[e = _score -> _RCREG `uc ]
+[e = _score _RCREG ]
 "94
 [; ;SIO.c: 94:                 UnewScore(score);
-[e ( _UnewScore (1 _score ]
+[e ( _UnewScore (1 -> _score `uc ]
 "95
 [; ;SIO.c: 95:     CToAConverteix(score);
-[e ( _CToAConverteix (1 -> _score `uc ]
+[e ( _CToAConverteix (1 _score ]
 "96
 [; ;SIO.c: 96:     TiResetTics(timerSIO);
 [e ( _TiResetTics (1 _timerSIO ]

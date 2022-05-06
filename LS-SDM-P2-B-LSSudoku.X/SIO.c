@@ -13,7 +13,7 @@ signed char novaTeclaSIO = -1;
 __bit jugantSIO = 0;
 __bit Krebut = 0;
 char timerSIO;
-char score;
+unsigned char score;
 
 void initSIO(void){
     timerSIO = TiGetTimer();
