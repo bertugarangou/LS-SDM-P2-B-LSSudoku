@@ -145,10 +145,7 @@ void menu(void) {
 			}
 		break;
 		case 11:
-            if (1 == 1) {
-				state = 12;
-			}
-			else if (!loginNOTRegister && indexUsuari == -1) {
+			if (!loginNOTRegister && indexUsuari == -1) {
 				URegister();
 				state = 0;
 			}
@@ -158,7 +155,9 @@ void menu(void) {
 			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
 				state = 0;
 			}
-			
+			else if (1 == 1) {
+				state = 12;
+			}
 		break;
 		case 12:
 			LcClear();
@@ -205,6 +204,12 @@ void menu(void) {
 				NovaTecla = -1;
 				calculateShowUsers();
 				state = 30;
+			}
+			else if (NovaTecla == 11 && menuDalt == 2) {
+				NoFerMenu();
+				LcClear();
+				menuDalt = 0;
+				state = 31;
 			}
 		break;
 		case 14:
@@ -299,9 +304,6 @@ void menu(void) {
 		break;
 		case 23:
 			if (LcLliure()) {
-				if (menuDalt == UgetNumUsuaris()){
-				  menuDalt = 0;
-				}
 				LcGotoXY(0,0);
 				LcNewString(getArrayShowUsers(menuDalt));
 				menuDalt++;
@@ -340,7 +342,7 @@ void menu(void) {
 			}
 		break;
 		case 28:
-			if (TiGetTics(timerMenu) > 400) {
+			if (TiGetTics(timerMenu) > 1205) {
 				state = 29;
 			}
 			else if (NovaTecla == 11) {
@@ -370,6 +372,55 @@ void menu(void) {
 		case 30:
 			if (UshowUsersCalculat()) {
 				state = 23;
+			}
+		break;
+		case 31:
+			if (LcLliure()) {
+				LcGotoXY(0,0);
+				LcNewString(UgetUserName(UgetTop5(menuDalt)));
+				CToAConverteix(UgetScore(UgetTop5(menuDalt)));
+				state = 32;
+			}
+		break;
+		case 32:
+			if (CToAHaAcabat() == 250 && LcLliure()) {
+				LcPutChar(':');
+				LcGotoXY(0,1);
+				LcNewString(CToAobtenir());
+				menuDalt++;
+				state = 34;
+			}
+		break;
+		case 34:
+			if (UgetTop5(menuDalt) == -1 || menuDalt == 5) {
+				pos = 0;
+				TiResetTics(timerMenu);
+				state = 37;
+			}
+			else if ((UgetTop5(menuDalt)  != -1 || menuDalt != 5) && LcLliure()) {
+				LcGotoXY(16,0);
+				LcNewString(UgetUserName(UgetTop5(menuDalt)));
+				CToAConverteix(UgetScore(UgetTop5(menuDalt)));
+				state = 35;
+			}
+		break;
+		case 35:
+			if (LcLliure() && CToAHaAcabat() == 250) {
+				LcPutChar(':');
+				LcGotoXY(28,1);
+				LcNewString(CToAobtenir());
+				pos = 0;
+				TiResetTics(timerMenu);
+				state = 37;
+			}
+		break;
+		case 37:
+			if (NovaTecla == 11) {
+				menuDalt = 0;
+				state = 12;
+			}
+			else if (TiGetTics(timerMenu) > 1205) {
+				state = 31;
 			}
 		break;
 	}

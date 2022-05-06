@@ -9,11 +9,11 @@
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
 signed char direccioSIO = -1;
-unsigned char rebut;
 signed char novaTeclaSIO = -1;
 __bit jugantSIO = 0;
 __bit Krebut = 0;
 char timerSIO;
+char score;
 
 void initSIO(void){
     timerSIO = TiGetTimer();
@@ -90,7 +90,9 @@ void motorSIO(void){
 		break;
 		case 4:
 			if (PIR1bits.RCIF) {
-				CToAConverteix(RCREG);
+                score = RCREG;
+                UnewScore(score);
+				CToAConverteix(score);
 				TiResetTics(timerSIO);
 				state = 5;
 			}

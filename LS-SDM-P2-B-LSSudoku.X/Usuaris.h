@@ -20,4 +20,8 @@ void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
 __bit UshowUsersCalculat(void);
+
+char UgetScore(char quin);
+char UgetTop5(char quin);
+__bit UHaAcabatCalcTop5(void);
 #endif
