@@ -4701,6 +4701,8 @@ char llegirCharEEPROM(char pos);
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
 void UnewScore(char scoretmp);
+char compareStrings(const char *a, const char *b);
+__bit miraPassword(void);
 # 5 "main.c" 2
 
 # 1 "./Menu.h" 1

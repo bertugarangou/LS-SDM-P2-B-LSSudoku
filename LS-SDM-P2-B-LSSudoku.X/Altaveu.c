@@ -1,7 +1,7 @@
 #include <xc.h>
 #include "Altaveu.h"
 #include "TiTTimer.h"
-const char duradaNotes = 168; //128+32+8
+char duradaNotes = 168; //128+32+8
 __bit reproduir = 0;
 unsigned char nota;
 char timerAltaveu;

@@ -11,8 +11,8 @@
 #include "CtoA.h"
 
 #define neg -1
-const char loginText[8] = "1.LOGIN";
-const char registerText[11] = "2.REGISTER";
+char loginText[8] = "1.LOGIN";
+char registerText[11] = "2.REGISTER";
 unsigned char tmp = 0;
 signed char NovaTecla = neg;
 signed char novaLletra = neg;
@@ -152,10 +152,10 @@ void menu(void) {
 				URegister();
 				state = 0;
 			}
-			else if (loginNOTRegister == 1 && indexUsuari > neg) {
+			else if (loginNOTRegister == 1 && indexUsuari > neg && miraPassword()) {
 				state = 12;
 			}
-			else if ((loginNOTRegister && indexUsuari == neg) || (!loginNOTRegister && indexUsuari > neg)) {
+			else if ((loginNOTRegister && indexUsuari == neg) || (!loginNOTRegister && indexUsuari > neg) || !miraPassword()) {
 				state = 0;
 			}
 		break;

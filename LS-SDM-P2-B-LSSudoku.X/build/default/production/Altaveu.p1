@@ -438,8 +438,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "4 Altaveu.c
-[; ;Altaveu.c: 4: const char duradaNotes = 168;
-[v _duradaNotes `Cuc ~T0 @X0 1 e ]
+[; ;Altaveu.c: 4: char duradaNotes = 168;
+[v _duradaNotes `uc ~T0 @X0 1 e ]
 [i _duradaNotes
 -> -> 168 `i `uc
 ]

@@ -215,6 +215,8 @@
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
 "290
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
+"295
+[v _miraPassword miraPassword `(b  1 e 0 0 ]
 "5 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Altaveu.c
 [v _reproduir reproduir `b  1 e 0 0 ]
 "6
@@ -385,7 +387,7 @@
 "2187
 [u S91 . 1 `S73 1 . 1 0 `S82 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES91  1 e 1 @3989 ]
-[s S1541 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1524 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -395,12 +397,12 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2705
-[s S1550 . 1 `uc 1 . 1 0 :4:0 
+[s S1533 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S1554 . 1 `S1541 1 . 1 0 `S1550 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1554  1 e 1 @3998 ]
+[u S1537 . 1 `S1524 1 . 1 0 `S1533 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1537  1 e 1 @3998 ]
 [s S432 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
@@ -426,7 +428,7 @@
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "3332
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S1465 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1448 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -436,7 +438,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3371
-[s S1474 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1457 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -445,13 +447,13 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S1483 . 1 `uc 1 . 1 0 :6:0 
+[s S1466 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1486 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1469 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S1488 . 1 `S1465 1 . 1 0 `S1474 1 . 1 0 `S1483 1 . 1 0 `S1486 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES1488  1 e 1 @4012 ]
+[u S1471 . 1 `S1448 1 . 1 0 `S1457 1 . 1 0 `S1466 1 . 1 0 `S1469 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1471  1 e 1 @4012 ]
 "3588
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3600
@@ -468,38 +470,38 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "4802
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S1287 . 1 `uc 1 . 1 0 :1:0 
+[s S1270 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "4846
-[s S1290 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1273 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S1294 . 1 `uc 1 . 1 0 :1:0 
+[s S1277 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S1301 . 1 `uc 1 . 1 0 :1:0 
+[s S1284 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S1304 . 1 `uc 1 . 1 0 :1:0 
+[s S1287 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S1307 . 1 `uc 1 . 1 0 :1:0 
+[s S1290 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S1310 . 1 `uc 1 . 1 0 :1:0 
+[s S1293 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S1313 . 1 `uc 1 . 1 0 :1:0 
+[s S1296 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S1316 . 1 `S1287 1 . 1 0 `S1290 1 . 1 0 `S1294 1 . 1 0 `S1301 1 . 1 0 `S1304 1 . 1 0 `S1307 1 . 1 0 `S1310 1 . 1 0 `S1313 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1316  1 e 1 @4034 ]
+[u S1299 . 1 `S1270 1 . 1 0 `S1273 1 . 1 0 `S1277 1 . 1 0 `S1284 1 . 1 0 `S1287 1 . 1 0 `S1290 1 . 1 0 `S1293 1 . 1 0 `S1296 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1299  1 e 1 @4034 ]
 "4935
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 [s S724 . 1 `uc 1 NOT_BOR 1 0 :1:0 
@@ -634,9 +636,9 @@
 "24
 [v _nou_s nou_s `b  1 e 0 0 ]
 "14 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
-[v _loginText loginText `C[8]uc  1 e 8 0 ]
+[v _loginText loginText `[8]uc  1 e 8 0 ]
 "15
-[v _registerText registerText `C[11]uc  1 e 11 0 ]
+[v _registerText registerText `[11]uc  1 e 11 0 ]
 "16
 [v _tmp tmp `uc  1 e 1 0 ]
 "17
@@ -690,7 +692,7 @@
 "15
 [v _zeroTecla zeroTecla `uc  1 e 1 0 ]
 "16
-[v _arrayZero arrayZero `C[2]uc  1 e 2 0 ]
+[v _arrayZero arrayZero `[2]uc  1 e 2 0 ]
 "8 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TeTeclat.c
 [v _tiTeclat tiTeclat `uc  1 s 1 tiTeclat ]
 "10
@@ -730,12 +732,12 @@
 [v _tmpUsername tmpUsername `[9]uc  1 e 9 0 ]
 "19
 [v _tmpPassword tmpPassword `[9]uc  1 e 9 0 ]
-[s S1092 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
+[s S1074 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
 "25
-[v _usuaris usuaris `[8]S1092  1 e 144 0 ]
-[s S1095 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
+[v _usuaris usuaris `[8]S1074  1 e 144 0 ]
+[s S1077 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
 "31
-[v _puntuacions puntuacions `[5]S1095  1 e 10 0 ]
+[v _puntuacions puntuacions `[5]S1077  1 e 10 0 ]
 "76 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -855,9 +857,14 @@
 {
 "43
 [v menu@state state `uc  1 s 1 state ]
-"436
+"435
 } 0
-"61 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"295 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+[v _miraPassword miraPassword `(b  1 e 0 0 ]
+{
+"297
+} 0
+"61
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
 {
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
@@ -1095,7 +1102,7 @@
 [v _Uinit Uinit `(v  1 e 1 0 ]
 {
 "110
-[v Uinit@k_1193 k `uc  1 a 1 12 ]
+[v Uinit@k_1175 k `uc  1 a 1 12 ]
 "106
 [v Uinit@k k `uc  1 a 1 11 ]
 "126

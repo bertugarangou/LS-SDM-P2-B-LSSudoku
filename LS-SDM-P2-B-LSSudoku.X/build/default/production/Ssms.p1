@@ -477,8 +477,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Ssms.c: 15: unsigned char zeroTecla;
 [v _zeroTecla `uc ~T0 @X0 1 e ]
 "16
-[; ;Ssms.c: 16: const char arrayZero[2] = {'0',32};
-[v _arrayZero `Cuc ~T0 @X0 -> 2 `i e ]
+[; ;Ssms.c: 16: char arrayZero[2] = {'0',32};
+[v _arrayZero `uc ~T0 @X0 -> 2 `i e ]
 [i _arrayZero
 :U ..
 -> -> 48 `ui `uc

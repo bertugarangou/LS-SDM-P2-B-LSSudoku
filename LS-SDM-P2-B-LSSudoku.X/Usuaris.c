@@ -291,3 +291,7 @@ void UnewScore(char scoretmp){
     scoreUsr = scoretmp;
     do_updateScore = 1;    
 }
+
+__bit miraPassword(){
+    return !compareStrings(tmpPassword, usuaris[usuariLoguejat].password);
+}

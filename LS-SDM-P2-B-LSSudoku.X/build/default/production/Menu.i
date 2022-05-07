@@ -4712,6 +4712,8 @@ char llegirCharEEPROM(char pos);
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
 void UnewScore(char scoretmp);
+char compareStrings(const char *a, const char *b);
+__bit miraPassword(void);
 # 5 "Menu.c" 2
 
 # 1 "./Ssms.h" 1
@@ -4789,8 +4791,8 @@ void CToAReset(void);
 
 
 
-const char loginText[8] = "1.LOGIN";
-const char registerText[11] = "2.REGISTER";
+char loginText[8] = "1.LOGIN";
+char registerText[11] = "2.REGISTER";
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
 signed char novaLletra = -1;
@@ -4930,12 +4932,11 @@ void menu(void) {
     URegister();
     state = 0;
    }
-   else if (loginNOTRegister == 1 && indexUsuari > -1) {
+   else if (loginNOTRegister == 1 && indexUsuari > -1 && miraPassword()) {
     state = 12;
    }
-   else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
+   else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1) || !miraPassword()) {
     state = 0;
-                LATBbits.LATB3 = 1;
    }
   break;
   case 12:

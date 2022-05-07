@@ -938,8 +938,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "145
 [; ;Usuaris.c: 145:     static char state = 0;
-[v F2638 `uc ~T0 @X0 1 s state ]
-[i F2638
+[v F2642 `uc ~T0 @X0 1 s state ]
+[i F2642
 -> -> 0 `i `uc
 ]
 "147
@@ -973,7 +973,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _usuariLoguejat -> -U -> 1 `i `c ]
 "155
 [; ;Usuaris.c: 155:     state = 1;
-[e = F2638 -> -> 1 `i `uc ]
+[e = F2642 -> -> 1 `i `uc ]
 "156
 [; ;Usuaris.c: 156:    }
 }
@@ -993,7 +993,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _escriureCharEEPROM (2 , -> _numUsuaris `uc -> -> 0 `i `uc ]
 "161
 [; ;Usuaris.c: 161:     state = 2;
-[e = F2638 -> -> 2 `i `uc ]
+[e = F2642 -> -> 2 `i `uc ]
 "162
 [; ;Usuaris.c: 162:    }
 }
@@ -1054,7 +1054,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 332 ]
 "179
 [; ;Usuaris.c: 179:     state = 5;
-[e = F2638 -> -> 5 `i `uc ]
+[e = F2642 -> -> 5 `i `uc ]
 "180
 [; ;Usuaris.c: 180:    }
 }
@@ -1069,7 +1069,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _do_updateScore -> -> 0 `i `b ]
 "183
 [; ;Usuaris.c: 183:     state = 6;
-[e = F2638 -> -> 6 `i `uc ]
+[e = F2642 -> -> 6 `i `uc ]
 "184
 [; ;Usuaris.c: 184:    }
 }
@@ -1104,7 +1104,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "193
 [; ;Usuaris.c: 193:     state = 1;
-[e = F2638 -> -> 1 `i `uc ]
+[e = F2642 -> -> 1 `i `uc ]
 "194
 [; ;Usuaris.c: 194:    }
 }
@@ -1119,7 +1119,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _do_check_exists -> -> 0 `i `b ]
 "197
 [; ;Usuaris.c: 197:     state = 0;
-[e = F2638 -> -> 0 `i `uc ]
+[e = F2642 -> -> 0 `i `uc ]
 "198
 [; ;Usuaris.c: 198:    }
 }
@@ -1149,7 +1149,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "206
 [; ;Usuaris.c: 206:     state = 2;
-[e = F2638 -> -> 2 `i `uc ]
+[e = F2642 -> -> 2 `i `uc ]
 "207
 [; ;Usuaris.c: 207:    }
 }
@@ -1164,7 +1164,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _i -> -> 0 `i `uc ]
 "210
 [; ;Usuaris.c: 210:     state = 3;
-[e = F2638 -> -> 3 `i `uc ]
+[e = F2642 -> -> 3 `i `uc ]
 "211
 [; ;Usuaris.c: 211:    }
 }
@@ -1194,7 +1194,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "219
 [; ;Usuaris.c: 219:     state = 3;
-[e = F2638 -> -> 3 `i `uc ]
+[e = F2642 -> -> 3 `i `uc ]
 "220
 [; ;Usuaris.c: 220:    }
 }
@@ -1225,7 +1225,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _escriureCharEEPROM (2 , -> _indexNextUser `uc -> -> 1 `i `uc ]
 "227
 [; ;Usuaris.c: 227:     state = 0;
-[e = F2638 -> -> 0 `i `uc ]
+[e = F2642 -> -> 0 `i `uc ]
 "228
 [; ;Usuaris.c: 228:    }
 }
@@ -1274,7 +1274,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 354 ]
 "240
 [; ;Usuaris.c: 240:     state = 5;
-[e = F2638 -> -> 5 `i `uc ]
+[e = F2642 -> -> 5 `i `uc ]
 "241
 [; ;Usuaris.c: 241:    }
 }
@@ -1289,7 +1289,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _do_showUsers -> -> 0 `i `b ]
 "244
 [; ;Usuaris.c: 244:     state = 0;
-[e = F2638 -> -> 0 `i `uc ]
+[e = F2642 -> -> 0 `i `uc ]
 "245
 [; ;Usuaris.c: 245:    }
 }
@@ -1310,7 +1310,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "250
 [; ;Usuaris.c: 250:     state = 6;
-[e = F2638 -> -> 6 `i `uc ]
+[e = F2642 -> -> 6 `i `uc ]
 "251
 [; ;Usuaris.c: 251:    }
 }
@@ -1322,7 +1322,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "253
 [; ;Usuaris.c: 253:     state = 7;
-[e = F2638 -> -> 7 `i `uc ]
+[e = F2642 -> -> 7 `i `uc ]
 "254
 [; ;Usuaris.c: 254:    }
 }
@@ -1337,7 +1337,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _i -> -> 0 `i `uc ]
 "257
 [; ;Usuaris.c: 257:     state = 8;
-[e = F2638 -> -> 8 `i `uc ]
+[e = F2642 -> -> 8 `i `uc ]
 "258
 [; ;Usuaris.c: 258:    }
 }
@@ -1370,7 +1370,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _escriureCharEEPROM (2 , -> _scoreUsr `uc -> + -> 200 `i -> _i `i `uc ]
 "267
 [; ;Usuaris.c: 267:    state = 0;
-[e = F2638 -> -> 0 `i `uc ]
+[e = F2642 -> -> 0 `i `uc ]
 "268
 [; ;Usuaris.c: 268:   break;
 [e $U 320  ]
@@ -1386,7 +1386,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "272
 [; ;Usuaris.c: 272:     state = 8;
-[e = F2638 -> -> 8 `i `uc ]
+[e = F2642 -> -> 8 `i `uc ]
 "273
 [; ;Usuaris.c: 273:    }
 }
@@ -1398,7 +1398,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "275
 [; ;Usuaris.c: 275:     state = 0;
-[e = F2638 -> -> 0 `i `uc ]
+[e = F2642 -> -> 0 `i `uc ]
 "276
 [; ;Usuaris.c: 276:    }
 }
@@ -1410,7 +1410,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "278
 [; ;Usuaris.c: 278:     state = 7;
-[e = F2638 -> -> 7 `i `uc ]
+[e = F2642 -> -> 7 `i `uc ]
 "279
 [; ;Usuaris.c: 279:    }
 }
@@ -1425,7 +1425,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 320  ]
 [e :U 321 ]
-[e [\ -> F2638 `i , $ -> 0 `i 322
+[e [\ -> F2642 `i , $ -> 0 `i 322
  , $ -> 1 `i 335
  , $ -> 2 `i 340
  , $ -> 3 `i 344
@@ -1485,4 +1485,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "293
 [; ;Usuaris.c: 293: }
 [e :UE 372 ]
+}
+"295
+[; ;Usuaris.c: 295: __bit miraPassword(){
+[v _miraPassword `(b ~T0 @X0 1 ef ]
+{
+[e :U _miraPassword ]
+[f ]
+"296
+[; ;Usuaris.c: 296:     return !compareStrings(tmpPassword, usuaris[usuariLoguejat].password);
+[e ) ! != -> ( _compareStrings (2 , -> &U _tmpPassword `*Cuc -> &U . *U + &U _usuaris * -> -> _usuariLoguejat `uc `ux -> -> # *U &U _usuaris `ui `ux 1 `*Cuc `i -> 0 `i ]
+[e $UE 373  ]
+"297
+[; ;Usuaris.c: 297: }
+[e :UE 373 ]
 }

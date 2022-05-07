@@ -4629,6 +4629,8 @@ char llegirCharEEPROM(char pos);
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
 void UnewScore(char scoretmp);
+char compareStrings(const char *a, const char *b);
+__bit miraPassword(void);
 # 2 "Usuaris.c" 2
 
 
@@ -4921,4 +4923,8 @@ signed char UgetTop5(char quin){
 void UnewScore(char scoretmp){
     scoreUsr = scoretmp;
     do_updateScore = 1;
+}
+
+__bit miraPassword(){
+    return !compareStrings(tmpPassword, usuaris[usuariLoguejat].password);
 }

@@ -4644,7 +4644,7 @@ void TiFreeTimer (char Handle);
 void _TiRSITimer (void);
 # 3 "Altaveu.c" 2
 
-const char duradaNotes = 168;
+char duradaNotes = 168;
 __bit reproduir = 0;
 unsigned char nota;
 char timerAltaveu;
