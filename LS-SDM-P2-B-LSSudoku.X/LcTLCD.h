@@ -25,8 +25,8 @@
 // -------------------------------END--HARDWARE---AREA--------------------
 
 
-void LcInit(char rows, char columns);
-// Pre: Rows = {1, 2, 4}  Columns = {8, 16, 20, 24, 32, 40 }
+void LcInit(char rows);
+// Pre: Rows = {1, 2, 4}  cols = {8, 16, 20, 24, 32, 40 }
 // Pre: There is a free timer
 // Pre: It needs 40ms of tranquility between the VCC raising and this constructor being called.
 // Post: This routine can last up to 100ms
@@ -62,7 +62,7 @@ void LcPutChar(char c);
 // The row of the LCD is increased when this happens until the second
 // row and then it is reset back to row 0 if it has 2 rows total. 
 // If the LCD has 4 rows it will reset back to row 0 when it
-// reaches row 4 and the columns will go till 39 before reseting to 0.
+// reaches row 4 and the cols will go till 39 before reseting to 0.
 // The one row LCDs returns to 0 when a column gets to 39. 
 // The row is never increased. 
 	// The char is written

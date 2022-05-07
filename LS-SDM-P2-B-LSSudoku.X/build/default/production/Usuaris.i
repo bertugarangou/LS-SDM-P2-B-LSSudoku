@@ -4632,7 +4632,7 @@ void UnewScore(char scoretmp);
 
 # 1 "./LcTLCD.h" 1
 # 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+void LcInit(char rows);
 
 
 
@@ -4679,8 +4679,8 @@ __bit do_check_exists = 0;
 unsigned char indexNextUser;
 unsigned char indexNextUserStruct;
 __bit do_register = 0;
-unsigned char i;
-unsigned char j;
+unsigned char i = 0;
+unsigned char j = 0;
 signed char usuariLoguejat = -1;
 __bit do_showUsers = 0;
 __bit do_updateScore = 0;
@@ -4694,7 +4694,6 @@ char tmpPassword[9];
 typedef struct{
     char username[9];
     char password[9];
-    unsigned char scores[5];
 }Usuari;
 Usuari usuaris[8];
 
@@ -4733,7 +4732,6 @@ char* UgetUserName(char quin){
 }
 
 char* getArrayShowUsers(char quin){
-
     return usuaris[arrayShowUsers[quin]].username;
 }
 void escriureCharEEPROM(char c, char pos){
@@ -4758,13 +4756,31 @@ char llegirCharEEPROM(char pos){
     return EEDATA;
 }
 void Uinit(){
-# 131 "Usuaris.c"
+
+
+
+    numUsuaris = llegirCharEEPROM(i);
+    if(numUsuaris > 8) numUsuaris = 0;
+    i++;
+    indexNextUser = llegirCharEEPROM(i);
+    if(indexNextUser > 8) indexNextUser = 0;
+    indexNextUserStruct = indexNextUser/18;
+    i++;
+    for(;j<numUsuaris;j++){
+        for(unsigned char k = 0; k<8; k++){
+            usuaris[j].username[k] = llegirCharEEPROM(i);
+            i++;
+            usuaris[j].password[k] = llegirCharEEPROM(i);
+            i++;
+        }
+    }
+
+
     puntuacions[0].indexStruct = -1;
     for(char i = 0; i<5; i++){
         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
         puntuacions[i].score = llegirCharEEPROM(200+i+i+1);
     }
-
 
 }
 

@@ -16,7 +16,7 @@
 //
 //--------------------------------VARIABLES---AREA-----------
 //
-static unsigned char Rows, Columns;
+static unsigned char Rows;
 static unsigned char RowAct, ColumnAct;
 static char Timer; //Originalment int, canviat a char
 //char s[] = "null";
@@ -38,15 +38,15 @@ void LcScroll(void){
   CantaIR(CURSORSHIFT | DISPLAYMOVE | MOVELEFT);
 }
 
-void LcInit(char rows, char columns) {
-// Pre: Rows = {1, 2, 4}  Columns = {8, 16, 20, 24, 32, 40 }
+void LcInit(char rows) {
+// Pre: Rows = {1, 2, 4}  Cols = {8, 16, 20, 24, 32, 40 }
 // Pre: It needs 40ms of tranquility between VCC raising until this constructor is called.
 // Pre: There is a free timer
 // Post: This routine can last until 100ms
 // Post: The display remains cleared, the cursor is turned OFF and at the position (0, 0).
 	int i;
 	Timer = TiGetTimer(); 
-	Rows = rows; Columns = columns;
+	Rows = rows;
 	RowAct = ColumnAct = 0;
 	SetControlsSortida();
 	for (i = 0; i < 2; i++) {
@@ -108,21 +108,7 @@ void LcGotoXY(char Column, char Row) {
 // Post: Sets the cursor to those coordinates. 
 // Post: The next order can last until 40us.
 	int Fisics;
-	// calculating the effective address of the LCD ram. 
-//	switch (Rows) {
-//		case 2:
-			Fisics = Column + (!Row ? 0 : 0x40); 
-//          break;
-//		case 4:
-//			Fisics = Column;
-//			if (Row == 1) Fisics += 0x40; else
-//			if (Row == 2) Fisics += Columns;      /* 0x14; */ else
-//			if (Row == 3) Fisics += 0x40+Columns; /* 0x54; */
-//			break;
-//		case 1:
-//		default:
-//			Fisics = Column; break;
-//	}
+	Fisics = Column + (!Row ? 0 : 0x40); 
 	// applying the command
 	WaitForBusy();
 	CantaIR(SET_DDRAM | Fisics);

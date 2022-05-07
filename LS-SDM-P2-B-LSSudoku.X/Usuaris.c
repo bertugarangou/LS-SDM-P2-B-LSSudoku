@@ -7,8 +7,8 @@ __bit do_check_exists = 0;
 unsigned char indexNextUser;
 unsigned char indexNextUserStruct;
 __bit do_register = 0;
-unsigned char i;
-unsigned char j;
+unsigned char i = 0;
+unsigned char j = 0;
 signed char usuariLoguejat = -1;
 __bit do_showUsers = 0;
 __bit do_updateScore = 0;
@@ -22,7 +22,6 @@ char tmpPassword[9];
 typedef struct{
     char username[9];
     char password[9];
-    unsigned char scores[5];
 }Usuari;
 Usuari usuaris[8];
 
@@ -61,7 +60,6 @@ char* UgetUserName(char quin){
 }
 
 char* getArrayShowUsers(char quin){
-    
     return usuaris[arrayShowUsers[quin]].username;
 }
 void escriureCharEEPROM(char c, char pos){
@@ -86,54 +84,31 @@ char llegirCharEEPROM(char pos){
     return EEDATA;
 }
 void Uinit(){
-    //escriureEEPROM();
     /*
      | num totals 8 | index last 8 | user1 8 | pass1 8 | user2 9 | pass2 9 |
      */
-    /*
-    EEADR = 0;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-    EECON1bits.RD = 1;
-    while(EECON1bits.RD == 1){}//bucle al init
-    numUsuaris = EEDATA;
-    //numUsuaris = 8; //canviar, mirar el comentari de just sota
-    
-    EEADR++;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
-    
-    while(EECON1bits.RD == 1){}//bucle al init
-    indexNextUser = EEDATA;
-    
-    EEADR++;
-    
-    for(char i = 0; i< numUsuaris; i++){//i-> usuari
-        for(char j = 0; j<9; j++){//j-> caracter
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].username[j] = EEDATA;
-            EEADR++;
-        }
-        for(char j = 0; j<9; j++){//j-> caracter
-            EECON1bits.EEPGD = 0;
-            EECON1bits.CFGS = 0;
-            EECON1bits.RD = 1;
-            while(EECON1bits.RD == 1){}
-            usuaris[i].password[j] = EEDATA;
-            EEADR++;
+    numUsuaris = llegirCharEEPROM(i);
+    if(numUsuaris > 8) numUsuaris = 0;
+    i++;
+    indexNextUser = llegirCharEEPROM(i);
+    if(indexNextUser > 8) indexNextUser = 0;
+    indexNextUserStruct = indexNextUser/18;
+    i++;
+    for(;j<numUsuaris;j++){
+        for(unsigned char k = 0; k<8; k++){
+            usuaris[j].username[k] = llegirCharEEPROM(i);
+            i++;
+            usuaris[j].password[k] = llegirCharEEPROM(i);
+            i++;
         }
     }
-    */
+    
     //legir init puntuacions
     puntuacions[0].indexStruct = -1;
     for(char i = 0; i<5; i++){
         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
         puntuacions[i].score = llegirCharEEPROM(200+i+i+1);
     }
-    
         
 }
 

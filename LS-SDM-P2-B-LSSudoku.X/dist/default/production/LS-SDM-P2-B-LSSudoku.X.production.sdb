@@ -21,6 +21,8 @@
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -77,11 +79,11 @@
 [v _JnovaTecla JnovaTecla `(v  1 e 1 0 ]
 "19
 [v _JnovaDireccio JnovaDireccio `(v  1 e 1 0 ]
-"27
+"23
 [v _JendGame JendGame `(v  1 e 1 0 ]
-"31
+"27
 [v _conversorJoystick conversorJoystick `(uc  1 e 1 0 ]
-"48
+"44
 [v _motorJoc motorJoc `(v  1 e 1 0 ]
 "12 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joystick.c
 [v _JoystickInit JoystickInit `(v  1 e 1 0 ]
@@ -95,27 +97,27 @@
 [v _LcClear LcClear `(v  1 e 1 0 ]
 "106
 [v _LcGotoXY LcGotoXY `(v  1 e 1 0 ]
-"134
+"120
 [v _LcPutChar LcPutChar `(v  1 e 1 0 ]
-"161
+"147
 [v _Espera Espera `(v  1 e 1 0 ]
-"166
+"152
 [v _CantaPartAlta CantaPartAlta `(v  1 e 1 0 ]
-"173
+"159
 [v _CantaPartBaixa CantaPartBaixa `(v  1 e 1 0 ]
-"180
+"166
 [v _CantaIR CantaIR `(v  1 e 1 0 ]
-"196
+"182
 [v _CantaData CantaData `(v  1 e 1 0 ]
-"212
+"198
 [v _WaitForBusy WaitForBusy `(v  1 e 1 0 ]
-"230
+"216
 [v _EscriuPrimeraOrdre EscriuPrimeraOrdre `(v  1 e 1 0 ]
-"241
+"227
 [v _LcNewString LcNewString `(v  1 e 1 0 ]
-"246
+"232
 [v _LcLCD LcLCD `(v  1 e 1 0 ]
-"257
+"243
 [v _LcLliure LcLliure `(b  1 e 0 0 ]
 "21 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _high_rsi high_rsi `IIH(v  1 e 1 0 ]
@@ -175,43 +177,43 @@
 [v _TiGetTics TiGetTics `(i  1 e 2 0 ]
 "70
 [v _TiGetTimer TiGetTimer `(uc  1 e 1 0 ]
-"35 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"34 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
-"39
+"38
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
-"42
+"41
 [v _UcheckExistsNotFinished UcheckExistsNotFinished `(b  1 e 0 0 ]
-"45
+"44
 [v _UcheckExistsGetError UcheckExistsGetError `(c  1 e 1 0 ]
-"48
+"47
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
-"51
+"50
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
-"55
+"54
 [v _URegister URegister `(v  1 e 1 0 ]
-"59
+"58
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
-"63
+"62
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
-"67
+"65
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
-"81
+"79
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
-"88
+"86
 [v _Uinit Uinit `(v  1 e 1 0 ]
-"140
+"115
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"149
+"124
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
-"152
+"127
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
-"156
+"131
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
-"293
+"268
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
-"296
+"271
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
-"299
+"274
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
 "5 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Altaveu.c
 [v _reproduir reproduir `b  1 e 0 0 ]
@@ -267,7 +269,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "681
-[s S619 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S617 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -276,17 +278,17 @@
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S628 . 1 `uc 1 . 1 0 :5:0 
+[s S626 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 P1B 1 0 :1:5 
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S633 . 1 `uc 1 . 1 0 :7:0 
+[s S631 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S636 . 1 `S82 1 . 1 0 `S619 1 . 1 0 `S628 1 . 1 0 `S633 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES636  1 e 1 @3971 ]
-[s S391 . 1 `uc 1 LATB0 1 0 :1:0 
+[u S634 . 1 `S82 1 . 1 0 `S617 1 . 1 0 `S626 1 . 1 0 `S631 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES634  1 e 1 @3971 ]
+[s S389 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -296,7 +298,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1128
-[s S400 . 1 `uc 1 LB0 1 0 :1:0 
+[s S398 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -305,8 +307,8 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S409 . 1 `S391 1 . 1 0 `S400 1 . 1 0 ]
-[v _LATBbits LATBbits `VES409  1 e 1 @3978 ]
+[u S407 . 1 `S389 1 . 1 0 `S398 1 . 1 0 ]
+[v _LATBbits LATBbits `VES407  1 e 1 @3978 ]
 [s S149 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
@@ -383,7 +385,7 @@
 "2187
 [u S91 . 1 `S73 1 . 1 0 `S82 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES91  1 e 1 @3989 ]
-[s S1523 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1519 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -393,13 +395,13 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2705
-[s S1532 . 1 `uc 1 . 1 0 :4:0 
+[s S1528 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S1536 . 1 `S1523 1 . 1 0 `S1532 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1536  1 e 1 @3998 ]
-[s S434 . 1 `uc 1 RD 1 0 :1:0 
+[u S1532 . 1 `S1519 1 . 1 0 `S1528 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1532  1 e 1 @3998 ]
+[s S432 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -409,11 +411,11 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3056
-[s S443 . 1 `uc 1 . 1 0 :6:0 
+[s S441 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S446 . 1 `S434 1 . 1 0 `S443 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES446  1 e 1 @4006 ]
+[u S444 . 1 `S432 1 . 1 0 `S441 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES444  1 e 1 @4006 ]
 "3101
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "3108
@@ -424,7 +426,7 @@
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "3332
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S1447 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1443 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -434,7 +436,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3371
-[s S1456 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1452 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -443,13 +445,13 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S1465 . 1 `uc 1 . 1 0 :6:0 
+[s S1461 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1468 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1464 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S1470 . 1 `S1447 1 . 1 0 `S1456 1 . 1 0 `S1465 1 . 1 0 `S1468 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES1470  1 e 1 @4012 ]
+[u S1466 . 1 `S1443 1 . 1 0 `S1452 1 . 1 0 `S1461 1 . 1 0 `S1464 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1466  1 e 1 @4012 ]
 "3588
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3600
@@ -466,56 +468,56 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "4802
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S1268 . 1 `uc 1 . 1 0 :1:0 
+[s S1265 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "4846
-[s S1271 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1268 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S1275 . 1 `uc 1 . 1 0 :1:0 
+[s S1272 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S1282 . 1 `uc 1 . 1 0 :1:0 
+[s S1279 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S1285 . 1 `uc 1 . 1 0 :1:0 
+[s S1282 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S1288 . 1 `uc 1 . 1 0 :1:0 
+[s S1285 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S1291 . 1 `uc 1 . 1 0 :1:0 
+[s S1288 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S1294 . 1 `uc 1 . 1 0 :1:0 
+[s S1291 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S1297 . 1 `S1268 1 . 1 0 `S1271 1 . 1 0 `S1275 1 . 1 0 `S1282 1 . 1 0 `S1285 1 . 1 0 `S1288 1 . 1 0 `S1291 1 . 1 0 `S1294 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1297  1 e 1 @4034 ]
+[u S1294 . 1 `S1265 1 . 1 0 `S1268 1 . 1 0 `S1272 1 . 1 0 `S1279 1 . 1 0 `S1282 1 . 1 0 `S1285 1 . 1 0 `S1288 1 . 1 0 `S1291 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1294  1 e 1 @4034 ]
 "4935
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S726 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S724 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "5725
-[s S728 . 1 `uc 1 . 1 0 :1:0 
+[s S726 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S731 . 1 `uc 1 . 1 0 :2:0 
+[s S729 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S734 . 1 `uc 1 . 1 0 :3:0 
+[s S732 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S737 . 1 `uc 1 . 1 0 :4:0 
+[s S735 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S740 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S738 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -523,7 +525,7 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S748 . 1 `uc 1 BOR 1 0 :1:0 
+[s S746 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
@@ -531,11 +533,11 @@
 `uc 1 . 1 0 :1:5 
 `uc 1 SBOREN 1 0 :1:6 
 ]
-[u S756 . 1 `S726 1 . 1 0 `S728 1 . 1 0 `S731 1 . 1 0 `S734 1 . 1 0 `S737 1 . 1 0 `S740 1 . 1 0 `S748 1 . 1 0 ]
-[v _RCONbits RCONbits `VES756  1 e 1 @4048 ]
+[u S754 . 1 `S724 1 . 1 0 `S726 1 . 1 0 `S729 1 . 1 0 `S732 1 . 1 0 `S735 1 . 1 0 `S738 1 . 1 0 `S746 1 . 1 0 ]
+[v _RCONbits RCONbits `VES754  1 e 1 @4048 ]
 "6184
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S847 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S845 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -543,19 +545,19 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6206
-[s S854 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S852 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S860 . 1 `S847 1 . 1 0 `S854 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES860  1 e 1 @4053 ]
+[u S858 . 1 `S845 1 . 1 0 `S852 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES858  1 e 1 @4053 ]
 "6268
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6275
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S795 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S793 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -565,7 +567,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6734
-[s S804 . 1 `uc 1 . 1 0 :1:0 
+[s S802 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -574,12 +576,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S813 . 1 `uc 1 . 1 0 :6:0 
+[s S811 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S817 . 1 `S795 1 . 1 0 `S804 1 . 1 0 `S813 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES817  1 e 1 @4082 ]
+[u S815 . 1 `S793 1 . 1 0 `S802 1 . 1 0 `S811 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES815  1 e 1 @4082 ]
 "4 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\CtoA.c
 [v _convertir convertir `uc  1 e 1 0 ]
 "5
@@ -693,9 +695,9 @@
 [v _tiTeclat tiTeclat `uc  1 s 1 tiTeclat ]
 "10
 [v _teclaPremuda teclaPremuda `C[4][3]uc  1 e 12 0 ]
-[s S723 Timer 3 `ui 1 h_initialTics 2 0 `uc 1 b_busy 1 2 ]
+[s S721 Timer 3 `ui 1 h_initialTics 2 0 `uc 1 b_busy 1 2 ]
 "12 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
-[v _s_Timers s_Timers `[8]S723  1 e 24 0 ]
+[v _s_Timers s_Timers `[8]S721  1 e 24 0 ]
 "14
 [v _h_Tics h_Tics `ui  1 s 2 h_Tics ]
 "15
@@ -728,16 +730,16 @@
 [v _tmpUsername tmpUsername `[9]uc  1 e 9 0 ]
 "20
 [v _tmpPassword tmpPassword `[9]uc  1 e 9 0 ]
-[s S1072 . 23 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 `[5]uc 1 scores 5 18 ]
-"27
-[v _usuaris usuaris `[8]S1072  1 e 184 0 ]
-[s S1076 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
-"33
-[v _puntuacions puntuacions `[5]S1076  1 e 10 0 ]
+[s S1070 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
+"26
+[v _usuaris usuaris `[8]S1070  1 e 144 0 ]
+[s S1073 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
+"32
+[v _puntuacions puntuacions `[5]S1073  1 e 10 0 ]
 "76 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"111
+"110
 } 0
 "43 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _motorSIO motorSIO `(v  1 e 1 0 ]
@@ -746,29 +748,29 @@
 [v motorSIO@state state `uc  1 s 1 state ]
 "141
 } 0
-"299 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"274 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
 {
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 5 ]
-"302
+"277
 } 0
-"48 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
+"44 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
 [v _motorJoc motorJoc `(v  1 e 1 0 ]
 {
-"49
+"45
 [v motorJoc@state state `uc  1 s 1 state ]
-"88
+"84
 } 0
-"31
+"27
 [v _conversorJoystick conversorJoystick `(uc  1 e 1 0 ]
 {
 [v conversorJoystick@direc direc `uc  1 a 1 wreg ]
 [v conversorJoystick@direc direc `uc  1 a 1 wreg ]
-"33
+"29
 [v conversorJoystick@direc direc `uc  1 a 1 5 ]
-"46
+"42
 } 0
 "23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _SIOendGame SIOendGame `(v  1 e 1 0 ]
@@ -853,98 +855,97 @@
 {
 "43
 [v menu@state state `uc  1 s 1 state ]
-"438
+"435
 } 0
-"63 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"62 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
 {
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
-"65
 [v getArrayShowUsers@quin quin `uc  1 a 1 7 ]
-"66
+"64
 } 0
 "42 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Hora.c
 [v _checkHoraAcabat checkHoraAcabat `(b  1 e 0 0 ]
 {
 "44
 } 0
-"149 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"124 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
 {
-"151
+"126
 } 0
-"152
+"127
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
 {
-"154
+"129
 } 0
-"59
+"58
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
 {
 [v UgetUserName@quin quin `uc  1 a 1 wreg ]
 [v UgetUserName@quin quin `uc  1 a 1 wreg ]
 [v UgetUserName@quin quin `uc  1 a 1 7 ]
-"61
+"60
 } 0
-"296
+"271
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
 {
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 5 ]
-"298
+"273
 } 0
-"293
+"268
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
 {
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 5 ]
-"295
+"270
 } 0
-"35
+"34
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
 {
-"37
+"36
 } 0
-"51
+"50
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
 {
 [v UenviaPas@c c `uc  1 a 1 wreg ]
 [v UenviaPas@c c `uc  1 a 1 wreg ]
 [v UenviaPas@pos pos `uc  1 p 1 5 ]
 [v UenviaPas@c c `uc  1 a 1 6 ]
-"53
+"52
 } 0
-"48
+"47
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
 {
 [v UenviaChar@c c `uc  1 a 1 wreg ]
 [v UenviaChar@c c `uc  1 a 1 wreg ]
 [v UenviaChar@pos pos `uc  1 p 1 5 ]
 [v UenviaChar@c c `uc  1 a 1 6 ]
-"50
+"49
 } 0
-"42
+"41
 [v _UcheckExistsNotFinished UcheckExistsNotFinished `(b  1 e 0 0 ]
 {
-"44
+"43
 } 0
-"45
+"44
 [v _UcheckExistsGetError UcheckExistsGetError `(c  1 e 1 0 ]
 {
-"47
+"46
 } 0
-"39
+"38
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
 {
-"41
+"40
 } 0
-"55
+"54
 [v _URegister URegister `(v  1 e 1 0 ]
 {
-"57
+"56
 } 0
 "19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
 [v _SiFerMenu SiFerMenu `(v  1 e 1 0 ]
@@ -992,10 +993,10 @@
 [v JnovaDireccio@dir dir `uc  1 a 1 5 ]
 "21
 } 0
-"27
+"23
 [v _JendGame JendGame `(v  1 e 1 0 ]
 {
-"29
+"25
 } 0
 "13
 [v _JJuguem JJuguem `(v  1 e 1 0 ]
@@ -1067,43 +1068,60 @@
 {
 "12
 } 0
-"156 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"131 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"157
+"132
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"291
+"266
 } 0
-"67
+"65
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
 {
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@pos pos `uc  1 p 1 5 ]
 [v escriureCharEEPROM@c c `uc  1 a 1 6 ]
-"80
+"78
 } 0
-"140
+"115
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.30Cuc  1 p 1 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 6 ]
-"147
+"122
 } 0
-"88
+"86
 [v _Uinit Uinit `(v  1 e 1 0 ]
 {
-"132
-[v Uinit@i i `uc  1 a 1 6 ]
-"138
+"98
+[v Uinit@k k `uc  1 a 1 11 ]
+"108
+[v Uinit@i i `uc  1 a 1 12 ]
+"113
 } 0
-"81
+"79
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
 {
 [v llegirCharEEPROM@pos pos `uc  1 a 1 wreg ]
 [v llegirCharEEPROM@pos pos `uc  1 a 1 wreg ]
 [v llegirCharEEPROM@pos pos `uc  1 a 1 5 ]
-"87
+"85
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+{
+[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbdiv@quotient quotient `uc  1 a 1 8 ]
+"7
+[v ___lbdiv@counter counter `uc  1 a 1 7 ]
+"4
+[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbdiv@divisor divisor `uc  1 p 1 5 ]
+"9
+[v ___lbdiv@dividend dividend `uc  1 a 1 6 ]
+"26
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v _TiInitTimer TiInitTimer `(v  1 e 1 0 ]
@@ -1167,32 +1185,31 @@
 {
 "30
 } 0
-"246 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
+"232 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
 [v _LcLCD LcLCD `(v  1 e 1 0 ]
 {
-"255
+"241
 } 0
 "41
 [v _LcInit LcInit `(v  1 e 1 0 ]
 {
 [v LcInit@rows rows `uc  1 a 1 wreg ]
 "47
-[v LcInit@i i `i  1 a 2 18 ]
+[v LcInit@i i `i  1 a 2 17 ]
 "41
 [v LcInit@rows rows `uc  1 a 1 wreg ]
-[v LcInit@columns columns `uc  1 p 1 16 ]
 "48
-[v LcInit@rows rows `uc  1 a 1 17 ]
+[v LcInit@rows rows `uc  1 a 1 16 ]
 "82
 } 0
-"230
+"216
 [v _EscriuPrimeraOrdre EscriuPrimeraOrdre `(v  1 e 1 0 ]
 {
 [v EscriuPrimeraOrdre@ordre ordre `uc  1 a 1 wreg ]
 [v EscriuPrimeraOrdre@ordre ordre `uc  1 a 1 wreg ]
-"232
+"218
 [v EscriuPrimeraOrdre@ordre ordre `uc  1 a 1 6 ]
-"239
+"225
 } 0
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joystick.c
 [v _JoystickMotor JoystickMotor `(v  1 e 1 0 ]
@@ -1239,33 +1256,33 @@
 [v GLCDMotor@length2 length2 `uc  1 s 1 length2 ]
 "177
 } 0
-"134 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
+"120 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\LcTLCD.c
 [v _LcPutChar LcPutChar `(v  1 e 1 0 ]
 {
 [v LcPutChar@c c `uc  1 a 1 wreg ]
 [v LcPutChar@c c `uc  1 a 1 wreg ]
-"136
+"122
 [v LcPutChar@c c `uc  1 a 1 19 ]
-"159
+"145
 } 0
-"196
+"182
 [v _CantaData CantaData `(v  1 e 1 0 ]
 {
 [v CantaData@Data Data `uc  1 a 1 wreg ]
 [v CantaData@Data Data `uc  1 a 1 wreg ]
 [v CantaData@Data Data `uc  1 a 1 7 ]
-"210
+"196
 } 0
-"241
+"227
 [v _LcNewString LcNewString `(v  1 e 1 0 ]
 {
 [v LcNewString@new_s new_s `*.35uc  1 p 2 8 ]
-"244
+"230
 } 0
-"257
+"243
 [v _LcLliure LcLliure `(b  1 e 0 0 ]
 {
-"259
+"245
 } 0
 "84
 [v _LcClear LcClear `(v  1 e 1 0 ]
@@ -1281,48 +1298,48 @@
 "106
 [v LcGotoXY@Column Column `uc  1 a 1 wreg ]
 [v LcGotoXY@Row Row `uc  1 p 1 13 ]
-"114
+"111
 [v LcGotoXY@Column Column `uc  1 a 1 18 ]
-"132
+"118
 } 0
-"212
+"198
 [v _WaitForBusy WaitForBusy `(v  1 e 1 0 ]
 {
 [v WaitForBusy@Busy Busy `uc  1 a 1 12 ]
-"228
+"214
 } 0
-"180
+"166
 [v _CantaIR CantaIR `(v  1 e 1 0 ]
 {
 [v CantaIR@IR IR `uc  1 a 1 wreg ]
 [v CantaIR@IR IR `uc  1 a 1 wreg ]
 [v CantaIR@IR IR `uc  1 a 1 7 ]
-"194
+"180
 } 0
-"173
+"159
 [v _CantaPartBaixa CantaPartBaixa `(v  1 e 1 0 ]
 {
 [v CantaPartBaixa@c c `uc  1 a 1 wreg ]
 [v CantaPartBaixa@c c `uc  1 a 1 wreg ]
 [v CantaPartBaixa@c c `uc  1 a 1 6 ]
-"178
+"164
 } 0
-"166
+"152
 [v _CantaPartAlta CantaPartAlta `(v  1 e 1 0 ]
 {
 [v CantaPartAlta@c c `uc  1 a 1 wreg ]
 [v CantaPartAlta@c c `uc  1 a 1 wreg ]
 [v CantaPartAlta@c c `uc  1 a 1 6 ]
-"171
+"157
 } 0
-"161
+"147
 [v _Espera Espera `(v  1 e 1 0 ]
 {
 [v Espera@Timer Timer `uc  1 a 1 wreg ]
 [v Espera@Timer Timer `uc  1 a 1 wreg ]
 [v Espera@ms ms `i  1 p 2 12 ]
 [v Espera@Timer Timer `uc  1 a 1 15 ]
-"164
+"150
 } 0
 "55 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v _TiResetTics TiResetTics `(v  1 e 1 0 ]

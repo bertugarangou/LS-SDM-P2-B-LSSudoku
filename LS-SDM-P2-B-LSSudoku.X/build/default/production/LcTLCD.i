@@ -4638,7 +4638,7 @@ void _TiRSITimer (void);
 
 # 1 "./LcTLCD.h" 1
 # 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+void LcInit(char rows);
 
 
 
@@ -4679,7 +4679,7 @@ __bit LcLliure(void);
 void LcInsertFletxa(void);
 # 3 "LcTLCD.c" 2
 # 19 "LcTLCD.c"
-static unsigned char Rows, Columns;
+static unsigned char Rows;
 static unsigned char RowAct, ColumnAct;
 static char Timer;
 
@@ -4701,7 +4701,7 @@ void LcScroll(void){
   CantaIR(0x10 | 0x08 | 0x00);
 }
 
-void LcInit(char rows, char columns) {
+void LcInit(char rows) {
 
 
 
@@ -4709,7 +4709,7 @@ void LcInit(char rows, char columns) {
 
  int i;
  Timer = TiGetTimer();
- Rows = rows; Columns = columns;
+ Rows = rows;
  RowAct = ColumnAct = 0;
  (TRISCbits.TRISC5 = TRISDbits.TRISD7 = TRISCbits.TRISC4 = 0);
  for (i = 0; i < 2; i++) {
@@ -4757,11 +4757,8 @@ void LcGotoXY(char Column, char Row) {
 
 
  int Fisics;
+ Fisics = Column + (!Row ? 0 : 0x40);
 
-
-
-   Fisics = Column + (!Row ? 0 : 0x40);
-# 127 "LcTLCD.c"
  WaitForBusy();
  CantaIR(0x80 | Fisics);
 
@@ -4782,7 +4779,7 @@ void LcPutChar(char c) {
    LcGotoXY(ColumnAct, RowAct);
   }
  }
-# 155 "LcTLCD.c"
+# 141 "LcTLCD.c"
  if (RowAct == 1) {
   if (ColumnAct >= 40) ColumnAct = 0;
   LcGotoXY(ColumnAct, RowAct);

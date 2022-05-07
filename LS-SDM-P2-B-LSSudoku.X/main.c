@@ -75,7 +75,6 @@ void init_eusart(void){
 
 void main(void) {
     init_ports();
-    //escriureEEPROM();//no hauria de serhi, esborra tot
     init_eusart();
     TiInitTimer();
     TeInit();
@@ -88,7 +87,7 @@ void main(void) {
     initHora();
     initSIO();
     
-    LcInit(2,16);
+    LcInit(2);
     Minit();
     
     while(1){

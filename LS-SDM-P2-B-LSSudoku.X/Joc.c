@@ -20,10 +20,6 @@ void JnovaDireccio(char dir){
     direccioJoc = dir;
 }
 
-signed char JUsuari(void){
-    return usuariJoc;
-}
-
 void JendGame(void){
     jugantJoc = 0;
 }

@@ -4638,7 +4638,7 @@ void _TiRSITimer (void);
 
 # 1 "./LcTLCD.h" 1
 # 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+void LcInit(char rows);
 
 
 

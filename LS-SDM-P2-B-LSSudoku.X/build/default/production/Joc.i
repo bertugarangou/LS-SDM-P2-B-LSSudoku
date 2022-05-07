@@ -4613,7 +4613,6 @@ unsigned char __t3rd16on(void);
 void motorJoc(void);
 void JJuguem(char usuari);
 void JnovaTecla(signed char tecla);
-signed char JUsuari(void);
 void JnovaDireccio(char dir);
 void JendGame(void);
 # 2 "Joc.c" 2
@@ -4650,7 +4649,7 @@ void initSIO(void);
 
 # 1 "./LcTLCD.h" 1
 # 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+void LcInit(char rows);
 
 
 
@@ -4706,10 +4705,6 @@ void JnovaTecla(signed char tecla){
 }
 void JnovaDireccio(char dir){
     direccioJoc = dir;
-}
-
-signed char JUsuari(void){
-    return usuariJoc;
 }
 
 void JendGame(void){

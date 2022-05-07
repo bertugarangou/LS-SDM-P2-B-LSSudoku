@@ -4620,7 +4620,7 @@ void MNouJoystick(signed char posicio);
 
 # 1 "./LcTLCD.h" 1
 # 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+void LcInit(char rows);
 
 
 
@@ -4758,7 +4758,6 @@ void NoFerMenu(void);
 void motorJoc(void);
 void JJuguem(char usuari);
 void JnovaTecla(signed char tecla);
-signed char JUsuari(void);
 void JnovaDireccio(char dir);
 void JendGame(void);
 # 9 "Menu.c" 2
@@ -4935,9 +4934,6 @@ void menu(void) {
    }
    else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
     state = 0;
-   }
-   else if (1 == 1) {
-    state = 12;
    }
   break;
   case 12:

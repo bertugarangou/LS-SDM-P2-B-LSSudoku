@@ -531,245 +531,231 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 282 ]
 }
 "23
-[; ;Joc.c: 23: signed char JUsuari(void){
-[v _JUsuari `(c ~T0 @X0 1 ef ]
+[; ;Joc.c: 23: void JendGame(void){
+[v _JendGame `(v ~T0 @X0 1 ef ]
 {
-[e :U _JUsuari ]
+[e :U _JendGame ]
 [f ]
 "24
-[; ;Joc.c: 24:     return usuariJoc;
-[e ) _usuariJoc ]
-[e $UE 283  ]
+[; ;Joc.c: 24:     jugantJoc = 0;
+[e = _jugantJoc -> -> 0 `i `b ]
 "25
 [; ;Joc.c: 25: }
 [e :UE 283 ]
 }
 "27
-[; ;Joc.c: 27: void JendGame(void){
-[v _JendGame `(v ~T0 @X0 1 ef ]
-{
-[e :U _JendGame ]
-[f ]
-"28
-[; ;Joc.c: 28:     jugantJoc = 0;
-[e = _jugantJoc -> -> 0 `i `b ]
-"29
-[; ;Joc.c: 29: }
-[e :UE 284 ]
-}
-"31
-[; ;Joc.c: 31: char conversorJoystick(char direc){
+[; ;Joc.c: 27: char conversorJoystick(char direc){
 [v _conversorJoystick `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _conversorJoystick ]
 [v _direc `uc ~T0 @X0 1 r1 ]
 [f ]
-"33
-[; ;Joc.c: 33:     if (direc==2) {
-[e $ ! == -> _direc `i -> 2 `i 286  ]
+"29
+[; ;Joc.c: 29:     if (direc==2) {
+[e $ ! == -> _direc `i -> 2 `i 285  ]
 {
-"34
-[; ;Joc.c: 34:         return 'W';
+"30
+[; ;Joc.c: 30:         return 'W';
 [e ) -> -> 87 `ui `uc ]
-[e $UE 285  ]
-"35
-[; ;Joc.c: 35:     }
+[e $UE 284  ]
+"31
+[; ;Joc.c: 31:     }
+}
+[e :U 285 ]
+"32
+[; ;Joc.c: 32:     if (direc==6) {
+[e $ ! == -> _direc `i -> 6 `i 286  ]
+{
+"33
+[; ;Joc.c: 33:         return 'D';
+[e ) -> -> 68 `ui `uc ]
+[e $UE 284  ]
+"34
+[; ;Joc.c: 34:     }
 }
 [e :U 286 ]
-"36
-[; ;Joc.c: 36:     if (direc==6) {
-[e $ ! == -> _direc `i -> 6 `i 287  ]
+"35
+[; ;Joc.c: 35:     if (direc==8) {
+[e $ ! == -> _direc `i -> 8 `i 287  ]
 {
+"36
+[; ;Joc.c: 36:         return 'S';
+[e ) -> -> 83 `ui `uc ]
+[e $UE 284  ]
 "37
-[; ;Joc.c: 37:         return 'D';
-[e ) -> -> 68 `ui `uc ]
-[e $UE 285  ]
-"38
-[; ;Joc.c: 38:     }
+[; ;Joc.c: 37:     }
 }
 [e :U 287 ]
-"39
-[; ;Joc.c: 39:     if (direc==8) {
-[e $ ! == -> _direc `i -> 8 `i 288  ]
+"38
+[; ;Joc.c: 38:     if (direc==4) {
+[e $ ! == -> _direc `i -> 4 `i 288  ]
 {
+"39
+[; ;Joc.c: 39:         return 'A';
+[e ) -> -> 65 `ui `uc ]
+[e $UE 284  ]
 "40
-[; ;Joc.c: 40:         return 'S';
-[e ) -> -> 83 `ui `uc ]
-[e $UE 285  ]
-"41
-[; ;Joc.c: 41:     }
+[; ;Joc.c: 40:     }
 }
 [e :U 288 ]
-"42
-[; ;Joc.c: 42:     if (direc==4) {
-[e $ ! == -> _direc `i -> 4 `i 289  ]
-{
-"43
-[; ;Joc.c: 43:         return 'A';
-[e ) -> -> 65 `ui `uc ]
-[e $UE 285  ]
-"44
-[; ;Joc.c: 44:     }
-}
-[e :U 289 ]
-"45
-[; ;Joc.c: 45:     return 0;
+"41
+[; ;Joc.c: 41:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 285  ]
-"46
-[; ;Joc.c: 46: }
-[e :UE 285 ]
+[e $UE 284  ]
+"42
+[; ;Joc.c: 42: }
+[e :UE 284 ]
 }
-"48
-[; ;Joc.c: 48: void motorJoc(void){
+"44
+[; ;Joc.c: 44: void motorJoc(void){
 [v _motorJoc `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorJoc ]
 [f ]
-"49
-[; ;Joc.c: 49:     static char state = 0;
-[v F2626 `uc ~T0 @X0 1 s state ]
-[i F2626
+"45
+[; ;Joc.c: 45:     static char state = 0;
+[v F2623 `uc ~T0 @X0 1 s state ]
+[i F2623
 -> -> 0 `i `uc
 ]
-"51
-[; ;Joc.c: 51:  switch(state) {
-[e $U 292  ]
-{
-"52
-[; ;Joc.c: 52:   case 0:
-[e :U 293 ]
-"53
-[; ;Joc.c: 53:    if (usuariJoc != -1) {
-[e $ ! != -> _usuariJoc `i -U -> 1 `i 294  ]
-{
-"54
-[; ;Joc.c: 54:     SIOStartGame(usuariJoc);
-[e ( _SIOStartGame (1 -> _usuariJoc `uc ]
-"55
-[; ;Joc.c: 55:     jugantJoc = 1;
-[e = _jugantJoc -> -> 1 `i `b ]
-"56
-[; ;Joc.c: 56:     state = 2;
-[e = F2626 -> -> 2 `i `uc ]
-"57
-[; ;Joc.c: 57:    }
-}
-[e :U 294 ]
-"58
-[; ;Joc.c: 58:   break;
+"47
+[; ;Joc.c: 47:  switch(state) {
 [e $U 291  ]
-"59
-[; ;Joc.c: 59:   case 1:
-[e :U 295 ]
-"60
-[; ;Joc.c: 60:    if (!jugantJoc) {
-[e $ ! ! _jugantJoc 296  ]
 {
-"61
-[; ;Joc.c: 61:     usuariJoc = -1;
+"48
+[; ;Joc.c: 48:   case 0:
+[e :U 292 ]
+"49
+[; ;Joc.c: 49:    if (usuariJoc != -1) {
+[e $ ! != -> _usuariJoc `i -U -> 1 `i 293  ]
+{
+"50
+[; ;Joc.c: 50:     SIOStartGame(usuariJoc);
+[e ( _SIOStartGame (1 -> _usuariJoc `uc ]
+"51
+[; ;Joc.c: 51:     jugantJoc = 1;
+[e = _jugantJoc -> -> 1 `i `b ]
+"52
+[; ;Joc.c: 52:     state = 2;
+[e = F2623 -> -> 2 `i `uc ]
+"53
+[; ;Joc.c: 53:    }
+}
+[e :U 293 ]
+"54
+[; ;Joc.c: 54:   break;
+[e $U 290  ]
+"55
+[; ;Joc.c: 55:   case 1:
+[e :U 294 ]
+"56
+[; ;Joc.c: 56:    if (!jugantJoc) {
+[e $ ! ! _jugantJoc 295  ]
+{
+"57
+[; ;Joc.c: 57:     usuariJoc = -1;
 [e = _usuariJoc -> -U -> 1 `i `c ]
-"62
-[; ;Joc.c: 62:     HnoJugant();
+"58
+[; ;Joc.c: 58:     HnoJugant();
 [e ( _HnoJugant ..  ]
-"63
-[; ;Joc.c: 63:     SIOendGame();
+"59
+[; ;Joc.c: 59:     SIOendGame();
 [e ( _SIOendGame ..  ]
-"64
-[; ;Joc.c: 64:     LATBbits.LATB3 = 0;
+"60
+[; ;Joc.c: 60:     LATBbits.LATB3 = 0;
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"61
+[; ;Joc.c: 61:     state--;
+[e -- F2623 -> -> 1 `i `uc ]
+"62
+[; ;Joc.c: 62:    }
+}
+[e $U 296  ]
+"63
+[; ;Joc.c: 63:    else if (direccioJoc > -1) {
+[e :U 295 ]
+[e $ ! > -> _direccioJoc `i -U -> 1 `i 297  ]
+{
+"64
+[; ;Joc.c: 64:     SIONovaDireccio(conversorJoystick(direccioJoc));
+[e ( _SIONovaDireccio (1 ( _conversorJoystick (1 -> _direccioJoc `uc ]
 "65
-[; ;Joc.c: 65:     state--;
-[e -- F2626 -> -> 1 `i `uc ]
+[; ;Joc.c: 65:     direccioJoc = -1;
+[e = _direccioJoc -> -U -> 1 `i `c ]
 "66
 [; ;Joc.c: 66:    }
 }
-[e $U 297  ]
+[e $U 298  ]
 "67
-[; ;Joc.c: 67:    else if (direccioJoc > -1) {
-[e :U 296 ]
-[e $ ! > -> _direccioJoc `i -U -> 1 `i 298  ]
+[; ;Joc.c: 67:    else if (HNouSegon() && LcLliure()) {
+[e :U 297 ]
+[e $ ! && ( _HNouSegon ..  ( _LcLliure ..  299  ]
 {
 "68
-[; ;Joc.c: 68:     SIONovaDireccio(conversorJoystick(direccioJoc));
-[e ( _SIONovaDireccio (1 ( _conversorJoystick (1 -> _direccioJoc `uc ]
-"69
-[; ;Joc.c: 69:     direccioJoc = -1;
-[e = _direccioJoc -> -U -> 1 `i `c ]
-"70
-[; ;Joc.c: 70:    }
-}
-[e $U 299  ]
-"71
-[; ;Joc.c: 71:    else if (HNouSegon() && LcLliure()) {
-[e :U 298 ]
-[e $ ! && ( _HNouSegon ..  ( _LcLliure ..  300  ]
-{
-"72
-[; ;Joc.c: 72:     HClearNouSegon();
+[; ;Joc.c: 68:     HClearNouSegon();
 [e ( _HClearNouSegon ..  ]
-"73
-[; ;Joc.c: 73:     LcGotoXY(0,1);
+"69
+[; ;Joc.c: 69:     LcGotoXY(0,1);
 [e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"74
-[; ;Joc.c: 74:     LcNewString(HGetTime());
+"70
+[; ;Joc.c: 70:     LcNewString(HGetTime());
 [e ( _LcNewString (1 ( _HGetTime ..  ]
+"71
+[; ;Joc.c: 71:    }
+}
+[e $U 300  ]
+"72
+[; ;Joc.c: 72:    else if (novaTeclaJOC > 0) {
+[e :U 299 ]
+[e $ ! > -> _novaTeclaJOC `i -> 0 `i 301  ]
+{
+"73
+[; ;Joc.c: 73:     SIONovaTecla(novaTeclaJOC+48);
+[e ( _SIONovaTecla (1 -> + -> _novaTeclaJOC `i -> 48 `i `c ]
+"74
+[; ;Joc.c: 74:     novaTeclaJOC = -1;
+[e = _novaTeclaJOC -> -U -> 1 `i `c ]
 "75
 [; ;Joc.c: 75:    }
 }
-[e $U 301  ]
-"76
-[; ;Joc.c: 76:    else if (novaTeclaJOC > 0) {
-[e :U 300 ]
-[e $ ! > -> _novaTeclaJOC `i -> 0 `i 302  ]
-{
-"77
-[; ;Joc.c: 77:     SIONovaTecla(novaTeclaJOC+48);
-[e ( _SIONovaTecla (1 -> + -> _novaTeclaJOC `i -> 48 `i `c ]
-"78
-[; ;Joc.c: 78:     novaTeclaJOC = -1;
-[e = _novaTeclaJOC -> -U -> 1 `i `c ]
-"79
-[; ;Joc.c: 79:    }
-}
-[e :U 302 ]
 [e :U 301 ]
-[e :U 299 ]
-[e :U 297 ]
+[e :U 300 ]
+[e :U 298 ]
+[e :U 296 ]
+"76
+[; ;Joc.c: 76:   break;
+[e $U 290  ]
+"77
+[; ;Joc.c: 77:   case 2:
+[e :U 302 ]
+"78
+[; ;Joc.c: 78:    if (SIOcheckKrebut()) {
+[e $ ! ( _SIOcheckKrebut ..  303  ]
+{
+"79
+[; ;Joc.c: 79:     HJugant();
+[e ( _HJugant ..  ]
 "80
-[; ;Joc.c: 80:   break;
-[e $U 291  ]
+[; ;Joc.c: 80:     state--;
+[e -- F2623 -> -> 1 `i `uc ]
 "81
-[; ;Joc.c: 81:   case 2:
+[; ;Joc.c: 81:    }
+}
 [e :U 303 ]
 "82
-[; ;Joc.c: 82:    if (SIOcheckKrebut()) {
-[e $ ! ( _SIOcheckKrebut ..  304  ]
-{
+[; ;Joc.c: 82:   break;
+[e $U 290  ]
 "83
-[; ;Joc.c: 83:     HJugant();
-[e ( _HJugant ..  ]
-"84
-[; ;Joc.c: 84:     state--;
-[e -- F2626 -> -> 1 `i `uc ]
-"85
-[; ;Joc.c: 85:    }
+[; ;Joc.c: 83:  }
 }
-[e :U 304 ]
-"86
-[; ;Joc.c: 86:   break;
-[e $U 291  ]
-"87
-[; ;Joc.c: 87:  }
-}
-[e $U 291  ]
-[e :U 292 ]
-[e [\ -> F2626 `i , $ -> 0 `i 293
- , $ -> 1 `i 295
- , $ -> 2 `i 303
- 291 ]
+[e $U 290  ]
 [e :U 291 ]
-"88
-[; ;Joc.c: 88: }
-[e :UE 290 ]
+[e [\ -> F2623 `i , $ -> 0 `i 292
+ , $ -> 1 `i 294
+ , $ -> 2 `i 302
+ 290 ]
+[e :U 290 ]
+"84
+[; ;Joc.c: 84: }
+[e :UE 289 ]
 }

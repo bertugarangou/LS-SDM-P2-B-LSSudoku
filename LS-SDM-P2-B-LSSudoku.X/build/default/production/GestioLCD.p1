@@ -437,10 +437,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v F2595 `Cuc ~T0 @X0 -> 29 `i t ]
+[v F2594 `Cuc ~T0 @X0 -> 29 `i t ]
 "6 GestioLCD.c
 [; ;GestioLCD.c: 6: const char menuList[][29] = {
-[v _menuList `F2595 ~T0 @X0 -> 5 `i e ]
+[v _menuList `F2594 ~T0 @X0 -> 5 `i e ]
 [i _menuList
 :U ..
 :U ..
@@ -629,62 +629,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "37
 [; ;GestioLCD.c: 37:  static char state = 0;
-[v F2606 `uc ~T0 @X0 1 s state ]
-[i F2606
+[v F2605 `uc ~T0 @X0 1 s state ]
+[i F2605
 -> -> 0 `i `uc
 ]
 "38
 [; ;GestioLCD.c: 38:     static char j=0;
-[v F2607 `uc ~T0 @X0 1 s j ]
-[i F2607
+[v F2606 `uc ~T0 @X0 1 s j ]
+[i F2606
 -> -> 0 `i `uc
 ]
 "39
 [; ;GestioLCD.c: 39:     static char max1 = 15;
-[v F2608 `uc ~T0 @X0 1 s max1 ]
-[i F2608
+[v F2607 `uc ~T0 @X0 1 s max1 ]
+[i F2607
 -> -> 15 `i `uc
 ]
 "40
 [; ;GestioLCD.c: 40:     static char min1 = 0;
-[v F2609 `uc ~T0 @X0 1 s min1 ]
-[i F2609
+[v F2608 `uc ~T0 @X0 1 s min1 ]
+[i F2608
 -> -> 0 `i `uc
 ]
 "41
 [; ;GestioLCD.c: 41:     static char min2 = 0;
-[v F2610 `uc ~T0 @X0 1 s min2 ]
-[i F2610
+[v F2609 `uc ~T0 @X0 1 s min2 ]
+[i F2609
 -> -> 0 `i `uc
 ]
 "42
 [; ;GestioLCD.c: 42:     static char max2 = 15;
-[v F2611 `uc ~T0 @X0 1 s max2 ]
-[i F2611
+[v F2610 `uc ~T0 @X0 1 s max2 ]
+[i F2610
 -> -> 15 `i `uc
 ]
 "43
 [; ;GestioLCD.c: 43:     static char k1 = 0;
-[v F2612 `uc ~T0 @X0 1 s k1 ]
-[i F2612
+[v F2611 `uc ~T0 @X0 1 s k1 ]
+[i F2611
 -> -> 0 `i `uc
 ]
 "44
 [; ;GestioLCD.c: 44:     static char k2 = 0;
-[v F2613 `uc ~T0 @X0 1 s k2 ]
-[i F2613
+[v F2612 `uc ~T0 @X0 1 s k2 ]
+[i F2612
 -> -> 0 `i `uc
 ]
 "45
 [; ;GestioLCD.c: 45:     static char length1=0;
-[v F2614 `uc ~T0 @X0 1 s length1 ]
-[i F2614
+[v F2613 `uc ~T0 @X0 1 s length1 ]
+[i F2613
 -> -> 0 `i `uc
 ]
 "46
 [; ;GestioLCD.c: 46:     static char length2=0;
-[v F2615 `uc ~T0 @X0 1 s length2 ]
-[i F2615
+[v F2614 `uc ~T0 @X0 1 s length2 ]
+[i F2614
 -> -> 0 `i `uc
 ]
 "48
@@ -696,7 +696,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 287 ]
 "50
 [; ;GestioLCD.c: 50:    if (length1 < 17 && ferMenu == 1) {
-[e $ ! && < -> F2614 `i -> 17 `i == -> _ferMenu `i -> 1 `i 288  ]
+[e $ ! && < -> F2613 `i -> 17 `i == -> _ferMenu `i -> 1 `i 288  ]
 {
 "51
 [; ;GestioLCD.c: 51:     LcGotoXY(0,0);
@@ -706,7 +706,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 -> &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `*uc ]
 "53
 [; ;GestioLCD.c: 53:     state = 5;
-[e = F2606 -> -> 5 `i `uc ]
+[e = F2605 -> -> 5 `i `uc ]
 "54
 [; ;GestioLCD.c: 54:    }
 }
@@ -714,11 +714,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;GestioLCD.c: 55:    else if (length1 >= 17 && ferMenu == 1) {
 [e :U 288 ]
-[e $ ! && >= -> F2614 `i -> 17 `i == -> _ferMenu `i -> 1 `i 290  ]
+[e $ ! && >= -> F2613 `i -> 17 `i == -> _ferMenu `i -> 1 `i 290  ]
 {
 "56
 [; ;GestioLCD.c: 56:     state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "57
 [; ;GestioLCD.c: 57:    }
 }
@@ -732,33 +732,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 291 ]
 "60
 [; ;GestioLCD.c: 60:    if (j>=16) {
-[e $ ! >= -> F2607 `i -> 16 `i 292  ]
+[e $ ! >= -> F2606 `i -> 16 `i 292  ]
 {
 "61
 [; ;GestioLCD.c: 61:     min1++;
-[e ++ F2609 -> -> 1 `i `uc ]
+[e ++ F2608 -> -> 1 `i `uc ]
 "62
 [; ;GestioLCD.c: 62:     max1++;
-[e ++ F2608 -> -> 1 `i `uc ]
+[e ++ F2607 -> -> 1 `i `uc ]
 "63
 [; ;GestioLCD.c: 63:     if (menuList[menuDaltGLCD][max1] == '\0') max1=0;
-[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2608 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 293  ]
-[e = F2608 -> -> 0 `i `uc ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2607 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 293  ]
+[e = F2607 -> -> 0 `i `uc ]
 [e :U 293 ]
 "64
 [; ;GestioLCD.c: 64:     if (menuList[menuDaltGLCD][min1] == '\0') min1=0;
-[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2609 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 294  ]
-[e = F2609 -> -> 0 `i `uc ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2608 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 294  ]
+[e = F2608 -> -> 0 `i `uc ]
 [e :U 294 ]
 "65
 [; ;GestioLCD.c: 65:     j=0;
-[e = F2607 -> -> 0 `i `uc ]
+[e = F2606 -> -> 0 `i `uc ]
 "66
 [; ;GestioLCD.c: 66:     k1=min1;
-[e = F2612 F2609 ]
+[e = F2611 F2608 ]
 "67
 [; ;GestioLCD.c: 67:     state = 6;
-[e = F2606 -> -> 6 `i `uc ]
+[e = F2605 -> -> 6 `i `uc ]
 "68
 [; ;GestioLCD.c: 68:    }
 }
@@ -766,24 +766,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "69
 [; ;GestioLCD.c: 69:    else if (j<16) {
 [e :U 292 ]
-[e $ ! < -> F2607 `i -> 16 `i 296  ]
+[e $ ! < -> F2606 `i -> 16 `i 296  ]
 {
 "70
 [; ;GestioLCD.c: 70:     LcGotoXY(j,0);
-[e ( _LcGotoXY (2 , F2607 -> -> 0 `i `uc ]
+[e ( _LcGotoXY (2 , F2606 -> -> 0 `i `uc ]
 "71
 [; ;GestioLCD.c: 71:     LcPutChar(menuList[menuDaltGLCD][k1]);
-[e ( _LcPutChar (1 *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2612 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux ]
+[e ( _LcPutChar (1 *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2611 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux ]
 "72
 [; ;GestioLCD.c: 72:     j++;
-[e ++ F2607 -> -> 1 `i `uc ]
+[e ++ F2606 -> -> 1 `i `uc ]
 "73
 [; ;GestioLCD.c: 73:     k1++;
-[e ++ F2612 -> -> 1 `i `uc ]
+[e ++ F2611 -> -> 1 `i `uc ]
 "74
 [; ;GestioLCD.c: 74:     if(menuList[menuDaltGLCD][k1] == '\0') k1 = 0;
-[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2612 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 297  ]
-[e = F2612 -> -> 0 `i `uc ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2611 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 297  ]
+[e = F2611 -> -> 0 `i `uc ]
 [e :U 297 ]
 "75
 [; ;GestioLCD.c: 75:    }
@@ -802,7 +802,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "79
 [; ;GestioLCD.c: 79:     state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "80
 [; ;GestioLCD.c: 80:    }
 }
@@ -814,7 +814,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "82
 [; ;GestioLCD.c: 82:     state = 0;
-[e = F2606 -> -> 0 `i `uc ]
+[e = F2605 -> -> 0 `i `uc ]
 "83
 [; ;GestioLCD.c: 83:    }
 }
@@ -832,7 +832,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "87
 [; ;GestioLCD.c: 87:     state = 7;
-[e = F2606 -> -> 7 `i `uc ]
+[e = F2605 -> -> 7 `i `uc ]
 "88
 [; ;GestioLCD.c: 88:    }
 }
@@ -844,7 +844,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "90
 [; ;GestioLCD.c: 90:     state = 0;
-[e = F2606 -> -> 0 `i `uc ]
+[e = F2605 -> -> 0 `i `uc ]
 "91
 [; ;GestioLCD.c: 91:    }
 }
@@ -862,40 +862,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "95
 [; ;GestioLCD.c: 95:     length1 = 0;
-[e = F2614 -> -> 0 `i `uc ]
+[e = F2613 -> -> 0 `i `uc ]
 "96
 [; ;GestioLCD.c: 96:     length2 = 0;
-[e = F2615 -> -> 0 `i `uc ]
+[e = F2614 -> -> 0 `i `uc ]
 "97
 [; ;GestioLCD.c: 97:     LcGotoXY(0,0);
 [e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "98
 [; ;GestioLCD.c: 98:     min1 = 0;
-[e = F2609 -> -> 0 `i `uc ]
+[e = F2608 -> -> 0 `i `uc ]
 "99
 [; ;GestioLCD.c: 99:     max1 = 15;
-[e = F2608 -> -> 15 `i `uc ]
+[e = F2607 -> -> 15 `i `uc ]
 "100
 [; ;GestioLCD.c: 100:     min2 = 0;
-[e = F2610 -> -> 0 `i `uc ]
+[e = F2609 -> -> 0 `i `uc ]
 "101
 [; ;GestioLCD.c: 101:     max2 = 15;
-[e = F2611 -> -> 15 `i `uc ]
+[e = F2610 -> -> 15 `i `uc ]
 "102
 [; ;GestioLCD.c: 102:     j = 0;
-[e = F2607 -> -> 0 `i `uc ]
+[e = F2606 -> -> 0 `i `uc ]
 "103
 [; ;GestioLCD.c: 103:     k1 = 0;
-[e = F2612 -> -> 0 `i `uc ]
+[e = F2611 -> -> 0 `i `uc ]
 "104
 [; ;GestioLCD.c: 104:     k2 = 0;
-[e = F2613 -> -> 0 `i `uc ]
+[e = F2612 -> -> 0 `i `uc ]
 "105
 [; ;GestioLCD.c: 105:     newString = 0;
 [e = _newString -> -> 0 `i `b ]
 "106
 [; ;GestioLCD.c: 106:     state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "107
 [; ;GestioLCD.c: 107:    }
 }
@@ -908,11 +908,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 308 ]
 "110
 [; ;GestioLCD.c: 110:    if (menuList[menuDaltGLCD][length1] == '\0' && menuDaltGLCD>=4) {
-[e $ ! && == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui >= -> _menuDaltGLCD `i -> 4 `i 309  ]
+[e $ ! && == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui >= -> _menuDaltGLCD `i -> 4 `i 309  ]
 {
 "111
 [; ;GestioLCD.c: 111:     state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "112
 [; ;GestioLCD.c: 112:    }
 }
@@ -920,11 +920,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "113
 [; ;GestioLCD.c: 113:    else if (menuList[menuDaltGLCD][length1] != '\0') {
 [e :U 309 ]
-[e $ ! != -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 311  ]
+[e $ ! != -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 311  ]
 {
 "114
 [; ;GestioLCD.c: 114:     length1++;
-[e ++ F2614 -> -> 1 `i `uc ]
+[e ++ F2613 -> -> 1 `i `uc ]
 "115
 [; ;GestioLCD.c: 115:    }
 }
@@ -932,11 +932,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "116
 [; ;GestioLCD.c: 116:    else if (menuDaltGLCD<4 && menuList[menuDaltGLCD][length1] == '\0') {
 [e :U 311 ]
-[e $ ! && < -> _menuDaltGLCD `i -> 4 `i == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 313  ]
+[e $ ! && < -> _menuDaltGLCD `i -> 4 `i == -> *U + &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> _menuDaltGLCD `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 313  ]
 {
 "117
 [; ;GestioLCD.c: 117:     state = 13;
-[e = F2606 -> -> 13 `i `uc ]
+[e = F2605 -> -> 13 `i `uc ]
 "118
 [; ;GestioLCD.c: 118:    }
 }
@@ -951,7 +951,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 314 ]
 "121
 [; ;GestioLCD.c: 121:    if (length2 < 17 && ferMenu == 1) {
-[e $ ! && < -> F2615 `i -> 17 `i == -> _ferMenu `i -> 1 `i 315  ]
+[e $ ! && < -> F2614 `i -> 17 `i == -> _ferMenu `i -> 1 `i 315  ]
 {
 "122
 [; ;GestioLCD.c: 122:     LcGotoXY(0,1);
@@ -961,7 +961,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 -> &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `*uc ]
 "124
 [; ;GestioLCD.c: 124:     state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "125
 [; ;GestioLCD.c: 125:    }
 }
@@ -969,11 +969,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "126
 [; ;GestioLCD.c: 126:    else if (length2 >= 17 && ferMenu == 1) {
 [e :U 315 ]
-[e $ ! && >= -> F2615 `i -> 17 `i == -> _ferMenu `i -> 1 `i 317  ]
+[e $ ! && >= -> F2614 `i -> 17 `i == -> _ferMenu `i -> 1 `i 317  ]
 {
 "127
 [; ;GestioLCD.c: 127:     state = 9;
-[e = F2606 -> -> 9 `i `uc ]
+[e = F2605 -> -> 9 `i `uc ]
 "128
 [; ;GestioLCD.c: 128:    }
 }
@@ -987,24 +987,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 318 ]
 "131
 [; ;GestioLCD.c: 131:    if (j<16) {
-[e $ ! < -> F2607 `i -> 16 `i 319  ]
+[e $ ! < -> F2606 `i -> 16 `i 319  ]
 {
 "132
 [; ;GestioLCD.c: 132:     LcGotoXY(j,1);
-[e ( _LcGotoXY (2 , F2607 -> -> 1 `i `uc ]
+[e ( _LcGotoXY (2 , F2606 -> -> 1 `i `uc ]
 "133
 [; ;GestioLCD.c: 133:     LcPutChar(menuList[menuDaltGLCD+1][k2]);
-[e ( _LcPutChar (1 *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux ]
+[e ( _LcPutChar (1 *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2612 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux ]
 "134
 [; ;GestioLCD.c: 134:     j++;
-[e ++ F2607 -> -> 1 `i `uc ]
+[e ++ F2606 -> -> 1 `i `uc ]
 "135
 [; ;GestioLCD.c: 135:     k2++;
-[e ++ F2613 -> -> 1 `i `uc ]
+[e ++ F2612 -> -> 1 `i `uc ]
 "136
 [; ;GestioLCD.c: 136:     if(menuList[menuDaltGLCD+1][k2] == '\0') k2 = 0;
-[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2613 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 320  ]
-[e = F2613 -> -> 0 `i `uc ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2612 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 320  ]
+[e = F2612 -> -> 0 `i `uc ]
 [e :U 320 ]
 "137
 [; ;GestioLCD.c: 137:    }
@@ -1013,33 +1013,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "138
 [; ;GestioLCD.c: 138:    else if (j>=16) {
 [e :U 319 ]
-[e $ ! >= -> F2607 `i -> 16 `i 322  ]
+[e $ ! >= -> F2606 `i -> 16 `i 322  ]
 {
 "139
 [; ;GestioLCD.c: 139:     min2++;
-[e ++ F2610 -> -> 1 `i `uc ]
+[e ++ F2609 -> -> 1 `i `uc ]
 "140
 [; ;GestioLCD.c: 140:     max2++;
-[e ++ F2611 -> -> 1 `i `uc ]
+[e ++ F2610 -> -> 1 `i `uc ]
 "141
 [; ;GestioLCD.c: 141:     if (menuList[menuDaltGLCD+1][max2] == '\0') max2=0;
-[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2611 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 323  ]
-[e = F2611 -> -> 0 `i `uc ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2610 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 323  ]
+[e = F2610 -> -> 0 `i `uc ]
 [e :U 323 ]
 "142
 [; ;GestioLCD.c: 142:     if (menuList[menuDaltGLCD+1][min2] == '\0') min2=0;
-[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2610 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 324  ]
-[e = F2610 -> -> 0 `i `uc ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2609 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 324  ]
+[e = F2609 -> -> 0 `i `uc ]
 [e :U 324 ]
 "143
 [; ;GestioLCD.c: 143:     j=0;
-[e = F2607 -> -> 0 `i `uc ]
+[e = F2606 -> -> 0 `i `uc ]
 "144
 [; ;GestioLCD.c: 144:     k2=min2;
-[e = F2613 F2610 ]
+[e = F2612 F2609 ]
 "145
 [; ;GestioLCD.c: 145:     state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "146
 [; ;GestioLCD.c: 146:    }
 }
@@ -1060,7 +1060,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcClear ..  ]
 "151
 [; ;GestioLCD.c: 151:     state = 2;
-[e = F2606 -> -> 2 `i `uc ]
+[e = F2605 -> -> 2 `i `uc ]
 "152
 [; ;GestioLCD.c: 152:    }
 }
@@ -1075,7 +1075,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcClear ..  ]
 "155
 [; ;GestioLCD.c: 155:     state = 0;
-[e = F2606 -> -> 0 `i `uc ]
+[e = F2605 -> -> 0 `i `uc ]
 "156
 [; ;GestioLCD.c: 156:    }
 }
@@ -1092,7 +1092,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerGLCD ]
 "160
 [; ;GestioLCD.c: 160:    state++;
-[e ++ F2606 -> -> 1 `i `uc ]
+[e ++ F2605 -> -> 1 `i `uc ]
 "161
 [; ;GestioLCD.c: 161:   break;
 [e $U 285  ]
@@ -1108,7 +1108,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerGLCD ]
 "165
 [; ;GestioLCD.c: 165:     state = 11;
-[e = F2606 -> -> 11 `i `uc ]
+[e = F2605 -> -> 11 `i `uc ]
 "166
 [; ;GestioLCD.c: 166:    }
 }
@@ -1121,11 +1121,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 332 ]
 "169
 [; ;GestioLCD.c: 169:    if (menuList[menuDaltGLCD+1][length2] != '\0') {
-[e $ ! != -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2615 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 333  ]
+[e $ ! != -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 333  ]
 {
 "170
 [; ;GestioLCD.c: 170:     length2++;
-[e ++ F2615 -> -> 1 `i `uc ]
+[e ++ F2614 -> -> 1 `i `uc ]
 "171
 [; ;GestioLCD.c: 171:    }
 }
@@ -1133,11 +1133,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "172
 [; ;GestioLCD.c: 172:    else if (menuList[menuDaltGLCD+1][length2] == '\0' ) {
 [e :U 333 ]
-[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2615 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 335  ]
+[e $ ! == -> *U + &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux * -> F2614 `ux -> -> # *U &U *U + &U _menuList * -> -> + -> _menuDaltGLCD `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _menuList `ui -> -> 29 `i `ui `ux `ui `ux `ui -> 0 `ui 335  ]
 {
 "173
 [; ;GestioLCD.c: 173:     state = 2;
-[e = F2606 -> -> 2 `i `uc ]
+[e = F2605 -> -> 2 `i `uc ]
 "174
 [; ;GestioLCD.c: 174:    }
 }
@@ -1151,7 +1151,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 285  ]
 [e :U 286 ]
-[e [\ -> F2606 `i , $ -> 2 `i 287
+[e [\ -> F2605 `i , $ -> 2 `i 287
  , $ -> 3 `i 291
  , $ -> 6 `i 298
  , $ -> 5 `i 302

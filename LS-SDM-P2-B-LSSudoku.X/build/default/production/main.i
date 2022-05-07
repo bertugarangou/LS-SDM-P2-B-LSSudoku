@@ -4609,7 +4609,7 @@ unsigned char __t3rd16on(void);
 
 # 1 "./LcTLCD.h" 1
 # 28 "./LcTLCD.h"
-void LcInit(char rows, char columns);
+void LcInit(char rows);
 
 
 
@@ -4799,7 +4799,6 @@ void initSIO(void);
 void motorJoc(void);
 void JJuguem(char usuari);
 void JnovaTecla(signed char tecla);
-signed char JUsuari(void);
 void JnovaDireccio(char dir);
 void JendGame(void);
 # 14 "main.c" 2
@@ -4860,7 +4859,6 @@ void init_eusart(void){
 
 void main(void) {
     init_ports();
-
     init_eusart();
     TiInitTimer();
     TeInit();
@@ -4873,7 +4871,7 @@ void main(void) {
     initHora();
     initSIO();
 
-    LcInit(2,16);
+    LcInit(2);
     Minit();
 
     while(1){

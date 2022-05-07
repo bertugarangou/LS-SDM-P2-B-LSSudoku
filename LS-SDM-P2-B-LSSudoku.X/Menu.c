@@ -158,9 +158,6 @@ void menu(void) {
 			else if ((loginNOTRegister && indexUsuari == neg) || (!loginNOTRegister && indexUsuari > neg)) {
 				state = 0;
 			}
-			else if (1 == 1) {
-				state = 12;
-			}
 		break;
 		case 12:
 			LcClear();
