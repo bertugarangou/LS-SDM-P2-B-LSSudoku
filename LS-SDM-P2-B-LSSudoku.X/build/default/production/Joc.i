@@ -4750,29 +4750,26 @@ void motorJoc(void){
     HnoJugant();
     SIOendGame();
     LATBbits.LATB3 = 0;
-    state = 0;
+    state--;
    }
    else if (direccioJoc > -1) {
     SIONovaDireccio(conversorJoystick(direccioJoc));
     direccioJoc = -1;
-    state = 1;
    }
    else if (HNouSegon() && LcLliure()) {
     HClearNouSegon();
     LcGotoXY(0,1);
     LcNewString(HGetTime());
-    state = 1;
    }
    else if (novaTeclaJOC > 0) {
     SIONovaTecla(novaTeclaJOC+48);
     novaTeclaJOC = -1;
-    state = 1;
    }
   break;
   case 2:
    if (SIOcheckKrebut()) {
     HJugant();
-    state = 1;
+    state--;
    }
   break;
  }

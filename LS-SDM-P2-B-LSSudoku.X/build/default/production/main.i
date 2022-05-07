@@ -4685,20 +4685,16 @@ void _TiRSITimer (void);
 
 char UgetNumUsuaris(void);
 void Uinit(void);
-void UcreateUser(void);
 void UenviaChar(char c, char pos);
 void UenviaPas(char c, char pos);
 void UmotorUsers(void);
 __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
 signed char UcheckExistsGetError(void);
-void escriureEEPROM(void);
-__bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
-void escriure2usuarisStruct(void);
 __bit UshowUsersCalculat(void);
 
 unsigned char UgetScore(char quin);
@@ -4741,6 +4737,13 @@ void SMSon(void);
 void SMSoff (void);
 # 8 "main.c" 2
 
+# 1 "./Altaveu.h" 1
+
+
+    void motorAltaveu(void);
+    void initAltaveu(void);
+    void playAltaveu(void);
+# 9 "main.c" 2
 
 # 1 "./GestioLCD.h" 1
 
@@ -4812,7 +4815,6 @@ char CToAHaAcabat(void);
 void CToAReset(void);
 # 15 "main.c" 2
 
-
 #pragma config OSC = HSPLL
 #pragma config PBADEN = DIG
 #pragma config WDT = OFF
@@ -4836,9 +4838,9 @@ void init_ports(void){
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
     LATBbits.LATB1 = 0;
-# 50 "main.c"
+# 49 "main.c"
     TRISC = 0xC0;
-# 60 "main.c"
+# 59 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 
@@ -4865,7 +4867,7 @@ void main(void) {
     Sinit();
     SMotor();
     Uinit();
-
+    initAltaveu();
     GLCDInit();
     JoystickInit();
     initHora();
@@ -4873,8 +4875,6 @@ void main(void) {
 
     LcInit(2,16);
     Minit();
-
-
 
     while(1){
         GLCDMotor();
@@ -4885,7 +4885,7 @@ void main(void) {
         menu();
 
         CtoA();
-
+        motorAltaveu();
         UmotorUsers();
 
         TeTeclat();

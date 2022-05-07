@@ -467,17 +467,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"4 Joystick.c
-[; ;Joystick.c: 4: char ultimaTeclaAD = 0;
+"8 Joystick.c
+[; ;Joystick.c: 8: char ultimaTeclaAD = 0;
 [v _ultimaTeclaAD `uc ~T0 @X0 1 e ]
 [i _ultimaTeclaAD
 -> -> 0 `i `uc
 ]
-"5
-[; ;Joystick.c: 5: __bit cap1;
+"9
+[; ;Joystick.c: 9: __bit cap1;
 [v _cap1 `b ~T0 @X0 1 e ]
-"6
-[; ;Joystick.c: 6: __bit cap2;
+"10
+[; ;Joystick.c: 10: __bit cap2;
 [v _cap2 `b ~T0 @X0 1 e ]
 "12
 [; ;Joystick.c: 12: void JoystickInit(void){

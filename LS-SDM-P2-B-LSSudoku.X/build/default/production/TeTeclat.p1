@@ -472,9 +472,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _tiTeclat
 -> -> 0 `i `uc
 ]
-[v F2585 `uc ~T0 @X0 -> 3 `i t ]
+[v F2585 `Cuc ~T0 @X0 -> 3 `i t ]
 "10
-[; ;TeTeclat.c: 10: char teclaPremuda[4][3] = {
+[; ;TeTeclat.c: 10: const char teclaPremuda[4][3] = {
 [v _teclaPremuda `F2585 ~T0 @X0 -> 4 `i e ]
 [i _teclaPremuda
 :U ..
@@ -721,86 +721,86 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;TeTeclat.c: 77:                 SsetNovaTecla(teclaPremuda[files-1][cols]);
 [e ( _SsetNovaTecla (1 *U + &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux * -> F2589 `ux -> -> # *U &U *U + &U _teclaPremuda * -> -> - -> F2590 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _teclaPremuda `ui -> -> 3 `i `ui `ux `ui `ux ]
-"79
-[; ;TeTeclat.c: 79:     state++;
+"78
+[; ;TeTeclat.c: 78:     state++;
 [e ++ F2588 -> -> 1 `i `uc ]
-"80
-[; ;TeTeclat.c: 80:    }
+"79
+[; ;TeTeclat.c: 79:    }
 }
 [e :U 301 ]
 [e :U 300 ]
-"81
-[; ;TeTeclat.c: 81:   break;
+"80
+[; ;TeTeclat.c: 80:   break;
 [e $U 282  ]
-"82
-[; ;TeTeclat.c: 82:   case 5:
+"81
+[; ;TeTeclat.c: 81:   case 5:
 [e :U 302 ]
-"83
-[; ;TeTeclat.c: 83:    if (files==0) {
+"82
+[; ;TeTeclat.c: 82:    if (files==0) {
 [e $ ! == -> F2590 `i -> 0 `i 303  ]
 {
-"84
-[; ;TeTeclat.c: 84:     TiResetTics(tiTeclat);
+"83
+[; ;TeTeclat.c: 83:     TiResetTics(tiTeclat);
 [e ( _TiResetTics (1 _tiTeclat ]
-"85
-[; ;TeTeclat.c: 85:     state++;
+"84
+[; ;TeTeclat.c: 84:     state++;
 [e ++ F2588 -> -> 1 `i `uc ]
-"86
-[; ;TeTeclat.c: 86:    }
+"85
+[; ;TeTeclat.c: 85:    }
 }
 [e :U 303 ]
-"87
-[; ;TeTeclat.c: 87:   break;
+"86
+[; ;TeTeclat.c: 86:   break;
 [e $U 282  ]
-"88
-[; ;TeTeclat.c: 88:   case 6:
+"87
+[; ;TeTeclat.c: 87:   case 6:
 [e :U 304 ]
-"89
-[; ;TeTeclat.c: 89:    if (TiGetTics(tiTeclat)>=0) {
+"88
+[; ;TeTeclat.c: 88:    if (TiGetTics(tiTeclat)>=0) {
 [e $ ! >= ( _TiGetTics (1 _tiTeclat -> 0 `i 305  ]
 {
-"90
-[; ;TeTeclat.c: 90:     state++;
+"89
+[; ;TeTeclat.c: 89:     state++;
 [e ++ F2588 -> -> 1 `i `uc ]
-"91
-[; ;TeTeclat.c: 91:    }
+"90
+[; ;TeTeclat.c: 90:    }
 }
 [e :U 305 ]
-"92
-[; ;TeTeclat.c: 92:   break;
+"91
+[; ;TeTeclat.c: 91:   break;
 [e $U 282  ]
-"93
-[; ;TeTeclat.c: 93:   case 7:
+"92
+[; ;TeTeclat.c: 92:   case 7:
 [e :U 306 ]
-"94
-[; ;TeTeclat.c: 94:    if (files!=0) {
+"93
+[; ;TeTeclat.c: 93:    if (files!=0) {
 [e $ ! != -> F2590 `i -> 0 `i 307  ]
 {
-"95
-[; ;TeTeclat.c: 95:     state = 5;
+"94
+[; ;TeTeclat.c: 94:     state = 5;
 [e = F2588 -> -> 5 `i `uc ]
-"96
-[; ;TeTeclat.c: 96:    }
+"95
+[; ;TeTeclat.c: 95:    }
 }
 [e $U 308  ]
-"97
-[; ;TeTeclat.c: 97:    else if (files==0) {
+"96
+[; ;TeTeclat.c: 96:    else if (files==0) {
 [e :U 307 ]
 [e $ ! == -> F2590 `i -> 0 `i 309  ]
 {
-"98
-[; ;TeTeclat.c: 98:     state = 0;
+"97
+[; ;TeTeclat.c: 97:     state = 0;
 [e = F2588 -> -> 0 `i `uc ]
-"99
-[; ;TeTeclat.c: 99:    }
+"98
+[; ;TeTeclat.c: 98:    }
 }
 [e :U 309 ]
 [e :U 308 ]
-"100
-[; ;TeTeclat.c: 100:   break;
+"99
+[; ;TeTeclat.c: 99:   break;
 [e $U 282  ]
-"101
-[; ;TeTeclat.c: 101:  }
+"100
+[; ;TeTeclat.c: 100:  }
 }
 [e $U 282  ]
 [e :U 283 ]
@@ -814,7 +814,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 7 `i 306
  282 ]
 [e :U 282 ]
-"102
-[; ;TeTeclat.c: 102: }
+"101
+[; ;TeTeclat.c: 101: }
 [e :UE 281 ]
 }

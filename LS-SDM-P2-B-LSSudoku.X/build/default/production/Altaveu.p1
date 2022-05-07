@@ -437,7 +437,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"5 Altaveu.c
+"4 Altaveu.c
+[; ;Altaveu.c: 4: const char duradaNotes = 168;
+[v _duradaNotes `Cuc ~T0 @X0 1 e ]
+[i _duradaNotes
+-> -> 168 `i `uc
+]
+"5
 [; ;Altaveu.c: 5: __bit reproduir = 0;
 [v _reproduir `b ~T0 @X0 1 e ]
 [i _reproduir
@@ -461,160 +467,157 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;Altaveu.c: 11:     timerAltaveu = TiGetTimer();
 [e = _timerAltaveu ( _TiGetTimer ..  ]
-"13
-[; ;Altaveu.c: 13: }
+"12
+[; ;Altaveu.c: 12: }
 [e :UE 280 ]
 }
-"14
-[; ;Altaveu.c: 14: void playAltaveu(void){
+"13
+[; ;Altaveu.c: 13: void playAltaveu(void){
 [v _playAltaveu `(v ~T0 @X0 1 ef ]
 {
 [e :U _playAltaveu ]
 [f ]
-"15
-[; ;Altaveu.c: 15:     reproduir = 1;
+"14
+[; ;Altaveu.c: 14:     reproduir = 1;
 [e = _reproduir -> -> 1 `i `b ]
-"16
-[; ;Altaveu.c: 16: }
+"15
+[; ;Altaveu.c: 15: }
 [e :UE 281 ]
 }
-"17
-[; ;Altaveu.c: 17: void motorAltaveu(void){
+"16
+[; ;Altaveu.c: 16: void motorAltaveu(void){
 [v _motorAltaveu `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorAltaveu ]
 [f ]
-"18
-[; ;Altaveu.c: 18: static char state = 0;
-[v F2577 `uc ~T0 @X0 1 s state ]
-[i F2577
+"17
+[; ;Altaveu.c: 17: static char state = 0;
+[v F2578 `uc ~T0 @X0 1 s state ]
+[i F2578
 -> -> 0 `i `uc
 ]
-"20
-[; ;Altaveu.c: 20:  switch(state) {
+"19
+[; ;Altaveu.c: 19:  switch(state) {
 [e $U 284  ]
 {
-"21
-[; ;Altaveu.c: 21:   case 0:
+"20
+[; ;Altaveu.c: 20:   case 0:
 [e :U 285 ]
-"22
-[; ;Altaveu.c: 22:    if (reproduir) {
+"21
+[; ;Altaveu.c: 21:    if (reproduir) {
 [e $ ! _reproduir 286  ]
 {
-"23
-[; ;Altaveu.c: 23:     nota = 1;
+"22
+[; ;Altaveu.c: 22:     nota = 1;
 [e = _nota -> -> 1 `i `uc ]
-"24
-[; ;Altaveu.c: 24:     copsNota = 0;
+"23
+[; ;Altaveu.c: 23:     copsNota = 0;
 [e = _copsNota -> -> 0 `i `uc ]
-"25
-[; ;Altaveu.c: 25:     TiResetTics(timerAltaveu);
+"24
+[; ;Altaveu.c: 24:     TiResetTics(timerAltaveu);
 [e ( _TiResetTics (1 _timerAltaveu ]
+"25
+[; ;Altaveu.c: 25:     state = 1;
+[e = F2578 -> -> 1 `i `uc ]
 "26
-[; ;Altaveu.c: 26:     state = 1;
-[e = F2577 -> -> 1 `i `uc ]
-"27
-[; ;Altaveu.c: 27:    }
+[; ;Altaveu.c: 26:    }
 }
 [e :U 286 ]
-"28
-[; ;Altaveu.c: 28:   break;
+"27
+[; ;Altaveu.c: 27:   break;
 [e $U 283  ]
-"29
-[; ;Altaveu.c: 29:   case 1:
+"28
+[; ;Altaveu.c: 28:   case 1:
 [e :U 287 ]
-"30
-[; ;Altaveu.c: 30:    if (nota > 5) {
+"29
+[; ;Altaveu.c: 29:    if (nota > 5) {
 [e $ ! > -> _nota `i -> 5 `i 288  ]
 {
-"31
-[; ;Altaveu.c: 31:     reproduir = 0;
+"30
+[; ;Altaveu.c: 30:     reproduir = 0;
 [e = _reproduir -> -> 0 `i `b ]
+"31
+[; ;Altaveu.c: 31:     state--;
+[e -- F2578 -> -> 1 `i `uc ]
 "32
-[; ;Altaveu.c: 32:     state = 0;
-[e = F2577 -> -> 0 `i `uc ]
-"33
-[; ;Altaveu.c: 33:    }
+[; ;Altaveu.c: 32:    }
 }
 [e $U 289  ]
-"34
-[; ;Altaveu.c: 34:    else if (copsNota == 168) {
+"33
+[; ;Altaveu.c: 33:    else if (copsNota == duradaNotes) {
 [e :U 288 ]
-[e $ ! == -> _copsNota `i -> 168 `i 290  ]
+[e $ ! == -> _copsNota `i -> _duradaNotes `i 290  ]
 {
-"35
-[; ;Altaveu.c: 35:     nota++;
+"34
+[; ;Altaveu.c: 34:     nota++;
 [e ++ _nota -> -> 1 `i `uc ]
-"36
-[; ;Altaveu.c: 36:     copsNota = 0;
+"35
+[; ;Altaveu.c: 35:     copsNota = 0;
 [e = _copsNota -> -> 0 `i `uc ]
-"37
-[; ;Altaveu.c: 37:     state = 1;
-[e = F2577 -> -> 1 `i `uc ]
-"38
-[; ;Altaveu.c: 38:    }
+"36
+[; ;Altaveu.c: 36:    }
 }
 [e $U 291  ]
-"39
-[; ;Altaveu.c: 39:    else if (TiGetTics(timerAltaveu) > nota) {
+"37
+[; ;Altaveu.c: 37:    else if (TiGetTics(timerAltaveu) > nota) {
 [e :U 290 ]
 [e $ ! > ( _TiGetTics (1 _timerAltaveu -> _nota `i 292  ]
 {
-"40
-[; ;Altaveu.c: 40:     LATBbits.LB0 = 1;
+"38
+[; ;Altaveu.c: 38:     LATBbits.LB0 = 1;
 [e = . . _LATBbits 1 0 -> -> 1 `i `uc ]
-"41
-[; ;Altaveu.c: 41:     TiResetTics(timerAltaveu);
+"39
+[; ;Altaveu.c: 39:     TiResetTics(timerAltaveu);
 [e ( _TiResetTics (1 _timerAltaveu ]
-"42
-[; ;Altaveu.c: 42:     state = 2;
-[e = F2577 -> -> 2 `i `uc ]
-"43
-[; ;Altaveu.c: 43:    }
+"40
+[; ;Altaveu.c: 40:     state++;
+[e ++ F2578 -> -> 1 `i `uc ]
+"41
+[; ;Altaveu.c: 41:    }
 }
 [e :U 292 ]
 [e :U 291 ]
 [e :U 289 ]
-"44
-[; ;Altaveu.c: 44:   break;
+"42
+[; ;Altaveu.c: 42:   break;
 [e $U 283  ]
-"45
-[; ;Altaveu.c: 45:   case 2:
+"43
+[; ;Altaveu.c: 43:   case 2:
 [e :U 293 ]
-"46
-[; ;Altaveu.c: 46:    if (TiGetTics(timerAltaveu) > nota) {
+"44
+[; ;Altaveu.c: 44:    if (TiGetTics(timerAltaveu) > nota) {
 [e $ ! > ( _TiGetTics (1 _timerAltaveu -> _nota `i 294  ]
 {
-"47
-[; ;Altaveu.c: 47:     LATBbits.LB0 = 0;
+"45
+[; ;Altaveu.c: 45:     LATBbits.LB0 = 0;
 [e = . . _LATBbits 1 0 -> -> 0 `i `uc ]
-"48
-[; ;Altaveu.c: 48:     TiResetTics(timerAltaveu);
+"46
+[; ;Altaveu.c: 46:     TiResetTics(timerAltaveu);
 [e ( _TiResetTics (1 _timerAltaveu ]
-"49
-[; ;Altaveu.c: 49:     copsNota++;
+"47
+[; ;Altaveu.c: 47:     copsNota++;
 [e ++ _copsNota -> -> 1 `i `uc ]
-"50
-[; ;Altaveu.c: 50:     state = 1;
-[e = F2577 -> -> 1 `i `uc ]
-"51
-[; ;Altaveu.c: 51:    }
+"48
+[; ;Altaveu.c: 48:     state++;
+[e ++ F2578 -> -> 1 `i `uc ]
+"49
+[; ;Altaveu.c: 49:    }
 }
 [e :U 294 ]
-"52
-[; ;Altaveu.c: 52:   break;
+"50
+[; ;Altaveu.c: 50:   break;
 [e $U 283  ]
-"53
-[; ;Altaveu.c: 53:  }
+"51
+[; ;Altaveu.c: 51:  }
 }
 [e $U 283  ]
 [e :U 284 ]
-[e [\ -> F2577 `i , $ -> 0 `i 285
+[e [\ -> F2578 `i , $ -> 0 `i 285
  , $ -> 1 `i 287
  , $ -> 2 `i 293
  283 ]
 [e :U 283 ]
-"54
-[; ;Altaveu.c: 54: }
+"52
+[; ;Altaveu.c: 52: }
 [e :UE 282 ]
 }

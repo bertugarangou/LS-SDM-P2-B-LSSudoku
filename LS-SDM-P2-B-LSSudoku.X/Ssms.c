@@ -9,7 +9,7 @@ signed char lletraASCII = neg;
 const char lletraInici[8] = "ADGJMPTW";
 char sumaPulsacions = 0;
 signed char novaTecla = neg;
-char timerSMS = neg;
+char timerSMS;
 signed char ultimaTecla = neg;
 __bit setSMSon = 0;
 unsigned char zeroTecla;
@@ -74,7 +74,7 @@ void SMotor(void) {
 			if ((novaTecla > 1 || novaTecla == 0) && novaTecla < 10) {
 				state = 1;
 			}
-			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII == -1) {
+			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII == neg) {
 				MNovaLletra(novaTecla+48);
 				novaTecla = neg;
 				state = 0;

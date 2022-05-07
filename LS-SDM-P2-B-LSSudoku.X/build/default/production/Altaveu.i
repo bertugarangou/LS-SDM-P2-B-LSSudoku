@@ -4644,7 +4644,7 @@ void TiFreeTimer (char Handle);
 void _TiRSITimer (void);
 # 3 "Altaveu.c" 2
 
-
+const char duradaNotes = 168;
 __bit reproduir = 0;
 unsigned char nota;
 char timerAltaveu;
@@ -4652,7 +4652,6 @@ unsigned char copsNota;
 
 void initAltaveu(void){
     timerAltaveu = TiGetTimer();
-
 }
 void playAltaveu(void){
     reproduir = 1;
@@ -4672,17 +4671,16 @@ static char state = 0;
   case 1:
    if (nota > 5) {
     reproduir = 0;
-    state = 0;
+    state--;
    }
-   else if (copsNota == 168) {
+   else if (copsNota == duradaNotes) {
     nota++;
     copsNota = 0;
-    state = 1;
    }
    else if (TiGetTics(timerAltaveu) > nota) {
     LATBbits.LB0 = 1;
     TiResetTics(timerAltaveu);
-    state = 2;
+    state++;
    }
   break;
   case 2:
@@ -4690,7 +4688,7 @@ static char state = 0;
     LATBbits.LB0 = 0;
     TiResetTics(timerAltaveu);
     copsNota++;
-    state = 1;
+    state++;
    }
   break;
  }

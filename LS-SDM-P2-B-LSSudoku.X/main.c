@@ -6,14 +6,13 @@
 #include "Menu.h"
 #include "TeTeclat.h"
 #include "Ssms.h"
-//#include "Altaveu.h"
+#include "Altaveu.h"
 #include "GestioLCD.h"
 #include "Joystick.h"
 #include "Hora.h"
 #include "SIO.h"
 #include "Joc.h"
 #include "CtoA.h"
-//ALTAVEU DESACTIVATT!!!!!!!!!!!!!!!!!!!!!!!
 #pragma config OSC = HSPLL	    //;Oscillador -> High Speed PLL
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
 #pragma config WDT = OFF	    //;Desactivem el Watch Dog Timer
@@ -83,7 +82,7 @@ void main(void) {
     Sinit();
     SMotor();
     Uinit();
-    //initAltaveu();
+    initAltaveu();
     GLCDInit();
     JoystickInit();
     initHora();
@@ -91,8 +90,6 @@ void main(void) {
     
     LcInit(2,16);
     Minit();
-    //borrar lo de sota, posa 2 usuaris forçats i punts!
-    //escriure2usuarisStruct();
     
     while(1){
         GLCDMotor();
@@ -103,7 +100,7 @@ void main(void) {
         menu();
 
         CtoA();
-        //motorAltaveu();
+        motorAltaveu();
         UmotorUsers();
         
         TeTeclat();//antapenultim

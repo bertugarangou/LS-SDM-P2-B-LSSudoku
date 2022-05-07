@@ -4675,7 +4675,7 @@ void SMSoff (void);
 
 static char tiTeclat=0;
 
-char teclaPremuda[4][3] = {
+const char teclaPremuda[4][3] = {
     {1,2,3},
     {4,5,6},
     {7,8,9},
@@ -4743,7 +4743,6 @@ void TeTeclat(void) {
    else if (files!=0) {
                 MsetNovaTecla(teclaPremuda[files-1][cols]);
                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-
     state++;
    }
   break;

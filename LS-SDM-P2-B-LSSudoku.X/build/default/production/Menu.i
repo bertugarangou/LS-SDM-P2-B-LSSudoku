@@ -4696,20 +4696,16 @@ void _TiRSITimer (void);
 
 char UgetNumUsuaris(void);
 void Uinit(void);
-void UcreateUser(void);
 void UenviaChar(char c, char pos);
 void UenviaPas(char c, char pos);
 void UmotorUsers(void);
 __bit UcheckExistsNotFinished(void);
 void UcheckExists(void);
 signed char UcheckExistsGetError(void);
-void escriureEEPROM(void);
-__bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
-void escriure2usuarisStruct(void);
 __bit UshowUsersCalculat(void);
 
 unsigned char UgetScore(char quin);
@@ -4793,6 +4789,8 @@ void CToAReset(void);
 
 
 
+const char loginText[8] = "1.LOGIN";
+const char registerText[11] = "2.REGISTER";
 unsigned char tmp = 0;
 signed char NovaTecla = -1;
 signed char novaLletra = -1;
@@ -4825,13 +4823,13 @@ void menu(void) {
  switch(state) {
   case 0:
    LcClear();
-   LcNewString("1.LOGIN");
+   LcNewString(loginText);
    state = 1;
   break;
   case 1:
    if (LcLliure()) {
     LcGotoXY(0,1);
-    LcNewString("2.REGISTER");
+    LcNewString(registerText);
     NovaTecla = -1;
     state = 2;
    }

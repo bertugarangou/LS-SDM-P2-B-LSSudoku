@@ -4664,7 +4664,7 @@ signed char lletraASCII = -1;
 const char lletraInici[8] = "ADGJMPTW";
 char sumaPulsacions = 0;
 signed char novaTecla = -1;
-char timerSMS = -1;
+char timerSMS;
 signed char ultimaTecla = -1;
 __bit setSMSon = 0;
 unsigned char zeroTecla;

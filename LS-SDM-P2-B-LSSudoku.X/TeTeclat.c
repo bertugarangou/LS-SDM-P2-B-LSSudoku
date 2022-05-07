@@ -7,7 +7,7 @@
 
 static char tiTeclat=0;
 
-char teclaPremuda[4][3] = {
+const char teclaPremuda[4][3] = {
     {1,2,3},
     {4,5,6},
     {7,8,9},
@@ -75,7 +75,6 @@ void TeTeclat(void) {
 			else if (files!=0) {
                 MsetNovaTecla(teclaPremuda[files-1][cols]);//comentat falta menu
                 SsetNovaTecla(teclaPremuda[files-1][cols]);
-                //JnovaTecla(teclaPremuda[files-1][cols]); //comentat falta joc
 				state++;
 			}
 		break;
@@ -100,7 +99,3 @@ void TeTeclat(void) {
 		break;
 	}
 }
-
-/*char teclaPremuda(char col, char files){
-    return 0;
-}*/

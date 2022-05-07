@@ -4644,6 +4644,7 @@ void TiFreeTimer (char Handle);
 void _TiRSITimer (void);
 # 3 "Hora.c" 2
 
+
 char timerHora;
 unsigned char segons = 0;
 char hora[6] = "30:00";
@@ -4717,7 +4718,7 @@ void motorHora(void) {
 
      segons++;
      if(segons > 59){
-
+      playAltaveu();
       segons = 0;
      }
     }

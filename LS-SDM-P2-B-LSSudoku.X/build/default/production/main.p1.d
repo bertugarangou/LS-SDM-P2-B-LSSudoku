@@ -6,6 +6,7 @@ Usuaris.h  \
 Menu.h  \
 TeTeclat.h  \
 Ssms.h  \
+Altaveu.h  \
 GestioLCD.h  \
 Joystick.h  \
 Hora.h  \

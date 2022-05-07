@@ -4619,13 +4619,13 @@ void MNouJoystick(signed char posicio);
 # 2 "Joystick.c" 2
 
 
+
+
+
+
 char ultimaTeclaAD = 0;
 __bit cap1;
 __bit cap2;
-
-
-
-
 
 void JoystickInit(void){
     ADCON0 = 0x01;

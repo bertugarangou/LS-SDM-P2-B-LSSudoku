@@ -3,10 +3,10 @@
 #include "Hora.h"
 #include "SIO.h"
 #include "LcTLCD.h"
-
-signed char usuariJoc = -1;
+#define neg -1
+signed char usuariJoc = neg;
 signed char direccioJoc = 0;
-signed char novaTeclaJOC = -1;
+signed char novaTeclaJOC = neg;
 __bit jugantJoc;
 
 
@@ -50,7 +50,7 @@ void motorJoc(void){
 
 	switch(state) {
 		case 0:
-			if (usuariJoc != -1) {
+			if (usuariJoc != neg) {
 				SIOStartGame(usuariJoc);
 				jugantJoc = 1;
 				state = 2;
@@ -58,33 +58,30 @@ void motorJoc(void){
 		break;
 		case 1:
 			if (!jugantJoc) {
-				usuariJoc = -1;
+				usuariJoc = neg;
 				HnoJugant();
 				SIOendGame();
 				LATBbits.LATB3 = 0;
-				state = 0;
+				state--;
 			}
-			else if (direccioJoc > -1) {
+			else if (direccioJoc > neg) {
 				SIONovaDireccio(conversorJoystick(direccioJoc));
-				direccioJoc = -1;
-				state = 1;
+				direccioJoc = neg;
 			}
 			else if (HNouSegon() && LcLliure()) {
 				HClearNouSegon();
 				LcGotoXY(0,1);
 				LcNewString(HGetTime());
-				state = 1;
 			}
 			else if (novaTeclaJOC > 0) {
 				SIONovaTecla(novaTeclaJOC+48);
-				novaTeclaJOC = -1;
-				state = 1;
+				novaTeclaJOC = neg;
 			}
 		break;
 		case 2:
 			if (SIOcheckKrebut()) {
 				HJugant();
-				state = 1;
+				state--;
 			}
 		break;
 	}

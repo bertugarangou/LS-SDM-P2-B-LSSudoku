@@ -679,8 +679,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Joc.c: 64:     LATBbits.LATB3 = 0;
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "65
-[; ;Joc.c: 65:     state = 0;
-[e = F2626 -> -> 0 `i `uc ]
+[; ;Joc.c: 65:     state--;
+[e -- F2626 -> -> 1 `i `uc ]
 "66
 [; ;Joc.c: 66:    }
 }
@@ -697,79 +697,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Joc.c: 69:     direccioJoc = -1;
 [e = _direccioJoc -> -U -> 1 `i `c ]
 "70
-[; ;Joc.c: 70:     state = 1;
-[e = F2626 -> -> 1 `i `uc ]
-"71
-[; ;Joc.c: 71:    }
+[; ;Joc.c: 70:    }
 }
 [e $U 299  ]
-"72
-[; ;Joc.c: 72:    else if (HNouSegon() && LcLliure()) {
+"71
+[; ;Joc.c: 71:    else if (HNouSegon() && LcLliure()) {
 [e :U 298 ]
 [e $ ! && ( _HNouSegon ..  ( _LcLliure ..  300  ]
 {
-"73
-[; ;Joc.c: 73:     HClearNouSegon();
+"72
+[; ;Joc.c: 72:     HClearNouSegon();
 [e ( _HClearNouSegon ..  ]
-"74
-[; ;Joc.c: 74:     LcGotoXY(0,1);
+"73
+[; ;Joc.c: 73:     LcGotoXY(0,1);
 [e ( _LcGotoXY (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"75
-[; ;Joc.c: 75:     LcNewString(HGetTime());
+"74
+[; ;Joc.c: 74:     LcNewString(HGetTime());
 [e ( _LcNewString (1 ( _HGetTime ..  ]
-"76
-[; ;Joc.c: 76:     state = 1;
-[e = F2626 -> -> 1 `i `uc ]
-"77
-[; ;Joc.c: 77:    }
+"75
+[; ;Joc.c: 75:    }
 }
 [e $U 301  ]
-"78
-[; ;Joc.c: 78:    else if (novaTeclaJOC > 0) {
+"76
+[; ;Joc.c: 76:    else if (novaTeclaJOC > 0) {
 [e :U 300 ]
 [e $ ! > -> _novaTeclaJOC `i -> 0 `i 302  ]
 {
-"79
-[; ;Joc.c: 79:     SIONovaTecla(novaTeclaJOC+48);
+"77
+[; ;Joc.c: 77:     SIONovaTecla(novaTeclaJOC+48);
 [e ( _SIONovaTecla (1 -> + -> _novaTeclaJOC `i -> 48 `i `c ]
-"80
-[; ;Joc.c: 80:     novaTeclaJOC = -1;
+"78
+[; ;Joc.c: 78:     novaTeclaJOC = -1;
 [e = _novaTeclaJOC -> -U -> 1 `i `c ]
-"81
-[; ;Joc.c: 81:     state = 1;
-[e = F2626 -> -> 1 `i `uc ]
-"82
-[; ;Joc.c: 82:    }
+"79
+[; ;Joc.c: 79:    }
 }
 [e :U 302 ]
 [e :U 301 ]
 [e :U 299 ]
 [e :U 297 ]
-"83
-[; ;Joc.c: 83:   break;
+"80
+[; ;Joc.c: 80:   break;
 [e $U 291  ]
-"84
-[; ;Joc.c: 84:   case 2:
+"81
+[; ;Joc.c: 81:   case 2:
 [e :U 303 ]
-"85
-[; ;Joc.c: 85:    if (SIOcheckKrebut()) {
+"82
+[; ;Joc.c: 82:    if (SIOcheckKrebut()) {
 [e $ ! ( _SIOcheckKrebut ..  304  ]
 {
-"86
-[; ;Joc.c: 86:     HJugant();
+"83
+[; ;Joc.c: 83:     HJugant();
 [e ( _HJugant ..  ]
-"87
-[; ;Joc.c: 87:     state = 1;
-[e = F2626 -> -> 1 `i `uc ]
-"88
-[; ;Joc.c: 88:    }
+"84
+[; ;Joc.c: 84:     state--;
+[e -- F2626 -> -> 1 `i `uc ]
+"85
+[; ;Joc.c: 85:    }
 }
 [e :U 304 ]
-"89
-[; ;Joc.c: 89:   break;
+"86
+[; ;Joc.c: 86:   break;
 [e $U 291  ]
-"90
-[; ;Joc.c: 90:  }
+"87
+[; ;Joc.c: 87:  }
 }
 [e $U 291  ]
 [e :U 292 ]
@@ -778,7 +769,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 303
  291 ]
 [e :U 291 ]
-"91
-[; ;Joc.c: 91: }
+"88
+[; ;Joc.c: 88: }
 [e :UE 290 ]
 }

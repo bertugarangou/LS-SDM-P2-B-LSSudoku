@@ -9,8 +9,10 @@
 #include "Joc.h"
 #include "SIO.h"
 #include "CtoA.h"
-#define neg -1
 
+#define neg -1
+const char loginText[8] = "1.LOGIN";
+const char registerText[11] = "2.REGISTER";
 unsigned char tmp = 0;
 signed char NovaTecla = neg;
 signed char novaLletra = neg;
@@ -43,13 +45,13 @@ void menu(void) {
 	switch(state) {
 		case 0:
 			LcClear();
-			LcNewString("1.LOGIN");
+			LcNewString(loginText);
 			state = 1;
 		break;
 		case 1:
 			if (LcLliure()) {
 				LcGotoXY(0,1);
-				LcNewString("2.REGISTER");
+				LcNewString(registerText);
 				NovaTecla = neg;
 				state = 2;
 			}

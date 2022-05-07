@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "Altaveu.h"
 #include "TiTTimer.h"
+#define zeroChar '0'
 char timerHora;
 unsigned char segons = 0;
 char hora[6] = "30:00";
@@ -53,28 +54,28 @@ void motorHora(void) {
 						nouSegon = 1;
 					//segons;
 					hora[4]--;
-					if(hora[4] == ('0'-1)){
+					if(hora[4] == (zeroChar-1)){
 						hora[4] = '9';
 						hora[3]--;
 					}
 					//minsBaix;
-					if(hora[3] == ('0'-1)){
+					if(hora[3] == (zeroChar-1)){
 						hora[3] = '5';
 						hora[1]--;
 					}
 					//minsAlt;
-					if(hora[1] == ('0'-1)){
+					if(hora[1] == (zeroChar-1)){
 						hora[1] = '9';
 						hora[0]--;
 					}
 					//final;
-					if(hora[0] == '0' && hora[1] == '0' && hora[3] == '0' && hora[4] == ('0')){
+					if(hora[0] == zeroChar && hora[1] == zeroChar && hora[3] == zeroChar && hora[4] == (zeroChar)){
 						tempsAcabat = 1;
 					}
 					//reproducció;
 					segons++;
 					if(segons > 59){
-						//playAltaveu();
+						playAltaveu();
 						segons = 0;
 					}
 				}

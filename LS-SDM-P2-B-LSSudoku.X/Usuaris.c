@@ -136,40 +136,7 @@ void Uinit(){
     
         
 }
-/*
-//BORRAR A FINAL
-void escriure2usuarisStruct(void){
-    //de manera forçada crea dos usuaris
-    usuaris[0].username[0] = '1';
-    usuaris[0].username[1] = '\0';
-    
-    usuaris[1].username[0] = 'A';
-    usuaris[1].username[1] = '\0';
-    
-    usuaris[2].username[0] = 'D';
-    usuaris[2].username[1] = '\0';
-    
-    usuaris[3].username[0] = 'G';
-    usuaris[3].username[1] = '\0';
-    usuaris[4].username[0] = 'c';
-    usuaris[4].username[1] = '\0';
 
-    puntuacions[0].indexStruct = 4;
-    puntuacions[1].indexStruct = 3;
-    puntuacions[2].indexStruct = 2;
-    puntuacions[3].indexStruct = 1;
-    puntuacions[4].indexStruct = 0;
-    puntuacions[5].indexStruct = -1;
-    puntuacions[0].score = 10;
-    puntuacions[1].score = 11;
-    puntuacions[2].score = 12;
-    puntuacions[3].score = 13;
-    puntuacions[4].score = 1;
-            
-    numUsuaris = 4;
-    indexNextUserStruct = 4;
-}
-    */
 char compareStrings(const char *a, const char *b){
     while (*a){
         if (*a != *b)break; 
@@ -333,24 +300,3 @@ void UnewScore(char scoretmp){
     scoreUsr = scoretmp;
     do_updateScore = 1;    
 }
-/*
-void escriureEEPROM(){
-    for(unsigned char caca = 0; caca < 160; caca++){
-        EEADR = 0;
-        EEDATA = 0;
-        EECON1bits.EEPGD = 0;
-        EECON1bits.CFGS = 0;
-        EECON1bits.WREN = 1;
-        INTCONbits.GIE = 0;
-        EECON2 = 85;
-        EECON2 = 170;
-         EECON1bits.WR = 1;
-        while(EECON1bits.WR){
-            
-           
-
-        }
-    }
-   INTCONbits.GIE = 1;
-}
-*/

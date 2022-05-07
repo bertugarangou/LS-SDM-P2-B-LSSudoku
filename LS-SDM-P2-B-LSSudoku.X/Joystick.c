@@ -1,19 +1,19 @@
 #include <xc.h>
 #include "Menu.h"
+#define ADCON0valor 0x01
+#define ADCON1valor 0x0D
+#define ADCON2valor 0x09
+#define ADRESHvalor 127
 
 char ultimaTeclaAD = 0;
 __bit cap1;
 __bit cap2;
 
-
-/**********ATENCIO DRETA I ESQUERRA DE MOMENT NO ES FA SERVIR*/
-
-
 void JoystickInit(void){
-    ADCON0 = 0x01;//00000001 chA //000001_1 chB
-    ADCON1 = 0x0D;//00001101
-    ADCON2 = 0x09;//00001110
-    ADRESH = 127;
+    ADCON0 = ADCON0valor;//00000001 chA //000001_1 chB
+    ADCON1 = ADCON1valor;//00001101
+    ADCON2 = ADCON2valor;//00001110
+    ADRESH = ADRESHvalor;
 }
 void JoystickMotor(void) {
 	static char state = 0;

@@ -459,11 +459,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -U -> 1 `i `c
 ]
 "12
-[; ;Ssms.c: 12: char timerSMS = -1;
+[; ;Ssms.c: 12: char timerSMS;
 [v _timerSMS `uc ~T0 @X0 1 e ]
-[i _timerSMS
--> -U -> 1 `i `uc
-]
 "13
 [; ;Ssms.c: 13: signed char ultimaTecla = -1;
 [v _ultimaTecla `c ~T0 @X0 1 e ]
