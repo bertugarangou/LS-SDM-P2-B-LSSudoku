@@ -80,7 +80,7 @@ void main(void) {
     TeInit();
     Sinit();
     SMotor();
-    Uinit();
+    
     initAltaveu();
     GLCDInit();
     JoystickInit();
@@ -88,8 +88,8 @@ void main(void) {
     initSIO();
     
     LcInit(2);
+    Uinit();
     Minit();
-    
     while(1){
         GLCDMotor();
         motorJoc();
@@ -97,7 +97,6 @@ void main(void) {
         motorHora();
         JoystickMotor();
         menu();
-
         CtoA();
         motorAltaveu();
         UmotorUsers();

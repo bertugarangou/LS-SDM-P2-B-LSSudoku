@@ -14,6 +14,7 @@ char* UgetUserName(char quin);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 __bit UshowUsersCalculat(void);
+char llegirCharEEPROM(char pos);
 
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);

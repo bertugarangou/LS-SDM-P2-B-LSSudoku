@@ -4624,57 +4624,15 @@ char* UgetUserName(char quin);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 __bit UshowUsersCalculat(void);
+char llegirCharEEPROM(char pos);
 
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
 void UnewScore(char scoretmp);
 # 2 "Usuaris.c" 2
 
-# 1 "./LcTLCD.h" 1
-# 28 "./LcTLCD.h"
-void LcInit(char rows);
 
-
-
-
-
-
-void LcEnd(void);
-
-
-void LcScroll(void);
-
-
-
-void LcClear(void);
-
-
-
-void LcCursorOn(void);
-
-
-
-void LcCursorOff(void);
-
-
-
-void LcGotoXY(char Column, char Row);
-
-
-
-
-void LcPutChar(char c);
-# 70 "./LcTLCD.h"
-void LcPutStringDebug(char *s);
-void LcNewString(char new_s[]);
-void PutStringCooperatiu();
-void LcLCD();
-__bit LcLliure(void);
-void LcInsertFletxa(void);
-# 3 "Usuaris.c" 2
-
-
-unsigned char numUsuaris = 0;
+unsigned char numUsuaris;
 __bit do_check_exists = 0;
 unsigned char indexNextUser;
 unsigned char indexNextUserStruct;
@@ -4759,25 +4717,39 @@ void Uinit(){
 
 
 
-    numUsuaris = llegirCharEEPROM(i);
+    i = 0;
+
+
+
+
+    numUsuaris = llegirCharEEPROM(0);
+
     if(numUsuaris > 8) numUsuaris = 0;
+
+
+
     i++;
-    indexNextUser = llegirCharEEPROM(i);
-    if(indexNextUser > 8) indexNextUser = 0;
+    indexNextUser = llegirCharEEPROM(1);
+    if(indexNextUser == 255) indexNextUser = 2;
     indexNextUserStruct = indexNextUser/18;
     i++;
-    for(;j<numUsuaris;j++){
-        for(unsigned char k = 0; k<8; k++){
+    for(j = 0;j<numUsuaris;j++){
+        for(unsigned char k = 0; k<9; k++){
             usuaris[j].username[k] = llegirCharEEPROM(i);
             i++;
+        }
+        for(unsigned char k = 0; k<9;k++){
             usuaris[j].password[k] = llegirCharEEPROM(i);
             i++;
         }
     }
 
 
+
+
+
     puntuacions[0].indexStruct = -1;
-    for(char i = 0; i<5; i++){
+    for(i = 0; i<5; i++){
         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
         puntuacions[i].score = llegirCharEEPROM(200+i+i+1);
     }
@@ -4814,6 +4786,9 @@ void UmotorUsers(){
     state = 1;
    }
    else if (do_register == 1) {
+    if(numUsuaris != 8) numUsuaris++;
+
+    escriureCharEEPROM(numUsuaris,0);
     state = 2;
    }
    else if (do_showUsers) {
@@ -4854,31 +4829,32 @@ void UmotorUsers(){
    }
   break;
   case 2:
-   if (i != 8) {
-    escriureCharEEPROM(tmpUsername[i],indexNextUser++);
+   if (i < 9) {
+    escriureCharEEPROM(tmpUsername[i],indexNextUser);
+    indexNextUser++;
     usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
     i++;
     state = 2;
    }
-   else if (i == 8) {
+   else if (i > 8) {
     i = 0;
     state = 3;
    }
   break;
   case 3:
-   if (i != 8) {
-    escriureCharEEPROM(tmpPassword[i],indexNextUser++);
+   if (i < 9) {
+    escriureCharEEPROM(tmpPassword[i],indexNextUser);
+    indexNextUser++;
     usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
     i++;
     state = 3;
    }
-   else if (i == 8) {
+   else if (i > 8) {
     do_register = 0;
-    indexNextUser++;
     if(indexNextUser == 159) indexNextUser = 16;
     indexNextUserStruct++;
     if(indexNextUserStruct == 8) indexNextUserStruct = 0;
-    if(numUsuaris != 8) numUsuaris++;
+    escriureCharEEPROM(indexNextUser,1);
     state = 0;
    }
   break;
@@ -4934,7 +4910,6 @@ void UmotorUsers(){
    }
   break;
  }
-
 }
 
 unsigned char UgetScore(char quin){

@@ -77,9 +77,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5
 [; ;./Ssms.h: 5: void SMotor(void);
 [v _SMotor `(v ~T0 @X0 0 ef ]
-"5 ./Usuaris.h
-[; ;./Usuaris.h: 5: void Uinit(void);
-[v _Uinit `(v ~T0 @X0 0 ef ]
 "4 ./Altaveu.h
 [; ;./Altaveu.h: 4:     void initAltaveu(void);
 [v _initAltaveu `(v ~T0 @X0 0 ef ]
@@ -98,6 +95,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./LcTLCD.h
 [; ;./LcTLCD.h: 28: void LcInit(char rows);
 [v _LcInit `(v ~T0 @X0 0 ef1`uc ]
+"5 ./Usuaris.h
+[; ;./Usuaris.h: 5: void Uinit(void);
+[v _Uinit `(v ~T0 @X0 0 ef ]
 "4 ./Menu.h
 [; ;./Menu.h: 4: void Minit(void);
 [v _Minit `(v ~T0 @X0 0 ef ]
@@ -653,9 +653,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "82
 [; ;main.c: 82:     SMotor();
 [e ( _SMotor ..  ]
-"83
-[; ;main.c: 83:     Uinit();
-[e ( _Uinit ..  ]
 "84
 [; ;main.c: 84:     initAltaveu();
 [e ( _initAltaveu ..  ]
@@ -675,7 +672,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 90:     LcInit(2);
 [e ( _LcInit (1 -> -> 2 `i `uc ]
 "91
-[; ;main.c: 91:     Minit();
+[; ;main.c: 91:     Uinit();
+[e ( _Uinit ..  ]
+"92
+[; ;main.c: 92:     Minit();
 [e ( _Minit ..  ]
 "93
 [; ;main.c: 93:     while(1){
@@ -699,34 +699,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99
 [; ;main.c: 99:         menu();
 [e ( _menu ..  ]
-"101
-[; ;main.c: 101:         CtoA();
+"100
+[; ;main.c: 100:         CtoA();
 [e ( _CtoA ..  ]
-"102
-[; ;main.c: 102:         motorAltaveu();
+"101
+[; ;main.c: 101:         motorAltaveu();
 [e ( _motorAltaveu ..  ]
-"103
-[; ;main.c: 103:         UmotorUsers();
+"102
+[; ;main.c: 102:         UmotorUsers();
 [e ( _UmotorUsers ..  ]
-"105
-[; ;main.c: 105:         TeTeclat();
+"104
+[; ;main.c: 104:         TeTeclat();
 [e ( _TeTeclat ..  ]
-"106
-[; ;main.c: 106:         SMotor();
+"105
+[; ;main.c: 105:         SMotor();
 [e ( _SMotor ..  ]
-"107
-[; ;main.c: 107:         LcLCD();
+"106
+[; ;main.c: 106:         LcLCD();
 [e ( _LcLCD ..  ]
-"108
-[; ;main.c: 108:     }
+"107
+[; ;main.c: 107:     }
 }
 [e :U 284 ]
 [e $U 285  ]
 [e :U 286 ]
-"109
-[; ;main.c: 109:     return;
+"108
+[; ;main.c: 108:     return;
 [e $UE 283  ]
-"110
-[; ;main.c: 110: }
+"109
+[; ;main.c: 109: }
 [e :UE 283 ]
 }

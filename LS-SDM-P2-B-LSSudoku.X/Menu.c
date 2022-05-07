@@ -57,7 +57,7 @@ void menu(void) {
 			}
 		break;
 		case 2:
-			if (NovaTecla == 1 && UgetNumUsuaris() > 0) {
+			if (NovaTecla == 1) {
 				loginNOTRegister = 1;
 				state = 3;
 			}

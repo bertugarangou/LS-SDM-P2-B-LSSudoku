@@ -4696,6 +4696,7 @@ char* UgetUserName(char quin);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 __bit UshowUsersCalculat(void);
+char llegirCharEEPROM(char pos);
 
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
@@ -4864,7 +4865,7 @@ void main(void) {
     TeInit();
     Sinit();
     SMotor();
-    Uinit();
+
     initAltaveu();
     GLCDInit();
     JoystickInit();
@@ -4872,8 +4873,8 @@ void main(void) {
     initSIO();
 
     LcInit(2);
+    Uinit();
     Minit();
-
     while(1){
         GLCDMotor();
         motorJoc();
@@ -4881,7 +4882,6 @@ void main(void) {
         motorHora();
         JoystickMotor();
         menu();
-
         CtoA();
         motorAltaveu();
         UmotorUsers();

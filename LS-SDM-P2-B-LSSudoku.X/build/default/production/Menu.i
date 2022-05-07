@@ -4707,6 +4707,7 @@ char* UgetUserName(char quin);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 __bit UshowUsersCalculat(void);
+char llegirCharEEPROM(char pos);
 
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
@@ -4834,7 +4835,7 @@ void menu(void) {
    }
   break;
   case 2:
-   if (NovaTecla == 1 && UgetNumUsuaris() > 0) {
+   if (NovaTecla == 1) {
     loginNOTRegister = 1;
     state = 3;
    }
@@ -4934,6 +4935,7 @@ void menu(void) {
    }
    else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
     state = 0;
+                LATBbits.LATB3 = 1;
    }
   break;
   case 12:

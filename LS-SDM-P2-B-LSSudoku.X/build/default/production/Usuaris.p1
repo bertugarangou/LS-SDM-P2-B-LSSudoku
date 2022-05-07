@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"22 Usuaris.c
-[; ;Usuaris.c: 22: typedef struct{
+"21 Usuaris.c
+[; ;Usuaris.c: 21: typedef struct{
 [s S280 `uc -> 9 `i `uc -> 9 `i ]
 [n S280 . username password ]
-"28
-[; ;Usuaris.c: 28: typedef struct{
+"27
+[; ;Usuaris.c: 27: typedef struct{
 [s S281 `c 1 `uc 1 ]
 [n S281 . indexStruct score ]
 "3115 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
@@ -464,243 +464,240 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"5 Usuaris.c
-[; ;Usuaris.c: 5: unsigned char numUsuaris = 0;
+"4 Usuaris.c
+[; ;Usuaris.c: 4: unsigned char numUsuaris;
 [v _numUsuaris `uc ~T0 @X0 1 e ]
-[i _numUsuaris
--> -> 0 `i `uc
-]
-"6
-[; ;Usuaris.c: 6: __bit do_check_exists = 0;
+"5
+[; ;Usuaris.c: 5: __bit do_check_exists = 0;
 [v _do_check_exists `b ~T0 @X0 1 e ]
 [i _do_check_exists
 -> -> 0 `i `b
 ]
-"7
-[; ;Usuaris.c: 7: unsigned char indexNextUser;
+"6
+[; ;Usuaris.c: 6: unsigned char indexNextUser;
 [v _indexNextUser `uc ~T0 @X0 1 e ]
-"8
-[; ;Usuaris.c: 8: unsigned char indexNextUserStruct;
+"7
+[; ;Usuaris.c: 7: unsigned char indexNextUserStruct;
 [v _indexNextUserStruct `uc ~T0 @X0 1 e ]
-"9
-[; ;Usuaris.c: 9: __bit do_register = 0;
+"8
+[; ;Usuaris.c: 8: __bit do_register = 0;
 [v _do_register `b ~T0 @X0 1 e ]
 [i _do_register
 -> -> 0 `i `b
 ]
-"10
-[; ;Usuaris.c: 10: unsigned char i = 0;
+"9
+[; ;Usuaris.c: 9: unsigned char i = 0;
 [v _i `uc ~T0 @X0 1 e ]
 [i _i
 -> -> 0 `i `uc
 ]
-"11
-[; ;Usuaris.c: 11: unsigned char j = 0;
+"10
+[; ;Usuaris.c: 10: unsigned char j = 0;
 [v _j `uc ~T0 @X0 1 e ]
 [i _j
 -> -> 0 `i `uc
 ]
-"12
-[; ;Usuaris.c: 12: signed char usuariLoguejat = -1;
+"11
+[; ;Usuaris.c: 11: signed char usuariLoguejat = -1;
 [v _usuariLoguejat `c ~T0 @X0 1 e ]
 [i _usuariLoguejat
 -> -U -> 1 `i `c
 ]
-"13
-[; ;Usuaris.c: 13: __bit do_showUsers = 0;
+"12
+[; ;Usuaris.c: 12: __bit do_showUsers = 0;
 [v _do_showUsers `b ~T0 @X0 1 e ]
 [i _do_showUsers
 -> -> 0 `i `b
 ]
-"14
-[; ;Usuaris.c: 14: __bit do_updateScore = 0;
+"13
+[; ;Usuaris.c: 13: __bit do_updateScore = 0;
 [v _do_updateScore `b ~T0 @X0 1 e ]
 [i _do_updateScore
 -> -> 0 `i `b
 ]
-"15
-[; ;Usuaris.c: 15: unsigned char scoreUsr;
+"14
+[; ;Usuaris.c: 14: unsigned char scoreUsr;
 [v _scoreUsr `uc ~T0 @X0 1 e ]
-"17
-[; ;Usuaris.c: 17: signed char arrayShowUsers[8];
+"16
+[; ;Usuaris.c: 16: signed char arrayShowUsers[8];
 [v _arrayShowUsers `c ~T0 @X0 -> 8 `i e ]
-"19
-[; ;Usuaris.c: 19: char tmpUsername[9];
+"18
+[; ;Usuaris.c: 18: char tmpUsername[9];
 [v _tmpUsername `uc ~T0 @X0 -> 9 `i e ]
-"20
-[; ;Usuaris.c: 20: char tmpPassword[9];
+"19
+[; ;Usuaris.c: 19: char tmpPassword[9];
 [v _tmpPassword `uc ~T0 @X0 -> 9 `i e ]
-"26
-[; ;Usuaris.c: 26: Usuari usuaris[8];
+"25
+[; ;Usuaris.c: 25: Usuari usuaris[8];
 [v _usuaris `S280 ~T0 @X0 -> 8 `i e ]
-"32
-[; ;Usuaris.c: 32: Scores puntuacions[5];
+"31
+[; ;Usuaris.c: 31: Scores puntuacions[5];
 [v _puntuacions `S281 ~T0 @X0 -> 5 `i e ]
-"34
-[; ;Usuaris.c: 34: char UgetNumUsuaris(void){
+"33
+[; ;Usuaris.c: 33: char UgetNumUsuaris(void){
 [v _UgetNumUsuaris `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UgetNumUsuaris ]
 [f ]
-"35
-[; ;Usuaris.c: 35:     return numUsuaris;
+"34
+[; ;Usuaris.c: 34:     return numUsuaris;
 [e ) -> _numUsuaris `uc ]
 [e $UE 282  ]
-"36
-[; ;Usuaris.c: 36: }
+"35
+[; ;Usuaris.c: 35: }
 [e :UE 282 ]
 }
-"38
-[; ;Usuaris.c: 38: void UcheckExists(void){
+"37
+[; ;Usuaris.c: 37: void UcheckExists(void){
 [v _UcheckExists `(v ~T0 @X0 1 ef ]
 {
 [e :U _UcheckExists ]
 [f ]
-"39
-[; ;Usuaris.c: 39:     do_check_exists = 1;
+"38
+[; ;Usuaris.c: 38:     do_check_exists = 1;
 [e = _do_check_exists -> -> 1 `i `b ]
-"40
-[; ;Usuaris.c: 40: }
+"39
+[; ;Usuaris.c: 39: }
 [e :UE 283 ]
 }
-"41
-[; ;Usuaris.c: 41: __bit UcheckExistsNotFinished(void){
+"40
+[; ;Usuaris.c: 40: __bit UcheckExistsNotFinished(void){
 [v _UcheckExistsNotFinished `(b ~T0 @X0 1 ef ]
 {
 [e :U _UcheckExistsNotFinished ]
 [f ]
-"42
-[; ;Usuaris.c: 42:     return do_check_exists;
+"41
+[; ;Usuaris.c: 41:     return do_check_exists;
 [e ) _do_check_exists ]
 [e $UE 284  ]
-"43
-[; ;Usuaris.c: 43: }
+"42
+[; ;Usuaris.c: 42: }
 [e :UE 284 ]
 }
-"44
-[; ;Usuaris.c: 44: signed char UcheckExistsGetError(){
+"43
+[; ;Usuaris.c: 43: signed char UcheckExistsGetError(){
 [v _UcheckExistsGetError `(c ~T0 @X0 1 ef ]
 {
 [e :U _UcheckExistsGetError ]
 [f ]
-"45
-[; ;Usuaris.c: 45:     return usuariLoguejat;
+"44
+[; ;Usuaris.c: 44:     return usuariLoguejat;
 [e ) _usuariLoguejat ]
 [e $UE 285  ]
-"46
-[; ;Usuaris.c: 46: }
+"45
+[; ;Usuaris.c: 45: }
 [e :UE 285 ]
 }
-"47
-[; ;Usuaris.c: 47: void UenviaChar(char c, char pos){
+"46
+[; ;Usuaris.c: 46: void UenviaChar(char c, char pos){
 [v _UenviaChar `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _UenviaChar ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [v _pos `uc ~T0 @X0 1 r2 ]
 [f ]
-"48
-[; ;Usuaris.c: 48:     tmpUsername[pos] = c;
+"47
+[; ;Usuaris.c: 47:     tmpUsername[pos] = c;
 [e = *U + &U _tmpUsername * -> _pos `ux -> -> # *U &U _tmpUsername `ui `ux _c ]
-"49
-[; ;Usuaris.c: 49: }
+"48
+[; ;Usuaris.c: 48: }
 [e :UE 286 ]
 }
-"50
-[; ;Usuaris.c: 50: void UenviaPas(char c, char pos){
+"49
+[; ;Usuaris.c: 49: void UenviaPas(char c, char pos){
 [v _UenviaPas `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _UenviaPas ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [v _pos `uc ~T0 @X0 1 r2 ]
 [f ]
-"51
-[; ;Usuaris.c: 51:     tmpPassword[pos] = c;
+"50
+[; ;Usuaris.c: 50:     tmpPassword[pos] = c;
 [e = *U + &U _tmpPassword * -> _pos `ux -> -> # *U &U _tmpPassword `ui `ux _c ]
-"52
-[; ;Usuaris.c: 52: }
+"51
+[; ;Usuaris.c: 51: }
 [e :UE 287 ]
 }
-"54
-[; ;Usuaris.c: 54: void URegister(void){
+"53
+[; ;Usuaris.c: 53: void URegister(void){
 [v _URegister `(v ~T0 @X0 1 ef ]
 {
 [e :U _URegister ]
 [f ]
-"55
-[; ;Usuaris.c: 55:     do_register = 1;
+"54
+[; ;Usuaris.c: 54:     do_register = 1;
 [e = _do_register -> -> 1 `i `b ]
-"56
-[; ;Usuaris.c: 56: }
+"55
+[; ;Usuaris.c: 55: }
 [e :UE 288 ]
 }
-"58
-[; ;Usuaris.c: 58: char* UgetUserName(char quin){
+"57
+[; ;Usuaris.c: 57: char* UgetUserName(char quin){
 [v _UgetUserName `(*uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UgetUserName ]
 [v _quin `uc ~T0 @X0 1 r1 ]
 [f ]
-"59
-[; ;Usuaris.c: 59:     return usuaris[quin].username;
+"58
+[; ;Usuaris.c: 58:     return usuaris[quin].username;
 [e ) &U . *U + &U _usuaris * -> _quin `ux -> -> # *U &U _usuaris `ui `ux 0 ]
 [e $UE 289  ]
-"60
-[; ;Usuaris.c: 60: }
+"59
+[; ;Usuaris.c: 59: }
 [e :UE 289 ]
 }
-"62
-[; ;Usuaris.c: 62: char* getArrayShowUsers(char quin){
+"61
+[; ;Usuaris.c: 61: char* getArrayShowUsers(char quin){
 [v _getArrayShowUsers `(*uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _getArrayShowUsers ]
 [v _quin `uc ~T0 @X0 1 r1 ]
 [f ]
-"63
-[; ;Usuaris.c: 63:     return usuaris[arrayShowUsers[quin]].username;
+"62
+[; ;Usuaris.c: 62:     return usuaris[arrayShowUsers[quin]].username;
 [e ) &U . *U + &U _usuaris * -> -> *U + &U _arrayShowUsers * -> _quin `ux -> -> # *U &U _arrayShowUsers `ui `ux `uc `ux -> -> # *U &U _usuaris `ui `ux 0 ]
 [e $UE 290  ]
-"64
-[; ;Usuaris.c: 64: }
+"63
+[; ;Usuaris.c: 63: }
 [e :UE 290 ]
 }
-"65
-[; ;Usuaris.c: 65: void escriureCharEEPROM(char c, char pos){
+"64
+[; ;Usuaris.c: 64: void escriureCharEEPROM(char c, char pos){
 [v _escriureCharEEPROM `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _escriureCharEEPROM ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [v _pos `uc ~T0 @X0 1 r2 ]
 [f ]
-"66
-[; ;Usuaris.c: 66:     EEADR = pos;
+"65
+[; ;Usuaris.c: 65:     EEADR = pos;
 [e = _EEADR -> _pos `uc ]
-"67
-[; ;Usuaris.c: 67:     EEDATA = c;
+"66
+[; ;Usuaris.c: 66:     EEDATA = c;
 [e = _EEDATA -> _c `uc ]
-"68
-[; ;Usuaris.c: 68:     EECON1bits.EEPGD = 0;
+"67
+[; ;Usuaris.c: 67:     EECON1bits.EEPGD = 0;
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"69
-[; ;Usuaris.c: 69:     EECON1bits.CFGS = 0;
+"68
+[; ;Usuaris.c: 68:     EECON1bits.CFGS = 0;
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-"70
-[; ;Usuaris.c: 70:     EECON1bits.WREN = 1;
+"69
+[; ;Usuaris.c: 69:     EECON1bits.WREN = 1;
 [e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-"71
-[; ;Usuaris.c: 71:     INTCONbits.GIE = 0;
+"70
+[; ;Usuaris.c: 70:     INTCONbits.GIE = 0;
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"72
-[; ;Usuaris.c: 72:     EECON2 = 85;
+"71
+[; ;Usuaris.c: 71:     EECON2 = 85;
 [e = _EECON2 -> -> 85 `i `uc ]
-"73
-[; ;Usuaris.c: 73:     EECON2 = 170;
+"72
+[; ;Usuaris.c: 72:     EECON2 = 170;
 [e = _EECON2 -> -> 170 `i `uc ]
-"74
-[; ;Usuaris.c: 74:     EECON1bits.WR = 1;
+"73
+[; ;Usuaris.c: 73:     EECON1bits.WR = 1;
 [e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-"75
-[; ;Usuaris.c: 75:     while(EECON1bits.WR){}
+"74
+[; ;Usuaris.c: 74:     while(EECON1bits.WR){}
 [e $U 292  ]
 [e :U 293 ]
 {
@@ -708,499 +705,466 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 292 ]
 [e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 293  ]
 [e :U 294 ]
-"76
-[; ;Usuaris.c: 76:     INTCONbits.GIE = 1;
+"75
+[; ;Usuaris.c: 75:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"77
-[; ;Usuaris.c: 77:     EECON1bits.WREN = 0;
+"76
+[; ;Usuaris.c: 76:     EECON1bits.WREN = 0;
 [e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-"78
-[; ;Usuaris.c: 78: }
+"77
+[; ;Usuaris.c: 77: }
 [e :UE 291 ]
 }
-"79
-[; ;Usuaris.c: 79: char llegirCharEEPROM(char pos){
+"78
+[; ;Usuaris.c: 78: char llegirCharEEPROM(char pos){
 [v _llegirCharEEPROM `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _llegirCharEEPROM ]
 [v _pos `uc ~T0 @X0 1 r1 ]
 [f ]
-"80
-[; ;Usuaris.c: 80:     EEADR = pos;
+"79
+[; ;Usuaris.c: 79:     EEADR = pos;
 [e = _EEADR -> _pos `uc ]
-"81
-[; ;Usuaris.c: 81:     EECON1bits.EEPGD = 0;
+"80
+[; ;Usuaris.c: 80:     EECON1bits.EEPGD = 0;
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"82
-[; ;Usuaris.c: 82:     EECON1bits.CFGS = 0;
+"81
+[; ;Usuaris.c: 81:     EECON1bits.CFGS = 0;
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-"83
-[; ;Usuaris.c: 83:     EECON1bits.RD = 1;
+"82
+[; ;Usuaris.c: 82:     EECON1bits.RD = 1;
 [e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-"84
-[; ;Usuaris.c: 84:     return EEDATA;
+"83
+[; ;Usuaris.c: 83:     return EEDATA;
 [e ) -> _EEDATA `uc ]
 [e $UE 295  ]
-"85
-[; ;Usuaris.c: 85: }
+"84
+[; ;Usuaris.c: 84: }
 [e :UE 295 ]
 }
-"86
-[; ;Usuaris.c: 86: void Uinit(){
+"85
+[; ;Usuaris.c: 85: void Uinit(){
 [v _Uinit `(v ~T0 @X0 1 ef ]
 {
 [e :U _Uinit ]
 [f ]
-"90
-[; ;Usuaris.c: 90:     numUsuaris = llegirCharEEPROM(i);
-[e = _numUsuaris -> ( _llegirCharEEPROM (1 -> _i `uc `uc ]
-"91
-[; ;Usuaris.c: 91:     if(numUsuaris > 8) numUsuaris = 0;
+"89
+[; ;Usuaris.c: 89:     i = 0;
+[e = _i -> -> 0 `i `uc ]
+"94
+[; ;Usuaris.c: 94:     numUsuaris = llegirCharEEPROM(0);
+[e = _numUsuaris -> ( _llegirCharEEPROM (1 -> -> 0 `i `uc `uc ]
+"96
+[; ;Usuaris.c: 96:     if(numUsuaris > 8) numUsuaris = 0;
 [e $ ! > -> _numUsuaris `i -> 8 `i 297  ]
 [e = _numUsuaris -> -> 0 `i `uc ]
 [e :U 297 ]
-"92
-[; ;Usuaris.c: 92:     i++;
+"100
+[; ;Usuaris.c: 100:     i++;
 [e ++ _i -> -> 1 `i `uc ]
-"93
-[; ;Usuaris.c: 93:     indexNextUser = llegirCharEEPROM(i);
-[e = _indexNextUser -> ( _llegirCharEEPROM (1 -> _i `uc `uc ]
-"94
-[; ;Usuaris.c: 94:     if(indexNextUser > 8) indexNextUser = 0;
-[e $ ! > -> _indexNextUser `i -> 8 `i 298  ]
-[e = _indexNextUser -> -> 0 `i `uc ]
+"101
+[; ;Usuaris.c: 101:     indexNextUser = llegirCharEEPROM(1);
+[e = _indexNextUser -> ( _llegirCharEEPROM (1 -> -> 1 `i `uc `uc ]
+"102
+[; ;Usuaris.c: 102:     if(indexNextUser == 255) indexNextUser = 2;
+[e $ ! == -> _indexNextUser `i -> 255 `i 298  ]
+[e = _indexNextUser -> -> 2 `i `uc ]
 [e :U 298 ]
-"95
-[; ;Usuaris.c: 95:     indexNextUserStruct = indexNextUser/18;
+"103
+[; ;Usuaris.c: 103:     indexNextUserStruct = indexNextUser/18;
 [e = _indexNextUserStruct -> / -> _indexNextUser `i -> 18 `i `uc ]
-"96
-[; ;Usuaris.c: 96:     i++;
+"104
+[; ;Usuaris.c: 104:     i++;
 [e ++ _i -> -> 1 `i `uc ]
-"97
-[; ;Usuaris.c: 97:     for(;j<numUsuaris;j++){
+"105
+[; ;Usuaris.c: 105:     for(j = 0;j<numUsuaris;j++){
 {
+[e = _j -> -> 0 `i `uc ]
 [e $U 302  ]
 [e :U 299 ]
 {
-"98
-[; ;Usuaris.c: 98:         for(unsigned char k = 0; k<8; k++){
+"106
+[; ;Usuaris.c: 106:         for(unsigned char k = 0; k<9; k++){
 {
 [v _k `uc ~T0 @X0 1 a ]
 [e = _k -> -> 0 `i `uc ]
-[e $ < -> _k `i -> 8 `i 303  ]
+[e $ < -> _k `i -> 9 `i 303  ]
 [e $U 304  ]
 [e :U 303 ]
 {
-"99
-[; ;Usuaris.c: 99:             usuaris[j].username[k] = llegirCharEEPROM(i);
+"107
+[; ;Usuaris.c: 107:             usuaris[j].username[k] = llegirCharEEPROM(i);
 [e = *U + &U . *U + &U _usuaris * -> _j `ux -> -> # *U &U _usuaris `ui `ux 0 * -> _k `ux -> -> # *U &U . *U + &U _usuaris * -> _j `ux -> -> # *U &U _usuaris `ui `ux 0 `ui `ux ( _llegirCharEEPROM (1 -> _i `uc ]
-"100
-[; ;Usuaris.c: 100:             i++;
+"108
+[; ;Usuaris.c: 108:             i++;
 [e ++ _i -> -> 1 `i `uc ]
-"101
-[; ;Usuaris.c: 101:             usuaris[j].password[k] = llegirCharEEPROM(i);
-[e = *U + &U . *U + &U _usuaris * -> _j `ux -> -> # *U &U _usuaris `ui `ux 1 * -> _k `ux -> -> # *U &U . *U + &U _usuaris * -> _j `ux -> -> # *U &U _usuaris `ui `ux 1 `ui `ux ( _llegirCharEEPROM (1 -> _i `uc ]
-"102
-[; ;Usuaris.c: 102:             i++;
-[e ++ _i -> -> 1 `i `uc ]
-"103
-[; ;Usuaris.c: 103:         }
+"109
+[; ;Usuaris.c: 109:         }
 }
 [e ++ _k -> -> 1 `i `uc ]
-[e $ < -> _k `i -> 8 `i 303  ]
+[e $ < -> _k `i -> 9 `i 303  ]
 [e :U 304 ]
 }
-"104
-[; ;Usuaris.c: 104:     }
+"110
+[; ;Usuaris.c: 110:         for(unsigned char k = 0; k<9;k++){
+{
+[v _k `uc ~T0 @X0 1 a ]
+[e = _k -> -> 0 `i `uc ]
+[e $ < -> _k `i -> 9 `i 306  ]
+[e $U 307  ]
+[e :U 306 ]
+{
+"111
+[; ;Usuaris.c: 111:             usuaris[j].password[k] = llegirCharEEPROM(i);
+[e = *U + &U . *U + &U _usuaris * -> _j `ux -> -> # *U &U _usuaris `ui `ux 1 * -> _k `ux -> -> # *U &U . *U + &U _usuaris * -> _j `ux -> -> # *U &U _usuaris `ui `ux 1 `ui `ux ( _llegirCharEEPROM (1 -> _i `uc ]
+"112
+[; ;Usuaris.c: 112:             i++;
+[e ++ _i -> -> 1 `i `uc ]
+"113
+[; ;Usuaris.c: 113:         }
+}
+[e ++ _k -> -> 1 `i `uc ]
+[e $ < -> _k `i -> 9 `i 306  ]
+[e :U 307 ]
+}
+"114
+[; ;Usuaris.c: 114:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
 [e :U 302 ]
 [e $ < -> _j `i -> _numUsuaris `i 299  ]
 [e :U 300 ]
 }
-"107
-[; ;Usuaris.c: 107:     puntuacions[0].indexStruct = -1;
+"120
+[; ;Usuaris.c: 120:     puntuacions[0].indexStruct = -1;
 [e = . *U + &U _puntuacions * -> -> -> 0 `i `ui `ux -> -> # *U &U _puntuacions `ui `ux 0 -> -U -> 1 `i `c ]
-"108
-[; ;Usuaris.c: 108:     for(char i = 0; i<5; i++){
+"121
+[; ;Usuaris.c: 121:     for(i = 0; i<5; i++){
 {
-[v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 306  ]
-[e $U 307  ]
-[e :U 306 ]
+[e $ < -> _i `i -> 5 `i 309  ]
+[e $U 310  ]
+[e :U 309 ]
 {
-"109
-[; ;Usuaris.c: 109:         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
+"122
+[; ;Usuaris.c: 122:         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
 [e = . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 -> ( _llegirCharEEPROM (1 -> + + -> 200 `i -> _i `i -> _i `i `uc `c ]
-"110
-[; ;Usuaris.c: 110:         puntuacions[i].score = llegirCharEEPROM(200+i+i+1);
+"123
+[; ;Usuaris.c: 123:         puntuacions[i].score = llegirCharEEPROM(200+i+i+1);
 [e = . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 -> ( _llegirCharEEPROM (1 -> + + + -> 200 `i -> _i `i -> _i `i -> 1 `i `uc `uc ]
-"111
-[; ;Usuaris.c: 111:     }
+"124
+[; ;Usuaris.c: 124:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 306  ]
-[e :U 307 ]
+[e $ < -> _i `i -> 5 `i 309  ]
+[e :U 310 ]
 }
-"113
-[; ;Usuaris.c: 113: }
+"126
+[; ;Usuaris.c: 126: }
 [e :UE 296 ]
 }
-"115
-[; ;Usuaris.c: 115: char compareStrings(const char *a, const char *b){
+"128
+[; ;Usuaris.c: 128: char compareStrings(const char *a, const char *b){
 [v _compareStrings `(uc ~T0 @X0 1 ef2`*Cuc`*Cuc ]
 {
 [e :U _compareStrings ]
 [v _a `*Cuc ~T0 @X0 1 r1 ]
 [v _b `*Cuc ~T0 @X0 1 r2 ]
 [f ]
-"116
-[; ;Usuaris.c: 116:     while (*a){
-[e $U 310  ]
-[e :U 311 ]
+"129
+[; ;Usuaris.c: 129:     while (*a){
+[e $U 313  ]
+[e :U 314 ]
 {
-"117
-[; ;Usuaris.c: 117:         if (*a != *b)break;
-[e $ ! != -> *U _a `i -> *U _b `i 313  ]
-[e $U 312  ]
-[e :U 313 ]
-"118
-[; ;Usuaris.c: 118:         a++;
+"130
+[; ;Usuaris.c: 130:         if (*a != *b)break;
+[e $ ! != -> *U _a `i -> *U _b `i 316  ]
+[e $U 315  ]
+[e :U 316 ]
+"131
+[; ;Usuaris.c: 131:         a++;
 [e ++ _a * -> -> 1 `i `x -> -> # *U _a `i `x ]
-"119
-[; ;Usuaris.c: 119:         b++;
+"132
+[; ;Usuaris.c: 132:         b++;
 [e ++ _b * -> -> 1 `i `x -> -> # *U _b `i `x ]
-"120
-[; ;Usuaris.c: 120:     }
+"133
+[; ;Usuaris.c: 133:     }
 }
-[e :U 310 ]
-"116
-[; ;Usuaris.c: 116:     while (*a){
-[e $ != -> *U _a `i -> 0 `i 311  ]
-[e :U 312 ]
-"121
-[; ;Usuaris.c: 121:     return *(const unsigned char*)a - *(const unsigned char*)b;
+[e :U 313 ]
+"129
+[; ;Usuaris.c: 129:     while (*a){
+[e $ != -> *U _a `i -> 0 `i 314  ]
+[e :U 315 ]
+"134
+[; ;Usuaris.c: 134:     return *(const unsigned char*)a - *(const unsigned char*)b;
 [e ) -> - -> *U -> _a `*Cuc `i -> *U -> _b `*Cuc `i `uc ]
-[e $UE 309  ]
-"122
-[; ;Usuaris.c: 122: }
-[e :UE 309 ]
+[e $UE 312  ]
+"135
+[; ;Usuaris.c: 135: }
+[e :UE 312 ]
 }
-"124
-[; ;Usuaris.c: 124: void calculateShowUsers(void){
+"137
+[; ;Usuaris.c: 137: void calculateShowUsers(void){
 [v _calculateShowUsers `(v ~T0 @X0 1 ef ]
 {
 [e :U _calculateShowUsers ]
 [f ]
-"125
-[; ;Usuaris.c: 125:     do_showUsers = 1;
+"138
+[; ;Usuaris.c: 138:     do_showUsers = 1;
 [e = _do_showUsers -> -> 1 `i `b ]
-"126
-[; ;Usuaris.c: 126: }
-[e :UE 314 ]
+"139
+[; ;Usuaris.c: 139: }
+[e :UE 317 ]
 }
-"127
-[; ;Usuaris.c: 127: __bit UshowUsersCalculat(void){
+"140
+[; ;Usuaris.c: 140: __bit UshowUsersCalculat(void){
 [v _UshowUsersCalculat `(b ~T0 @X0 1 ef ]
 {
 [e :U _UshowUsersCalculat ]
 [f ]
-"128
-[; ;Usuaris.c: 128:     return !do_showUsers;
+"141
+[; ;Usuaris.c: 141:     return !do_showUsers;
 [e ) ! _do_showUsers ]
-[e $UE 315  ]
-"129
-[; ;Usuaris.c: 129: }
-[e :UE 315 ]
+[e $UE 318  ]
+"142
+[; ;Usuaris.c: 142: }
+[e :UE 318 ]
 }
-"131
-[; ;Usuaris.c: 131: void UmotorUsers(){
+"144
+[; ;Usuaris.c: 144: void UmotorUsers(){
 [v _UmotorUsers `(v ~T0 @X0 1 ef ]
 {
 [e :U _UmotorUsers ]
 [f ]
-"132
-[; ;Usuaris.c: 132:     static char state = 0;
-[v F2656 `uc ~T0 @X0 1 s state ]
-[i F2656
+"145
+[; ;Usuaris.c: 145:     static char state = 0;
+[v F2638 `uc ~T0 @X0 1 s state ]
+[i F2638
 -> -> 0 `i `uc
 ]
-"134
-[; ;Usuaris.c: 134:  switch(state) {
-[e $U 318  ]
-{
-"135
-[; ;Usuaris.c: 135:   case 0:
-[e :U 319 ]
-"136
-[; ;Usuaris.c: 136:    if (!do_check_exists && !do_register && !do_showUsers && !do_updateScore) {
-[e $ ! && && && ! _do_check_exists ! _do_register ! _do_showUsers ! _do_updateScore 320  ]
-{
-"137
-[; ;Usuaris.c: 137:     i = 0;
-[e = _i -> -> 0 `i `uc ]
-"138
-[; ;Usuaris.c: 138:     j = 0;
-[e = _j -> -> 0 `i `uc ]
-"139
-[; ;Usuaris.c: 139:    }
-}
-[e $U 321  ]
-"140
-[; ;Usuaris.c: 140:    else if (do_check_exists == 1) {
-[e :U 320 ]
-[e $ ! == -> _do_check_exists `i -> 1 `i 322  ]
-{
-"141
-[; ;Usuaris.c: 141:     usuariLoguejat = -1;
-[e = _usuariLoguejat -> -U -> 1 `i `c ]
-"142
-[; ;Usuaris.c: 142:     state = 1;
-[e = F2656 -> -> 1 `i `uc ]
-"143
-[; ;Usuaris.c: 143:    }
-}
-[e $U 323  ]
-"144
-[; ;Usuaris.c: 144:    else if (do_register == 1) {
-[e :U 322 ]
-[e $ ! == -> _do_register `i -> 1 `i 324  ]
-{
-"145
-[; ;Usuaris.c: 145:     state = 2;
-[e = F2656 -> -> 2 `i `uc ]
-"146
-[; ;Usuaris.c: 146:    }
-}
-[e $U 325  ]
 "147
-[; ;Usuaris.c: 147:    else if (do_showUsers) {
-[e :U 324 ]
-[e $ ! _do_showUsers 326  ]
+[; ;Usuaris.c: 147:  switch(state) {
+[e $U 321  ]
 {
 "148
-[; ;Usuaris.c: 148:     arrayShowUsers[0] = usuariLoguejat;
-[e = *U + &U _arrayShowUsers * -> -> -> 0 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux _usuariLoguejat ]
+[; ;Usuaris.c: 148:   case 0:
+[e :U 322 ]
 "149
-[; ;Usuaris.c: 149:     arrayShowUsers[1] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 1 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 149:    if (!do_check_exists && !do_register && !do_showUsers && !do_updateScore) {
+[e $ ! && && && ! _do_check_exists ! _do_register ! _do_showUsers ! _do_updateScore 323  ]
+{
 "150
-[; ;Usuaris.c: 150:     arrayShowUsers[2] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 2 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 150:     i = 0;
+[e = _i -> -> 0 `i `uc ]
 "151
-[; ;Usuaris.c: 151:     arrayShowUsers[3] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 3 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 151:     j = 0;
+[e = _j -> -> 0 `i `uc ]
 "152
-[; ;Usuaris.c: 152:     arrayShowUsers[4] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 4 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 152:    }
+}
+[e $U 324  ]
 "153
-[; ;Usuaris.c: 153:     arrayShowUsers[5] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 5 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 153:    else if (do_check_exists == 1) {
+[e :U 323 ]
+[e $ ! == -> _do_check_exists `i -> 1 `i 325  ]
+{
 "154
-[; ;Usuaris.c: 154:     arrayShowUsers[6] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 6 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 154:     usuariLoguejat = -1;
+[e = _usuariLoguejat -> -U -> 1 `i `c ]
 "155
-[; ;Usuaris.c: 155:     arrayShowUsers[7] = -1;
-[e = *U + &U _arrayShowUsers * -> -> -> 7 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
+[; ;Usuaris.c: 155:     state = 1;
+[e = F2638 -> -> 1 `i `uc ]
 "156
-[; ;Usuaris.c: 156:     i = 1;
-[e = _i -> -> 1 `i `uc ]
+[; ;Usuaris.c: 156:    }
+}
+[e $U 326  ]
 "157
-[; ;Usuaris.c: 157:     if(numUsuaris < 7) {
-[e $ ! < -> _numUsuaris `i -> 7 `i 327  ]
+[; ;Usuaris.c: 157:    else if (do_register == 1) {
+[e :U 325 ]
+[e $ ! == -> _do_register `i -> 1 `i 327  ]
 {
 "158
-[; ;Usuaris.c: 158:       j = 0;
-[e = _j -> -> 0 `i `uc ]
-"159
-[; ;Usuaris.c: 159:     }
-}
-[e $U 328  ]
-"160
-[; ;Usuaris.c: 160:     else{
-[e :U 327 ]
-{
-"161
-[; ;Usuaris.c: 161:       j = indexNextUserStruct;
-[e = _j _indexNextUserStruct ]
-"162
-[; ;Usuaris.c: 162:     }
-}
+[; ;Usuaris.c: 158:     if(numUsuaris != 8) numUsuaris++;
+[e $ ! != -> _numUsuaris `i -> 8 `i 328  ]
+[e ++ _numUsuaris -> -> 1 `i `uc ]
 [e :U 328 ]
-"163
-[; ;Usuaris.c: 163:     state = 5;
-[e = F2656 -> -> 5 `i `uc ]
-"164
-[; ;Usuaris.c: 164:    }
+"160
+[; ;Usuaris.c: 160:     escriureCharEEPROM(numUsuaris,0);
+[e ( _escriureCharEEPROM (2 , -> _numUsuaris `uc -> -> 0 `i `uc ]
+"161
+[; ;Usuaris.c: 161:     state = 2;
+[e = F2638 -> -> 2 `i `uc ]
+"162
+[; ;Usuaris.c: 162:    }
 }
 [e $U 329  ]
+"163
+[; ;Usuaris.c: 163:    else if (do_showUsers) {
+[e :U 327 ]
+[e $ ! _do_showUsers 330  ]
+{
+"164
+[; ;Usuaris.c: 164:     arrayShowUsers[0] = usuariLoguejat;
+[e = *U + &U _arrayShowUsers * -> -> -> 0 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux _usuariLoguejat ]
 "165
-[; ;Usuaris.c: 165:    else if (do_updateScore) {
-[e :U 326 ]
-[e $ ! _do_updateScore 330  ]
-{
+[; ;Usuaris.c: 165:     arrayShowUsers[1] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 1 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "166
-[; ;Usuaris.c: 166:     do_updateScore = 0;
-[e = _do_updateScore -> -> 0 `i `b ]
+[; ;Usuaris.c: 166:     arrayShowUsers[2] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 2 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "167
-[; ;Usuaris.c: 167:     state = 6;
-[e = F2656 -> -> 6 `i `uc ]
+[; ;Usuaris.c: 167:     arrayShowUsers[3] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 3 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "168
-[; ;Usuaris.c: 168:    }
-}
-[e :U 330 ]
-[e :U 329 ]
-[e :U 325 ]
-[e :U 323 ]
-[e :U 321 ]
+[; ;Usuaris.c: 168:     arrayShowUsers[4] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 4 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "169
-[; ;Usuaris.c: 169:   break;
-[e $U 317  ]
+[; ;Usuaris.c: 169:     arrayShowUsers[5] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 5 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "170
-[; ;Usuaris.c: 170:   case 1:
-[e :U 331 ]
+[; ;Usuaris.c: 170:     arrayShowUsers[6] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 6 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "171
-[; ;Usuaris.c: 171:    if (i < numUsuaris) {
-[e $ ! < -> _i `i -> _numUsuaris `i 332  ]
-{
+[; ;Usuaris.c: 171:     arrayShowUsers[7] = -1;
+[e = *U + &U _arrayShowUsers * -> -> -> 7 `i `ui `ux -> -> # *U &U _arrayShowUsers `ui `ux -> -U -> 1 `i `c ]
 "172
-[; ;Usuaris.c: 172:     if(compareStrings(tmpUsername, usuaris[i].username) == 0){
-[e $ ! == -> ( _compareStrings (2 , -> &U _tmpUsername `*Cuc -> &U . *U + &U _usuaris * -> _i `ux -> -> # *U &U _usuaris `ui `ux 0 `*Cuc `i -> 0 `i 333  ]
-{
+[; ;Usuaris.c: 172:     i = 1;
+[e = _i -> -> 1 `i `uc ]
 "173
-[; ;Usuaris.c: 173:      usuariLoguejat = i;
-[e = _usuariLoguejat -> _i `c ]
+[; ;Usuaris.c: 173:     if(numUsuaris < 7) {
+[e $ ! < -> _numUsuaris `i -> 7 `i 331  ]
+{
+"174
+[; ;Usuaris.c: 174:       j = 0;
+[e = _j -> -> 0 `i `uc ]
 "175
 [; ;Usuaris.c: 175:     }
 }
-[e :U 333 ]
+[e $U 332  ]
 "176
-[; ;Usuaris.c: 176:     i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;Usuaris.c: 176:     else{
+[e :U 331 ]
+{
 "177
-[; ;Usuaris.c: 177:     state = 1;
-[e = F2656 -> -> 1 `i `uc ]
+[; ;Usuaris.c: 177:       j = indexNextUserStruct;
+[e = _j _indexNextUserStruct ]
 "178
-[; ;Usuaris.c: 178:    }
+[; ;Usuaris.c: 178:     }
 }
-[e $U 334  ]
-"179
-[; ;Usuaris.c: 179:    else if (i == numUsuaris) {
 [e :U 332 ]
-[e $ ! == -> _i `i -> _numUsuaris `i 335  ]
-{
+"179
+[; ;Usuaris.c: 179:     state = 5;
+[e = F2638 -> -> 5 `i `uc ]
 "180
-[; ;Usuaris.c: 180:     do_check_exists = 0;
-[e = _do_check_exists -> -> 0 `i `b ]
+[; ;Usuaris.c: 180:    }
+}
+[e $U 333  ]
 "181
-[; ;Usuaris.c: 181:     state = 0;
-[e = F2656 -> -> 0 `i `uc ]
+[; ;Usuaris.c: 181:    else if (do_updateScore) {
+[e :U 330 ]
+[e $ ! _do_updateScore 334  ]
+{
 "182
-[; ;Usuaris.c: 182:    }
-}
-[e :U 335 ]
-[e :U 334 ]
+[; ;Usuaris.c: 182:     do_updateScore = 0;
+[e = _do_updateScore -> -> 0 `i `b ]
 "183
-[; ;Usuaris.c: 183:   break;
-[e $U 317  ]
+[; ;Usuaris.c: 183:     state = 6;
+[e = F2638 -> -> 6 `i `uc ]
 "184
-[; ;Usuaris.c: 184:   case 2:
-[e :U 336 ]
-"185
-[; ;Usuaris.c: 185:    if (i != 8) {
-[e $ ! != -> _i `i -> 8 `i 337  ]
-{
-"186
-[; ;Usuaris.c: 186:     escriureCharEEPROM(tmpUsername[i],indexNextUser++);
-[e ( _escriureCharEEPROM (2 , *U + &U _tmpUsername * -> _i `ux -> -> # *U &U _tmpUsername `ui `ux -> ++ _indexNextUser -> -> 1 `i `uc `uc ]
-"187
-[; ;Usuaris.c: 187:     usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
-[e = *U + &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 0 * -> _i `ux -> -> # *U &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 0 `ui `ux *U + &U _tmpUsername * -> _i `ux -> -> # *U &U _tmpUsername `ui `ux ]
-"188
-[; ;Usuaris.c: 188:     i++;
-[e ++ _i -> -> 1 `i `uc ]
-"189
-[; ;Usuaris.c: 189:     state = 2;
-[e = F2656 -> -> 2 `i `uc ]
-"190
-[; ;Usuaris.c: 190:    }
+[; ;Usuaris.c: 184:    }
 }
-[e $U 338  ]
-"191
-[; ;Usuaris.c: 191:    else if (i == 8) {
-[e :U 337 ]
-[e $ ! == -> _i `i -> 8 `i 339  ]
+[e :U 334 ]
+[e :U 333 ]
+[e :U 329 ]
+[e :U 326 ]
+[e :U 324 ]
+"185
+[; ;Usuaris.c: 185:   break;
+[e $U 320  ]
+"186
+[; ;Usuaris.c: 186:   case 1:
+[e :U 335 ]
+"187
+[; ;Usuaris.c: 187:    if (i < numUsuaris) {
+[e $ ! < -> _i `i -> _numUsuaris `i 336  ]
 {
+"188
+[; ;Usuaris.c: 188:     if(compareStrings(tmpUsername, usuaris[i].username) == 0){
+[e $ ! == -> ( _compareStrings (2 , -> &U _tmpUsername `*Cuc -> &U . *U + &U _usuaris * -> _i `ux -> -> # *U &U _usuaris `ui `ux 0 `*Cuc `i -> 0 `i 337  ]
+{
+"189
+[; ;Usuaris.c: 189:      usuariLoguejat = i;
+[e = _usuariLoguejat -> _i `c ]
+"191
+[; ;Usuaris.c: 191:     }
+}
+[e :U 337 ]
 "192
-[; ;Usuaris.c: 192:     i = 0;
-[e = _i -> -> 0 `i `uc ]
+[; ;Usuaris.c: 192:     i++;
+[e ++ _i -> -> 1 `i `uc ]
 "193
-[; ;Usuaris.c: 193:     state = 3;
-[e = F2656 -> -> 3 `i `uc ]
+[; ;Usuaris.c: 193:     state = 1;
+[e = F2638 -> -> 1 `i `uc ]
 "194
 [; ;Usuaris.c: 194:    }
 }
+[e $U 338  ]
+"195
+[; ;Usuaris.c: 195:    else if (i == numUsuaris) {
+[e :U 336 ]
+[e $ ! == -> _i `i -> _numUsuaris `i 339  ]
+{
+"196
+[; ;Usuaris.c: 196:     do_check_exists = 0;
+[e = _do_check_exists -> -> 0 `i `b ]
+"197
+[; ;Usuaris.c: 197:     state = 0;
+[e = F2638 -> -> 0 `i `uc ]
+"198
+[; ;Usuaris.c: 198:    }
+}
 [e :U 339 ]
 [e :U 338 ]
-"195
-[; ;Usuaris.c: 195:   break;
-[e $U 317  ]
-"196
-[; ;Usuaris.c: 196:   case 3:
-[e :U 340 ]
-"197
-[; ;Usuaris.c: 197:    if (i != 8) {
-[e $ ! != -> _i `i -> 8 `i 341  ]
-{
-"198
-[; ;Usuaris.c: 198:     escriureCharEEPROM(tmpPassword[i],indexNextUser++);
-[e ( _escriureCharEEPROM (2 , *U + &U _tmpPassword * -> _i `ux -> -> # *U &U _tmpPassword `ui `ux -> ++ _indexNextUser -> -> 1 `i `uc `uc ]
 "199
-[; ;Usuaris.c: 199:     usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
-[e = *U + &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 1 * -> _i `ux -> -> # *U &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 1 `ui `ux *U + &U _tmpPassword * -> _i `ux -> -> # *U &U _tmpPassword `ui `ux ]
+[; ;Usuaris.c: 199:   break;
+[e $U 320  ]
 "200
-[; ;Usuaris.c: 200:     i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;Usuaris.c: 200:   case 2:
+[e :U 340 ]
 "201
-[; ;Usuaris.c: 201:     state = 3;
-[e = F2656 -> -> 3 `i `uc ]
+[; ;Usuaris.c: 201:    if (i < 9) {
+[e $ ! < -> _i `i -> 9 `i 341  ]
+{
 "202
-[; ;Usuaris.c: 202:    }
+[; ;Usuaris.c: 202:     escriureCharEEPROM(tmpUsername[i],indexNextUser);
+[e ( _escriureCharEEPROM (2 , *U + &U _tmpUsername * -> _i `ux -> -> # *U &U _tmpUsername `ui `ux -> _indexNextUser `uc ]
+"203
+[; ;Usuaris.c: 203:     indexNextUser++;
+[e ++ _indexNextUser -> -> 1 `i `uc ]
+"204
+[; ;Usuaris.c: 204:     usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
+[e = *U + &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 0 * -> _i `ux -> -> # *U &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 0 `ui `ux *U + &U _tmpUsername * -> _i `ux -> -> # *U &U _tmpUsername `ui `ux ]
+"205
+[; ;Usuaris.c: 205:     i++;
+[e ++ _i -> -> 1 `i `uc ]
+"206
+[; ;Usuaris.c: 206:     state = 2;
+[e = F2638 -> -> 2 `i `uc ]
+"207
+[; ;Usuaris.c: 207:    }
 }
 [e $U 342  ]
-"203
-[; ;Usuaris.c: 203:    else if (i == 8) {
-[e :U 341 ]
-[e $ ! == -> _i `i -> 8 `i 343  ]
-{
-"204
-[; ;Usuaris.c: 204:     do_register = 0;
-[e = _do_register -> -> 0 `i `b ]
-"205
-[; ;Usuaris.c: 205:     indexNextUser++;
-[e ++ _indexNextUser -> -> 1 `i `uc ]
-"206
-[; ;Usuaris.c: 206:     if(indexNextUser == 159) indexNextUser = 16;
-[e $ ! == -> _indexNextUser `i -> 159 `i 344  ]
-[e = _indexNextUser -> -> 16 `i `uc ]
-[e :U 344 ]
-"207
-[; ;Usuaris.c: 207:     indexNextUserStruct++;
-[e ++ _indexNextUserStruct -> -> 1 `i `uc ]
 "208
-[; ;Usuaris.c: 208:     if(indexNextUserStruct == 8) indexNextUserStruct = 0;
-[e $ ! == -> _indexNextUserStruct `i -> 8 `i 345  ]
-[e = _indexNextUserStruct -> -> 0 `i `uc ]
-[e :U 345 ]
+[; ;Usuaris.c: 208:    else if (i > 8) {
+[e :U 341 ]
+[e $ ! > -> _i `i -> 8 `i 343  ]
+{
 "209
-[; ;Usuaris.c: 209:     if(numUsuaris != 8) numUsuaris++;
-[e $ ! != -> _numUsuaris `i -> 8 `i 346  ]
-[e ++ _numUsuaris -> -> 1 `i `uc ]
-[e :U 346 ]
+[; ;Usuaris.c: 209:     i = 0;
+[e = _i -> -> 0 `i `uc ]
 "210
-[; ;Usuaris.c: 210:     state = 0;
-[e = F2656 -> -> 0 `i `uc ]
+[; ;Usuaris.c: 210:     state = 3;
+[e = F2638 -> -> 3 `i `uc ]
 "211
 [; ;Usuaris.c: 211:    }
 }
@@ -1208,256 +1172,317 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 342 ]
 "212
 [; ;Usuaris.c: 212:   break;
-[e $U 317  ]
+[e $U 320  ]
 "213
-[; ;Usuaris.c: 213:   case 5:
-[e :U 347 ]
+[; ;Usuaris.c: 213:   case 3:
+[e :U 344 ]
 "214
-[; ;Usuaris.c: 214:    if (i < numUsuaris) {
-[e $ ! < -> _i `i -> _numUsuaris `i 348  ]
+[; ;Usuaris.c: 214:    if (i < 9) {
+[e $ ! < -> _i `i -> 9 `i 345  ]
 {
 "215
-[; ;Usuaris.c: 215:     if(j != usuariLoguejat){
-[e $ ! != -> _j `i -> _usuariLoguejat `i 349  ]
-{
+[; ;Usuaris.c: 215:     escriureCharEEPROM(tmpPassword[i],indexNextUser);
+[e ( _escriureCharEEPROM (2 , *U + &U _tmpPassword * -> _i `ux -> -> # *U &U _tmpPassword `ui `ux -> _indexNextUser `uc ]
 "216
-[; ;Usuaris.c: 216:       arrayShowUsers[i] = j;
-[e = *U + &U _arrayShowUsers * -> _i `ux -> -> # *U &U _arrayShowUsers `ui `ux -> _j `c ]
+[; ;Usuaris.c: 216:     indexNextUser++;
+[e ++ _indexNextUser -> -> 1 `i `uc ]
 "217
-[; ;Usuaris.c: 217:      i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;Usuaris.c: 217:     usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
+[e = *U + &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 1 * -> _i `ux -> -> # *U &U . *U + &U _usuaris * -> _indexNextUserStruct `ux -> -> # *U &U _usuaris `ui `ux 1 `ui `ux *U + &U _tmpPassword * -> _i `ux -> -> # *U &U _tmpPassword `ui `ux ]
 "218
-[; ;Usuaris.c: 218:     }else{
-}
-[e $U 350  ]
-[e :U 349 ]
-{
+[; ;Usuaris.c: 218:     i++;
+[e ++ _i -> -> 1 `i `uc ]
 "219
-[; ;Usuaris.c: 219:       j++;
-[e ++ _j -> -> 1 `i `uc ]
+[; ;Usuaris.c: 219:     state = 3;
+[e = F2638 -> -> 3 `i `uc ]
 "220
-[; ;Usuaris.c: 220:     }
+[; ;Usuaris.c: 220:    }
 }
-[e :U 350 ]
+[e $U 346  ]
 "221
-[; ;Usuaris.c: 221:     j++;
-[e ++ _j -> -> 1 `i `uc ]
-"222
-[; ;Usuaris.c: 222:     if(j > 7) j=0;
-[e $ ! > -> _j `i -> 7 `i 351  ]
-[e = _j -> -> 0 `i `uc ]
-[e :U 351 ]
-"223
-[; ;Usuaris.c: 223:     state = 5;
-[e = F2656 -> -> 5 `i `uc ]
-"224
-[; ;Usuaris.c: 224:    }
-}
-[e $U 352  ]
-"225
-[; ;Usuaris.c: 225:    else if (i == numUsuaris) {
-[e :U 348 ]
-[e $ ! == -> _i `i -> _numUsuaris `i 353  ]
+[; ;Usuaris.c: 221:    else if (i > 8) {
+[e :U 345 ]
+[e $ ! > -> _i `i -> 8 `i 347  ]
 {
+"222
+[; ;Usuaris.c: 222:     do_register = 0;
+[e = _do_register -> -> 0 `i `b ]
+"223
+[; ;Usuaris.c: 223:     if(indexNextUser == 159) indexNextUser = 16;
+[e $ ! == -> _indexNextUser `i -> 159 `i 348  ]
+[e = _indexNextUser -> -> 16 `i `uc ]
+[e :U 348 ]
+"224
+[; ;Usuaris.c: 224:     indexNextUserStruct++;
+[e ++ _indexNextUserStruct -> -> 1 `i `uc ]
+"225
+[; ;Usuaris.c: 225:     if(indexNextUserStruct == 8) indexNextUserStruct = 0;
+[e $ ! == -> _indexNextUserStruct `i -> 8 `i 349  ]
+[e = _indexNextUserStruct -> -> 0 `i `uc ]
+[e :U 349 ]
 "226
-[; ;Usuaris.c: 226:     do_showUsers = 0;
-[e = _do_showUsers -> -> 0 `i `b ]
+[; ;Usuaris.c: 226:     escriureCharEEPROM(indexNextUser,1);
+[e ( _escriureCharEEPROM (2 , -> _indexNextUser `uc -> -> 1 `i `uc ]
 "227
 [; ;Usuaris.c: 227:     state = 0;
-[e = F2656 -> -> 0 `i `uc ]
+[e = F2638 -> -> 0 `i `uc ]
 "228
 [; ;Usuaris.c: 228:    }
 }
-[e :U 353 ]
-[e :U 352 ]
+[e :U 347 ]
+[e :U 346 ]
 "229
 [; ;Usuaris.c: 229:   break;
-[e $U 317  ]
+[e $U 320  ]
 "230
-[; ;Usuaris.c: 230:   case 6:
-[e :U 354 ]
+[; ;Usuaris.c: 230:   case 5:
+[e :U 350 ]
 "231
-[; ;Usuaris.c: 231:    if (i < 5 && puntuacions[i].indexStruct != -1) {
-[e $ ! && < -> _i `i -> 5 `i != -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 `i -U -> 1 `i 355  ]
+[; ;Usuaris.c: 231:    if (i < numUsuaris) {
+[e $ ! < -> _i `i -> _numUsuaris `i 351  ]
 {
 "232
-[; ;Usuaris.c: 232:     i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;Usuaris.c: 232:     if(j != usuariLoguejat){
+[e $ ! != -> _j `i -> _usuariLoguejat `i 352  ]
+{
 "233
-[; ;Usuaris.c: 233:     state = 6;
-[e = F2656 -> -> 6 `i `uc ]
+[; ;Usuaris.c: 233:       arrayShowUsers[i] = j;
+[e = *U + &U _arrayShowUsers * -> _i `ux -> -> # *U &U _arrayShowUsers `ui `ux -> _j `c ]
 "234
-[; ;Usuaris.c: 234:    }
-}
-[e $U 356  ]
+[; ;Usuaris.c: 234:      i++;
+[e ++ _i -> -> 1 `i `uc ]
 "235
-[; ;Usuaris.c: 235:    else if (i < 5 && puntuacions[i].indexStruct == -1) {
-[e :U 355 ]
-[e $ ! && < -> _i `i -> 5 `i == -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 `i -U -> 1 `i 357  ]
+[; ;Usuaris.c: 235:     }else{
+}
+[e $U 353  ]
+[e :U 352 ]
 {
 "236
-[; ;Usuaris.c: 236:     state = 7;
-[e = F2656 -> -> 7 `i `uc ]
+[; ;Usuaris.c: 236:       j++;
+[e ++ _j -> -> 1 `i `uc ]
 "237
-[; ;Usuaris.c: 237:    }
+[; ;Usuaris.c: 237:     }
 }
-[e $U 358  ]
+[e :U 353 ]
 "238
-[; ;Usuaris.c: 238:    else if (i > 4) {
-[e :U 357 ]
-[e $ ! > -> _i `i -> 4 `i 359  ]
-{
+[; ;Usuaris.c: 238:     j++;
+[e ++ _j -> -> 1 `i `uc ]
 "239
-[; ;Usuaris.c: 239:     i = 0;
-[e = _i -> -> 0 `i `uc ]
+[; ;Usuaris.c: 239:     if(j > 7) j=0;
+[e $ ! > -> _j `i -> 7 `i 354  ]
+[e = _j -> -> 0 `i `uc ]
+[e :U 354 ]
 "240
-[; ;Usuaris.c: 240:     state = 8;
-[e = F2656 -> -> 8 `i `uc ]
+[; ;Usuaris.c: 240:     state = 5;
+[e = F2638 -> -> 5 `i `uc ]
 "241
 [; ;Usuaris.c: 241:    }
 }
-[e :U 359 ]
-[e :U 358 ]
-[e :U 356 ]
+[e $U 355  ]
 "242
-[; ;Usuaris.c: 242:   break;
-[e $U 317  ]
+[; ;Usuaris.c: 242:    else if (i == numUsuaris) {
+[e :U 351 ]
+[e $ ! == -> _i `i -> _numUsuaris `i 356  ]
+{
 "243
-[; ;Usuaris.c: 243:   case 7:
-[e :U 360 ]
+[; ;Usuaris.c: 243:     do_showUsers = 0;
+[e = _do_showUsers -> -> 0 `i `b ]
 "244
-[; ;Usuaris.c: 244:    puntuacions[i].score = scoreUsr;
-[e = . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 _scoreUsr ]
+[; ;Usuaris.c: 244:     state = 0;
+[e = F2638 -> -> 0 `i `uc ]
 "245
-[; ;Usuaris.c: 245:    puntuacions[i].indexStruct = usuariLoguejat;
-[e = . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 _usuariLoguejat ]
+[; ;Usuaris.c: 245:    }
+}
+[e :U 356 ]
+[e :U 355 ]
 "246
-[; ;Usuaris.c: 246:    i = i+i;
-[e = _i -> + -> _i `i -> _i `i `uc ]
+[; ;Usuaris.c: 246:   break;
+[e $U 320  ]
 "247
-[; ;Usuaris.c: 247:    escriureCharEEPROM(usuariLoguejat,200+i);
-[e ( _escriureCharEEPROM (2 , -> _usuariLoguejat `uc -> + -> 200 `i -> _i `i `uc ]
+[; ;Usuaris.c: 247:   case 6:
+[e :U 357 ]
 "248
-[; ;Usuaris.c: 248:    i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;Usuaris.c: 248:    if (i < 5 && puntuacions[i].indexStruct != -1) {
+[e $ ! && < -> _i `i -> 5 `i != -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 `i -U -> 1 `i 358  ]
+{
 "249
-[; ;Usuaris.c: 249:    escriureCharEEPROM(scoreUsr,200+i);
-[e ( _escriureCharEEPROM (2 , -> _scoreUsr `uc -> + -> 200 `i -> _i `i `uc ]
-"250
-[; ;Usuaris.c: 250:    state = 0;
-[e = F2656 -> -> 0 `i `uc ]
-"251
-[; ;Usuaris.c: 251:   break;
-[e $U 317  ]
-"252
-[; ;Usuaris.c: 252:   case 8:
-[e :U 361 ]
-"253
-[; ;Usuaris.c: 253:    if (puntuacions[i].score >= scoreUsr && i < 5) {
-[e $ ! && >= -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 `i -> _scoreUsr `i < -> _i `i -> 5 `i 362  ]
-{
-"254
-[; ;Usuaris.c: 254:     i++;
+[; ;Usuaris.c: 249:     i++;
 [e ++ _i -> -> 1 `i `uc ]
+"250
+[; ;Usuaris.c: 250:     state = 6;
+[e = F2638 -> -> 6 `i `uc ]
+"251
+[; ;Usuaris.c: 251:    }
+}
+[e $U 359  ]
+"252
+[; ;Usuaris.c: 252:    else if (i < 5 && puntuacions[i].indexStruct == -1) {
+[e :U 358 ]
+[e $ ! && < -> _i `i -> 5 `i == -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 `i -U -> 1 `i 360  ]
+{
+"253
+[; ;Usuaris.c: 253:     state = 7;
+[e = F2638 -> -> 7 `i `uc ]
+"254
+[; ;Usuaris.c: 254:    }
+}
+[e $U 361  ]
 "255
-[; ;Usuaris.c: 255:     state = 8;
-[e = F2656 -> -> 8 `i `uc ]
+[; ;Usuaris.c: 255:    else if (i > 4) {
+[e :U 360 ]
+[e $ ! > -> _i `i -> 4 `i 362  ]
+{
 "256
-[; ;Usuaris.c: 256:    }
-}
-[e $U 363  ]
+[; ;Usuaris.c: 256:     i = 0;
+[e = _i -> -> 0 `i `uc ]
 "257
-[; ;Usuaris.c: 257:    else if (i > 4) {
-[e :U 362 ]
-[e $ ! > -> _i `i -> 4 `i 364  ]
-{
+[; ;Usuaris.c: 257:     state = 8;
+[e = F2638 -> -> 8 `i `uc ]
 "258
-[; ;Usuaris.c: 258:     state = 0;
-[e = F2656 -> -> 0 `i `uc ]
+[; ;Usuaris.c: 258:    }
+}
+[e :U 362 ]
+[e :U 361 ]
+[e :U 359 ]
 "259
-[; ;Usuaris.c: 259:    }
-}
-[e $U 365  ]
+[; ;Usuaris.c: 259:   break;
+[e $U 320  ]
 "260
-[; ;Usuaris.c: 260:    else if (puntuacions[i].score < scoreUsr && i < 5) {
-[e :U 364 ]
-[e $ ! && < -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 `i -> _scoreUsr `i < -> _i `i -> 5 `i 366  ]
-{
-"261
-[; ;Usuaris.c: 261:     state = 7;
-[e = F2656 -> -> 7 `i `uc ]
-"262
-[; ;Usuaris.c: 262:    }
-}
-[e :U 366 ]
-[e :U 365 ]
+[; ;Usuaris.c: 260:   case 7:
 [e :U 363 ]
+"261
+[; ;Usuaris.c: 261:    puntuacions[i].score = scoreUsr;
+[e = . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 _scoreUsr ]
+"262
+[; ;Usuaris.c: 262:    puntuacions[i].indexStruct = usuariLoguejat;
+[e = . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 0 _usuariLoguejat ]
 "263
-[; ;Usuaris.c: 263:   break;
-[e $U 317  ]
+[; ;Usuaris.c: 263:    i = i+i;
+[e = _i -> + -> _i `i -> _i `i `uc ]
 "264
-[; ;Usuaris.c: 264:  }
-}
-[e $U 317  ]
-[e :U 318 ]
-[e [\ -> F2656 `i , $ -> 0 `i 319
- , $ -> 1 `i 331
- , $ -> 2 `i 336
- , $ -> 3 `i 340
- , $ -> 5 `i 347
- , $ -> 6 `i 354
- , $ -> 7 `i 360
- , $ -> 8 `i 361
- 317 ]
-[e :U 317 ]
+[; ;Usuaris.c: 264:    escriureCharEEPROM(usuariLoguejat,200+i);
+[e ( _escriureCharEEPROM (2 , -> _usuariLoguejat `uc -> + -> 200 `i -> _i `i `uc ]
+"265
+[; ;Usuaris.c: 265:    i++;
+[e ++ _i -> -> 1 `i `uc ]
 "266
-[; ;Usuaris.c: 266: }
-[e :UE 316 ]
-}
+[; ;Usuaris.c: 266:    escriureCharEEPROM(scoreUsr,200+i);
+[e ( _escriureCharEEPROM (2 , -> _scoreUsr `uc -> + -> 200 `i -> _i `i `uc ]
+"267
+[; ;Usuaris.c: 267:    state = 0;
+[e = F2638 -> -> 0 `i `uc ]
 "268
-[; ;Usuaris.c: 268: unsigned char UgetScore(char quin){
+[; ;Usuaris.c: 268:   break;
+[e $U 320  ]
+"269
+[; ;Usuaris.c: 269:   case 8:
+[e :U 364 ]
+"270
+[; ;Usuaris.c: 270:    if (puntuacions[i].score >= scoreUsr && i < 5) {
+[e $ ! && >= -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 `i -> _scoreUsr `i < -> _i `i -> 5 `i 365  ]
+{
+"271
+[; ;Usuaris.c: 271:     i++;
+[e ++ _i -> -> 1 `i `uc ]
+"272
+[; ;Usuaris.c: 272:     state = 8;
+[e = F2638 -> -> 8 `i `uc ]
+"273
+[; ;Usuaris.c: 273:    }
+}
+[e $U 366  ]
+"274
+[; ;Usuaris.c: 274:    else if (i > 4) {
+[e :U 365 ]
+[e $ ! > -> _i `i -> 4 `i 367  ]
+{
+"275
+[; ;Usuaris.c: 275:     state = 0;
+[e = F2638 -> -> 0 `i `uc ]
+"276
+[; ;Usuaris.c: 276:    }
+}
+[e $U 368  ]
+"277
+[; ;Usuaris.c: 277:    else if (puntuacions[i].score < scoreUsr && i < 5) {
+[e :U 367 ]
+[e $ ! && < -> . *U + &U _puntuacions * -> _i `ux -> -> # *U &U _puntuacions `ui `ux 1 `i -> _scoreUsr `i < -> _i `i -> 5 `i 369  ]
+{
+"278
+[; ;Usuaris.c: 278:     state = 7;
+[e = F2638 -> -> 7 `i `uc ]
+"279
+[; ;Usuaris.c: 279:    }
+}
+[e :U 369 ]
+[e :U 368 ]
+[e :U 366 ]
+"280
+[; ;Usuaris.c: 280:   break;
+[e $U 320  ]
+"281
+[; ;Usuaris.c: 281:  }
+}
+[e $U 320  ]
+[e :U 321 ]
+[e [\ -> F2638 `i , $ -> 0 `i 322
+ , $ -> 1 `i 335
+ , $ -> 2 `i 340
+ , $ -> 3 `i 344
+ , $ -> 5 `i 350
+ , $ -> 6 `i 357
+ , $ -> 7 `i 363
+ , $ -> 8 `i 364
+ 320 ]
+[e :U 320 ]
+"282
+[; ;Usuaris.c: 282: }
+[e :UE 319 ]
+}
+"284
+[; ;Usuaris.c: 284: unsigned char UgetScore(char quin){
 [v _UgetScore `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UgetScore ]
 [v _quin `uc ~T0 @X0 1 r1 ]
 [f ]
-"269
-[; ;Usuaris.c: 269:     return puntuacions[quin].score;
+"285
+[; ;Usuaris.c: 285:     return puntuacions[quin].score;
 [e ) . *U + &U _puntuacions * -> _quin `ux -> -> # *U &U _puntuacions `ui `ux 1 ]
-[e $UE 367  ]
-"270
-[; ;Usuaris.c: 270: }
-[e :UE 367 ]
+[e $UE 370  ]
+"286
+[; ;Usuaris.c: 286: }
+[e :UE 370 ]
 }
-"271
-[; ;Usuaris.c: 271: signed char UgetTop5(char quin){
+"287
+[; ;Usuaris.c: 287: signed char UgetTop5(char quin){
 [v _UgetTop5 `(c ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UgetTop5 ]
 [v _quin `uc ~T0 @X0 1 r1 ]
 [f ]
-"272
-[; ;Usuaris.c: 272:     return puntuacions[quin].indexStruct;
+"288
+[; ;Usuaris.c: 288:     return puntuacions[quin].indexStruct;
 [e ) . *U + &U _puntuacions * -> _quin `ux -> -> # *U &U _puntuacions `ui `ux 0 ]
-[e $UE 368  ]
-"273
-[; ;Usuaris.c: 273: }
-[e :UE 368 ]
+[e $UE 371  ]
+"289
+[; ;Usuaris.c: 289: }
+[e :UE 371 ]
 }
-"274
-[; ;Usuaris.c: 274: void UnewScore(char scoretmp){
+"290
+[; ;Usuaris.c: 290: void UnewScore(char scoretmp){
 [v _UnewScore `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UnewScore ]
 [v _scoretmp `uc ~T0 @X0 1 r1 ]
 [f ]
-"275
-[; ;Usuaris.c: 275:     scoreUsr = scoretmp;
+"291
+[; ;Usuaris.c: 291:     scoreUsr = scoretmp;
 [e = _scoreUsr -> _scoretmp `uc ]
-"276
-[; ;Usuaris.c: 276:     do_updateScore = 1;
+"292
+[; ;Usuaris.c: 292:     do_updateScore = 1;
 [e = _do_updateScore -> -> 1 `i `b ]
-"277
-[; ;Usuaris.c: 277: }
-[e :UE 369 ]
+"293
+[; ;Usuaris.c: 293: }
+[e :UE 372 ]
 }

@@ -6,7 +6,7 @@
 #define neg -1
 
 signed char lletraASCII = neg;
-const char lletraInici[8] = "ADGJMPTW";
+char lletraInici[8] = "ADGJMPTW";
 char sumaPulsacions = 0;
 signed char novaTecla = neg;
 char timerSMS;
