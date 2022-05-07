@@ -9,13 +9,13 @@
 #include "Joc.h"
 #include "SIO.h"
 #include "CtoA.h"
+#define neg -1
 
 unsigned char tmp = 0;
-signed char NovaTecla = -1;
-signed char novaLletra = -1;
-signed char novaDireccio = -1;
+signed char NovaTecla = neg;
+signed char novaLletra = neg;
+signed char novaDireccio = neg;
 char horaTmp[4];
-signed char arrayMostrarUsuaris[8] = {-1,-1,-1,-1,-1,-1,-1,-1};
 
 char timerMenu;
 __bit loginNOTRegister;
@@ -50,7 +50,7 @@ void menu(void) {
 			if (LcLliure()) {
 				LcGotoXY(0,1);
 				LcNewString("2.REGISTER");
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 2;
 			}
 		break;
@@ -65,8 +65,8 @@ void menu(void) {
 			}
 		break;
 		case 3:
-			NovaTecla = -1;
-			novaLletra = -1;
+			NovaTecla = neg;
+			novaLletra = neg;
 			LcClear();
 			LcNewString("USER: ");
 			state = 4;
@@ -99,15 +99,15 @@ void menu(void) {
 		case 7:
 			if (tmp != 7 && NovaTecla != 11) {
 				tmp++;
-				NovaTecla = -1;
-				novaLletra = -1;
+				NovaTecla = neg;
+				novaLletra = neg;
 				state = 6;
 			}
 			else if (tmp == 7 || NovaTecla == 11) {
 				LcGotoXY(6,1);
 				UenviaChar('\0',tmp);
-				NovaTecla = -1;
-				novaLletra = -1;
+				NovaTecla = neg;
+				novaLletra = neg;
 				tmp = 0;
 				state = 8;
 			}
@@ -125,14 +125,14 @@ void menu(void) {
 		case 9:
 			if (tmp != 7 && NovaTecla != 11) {
 				tmp++;
-				NovaTecla = -1;
-				novaLletra = -1;
+				NovaTecla = neg;
+				novaLletra = neg;
 				state = 8;
 			}
 			else if (tmp == 7 || NovaTecla == 11) {
 				UenviaPas('\0',tmp);
-				NovaTecla = -1;
-				novaLletra = -1;
+				NovaTecla = neg;
+				novaLletra = neg;
 				tmp = 0;
 				UcheckExists();
 				SMSoff();
@@ -146,14 +146,14 @@ void menu(void) {
 			}
 		break;
 		case 11:
-			if (!loginNOTRegister && indexUsuari == -1) {
+			if (!loginNOTRegister && indexUsuari == neg) {
 				URegister();
 				state = 0;
 			}
-			else if (loginNOTRegister == 1 && indexUsuari > -1) {
+			else if (loginNOTRegister == 1 && indexUsuari > neg) {
 				state = 12;
 			}
-			else if ((loginNOTRegister && indexUsuari == -1) || (!loginNOTRegister && indexUsuari > -1)) {
+			else if ((loginNOTRegister && indexUsuari == neg) || (!loginNOTRegister && indexUsuari > neg)) {
 				state = 0;
 			}
 			else if (1 == 1) {
@@ -164,8 +164,8 @@ void menu(void) {
 			LcClear();
 			SiFerMenu();
 			GLCDMostraMenu(menuDalt);
-			novaDireccio = -1;
-			NovaTecla = -1;
+			novaDireccio = neg;
+			NovaTecla = neg;
 			state = 13;
 		break;
 		case 13:
@@ -187,12 +187,12 @@ void menu(void) {
 				LcClear();
 				NoFerMenu();
 				LcNewString("Modify Time:");
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 16;
 			}
 			else if (menuDalt == 0 && NovaTecla == 11) {
 				NoFerMenu();
-				NovaTecla = -1;
+				NovaTecla = neg;
 				LcClear();
 				LcNewString("TIME REMAINING:");
 				JJuguem(indexUsuari);
@@ -202,15 +202,15 @@ void menu(void) {
 				NoFerMenu();
 				LcClear();
 				menuDalt = 0;
-				NovaTecla = -1;
+				NovaTecla = neg;
 				calculateShowUsers();
 				state = 30;
 			}
-			else if (NovaTecla == 11 && menuDalt == 2 && UgetTop5(0) != -1) {
+			else if (NovaTecla == 11 && menuDalt == 2 && UgetTop5(0) != neg) {
 				NoFerMenu();
 				LcClear();
 				menuDalt = 0;
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 31;
 			}
 		break;
@@ -227,11 +227,11 @@ void menu(void) {
 			}
 		break;
 		case 16:
-			if (LcLliure() && NovaTecla > -1 && NovaTecla < 10) {
+			if (LcLliure() && NovaTecla > neg && NovaTecla < 10) {
 				LcGotoXY(0,1);
 				horaTmp[0] = NovaTecla+48;
 				LcPutChar(horaTmp[0]);
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 17;
 			}
 			else if (NovaTecla == 10) {
@@ -239,10 +239,10 @@ void menu(void) {
 			}
 		break;
 		case 17:
-			if (NovaTecla > -1 && NovaTecla < 10) {
+			if (NovaTecla > neg && NovaTecla < 10) {
 				horaTmp[1] = NovaTecla+48;
 				LcPutChar(horaTmp[1]);
-				NovaTecla = -1;
+				NovaTecla = neg;
 				LcPutChar(':');
 				state = 18;
 			}
@@ -251,10 +251,10 @@ void menu(void) {
 			}
 		break;
 		case 18:
-			if (NovaTecla > -1 && NovaTecla < 10) {
+			if (NovaTecla > neg && NovaTecla < 10) {
 				horaTmp[2] = NovaTecla+48;
 				LcPutChar(horaTmp[2]);
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 19;
 			}
 			else if (NovaTecla == 10) {
@@ -262,10 +262,10 @@ void menu(void) {
 			}
 		break;
 		case 19:
-			if (NovaTecla > -1 && NovaTecla < 10) {
+			if (NovaTecla > neg && NovaTecla < 10) {
 				horaTmp[3] = NovaTecla+48;
 				LcPutChar(horaTmp[3]);
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 20;
 			}
 			else if (NovaTecla ==10) {
@@ -275,7 +275,7 @@ void menu(void) {
 		case 20:
 			if (NovaTecla == 11) {
 				HActualitzaHora(horaTmp);
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 12;
 			}
 			else if (NovaTecla == 10) {
@@ -290,12 +290,12 @@ void menu(void) {
 			}
 			else if (NovaTecla > 0 && NovaTecla < 10) {
 				JnovaTecla(NovaTecla);
-				NovaTecla = -1;
+				NovaTecla = neg;
 				state = 21;
 			}
-			else if (novaDireccio > -1) {
+			else if (novaDireccio > neg) {
 				JnovaDireccio(novaDireccio);
-				novaDireccio = -1;
+				novaDireccio = neg;
 				state = 21;
 			}
 		break;
@@ -389,12 +389,12 @@ void menu(void) {
 				LcGotoXY(0,1);
 				LcNewString(CToAobtenir());
 				menuDalt++;
-				if(menuDalt == 5 || UgetTop5(menuDalt) == -1) menuDalt = 0;
+				if(menuDalt == 5 || UgetTop5(menuDalt) == neg) menuDalt = 0;
 				state = 34;
 			}
 		break;
 		case 34:
-			if ((UgetTop5(menuDalt)  != -1 || menuDalt != 5) && LcLliure()) {
+			if ((UgetTop5(menuDalt)  != neg || menuDalt != 5) && LcLliure()) {
 				LcGotoXY(16,0);
 				LcNewString(UgetUserName(UgetTop5(menuDalt)));
 				CToAConverteix(UgetScore(UgetTop5(menuDalt)));
@@ -416,7 +416,7 @@ void menu(void) {
 				menuDalt = 0;
 				state = 12;
 			}
-			else if (TiGetTics(timerMenu) > 400 & LcLliure()) {
+			else if (TiGetTics(timerMenu) > 400 && LcLliure()) {
 				state = 38;
 			}
 		break;

@@ -5,15 +5,15 @@
 #include "Menu.h"
 #define neg -1
 
-signed char lletraASCII = -1;
-char lletraInici[9] = "ADGJMPTW";
+signed char lletraASCII = neg;
+const char lletraInici[8] = "ADGJMPTW";
 char sumaPulsacions = 0;
-signed char novaTecla = -1;
-char timerSMS = -1;
-signed char ultimaTecla = -1;
+signed char novaTecla = neg;
+char timerSMS = neg;
+signed char ultimaTecla = neg;
 __bit setSMSon = 0;
 unsigned char zeroTecla;
-char arrayZero[3] = {'0',32};
+const char arrayZero[2] = {'0',32};
 
 void Sinit(void){
     timerSMS = TiGetTimer();
@@ -24,26 +24,25 @@ void SMotor(void) {
 
 	switch(state) {
 		case 0:
-			if (novaTecla != -1 && setSMSon == 1) {
+			if (novaTecla != neg && setSMSon == 1) {
 				TiResetTics(timerSMS);
 				state = 3;
 			}
-			else if (novaTecla == -1 && TiGetTics(timerSMS)>= TSMS && lletraASCII != -1  && setSMSon == 1) {
+			else if (novaTecla == neg && TiGetTics(timerSMS)>= TSMS && lletraASCII != neg  && setSMSon == 1) {
 				MNovaLletra(lletraASCII);
-				lletraASCII = -1;
-				ultimaTecla = -1;
+				lletraASCII = neg;
+				ultimaTecla = neg;
 				zeroTecla = 0;
-				state = 0;
 			}
 		break;
 		case 1:
 			if (novaTecla == ultimaTecla && TiGetTics(timerSMS) < TSMS) {
-				novaTecla = -1;
+				novaTecla = neg;
 				sumaPulsacions++;
 				lletraASCII++;
-				state = 2;
+				state++;
 			}
-			else if (novaTecla != -1 && novaTecla != ultimaTecla) {
+			else if (novaTecla != neg && novaTecla != ultimaTecla) {
 				MNovaLletra(lletraASCII);
 				if(novaTecla != 0){
 				  lletraASCII = lletraInici[novaTecla-2];
@@ -53,8 +52,8 @@ void SMotor(void) {
 				zeroTecla=0;
 				ultimaTecla = novaTecla;
 				sumaPulsacions = 0;
-				novaTecla = -1;
-				state = 0;
+				novaTecla = neg;
+				state--;
 			}
 		break;
 		case 2:
@@ -77,18 +76,18 @@ void SMotor(void) {
 			}
 			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII == -1) {
 				MNovaLletra(novaTecla+48);
-				novaTecla = -1;
+				novaTecla = neg;
 				state = 0;
 			}
-			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII != -1) {
+			else if (novaTecla != 0 && novaTecla <= 1 && lletraASCII != neg) {
 				MNovaLletra(lletraASCII);
-				lletraASCII = -1;
-				state = 4;
+				lletraASCII = neg;
+				state++;
 			}
 		break;
 		case 4:
 			MNovaLletra(novaTecla+48);
-			novaTecla = -1;
+			novaTecla = neg;
 			state = 0;
 		break;
 		case 5:

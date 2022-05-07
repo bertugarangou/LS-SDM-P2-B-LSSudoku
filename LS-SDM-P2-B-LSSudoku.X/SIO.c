@@ -5,11 +5,12 @@
 #include "CtoA.h"
 #include "Hora.h"
 #include "LcTLCD.h"
+#define neg -1
 
 char *userPtr = 0;
-signed char usuariActualSIO = -1;
-signed char direccioSIO = -1;
-signed char novaTeclaSIO = -1;
+signed char usuariActualSIO = neg;
+signed char direccioSIO = neg;
+signed char novaTeclaSIO = neg;
 __bit jugantSIO = 0;
 __bit Krebut = 0;
 char timerSIO;
@@ -44,7 +45,7 @@ void motorSIO(void){
 
 	switch(state) {
 		case 0:
-			if (usuariActualSIO > -1) {
+			if (usuariActualSIO > neg) {
 				userPtr = UgetUserName(usuariActualSIO);
 				jugantSIO = 1;
 				Krebut = 0;
@@ -70,9 +71,9 @@ void motorSIO(void){
 			}
 		break;
 		case 3:
-			if (direccioSIO != -1 && TXSTAbits.TRMT) {
+			if (direccioSIO != neg && TXSTAbits.TRMT) {
 				TXREG = direccioSIO;
-				direccioSIO = -1;
+				direccioSIO = neg;
 				state = 3;
 			}
 			else if (novaTeclaSIO > '0' && novaTeclaSIO <= '9' && TXSTAbits.TRMT) {
@@ -132,7 +133,7 @@ void motorSIO(void){
 		case 9:
 			if (LcLliure() && CToAHaAcabat() == 250) {
 				LcNewString(CToAobtenir());
-				usuariActualSIO = -1;
+				usuariActualSIO = neg;
 				state = 0;
 			}
 		break;

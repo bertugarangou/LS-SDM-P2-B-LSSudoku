@@ -74,7 +74,7 @@ void motorHora(void) {
 					//reproducció;
 					segons++;
 					if(segons > 59){
-						playAltaveu();
+						//playAltaveu();
 						segons = 0;
 					}
 				}

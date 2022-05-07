@@ -4,7 +4,6 @@
 #include <xc.h>
 #include <pic18f4321.h>
 #include "Ssms.h"
-//#include "JJoc.h"
 
 static char tiTeclat=0;
 

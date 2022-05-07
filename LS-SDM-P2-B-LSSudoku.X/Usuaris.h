@@ -14,7 +14,6 @@ void escriureEEPROM(void);
 __bit URegisterEnded(void);
 void URegister(void);
 char* UgetUserName(char quin);
-void UchangeScore(char quin, char score);
 void calculateShowUsers(void);
 char* getArrayShowUsers(char quin);
 void escriure2usuarisStruct(void);
@@ -22,5 +21,5 @@ __bit UshowUsersCalculat(void);
 
 unsigned char UgetScore(char quin);
 signed char UgetTop5(char quin);
-void UnewScore(char score);
+void UnewScore(char scoretmp);
 #endif
