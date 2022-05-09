@@ -4776,6 +4776,7 @@ void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
 void initSIO(void);
+void SIOEnviaHora(void);
 # 10 "Menu.c" 2
 
 # 1 "./CtoA.h" 1
@@ -4821,7 +4822,6 @@ void MNouJoystick(signed char posicio){
 
 void menu(void) {
  static char state = 0;
-
  switch(state) {
   case 0:
    LcClear();

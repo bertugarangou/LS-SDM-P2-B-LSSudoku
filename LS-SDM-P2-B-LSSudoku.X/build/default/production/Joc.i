@@ -4645,6 +4645,7 @@ void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
 void initSIO(void);
+void SIOEnviaHora(void);
 # 4 "Joc.c" 2
 
 # 1 "./LcTLCD.h" 1
@@ -4764,6 +4765,7 @@ void motorJoc(void){
   case 2:
    if (SIOcheckKrebut()) {
     HJugant();
+                SIOEnviaHora();
     state--;
    }
   break;

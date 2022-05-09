@@ -4794,6 +4794,7 @@ void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
 void initSIO(void);
+void SIOEnviaHora(void);
 # 13 "main.c" 2
 
 # 1 "./Joc.h" 1
@@ -4821,7 +4822,6 @@ void CToAReset(void);
 #pragma config PBADEN = DIG
 #pragma config WDT = OFF
 #pragma config LVP = OFF
-
 void __attribute__((picinterrupt(("")))) high_rsi(){
     _TiRSITimer();
 }
@@ -4839,10 +4839,10 @@ void init_ports(void){
     TRISB = 0xE0;
     LATBbits.LATB3 = 0;
     LATBbits.LATB0 = 0;
-    LATBbits.LATB1 = 0;
-# 49 "main.c"
+    LATBbits.LATB1 = 1;
+# 48 "main.c"
     TRISC = 0xC0;
-# 59 "main.c"
+# 58 "main.c"
     TRISD = 0x8F;
     LATD = 0x00;
 

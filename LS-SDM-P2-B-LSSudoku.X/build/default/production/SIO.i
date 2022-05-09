@@ -4618,6 +4618,7 @@ void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
 void initSIO(void);
+void SIOEnviaHora(void);
 # 2 "SIO.c" 2
 
 # 1 "./Usuaris.h" 1
@@ -4756,6 +4757,10 @@ __bit jugantSIO = 0;
 __bit Krebut = 0;
 char timerSIO;
 unsigned char score;
+__bit hi_ha_hora_sio2 = 0;
+char horaTX[6];
+unsigned char charActu;
+unsigned char mask;
 
 void initSIO(void){
     timerSIO = TiGetTimer();
@@ -4774,7 +4779,9 @@ void SIONovaDireccio(char num){
 void SIOStartGame(char usuari){
     usuariActualSIO = usuari;
 }
-
+void SIOEnviaHora(void){
+    hi_ha_hora_sio2 = 1;
+}
 signed char SIOHaAcabatPuntuacions(void){
     return usuariActualSIO;
 }
@@ -4829,14 +4836,27 @@ void motorSIO(void){
     novaTeclaSIO = 0;
     state = 4;
    }
+   else if (hi_ha_hora_sio2) {
+    horaTX[0] = HGetTime()[0];
+                horaTX[1] = HGetTime()[1];
+                horaTX[2] = HGetTime()[2];
+                horaTX[3] = HGetTime()[3];
+                horaTX[4] = HGetTime()[4];
+    horaTX[5] = '_';
+    mask = 1;
+    TiResetTics(timerSIO);
+    charActu = 0;
+    state = 10;
+   }
   break;
   case 4:
    if (PIR1bits.RCIF) {
-                score = RCREG;
-                UnewScore(score);
+    score = RCREG;
+    UnewScore(score);
     CToAConverteix(score);
     TiResetTics(timerSIO);
     state = 5;
+
    }
   break;
   case 5:
@@ -4860,7 +4880,7 @@ void motorSIO(void){
   case 6:
    if (PIR1bits.RCIF) {
     LcPutChar(RCREG);
-                TiResetTics(timerSIO);
+    TiResetTics(timerSIO);
     state = 5;
    }
   break;
@@ -4876,6 +4896,36 @@ void motorSIO(void){
     LcNewString(CToAobtenir());
     usuariActualSIO = -1;
     state = 0;
+   }
+  break;
+  case 10:
+   if (charActu == 6) {
+    hi_ha_hora_sio2 = 0;
+    state = 3;
+   }
+   else if (charActu < 6 && TiGetTics(timerSIO) > 0) {
+    LATBbits.LATB1 = 0;
+    TiResetTics(timerSIO);
+    state = 11;
+   }
+  break;
+  case 11:
+   if (mask < 1 && TiGetTics(timerSIO) > 0) {
+    mask = 1;
+    charActu++;
+    LATBbits.LATB1 = 1;
+    TiResetTics(timerSIO);
+    state = 10;
+   }
+   else if (TiGetTics(timerSIO) > 0 && mask) {
+    if(mask & horaTX[charActu]){
+       LATBbits.LATB1 = 1;
+      }else{
+       LATBbits.LATB1 = 0;
+      }
+      mask = mask<<1;
+    TiResetTics(timerSIO);
+    state = 11;
    }
   break;
  }

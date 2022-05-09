@@ -8,4 +8,5 @@ void motorSIO(void);
 __bit SIOcheckKrebut(void);
 void SIOendGame(void);
 void initSIO(void);
+void SIOEnviaHora(void);
 #endif

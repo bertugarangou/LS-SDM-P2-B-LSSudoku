@@ -77,6 +77,7 @@ void motorJoc(void){
 		case 2:
 			if (SIOcheckKrebut()) {
 				HJugant();
+                SIOEnviaHora();
 				state--;
 			}
 		break;

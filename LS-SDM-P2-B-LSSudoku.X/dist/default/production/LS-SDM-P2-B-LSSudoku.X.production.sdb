@@ -119,13 +119,13 @@
 [v _LcLCD LcLCD `(v  1 e 1 0 ]
 "243
 [v _LcLliure LcLliure `(b  1 e 0 0 ]
-"21 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
+"20 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _high_rsi high_rsi `IIH(v  1 e 1 0 ]
-"25
+"24
 [v _init_ports init_ports `(v  1 e 1 0 ]
-"67
+"66
 [v _init_eusart init_eusart `(v  1 e 1 0 ]
-"76
+"75
 [v _main main `(v  1 e 1 0 ]
 "28 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Menu.c
 [v _Minit Minit `(v  1 e 1 0 ]
@@ -137,21 +137,23 @@
 [v _MNouJoystick MNouJoystick `(v  1 e 1 0 ]
 "42
 [v _menu menu `(v  1 e 1 0 ]
-"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
+"23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _initSIO initSIO `(v  1 e 1 0 ]
-"23
+"27
 [v _SIOendGame SIOendGame `(v  1 e 1 0 ]
-"26
+"30
 [v _SIOcheckKrebut SIOcheckKrebut `(b  1 e 0 0 ]
-"29
-[v _SIONovaDireccio SIONovaDireccio `(v  1 e 1 0 ]
 "33
-[v _SIOStartGame SIOStartGame `(v  1 e 1 0 ]
+[v _SIONovaDireccio SIONovaDireccio `(v  1 e 1 0 ]
 "37
-[v _SIOHaAcabatPuntuacions SIOHaAcabatPuntuacions `(c  1 e 1 0 ]
+[v _SIOStartGame SIOStartGame `(v  1 e 1 0 ]
 "40
-[v _SIONovaTecla SIONovaTecla `(v  1 e 1 0 ]
+[v _SIOEnviaHora SIOEnviaHora `(v  1 e 1 0 ]
 "43
+[v _SIOHaAcabatPuntuacions SIOHaAcabatPuntuacions `(c  1 e 1 0 ]
+"46
+[v _SIONovaTecla SIONovaTecla `(v  1 e 1 0 ]
+"49
 [v _motorSIO motorSIO `(v  1 e 1 0 ]
 "18 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _Sinit Sinit `(v  1 e 1 0 ]
@@ -387,7 +389,7 @@
 "2187
 [u S91 . 1 `S73 1 . 1 0 `S82 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES91  1 e 1 @3989 ]
-[s S1524 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1528 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -397,12 +399,12 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2705
-[s S1533 . 1 `uc 1 . 1 0 :4:0 
+[s S1537 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S1537 . 1 `S1524 1 . 1 0 `S1533 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1537  1 e 1 @3998 ]
+[u S1541 . 1 `S1528 1 . 1 0 `S1537 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1541  1 e 1 @3998 ]
 [s S432 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
@@ -428,7 +430,7 @@
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "3332
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S1448 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1452 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -438,7 +440,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3371
-[s S1457 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1461 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -447,13 +449,13 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S1466 . 1 `uc 1 . 1 0 :6:0 
+[s S1470 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1469 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1473 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S1471 . 1 `S1448 1 . 1 0 `S1457 1 . 1 0 `S1466 1 . 1 0 `S1469 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES1471  1 e 1 @4012 ]
+[u S1475 . 1 `S1452 1 . 1 0 `S1461 1 . 1 0 `S1470 1 . 1 0 `S1473 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1475  1 e 1 @4012 ]
 "3588
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3600
@@ -675,6 +677,14 @@
 [v _timerSIO timerSIO `uc  1 e 1 0 ]
 "17
 [v _score score `uc  1 e 1 0 ]
+"18
+[v _hi_ha_hora_sio2 hi_ha_hora_sio2 `b  1 e 0 0 ]
+"19
+[v _horaTX horaTX `[6]uc  1 e 6 0 ]
+"20
+[v _charActu charActu `uc  1 e 1 0 ]
+"21
+[v _mask mask `uc  1 e 1 0 ]
 "8 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Ssms.c
 [v _lletraASCII lletraASCII `c  1 e 1 0 ]
 "9
@@ -738,17 +748,17 @@
 [s S1077 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
 "31
 [v _puntuacions puntuacions `[5]S1077  1 e 10 0 ]
-"76 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
+"75 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"109
+"108
 } 0
-"43 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
+"49 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _motorSIO motorSIO `(v  1 e 1 0 ]
 {
-"44
+"50
 [v motorSIO@state state `uc  1 s 1 state ]
-"141
+"190
 } 0
 "290 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
@@ -763,7 +773,7 @@
 {
 "45
 [v motorJoc@state state `uc  1 s 1 state ]
-"84
+"85
 } 0
 "27
 [v _conversorJoystick conversorJoystick `(uc  1 e 1 0 ]
@@ -774,39 +784,44 @@
 [v conversorJoystick@direc direc `uc  1 a 1 5 ]
 "42
 } 0
-"23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
+"27 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _SIOendGame SIOendGame `(v  1 e 1 0 ]
 {
-"25
+"29
 } 0
-"26
+"30
 [v _SIOcheckKrebut SIOcheckKrebut `(b  1 e 0 0 ]
 {
-"28
+"32
 } 0
-"33
+"37
 [v _SIOStartGame SIOStartGame `(v  1 e 1 0 ]
 {
 [v SIOStartGame@usuari usuari `uc  1 a 1 wreg ]
 [v SIOStartGame@usuari usuari `uc  1 a 1 wreg ]
 [v SIOStartGame@usuari usuari `uc  1 a 1 5 ]
-"35
+"39
 } 0
-"40
+"46
 [v _SIONovaTecla SIONovaTecla `(v  1 e 1 0 ]
 {
 [v SIONovaTecla@tecla tecla `c  1 a 1 wreg ]
 [v SIONovaTecla@tecla tecla `c  1 a 1 wreg ]
 [v SIONovaTecla@tecla tecla `c  1 a 1 5 ]
-"42
+"48
 } 0
-"29
+"33
 [v _SIONovaDireccio SIONovaDireccio `(v  1 e 1 0 ]
 {
 [v SIONovaDireccio@num num `uc  1 a 1 wreg ]
 [v SIONovaDireccio@num num `uc  1 a 1 wreg ]
 [v SIONovaDireccio@num num `uc  1 a 1 5 ]
-"31
+"35
+} 0
+"40
+[v _SIOEnviaHora SIOEnviaHora `(v  1 e 1 0 ]
+{
+"42
 } 0
 "35 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Hora.c
 [v _HnoJugant HnoJugant `(v  1 e 1 0 ]
@@ -857,7 +872,7 @@
 {
 "43
 [v menu@state state `uc  1 s 1 state ]
-"435
+"434
 } 0
 "295 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
@@ -969,10 +984,10 @@
 {
 "136
 } 0
-"37 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
+"43 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _SIOHaAcabatPuntuacions SIOHaAcabatPuntuacions `(c  1 e 1 0 ]
 {
-"39
+"45
 } 0
 "22 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
 [v _NoFerMenu NoFerMenu `(v  1 e 1 0 ]
@@ -1050,20 +1065,20 @@
 {
 "21
 } 0
-"25 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
+"24 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _init_ports init_ports `(v  1 e 1 0 ]
 {
-"66
+"65
 } 0
-"67
+"66
 [v _init_eusart init_eusart `(v  1 e 1 0 ]
 {
-"73
+"72
 } 0
-"19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
+"23 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\SIO.c
 [v _initSIO initSIO `(v  1 e 1 0 ]
 {
-"21
+"25
 } 0
 "12 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Hora.c
 [v _initHora initHora `(v  1 e 1 0 ]
@@ -1384,10 +1399,10 @@
 {
 "35
 } 0
-"21 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
+"20 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _high_rsi high_rsi `IIH(v  1 e 1 0 ]
 {
-"23
+"22
 } 0
 "37 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
 [v __TiRSITimer _TiRSITimer `(v  1 e 1 0 ]

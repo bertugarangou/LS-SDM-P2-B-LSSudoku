@@ -17,7 +17,6 @@
 #pragma config PBADEN = DIG	    //;PORTB com a Digital (el posem a 0)
 #pragma config WDT = OFF	    //;Desactivem el Watch Dog Timer
 #pragma config LVP = OFF	    //;Evitar resets eusart
-
 void __interrupt() high_rsi(){
     _TiRSITimer();    
 }
@@ -35,7 +34,7 @@ void init_ports(void){
     TRISB = 0xE0;//11100000
     LATBbits.LATB3 = 0;//led debugg
     LATBbits.LATB0 = 0;//spk
-    LATBbits.LATB1 = 0;//bluetooth tx
+    LATBbits.LATB1 = 1;//bluetooth tx
     
     
     //TRISCbits.TRISC7 = 1;

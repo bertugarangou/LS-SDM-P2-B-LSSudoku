@@ -41,7 +41,6 @@ void MNouJoystick(signed char posicio){
 
 void menu(void) {
 	static char state = 0;
-
 	switch(state) {
 		case 0:
 			LcClear();

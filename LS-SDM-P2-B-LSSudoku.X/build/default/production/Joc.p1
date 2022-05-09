@@ -53,6 +53,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9 ./Hora.h
 [; ;./Hora.h: 9:     void HJugant(void);
 [v _HJugant `(v ~T0 @X0 0 ef ]
+"11 ./SIO.h
+[; ;./SIO.h: 11: void SIOEnviaHora(void);
+[v _SIOEnviaHora `(v ~T0 @X0 0 ef ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -614,8 +617,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "45
 [; ;Joc.c: 45:     static char state = 0;
-[v F2623 `uc ~T0 @X0 1 s state ]
-[i F2623
+[v F2624 `uc ~T0 @X0 1 s state ]
+[i F2624
 -> -> 0 `i `uc
 ]
 "47
@@ -637,7 +640,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _jugantJoc -> -> 1 `i `b ]
 "52
 [; ;Joc.c: 52:     state = 2;
-[e = F2623 -> -> 2 `i `uc ]
+[e = F2624 -> -> 2 `i `uc ]
 "53
 [; ;Joc.c: 53:    }
 }
@@ -666,7 +669,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "61
 [; ;Joc.c: 61:     state--;
-[e -- F2623 -> -> 1 `i `uc ]
+[e -- F2624 -> -> 1 `i `uc ]
 "62
 [; ;Joc.c: 62:    }
 }
@@ -736,26 +739,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Joc.c: 79:     HJugant();
 [e ( _HJugant ..  ]
 "80
-[; ;Joc.c: 80:     state--;
-[e -- F2623 -> -> 1 `i `uc ]
+[; ;Joc.c: 80:                 SIOEnviaHora();
+[e ( _SIOEnviaHora ..  ]
 "81
-[; ;Joc.c: 81:    }
+[; ;Joc.c: 81:     state--;
+[e -- F2624 -> -> 1 `i `uc ]
+"82
+[; ;Joc.c: 82:    }
 }
 [e :U 303 ]
-"82
-[; ;Joc.c: 82:   break;
-[e $U 290  ]
 "83
-[; ;Joc.c: 83:  }
+[; ;Joc.c: 83:   break;
+[e $U 290  ]
+"84
+[; ;Joc.c: 84:  }
 }
 [e $U 290  ]
 [e :U 291 ]
-[e [\ -> F2623 `i , $ -> 0 `i 292
+[e [\ -> F2624 `i , $ -> 0 `i 292
  , $ -> 1 `i 294
  , $ -> 2 `i 302
  290 ]
 [e :U 290 ]
-"84
-[; ;Joc.c: 84: }
+"85
+[; ;Joc.c: 85: }
 [e :UE 289 ]
 }
