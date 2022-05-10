@@ -19,9 +19,9 @@
 #define EnableUp()				(LATCbits.LATC4 = 1)
 #define EnableDown()            (LATCbits.LATC4 = 0)
 
-#define CURSORSHIFT 0x10
-#define MOVELEFT 0x00
-#define DISPLAYMOVE 0x08
+char CURSORSHIFT =0x10;
+char MOVELEFT =0x00;
+char  DISPLAYMOVE =0x08;
 // -------------------------------END--HARDWARE---AREA--------------------
 
 
@@ -32,7 +32,7 @@ void LcInit(char rows);
 // Post: This routine can last up to 100ms
 // Post: The display remains cleared, the cursor turned off and at the position 0, 0.
 
-void LcEnd(void);
+//void LcEnd(void);
 // The destructor
 
 void LcScroll(void);
@@ -43,11 +43,11 @@ void LcClear(void);
 // Post: Clears the display and sets the cursor to its previous state. 
 // Post: The next order can last up to 1.6ms. 
 
-void LcCursorOn(void);
+//void LcCursorOn(void);
 // Post: Turn on the cursor
 // Post: The next order can last up to 40us. 
 
-void LcCursorOff(void);
+//void LcCursorOff(void);
 // Post: Turns off the cursor
 // Post: The next order can last up to 40us. 
 
@@ -69,8 +69,7 @@ void LcPutChar(char c);
 
 void LcPutStringDebug(char *s);
 void LcNewString(char new_s[]);
-void PutStringCooperatiu();
-void LcLCD();
+void LcLCD(void);
 __bit LcLliure(void);
-void LcInsertFletxa(void);
+//void LcInsertFletxa(void);
 #endif

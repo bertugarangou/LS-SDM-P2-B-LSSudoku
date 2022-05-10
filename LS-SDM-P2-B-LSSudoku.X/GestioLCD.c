@@ -2,7 +2,7 @@
 #include "TiTTimer.h"
 #include "LcTLCD.h"
 #include "GestioLCD.h"
-#define one 1
+unsigned char one = 1;
 const char menuList[][29] = {
     "1.Play a Game",
     "2.Modify Time",
@@ -66,7 +66,7 @@ void GLCDMotor(void) {
 				k1=min1;
 				state = 6;
 			}
-			else if (j<16) {
+			else{
 				LcGotoXY(j,0);
 				LcPutChar(menuList[menuDaltGLCD][k1]);
 				j++;
@@ -78,7 +78,7 @@ void GLCDMotor(void) {
 			if (menuDaltGLCD<4) {
 				state++;
 			}
-			else if (menuDaltGLCD >= 4) {
+			else{
 				state = 0;
 			}
 		break;
@@ -106,7 +106,7 @@ void GLCDMotor(void) {
 				state++;
 			}
 		break;
-		case one:
+		case 1:
 			if (menuList[menuDaltGLCD][length1] == '\0' && menuDaltGLCD>=4) {
 				state++;
 			}
@@ -135,7 +135,7 @@ void GLCDMotor(void) {
 				k2++;
 				if(menuList[menuDaltGLCD+one][k2] == '\0') k2 = 0;
 			}
-			else if (j>=16) {
+			else{
 				min2++;
 				max2++;
 				if (menuList[menuDaltGLCD+one][max2] == '\0') max2=0;

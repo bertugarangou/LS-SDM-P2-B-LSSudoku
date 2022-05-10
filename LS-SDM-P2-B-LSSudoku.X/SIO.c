@@ -6,7 +6,7 @@
 #include "Hora.h"
 #include "LcTLCD.h"
 #define neg -1
-const char newLineChar = '\n\r';
+char newLineChar = '\r';
 
 char *userPtr = 0;
 signed char usuariActualSIO = neg;

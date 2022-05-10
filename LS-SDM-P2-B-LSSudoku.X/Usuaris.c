@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "Usuaris.h"
-
+char zero = 0;
+signed char neg = -1;
 unsigned char numUsuaris;
 __bit do_check_exists = 0;
 unsigned char indexNextUser;
@@ -12,19 +13,13 @@ signed char usuariLoguejat = -1;
 __bit do_showUsers = 0;
 __bit do_updateScore = 0;
 unsigned char scoreUsr;
+unsigned char tmp;
 
 signed char arrayShowUsers[8];
 
 char tmpUsername[9];
 char tmpPassword[9];
-/*
-    for(int i = 0; i < 5; i++){
-	if(puntuacions[i].indexUsuari == indexNextUserStruct){
-		puntuacions[i].indexUsuari = -1;
-	}
-}
- 
- */
+
 typedef struct{
     char username[9];
     char password[9];
@@ -71,21 +66,21 @@ char* getArrayShowUsers(char quin){
 void escriureCharEEPROM(char c, char pos){
     EEADR = pos;
     EEDATA = c;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = zero;
+    EECON1bits.CFGS = zero;
     EECON1bits.WREN = 1;
-    INTCONbits.GIE = 0;
+    INTCONbits.GIE = zero;
     EECON2 = 85;
     EECON2 = 170;
     EECON1bits.WR = 1;
     while(EECON1bits.WR){}
     INTCONbits.GIE = 1;
-    EECON1bits.WREN = 0;
+    EECON1bits.WREN = zero;
 }
 char llegirCharEEPROM(char pos){
     EEADR = pos;
-    EECON1bits.EEPGD = 0;
-    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = zero;
+    EECON1bits.CFGS = zero;
     EECON1bits.RD = 1;
     return EEDATA;
 }
@@ -98,9 +93,9 @@ void Uinit(){
     escriureCharEEPROM(0,0); //resetejador de la eeprom per usuaris
     escriureCharEEPROM(2,1);
     */
-    numUsuaris = llegirCharEEPROM(0);
+    numUsuaris = llegirCharEEPROM(zero);
     
-    if(numUsuaris > 8) numUsuaris = 0;
+    if(numUsuaris > 8) numUsuaris = zero;
 
 
     
@@ -109,12 +104,12 @@ void Uinit(){
     if(indexNextUser == 255) indexNextUser = 2;
     indexNextUserStruct = indexNextUser/18;//estem en un init no importa la cooperativitat rtos
     i++;
-    for(j = 0;j<numUsuaris;j++){
-        for(unsigned char k = 0; k<9; k++){
+    for(j = zero;j<numUsuaris;j++){
+        for(unsigned char k = zero; k<9; k++){
             usuaris[j].username[k] = llegirCharEEPROM(i);
             i++;
         }
-        for(unsigned char k = 0; k<9;k++){
+        for(unsigned char k = zero; k<9;k++){
             usuaris[j].password[k] = llegirCharEEPROM(i);
             i++;
         }
@@ -124,7 +119,7 @@ void Uinit(){
     
     
     //legir init puntuacions
-    puntuacions[0].indexStruct = -1;
+    puntuacions[zero].indexStruct = neg;
     for(i = 0; i<5; i++){
         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
         puntuacions[i].score = llegirCharEEPROM(200+i+i+1);
@@ -154,28 +149,28 @@ void UmotorUsers(){
 	switch(state) {
 		case 0:
 			if (!do_check_exists && !do_register && !do_showUsers && !do_updateScore) {
-				i = 0;
-				j = 0;
+				i = zero;
+				j = zero;
 			}
 			else if (do_check_exists == 1) {
-				usuariLoguejat = -1;
+				usuariLoguejat = neg;
 				state++;
 			}
 			else if (do_register == 1) {
 				if(numUsuaris != 8) numUsuaris++;
                 
-				escriureCharEEPROM(numUsuaris,0);
+				escriureCharEEPROM(numUsuaris,zero);
 				state = 2;
 			}
 			else if (do_showUsers) {
 				arrayShowUsers[0] = usuariLoguejat;
-				arrayShowUsers[1] = -1;
-				arrayShowUsers[2] = -1;
-				arrayShowUsers[3] = -1;
-				arrayShowUsers[4] = -1;
-				arrayShowUsers[5] = -1;
-				arrayShowUsers[6] = -1;
-				arrayShowUsers[7] = -1;
+				arrayShowUsers[1] = neg;
+				arrayShowUsers[2] = neg;
+				arrayShowUsers[3] = neg;
+				arrayShowUsers[4] = neg;
+				arrayShowUsers[5] = neg;
+				arrayShowUsers[6] = neg;
+				arrayShowUsers[7] = neg;
 				i = 1;
 				if(numUsuaris < 7) {
 				  j = 0;
@@ -186,20 +181,20 @@ void UmotorUsers(){
 				state = 5;
 			}
 			else if (do_updateScore) {
-				do_updateScore = 0;
+				do_updateScore = zero;
 				state = 6;
 			}
 		break;
 		case 1:
 			if (i < numUsuaris) {
-				if(compareStrings(tmpUsername, usuaris[i].username) == 0){
+				if(compareStrings(tmpUsername, usuaris[i].username) == zero){
 					usuariLoguejat = i;
 				//si son iguals;
 				}
 				i++;
 			}
-			else if (i == numUsuaris) {
-				do_check_exists = 0;
+			else{
+				do_check_exists = zero;
 				state--;
 			}
 		break;
@@ -210,7 +205,7 @@ void UmotorUsers(){
 				usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
 				i++;
 			}
-			else if (i > 8) {
+			else {
 				i = 0;
 				state++;
 			}
@@ -222,14 +217,16 @@ void UmotorUsers(){
 				usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
 				i++;
 			}
-			else if (i > 8) {
-				do_register = 0;
+			else{
+				do_register = zero;
 				if(indexNextUser > 140) indexNextUser = 2;
 				indexNextUserStruct++;
-				if(indexNextUserStruct == 8) indexNextUserStruct = 0;
+				if(indexNextUserStruct == 8) indexNextUserStruct = zero;
 				escriureCharEEPROM(indexNextUser,1);
-				state = 0;
-			}
+				state = 9;
+                i = 0;
+                
+            }
 		break;
 		case 5:
 			if (i < numUsuaris) {
@@ -240,23 +237,23 @@ void UmotorUsers(){
 				}else{
 				  j++;
 				}
-				//j++;
-				if(j > 7) j=0;
+				//j++; //mirar si hi ha de ser o no
+				if(j > 7) j=zero;
 			}
 			else if (i == numUsuaris) {
-				do_showUsers = 0;
-				state = 0;
+				do_showUsers = zero;
+				state = zero;
 			}
 		break;
 		case 6:
-			if (i < 5 && puntuacions[i].indexStruct != -1) {
+			if (i < 5 && puntuacions[i].indexStruct != neg) {
 				i++;
 			}
-			else if (i < 5 && puntuacions[i].indexStruct == -1) {
+			else if (i < 5 && puntuacions[i].indexStruct == neg) {
 				state++;
 			}
 			else if (i > 4) {
-				i = 0;
+				i = zero;
 				state = 8;
 			}
 		break;
@@ -267,19 +264,37 @@ void UmotorUsers(){
 			escriureCharEEPROM(usuariLoguejat,200+i);
 			i++;
 			escriureCharEEPROM(scoreUsr,200+i);
-			state = 0;
+			state = zero;
 		break;
 		case 8:
 			if (puntuacions[i].score >= scoreUsr && i < 5) {
 				i++;
 			}
 			else if (i > 4) {
-				state = 0;
+				state = zero;
 			}
 			else if (puntuacions[i].score < scoreUsr && i < 5) {
 				state--;
 			}
 		break;
+        case 9:
+            if (indexNextUser != 2 || i > 4) {
+				
+				state = 0;
+			}
+			else if (indexNextUser == 2 && i < 5) {
+				if(indexNextUserStruct == 0){
+				  tmp = 7;
+				}else{
+				 tmp = indexNextUserStruct-1;
+				}
+				if(puntuacions[i].indexStruct == tmp){
+				  puntuacions[i].indexStruct = -1;
+				}
+				i++;
+			}
+            
+        break;
 	}
 }
 

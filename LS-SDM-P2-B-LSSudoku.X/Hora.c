@@ -8,6 +8,8 @@ char hora[6] = "30:00";
 __bit jugant = 0;
 __bit nouSegon = 0;
 __bit tempsAcabat;
+char cinquantanou = 59;
+char tres = 3;
 
 void initHora(void){
     timerHora = TiGetTimer();
@@ -56,11 +58,11 @@ void motorHora(void) {
 					hora[4]--;
 					if(hora[4] == (zeroChar-1)){
 						hora[4] = '9';
-						hora[3]--;
+						hora[tres]--;
 					}
 					//minsBaix;
-					if(hora[3] == (zeroChar-1)){
-						hora[3] = '5';
+					if(hora[tres] == (zeroChar-1)){
+						hora[tres] = '5';
 						hora[1]--;
 					}
 					//minsAlt;
@@ -69,12 +71,12 @@ void motorHora(void) {
 						hora[0]--;
 					}
 					//final;
-					if(hora[0] == zeroChar && hora[1] == zeroChar && hora[3] == zeroChar && hora[4] == (zeroChar)){
+					if(hora[0] == zeroChar && hora[1] == zeroChar && hora[tres] == zeroChar && hora[4] == (zeroChar)){
 						tempsAcabat = 1;
 					}
 					//reproducció;
 					segons++;
-					if(segons > 59){
+					if(segons > cinquantanou){
 						playAltaveu();
 						segons = 0;
 					}

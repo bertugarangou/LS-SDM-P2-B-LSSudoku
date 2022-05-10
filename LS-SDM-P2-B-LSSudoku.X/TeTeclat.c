@@ -4,10 +4,10 @@
 #include <xc.h>
 #include <pic18f4321.h>
 #include "Ssms.h"
-
+char zero = 0;
 static char tiTeclat=0;
 
-const char teclaPremuda[4][3] = {
+char teclaPremuda[4][3] = {
     {1,2,3},
     {4,5,6},
     {7,8,9},
@@ -25,40 +25,40 @@ void TeTeclat(void) {
     files = PORTDbits.RD0 + PORTDbits.RD1*2 + PORTDbits.RD2*3 + PORTDbits.RD3*4;
 	switch(state) {
 		case 0:
-			if (files==0) {
+			if (files==zero) {
 				Col1=1;
-				Col2=0;
-				Col3=0;
-				cols=0;
+				Col2=zero;
+				Col3=zero;
+				cols=zero;
 				state++;
 			}
-			else if (files!=0) {
+			else if (files!=zero) {
 				TiResetTics(tiTeclat);
 				state = 3;
 			}
 		break;
 		case 1:
-			if (files==0) {
-				Col1=0;
+			if (files==zero) {
+				Col1=zero;
 				Col2=1;
-				Col3=0;
+				Col3=zero;
 				cols=1;
 				state++;
 			}
-			else if (files!=0) {
+			else if (files!=zero) {
 				TiResetTics(tiTeclat);
 				state = 3;
 			}
 		break;
 		case 2:
-			if (files==0) {
-				Col1=0;
-				Col2=0;
+			if (files==zero) {
+				Col1=zero;
+				Col2=zero;
 				Col3=1;
 				cols=2;
-				state = 0;
+				state = zero;
 			}
-			else if (files!=0) {
+			else if (files!=zero) {
 				TiResetTics(tiTeclat);
 				state++;
 			}
@@ -69,17 +69,17 @@ void TeTeclat(void) {
 			}
 		break;
 		case 4:
-			if (files==0) {
+			if (files==zero) {
 				state = 1;
 			}
-			else if (files!=0) {
+			else if (files!=zero) {
                 MsetNovaTecla(teclaPremuda[files-1][cols]);//comentat falta menu
                 SsetNovaTecla(teclaPremuda[files-1][cols]);
 				state++;
 			}
 		break;
 		case 5:
-			if (files==0) {
+			if (files==zero) {
 				TiResetTics(tiTeclat);
 				state++;
 			}
@@ -90,11 +90,11 @@ void TeTeclat(void) {
 			}
 		break;
 		case 7:
-			if (files!=0) {
+			if (files!=zero) {
 				state = 5;
 			}
-			else if (files==0) {
-				state = 0;
+			else{
+				state = zero;
 			}
 		break;
 	}

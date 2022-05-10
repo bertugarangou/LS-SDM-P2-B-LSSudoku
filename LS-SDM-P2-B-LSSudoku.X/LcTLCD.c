@@ -2,14 +2,12 @@
 #include "TiTTimer.h"
 #include "LcTLCD.h"
 
-#define FUNCTION_SET	0x20
-#define BITS_8			0x10
-#define DISPLAY_CONTROL	0x08
-#define DISPLAY_ON		0x04
-#define CURSOR_ON		0x02
-#define DISPLAY_CLEAR	0x01
-#define ENTRY_MODE		0x04
-#define SET_DDRAM		0x80
+char FUNCTION_SET=0x20;
+char DISPLAY_CONTROL=0x08;
+char DISPLAY_ON	=0x04;
+char CURSOR_ON	=0x02;
+char DISPLAY_CLEAR=0x01;
+char SET_DDRAM	= 0x80;
 //
 //---------------------------End--CONSTANTS---AREA-----------
 //
