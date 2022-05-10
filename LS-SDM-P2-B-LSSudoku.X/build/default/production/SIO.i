@@ -4749,6 +4749,7 @@ void LcInsertFletxa(void);
 
 
 
+
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
 signed char direccioSIO = -1;
@@ -4804,7 +4805,6 @@ void motorSIO(void){
    if (*userPtr == '\0' && TXSTAbits.TRMT) {
     TXREG = '\0';
     novaTeclaSIO = 0;
-    LATBbits.LATB3 = 1;
     state = 2;
    }
    else if (*userPtr != '\0' && TXSTAbits.TRMT) {
@@ -4842,7 +4842,7 @@ void motorSIO(void){
                 horaTX[2] = HGetTime()[2];
                 horaTX[3] = HGetTime()[3];
                 horaTX[4] = HGetTime()[4];
-    horaTX[5] = '_';
+    horaTX[5] = '\n\r';
     mask = 1;
     TiResetTics(timerSIO);
     charActu = 0;
@@ -4906,6 +4906,7 @@ void motorSIO(void){
    else if (charActu < 6 && TiGetTics(timerSIO) > 0) {
     LATBbits.LATB1 = 0;
     TiResetTics(timerSIO);
+
     state = 11;
    }
   break;

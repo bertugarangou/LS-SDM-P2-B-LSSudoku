@@ -8,22 +8,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9 ./SIO.h
 [; ;./SIO.h: 9: void SIOendGame(void);
 [v _SIOendGame `(v ~T0 @X0 0 ef ]
-"1107 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1107:     struct {
-[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S46 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"1117
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1117:     struct {
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S47 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"1106
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1106: typedef union {
-[u S45 `S46 1 `S47 1 ]
-[n S45 . . . ]
-"1128
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1128: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
-[v _LATBbits `VS45 ~T0 @X0 0 e@3978 ]
-"3 ./SIO.h
+"3
 [; ;./SIO.h: 3: void SIONovaDireccio(char num);
 [v _SIONovaDireccio `(v ~T0 @X0 0 ef1`uc ]
 "12 ./Hora.h
@@ -44,7 +29,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11 ./Hora.h
 [; ;./Hora.h: 11:     char* HGetTime(void);
 [v _HGetTime `(*uc ~T0 @X0 0 ef ]
-"6 ./SIO.h
+"11 ./SIO.h
+[; ;./SIO.h: 11: void SIOEnviaHora(void);
+[v _SIOEnviaHora `(v ~T0 @X0 0 ef ]
+"6
 [; ;./SIO.h: 6: void SIONovaTecla(signed char tecla);
 [v _SIONovaTecla `(v ~T0 @X0 0 ef1`c ]
 "8
@@ -53,9 +41,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9 ./Hora.h
 [; ;./Hora.h: 9:     void HJugant(void);
 [v _HJugant `(v ~T0 @X0 0 ef ]
-"11 ./SIO.h
-[; ;./SIO.h: 11: void SIOEnviaHora(void);
-[v _SIOEnviaHora `(v ~T0 @X0 0 ef ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -664,9 +649,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59
 [; ;Joc.c: 59:     SIOendGame();
 [e ( _SIOendGame ..  ]
-"60
-[; ;Joc.c: 60:     LATBbits.LATB3 = 0;
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "61
 [; ;Joc.c: 61:     state--;
 [e -- F2624 -> -> 1 `i `uc ]
@@ -704,55 +686,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Joc.c: 70:     LcNewString(HGetTime());
 [e ( _LcNewString (1 ( _HGetTime ..  ]
 "71
-[; ;Joc.c: 71:    }
+[; ;Joc.c: 71:                 SIOEnviaHora();
+[e ( _SIOEnviaHora ..  ]
+"73
+[; ;Joc.c: 73:    }
 }
 [e $U 300  ]
-"72
-[; ;Joc.c: 72:    else if (novaTeclaJOC > 0) {
+"74
+[; ;Joc.c: 74:    else if (novaTeclaJOC > 0) {
 [e :U 299 ]
 [e $ ! > -> _novaTeclaJOC `i -> 0 `i 301  ]
 {
-"73
-[; ;Joc.c: 73:     SIONovaTecla(novaTeclaJOC+48);
-[e ( _SIONovaTecla (1 -> + -> _novaTeclaJOC `i -> 48 `i `c ]
-"74
-[; ;Joc.c: 74:     novaTeclaJOC = -1;
-[e = _novaTeclaJOC -> -U -> 1 `i `c ]
 "75
-[; ;Joc.c: 75:    }
+[; ;Joc.c: 75:     SIONovaTecla(novaTeclaJOC+48);
+[e ( _SIONovaTecla (1 -> + -> _novaTeclaJOC `i -> 48 `i `c ]
+"76
+[; ;Joc.c: 76:     novaTeclaJOC = -1;
+[e = _novaTeclaJOC -> -U -> 1 `i `c ]
+"77
+[; ;Joc.c: 77:    }
 }
 [e :U 301 ]
 [e :U 300 ]
 [e :U 298 ]
 [e :U 296 ]
-"76
-[; ;Joc.c: 76:   break;
-[e $U 290  ]
-"77
-[; ;Joc.c: 77:   case 2:
-[e :U 302 ]
 "78
-[; ;Joc.c: 78:    if (SIOcheckKrebut()) {
+[; ;Joc.c: 78:   break;
+[e $U 290  ]
+"79
+[; ;Joc.c: 79:   case 2:
+[e :U 302 ]
+"80
+[; ;Joc.c: 80:    if (SIOcheckKrebut()) {
 [e $ ! ( _SIOcheckKrebut ..  303  ]
 {
-"79
-[; ;Joc.c: 79:     HJugant();
-[e ( _HJugant ..  ]
-"80
-[; ;Joc.c: 80:                 SIOEnviaHora();
-[e ( _SIOEnviaHora ..  ]
 "81
-[; ;Joc.c: 81:     state--;
+[; ;Joc.c: 81:     HJugant();
+[e ( _HJugant ..  ]
+"83
+[; ;Joc.c: 83:     state--;
 [e -- F2624 -> -> 1 `i `uc ]
-"82
-[; ;Joc.c: 82:    }
+"84
+[; ;Joc.c: 84:    }
 }
 [e :U 303 ]
-"83
-[; ;Joc.c: 83:   break;
+"85
+[; ;Joc.c: 85:   break;
 [e $U 290  ]
-"84
-[; ;Joc.c: 84:  }
+"86
+[; ;Joc.c: 86:  }
 }
 [e $U 290  ]
 [e :U 291 ]
@@ -761,7 +743,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 302
  290 ]
 [e :U 290 ]
-"85
-[; ;Joc.c: 85: }
+"87
+[; ;Joc.c: 87: }
 [e :UE 289 ]
 }

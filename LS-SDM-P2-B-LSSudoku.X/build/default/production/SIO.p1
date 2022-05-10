@@ -31,21 +31,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3588
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3588: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
 [v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
-"1107
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1107:     struct {
-[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S46 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"1117
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1117:     struct {
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S47 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"1106
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1106: typedef union {
-[u S45 `S46 1 `S47 1 ]
-[n S45 . . . ]
-"1128
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1128: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
-[v _LATBbits `VS45 ~T0 @X0 0 e@3978 ]
 "3600
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 3600: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
@@ -100,6 +85,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./CtoA.h: 6: char* CToAobtenir(void);
 [v _CToAobtenir `(*uc ~T0 @X0 0 ef ]
+"1107 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1107:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1117
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1117:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"1106
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1106: typedef union {
+[u S45 `S46 1 `S47 1 ]
+[n S45 . . . ]
+"1128
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 1128: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS45 ~T0 @X0 0 e@3978 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -514,230 +514,227 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 SIO.c
-[; ;SIO.c: 10: char *userPtr = 0;
+"11 SIO.c
+[; ;SIO.c: 11: char *userPtr = 0;
 [v _userPtr `*uc ~T0 @X0 1 e ]
 [i _userPtr
 -> -> 0 `i `*uc
 ]
-"11
-[; ;SIO.c: 11: signed char usuariActualSIO = -1;
+"12
+[; ;SIO.c: 12: signed char usuariActualSIO = -1;
 [v _usuariActualSIO `c ~T0 @X0 1 e ]
 [i _usuariActualSIO
 -> -U -> 1 `i `c
 ]
-"12
-[; ;SIO.c: 12: signed char direccioSIO = -1;
+"13
+[; ;SIO.c: 13: signed char direccioSIO = -1;
 [v _direccioSIO `c ~T0 @X0 1 e ]
 [i _direccioSIO
 -> -U -> 1 `i `c
 ]
-"13
-[; ;SIO.c: 13: signed char novaTeclaSIO = -1;
+"14
+[; ;SIO.c: 14: signed char novaTeclaSIO = -1;
 [v _novaTeclaSIO `c ~T0 @X0 1 e ]
 [i _novaTeclaSIO
 -> -U -> 1 `i `c
 ]
-"14
-[; ;SIO.c: 14: __bit jugantSIO = 0;
+"15
+[; ;SIO.c: 15: __bit jugantSIO = 0;
 [v _jugantSIO `b ~T0 @X0 1 e ]
 [i _jugantSIO
 -> -> 0 `i `b
 ]
-"15
-[; ;SIO.c: 15: __bit Krebut = 0;
+"16
+[; ;SIO.c: 16: __bit Krebut = 0;
 [v _Krebut `b ~T0 @X0 1 e ]
 [i _Krebut
 -> -> 0 `i `b
 ]
-"16
-[; ;SIO.c: 16: char timerSIO;
-[v _timerSIO `uc ~T0 @X0 1 e ]
 "17
-[; ;SIO.c: 17: unsigned char score;
-[v _score `uc ~T0 @X0 1 e ]
+[; ;SIO.c: 17: char timerSIO;
+[v _timerSIO `uc ~T0 @X0 1 e ]
 "18
-[; ;SIO.c: 18: __bit hi_ha_hora_sio2 = 0;
+[; ;SIO.c: 18: unsigned char score;
+[v _score `uc ~T0 @X0 1 e ]
+"19
+[; ;SIO.c: 19: __bit hi_ha_hora_sio2 = 0;
 [v _hi_ha_hora_sio2 `b ~T0 @X0 1 e ]
 [i _hi_ha_hora_sio2
 -> -> 0 `i `b
 ]
-"19
-[; ;SIO.c: 19: char horaTX[6];
-[v _horaTX `uc ~T0 @X0 -> 6 `i e ]
 "20
-[; ;SIO.c: 20: unsigned char charActu;
-[v _charActu `uc ~T0 @X0 1 e ]
+[; ;SIO.c: 20: char horaTX[6];
+[v _horaTX `uc ~T0 @X0 -> 6 `i e ]
 "21
-[; ;SIO.c: 21: unsigned char mask;
+[; ;SIO.c: 21: unsigned char charActu;
+[v _charActu `uc ~T0 @X0 1 e ]
+"22
+[; ;SIO.c: 22: unsigned char mask;
 [v _mask `uc ~T0 @X0 1 e ]
-"23
-[; ;SIO.c: 23: void initSIO(void){
+"24
+[; ;SIO.c: 24: void initSIO(void){
 [v _initSIO `(v ~T0 @X0 1 ef ]
 {
 [e :U _initSIO ]
 [f ]
-"24
-[; ;SIO.c: 24:     timerSIO = TiGetTimer();
-[e = _timerSIO ( _TiGetTimer ..  ]
 "25
-[; ;SIO.c: 25: }
+[; ;SIO.c: 25:     timerSIO = TiGetTimer();
+[e = _timerSIO ( _TiGetTimer ..  ]
+"26
+[; ;SIO.c: 26: }
 [e :UE 280 ]
 }
-"27
-[; ;SIO.c: 27: void SIOendGame(void){
+"28
+[; ;SIO.c: 28: void SIOendGame(void){
 [v _SIOendGame `(v ~T0 @X0 1 ef ]
 {
 [e :U _SIOendGame ]
 [f ]
-"28
-[; ;SIO.c: 28:     jugantSIO = 0;
-[e = _jugantSIO -> -> 0 `i `b ]
 "29
-[; ;SIO.c: 29: }
+[; ;SIO.c: 29:     jugantSIO = 0;
+[e = _jugantSIO -> -> 0 `i `b ]
+"30
+[; ;SIO.c: 30: }
 [e :UE 281 ]
 }
-"30
-[; ;SIO.c: 30: __bit SIOcheckKrebut(void){
+"31
+[; ;SIO.c: 31: __bit SIOcheckKrebut(void){
 [v _SIOcheckKrebut `(b ~T0 @X0 1 ef ]
 {
 [e :U _SIOcheckKrebut ]
 [f ]
-"31
-[; ;SIO.c: 31:     return Krebut;
+"32
+[; ;SIO.c: 32:     return Krebut;
 [e ) _Krebut ]
 [e $UE 282  ]
-"32
-[; ;SIO.c: 32: }
+"33
+[; ;SIO.c: 33: }
 [e :UE 282 ]
 }
-"33
-[; ;SIO.c: 33: void SIONovaDireccio(char num){
+"34
+[; ;SIO.c: 34: void SIONovaDireccio(char num){
 [v _SIONovaDireccio `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SIONovaDireccio ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-"34
-[; ;SIO.c: 34:     direccioSIO = num;
-[e = _direccioSIO -> _num `c ]
 "35
-[; ;SIO.c: 35: }
+[; ;SIO.c: 35:     direccioSIO = num;
+[e = _direccioSIO -> _num `c ]
+"36
+[; ;SIO.c: 36: }
 [e :UE 283 ]
 }
-"37
-[; ;SIO.c: 37: void SIOStartGame(char usuari){
+"38
+[; ;SIO.c: 38: void SIOStartGame(char usuari){
 [v _SIOStartGame `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SIOStartGame ]
 [v _usuari `uc ~T0 @X0 1 r1 ]
 [f ]
-"38
-[; ;SIO.c: 38:     usuariActualSIO = usuari;
-[e = _usuariActualSIO -> _usuari `c ]
 "39
-[; ;SIO.c: 39: }
+[; ;SIO.c: 39:     usuariActualSIO = usuari;
+[e = _usuariActualSIO -> _usuari `c ]
+"40
+[; ;SIO.c: 40: }
 [e :UE 284 ]
 }
-"40
-[; ;SIO.c: 40: void SIOEnviaHora(void){
+"41
+[; ;SIO.c: 41: void SIOEnviaHora(void){
 [v _SIOEnviaHora `(v ~T0 @X0 1 ef ]
 {
 [e :U _SIOEnviaHora ]
 [f ]
-"41
-[; ;SIO.c: 41:     hi_ha_hora_sio2 = 1;
-[e = _hi_ha_hora_sio2 -> -> 1 `i `b ]
 "42
-[; ;SIO.c: 42: }
+[; ;SIO.c: 42:     hi_ha_hora_sio2 = 1;
+[e = _hi_ha_hora_sio2 -> -> 1 `i `b ]
+"43
+[; ;SIO.c: 43: }
 [e :UE 285 ]
 }
-"43
-[; ;SIO.c: 43: signed char SIOHaAcabatPuntuacions(void){
+"44
+[; ;SIO.c: 44: signed char SIOHaAcabatPuntuacions(void){
 [v _SIOHaAcabatPuntuacions `(c ~T0 @X0 1 ef ]
 {
 [e :U _SIOHaAcabatPuntuacions ]
 [f ]
-"44
-[; ;SIO.c: 44:     return usuariActualSIO;
+"45
+[; ;SIO.c: 45:     return usuariActualSIO;
 [e ) _usuariActualSIO ]
 [e $UE 286  ]
-"45
-[; ;SIO.c: 45: }
+"46
+[; ;SIO.c: 46: }
 [e :UE 286 ]
 }
-"46
-[; ;SIO.c: 46: void SIONovaTecla(signed char tecla){
+"47
+[; ;SIO.c: 47: void SIONovaTecla(signed char tecla){
 [v _SIONovaTecla `(v ~T0 @X0 1 ef1`c ]
 {
 [e :U _SIONovaTecla ]
 [v _tecla `c ~T0 @X0 1 r1 ]
 [f ]
-"47
-[; ;SIO.c: 47:     novaTeclaSIO = tecla;
-[e = _novaTeclaSIO _tecla ]
 "48
-[; ;SIO.c: 48: }
+[; ;SIO.c: 48:     novaTeclaSIO = tecla;
+[e = _novaTeclaSIO _tecla ]
+"49
+[; ;SIO.c: 49: }
 [e :UE 287 ]
 }
-"49
-[; ;SIO.c: 49: void motorSIO(void){
+"50
+[; ;SIO.c: 50: void motorSIO(void){
 [v _motorSIO `(v ~T0 @X0 1 ef ]
 {
 [e :U _motorSIO ]
 [f ]
-"50
-[; ;SIO.c: 50:     static char state = 0;
+"51
+[; ;SIO.c: 51:     static char state = 0;
 [v F2672 `uc ~T0 @X0 1 s state ]
 [i F2672
 -> -> 0 `i `uc
 ]
-"52
-[; ;SIO.c: 52:  switch(state) {
+"53
+[; ;SIO.c: 53:  switch(state) {
 [e $U 290  ]
 {
-"53
-[; ;SIO.c: 53:   case 0:
-[e :U 291 ]
 "54
-[; ;SIO.c: 54:    if (usuariActualSIO > -1) {
+[; ;SIO.c: 54:   case 0:
+[e :U 291 ]
+"55
+[; ;SIO.c: 55:    if (usuariActualSIO > -1) {
 [e $ ! > -> _usuariActualSIO `i -U -> 1 `i 292  ]
 {
-"55
-[; ;SIO.c: 55:     userPtr = UgetUserName(usuariActualSIO);
-[e = _userPtr ( _UgetUserName (1 -> _usuariActualSIO `uc ]
 "56
-[; ;SIO.c: 56:     jugantSIO = 1;
-[e = _jugantSIO -> -> 1 `i `b ]
+[; ;SIO.c: 56:     userPtr = UgetUserName(usuariActualSIO);
+[e = _userPtr ( _UgetUserName (1 -> _usuariActualSIO `uc ]
 "57
-[; ;SIO.c: 57:     Krebut = 0;
-[e = _Krebut -> -> 0 `i `b ]
+[; ;SIO.c: 57:     jugantSIO = 1;
+[e = _jugantSIO -> -> 1 `i `b ]
 "58
-[; ;SIO.c: 58:     state = 1;
-[e = F2672 -> -> 1 `i `uc ]
+[; ;SIO.c: 58:     Krebut = 0;
+[e = _Krebut -> -> 0 `i `b ]
 "59
-[; ;SIO.c: 59:    }
+[; ;SIO.c: 59:     state = 1;
+[e = F2672 -> -> 1 `i `uc ]
+"60
+[; ;SIO.c: 60:    }
 }
 [e :U 292 ]
-"60
-[; ;SIO.c: 60:   break;
-[e $U 289  ]
 "61
-[; ;SIO.c: 61:   case 1:
-[e :U 293 ]
+[; ;SIO.c: 61:   break;
+[e $U 289  ]
 "62
-[; ;SIO.c: 62:    if (*userPtr == '\0' && TXSTAbits.TRMT) {
+[; ;SIO.c: 62:   case 1:
+[e :U 293 ]
+"63
+[; ;SIO.c: 63:    if (*userPtr == '\0' && TXSTAbits.TRMT) {
 [e $ ! && == -> *U _userPtr `ui -> 0 `ui != -> . . _TXSTAbits 0 1 `i -> 0 `i 294  ]
 {
-"63
-[; ;SIO.c: 63:     TXREG = '\0';
-[e = _TXREG -> -> 0 `ui `uc ]
 "64
-[; ;SIO.c: 64:     novaTeclaSIO = 0;
-[e = _novaTeclaSIO -> -> 0 `i `c ]
+[; ;SIO.c: 64:     TXREG = '\0';
+[e = _TXREG -> -> 0 `ui `uc ]
 "65
-[; ;SIO.c: 65:     LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[; ;SIO.c: 65:     novaTeclaSIO = 0;
+[e = _novaTeclaSIO -> -> 0 `i `c ]
 "66
 [; ;SIO.c: 66:     state = 2;
 [e = F2672 -> -> 2 `i `uc ]
@@ -867,8 +864,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 102:                 horaTX[4] = HGetTime()[4];
 [e = *U + &U _horaTX * -> -> -> 4 `i `ui `ux -> -> # *U &U _horaTX `ui `ux *U + ( _HGetTime ..  * -> -> 4 `i `x -> -> # *U ( _HGetTime ..  `i `x ]
 "103
-[; ;SIO.c: 103:     horaTX[5] = '_';
-[e = *U + &U _horaTX * -> -> -> 5 `i `ui `ux -> -> # *U &U _horaTX `ui `ux -> -> 95 `ui `uc ]
+[; ;SIO.c: 103:     horaTX[5] = '\n\r';
+[e = *U + &U _horaTX * -> -> -> 5 `i `ui `ux -> -> # *U &U _horaTX `ui `ux -> -> 2573 `ui `uc ]
 "104
 [; ;SIO.c: 104:     mask = 1;
 [e = _mask -> -> 1 `i `uc ]
@@ -1079,87 +1076,87 @@ Version 4.0 HI-TECH Software Intermediate Code
 "166
 [; ;SIO.c: 166:     TiResetTics(timerSIO);
 [e ( _TiResetTics (1 _timerSIO ]
-"167
-[; ;SIO.c: 167:     state = 11;
-[e = F2672 -> -> 11 `i `uc ]
 "168
-[; ;SIO.c: 168:    }
+[; ;SIO.c: 168:     state = 11;
+[e = F2672 -> -> 11 `i `uc ]
+"169
+[; ;SIO.c: 169:    }
 }
 [e :U 324 ]
 [e :U 323 ]
-"169
-[; ;SIO.c: 169:   break;
-[e $U 289  ]
 "170
-[; ;SIO.c: 170:   case 11:
-[e :U 325 ]
+[; ;SIO.c: 170:   break;
+[e $U 289  ]
 "171
-[; ;SIO.c: 171:    if (mask < 1 && TiGetTics(timerSIO) > 0) {
+[; ;SIO.c: 171:   case 11:
+[e :U 325 ]
+"172
+[; ;SIO.c: 172:    if (mask < 1 && TiGetTics(timerSIO) > 0) {
 [e $ ! && < -> _mask `i -> 1 `i > ( _TiGetTics (1 _timerSIO -> 0 `i 326  ]
 {
-"172
-[; ;SIO.c: 172:     mask = 1;
-[e = _mask -> -> 1 `i `uc ]
 "173
-[; ;SIO.c: 173:     charActu++;
-[e ++ _charActu -> -> 1 `i `uc ]
+[; ;SIO.c: 173:     mask = 1;
+[e = _mask -> -> 1 `i `uc ]
 "174
-[; ;SIO.c: 174:     LATBbits.LATB1 = 1;
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[; ;SIO.c: 174:     charActu++;
+[e ++ _charActu -> -> 1 `i `uc ]
 "175
-[; ;SIO.c: 175:     TiResetTics(timerSIO);
-[e ( _TiResetTics (1 _timerSIO ]
+[; ;SIO.c: 175:     LATBbits.LATB1 = 1;
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 "176
-[; ;SIO.c: 176:     state = 10;
-[e = F2672 -> -> 10 `i `uc ]
+[; ;SIO.c: 176:     TiResetTics(timerSIO);
+[e ( _TiResetTics (1 _timerSIO ]
 "177
-[; ;SIO.c: 177:    }
+[; ;SIO.c: 177:     state = 10;
+[e = F2672 -> -> 10 `i `uc ]
+"178
+[; ;SIO.c: 178:    }
 }
 [e $U 327  ]
-"178
-[; ;SIO.c: 178:    else if (TiGetTics(timerSIO) > 0 && mask) {
+"179
+[; ;SIO.c: 179:    else if (TiGetTics(timerSIO) > 0 && mask) {
 [e :U 326 ]
 [e $ ! && > ( _TiGetTics (1 _timerSIO -> 0 `i != -> _mask `i -> 0 `i 328  ]
 {
-"179
-[; ;SIO.c: 179:     if(mask & horaTX[charActu]){
+"180
+[; ;SIO.c: 180:     if(mask & horaTX[charActu]){
 [e $ ! != & -> _mask `i -> *U + &U _horaTX * -> _charActu `ux -> -> # *U &U _horaTX `ui `ux `i -> 0 `i 329  ]
 {
-"180
-[; ;SIO.c: 180:        LATBbits.LATB1 = 1;
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 "181
-[; ;SIO.c: 181:       }else{
+[; ;SIO.c: 181:        LATBbits.LATB1 = 1;
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+"182
+[; ;SIO.c: 182:       }else{
 }
 [e $U 330  ]
 [e :U 329 ]
 {
-"182
-[; ;SIO.c: 182:        LATBbits.LATB1 = 0;
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 "183
-[; ;SIO.c: 183:       }
+[; ;SIO.c: 183:        LATBbits.LATB1 = 0;
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+"184
+[; ;SIO.c: 184:       }
 }
 [e :U 330 ]
-"184
-[; ;SIO.c: 184:       mask = mask<<1;
-[e = _mask -> << -> _mask `i -> 1 `i `uc ]
 "185
-[; ;SIO.c: 185:     TiResetTics(timerSIO);
-[e ( _TiResetTics (1 _timerSIO ]
+[; ;SIO.c: 185:       mask = mask<<1;
+[e = _mask -> << -> _mask `i -> 1 `i `uc ]
 "186
-[; ;SIO.c: 186:     state = 11;
-[e = F2672 -> -> 11 `i `uc ]
+[; ;SIO.c: 186:     TiResetTics(timerSIO);
+[e ( _TiResetTics (1 _timerSIO ]
 "187
-[; ;SIO.c: 187:    }
+[; ;SIO.c: 187:     state = 11;
+[e = F2672 -> -> 11 `i `uc ]
+"188
+[; ;SIO.c: 188:    }
 }
 [e :U 328 ]
 [e :U 327 ]
-"188
-[; ;SIO.c: 188:   break;
-[e $U 289  ]
 "189
-[; ;SIO.c: 189:  }
+[; ;SIO.c: 189:   break;
+[e $U 289  ]
+"190
+[; ;SIO.c: 190:  }
 }
 [e $U 289  ]
 [e :U 290 ]
@@ -1177,8 +1174,8 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 11 `i 325
  289 ]
 [e :U 289 ]
-"190
-[; ;SIO.c: 190: }
+"191
+[; ;SIO.c: 191: }
 [e :UE 288 ]
 }
 [a 1C 69 82 82 79 82 83 58 0 ]

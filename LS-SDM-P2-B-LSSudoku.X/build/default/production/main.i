@@ -4866,7 +4866,6 @@ void main(void) {
     TiInitTimer();
     TeInit();
     Sinit();
-    SMotor();
 
     initAltaveu();
     GLCDInit();

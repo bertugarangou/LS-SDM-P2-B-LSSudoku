@@ -74,9 +74,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 ./Ssms.h
 [; ;./Ssms.h: 4: void Sinit(void);
 [v _Sinit `(v ~T0 @X0 0 ef ]
-"5
-[; ;./Ssms.h: 5: void SMotor(void);
-[v _SMotor `(v ~T0 @X0 0 ef ]
 "4 ./Altaveu.h
 [; ;./Altaveu.h: 4:     void initAltaveu(void);
 [v _initAltaveu `(v ~T0 @X0 0 ef ]
@@ -131,6 +128,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10 ./TeTeclat.h
 [; ;./TeTeclat.h: 10:     void TeTeclat();
 [v _TeTeclat `(v ~T0 @X0 0 e? ]
+"5 ./Ssms.h
+[; ;./Ssms.h: 5: void SMotor(void);
+[v _SMotor `(v ~T0 @X0 0 ef ]
 "73 ./LcTLCD.h
 [; ;./LcTLCD.h: 73: void LcLCD();
 [v _LcLCD `(v ~T0 @X0 0 e? ]
@@ -649,83 +649,80 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;main.c: 80:     Sinit();
 [e ( _Sinit ..  ]
-"81
-[; ;main.c: 81:     SMotor();
-[e ( _SMotor ..  ]
-"83
-[; ;main.c: 83:     initAltaveu();
+"82
+[; ;main.c: 82:     initAltaveu();
 [e ( _initAltaveu ..  ]
-"84
-[; ;main.c: 84:     GLCDInit();
+"83
+[; ;main.c: 83:     GLCDInit();
 [e ( _GLCDInit ..  ]
-"85
-[; ;main.c: 85:     JoystickInit();
+"84
+[; ;main.c: 84:     JoystickInit();
 [e ( _JoystickInit ..  ]
-"86
-[; ;main.c: 86:     initHora();
+"85
+[; ;main.c: 85:     initHora();
 [e ( _initHora ..  ]
-"87
-[; ;main.c: 87:     initSIO();
+"86
+[; ;main.c: 86:     initSIO();
 [e ( _initSIO ..  ]
-"89
-[; ;main.c: 89:     LcInit(2);
+"88
+[; ;main.c: 88:     LcInit(2);
 [e ( _LcInit (1 -> -> 2 `i `uc ]
-"90
-[; ;main.c: 90:     Uinit();
+"89
+[; ;main.c: 89:     Uinit();
 [e ( _Uinit ..  ]
-"91
-[; ;main.c: 91:     Minit();
+"90
+[; ;main.c: 90:     Minit();
 [e ( _Minit ..  ]
-"92
-[; ;main.c: 92:     while(1){
+"91
+[; ;main.c: 91:     while(1){
 [e :U 285 ]
 {
-"93
-[; ;main.c: 93:         GLCDMotor();
+"92
+[; ;main.c: 92:         GLCDMotor();
 [e ( _GLCDMotor ..  ]
-"94
-[; ;main.c: 94:         motorJoc();
+"93
+[; ;main.c: 93:         motorJoc();
 [e ( _motorJoc ..  ]
-"95
-[; ;main.c: 95:         motorSIO();
+"94
+[; ;main.c: 94:         motorSIO();
 [e ( _motorSIO ..  ]
-"96
-[; ;main.c: 96:         motorHora();
+"95
+[; ;main.c: 95:         motorHora();
 [e ( _motorHora ..  ]
-"97
-[; ;main.c: 97:         JoystickMotor();
+"96
+[; ;main.c: 96:         JoystickMotor();
 [e ( _JoystickMotor ..  ]
-"98
-[; ;main.c: 98:         menu();
+"97
+[; ;main.c: 97:         menu();
 [e ( _menu ..  ]
-"99
-[; ;main.c: 99:         CtoA();
+"98
+[; ;main.c: 98:         CtoA();
 [e ( _CtoA ..  ]
-"100
-[; ;main.c: 100:         motorAltaveu();
+"99
+[; ;main.c: 99:         motorAltaveu();
 [e ( _motorAltaveu ..  ]
-"101
-[; ;main.c: 101:         UmotorUsers();
+"100
+[; ;main.c: 100:         UmotorUsers();
 [e ( _UmotorUsers ..  ]
-"103
-[; ;main.c: 103:         TeTeclat();
+"102
+[; ;main.c: 102:         TeTeclat();
 [e ( _TeTeclat ..  ]
-"104
-[; ;main.c: 104:         SMotor();
+"103
+[; ;main.c: 103:         SMotor();
 [e ( _SMotor ..  ]
-"105
-[; ;main.c: 105:         LcLCD();
+"104
+[; ;main.c: 104:         LcLCD();
 [e ( _LcLCD ..  ]
-"106
-[; ;main.c: 106:     }
+"105
+[; ;main.c: 105:     }
 }
 [e :U 284 ]
 [e $U 285  ]
 [e :U 286 ]
-"107
-[; ;main.c: 107:     return;
+"106
+[; ;main.c: 106:     return;
 [e $UE 283  ]
-"108
-[; ;main.c: 108: }
+"107
+[; ;main.c: 107: }
 [e :UE 283 ]
 }

@@ -57,7 +57,7 @@ void motorJoc(void){
 				usuariJoc = neg;
 				HnoJugant();
 				SIOendGame();
-				LATBbits.LATB3 = 0;
+				
 				state--;
 			}
 			else if (direccioJoc > neg) {
@@ -68,6 +68,8 @@ void motorJoc(void){
 				HClearNouSegon();
 				LcGotoXY(0,1);
 				LcNewString(HGetTime());
+                SIOEnviaHora();
+                
 			}
 			else if (novaTeclaJOC > 0) {
 				SIONovaTecla(novaTeclaJOC+48);
@@ -77,7 +79,7 @@ void motorJoc(void){
 		case 2:
 			if (SIOcheckKrebut()) {
 				HJugant();
-                SIOEnviaHora();
+                
 				state--;
 			}
 		break;
