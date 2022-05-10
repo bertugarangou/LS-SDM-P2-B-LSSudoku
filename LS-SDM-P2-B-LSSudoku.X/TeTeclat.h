@@ -6,7 +6,7 @@
     #define Col3 LATDbits.LD6
     #define TREBOT 0 //16 ms
 
-    void TeInit();
-    void TeTeclat();
+    void TeInit(void);
+    void TeTeclat(void);
 
 #endif

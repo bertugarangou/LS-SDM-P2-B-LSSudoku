@@ -211,13 +211,13 @@
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
 "151
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
-"291
+"286
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
-"294
+"289
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
-"297
+"292
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
-"302
+"297
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
 "5 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Altaveu.c
 [v _reproduir reproduir `b  1 e 0 0 ]
@@ -709,7 +709,7 @@
 [v _teclaPremuda teclaPremuda `C[4][3]uc  1 e 12 0 ]
 [s S721 Timer 3 `ui 1 h_initialTics 2 0 `uc 1 b_busy 1 2 ]
 "12 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
-[v _s_Timers s_Timers `[9]S721  1 e 27 0 ]
+[v _s_Timers s_Timers `[8]S721  1 e 24 0 ]
 "14
 [v _h_Tics h_Tics `ui  1 s 2 h_Tics ]
 "15
@@ -758,15 +758,15 @@
 {
 "51
 [v motorSIO@state state `uc  1 s 1 state ]
-"191
+"190
 } 0
-"297 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"292 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
 {
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 5 ]
-"300
+"295
 } 0
 "44 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
 [v _motorJoc motorJoc `(v  1 e 1 0 ]
@@ -874,10 +874,10 @@
 [v menu@state state `uc  1 s 1 state ]
 "434
 } 0
-"302 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"297 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
 {
-"304
+"299
 } 0
 "68
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
@@ -910,21 +910,21 @@
 [v UgetUserName@quin quin `uc  1 a 1 7 ]
 "66
 } 0
-"294
+"289
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
 {
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 5 ]
-"296
-} 0
 "291
+} 0
+"286
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
 {
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 5 ]
-"293
+"288
 } 0
 "40
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
@@ -1095,7 +1095,7 @@
 {
 "152
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"289
+"284
 } 0
 "71
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]

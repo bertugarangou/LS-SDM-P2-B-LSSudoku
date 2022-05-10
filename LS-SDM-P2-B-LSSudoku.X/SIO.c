@@ -56,14 +56,14 @@ void motorSIO(void){
 				userPtr = UgetUserName(usuariActualSIO);
 				jugantSIO = 1;
 				Krebut = 0;
-				state = 1;
+				state++;
 			}
 		break;
 		case 1:
 			if (*userPtr == '\0' && TXSTAbits.TRMT) {
 				TXREG = '\0';
 				novaTeclaSIO = 0;
-				state = 2;
+				state++;
 			}
 			else if (*userPtr != '\0' && TXSTAbits.TRMT) {
 				TXREG = *userPtr;
@@ -73,26 +73,26 @@ void motorSIO(void){
 		case 2:
 			if (RCREG == 'K') {
 				Krebut = 1;
-				state = 3;
+				state++;
 			}
 		break;
 		case 3:
 			if (direccioSIO != -1 && TXSTAbits.TRMT) {
 				TXREG = direccioSIO;
 				direccioSIO = -1;
-				state = 3;
+				
 			}
 			else if (novaTeclaSIO > '0' && novaTeclaSIO <= '9' && TXSTAbits.TRMT) {
 				TXREG = novaTeclaSIO;
 				novaTeclaSIO = 0;
-				state = 3;
+				
 			}
 			else if ((!jugantSIO && TXSTAbits.TRMT) || PIR1bits.RCIF) {
 				LcClear();
 				LcNewString("ERRORS:");
 				TXREG = 'F';
 				novaTeclaSIO = 0;
-				state = 4;
+				state++;
 			}
 			else if (hi_ha_hora_sio2) {
 				horaTX[0] = HGetTime()[0];
@@ -113,8 +113,7 @@ void motorSIO(void){
 				UnewScore(score);
 				CToAConverteix(score);
 				TiResetTics(timerSIO);
-				state = 5;
-                //UchangeScore(usuariActualSIO,score);
+				state++;
 			}
 		break;
 		case 5:
@@ -126,27 +125,27 @@ void motorSIO(void){
 			else if (TiGetTics(timerSIO) < 2490 && PIR1bits.RCIF && LcLliure()) {
 				LcGotoXY(0,1);
 				LcPutChar(RCREG);
-				state = 6;
+				state++;
 			}
 		break;
 		case 7:
 			if (LcLliure()) {
 				LcNewString(HGetTime());
-				state = 8;
+				state++;
 			}
 		break;
 		case 6:
 			if (PIR1bits.RCIF) {
 				LcPutChar(RCREG);
 				TiResetTics(timerSIO);
-				state = 5;
+				state--;
 			}
 		break;
 		case 8:
 			if (LcLliure()) {
 				LcGotoXY(0,1);
 				LcNewString("SCORE: ");
-				state = 9;
+				state++;
 			}
 		break;
 		case 9:
@@ -165,7 +164,7 @@ void motorSIO(void){
 				LATBbits.LATB1 = 0;
 				TiResetTics(timerSIO);
                 
-				state = 11;
+				state++;
 			}
 		break;
 		case 11:
@@ -174,7 +173,7 @@ void motorSIO(void){
 				charActu++;
 				LATBbits.LATB1 = 1;
 				TiResetTics(timerSIO);
-				state = 10;
+				state--;
 			}
 			else if (TiGetTics(timerSIO) > 0 && mask) {
 				if(mask & horaTX[charActu]){
@@ -184,7 +183,7 @@ void motorSIO(void){
 						}
 						mask = mask<<1;
 				TiResetTics(timerSIO);
-				state = 11;
+				
 			}
 		break;
 	}

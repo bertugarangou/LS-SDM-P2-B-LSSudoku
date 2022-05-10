@@ -159,7 +159,7 @@ void UmotorUsers(){
 			}
 			else if (do_check_exists == 1) {
 				usuariLoguejat = -1;
-				state = 1;
+				state++;
 			}
 			else if (do_register == 1) {
 				if(numUsuaris != 8) numUsuaris++;
@@ -197,11 +197,10 @@ void UmotorUsers(){
 				//si son iguals;
 				}
 				i++;
-				state = 1;
 			}
 			else if (i == numUsuaris) {
 				do_check_exists = 0;
-				state = 0;
+				state--;
 			}
 		break;
 		case 2:
@@ -210,11 +209,10 @@ void UmotorUsers(){
 				indexNextUser++;
 				usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
 				i++;
-				state = 2;
 			}
 			else if (i > 8) {
 				i = 0;
-				state = 3;
+				state++;
 			}
 		break;
 		case 3:
@@ -223,11 +221,10 @@ void UmotorUsers(){
 				indexNextUser++;
 				usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
 				i++;
-				state = 3;
 			}
 			else if (i > 8) {
 				do_register = 0;
-				if(indexNextUser == 159) indexNextUser = 16;
+				if(indexNextUser > 140) indexNextUser = 2;
 				indexNextUserStruct++;
 				if(indexNextUserStruct == 8) indexNextUserStruct = 0;
 				escriureCharEEPROM(indexNextUser,1);
@@ -239,12 +236,12 @@ void UmotorUsers(){
 				if(j != usuariLoguejat){
 				  arrayShowUsers[i] = j;
 					i++;
+                    j++;
 				}else{
 				  j++;
 				}
-				j++;
+				//j++;
 				if(j > 7) j=0;
-				state = 5;
 			}
 			else if (i == numUsuaris) {
 				do_showUsers = 0;
@@ -254,10 +251,9 @@ void UmotorUsers(){
 		case 6:
 			if (i < 5 && puntuacions[i].indexStruct != -1) {
 				i++;
-				state = 6;
 			}
 			else if (i < 5 && puntuacions[i].indexStruct == -1) {
-				state = 7;
+				state++;
 			}
 			else if (i > 4) {
 				i = 0;
@@ -276,13 +272,12 @@ void UmotorUsers(){
 		case 8:
 			if (puntuacions[i].score >= scoreUsr && i < 5) {
 				i++;
-				state = 8;
 			}
 			else if (i > 4) {
 				state = 0;
 			}
 			else if (puntuacions[i].score < scoreUsr && i < 5) {
-				state = 7;
+				state--;
 			}
 		break;
 	}

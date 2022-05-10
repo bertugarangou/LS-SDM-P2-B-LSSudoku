@@ -496,8 +496,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "12 TiTTimer.c
-[; ;TiTTimer.c: 12: } s_Timers[9];
-[v _s_Timers `S280 ~T0 @X0 -> 9 `i e ]
+[; ;TiTTimer.c: 12: } s_Timers[8];
+[v _s_Timers `S280 ~T0 @X0 -> 8 `i e ]
 "14
 [; ;TiTTimer.c: 14: static unsigned int h_Tics=0;
 [v _h_Tics `ui ~T0 @X0 1 s ]
@@ -541,10 +541,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TiTTimer.c: 29:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "31
-[; ;TiTTimer.c: 31:     for (counter=0;counter<9;counter++) {
+[; ;TiTTimer.c: 31:     for (counter=0;counter<8;counter++) {
 {
 [e = _counter -> -> 0 `i `uc ]
-[e $ < -> _counter `i -> 9 `i 282  ]
+[e $ < -> _counter `i -> 8 `i 282  ]
 [e $U 283  ]
 [e :U 282 ]
 {
@@ -555,7 +555,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TiTTimer.c: 33:     }
 }
 [e ++ _counter -> -> 1 `i `uc ]
-[e $ < -> _counter `i -> 9 `i 282  ]
+[e $ < -> _counter `i -> 8 `i 282  ]
 [e :U 283 ]
 }
 "34
@@ -585,10 +585,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! >= -> _h_Tics `l -> 61000 `l 286  ]
 {
 "46
-[; ;TiTTimer.c: 46:         for (counter=0;counter<9;counter++){
+[; ;TiTTimer.c: 46:         for (counter=0;counter<8;counter++){
 {
 [e = _counter -> -> 0 `i `uc ]
-[e $ < -> _counter `i -> 9 `i 287  ]
+[e $ < -> _counter `i -> 8 `i 287  ]
 [e $U 288  ]
 [e :U 287 ]
 {
@@ -607,7 +607,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TiTTimer.c: 50:         }
 }
 [e ++ _counter -> -> 1 `i `uc ]
-[e $ < -> _counter `i -> 9 `i 287  ]
+[e $ < -> _counter `i -> 8 `i 287  ]
 [e :U 288 ]
 }
 "51
@@ -674,8 +674,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TiTTimer.c: 76:         counter++;
 [e ++ _counter -> -> 1 `i `uc ]
 "77
-[; ;TiTTimer.c: 77:  if (counter == 9) return -1;
-[e $ ! == -> _counter `i -> 9 `i 297  ]
+[; ;TiTTimer.c: 77:  if (counter == 8) return -1;
+[e $ ! == -> _counter `i -> 8 `i 297  ]
 [e ) -> -U -> 1 `i `uc ]
 [e $UE 293  ]
 [e :U 297 ]

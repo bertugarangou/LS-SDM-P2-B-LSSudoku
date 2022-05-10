@@ -4725,8 +4725,8 @@ void MNouJoystick(signed char posicio);
 
 
 
-    void TeInit();
-    void TeTeclat();
+    void TeInit(void);
+    void TeTeclat(void);
 # 7 "main.c" 2
 
 # 1 "./Ssms.h" 1

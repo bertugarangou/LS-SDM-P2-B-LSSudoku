@@ -16,8 +16,8 @@
 
 
 
-    void TeInit();
-    void TeTeclat();
+    void TeInit(void);
+    void TeTeclat(void);
 # 1 "TeTeclat.c" 2
 
 # 1 "./TiTTimer.h" 1
