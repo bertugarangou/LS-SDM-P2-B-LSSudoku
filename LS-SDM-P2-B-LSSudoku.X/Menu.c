@@ -178,7 +178,7 @@ void menu(void) {
 			else if (NovaTecla == 11 && menuDalt == 3) {
 				NoFerMenu();
 				LcClear();
-				LcNewString("BYE BYE");
+				LcNewString("BYE BYE ");
 				state++;
 			}
 			else if (NovaTecla == 11 && menuDalt == 1) {

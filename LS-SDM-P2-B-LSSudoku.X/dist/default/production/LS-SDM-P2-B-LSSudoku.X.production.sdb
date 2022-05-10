@@ -203,13 +203,13 @@
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
 "87
 [v _Uinit Uinit `(v  1 e 1 0 ]
-"130
+"127
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"139
+"136
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
-"142
+"139
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
-"146
+"143
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 "301
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
@@ -892,15 +892,15 @@
 {
 "46
 } 0
-"139 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"136 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
 {
-"141
+"138
 } 0
-"142
+"139
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
 {
-"144
+"141
 } 0
 "59
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
@@ -1090,10 +1090,10 @@
 {
 "12
 } 0
-"146 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"143 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"147
+"144
 [v UmotorUsers@state state `uc  1 s 1 state ]
 "299
 } 0
@@ -1106,12 +1106,12 @@
 [v escriureCharEEPROM@c c `uc  1 a 1 6 ]
 "79
 } 0
-"130
+"127
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.30Cuc  1 p 1 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 6 ]
-"137
+"134
 } 0
 "87
 [v _Uinit Uinit `(v  1 e 1 0 ]
@@ -1120,7 +1120,7 @@
 [v Uinit@k_1194 k `uc  1 a 1 12 ]
 "108
 [v Uinit@k k `uc  1 a 1 11 ]
-"128
+"125
 } 0
 "80
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]

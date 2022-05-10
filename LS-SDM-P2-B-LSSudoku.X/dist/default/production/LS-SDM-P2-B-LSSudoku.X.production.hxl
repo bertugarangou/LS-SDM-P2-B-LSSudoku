@@ -11,15 +11,17 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
-  8h - 15Fh		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
-  200h - 1D90h		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
-  1D92h - 1FFFh		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
+  8h - 161h		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
+  200h - 2E2h		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
+  2E4h - 1D92h		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
+  1D94h - 1FFFh		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
   200000h - 200007h		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
   300000h - 30000Dh		(dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.hex)
  Unused ranges:
   4h - 7h
-  160h - 1FFh
-  1D91h - 1D91h
+  162h - 1FFh
+  2E3h - 2E3h
+  1D93h - 1D93h
   2000h - 1FFFFFh
   200008h - 2FFFFFh
 
@@ -52,6 +54,7 @@
 00000130 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000140 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000160 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00000200 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000210 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -67,7 +70,7 @@
 000002B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000002C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000002D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000002E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000002E0 | H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000002F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000300 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000310 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -494,7 +497,7 @@
 00001D60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001D70 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001D80 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001D90 | H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001D90 | H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001DA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001DB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001DC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

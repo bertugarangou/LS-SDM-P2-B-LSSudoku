@@ -4754,9 +4754,6 @@ void Uinit(){
     }
 
 
-
-
-
     puntuacions[zero].indexStruct = neg;
     for(i = 0; i<5; i++){
         puntuacions[i].indexStruct = llegirCharEEPROM(200+i+i);
@@ -4795,9 +4792,7 @@ void UmotorUsers(){
     state++;
    }
    else if (do_register == 1) {
-    if(numUsuaris != 8) numUsuaris++;
 
-    escriureCharEEPROM(numUsuaris,zero);
     state = 2;
    }
    else if (do_showUsers) {
@@ -4916,21 +4911,26 @@ void UmotorUsers(){
    }
   break;
         case 9:
-            if (indexNextUser != 2 || i > 4) {
-
+            numUsuaris++;
+            if (numUsuaris != 9|| i > 4) {
     state = 0;
    }
-   else if (indexNextUser == 2 && i < 5) {
+   else if (numUsuaris ==9 && i < 5) {
     if(indexNextUserStruct == 0){
       tmp = 7;
     }else{
      tmp = indexNextUserStruct-1;
     }
+
+
     if(puntuacions[i].indexStruct == tmp){
       puntuacions[i].indexStruct = -1;
     }
     i++;
    }
+
+            if(numUsuaris == 9) numUsuaris = 8;
+   escriureCharEEPROM(numUsuaris,zero);
 
         break;
  }
