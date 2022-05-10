@@ -154,7 +154,7 @@ void UmotorUsers(){
 				state++;
 			}
 			else if (do_register == 1) {
-				
+				numUsuaris++;
 				state = 2;
 			}
 			else if (do_showUsers) {
@@ -273,7 +273,7 @@ void UmotorUsers(){
 			}
 		break;
         case 9:
-            numUsuaris++;
+            
             if (numUsuaris != 9|| i > 4) {
 				state = 0;
 			}
