@@ -1,4 +1,4 @@
-[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[p PRO_MODE GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK SPACEOPT EMI_WORD ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F4321 ]
@@ -179,45 +179,45 @@
 [v _TiGetTics TiGetTics `(i  1 e 2 0 ]
 "70
 [v _TiGetTimer TiGetTimer `(uc  1 e 1 0 ]
-"41 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"40 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
-"45
+"44
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
-"48
+"47
 [v _UcheckExistsNotFinished UcheckExistsNotFinished `(b  1 e 0 0 ]
-"51
+"50
 [v _UcheckExistsGetError UcheckExistsGetError `(c  1 e 1 0 ]
-"54
+"53
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
-"57
+"56
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
-"61
+"60
 [v _URegister URegister `(v  1 e 1 0 ]
-"65
+"64
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
-"69
+"68
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
-"72
+"71
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
-"86
+"85
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
-"93
+"92
 [v _Uinit Uinit `(v  1 e 1 0 ]
-"136
+"135
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"145
+"144
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
-"148
+"147
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
-"152
+"151
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
-"309
+"286
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
-"312
+"289
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
-"315
+"292
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
-"320
+"297
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
 "5 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Altaveu.c
 [v _reproduir reproduir `b  1 e 0 0 ]
@@ -389,7 +389,7 @@
 "2187
 [u S91 . 1 `S73 1 . 1 0 `S82 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES91  1 e 1 @3989 ]
-[s S1485 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1484 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -399,12 +399,12 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2705
-[s S1494 . 1 `uc 1 . 1 0 :4:0 
+[s S1493 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S1498 . 1 `S1485 1 . 1 0 `S1494 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1498  1 e 1 @3998 ]
+[u S1497 . 1 `S1484 1 . 1 0 `S1493 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1497  1 e 1 @3998 ]
 [s S432 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
@@ -430,7 +430,7 @@
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "3332
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S1431 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1430 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -440,7 +440,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3371
-[s S1440 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1439 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -449,13 +449,13 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S1449 . 1 `uc 1 . 1 0 :6:0 
+[s S1448 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1452 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1451 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S1454 . 1 `S1431 1 . 1 0 `S1440 1 . 1 0 `S1449 1 . 1 0 `S1452 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES1454  1 e 1 @4012 ]
+[u S1453 . 1 `S1430 1 . 1 0 `S1439 1 . 1 0 `S1448 1 . 1 0 `S1451 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1453  1 e 1 @4012 ]
 "3588
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3600
@@ -472,38 +472,38 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "4802
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S1271 . 1 `uc 1 . 1 0 :1:0 
+[s S1270 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "4846
-[s S1274 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1273 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S1278 . 1 `uc 1 . 1 0 :1:0 
+[s S1277 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S1285 . 1 `uc 1 . 1 0 :1:0 
+[s S1284 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S1288 . 1 `uc 1 . 1 0 :1:0 
+[s S1287 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S1291 . 1 `uc 1 . 1 0 :1:0 
+[s S1290 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S1294 . 1 `uc 1 . 1 0 :1:0 
+[s S1293 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S1297 . 1 `uc 1 . 1 0 :1:0 
+[s S1296 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S1300 . 1 `S1271 1 . 1 0 `S1274 1 . 1 0 `S1278 1 . 1 0 `S1285 1 . 1 0 `S1288 1 . 1 0 `S1291 1 . 1 0 `S1294 1 . 1 0 `S1297 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1300  1 e 1 @4034 ]
+[u S1299 . 1 `S1270 1 . 1 0 `S1273 1 . 1 0 `S1277 1 . 1 0 `S1284 1 . 1 0 `S1287 1 . 1 0 `S1290 1 . 1 0 `S1293 1 . 1 0 `S1296 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1299  1 e 1 @4034 ]
 "4935
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 [s S724 . 1 `uc 1 NOT_BOR 1 0 :1:0 
@@ -641,6 +641,8 @@
 [v _loginText loginText `[8]uc  1 e 8 0 ]
 "15
 [v _registerText registerText `[11]uc  1 e 11 0 ]
+"16
+[v _tmp tmp `uc  1 e 1 0 ]
 "17
 [v _NovaTecla NovaTecla `c  1 e 1 0 ]
 "18
@@ -734,19 +736,17 @@
 [v _do_updateScore do_updateScore `b  1 e 0 0 ]
 "14
 [v _scoreUsr scoreUsr `uc  1 e 1 0 ]
-"15
-[v _tmp tmp `uc  1 e 1 0 ]
-"17
+"16
 [v _arrayShowUsers arrayShowUsers `[8]c  1 e 8 0 ]
-"19
+"18
 [v _tmpUsername tmpUsername `[9]uc  1 e 9 0 ]
-"20
+"19
 [v _tmpPassword tmpPassword `[9]uc  1 e 9 0 ]
 [s S1074 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
-"33
+"32
 [v _usuaris usuaris `[8]S1074  1 e 144 0 ]
 [s S1077 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
-"39
+"38
 [v _puntuacions puntuacions `[5]S1077  1 e 10 0 ]
 "75 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -760,13 +760,13 @@
 [v motorSIO@state state `uc  1 s 1 state ]
 "190
 } 0
-"315 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"292 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
 {
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 5 ]
-"318
+"295
 } 0
 "44 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
 [v _motorJoc motorJoc `(v  1 e 1 0 ]
@@ -874,100 +874,100 @@
 [v menu@state state `uc  1 s 1 state ]
 "434
 } 0
-"320 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"297 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
 {
-"322
+"299
 } 0
-"69
+"68
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
 {
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
-[v getArrayShowUsers@quin quin `uc  1 a 1 8 ]
-"71
+[v getArrayShowUsers@quin quin `uc  1 a 1 7 ]
+"70
 } 0
 "42 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Hora.c
 [v _checkHoraAcabat checkHoraAcabat `(b  1 e 0 0 ]
 {
 "44
 } 0
-"145 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"144 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
 {
-"147
+"146
 } 0
-"148
+"147
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
 {
-"150
+"149
 } 0
-"65
+"64
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
 {
 [v UgetUserName@quin quin `uc  1 a 1 wreg ]
 [v UgetUserName@quin quin `uc  1 a 1 wreg ]
 [v UgetUserName@quin quin `uc  1 a 1 7 ]
-"67
+"66
 } 0
-"312
+"289
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
 {
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 5 ]
-"314
+"291
 } 0
-"309
+"286
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
 {
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 5 ]
-"311
+"288
 } 0
-"41
+"40
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
 {
-"43
+"42
 } 0
-"57
+"56
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
 {
 [v UenviaPas@c c `uc  1 a 1 wreg ]
 [v UenviaPas@c c `uc  1 a 1 wreg ]
 [v UenviaPas@pos pos `uc  1 p 1 5 ]
 [v UenviaPas@c c `uc  1 a 1 6 ]
-"59
+"58
 } 0
-"54
+"53
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
 {
 [v UenviaChar@c c `uc  1 a 1 wreg ]
 [v UenviaChar@c c `uc  1 a 1 wreg ]
 [v UenviaChar@pos pos `uc  1 p 1 5 ]
 [v UenviaChar@c c `uc  1 a 1 6 ]
-"56
+"55
 } 0
-"48
+"47
 [v _UcheckExistsNotFinished UcheckExistsNotFinished `(b  1 e 0 0 ]
 {
-"50
+"49
 } 0
-"51
+"50
 [v _UcheckExistsGetError UcheckExistsGetError `(c  1 e 1 0 ]
 {
-"53
+"52
 } 0
-"45
+"44
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
 {
-"47
+"46
 } 0
-"61
+"60
 [v _URegister URegister `(v  1 e 1 0 ]
 {
-"63
+"62
 } 0
 "19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
 [v _SiFerMenu SiFerMenu `(v  1 e 1 0 ]
@@ -1090,45 +1090,45 @@
 {
 "12
 } 0
-"152 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"151 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"153
+"152
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"307
+"284
 } 0
-"72
+"71
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
 {
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@pos pos `uc  1 p 1 5 ]
 [v escriureCharEEPROM@c c `uc  1 a 1 6 ]
-"85
+"84
 } 0
-"136
+"135
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.30Cuc  1 p 1 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 6 ]
-"143
+"142
 } 0
-"93
+"92
 [v _Uinit Uinit `(v  1 e 1 0 ]
 {
-"118
-[v Uinit@k_1176 k `uc  1 a 1 12 ]
-"114
+"117
+[v Uinit@k_1175 k `uc  1 a 1 12 ]
+"113
 [v Uinit@k k `uc  1 a 1 11 ]
-"134
+"133
 } 0
-"86
+"85
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
 {
 [v llegirCharEEPROM@pos pos `uc  1 a 1 wreg ]
 [v llegirCharEEPROM@pos pos `uc  1 a 1 wreg ]
 [v llegirCharEEPROM@pos pos `uc  1 a 1 5 ]
-"92
+"91
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lbdiv.c
 [v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
@@ -1298,7 +1298,7 @@
 "227
 [v _LcNewString LcNewString `(v  1 e 1 0 ]
 {
-[v LcNewString@new_s new_s `*.35uc  1 p 2 9 ]
+[v LcNewString@new_s new_s `*.35uc  1 p 2 8 ]
 "230
 } 0
 "243

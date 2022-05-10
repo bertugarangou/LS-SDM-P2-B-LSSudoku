@@ -4645,13 +4645,12 @@ signed char usuariLoguejat = -1;
 __bit do_showUsers = 0;
 __bit do_updateScore = 0;
 unsigned char scoreUsr;
-unsigned char tmp;
 
 signed char arrayShowUsers[8];
 
 char tmpUsername[9];
 char tmpPassword[9];
-# 29 "Usuaris.c"
+# 28 "Usuaris.c"
 typedef struct{
     char username[9];
     char password[9];
@@ -4790,6 +4789,7 @@ void UmotorUsers(){
    }
    else if (do_register == 1) {
     if(numUsuaris != 8) numUsuaris++;
+
     escriureCharEEPROM(numUsuaris,0);
     state = 2;
    }
@@ -4823,9 +4823,8 @@ void UmotorUsers(){
 
     }
     i++;
-
    }
-   else {
+   else if (i == numUsuaris) {
     do_check_exists = 0;
     state--;
    }
@@ -4836,9 +4835,8 @@ void UmotorUsers(){
     indexNextUser++;
     usuaris[indexNextUserStruct].username[i] = tmpUsername[i];
     i++;
-
    }
-   else {
+   else if (i > 8) {
     i = 0;
     state++;
    }
@@ -4849,7 +4847,6 @@ void UmotorUsers(){
     indexNextUser++;
     usuaris[indexNextUserStruct].password[i] = tmpPassword[i];
     i++;
-
    }
    else if (i > 8) {
     do_register = 0;
@@ -4857,8 +4854,7 @@ void UmotorUsers(){
     indexNextUserStruct++;
     if(indexNextUserStruct == 8) indexNextUserStruct = 0;
     escriureCharEEPROM(indexNextUser,1);
-    i = 0;
-    state = 9;
+    state = 0;
    }
   break;
   case 5:
@@ -4866,12 +4862,12 @@ void UmotorUsers(){
     if(j != usuariLoguejat){
       arrayShowUsers[i] = j;
      i++;
-      j++;
+                    j++;
     }else{
       j++;
     }
-    if(j > 7) j=0;
 
+    if(j > 7) j=0;
    }
    else if (i == numUsuaris) {
     do_showUsers = 0;
@@ -4881,7 +4877,6 @@ void UmotorUsers(){
   case 6:
    if (i < 5 && puntuacions[i].indexStruct != -1) {
     i++;
-
    }
    else if (i < 5 && puntuacions[i].indexStruct == -1) {
     state++;
@@ -4903,30 +4898,12 @@ void UmotorUsers(){
   case 8:
    if (puntuacions[i].score >= scoreUsr && i < 5) {
     i++;
-
    }
    else if (i > 4) {
     state = 0;
    }
    else if (puntuacions[i].score < scoreUsr && i < 5) {
     state--;
-   }
-  break;
-  case 9:
-   if (indexNextUser != 2 || i > 4) {
-
-    state = 0;
-   }
-   else if (indexNextUser == 2 && i < 5) {
-    if(indexNextUserStruct == 0){
-      tmp = 7;
-    }else{
-     tmp = indexNextUserStruct-1;
-    }
-    if(puntuacions[i].indexStruct == tmp){
-      puntuacions[i].indexStruct = -1;
-    }
-    i++;
    }
   break;
  }
