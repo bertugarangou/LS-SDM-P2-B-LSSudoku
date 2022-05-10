@@ -4688,7 +4688,7 @@ static char state = 0;
     LATBbits.LB0 = 0;
     TiResetTics(timerAltaveu);
     copsNota++;
-    state++;
+    state--;
    }
   break;
  }

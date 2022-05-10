@@ -598,8 +598,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Altaveu.c: 47:     copsNota++;
 [e ++ _copsNota -> -> 1 `i `uc ]
 "48
-[; ;Altaveu.c: 48:     state++;
-[e ++ F2578 -> -> 1 `i `uc ]
+[; ;Altaveu.c: 48:     state--;
+[e -- F2578 -> -> 1 `i `uc ]
 "49
 [; ;Altaveu.c: 49:    }
 }

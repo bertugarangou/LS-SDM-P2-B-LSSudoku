@@ -514,7 +514,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7011
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4321.h: 7011: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 SIO.c
+"9 SIO.c
+[; ;SIO.c: 9: const char newLineChar = '\n\r';
+[v _newLineChar `Cuc ~T0 @X0 1 e ]
+[i _newLineChar
+-> -> 2573 `ui `uc
+]
+"11
 [; ;SIO.c: 11: char *userPtr = 0;
 [v _userPtr `*uc ~T0 @X0 1 e ]
 [i _userPtr
@@ -688,8 +694,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "51
 [; ;SIO.c: 51:     static char state = 0;
-[v F2672 `uc ~T0 @X0 1 s state ]
-[i F2672
+[v F2673 `uc ~T0 @X0 1 s state ]
+[i F2673
 -> -> 0 `i `uc
 ]
 "53
@@ -714,7 +720,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Krebut -> -> 0 `i `b ]
 "59
 [; ;SIO.c: 59:     state = 1;
-[e = F2672 -> -> 1 `i `uc ]
+[e = F2673 -> -> 1 `i `uc ]
 "60
 [; ;SIO.c: 60:    }
 }
@@ -737,7 +743,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTeclaSIO -> -> 0 `i `c ]
 "66
 [; ;SIO.c: 66:     state = 2;
-[e = F2672 -> -> 2 `i `uc ]
+[e = F2673 -> -> 2 `i `uc ]
 "67
 [; ;SIO.c: 67:    }
 }
@@ -773,7 +779,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Krebut -> -> 1 `i `b ]
 "76
 [; ;SIO.c: 76:     state = 3;
-[e = F2672 -> -> 3 `i `uc ]
+[e = F2673 -> -> 3 `i `uc ]
 "77
 [; ;SIO.c: 77:    }
 }
@@ -796,7 +802,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _direccioSIO -> -U -> 1 `i `c ]
 "83
 [; ;SIO.c: 83:     state = 3;
-[e = F2672 -> -> 3 `i `uc ]
+[e = F2673 -> -> 3 `i `uc ]
 "84
 [; ;SIO.c: 84:    }
 }
@@ -814,7 +820,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTeclaSIO -> -> 0 `i `c ]
 "88
 [; ;SIO.c: 88:     state = 3;
-[e = F2672 -> -> 3 `i `uc ]
+[e = F2673 -> -> 3 `i `uc ]
 "89
 [; ;SIO.c: 89:    }
 }
@@ -838,7 +844,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _novaTeclaSIO -> -> 0 `i `c ]
 "95
 [; ;SIO.c: 95:     state = 4;
-[e = F2672 -> -> 4 `i `uc ]
+[e = F2673 -> -> 4 `i `uc ]
 "96
 [; ;SIO.c: 96:    }
 }
@@ -864,8 +870,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SIO.c: 102:                 horaTX[4] = HGetTime()[4];
 [e = *U + &U _horaTX * -> -> -> 4 `i `ui `ux -> -> # *U &U _horaTX `ui `ux *U + ( _HGetTime ..  * -> -> 4 `i `x -> -> # *U ( _HGetTime ..  `i `x ]
 "103
-[; ;SIO.c: 103:     horaTX[5] = '\n\r';
-[e = *U + &U _horaTX * -> -> -> 5 `i `ui `ux -> -> # *U &U _horaTX `ui `ux -> -> 2573 `ui `uc ]
+[; ;SIO.c: 103:     horaTX[5] = newLineChar;
+[e = *U + &U _horaTX * -> -> -> 5 `i `ui `ux -> -> # *U &U _horaTX `ui `ux _newLineChar ]
 "104
 [; ;SIO.c: 104:     mask = 1;
 [e = _mask -> -> 1 `i `uc ]
@@ -877,7 +883,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _charActu -> -> 0 `i `uc ]
 "107
 [; ;SIO.c: 107:     state = 10;
-[e = F2672 -> -> 10 `i `uc ]
+[e = F2673 -> -> 10 `i `uc ]
 "108
 [; ;SIO.c: 108:    }
 }
@@ -909,7 +915,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerSIO ]
 "116
 [; ;SIO.c: 116:     state = 5;
-[e = F2672 -> -> 5 `i `uc ]
+[e = F2673 -> -> 5 `i `uc ]
 "118
 [; ;SIO.c: 118:    }
 }
@@ -932,7 +938,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 2C ]
 "124
 [; ;SIO.c: 124:     state = 7;
-[e = F2672 -> -> 7 `i `uc ]
+[e = F2673 -> -> 7 `i `uc ]
 "125
 [; ;SIO.c: 125:    }
 }
@@ -950,7 +956,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcPutChar (1 -> _RCREG `uc ]
 "129
 [; ;SIO.c: 129:     state = 6;
-[e = F2672 -> -> 6 `i `uc ]
+[e = F2673 -> -> 6 `i `uc ]
 "130
 [; ;SIO.c: 130:    }
 }
@@ -971,7 +977,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 ( _HGetTime ..  ]
 "135
 [; ;SIO.c: 135:     state = 8;
-[e = F2672 -> -> 8 `i `uc ]
+[e = F2673 -> -> 8 `i `uc ]
 "136
 [; ;SIO.c: 136:    }
 }
@@ -994,7 +1000,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerSIO ]
 "142
 [; ;SIO.c: 142:     state = 5;
-[e = F2672 -> -> 5 `i `uc ]
+[e = F2673 -> -> 5 `i `uc ]
 "143
 [; ;SIO.c: 143:    }
 }
@@ -1017,7 +1023,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcNewString (1 :s 3C ]
 "149
 [; ;SIO.c: 149:     state = 9;
-[e = F2672 -> -> 9 `i `uc ]
+[e = F2673 -> -> 9 `i `uc ]
 "150
 [; ;SIO.c: 150:    }
 }
@@ -1040,7 +1046,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _usuariActualSIO -> -U -> 1 `i `c ]
 "156
 [; ;SIO.c: 156:     state = 0;
-[e = F2672 -> -> 0 `i `uc ]
+[e = F2673 -> -> 0 `i `uc ]
 "157
 [; ;SIO.c: 157:    }
 }
@@ -1060,7 +1066,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _hi_ha_hora_sio2 -> -> 0 `i `b ]
 "162
 [; ;SIO.c: 162:     state = 3;
-[e = F2672 -> -> 3 `i `uc ]
+[e = F2673 -> -> 3 `i `uc ]
 "163
 [; ;SIO.c: 163:    }
 }
@@ -1078,7 +1084,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerSIO ]
 "168
 [; ;SIO.c: 168:     state = 11;
-[e = F2672 -> -> 11 `i `uc ]
+[e = F2673 -> -> 11 `i `uc ]
 "169
 [; ;SIO.c: 169:    }
 }
@@ -1108,7 +1114,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerSIO ]
 "177
 [; ;SIO.c: 177:     state = 10;
-[e = F2672 -> -> 10 `i `uc ]
+[e = F2673 -> -> 10 `i `uc ]
 "178
 [; ;SIO.c: 178:    }
 }
@@ -1146,7 +1152,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TiResetTics (1 _timerSIO ]
 "187
 [; ;SIO.c: 187:     state = 11;
-[e = F2672 -> -> 11 `i `uc ]
+[e = F2673 -> -> 11 `i `uc ]
 "188
 [; ;SIO.c: 188:    }
 }
@@ -1160,7 +1166,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 289  ]
 [e :U 290 ]
-[e [\ -> F2672 `i , $ -> 0 `i 291
+[e [\ -> F2673 `i , $ -> 0 `i 291
  , $ -> 1 `i 293
  , $ -> 2 `i 297
  , $ -> 3 `i 299

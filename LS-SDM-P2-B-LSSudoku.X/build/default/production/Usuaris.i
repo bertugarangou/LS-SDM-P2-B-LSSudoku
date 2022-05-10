@@ -4650,7 +4650,7 @@ signed char arrayShowUsers[8];
 
 char tmpUsername[9];
 char tmpPassword[9];
-
+# 28 "Usuaris.c"
 typedef struct{
     char username[9];
     char password[9];

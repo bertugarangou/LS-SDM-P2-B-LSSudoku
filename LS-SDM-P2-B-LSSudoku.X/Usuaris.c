@@ -17,7 +17,14 @@ signed char arrayShowUsers[8];
 
 char tmpUsername[9];
 char tmpPassword[9];
-
+/*
+    for(int i = 0; i < 5; i++){
+	if(puntuacions[i].indexUsuari == indexNextUserStruct){
+		puntuacions[i].indexUsuari = -1;
+	}
+}
+ 
+ */
 typedef struct{
     char username[9];
     char password[9];

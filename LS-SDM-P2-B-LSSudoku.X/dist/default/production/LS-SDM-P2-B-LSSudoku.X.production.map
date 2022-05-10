@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.sym \
   --cmf=dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.cmf -z \
-  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAs2cs.4 \
+  -Q18F4321 -oC:\Users\alber\AppData\Local\Temp\xcAsirc.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LS-SDM-P2-B-LSSudoku.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0190h-01FFh -pstack=STACK \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alber\AppData\Local\Temp\xcAs2cs.o \
+  C:\Users\alber\AppData\Local\Temp\xcAsirc.o \
   dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o 
 
 Object code version is 3.11
@@ -31,7 +31,7 @@ Machine type is 18F4321
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alber\AppData\Local\Temp\xcAs2cs.o
+C:\Users\alber\AppData\Local\Temp\xcAsirc.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 32       32        4        4       0
@@ -138,10 +138,10 @@ dist/default/production\LS-SDM-P2-B-LSSudoku.X.production.o
                 text1                               A72      A72      2F2      178       0
                 text0                              1A80     1A80       68      178       0
                 cstackCOMRAM                         5F       5F       16        1       1
-                cstackBANK0                          D7       D7        5       80       1
+                cstackBANK0                          DA       DA        5       80       1
                 bssBANK1                            100      100       90      100       1
-                dataBANK0                            BC       BC       1B       80       1
-                bssBANK0                             80       80       3C       80       1
+                dataBANK0                            BF       BF       1B       80       1
+                bssBANK0                             80       80       3F       80       1
                 dataCOMRAM                           45       45       1A        1       1
                 bssCOMRAM                             1        1       44        1       1
                 bitbssCOMRAM                        3A8       75       13        1       1     8
@@ -276,9 +276,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          D7       D7        5         1
-                dataBANK0                            BC       BC       1B         1
-                bssBANK0                             80       80       3C         1
+                cstackBANK0                          DA       DA        5         1
+                dataBANK0                            BF       BF       1B         1
+                bssBANK0                             80       80       3F         1
 
         CLASS   BANK1          
                 bssBANK1                            100      100       90         1
@@ -302,7 +302,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  000078  000079         1       1  COMRAM  
                 intcode                        000008  0001EA  0001F2         4       0  CODE    
-                bssBANK0                       000080  00005C  0000DC        80       1  BANK0   
+                bssBANK0                       000080  00005F  0000DF        80       1  BANK0   
                 bssBANK1                       000100  000090  000190       100       1  BANK1   
                 smallconst                     000200  0000F0  0002F0       100       0  SMALLCON
                 text19                         0002F0  001CDB  001FCB       178       0  CODE    
@@ -312,10 +312,10 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0000DC-0000FF               24
+        BANK0            0000DF-0000FF               21
         BANK1            000190-0001FF               70
         BIGRAM           000079-00007F                7
-                         0000DC-0000FF               24
+                         0000DF-0000FF               21
                          000190-0001FF               70
         CODE             000004-000007                4
                          0001F2-0001FF                E
@@ -326,7 +326,7 @@ UNUSED ADDRESS RANGES
                          001FCB-001FCB                1
         EEDATA           F00000-F000FF              100
         MEDIUMCONST      001FCB-001FCB                1
-        RAM              0000DC-0000FF               24
+        RAM              0000DF-0000FF               21
                          000190-0001FF               70
         SFR              000F80-000FFF               80
         SMALLCONST       001FCB-001FCB                1
@@ -397,9 +397,9 @@ PL50                              text19       000A4A
 PL52                              text1        000D38
 PL54                              text1        000D44
 PL56                              text58       001CBE
-PL58                              text1        000D50
+PL58                              text56       001278
 PL6                               text63       001548
-PL60                              text56       001278
+PL60                              text1        000D50
 PL62                              text26       000042
 PL64                              text1        000D5A
 PL66                              text95       001C8A
@@ -918,9 +918,9 @@ __end_ofPL50                      text19       000A56
 __end_ofPL52                      text1        000D44
 __end_ofPL54                      text1        000D50
 __end_ofPL56                      text58       001CC8
-__end_ofPL58                      text1        000D5A
+__end_ofPL58                      text56       001280
 __end_ofPL6                       text63       001552
-__end_ofPL60                      text56       001280
+__end_ofPL60                      text1        000D5A
 __end_ofPL62                      text26       00004A
 __end_ofPL64                      text1        000D64
 __end_ofPL66                      text95       001C94
@@ -1046,9 +1046,9 @@ __pbssBANK0                       bssBANK0     000080
 __pbssBANK1                       bssBANK1     000100
 __pbssCOMRAM                      bssCOMRAM    000001
 __pcinit                          cinit        001A08
-__pcstackBANK0                    cstackBANK0  0000D7
+__pcstackBANK0                    cstackBANK0  0000DA
 __pcstackCOMRAM                   cstackCOMRAM 00005F
-__pdataBANK0                      dataBANK0    0000BC
+__pdataBANK0                      dataBANK0    0000BF
 __pdataCOMRAM                     dataCOMRAM   000045
 __pidataBANK0                     idataBANK0   001F96
 __pidataCOMRAM                    idataCOMRAM  001FB1
@@ -1247,7 +1247,7 @@ __size_of_motorJoc                (abs)        000000
 __size_of_motorSIO                (abs)        000000
 __size_of_playAltaveu             (abs)        000000
 __smallconst                      smallconst   000200
-_arrayShowUsers                   bssBANK0     0000A2
+_arrayShowUsers                   bssBANK0     0000A5
 _arrayZero                        dataCOMRAM   000045
 _calculateShowUsers               text23       0001C6
 _cap1                             bitbssCOMRAM 0003B0
@@ -1289,9 +1289,9 @@ _jugantJoc                        bitbssCOMRAM 0003AB
 _jugantSIO                        bitbssCOMRAM 0003AA
 _llegirCharEEPROM                 text60       00007C
 _lletraASCII                      dataCOMRAM   000055
-_lletraInici                      dataBANK0    0000BC
+_lletraInici                      dataBANK0    0000BF
 _loginNOTRegister                 bitbssCOMRAM 0003B8
-_loginText                        dataBANK0    0000CF
+_loginText                        dataBANK0    0000D2
 _main                             text0        001A80
 _mask                             bssCOMRAM    00000E
 _menu                             text19       0002F0
@@ -1315,8 +1315,8 @@ _novaTeclaSIO                     dataCOMRAM   000048
 _numUsuaris                       bssCOMRAM    00002D
 _playAltaveu                      text17       0001C2
 _pos                              bssCOMRAM    00002F
-_puntuacions                      bssBANK0     000098
-_registerText                     dataBANK0    0000C4
+_puntuacions                      bssBANK0     00009B
+_registerText                     dataBANK0    0000C7
 _reproduir                        bitbssCOMRAM 0003B3
 _s_Timers                         bssBANK0     000080
 _s_ptr                            bssCOMRAM    00000B
@@ -1336,8 +1336,8 @@ _timerMenu                        bssCOMRAM    000032
 _timerSIO                         bssCOMRAM    000011
 _timerSMS                         bssCOMRAM    00003B
 _tmp                              bssCOMRAM    000033
-_tmpPassword                      bssBANK0     0000AA
-_tmpUsername                      bssBANK0     0000B3
+_tmpPassword                      bssBANK0     0000AD
+_tmpUsername                      bssBANK0     0000B6
 _ultimaTecla                      dataCOMRAM   000053
 _ultimaTeclaAD                    bssCOMRAM    000018
 _userPtr                          bssCOMRAM    000007
@@ -1477,7 +1477,7 @@ shared
 		PL50           		CODE           	0A4A	0000	12
 		PL8            		CODE           	0FDE	0000	10
 		PL22           		CODE           	1258	0000	14
-		PL60           		CODE           	1278	0000	8
+		PL60           		CODE           	0D50	0000	10
 		PL32           		CODE           	0A30	0000	10
 		PL70           		CODE           	1634	0000	10
 		PL42           		CODE           	1626	0000	14
@@ -1509,7 +1509,7 @@ shared
 		PL76           		CODE           	1BAA	0000	10
 		PL48           		CODE           	1BF8	0000	12
 		PL86           		CODE           	1B44	0000	10
-		PL58           		CODE           	0D50	0000	10
+		PL58           		CODE           	1278	0000	8
 		PL96           		CODE           	0A6A	0000	8
 		PL68           		CODE           	19FE	0000	10
 		PL78           		CODE           	0FF2	0000	10

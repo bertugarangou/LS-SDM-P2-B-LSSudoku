@@ -179,45 +179,45 @@
 [v _TiGetTics TiGetTics `(i  1 e 2 0 ]
 "70
 [v _TiGetTimer TiGetTimer `(uc  1 e 1 0 ]
-"33 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"40 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
-"37
+"44
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
-"40
+"47
 [v _UcheckExistsNotFinished UcheckExistsNotFinished `(b  1 e 0 0 ]
-"43
+"50
 [v _UcheckExistsGetError UcheckExistsGetError `(c  1 e 1 0 ]
-"46
-[v _UenviaChar UenviaChar `(v  1 e 1 0 ]
-"49
-[v _UenviaPas UenviaPas `(v  1 e 1 0 ]
 "53
+[v _UenviaChar UenviaChar `(v  1 e 1 0 ]
+"56
+[v _UenviaPas UenviaPas `(v  1 e 1 0 ]
+"60
 [v _URegister URegister `(v  1 e 1 0 ]
-"57
-[v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
-"61
-[v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
 "64
+[v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
+"68
+[v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
+"71
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
-"78
-[v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
 "85
+[v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
+"92
 [v _Uinit Uinit `(v  1 e 1 0 ]
-"128
+"135
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
-"137
-[v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
-"140
-[v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
 "144
+[v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
+"147
+[v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
+"151
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
-"284
+"291
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
-"287
+"294
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
-"290
+"297
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
-"295
+"302
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
 "5 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Altaveu.c
 [v _reproduir reproduir `b  1 e 0 0 ]
@@ -709,7 +709,7 @@
 [v _teclaPremuda teclaPremuda `C[4][3]uc  1 e 12 0 ]
 [s S721 Timer 3 `ui 1 h_initialTics 2 0 `uc 1 b_busy 1 2 ]
 "12 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\TiTTimer.c
-[v _s_Timers s_Timers `[8]S721  1 e 24 0 ]
+[v _s_Timers s_Timers `[9]S721  1 e 27 0 ]
 "14
 [v _h_Tics h_Tics `ui  1 s 2 h_Tics ]
 "15
@@ -743,10 +743,10 @@
 "19
 [v _tmpPassword tmpPassword `[9]uc  1 e 9 0 ]
 [s S1074 . 18 `[9]uc 1 username 9 0 `[9]uc 1 password 9 9 ]
-"25
+"32
 [v _usuaris usuaris `[8]S1074  1 e 144 0 ]
 [s S1077 . 2 `c 1 indexStruct 1 0 `uc 1 score 1 1 ]
-"31
+"38
 [v _puntuacions puntuacions `[5]S1077  1 e 10 0 ]
 "75 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -760,13 +760,13 @@
 [v motorSIO@state state `uc  1 s 1 state ]
 "191
 } 0
-"290 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"297 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UnewScore UnewScore `(v  1 e 1 0 ]
 {
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 wreg ]
 [v UnewScore@scoretmp scoretmp `uc  1 a 1 5 ]
-"293
+"300
 } 0
 "44 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Joc.c
 [v _motorJoc motorJoc `(v  1 e 1 0 ]
@@ -874,100 +874,100 @@
 [v menu@state state `uc  1 s 1 state ]
 "434
 } 0
-"295 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"302 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _miraPassword miraPassword `(b  1 e 0 0 ]
 {
-"297
+"304
 } 0
-"61
+"68
 [v _getArrayShowUsers getArrayShowUsers `(*.39uc  1 e 2 0 ]
 {
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
 [v getArrayShowUsers@quin quin `uc  1 a 1 wreg ]
 [v getArrayShowUsers@quin quin `uc  1 a 1 7 ]
-"63
+"70
 } 0
 "42 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Hora.c
 [v _checkHoraAcabat checkHoraAcabat `(b  1 e 0 0 ]
 {
 "44
 } 0
-"137 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"144 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _calculateShowUsers calculateShowUsers `(v  1 e 1 0 ]
 {
-"139
+"146
 } 0
-"140
+"147
 [v _UshowUsersCalculat UshowUsersCalculat `(b  1 e 0 0 ]
 {
-"142
+"149
 } 0
-"57
+"64
 [v _UgetUserName UgetUserName `(*.39uc  1 e 2 0 ]
 {
 [v UgetUserName@quin quin `uc  1 a 1 wreg ]
 [v UgetUserName@quin quin `uc  1 a 1 wreg ]
 [v UgetUserName@quin quin `uc  1 a 1 7 ]
-"59
+"66
 } 0
-"287
+"294
 [v _UgetTop5 UgetTop5 `(c  1 e 1 0 ]
 {
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 wreg ]
 [v UgetTop5@quin quin `uc  1 a 1 5 ]
-"289
+"296
 } 0
-"284
+"291
 [v _UgetScore UgetScore `(uc  1 e 1 0 ]
 {
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 wreg ]
 [v UgetScore@quin quin `uc  1 a 1 5 ]
-"286
+"293
 } 0
-"33
+"40
 [v _UgetNumUsuaris UgetNumUsuaris `(uc  1 e 1 0 ]
 {
-"35
+"42
 } 0
-"49
+"56
 [v _UenviaPas UenviaPas `(v  1 e 1 0 ]
 {
 [v UenviaPas@c c `uc  1 a 1 wreg ]
 [v UenviaPas@c c `uc  1 a 1 wreg ]
 [v UenviaPas@pos pos `uc  1 p 1 5 ]
 [v UenviaPas@c c `uc  1 a 1 6 ]
-"51
+"58
 } 0
-"46
+"53
 [v _UenviaChar UenviaChar `(v  1 e 1 0 ]
 {
 [v UenviaChar@c c `uc  1 a 1 wreg ]
 [v UenviaChar@c c `uc  1 a 1 wreg ]
 [v UenviaChar@pos pos `uc  1 p 1 5 ]
 [v UenviaChar@c c `uc  1 a 1 6 ]
-"48
+"55
 } 0
-"40
+"47
 [v _UcheckExistsNotFinished UcheckExistsNotFinished `(b  1 e 0 0 ]
 {
-"42
+"49
 } 0
-"43
+"50
 [v _UcheckExistsGetError UcheckExistsGetError `(c  1 e 1 0 ]
 {
-"45
+"52
 } 0
-"37
+"44
 [v _UcheckExists UcheckExists `(v  1 e 1 0 ]
 {
-"39
+"46
 } 0
-"53
+"60
 [v _URegister URegister `(v  1 e 1 0 ]
 {
-"55
+"62
 } 0
 "19 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\GestioLCD.c
 [v _SiFerMenu SiFerMenu `(v  1 e 1 0 ]
@@ -1090,45 +1090,45 @@
 {
 "12
 } 0
-"144 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
+"151 C:\Users\alber\Documents\GITHUB\LS-SDM-P2-B-LSSudoku\LS-SDM-P2-B-LSSudoku.X\Usuaris.c
 [v _UmotorUsers UmotorUsers `(v  1 e 1 0 ]
 {
-"145
+"152
 [v UmotorUsers@state state `uc  1 s 1 state ]
-"282
+"289
 } 0
-"64
+"71
 [v _escriureCharEEPROM escriureCharEEPROM `(v  1 e 1 0 ]
 {
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@c c `uc  1 a 1 wreg ]
 [v escriureCharEEPROM@pos pos `uc  1 p 1 5 ]
 [v escriureCharEEPROM@c c `uc  1 a 1 6 ]
-"77
+"84
 } 0
-"128
+"135
 [v _compareStrings compareStrings `(uc  1 e 1 0 ]
 {
 [v compareStrings@a a `*.30Cuc  1 p 1 5 ]
 [v compareStrings@b b `*.39Cuc  1 p 2 6 ]
-"135
+"142
 } 0
-"85
+"92
 [v _Uinit Uinit `(v  1 e 1 0 ]
 {
-"110
+"117
 [v Uinit@k_1175 k `uc  1 a 1 12 ]
-"106
+"113
 [v Uinit@k k `uc  1 a 1 11 ]
-"126
+"133
 } 0
-"78
+"85
 [v _llegirCharEEPROM llegirCharEEPROM `(uc  1 e 1 0 ]
 {
 [v llegirCharEEPROM@pos pos `uc  1 a 1 wreg ]
 [v llegirCharEEPROM@pos pos `uc  1 a 1 wreg ]
 [v llegirCharEEPROM@pos pos `uc  1 a 1 5 ]
-"84
+"91
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lbdiv.c
 [v ___lbdiv __lbdiv `(uc  1 e 1 0 ]

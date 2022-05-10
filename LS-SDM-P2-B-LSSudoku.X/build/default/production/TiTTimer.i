@@ -4645,7 +4645,7 @@ void _TiRSITimer (void);
 struct Timer {
  unsigned int h_initialTics;
  unsigned char b_busy;
-} s_Timers[8];
+} s_Timers[9];
 
 static unsigned int h_Tics=0;
 static char counter;
@@ -4664,7 +4664,7 @@ void TiInitTimer(void) {
     TMR0L = 148;
     T0CONbits.TMR0ON = 1;
 
-    for (counter=0;counter<8;counter++) {
+    for (counter=0;counter<9;counter++) {
  s_Timers[counter].b_busy=0;
     }
 }
@@ -4679,7 +4679,7 @@ void _TiRSITimer (void) {
 
     if (h_Tics>=61000) {
 
-        for (counter=0;counter<8;counter++){
+        for (counter=0;counter<9;counter++){
             if (s_Timers[counter].b_busy==1){
                 s_Timers[counter].h_initialTics -= h_Tics;
             }
@@ -4710,7 +4710,7 @@ char TiGetTimer(void) {
     counter=0;
     while (s_Timers[counter].b_busy==1) {
         counter++;
- if (counter == 8) return -1;
+ if (counter == 9) return -1;
     }
     s_Timers[counter].b_busy=1;
     return (counter);

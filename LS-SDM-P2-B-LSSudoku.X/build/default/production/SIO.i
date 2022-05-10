@@ -4748,7 +4748,7 @@ void LcInsertFletxa(void);
 # 7 "SIO.c" 2
 
 
-
+const char newLineChar = '\n\r';
 
 char *userPtr = 0;
 signed char usuariActualSIO = -1;
@@ -4842,7 +4842,7 @@ void motorSIO(void){
                 horaTX[2] = HGetTime()[2];
                 horaTX[3] = HGetTime()[3];
                 horaTX[4] = HGetTime()[4];
-    horaTX[5] = '\n\r';
+    horaTX[5] = newLineChar;
     mask = 1;
     TiResetTics(timerSIO);
     charActu = 0;
